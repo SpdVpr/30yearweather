@@ -7,8 +7,10 @@ import HistoricalRecords from "./HistoricalRecords";
 import AstronomyCard from "./AstronomyCard";
 import ExtremesCard from "./ExtremesCard";
 import TourismScoreCard from "./TourismScoreCard";
+import HealthImpactCard from "./HealthImpactCard"; // NEW
+import AltitudeWarningCard from "./AltitudeWarningCard"; // NEW
 import { Sun, CloudRain, Wind, Thermometer, Cloud, Heart } from "lucide-react";
-import { DayData } from "@/lib/data";
+import { DayData, GeoInfo } from "@/lib/data";
 import { calculateTourismScores, fetchTourismData, TourismDataset, getTourismInsights, getTourismAttribution } from "@/lib/tourism"; // NEW imports
 
 interface WeatherDashboardProps {
@@ -17,10 +19,11 @@ interface WeatherDashboardProps {
     lon: number;
     dateId: string;
     citySlug: string; // NEW prop
+    geoInfo?: GeoInfo; // NEW prop
 }
 
-export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug }: WeatherDashboardProps) {
-    const { stats, scores, clothing, historical_records } = dayData;
+export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, geoInfo }: WeatherDashboardProps) {
+    const { stats, scores, clothing, historical_records, pressure_stats, health_impact } = dayData;
 
     // NEW: Fetch Tourism Data
     const [tourismData, setTourismData] = useState<TourismDataset | null>(null);
@@ -97,6 +100,22 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug }
                         attribution={tourismAttribution}
                     />
                 </div>
+            </div>
+
+            {/* 2.5 Health & Altitude Warnings (NEW) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Health Impact (Pressure-based) */}
+                {health_impact && pressure_stats && (
+                    <HealthImpactCard
+                        healthImpact={health_impact}
+                        pressureStats={pressure_stats}
+                    />
+                )}
+
+                {/* Altitude Warning (if applicable) */}
+                {geoInfo && (
+                    <AltitudeWarningCard geoInfo={geoInfo} />
+                )}
             </div>
 
             {/* 3. Main Visualizations & Suitcase */}

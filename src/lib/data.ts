@@ -9,6 +9,31 @@ export interface DayStats {
     precip_prob: number;
     wind_kmh: number;
     clouds_percent: number;
+    pressure_hpa?: number; // NEW: Atmospheric pressure
+}
+
+export interface PressureStats {
+    mean_hpa: number | null;
+    volatility: "Low" | "Medium" | "High";
+    std_dev: number | null;
+}
+
+export interface HealthImpact {
+    migraine_risk: "Low" | "Medium" | "High";
+    joint_pain_risk: "Low" | "Medium" | "High";
+    fishing_conditions: "Poor" | "Fair" | "Excellent";
+}
+
+export interface AltitudeEffects {
+    uv_multiplier: number;
+    alcohol_warning: boolean;
+    sunburn_risk: "Normal" | "Medium" | "High";
+}
+
+export interface GeoInfo {
+    elevation: number | null;
+    is_high_altitude: boolean;
+    altitude_effects: AltitudeEffects | null;
 }
 
 export interface DayScores {
@@ -28,6 +53,8 @@ export interface HistoricalRecord {
 export interface DayData {
     stats: DayStats;
     scores: DayScores;
+    pressure_stats?: PressureStats; // NEW
+    health_impact?: HealthImpact; // NEW
     clothing: string[];
     events?: { description: string }[];
     historical_records?: HistoricalRecord[];
@@ -40,6 +67,7 @@ export interface CityData {
         lat: number;
         lon: number;
         desc?: string;
+        geo_info?: GeoInfo; // NEW
     };
     days: Record<string, DayData>; // Key "MM-DD"
 }

@@ -228,6 +228,7 @@ export default async function CityDatePage({
                 lon={data.meta.lon}
                 dateId={date} // "MM-DD" needed for SunCalc
                 citySlug={city}
+                geoInfo={data.meta.geo_info} // NEW: Pass altitude/geo data
             />
 
         </main>
