@@ -1,31 +1,35 @@
 "use client";
-import { useState, useEffect } from "react"; // NEW
-import { Card, AreaChart, Title, BarChart } from "@tremor/react";
+import { useState, useEffect } from "react";
+import { Card, AreaChart, Title, Accordion, AccordionHeader, AccordionBody, AccordionList } from "@tremor/react";
 import StatCard from "./StatCard";
 import SmartSuitcase from "./SmartSuitcase";
 import HistoricalRecords from "./HistoricalRecords";
 import AstronomyCard from "./AstronomyCard";
 import ExtremesCard from "./ExtremesCard";
 import TourismScoreCard from "./TourismScoreCard";
-import HealthImpactCard from "./HealthImpactCard"; // NEW
-import AltitudeWarningCard from "./AltitudeWarningCard"; // NEW
-import { Sun, CloudRain, Wind, Thermometer, Cloud, Heart } from "lucide-react";
-import { DayData, GeoInfo } from "@/lib/data";
-import { calculateTourismScores, fetchTourismData, TourismDataset, getTourismInsights, getTourismAttribution } from "@/lib/tourism"; // NEW imports
+import HealthImpactCard from "./HealthImpactCard";
+import AltitudeWarningCard from "./AltitudeWarningCard";
+import SafetyProfileCard from "./SafetyProfileCard";
+import { Sun, CloudRain, Wind, Thermometer, Cloud, Heart, Droplets, Snowflake, Gauge, Info } from "lucide-react";
+import { DayData, GeoInfo, SafetyProfile } from "@/lib/data";
+import { calculateTourismScores, fetchTourismData, TourismDataset, getTourismInsights, getTourismAttribution } from "@/lib/tourism";
 
 interface WeatherDashboardProps {
     dayData: DayData;
     lat: number;
     lon: number;
     dateId: string;
-    citySlug: string; // NEW prop
-    geoInfo?: GeoInfo; // NEW prop
+    citySlug: string;
+    cityName: string;
+    geoInfo?: GeoInfo;
+    safetyProfile?: SafetyProfile;
+    timezoneOffset?: number;
 }
 
-export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, geoInfo }: WeatherDashboardProps) {
-    const { stats, scores, clothing, historical_records, pressure_stats, health_impact } = dayData;
+export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, cityName, geoInfo, safetyProfile, timezoneOffset = 0 }: WeatherDashboardProps) {
+    const { stats, scores, clothing, historical_records, pressure_stats, health_impact, weather_condition } = dayData;
 
-    // NEW: Fetch Tourism Data
+    // Tourism Data Fetching
     const [tourismData, setTourismData] = useState<TourismDataset | null>(null);
 
     useEffect(() => {
@@ -34,16 +38,25 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
         }
     }, [citySlug]);
 
-    // Calculate scores with real data (if available)
     const tourismScores = calculateTourismScores(dayData, dateId, tourismData);
-
-    // Get monthly insights
     const month = parseInt(dateId.split('-')[0]);
+    const dateFormatted = new Date(2024, month - 1, parseInt(dateId.split('-')[1])).toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+
     const tourismInsights = getTourismInsights(tourismData, month);
     const tourismAttribution = getTourismAttribution(tourismData);
 
-    // Transform ACTUAL historical records for the chart
-    // This ensures we are visualizing real data from the JSON/Firebase source
+    // Helper text generators
+    const getVerdict = () => {
+        if (stats.precip_prob > 50) return "Rainy & Overcast";
+        if (stats.temp_max < 5) return "Cold & Crisp";
+        if (stats.temp_max > 25) return "Warm & Sunny";
+        return "Mild & Comfortable";
+    };
+
+    const precipType = (stats.temp_max < 2 || (stats.snowfall_cm || 0) > 0) ? "Snow" : "Rain";
+    const isSnowy = precipType === "Snow";
+
+    // Chart Data
     const chartData = historical_records
         ? historical_records.map(r => ({
             Year: r.year.toString(),
@@ -53,80 +66,178 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
         : [];
 
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
 
-            {/* 1. Primary Stats Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <StatCard
-                    title="Avg High"
-                    value={`${stats.temp_max}°C`}
-                    icon={<Thermometer className="w-5 h-5 text-rose-500" />}
-                    color="rose"
-                    delay={1}
-                />
-                <StatCard
-                    title="Rain Probability"
-                    value={`${stats.precip_prob}%`}
-                    subtext={`${stats.precip_mm}mm avg amount`}
-                    icon={<CloudRain className="w-5 h-5 text-blue-500" />}
-                    color="blue"
-                    delay={2}
-                />
-                <StatCard
-                    title="Cloud Cover"
-                    value={`${stats.clouds_percent}%`}
-                    icon={<Cloud className="w-5 h-5 text-slate-500" />}
-                    delay={3}
-                />
-                <StatCard
-                    title="Wind Speed"
-                    value={`${stats.wind_kmh} km/h`}
-                    icon={<Wind className="w-5 h-5 text-slate-500" />}
-                    delay={4}
-                />
-            </div>
-
-            {/* 2. Detailed Insights Grid (NEW) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Astronomy / Sun Cycle - Now full width in this row or spanning */}
-                <div className="md:col-span-2">
-                    <AstronomyCard date={dateId} lat={lat} lon={lon} />
+            {/* 1. VERDICT / SUMMARY */}
+            <section>
+                <div className="flex items-center gap-2 mb-4">
+                    <Info className="w-5 h-5 text-blue-600" />
+                    <h2 className="text-xl font-bold text-slate-800">
+                        Weather Verdict for {cityName} on {dateFormatted}
+                    </h2>
                 </div>
-                {/* AI Tourism Intelligence - Replaces previous placeholder */}
-                <div className="md:col-span-1">
-                    <TourismScoreCard
-                        scores={tourismScores}
-                        insights={tourismInsights}
-                        attribution={tourismAttribution}
-                    />
+                <div className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl">
+                    <p className="text-lg text-slate-700 font-medium">
+                        "{getVerdict()}. Expect average highs of {stats.temp_max}°C. {stats.precip_prob}% chance of {precipType.toLowerCase()}."
+                    </p>
                 </div>
-            </div>
+            </section>
 
-            {/* 2.5 Health & Altitude Warnings (NEW) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Health Impact (Pressure-based) */}
-                {health_impact && pressure_stats && (
-                    <HealthImpactCard
-                        healthImpact={health_impact}
-                        pressureStats={pressure_stats}
-                    />
-                )}
+            {/* 2. PLAN YOUR DAY (Clothing + Key Stats) */}
+            <section>
+                <h2 className="text-xl font-bold text-slate-800 mb-4">
+                    What to wear in {cityName}?
+                </h2>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    {/* Clothing Column - 1/3 Width */}
+                    <div className="h-full">
+                        <SmartSuitcase clothing={clothing} />
+                    </div>
 
-                {/* Altitude Warning (if applicable) */}
-                {geoInfo && (
-                    <AltitudeWarningCard geoInfo={geoInfo} />
-                )}
-            </div>
+                    {/* Key Metrics Grid - 2/3 Width (2x2 Grid) 
+                        Mobile optimization: use grid-cols-2 instead of 1 to save vertical space.
+                    */}
+                    <div className="lg:col-span-2 grid grid-cols-2 gap-4">
+                        <StatCard
+                            title="Average High"
+                            value={`${stats.temp_max}°C`}
+                            subtext="Daytime Peak"
+                            icon={<Thermometer className="w-5 h-5 text-rose-500" />}
+                            color="rose"
+                            delay={0}
+                        />
+                        <StatCard
+                            title="Average Low"
+                            value={`${stats.temp_min}°C`}
+                            subtext="Nighttime Low"
+                            icon={<Thermometer className="w-5 h-5 text-blue-500" />}
+                            color="blue"
+                            delay={1}
+                        />
+                        <StatCard
+                            title={`${precipType} Chance`}
+                            value={`${stats.precip_prob}%`}
+                            subtext={`Avg ${stats.precip_mm}mm`}
+                            icon={isSnowy ? <Snowflake className="w-5 h-5 text-cyan-500" /> : <CloudRain className="w-5 h-5 text-blue-500" />}
+                            color="blue"
+                            delay={2}
+                        />
+                        {/* Show Snowfall if relevant, otherwise Cloud Cover */}
+                        {(isSnowy || (stats.snowfall_cm || 0) > 0) ? (
+                            <StatCard
+                                title="Snowfall"
+                                value={`${stats.snowfall_cm?.toFixed(1) ?? 0} cm`}
+                                subtext="Accumulation"
+                                icon={<Snowflake className="w-5 h-5 text-cyan-500" />}
+                                color="blue"
+                                delay={3}
+                            />
+                        ) : (
+                            <StatCard
+                                title="Cloud Cover"
+                                value={`${stats.clouds_percent}%`}
+                                subtext={weather_condition?.description}
+                                icon={<Cloud className="w-5 h-5 text-slate-500" />}
+                                color="slate"
+                                delay={3}
+                            />
+                        )}
+                    </div>
+                </div>
+            </section>
 
-            {/* 3. Main Visualizations & Suitcase */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* 3. ATMOSPHERIC & SOLAR (Consolidated to remove gaps) */}
+            <section>
+                <h2 className="text-xl font-bold text-slate-800 mb-4">
+                    Atmospheric Conditions
+                </h2>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    {/* Chart - Wider (2/3) for better visibility */}
+                    <div className="lg:col-span-2 h-full">
+                        <AstronomyCard date={dateId} lat={lat} lon={lon} timezoneOffset={timezoneOffset} />
+                    </div>
 
-                {/* Left Column: Charts (2/3 width) */}
-                <div className="lg:col-span-2 space-y-8">
-                    {/* Temperature Trend Chart */}
-                    <Card className="p-6 rounded-xl shadow-sm ring-1 ring-gray-200">
-                        <Title>Temperature History (Last 10 Years)</Title>
-                        <div className="mt-4">
+                    {/* Conditions Stack - 1/3 Width 
+                        Mobile Optimization: 
+                        - Mobile: grid-cols-2 (2 items per row)
+                        - Tablet (sm): grid-cols-3 (1 row of 3)
+                        - Desktop (lg): grid-cols-1 (stack)
+                    */}
+                    <div className="space-y-4 h-full flex flex-col justify-between">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-4 flex-1">
+                            <StatCard
+                                title="Wind Speed"
+                                value={`${stats.wind_kmh} km/h`}
+                                subtext="Average Speed"
+                                icon={<Wind className="w-5 h-5 text-slate-500" />}
+                                color="slate"
+                                delay={0}
+                            />
+                            <StatCard
+                                title="Sunshine"
+                                value={`${stats.sunshine_hours?.toFixed(1) ?? '--'} hrs`}
+                                subtext="Daily Average"
+                                icon={<Sun className="w-5 h-5 text-amber-500" />}
+                                color="amber"
+                                delay={1}
+                            />
+                            <StatCard
+                                title="Humidity"
+                                value={`${stats.humidity_percent ?? 75}%`}
+                                subtext="Relative Humidity"
+                                icon={<Droplets className="w-5 h-5 text-indigo-500" />}
+                                color="blue"
+                                delay={2}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 4. TRAVEL INTELLIGENCE (Bento Grid Layout) */}
+            <section>
+                <h2 className="text-xl font-bold text-slate-800 mb-4">
+                    Travel & Wellbeing Intelligence
+                </h2>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    {/* Top Row: Tourism (2/3) + Health (1/3) */}
+                    <div className="lg:col-span-2 h-full">
+                        <TourismScoreCard
+                            scores={tourismScores}
+                            insights={tourismInsights}
+                            attribution={tourismAttribution}
+                        />
+                    </div>
+                    {health_impact && pressure_stats && (
+                        <div className="lg:col-span-1 h-full">
+                            <HealthImpactCard
+                                healthImpact={health_impact}
+                                pressureStats={pressure_stats}
+                            />
+                        </div>
+                    )}
+
+                    {/* Bottom Row: Safety (Full Width) */}
+                    {safetyProfile && (
+                        <div className="lg:col-span-3">
+                            <SafetyProfileCard
+                                safetyProfile={safetyProfile}
+                                cityName={cityName}
+                            />
+                        </div>
+                    )}
+                </div>
+            </section>
+
+            {/* 5. HISTORY (2/3 Chart, 1/3 Extremes) */}
+            <section>
+                <h2 className="text-xl font-bold text-slate-800 mb-4">
+                    Historical Weather Archive (2010 - 2024)
+                </h2>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div className="lg:col-span-2 h-full">
+                        <Card className="p-6 rounded-xl shadow-sm ring-1 ring-gray-200 h-full">
+                            <Title>Temperature History</Title>
                             <AreaChart
                                 className="h-72 mt-4"
                                 data={chartData}
@@ -136,74 +247,43 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                                 valueFormatter={(number) => `${number}°C`}
                                 showAnimation={true}
                             />
-                        </div>
-                    </Card>
-
-                    {/* Historical Data Table */}
-                    {historical_records && <HistoricalRecords records={historical_records} />}
-                </div>
-
-                {/* Right Column: Suitcase & Wedding Score (1/3 width) */}
-                <div className="space-y-6">
-
-                    {/* Wedding Score (Demoted to side card) */}
-                    <StatCard
-                        title="Wedding Index"
-                        value={`${scores.wedding}/100`}
-                        subtext="Based on rain, temp & wind stability"
-                        icon={<Heart className="w-5 h-5 text-rose-500" />}
-                        color="rose"
-                        delay={5}
-                    />
-
-                    {/* Reliability Score */}
-                    <StatCard
-                        title="Weather Reliability"
-                        value={`${scores.reliability}/100`}
-                        subtext="Consistency year-over-year"
-                        icon={<Sun className="w-5 h-5 text-amber-500" />}
-                        color="amber"
-                        delay={6}
-                    />
-
-                    {/* Events & Holidays */}
-                    <div className="bg-white p-6 rounded-xl border border-indigo-100 shadow-sm transition-all hover:shadow-md">
-                        <h3 className="text-xs font-medium uppercase tracking-wide opacity-70 mb-4 text-indigo-900">
-                            Events & Holidays
-                        </h3>
-                        {dayData.events && dayData.events.length > 0 ? (
-                            <div className="space-y-3">
-                                {dayData.events.map((event, idx) => (
-                                    <div key={idx} className="flex items-start gap-3 p-3 bg-indigo-50 rounded-lg text-indigo-900">
-                                        <div className="mt-0.5">🎉</div>
-                                        <span className="font-medium text-sm">{event.description}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        ) : (
-                            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg text-gray-500">
-                                <div className="opacity-50">📅</div>
-                                <span className="text-sm">No public holidays expected</span>
-                            </div>
-                        )}
+                        </Card>
                     </div>
-
-                    {/* Smart Suitcase */}
-                    <SmartSuitcase clothing={clothing} />
-
-                    {/* Hall of Fame (Extremes) - Moved to sidebar */}
-                    {historical_records && (
-                        <div>
-                            <div className="mb-4">
-                                <h3 className="text-sm font-semibold text-gray-900">Weather Records</h3>
-                                <p className="text-xs text-gray-500">Extreme measurements</p>
-                            </div>
-                            <ExtremesCard records={historical_records} />
-                        </div>
-                    )}
-
+                    <div className="h-full">
+                        {historical_records && <ExtremesCard records={historical_records} />}
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            {/* 6. FAQ */}
+            <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <h2 className="text-xl font-bold text-slate-800 mb-6">Frequently Asked Questions</h2>
+                <AccordionList>
+                    <Accordion>
+                        <AccordionHeader className="text-sm font-medium">Will it snow in {cityName} on {dateFormatted}?</AccordionHeader>
+                        <AccordionBody className="text-slate-600 text-sm leading-relaxed">
+                            Historically, there is a {stats.precip_prob}% chance of precipitation on this day.
+                            {isSnowy
+                                ? ` Given the low temperatures (${stats.temp_min}°C - ${stats.temp_max}°C), snow is likely if precip occurs.`
+                                : ` Temperatures are generally too warm for snow (${stats.temp_min}°C - ${stats.temp_max}°C). Expect rain if anything.`}
+                        </AccordionBody>
+                    </Accordion>
+                    <Accordion>
+                        <AccordionHeader className="text-sm font-medium">Is it windy in {cityName} in {month === 12 || month < 3 ? 'Winter' : 'this season'}?</AccordionHeader>
+                        <AccordionBody className="text-slate-600 text-sm leading-relaxed">
+                            The average wind speed on {dateFormatted} is {stats.wind_kmh} km/h.
+                            {stats.wind_kmh > 20 ? " It can be quite breezy, so a windbreaker is recommended." : " It is generally calm."}
+                        </AccordionBody>
+                    </Accordion>
+                    <Accordion>
+                        <AccordionHeader className="text-sm font-medium">Is {cityName} safe for tourists?</AccordionHeader>
+                        <AccordionBody className="text-slate-600 text-sm leading-relaxed">
+                            {safetyProfile ? `The seismic risk is classified as ${safetyProfile.seismic.risk_level}. ` : "General safety data is positive. "}
+                            {safetyProfile?.seismic.risk_level === 'High' ? "Visitors should be aware of earthquake protocols." : "It is geologically stable."}
+                        </AccordionBody>
+                    </Accordion>
+                </AccordionList>
+            </section>
 
         </div>
     );

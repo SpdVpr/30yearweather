@@ -9,7 +9,11 @@ export interface DayStats {
     precip_prob: number;
     wind_kmh: number;
     clouds_percent: number;
-    pressure_hpa?: number; // NEW: Atmospheric pressure
+    pressure_hpa?: number; // Atmospheric pressure
+    // NEW: Extended weather variables
+    snowfall_cm?: number; // Snowfall in centimeters
+    sunshine_hours?: number; // Sunshine duration in hours
+    humidity_percent?: number; // Relative humidity percentage
 }
 
 export interface PressureStats {
@@ -36,6 +40,58 @@ export interface GeoInfo {
     altitude_effects: AltitudeEffects | null;
 }
 
+export interface SeismicRisk {
+    count_30y: number;
+    avg_per_year: number;
+    max_magnitude: number | null;
+    seismic_score: number;
+    risk_level: "Stable" | "Low" | "Medium" | "High" | "Very High" | "Unknown";
+}
+
+export interface HurricaneRisk {
+    zone: string;
+    storm_type: string;
+    season_start: number;
+    season_end: number;
+    is_year_round: boolean;
+    risk_level: "High" | "Seasonal";
+}
+
+export interface VolcanoInfo {
+    name: string;
+    distance_km: number;
+    last_eruption: number;
+    activity_level: string;
+}
+
+export interface VolcanoRisk {
+    risk_level: "Medium" | "High" | "Very High";
+    nearby_volcanoes: VolcanoInfo[];
+    count: number;
+}
+
+export interface FloodRisk {
+    risk_level: "Minimal" | "Low" | "Medium" | "High";
+    risk_score: number;
+    risk_factors: string[];
+    elevation: number | null;
+}
+
+export interface AirQuality {
+    aqi: number;
+    pm25: number;
+    category: "Good" | "Moderate" | "Unhealthy for Sensitive" | "Unhealthy" | "Very Unhealthy";
+    health_note: string;
+}
+
+export interface SafetyProfile {
+    seismic: SeismicRisk;
+    hurricane: HurricaneRisk | null;
+    volcano: VolcanoRisk | null;
+    flood: FloodRisk | null;
+    air_quality: AirQuality | null;
+}
+
 export interface DayScores {
     wedding: number;
     reliability: number;
@@ -43,18 +99,28 @@ export interface DayScores {
     crowd?: number;
 }
 
+export interface WeatherCondition {
+    description: string; // e.g., "Clear sky", "Overcast", "Heavy rain"
+    icon: string; // Icon suggestion (e.g., "sun", "cloud", "rain")
+    severity: string; // e.g., "clear", "cloudy", "rain", "snow", "storm"
+}
+
 export interface HistoricalRecord {
     year: number;
     temp_max: number;
     temp_min: number;
     precip: number;
+    snowfall?: number; // NEW: Snowfall data
+    weather_code?: number; // NEW: WMO weather code
 }
 
 export interface DayData {
     stats: DayStats;
+    weather_condition?: WeatherCondition; // NEW: Weather description & icon
     scores: DayScores;
-    pressure_stats?: PressureStats; // NEW
-    health_impact?: HealthImpact; // NEW
+    pressure_stats?: PressureStats;
+    health_impact?: HealthImpact;
+    safety?: any; // Monthly safety data (seismic, hurricane, flood, air quality, volcano)
     clothing: string[];
     events?: { description: string }[];
     historical_records?: HistoricalRecord[];
@@ -68,6 +134,7 @@ export interface CityData {
         lon: number;
         desc?: string;
         geo_info?: GeoInfo; // NEW
+        safety_profile?: SafetyProfile; // NEW
     };
     days: Record<string, DayData>; // Key "MM-DD"
 }
@@ -113,5 +180,5 @@ export async function getCityData(slug: string): Promise<CityData | null> {
 
 export async function getAllCities(): Promise<string[]> {
     // Return list of available city slugs
-    return ['prague-cz', 'berlin-de'];
+    return ['prague-cz', 'berlin-de', 'tokyo-jp'];
 }

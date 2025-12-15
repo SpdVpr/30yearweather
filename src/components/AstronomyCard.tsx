@@ -10,147 +10,153 @@ interface AstronomyCardProps {
     date: string; // "MM-DD"
     lat: number;
     lon: number;
+    timezoneOffset?: number; // Offset in hours (e.g., 9 for Tokyo, 1 for Prague)
 }
 
-export default function AstronomyCard({ date, lat, lon }: AstronomyCardProps) {
-    // 1. Calculate Sun Position Data Points for the entire day (00:00 - 23:59)
+export default function AstronomyCard({ date, lat, lon, timezoneOffset = 0 }: AstronomyCardProps) {
+    // 1. Calculate Sun Position Data Points for the entire day (Local Time 00:00 - 23:59)
     const chartData = useMemo(() => {
         const currentYear = new Date().getFullYear();
         const [month, day] = date.split('-').map(Number);
         const data = [];
 
-        // Generate data points for every 15 minutes for smoother curve
+        // Generate data points for every 30 minutes for performance
         for (let h = 0; h < 24; h++) {
-            for (let m = 0; m < 60; m += 15) {
-                const timeDate = new Date(currentYear, month - 1, day, h, m, 0);
-                const pos = SunCalc.getPosition(timeDate, lat, lon);
+            for (let m = 0; m < 60; m += 30) {
+                // Construct UTC date that corresponds to Local Time (h:m)
+                // UTC = Local - Offset
+                const utcDate = new Date(Date.UTC(currentYear, month - 1, day, h - timezoneOffset, m));
+
+                const pos = SunCalc.getPosition(utcDate, lat, lon);
                 // Convert altitude from radians to degrees
                 const altitude = (pos.altitude * 180) / Math.PI;
 
                 data.push({
                     time: `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`,
                     altitude: altitude,
-                    originalDate: timeDate.getTime() // store timestamp for easier x-axis calc if needed
+                    formattedTime: `${h}:${m.toString().padStart(2, '0')}`
                 });
             }
         }
         return data;
-    }, [date, lat, lon]);
+    }, [date, lat, lon, timezoneOffset]);
 
     // 2. Calculate Key Events (Sunrise, Sunset, Noon)
     const sunTimes = useMemo(() => {
         const currentYear = new Date().getFullYear();
         const [month, day] = date.split('-').map(Number);
-        const targetDate = new Date(currentYear, month - 1, day, 12, 0, 0);
-        return SunCalc.getTimes(targetDate, lat, lon);
-    }, [date, lat, lon]);
+        // Calculate based on Noon UTC to avoid edge cases, then adjust
+        const noonUtc = new Date(Date.UTC(currentYear, month - 1, day, 12 - timezoneOffset, 0));
+        return SunCalc.getTimes(noonUtc, lat, lon);
+    }, [date, lat, lon, timezoneOffset]);
 
-    const formatTime = (date: Date) => {
-        return date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+    const formatTime = (dateObj: Date) => {
+        // Adjust UTC date object to "Local Time" string manually based on offset
+        // Because dateObj is the absolute moment in time (e.g. 21:00 UTC)
+        // We want to display (21 + 9) % 24 = 06:00
+        const utcHours = dateObj.getUTCHours();
+        const utcMinutes = dateObj.getUTCMinutes();
+
+        let localHours = utcHours + timezoneOffset;
+        if (localHours >= 24) localHours -= 24;
+        if (localHours < 0) localHours += 24;
+
+        // Handle minutes (usually no offset, but for 30min zones...) assuming whole hour offsets for MVP
+        // If offset has decimals (e.g. 5.5), logic needs update.
+        // For simplicity:
+        const totalMinutes = utcHours * 60 + utcMinutes + (timezoneOffset * 60);
+        const normalizedMinutes = (totalMinutes + 24 * 60) % (24 * 60);
+        const h = Math.floor(normalizedMinutes / 60);
+        const m = Math.floor(normalizedMinutes % 60);
+
+        return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
     };
 
     // 3. Dynamic Gradient Calculation
-    // We need to find at what % of the X-axis (00:00 to 24:00) the sunrise and sunset happen.
     const gradientOffsets = useMemo(() => {
-        const startOfDay = new Date(sunTimes.sunrise).setHours(0, 0, 0, 0);
-        const endOfDay = new Date(sunTimes.sunrise).setHours(23, 59, 59, 999);
-        const dayLengthTotal = endOfDay - startOfDay;
+        // We need to map sunrise/sunset absolute times to the X-axis (0..24 local hours)
+        const getLocalHour = (dateObj: Date) => {
+            const h = dateObj.getUTCHours();
+            const m = dateObj.getUTCMinutes();
+            const totalHoursUtc = h + m / 60;
+            let local = totalHoursUtc + timezoneOffset;
+            if (local < 0) local += 24;
+            if (local >= 24) local -= 24;
+            return local;
+        };
 
-        // Ensure we use the same day for calc
-        const sunriseTime = sunTimes.sunrise.getTime() - startOfDay;
-        const sunsetTime = sunTimes.sunset.getTime() - startOfDay;
-
-        const sunrisePercent = sunriseTime / dayLengthTotal;
-        const sunsetPercent = sunsetTime / dayLengthTotal;
+        const sunriseLocal = getLocalHour(sunTimes.sunrise);
+        const sunsetLocal = getLocalHour(sunTimes.sunset);
 
         return {
-            sunrise: sunrisePercent,
-            sunset: sunsetPercent
+            sunrise: sunriseLocal / 24,
+            sunset: sunsetLocal / 24
         };
-    }, [sunTimes]);
+    }, [sunTimes, timezoneOffset]);
 
     return (
-        <Card className="h-full rounded-xl bg-white border border-gray-100 shadow-sm overflow-hidden">
+        <Card className="h-full rounded-xl bg-white border border-gray-100 shadow-sm overflow-hidden flex flex-col">
             <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-orange-100 rounded-lg text-orange-600">
+                <div className="p-2 bg-amber-50 rounded-lg text-amber-600">
                     <Sunrise className="w-5 h-5" />
                 </div>
                 <div>
-                    <Title>Sun Elevation</Title>
-                    <Text className="text-xs">Day & Night Cycle</Text>
+                    <Title>Daylight & Sun</Title>
+                    <Text className="text-xs text-gray-400">Solar Elevation Cycle</Text>
                 </div>
             </div>
 
-            <div className="h-64 w-full relative">
+            <div className="flex-1 w-full min-h-[200px] relative">
                 <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                         <defs>
                             <linearGradient id="splitColor" x1="0" y1="0" x2="1" y2="0">
-                                {/* Night before sunrise */}
-                                <stop offset={gradientOffsets.sunrise - 0.05} stopColor="#6366f1" stopOpacity={0.4} />
-                                <stop offset={gradientOffsets.sunrise} stopColor="#f59e0b" stopOpacity={0.8} />
-
-                                {/* Day */}
-                                <stop offset={gradientOffsets.sunset} stopColor="#f59e0b" stopOpacity={0.8} />
-
-                                {/* Night after sunset */}
-                                <stop offset={gradientOffsets.sunset + 0.05} stopColor="#6366f1" stopOpacity={0.4} />
+                                <stop offset={Math.max(0, gradientOffsets.sunrise - 0.1)} stopColor="#6366f1" stopOpacity={0.3} />
+                                <stop offset={gradientOffsets.sunrise} stopColor="#f59e0b" stopOpacity={0.6} />
+                                <stop offset={gradientOffsets.sunset} stopColor="#f59e0b" stopOpacity={0.6} />
+                                <stop offset={Math.min(1, gradientOffsets.sunset + 0.1)} stopColor="#6366f1" stopOpacity={0.3} />
                             </linearGradient>
                         </defs>
 
-                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
-
+                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
                         <XAxis
-                            dataKey="time"
-                            interval={15} // approx every 4 hours
+                            dataKey="formattedTime"
+                            interval={7}
                             tick={{ fontSize: 10, fill: '#9ca3af' }}
                             axisLine={false}
                             tickLine={false}
-                            minTickGap={30}
                         />
-                        <YAxis
-                            hide={false}
-                            width={40}
-                            tick={{ fontSize: 10, fill: '#9ca3af' }}
-                            domain={[-60, 80]} // Visual optimization
-                            axisLine={false}
-                            tickLine={false}
-                            label={{ value: 'Elevation (°)', angle: -90, position: 'insideLeft', style: { fill: '#9ca3af', fontSize: '10px' } }}
-                        />
-
-                        {/* Horizon Line (0 degrees) */}
-                        <ReferenceLine y={0} stroke="#374151" strokeWidth={1} />
-
+                        <YAxis hide={true} domain={[-20, 90]} />
+                        <ReferenceLine y={0} stroke="#e5e7eb" />
                         <Tooltip
                             contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                            labelStyle={{ color: '#6b7280', marginBottom: '0.25rem' }}
-                            formatter={(value: number | undefined) => value !== undefined ? [`${Math.round(value)}°`, 'Elevation'] : ['N/A', 'Elevation']}
+                            labelStyle={{ color: '#6b7280' }}
+                            formatter={(value: any) => [`${Math.round(Number(value))}°`, 'Elevation']}
                         />
-
                         <Area
-                            type="monotone"
+                            type="basis"
                             dataKey="altitude"
                             stroke="url(#splitColor)"
-                            strokeWidth={3}
+                            strokeWidth={2}
                             fill="url(#splitColor)"
-                            fillOpacity={0.2}
+                            fillOpacity={1}
                         />
                     </AreaChart>
                 </ResponsiveContainer>
             </div>
 
-            <div className="mt-4 grid grid-cols-3 gap-2 text-center text-sm border-t border-gray-100 pt-4">
+            <div className="mt-4 grid grid-cols-3 gap-2 text-center text-sm border-t border-gray-50 pt-4">
                 <div>
-                    <p className="text-gray-400 text-xs">Sunrise</p>
-                    <p className="font-medium text-gray-900">{formatTime(sunTimes.sunrise)}</p>
+                    <p className="text-gray-400 text-[10px] uppercase tracking-wider">Sunrise</p>
+                    <p className="font-semibold text-gray-700">{formatTime(sunTimes.sunrise)}</p>
                 </div>
                 <div>
-                    <p className="text-gray-400 text-xs">Solar Noon</p>
-                    <p className="font-medium text-gray-900">{formatTime(sunTimes.solarNoon)}</p>
+                    <p className="text-gray-400 text-[10px] uppercase tracking-wider">Noon</p>
+                    <p className="font-semibold text-gray-700">{formatTime(sunTimes.solarNoon)}</p>
                 </div>
                 <div>
-                    <p className="text-gray-400 text-xs">Sunset</p>
-                    <p className="font-medium text-gray-900">{formatTime(sunTimes.sunset)}</p>
+                    <p className="text-gray-400 text-[10px] uppercase tracking-wider">Sunset</p>
+                    <p className="font-semibold text-gray-700">{formatTime(sunTimes.sunset)}</p>
                 </div>
             </div>
         </Card>

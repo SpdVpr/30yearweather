@@ -150,7 +150,10 @@ const JsonLd = ({ data, date, dayData }: { data: any, date: string, dayData?: an
             variableMeasured: [
                 { '@type': 'PropertyValue', name: 'Average High Temperature', value: `${dayData.stats.temp_max}°C` },
                 { '@type': 'PropertyValue', name: 'Rain Probability', value: `${dayData.stats.precip_prob}%` },
-                { '@type': 'PropertyValue', name: 'Wind Speed', value: `${dayData.stats.wind_kmh} km/h` }
+                { '@type': 'PropertyValue', name: 'Wind Speed', value: `${dayData.stats.wind_kmh} km/h` },
+                ...(dayData.stats.humidity_percent ? [{ '@type': 'PropertyValue', name: 'Humidity', value: `${dayData.stats.humidity_percent}%` }] : []),
+                ...(dayData.stats.sunshine_hours ? [{ '@type': 'PropertyValue', name: 'Sunshine Duration', value: `${dayData.stats.sunshine_hours} hours` }] : []),
+                ...(dayData.stats.snowfall_cm ? [{ '@type': 'PropertyValue', name: 'Snowfall', value: `${dayData.stats.snowfall_cm} cm` }] : [])
             ],
             mainEntityOfPage: `${baseUrl}/${citySlug}/${date}`
         };
@@ -221,14 +224,21 @@ export default async function CityDatePage({
                 precipProb={dayData.stats.precip_prob}
             />
 
-            {/* 2. Main Dashboard (Grid Layout) */}
+            {/* 2. Main Dashboard (Programmatic SEO Structure) */}
             <WeatherDashboard
                 dayData={dayData}
                 lat={data.meta.lat}
                 lon={data.meta.lon}
                 dateId={date} // "MM-DD" needed for SunCalc
                 citySlug={city}
-                geoInfo={data.meta.geo_info} // NEW: Pass altitude/geo data
+                cityName={data.meta.name}
+                geoInfo={data.meta.geo_info}
+                safetyProfile={data.meta.safety_profile}
+                timezoneOffset={
+                    city.includes('tokyo') ? 9 :
+                        city.includes('prague') ? 2 : // Summer time approx
+                            city.includes('berlin') ? 2 : 0
+                }
             />
 
         </main>

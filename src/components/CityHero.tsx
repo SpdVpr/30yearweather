@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowLeft } from "lucide-react";
 
 interface CityHeroProps {
     city: string;
@@ -18,7 +19,8 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
     const heroImage =
         citySlug === 'prague-cz' ? '/images/prague-hero.webp' :
             citySlug === 'berlin-de' ? '/images/berlin-de-hero.webp' :
-                '/images/prague-hero.webp'; // Fallback
+                citySlug === 'tokyo-jp' ? '/images/tokyo-hero.png' :
+                    '/images/prague-hero.webp'; // Fallback
 
     return (
         <div className="relative h-[70vh] w-full overflow-hidden">
@@ -31,8 +33,19 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
                 priority
             />
 
-            {/* Overlay - Gradient for legibility */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/80" />
+            {/* Overlay - Darker for better text readability on bright images */}
+            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90" />
+
+            {/* Back Button (Absolute Top Left) */}
+            <Link
+                href={`/${citySlug}`}
+                className="absolute top-6 left-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors border border-white/20"
+            >
+                <ArrowLeft className="w-4 h-4" />
+                <span className="text-sm font-medium">Back to Calendar</span>
+            </Link>
+
 
             {/* Content */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
@@ -60,34 +73,37 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    className="mt-8 flex gap-8 backdrop-blur-md bg-white/10 px-8 py-4 rounded-full border border-white/20"
+                    className="mt-8 flex gap-8 md:gap-12"
                 >
-                    <div className="flex flex-col">
-                        <span className="text-xs uppercase tracking-wider opacity-70">Day</span>
-                        <span className="text-2xl font-semibold">{tempMax}°</span>
+                    <div className="text-center">
+                        <p className="text-3xl font-bold">{tempMax}°</p>
+                        <p className="text-xs uppercase tracking-wider opacity-70">High</p>
                     </div>
-                    <div className="w-px bg-white/20" />
-                    <div className="flex flex-col">
-                        <span className="text-xs uppercase tracking-wider opacity-70">Night</span>
-                        <span className="text-2xl font-semibold">{tempMin}°</span>
+                    <div className="text-center">
+                        <p className="text-3xl font-bold">{tempMin}°</p>
+                        <p className="text-xs uppercase tracking-wider opacity-70">Low</p>
                     </div>
-                    <div className="w-px bg-white/20" />
-                    <div className="flex flex-col">
-                        <span className="text-xs uppercase tracking-wider opacity-70">Rain</span>
-                        <span className="text-2xl font-semibold">{precipProb}%</span>
+                    <div className="text-center">
+                        <p className="text-3xl font-bold">{precipProb}%</p>
+                        <p className="text-xs uppercase tracking-wider opacity-70">Rain</p>
                     </div>
                 </motion.div>
             </div>
 
             {/* Scroll Indicator */}
             <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    delay: 1.5,
+                    duration: 1,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                }}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50"
             >
-                <ArrowDown className="w-8 h-8" />
+                <ArrowDown className="w-6 h-6" />
             </motion.div>
         </div>
     );
 }
-

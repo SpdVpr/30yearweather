@@ -219,7 +219,8 @@ export default async function Home() {
               const cityImage =
                 city.slug === 'prague-cz' ? '/images/prague-hero.webp' :
                   city.slug === 'berlin-de' ? '/images/berlin-de-hero.webp' :
-                    null;
+                    city.slug === 'tokyo-jp' ? '/images/tokyo-hero.png' :
+                      null;
 
               return (
                 <Link key={city.slug} href={`/${city.slug}`} className="group block">
@@ -354,4 +355,3 @@ export default async function Home() {
     </div>
   );
 }
-

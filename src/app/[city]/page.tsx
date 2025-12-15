@@ -12,10 +12,11 @@ export async function generateMetadata({ params }: { params: { city: string } })
     if (!data) return { title: 'City not found' };
 
     const cityName = data.meta.name;
+    const description = data.meta.desc || `Get accurate long-range weather forecasts for ${cityName} up to 365 days ahead. Based on 30 years of historical data. See rain probabilities, temperatures, and best months to visit ${cityName}.`;
 
     return {
         title: `${cityName} Weather Forecast - 365 Day Long-Range Forecast`,
-        description: `Get accurate long-range weather forecasts for ${cityName} up to 365 days ahead. Based on 30 years of historical data. See rain probabilities, temperatures, and best months to visit ${cityName}.`,
+        description: description,
         keywords: [`${cityName} weather forecast`, `${cityName} long range forecast`, `${cityName} weather`, `best time to visit ${cityName}`, `${cityName} weather by month`, `${cityName} 365 day forecast`],
         alternates: {
             canonical: `/${params.city}`,
@@ -150,8 +151,8 @@ export default async function CityIndexPage({
                 <div className="mb-12">
                     <h2 className="text-4xl font-serif font-bold mb-4">When to visit {data.meta.name}?</h2>
                     <p className="text-lg text-stone-600 max-w-2xl">
-                        We've analyzed 30 years of weather data to help you pick the perfect month.
-                        Below is the historical average for every month of the year.
+                        {/* Use the rich description here as well if available, falling back to static text */}
+                        {data.meta.desc ? data.meta.desc : "We've analyzed 30 years of weather data to help you pick the perfect month. Below is the historical average for every month of the year."}
                     </p>
                 </div>
 
