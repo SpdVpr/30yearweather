@@ -11,9 +11,9 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "30-Year Weather Intelligence | Plan Your Perfect Trip",
-  description: "Don't rely on forecasts. Use 30 years of historical data to plan your wedding, vacation, or event with confidence.",
-  keywords: ["historical weather data", "weather planning", "best time to visit", "wedding weather planning", "30 year weather", "NASA weather data", "travel planning weather"],
+  title: "Long-Range Weather Forecast | 365-Day Predictions Based on 30 Years of Data",
+  description: "Get accurate long-range weather forecasts for any date up to 365 days ahead. Based on 30 years of NASA satellite data. Perfect for wedding planning, travel, and events.",
+  keywords: ["long range weather forecast", "365 day weather forecast", "year ahead weather forecast", "weather forecast", "long term weather forecast", "extended weather forecast", "wedding weather forecast", "travel weather forecast", "historical weather forecast", "30 year weather data"],
 };
 
 export default async function Home() {
@@ -39,42 +39,42 @@ export default async function Home() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'What is 30-year weather data?',
+        name: 'How far ahead can you forecast weather?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '30-year weather data is historical climate information collected over three decades from NASA POWER satellites. It shows actual weather patterns that occurred on specific dates, helping you understand the probability of certain weather conditions for your planned event or trip.'
+          text: 'We provide long-range weather forecasts for any date up to 365 days ahead. Unlike traditional 7-day forecasts, our predictions are based on 30 years of NASA POWER satellite data, showing you what the weather was actually like on your chosen date over the past three decades.'
         }
       },
       {
         '@type': 'Question',
-        name: 'How accurate is historical weather for planning?',
+        name: 'How accurate is a long-range weather forecast?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Historical weather data is significantly more reliable than long-range forecasts. While 7-day forecasts are only 80% accurate, 30-year historical patterns show you what actually happened on your chosen date over the past three decades, giving you probability-based insights for better planning.'
+          text: 'Our long-range forecasts are based on historical probability, not speculation. While traditional 7-day forecasts are only 80% accurate and anything beyond 10 days is unreliable, our 30-year historical data shows you the actual probability of rain, temperature ranges, and weather patterns for your specific date. This makes it significantly more reliable for long-term planning.'
         }
       },
       {
         '@type': 'Question',
-        name: 'Can I use this for wedding planning?',
+        name: 'Can I get a weather forecast for my wedding date?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Absolutely! 30YearWeather is perfect for wedding planning. You can see the exact probability of rain, average temperatures, and crowd levels for any date in your chosen city. This helps you pick the perfect outdoor wedding date with confidence.'
+          text: 'Absolutely! Our wedding weather forecast tool is perfect for planning outdoor weddings. You can see the exact probability of rain, average temperatures, and crowd levels for any date in your chosen city. This helps you pick the perfect outdoor wedding date with confidence, even if your wedding is 6-12 months away.'
         }
       },
       {
         '@type': 'Question',
-        name: 'What cities do you cover?',
+        name: 'What cities have long-range weather forecasts?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'We currently cover Prague and Berlin with detailed 30-year weather analysis. We are rapidly expanding to cover 100+ major cities worldwide in 2025, including Paris, Rome, Barcelona, and New York.'
+          text: 'We currently provide 365-day weather forecasts for Prague and Berlin with detailed 30-year analysis. We are rapidly expanding to cover 100+ major cities worldwide in 2025, including Paris, Rome, Barcelona, London, and New York.'
         }
       },
       {
         '@type': 'Question',
-        name: 'Is 30YearWeather free to use?',
+        name: 'Is the long-range weather forecast free?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes! 30YearWeather is completely free for personal use. We believe everyone should have access to reliable weather intelligence for planning their important life events.'
+          text: 'Yes! Our long-range weather forecasts are completely free for personal use. We believe everyone should have access to reliable weather predictions for planning their weddings, vacations, and important life events.'
         }
       }
     ]
@@ -123,17 +123,17 @@ export default async function Home() {
         <div className="absolute bottom-0 w-full px-6 md:px-12 pb-24 md:pb-32 max-w-7xl mx-auto">
           <div className="max-w-2xl animate-fade-in-up">
             <span className="inline-block py-1 px-3 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium uppercase tracking-widest">
-              New: Tourism Intelligence
+              365-Day Weather Forecast
             </span>
             <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-[1.1]">
-              Don't <span className="italic text-orange-200">guess</span> the<br />weather.
+              Long-Range Weather<br /><span className="italic text-orange-200">Forecast</span> You Can Trust
             </h1>
             <p className="text-lg md:text-xl text-stone-200 mb-8 max-w-lg leading-relaxed">
-              We analyze 30 years of historical satellite data to help you pick the perfect travel dates. avoid rain, crowds, and bad surprises.
+              Get weather forecasts for any date up to 365 days ahead. Based on 30 years of NASA satellite data, not guesswork. Perfect for weddings, travel, and events.
             </p>
             <div className="flex gap-4">
               <Link href="#cities" className="bg-white text-stone-900 px-8 py-4 rounded-full font-semibold hover:bg-stone-100 transition-all flex items-center gap-2">
-                Find Destination <ArrowRight className="w-4 h-4" />
+                Get Your Forecast <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -277,45 +277,46 @@ export default async function Home() {
         <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12 text-center">Frequently Asked Questions</h2>
         <div className="space-y-8">
           <div className="border-b border-stone-200 pb-6">
-            <h3 className="text-xl font-bold mb-3">What is 30-year weather data?</h3>
+            <h3 className="text-xl font-bold mb-3">How far ahead can you forecast weather?</h3>
             <p className="text-stone-600 leading-relaxed">
-              30-year weather data is historical climate information collected over three decades from NASA POWER satellites.
-              It shows actual weather patterns that occurred on specific dates, helping you understand the probability of
-              certain weather conditions for your planned event or trip.
+              We provide long-range weather forecasts for any date up to 365 days ahead. Unlike traditional 7-day forecasts,
+              our predictions are based on 30 years of NASA POWER satellite data, showing you what the weather was actually
+              like on your chosen date over the past three decades.
             </p>
           </div>
 
           <div className="border-b border-stone-200 pb-6">
-            <h3 className="text-xl font-bold mb-3">How accurate is historical weather for planning?</h3>
+            <h3 className="text-xl font-bold mb-3">How accurate is a long-range weather forecast?</h3>
             <p className="text-stone-600 leading-relaxed">
-              Historical weather data is significantly more reliable than long-range forecasts. While 7-day forecasts are
-              only 80% accurate, 30-year historical patterns show you what actually happened on your chosen date over the
-              past three decades, giving you probability-based insights for better planning.
+              Our long-range forecasts are based on historical probability, not speculation. While traditional 7-day forecasts
+              are only 80% accurate and anything beyond 10 days is unreliable, our 30-year historical data shows you the actual
+              probability of rain, temperature ranges, and weather patterns for your specific date. This makes it significantly
+              more reliable for long-term planning.
             </p>
           </div>
 
           <div className="border-b border-stone-200 pb-6">
-            <h3 className="text-xl font-bold mb-3">Can I use this for wedding planning?</h3>
+            <h3 className="text-xl font-bold mb-3">Can I get a weather forecast for my wedding date?</h3>
             <p className="text-stone-600 leading-relaxed">
-              Absolutely! 30YearWeather is perfect for wedding planning. You can see the exact probability of rain,
-              average temperatures, and crowd levels for any date in your chosen city. This helps you pick the perfect
-              outdoor wedding date with confidence.
+              Absolutely! Our wedding weather forecast tool is perfect for planning outdoor weddings. You can see the exact
+              probability of rain, average temperatures, and crowd levels for any date in your chosen city. This helps you
+              pick the perfect outdoor wedding date with confidence, even if your wedding is 6-12 months away.
             </p>
           </div>
 
           <div className="border-b border-stone-200 pb-6">
-            <h3 className="text-xl font-bold mb-3">What cities do you cover?</h3>
+            <h3 className="text-xl font-bold mb-3">What cities have long-range weather forecasts?</h3>
             <p className="text-stone-600 leading-relaxed">
-              We currently cover Prague and Berlin with detailed 30-year weather analysis. We are rapidly expanding to
-              cover 100+ major cities worldwide in 2025, including Paris, Rome, Barcelona, and New York.
+              We currently provide 365-day weather forecasts for Prague and Berlin with detailed 30-year analysis. We are
+              rapidly expanding to cover 100+ major cities worldwide in 2025, including Paris, Rome, Barcelona, London, and New York.
             </p>
           </div>
 
           <div className="pb-6">
-            <h3 className="text-xl font-bold mb-3">Is 30YearWeather free to use?</h3>
+            <h3 className="text-xl font-bold mb-3">Is the long-range weather forecast free?</h3>
             <p className="text-stone-600 leading-relaxed">
-              Yes! 30YearWeather is completely free for personal use. We believe everyone should have access to reliable
-              weather intelligence for planning their important life events.
+              Yes! Our long-range weather forecasts are completely free for personal use. We believe everyone should have
+              access to reliable weather predictions for planning their weddings, vacations, and important life events.
             </p>
           </div>
         </div>

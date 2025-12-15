@@ -14,9 +14,9 @@ export async function generateMetadata({ params }: { params: { city: string } })
     const cityName = data.meta.name;
 
     return {
-        title: `Weather History for ${cityName} - Best Time to Visit`,
-        description: `Planning a trip to ${cityName}? Explore 30 years of historical weather data, rain probabilities, and crowd analysis to find the perfect month to visit.`,
-        keywords: [`${cityName} weather history`, `best time to visit ${cityName}`, `${cityName} tourism data`, `weather planning ${cityName}`],
+        title: `${cityName} Weather Forecast - 365 Day Long-Range Forecast`,
+        description: `Get accurate long-range weather forecasts for ${cityName} up to 365 days ahead. Based on 30 years of historical data. See rain probabilities, temperatures, and best months to visit ${cityName}.`,
+        keywords: [`${cityName} weather forecast`, `${cityName} long range forecast`, `${cityName} weather`, `best time to visit ${cityName}`, `${cityName} weather by month`, `${cityName} 365 day forecast`],
         alternates: {
             canonical: `/${params.city}`,
         }

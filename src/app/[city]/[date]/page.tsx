@@ -24,8 +24,9 @@ export async function generateMetadata({ params }: { params: { city: string; dat
     if (isMonthView) {
         const monthName = format(new Date(2024, parseInt(date) - 1, 1), "MMMM");
         return {
-            title: `${monthName} in ${cityName} - Weather & Travel Guide`,
-            description: `Planning a trip to ${cityName} in ${monthName}? See day-by-day historical weather probabilities, crowds, and rain chances.`,
+            title: `${cityName} Weather Forecast for ${monthName} - Long-Range Predictions`,
+            description: `Get ${monthName} weather forecast for ${cityName}. See day-by-day predictions, rain probabilities, and temperatures based on 30 years of data. Perfect for planning your ${monthName} trip to ${cityName}.`,
+            keywords: [`${cityName} ${monthName} weather`, `${cityName} ${monthName} forecast`, `${cityName} weather ${monthName}`],
             alternates: { canonical: `${baseUrl}/${city}/${date}` }
         };
     }
@@ -39,15 +40,15 @@ export async function generateMetadata({ params }: { params: { city: string; dat
     const tempAvg = dayData.stats.temp_max;
 
     return {
-        title: `Weather in ${cityName} on ${formattedDate}: 30-Year Historical Guide`,
-        description: `Planning a wedding or trip to ${cityName} on ${formattedDate}? Expect avg highs of ${tempAvg}°C. Detailed historical weather analysis, rain probability, and crowds.`,
-        keywords: [`weather ${cityName} ${formattedDate}`, `${cityName} weather ${formattedMonth}`, `historical weather ${cityName}`, "wedding weather planning"],
+        title: `${cityName} Weather Forecast for ${formattedDate} - Long-Range Prediction`,
+        description: `${cityName} weather forecast for ${formattedDate}: Expect ${tempAvg}°C with ${dayData.stats.precip_prob}% chance of rain. Based on 30 years of data. Perfect for planning weddings, trips, and events in ${cityName}.`,
+        keywords: [`${cityName} weather forecast ${formattedDate}`, `${cityName} weather ${formattedMonth}`, `${cityName} forecast`, `weather forecast ${cityName}`, "wedding weather forecast"],
         alternates: {
             canonical: `${baseUrl}/${city}/${date}`,
         },
         openGraph: {
-            title: `Is ${formattedDate} a good day for ${cityName}? - Weather & Travel Index`,
-            description: `Historical weather & crowd analysis for ${cityName}. Avg Temp: ${tempAvg}°C, Rain Chance: ${dayData.stats.precip_prob}%. Perfect for planning.`,
+            title: `${cityName} Weather Forecast for ${formattedDate} - ${tempAvg}°C, ${dayData.stats.precip_prob}% Rain`,
+            description: `Long-range weather forecast for ${cityName} on ${formattedDate}. Avg Temp: ${tempAvg}°C, Rain Chance: ${dayData.stats.precip_prob}%. Based on 30 years of NASA data.`,
             images: ['/images/prague-hero.png'],
         }
     };

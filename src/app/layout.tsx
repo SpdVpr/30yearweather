@@ -12,14 +12,16 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 export const metadata: Metadata = {
   metadataBase: baseUrl,
   title: {
-    default: "30-Year Weather Intelligence | Plan Your Perfect Trip",
+    default: "Long-Range Weather Forecast | 365-Day Predictions Based on 30 Years of Data",
     template: "%s | 30YearWeather"
   },
-  description: "Don't rely on forecasts. Use 30 years of historical data to plan your wedding, vacation, or event with confidence.",
+  description: "Get accurate long-range weather forecasts for any date up to 365 days ahead. Based on 30 years of NASA satellite data. Perfect for wedding planning, travel, and events.",
+  keywords: ["long range weather forecast", "365 day weather forecast", "year ahead weather", "weather forecast", "historical weather forecast", "wedding weather forecast", "travel weather planning"],
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: '30YearWeather',
+    siteName: '30YearWeather - Long Range Weather Forecast',
+    description: "365-day weather forecasts based on 30 years of historical data. Plan your wedding, vacation, or event with confidence.",
   },
   twitter: {
     card: 'summary_large_image',
