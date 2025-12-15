@@ -5,6 +5,7 @@ import { Card, Title, Text, Badge } from "@tremor/react";
 import { ArrowLeft, ArrowRight, Thermometer, CloudRain } from "lucide-react";
 import { format } from "date-fns";
 import type { Metadata } from 'next';
+import CityPageTracker from "@/components/CityPageTracker";
 
 // 1. Dynamic Metadata
 export async function generateMetadata({ params }: { params: { city: string } }): Promise<Metadata> {
@@ -133,6 +134,7 @@ export default async function CityIndexPage({
 
     return (
         <div className="min-h-screen bg-stone-50 text-stone-900 pb-20">
+            <CityPageTracker cityName={data.meta.name} citySlug={city} />
             <JsonLd data={data} slug={city} />
 
             {/* Navbar / Breadcrumb */}

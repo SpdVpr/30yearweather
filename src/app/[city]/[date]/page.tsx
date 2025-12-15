@@ -5,6 +5,7 @@ import WeatherDashboard from "@/components/WeatherDashboard";
 import MonthCalendarView from "@/components/MonthCalendarView";
 import { format } from "date-fns";
 import type { Metadata } from 'next';
+import DatePageTracker from "@/components/DatePageTracker";
 
 // 1. Dynamic Metadata Generation
 export async function generateMetadata({ params }: { params: { city: string; date: string } }): Promise<Metadata> {
@@ -193,8 +194,13 @@ export default async function CityDatePage({
     if (date.length === 2 && !isNaN(parseInt(date))) {
         console.log("-> Detected Month View");
         if (!data) notFound();
+        const monthName = format(new Date(2024, parseInt(date) - 1, 1), "MMMM");
         return (
             <>
+                <DatePageTracker
+                    cityName={data.meta.name}
+                    date={monthName}
+                />
                 <JsonLd data={data} date={date} dayData={null} />
                 <MonthCalendarView city={city} month={date} data={data} />
             </>
@@ -211,8 +217,19 @@ export default async function CityDatePage({
     const dateObj = new Date(2024, parseInt(date.split('-')[0]) - 1, parseInt(date.split('-')[1]));
     const formattedDate = format(dateObj, "MMMM d");
 
+    // Calculate verdict from wedding score
+    const weddingScore = dayData.scores.wedding;
+    let verdict = "MAYBE";
+    if (weddingScore >= 80) verdict = "YES";
+    else if (weddingScore < 50) verdict = "NO";
+
     return (
         <main className="min-h-screen bg-slate-50">
+            <DatePageTracker
+                cityName={data.meta.name}
+                date={formattedDate}
+                verdict={verdict}
+            />
             {/* Inject JSON-LD */}
             <JsonLd data={data} date={date} dayData={dayData} />
 
