@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Card, Title, Text, Badge } from "@tremor/react";
+// Removed Tremor imports to fix potential hydration issues
 import { ArrowLeft, Thermometer, CloudRain, Sun, Wind, Calendar } from "lucide-react";
 import { format } from "date-fns";
 
@@ -15,15 +15,20 @@ export default function MonthCalendarView({
     const monthNum = parseInt(month);
     const monthName = format(new Date(2024, monthNum - 1, 1), "MMMM");
 
+    // Ensure month format matches data keys (e.g. "08")
+    const monthFormatted = month.toString().padStart(2, '0');
+
     // Filter days for this month
     const days = Object.entries(data.days)
-        .filter(([key]) => key.startsWith(`${month}-`))
+        .filter(([key]) => key.startsWith(`${monthFormatted}-`))
         .sort((a, b) => a[0].localeCompare(b[0])); // Sort by date
+
+    console.log(`MonthCalendarView: city=${city}, month=${month}, daysFound=${days.length}`);
 
     return (
         <div className="min-h-screen bg-stone-50 text-stone-900 pb-20">
             {/* Navbar / Breadcrumb */}
-            <div className="bg-white border-b border-stone-200 px-6 py-4 sticky top-0 z-10">
+            <div className="bg-white border-b border-stone-200 px-6 py-4 sticky top-0 z-10 w-full">
                 <div className="max-w-6xl mx-auto flex items-center gap-4">
                     <Link href={`/${city}`} className="text-stone-500 hover:text-orange-600 transition-colors flex items-center gap-1">
                         <ArrowLeft className="w-5 h-5" /> <span className="text-sm font-medium">Back to Year</span>

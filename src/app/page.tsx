@@ -102,38 +102,39 @@ export default async function Home() {
           <a href="#" className="hover:text-white hover:underline transition-all opacity-80">About</a>
         </div>
       </nav>
-
       {/* 2. Hero Section (Immersive) */}
-      <div className="relative w-full h-[85vh] overflow-hidden">
+      <div className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-stone-200">
         {/* Background Image */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-travel.webp"
+            src="/images/hero1-optimized.webp"
             alt="Couple planning trip in sunny city"
             fill
             className="object-cover"
             priority
             quality={90}
           />
-          {/* Gradient Overlay for Text Readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-stone-900/20 to-transparent" />
+          {/* Gradient Overlay for Text Readability - Stronger for centered text */}
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-black/30" />
         </div>
 
         {/* Hero Content */}
-        <div className="absolute bottom-0 w-full px-6 md:px-12 pb-24 md:pb-32 max-w-7xl mx-auto">
-          <div className="max-w-2xl animate-fade-in-up">
-            <span className="inline-block py-1 px-3 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium uppercase tracking-widest">
+        <div className="relative z-10 w-full px-6 md:px-12 max-w-[1600px] mx-auto flex flex-col items-center text-center pt-20">
+          <div className="animate-fade-in-up">
+            <span className="inline-block py-1.5 px-4 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-widest">
               365-Day Weather Forecast
             </span>
-            <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-[1.1]">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-8 leading-[1.1] tracking-tight drop-shadow-lg">
               Long-Range Weather<br /><span className="italic text-orange-200">Forecast</span> You Can Trust
             </h1>
-            <p className="text-lg md:text-xl text-stone-200 mb-8 max-w-lg leading-relaxed">
+            <p className="text-lg md:text-xl text-stone-100 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md font-medium">
               Get weather forecasts for any date up to 365 days ahead. Based on 30 years of NASA satellite data, not guesswork. Perfect for weddings, travel, and events.
             </p>
-            <div className="flex gap-4">
-              <Link href="#cities" className="bg-white text-stone-900 px-8 py-4 rounded-full font-semibold hover:bg-stone-100 transition-all flex items-center gap-2">
-                Get Your Forecast <ArrowRight className="w-4 h-4" />
+
+            <div className="flex justify-center gap-4">
+              <Link href="#cities" className="bg-white text-stone-900 px-8 py-4 rounded-full font-bold hover:bg-stone-100 transition-all flex items-center gap-2 shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                Get Your Forecast <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
           </div>
@@ -213,65 +214,79 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <h2 className="text-sm font-bold text-stone-400 uppercase tracking-widest mb-12">Curated Destinations</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-            {cities.map((city) => {
-              // Simple image mapping for MVP
-              const cityImage =
-                city.slug === 'prague-cz' ? '/images/prague-hero.webp' :
-                  city.slug === 'berlin-de' ? '/images/berlin-de-hero.webp' :
-                    city.slug === 'tokyo-jp' ? '/images/tokyo-hero.png' :
-                      null;
+          {/* Categorized City Lists */}
+          {[
+            {
+              title: "Europe",
+              description: "Historic capitals and romantic getaways close to home.",
+              slugs: ['prague-cz', 'berlin-de', 'london-uk', 'paris-fr', 'rome-it', 'barcelona-es', 'vienna-at', 'zurich-ch', 'athens-gr']
+            },
+            {
+              title: "Asia & Pacific",
+              description: "Exotic destinations and futuristic metropolises.",
+              slugs: ['tokyo-jp']
+            }
+          ].map((category) => {
+            // Filter cities for this category
+            const categoryCities = cities.filter(c => category.slugs.includes(c.slug));
 
-              return (
-                <Link key={city.slug} href={`/${city.slug}`} className="group block">
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-stone-100 mb-6 shadow-sm transition-shadow group-hover:shadow-md">
-                    {cityImage ? (
-                      <Image
-                        src={cityImage}
-                        alt={city.name}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 bg-stone-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
-                        <MapIcon className="w-16 h-16 text-stone-300 stroke-1" />
-                      </div>
-                    )}
+            if (categoryCities.length === 0) return null;
 
-                    <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 text-xs font-bold uppercase tracking-widest text-stone-900 border border-white/50">
-                      {city.country}
-                    </div>
-                  </div>
+            return (
+              <div key={category.title} className="mb-20 last:mb-0">
+                <div className="mb-8">
+                  <h3 className="text-2xl font-serif font-bold text-stone-900">{category.title}</h3>
+                  <p className="text-stone-500 mt-2">{category.description}</p>
+                </div>
 
-                  <div className="flex justify-between items-end">
-                    <div className="max-w-md">
-                      <h3 className="text-3xl font-serif font-bold text-stone-900 group-hover:text-orange-600 transition-colors mb-2">
-                        {city.name}
-                      </h3>
-                      <p className="text-stone-500 line-clamp-2 leading-relaxed">
-                        {city.desc}
-                      </p>
-                    </div>
-                    <div className="w-12 h-12 rounded-full border border-stone-200 flex items-center justify-center group-hover:bg-stone-900 group-hover:text-white transition-all">
-                      <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                  {categoryCities.map((city) => {
+                    // Dynamic image mapping (Standardized to [slug]-hero.webp, with png fallback for legacy/generated)
+                    // Legacy PNGs: tokyo-jp, prague-cz, berlin-de
+                    const isPng = ['tokyo-jp', 'prague-cz', 'berlin-de'].includes(city.slug);
+                    const cityImage = `/images/${city.slug}-hero.${isPng ? 'png' : 'webp'}`;
 
-            {/* "Suggest a City" Block */}
-            <div className="flex flex-col justify-center items-center text-center p-12 border border-dashed border-stone-300 rounded-sm hover:bg-stone-50 transition-colors">
-              <h3 className="text-xl font-bold font-serif mb-2">Missing your city?</h3>
-              <p className="text-stone-500 mb-6 max-w-xs">We process new locations weekly. Request a destination for deep analysis.</p>
-              <button className="text-sm font-bold border-b-2 border-orange-500 pb-0.5 hover:text-orange-600 transition-colors">
-                Submit Request
-              </button>
-            </div>
+                    return (
+                      <Link key={city.slug} href={`/${city.slug}`} className="group block">
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-stone-100 mb-4 shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1">
+                          <Image
+                            src={cityImage}
+                            alt={city.name}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
+
+                          <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 text-xs font-bold uppercase tracking-widest text-stone-900 border border-white/50 rounded-sm">
+                            {city.country}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-xl font-bold text-stone-900 group-hover:text-orange-600 transition-colors mb-1">
+                            {city.name}
+                          </h4>
+                          <p className="text-sm text-stone-500 line-clamp-2 leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
+                            {city.desc}
+                          </p>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}   {/* "Suggest a City" Block */}
+          <div className="flex flex-col justify-center items-center text-center p-12 border border-dashed border-stone-300 rounded-sm hover:bg-stone-50 transition-colors">
+            <h3 className="text-xl font-bold font-serif mb-2">Missing your city?</h3>
+            <p className="text-stone-500 mb-6 max-w-xs">We process new locations weekly. Request a destination for deep analysis.</p>
+            <button className="text-sm font-bold border-b-2 border-orange-500 pb-0.5 hover:text-orange-600 transition-colors">
+              Submit Request
+            </button>
           </div>
         </div>
       </section>
+
 
       {/* FAQ Section */}
       <section className="py-24 px-6 md:px-12 max-w-4xl mx-auto">
@@ -321,10 +336,10 @@ export default async function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Footer */}
-      <footer className="bg-stone-900 text-stone-400 py-24 px-6 md:px-12">
+      < footer className="bg-stone-900 text-stone-400 py-24 px-6 md:px-12" >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
           <div>
             <h4 className="text-white text-2xl font-serif font-bold mb-6">30YearWeather.</h4>
@@ -351,7 +366,7 @@ export default async function Home() {
           <span>© 2024 30YearWeather Intelligence.</span>
           <span>Prague, Czech Republic</span>
         </div>
-      </footer>
-    </div>
+      </footer >
+    </div >
   );
 }

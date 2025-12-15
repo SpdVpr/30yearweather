@@ -180,5 +180,9 @@ export async function getCityData(slug: string): Promise<CityData | null> {
 
 export async function getAllCities(): Promise<string[]> {
     // Return list of available city slugs
-    return ['prague-cz', 'berlin-de', 'tokyo-jp'];
+    return [
+        'prague-cz', 'berlin-de', 'tokyo-jp',
+        'london-uk', 'paris-fr', 'rome-it',
+        'barcelona-es', 'vienna-at', 'zurich-ch', 'athens-gr'
+    ];
 }

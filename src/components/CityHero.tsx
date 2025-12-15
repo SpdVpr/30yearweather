@@ -15,12 +15,9 @@ interface CityHeroProps {
 }
 
 export default function CityHero({ city, citySlug, date, tempMax, tempMin, precipProb }: CityHeroProps) {
-    // Map city slug to hero image
-    const heroImage =
-        citySlug === 'prague-cz' ? '/images/prague-hero.webp' :
-            citySlug === 'berlin-de' ? '/images/berlin-de-hero.webp' :
-                citySlug === 'tokyo-jp' ? '/images/tokyo-hero.png' :
-                    '/images/prague-hero.webp'; // Fallback
+    // Map city slug to hero image (Standardized naming)
+    const isPng = ['tokyo-jp', 'prague-cz', 'berlin-de'].includes(citySlug);
+    const heroImage = `/images/${citySlug}-hero.${isPng ? 'png' : 'webp'}`;
 
     return (
         <div className="relative h-[70vh] w-full overflow-hidden">

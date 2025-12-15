@@ -189,7 +189,9 @@ export default async function CityDatePage({
     const data = await getCityData(city);
 
     // --- MONTH VIEW LOGIC ---
+    console.log(`Checking route: city=${city}, date=${date}, length=${date.length}`);
     if (date.length === 2 && !isNaN(parseInt(date))) {
+        console.log("-> Detected Month View");
         if (!data) notFound();
         return (
             <>
