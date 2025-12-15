@@ -53,7 +53,7 @@ export default function TourismScoreCard({ scores }: TourismScoreCardProps) {
                             fillOpacity={0.4}
                         />
                         <Tooltip
-                            formatter={(value: number) => [`${value}/100`, 'Score']}
+                            formatter={(value: number | undefined) => value !== undefined ? [`${value}/100`, 'Score'] : ['N/A', 'Score']}
                             contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                         />
                     </RadarChart>
