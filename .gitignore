@@ -3,13 +3,15 @@
 # Backend - keep only on local
 /backend/
 
-# Root documentation files - keep only on local
-/*.md
-
 # dependencies
-node_modules
+/node_modules
 /.pnp
-.pnp.js
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # testing
 /coverage
@@ -17,11 +19,9 @@ node_modules
 # next.js
 /.next/
 /out/
-/frontend/.next/
-/frontend/out/
 
 # production
-/frontend/build
+/build
 
 # misc
 .DS_Store
@@ -31,29 +31,19 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# local env files
-.env*.local
-.env
+# env files
+.env*
+!.env.example
 
 # vercel
 .vercel
 
-# firebase
-firebase-debug.log
-firebase-service-account.json
-backend/firebase-service-account.json
-frontend/firebase-service-account.json
+# typescript
+*.tsbuildinfo
+next-env.d.ts
 
-# lighthouse
-lighthouse-*.html
-
-# IDE
-.vscode
-.idea
-*.swp
-*.swo
-
-# data
-/backend/data/*.json
-!/backend/data/.gitkeep
+# Firebase service account (NEVER commit this!)
+historical-weather.json
+*-service-account.json
