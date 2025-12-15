@@ -13,6 +13,7 @@ import {
 export const metadata = {
   title: "30-Year Weather Intelligence | Plan Your Perfect Trip",
   description: "Don't rely on forecasts. Use 30 years of historical data to plan your wedding, vacation, or event with confidence.",
+  keywords: ["historical weather data", "weather planning", "best time to visit", "wedding weather planning", "30 year weather", "NASA weather data", "travel planning weather"],
 };
 
 export default async function Home() {
@@ -31,8 +32,61 @@ export default async function Home() {
     })
   );
 
+  // FAQ Schema for SEO
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is 30-year weather data?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '30-year weather data is historical climate information collected over three decades from NASA POWER satellites. It shows actual weather patterns that occurred on specific dates, helping you understand the probability of certain weather conditions for your planned event or trip.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How accurate is historical weather for planning?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Historical weather data is significantly more reliable than long-range forecasts. While 7-day forecasts are only 80% accurate, 30-year historical patterns show you what actually happened on your chosen date over the past three decades, giving you probability-based insights for better planning.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I use this for wedding planning?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Absolutely! 30YearWeather is perfect for wedding planning. You can see the exact probability of rain, average temperatures, and crowd levels for any date in your chosen city. This helps you pick the perfect outdoor wedding date with confidence.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What cities do you cover?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We currently cover Prague and Berlin with detailed 30-year weather analysis. We are rapidly expanding to cover 100+ major cities worldwide in 2025, including Paris, Rome, Barcelona, and New York.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Is 30YearWeather free to use?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes! 30YearWeather is completely free for personal use. We believe everyone should have access to reliable weather intelligence for planning their important life events.'
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-stone-50 text-stone-900 font-sans selection:bg-orange-100 selection:text-orange-900">
+      {/* FAQ Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       {/* 1. Navbar (Minimalist with Logo) */}
       <nav className="absolute top-0 w-full z-50 py-6 px-6 md:px-12 flex justify-between items-center bg-gradient-to-b from-black/50 to-transparent">
@@ -214,6 +268,55 @@ export default async function Home() {
                 Submit Request
               </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 px-6 md:px-12 max-w-4xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12 text-center">Frequently Asked Questions</h2>
+        <div className="space-y-8">
+          <div className="border-b border-stone-200 pb-6">
+            <h3 className="text-xl font-bold mb-3">What is 30-year weather data?</h3>
+            <p className="text-stone-600 leading-relaxed">
+              30-year weather data is historical climate information collected over three decades from NASA POWER satellites.
+              It shows actual weather patterns that occurred on specific dates, helping you understand the probability of
+              certain weather conditions for your planned event or trip.
+            </p>
+          </div>
+
+          <div className="border-b border-stone-200 pb-6">
+            <h3 className="text-xl font-bold mb-3">How accurate is historical weather for planning?</h3>
+            <p className="text-stone-600 leading-relaxed">
+              Historical weather data is significantly more reliable than long-range forecasts. While 7-day forecasts are
+              only 80% accurate, 30-year historical patterns show you what actually happened on your chosen date over the
+              past three decades, giving you probability-based insights for better planning.
+            </p>
+          </div>
+
+          <div className="border-b border-stone-200 pb-6">
+            <h3 className="text-xl font-bold mb-3">Can I use this for wedding planning?</h3>
+            <p className="text-stone-600 leading-relaxed">
+              Absolutely! 30YearWeather is perfect for wedding planning. You can see the exact probability of rain,
+              average temperatures, and crowd levels for any date in your chosen city. This helps you pick the perfect
+              outdoor wedding date with confidence.
+            </p>
+          </div>
+
+          <div className="border-b border-stone-200 pb-6">
+            <h3 className="text-xl font-bold mb-3">What cities do you cover?</h3>
+            <p className="text-stone-600 leading-relaxed">
+              We currently cover Prague and Berlin with detailed 30-year weather analysis. We are rapidly expanding to
+              cover 100+ major cities worldwide in 2025, including Paris, Rome, Barcelona, and New York.
+            </p>
+          </div>
+
+          <div className="pb-6">
+            <h3 className="text-xl font-bold mb-3">Is 30YearWeather free to use?</h3>
+            <p className="text-stone-600 leading-relaxed">
+              Yes! 30YearWeather is completely free for personal use. We believe everyone should have access to reliable
+              weather intelligence for planning their important life events.
+            </p>
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllCities } from '@/lib/data';
 
 // CHANGE THIS TO YOUR PRODUCTION DOMAIN
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://historical-weather-app.vercel.app';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const cities = await getAllCities();
@@ -16,11 +16,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 1,
     });
 
-    // 2. City Pages (Archives/Index)
-    // Assuming you might have a page like /prague-cz later
-    // For now, valid pages are /city/date
+    // 2. City Overview Pages (/prague-cz)
+    for (const city of cities) {
+        urls.push({
+            url: `${BASE_URL}/${city}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        });
+    }
 
-    // 3. Daily Pages (City * 366 days)
+    // 3. Monthly Pages (/prague-cz/01, /prague-cz/02, etc.)
+    for (const city of cities) {
+        for (let month = 1; month <= 12; month++) {
+            const monthSlug = month.toString().padStart(2, '0');
+            urls.push({
+                url: `${BASE_URL}/${city}/${monthSlug}`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.85,
+            });
+        }
+    }
+
+    // 4. Daily Pages (City * 366 days)
     for (const city of cities) {
         // Generate dates for current year (taking leap year into account to be safe, e.g. 2024)
         const year = 2024;
@@ -36,7 +55,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 url: `${BASE_URL}/${city}/${dateSlug}`,
                 lastModified: new Date(),
                 changeFrequency: 'monthly', // Historical data rarely changes
-                priority: 0.8,
+                priority: 0.7,
             });
         }
     }

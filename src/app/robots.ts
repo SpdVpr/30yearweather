@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://historical-weather-app.vercel.app';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
 
 export default function robots(): MetadataRoute.Robots {
     return {
