@@ -124,7 +124,7 @@ export default function AstronomyCard({ date, lat, lon }: AstronomyCardProps) {
                         <Tooltip
                             contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                             labelStyle={{ color: '#6b7280', marginBottom: '0.25rem' }}
-                            formatter={(value: number) => [`${Math.round(value)}°`, 'Elevation']}
+                            formatter={(value: number | undefined) => value !== undefined ? [`${Math.round(value)}°`, 'Elevation'] : ['N/A', 'Elevation']}
                         />
 
                         <Area
