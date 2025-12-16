@@ -136,6 +136,14 @@ export interface CityData {
         geo_info?: GeoInfo; // NEW
         safety_profile?: SafetyProfile; // NEW
     };
+    yearly_stats?: {
+        avg_temp_annual: number;
+        warming_trend: number;
+        coldest_month: number;
+        hottest_month: number;
+        wettest_month: number;
+        total_days_analyzed: number;
+    };
     days: Record<string, DayData>; // Key "MM-DD"
 }
 

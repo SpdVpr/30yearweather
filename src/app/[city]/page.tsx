@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCityData } from "@/lib/data";
 import { Card, Title, Text, Badge } from "@tremor/react";
-import { ArrowLeft, ArrowRight, Thermometer, CloudRain } from "lucide-react";
+import { ArrowLeft, ArrowRight, Thermometer, CloudRain, TrendingUp } from "lucide-react";
 import { format } from "date-fns";
 import type { Metadata } from 'next';
 import CityPageTracker from "@/components/CityPageTracker";
@@ -156,7 +156,42 @@ export default async function CityIndexPage({
                         {/* Use the rich description here as well if available, falling back to static text */}
                         {data.meta.desc ? data.meta.desc : "We've analyzed 30 years of weather data to help you pick the perfect month. Below is the historical average for every month of the year."}
                     </p>
+
+                    {/* Methodology Badge */}
+                    <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm border border-emerald-100">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        <span className="font-medium">Forecast V3: Smart Rolling Window (+/- 2 days smoothing)</span>
+                    </div>
                 </div>
+
+                {/* Global Warming Insight Card */}
+                {data.yearly_stats && data.yearly_stats.warming_trend > 0 && (
+                    <Card className="mb-12 bg-gradient-to-br from-orange-50 to-amber-50 border-orange-100">
+                        <div className="flex items-start gap-4">
+                            <div className="p-3 bg-white rounded-xl shadow-sm border border-orange-100">
+                                <TrendingUp className="w-8 h-8 text-orange-600" />
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-bold text-stone-900 flex items-center gap-2">
+                                    Climate Trend Detected
+                                    <Badge color="orange" size="xs">Important</Badge>
+                                </h3>
+                                <p className="text-stone-600 mt-1 max-w-3xl">
+                                    Our analysis of the last 30 years shows a clear warming trend for {data.meta.name}.
+                                    Temperatures have risen by <span className="font-bold text-orange-700">+{data.yearly_stats.warming_trend}°C</span>
+                                    when comparing the 1994-1998 average vs the 2020-2024 average.
+                                    <br />
+                                    <span className="text-sm opacity-80 mt-1 block">
+                                        * Our forecasts are weighted to prioritize this recent data (Smart Recency Weighting), giving you a more realistic outlook for 2025.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </Card>
+                )}
 
                 {/* Months Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

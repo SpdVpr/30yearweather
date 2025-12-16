@@ -147,17 +147,7 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                 </div>
             </section>
 
-            {/* 1.5 BETTER ALTERNATIVES (only if current score is low and alternatives exist) */}
-            {alternativeDates && alternativeDates.length > 0 && scores.wedding < 70 && (
-                <section>
-                    <BetterAlternatives
-                        currentDateSlug={dateId}
-                        currentScore={scores.wedding}
-                        citySlug={citySlug}
-                        alternatives={alternativeDates}
-                    />
-                </section>
-            )}
+
 
             {/* 2. PLAN YOUR DAY (Clothing + Key Stats) */}
             <section>
@@ -359,7 +349,19 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                 </div>
             </section>
 
-            {/* 6. COMPARE CITIES (show other destinations for same date) */}
+            {/* 6. BETTER ALTERNATIVES (moved from top) */}
+            {alternativeDates && alternativeDates.length > 0 && alternativeDates.some(a => a.score > scores.wedding) && (
+                <section>
+                    <BetterAlternatives
+                        currentDateSlug={dateId}
+                        currentScore={scores.wedding}
+                        citySlug={citySlug}
+                        alternatives={alternativeDates}
+                    />
+                </section>
+            )}
+
+            {/* 7. COMPARE CITIES (show other destinations for same date) */}
             {cityComparisons && cityComparisons.length > 0 && (
                 <section>
                     <CompareCities
@@ -371,7 +373,7 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                 </section>
             )}
 
-            {/* 7. FAQ */}
+            {/* 8. FAQ */}
             <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
                 <h2 className="text-xl font-bold text-slate-800 mb-6">Frequently Asked Questions</h2>
                 <AccordionList>
