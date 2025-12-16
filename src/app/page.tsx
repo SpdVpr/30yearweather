@@ -399,7 +399,7 @@ export default async function Home() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-stone-800 text-xs flex justify-between">
-          <span>© 2024 30YearWeather Intelligence.</span>
+          <span>© 2025 30YearWeather Intelligence.</span>
           <span>Prague, Czech Republic</span>
         </div>
       </footer >

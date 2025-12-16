@@ -15,12 +15,32 @@ export async function generateMetadata({ params }: { params: { city: string } })
     const cityName = data.meta.name;
     const description = data.meta.desc || `Get accurate long-range weather forecasts for ${cityName} up to 365 days ahead. Based on 30 years of historical data. See rain probabilities, temperatures, and best months to visit ${cityName}.`;
 
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
+
     return {
         title: `${cityName} Weather Forecast - 365 Day Long-Range Forecast`,
         description: description,
         keywords: [`${cityName} weather forecast`, `${cityName} long range forecast`, `${cityName} weather`, `best time to visit ${cityName}`, `${cityName} weather by month`, `${cityName} 365 day forecast`],
         alternates: {
             canonical: `/${params.city}`,
+        },
+        openGraph: {
+            title: `${cityName} Weather Forecast - 365 Day Long-Range Forecast`,
+            description: description,
+            images: [
+                {
+                    url: '/images/hero1-optimized.webp',
+                    width: 1200,
+                    height: 630,
+                    alt: `${cityName} Weather Forecast`,
+                }
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${cityName} Weather Forecast - 365 Day Long-Range Forecast`,
+            description: description,
+            images: ['/images/hero1-optimized.webp'],
         }
     };
 }

@@ -24,10 +24,22 @@ export const metadata: Metadata = {
     locale: 'en_US',
     siteName: '30YearWeather - Long Range Weather Forecast',
     description: "365-day weather forecasts based on 30 years of historical data. Plan your wedding, vacation, or event with confidence.",
+    images: [
+      {
+        url: '/images/hero1-optimized.webp',
+        width: 1200,
+        height: 630,
+        alt: '30YearWeather - Long Range Weather Forecast',
+      }
+    ],
   },
   twitter: {
     card: 'summary_large_image',
+    title: "Long-Range Weather Forecast | 365-Day Predictions Based on 30 Years of Data",
+    description: "365-day weather forecasts based on 30 years of historical data. Plan your wedding, vacation, or event with confidence.",
+    images: ['/images/hero1-optimized.webp'],
   },
+  manifest: '/manifest.json',
   icons: {
     icon: [
       { url: '/favicon_io/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -45,6 +57,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   other: {
+    'theme-color': '#ea580c',
     'ai:summary': 'Historical weather intelligence based on 30 years of NASA satellite data',
     'ai:data_source': 'NASA POWER API, 1991-2021',
     'ai:use_cases': 'wedding planning, vacation planning, event planning, filming locations',
@@ -58,22 +71,54 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Global Organization Schema
-  const jsonLd = {
+  // Enhanced Organization Schema with contact info
+  const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: '30YearWeather',
     url: baseUrl.toString(),
     logo: `${baseUrl.toString()}icon.png`,
+    description: 'Long-range weather forecasts based on 30 years of NASA satellite data',
+    foundingDate: '2024',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Support',
+      email: 'support@30yearweather.com',
+      availableLanguage: ['English', 'Czech']
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Prague',
+      addressCountry: 'CZ'
+    },
     sameAs: []
+  };
+
+  // WebSite Schema with SearchAction for Google Sitelinks Search Box
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: '30YearWeather',
+    url: baseUrl.toString(),
+    description: '365-day weather forecasts based on 30 years of historical data',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${baseUrl.toString()}?search={search_term_string}`
+      },
+      'query-input': 'required name=search_term_string'
+    }
   };
 
   return (
     <html lang="en">
       <head>
+        <meta name="theme-color" content="#ea580c" />
+        <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, websiteSchema]) }}
         />
       </head>
       <body

@@ -50,7 +50,20 @@ export async function generateMetadata({ params }: { params: { city: string; dat
         openGraph: {
             title: `${cityName} Weather Forecast for ${formattedDate} - ${tempAvg}°C, ${dayData.stats.precip_prob}% Rain`,
             description: `Long-range weather forecast for ${cityName} on ${formattedDate}. Avg Temp: ${tempAvg}°C, Rain Chance: ${dayData.stats.precip_prob}%. Based on 30 years of NASA data.`,
-            images: ['/images/prague-hero.png'],
+            images: [
+                {
+                    url: '/images/hero1-optimized.webp',
+                    width: 1200,
+                    height: 630,
+                    alt: `${cityName} Weather Forecast for ${formattedDate}`,
+                }
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${cityName} Weather Forecast for ${formattedDate} - ${tempAvg}°C, ${dayData.stats.precip_prob}% Rain`,
+            description: `Long-range weather forecast for ${cityName} on ${formattedDate}. Avg Temp: ${tempAvg}°C, Rain Chance: ${dayData.stats.precip_prob}%. Based on 30 years of NASA data.`,
+            images: ['/images/hero1-optimized.webp'],
         }
     };
 }
