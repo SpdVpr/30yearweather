@@ -241,6 +241,7 @@ export default async function CityDatePage({
                 tempMax={dayData.stats.temp_max}
                 tempMin={dayData.stats.temp_min}
                 precipProb={dayData.stats.precip_prob}
+                dateSlug={date}
             />
 
             {/* 2. Main Dashboard (Programmatic SEO Structure) */}
@@ -254,11 +255,38 @@ export default async function CityDatePage({
                 geoInfo={data.meta.geo_info}
                 safetyProfile={data.meta.safety_profile}
                 timezoneOffset={
-                    city.includes('tokyo') ? 9 :
-                        city.includes('prague') ? 2 : // Summer time approx
-                            city.includes('berlin') ? 2 : 0
+                    (() => {
+                        // Standardized offsets (Simplified for main tourism seasons/Year-round)
+                        const c = city.toLowerCase();
+                        if (c.includes('tokyo') || c.includes('kyoto') || c.includes('seoul')) return 9;
+                        if (c.includes('beijing') || c.includes('shanghai') || c.includes('hong-kong') || c.includes('taipei') || c.includes('singapore') || c.includes('kuala-lumpur') || c.includes('bali') || c.includes('manila')) return 8;
+                        if (c.includes('bangkok') || c.includes('hanoi') || c.includes('ho-chi-minh') || c.includes('jakarta')) return 7;
+                        if (c.includes('mumbai') || c.includes('new-delhi')) return 5.5;
+                        if (c.includes('dubai')) return 4;
+                        if (c.includes('istanbul') || c.includes('athens') || c.includes('helsinki')) return 3; // Summer coverage main
+                        if (c.includes('london') || c.includes('dublin') || c.includes('lisbon')) return 1; // Summer coverage main
+                        // Default CET/CEST (Prague, Berlin, Paris, Rome, etc)
+                        return 2;
+                    })()
                 }
             />
+
+            {/* AI/SEO Citation Block - Helps Perplexity/GPT cite us */}
+            <section className="container mx-auto px-4 py-12 mt-8 border-t border-slate-200">
+                <div className="max-w-4xl mx-auto">
+                    <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Data Source & Methodology</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                        This historical weather report for <strong>{data.meta.name}</strong> on <strong>{formattedDate}</strong> is calculated based on 30 years of continuous satellite observation data (1991-2021) from the <strong>NASA POWER Project</strong>.
+                        Unlike standard 7-day forecasts which rely on models, this data represents actual recorded historical averages, providing a reliable baseline for planning long-term events like weddings or vacations.
+                    </p>
+                    <div className="bg-slate-100 p-4 rounded-md border border-slate-200">
+                        <p className="text-xs font-mono text-slate-500 mb-1">CITE THIS DATA:</p>
+                        <p className="text-sm font-medium text-slate-700 select-all">
+                            "Historical Weather for {data.meta.name} on {formattedDate}. Source: 30YearWeather.com based on NASA POWER API (1991-2021)."
+                        </p>
+                    </div>
+                </div>
+            </section>
 
         </main>
     );

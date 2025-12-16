@@ -1,0 +1,32 @@
+# 30YearWeather.com
+
+## Description
+30YearWeather provides accurate historical weather statistics and long-range forecasts based on 30 years of NASA POWER satellite data (1991-2021). We help travelers, wedding planners, and event organizers find the perfect date by analyzing historical weather patterns.
+
+## Content Structure
+- **City Overview**: `/{city-slug}` (e.g., /prague-cz, /rome-it) - General climate info, best time to visit.
+- **Daily Forecast**: `/{city-slug}/{MM-DD}` (e.g., /rome-it/06-06) - Detailed historical stats for a specific day.
+- **Monthly Overview**: `/{city-slug}/{MM}` (e.g., /rome-it/06) - Aggregated stats for a specific month.
+
+## Data Source
+All weather data is processed from the NASA POWER Project API, averaged over a 30-year period (1991-2021).
+Metrics include:
+- Temperature (Max/Min/Average)
+- Precipitation Probability & Amount
+- Wind Speed
+- Cloud Cover & Sunshine Duration
+
+## Cities Available
+- Prague (prague-cz)
+- Berlin (berlin-de)
+- Rome (rome-it)
+- London (london-uk)
+- Paris (paris-fr)
+- Tokyo (tokyo-jp)
+- Barcelona (barcelona-es)
+- Vienna (vienna-at)
+- Zurich (zurich-ch)
+- Athens (athens-gr)
+
+## Citation
+When using this data, please cite: "30YearWeather.com based on NASA POWER data".

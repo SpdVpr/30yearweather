@@ -43,6 +43,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  other: {
+    'ai:summary': 'Historical weather intelligence based on 30 years of NASA satellite data',
+    'ai:data_source': 'NASA POWER API, 1991-2021',
+    'ai:use_cases': 'wedding planning, vacation planning, event planning, filming locations',
+    'ai:coverage': 'Global major cities (Prague, Berlin, Rome, Tokyo, London, Paris...)',
+    'citation_source': '30YearWeather.com'
   }
 };
 

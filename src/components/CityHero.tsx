@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowLeft } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 
 interface CityHeroProps {
     city: string;
@@ -12,15 +12,44 @@ interface CityHeroProps {
     tempMax: number;
     tempMin: number;
     precipProb: number;
+    dateSlug?: string;
 }
 
-export default function CityHero({ city, citySlug, date, tempMax, tempMin, precipProb }: CityHeroProps) {
+export default function CityHero({ city, citySlug, date, tempMax, tempMin, precipProb, dateSlug }: CityHeroProps) {
     // Map city slug to hero image (Standardized naming)
-    const isPng = ['tokyo-jp', 'prague-cz', 'berlin-de'].includes(citySlug);
+    const isPng = ['tokyo-jp', 'prague-cz', 'berlin-de',
+        'amsterdam-nl', 'madrid-es', 'brussels-be',
+        'warsaw-pl', 'budapest-hu', 'lisbon-pt',
+        'dublin-ie', 'stockholm-se', 'copenhagen-dk',
+        'dublin-ie', 'stockholm-se', 'copenhagen-dk',
+        'oslo-no', 'helsinki-fi', 'bratislava-sk',
+        'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk', 'taipei-tw',
+        'bangkok-th', 'singapore-sg', 'kuala-lumpur-my', 'hanoi-vn', 'ho-chi-minh-vn',
+        'jakarta-id', 'bali-id', 'manila-ph', 'mumbai-in', 'new-delhi-in',
+        'dubai-ae', 'istanbul-tr', 'kyoto-jp'
+    ].includes(citySlug);
     const heroImage = `/images/${citySlug}-hero.${isPng ? 'png' : 'webp'}`;
 
+    // Logic for Next/Prev Day
+    const [monthStr, dayStr] = (dateSlug || "01-01").split('-');
+    const currentYear = 2024; // Leap year for full coverage
+    const currentObj = new Date(currentYear, parseInt(monthStr) - 1, parseInt(dayStr));
+
+    // Prev Day
+    const prevObj = new Date(currentObj);
+    prevObj.setDate(prevObj.getDate() - 1);
+    const prevSlug = `${(prevObj.getMonth() + 1).toString().padStart(2, '0')}-${prevObj.getDate().toString().padStart(2, '0')}`;
+
+    // Next Day
+    const nextObj = new Date(currentObj);
+    nextObj.setDate(nextObj.getDate() + 1);
+    const nextSlug = `${(nextObj.getMonth() + 1).toString().padStart(2, '0')}-${nextObj.getDate().toString().padStart(2, '0')}`;
+
+    // Back to Month View
+    const monthSlug = monthStr;
+
     return (
-        <div className="relative h-[70vh] w-full overflow-hidden">
+        <div className="relative h-[70vh] w-full overflow-hidden group">
             {/* Background Image */}
             <Image
                 src={heroImage}
@@ -30,17 +59,33 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
                 priority
             />
 
-            {/* Overlay - Darker for better text readability on bright images */}
+            {/* Overlay */}
             <div className="absolute inset-0 bg-black/40" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90" />
 
             {/* Back Button (Absolute Top Left) */}
             <Link
-                href={`/${citySlug}`}
+                href={`/${citySlug}/${monthSlug}`}
                 className="absolute top-6 left-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors border border-white/20"
             >
                 <ArrowLeft className="w-4 h-4" />
                 <span className="text-sm font-medium">Back to Calendar</span>
+            </Link>
+
+            {/* Prev Day Arrow (Left Center) */}
+            <Link
+                href={`/${citySlug}/${prevSlug}`}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/20 hover:bg-black/50 backdrop-blur-md text-white border border-white/10 transition-all hover:scale-110 hidden md:flex"
+            >
+                <ArrowLeft className="w-6 h-6" />
+            </Link>
+
+            {/* Next Day Arrow (Right Center) */}
+            <Link
+                href={`/${citySlug}/${nextSlug}`}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/20 hover:bg-black/50 backdrop-blur-md text-white border border-white/10 transition-all hover:scale-110 hidden md:flex"
+            >
+                <ArrowRight className="w-6 h-6" />
             </Link>
 
 

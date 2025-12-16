@@ -219,12 +219,12 @@ export default async function Home() {
             {
               title: "Europe",
               description: "Historic capitals and romantic getaways close to home.",
-              slugs: ['prague-cz', 'berlin-de', 'london-uk', 'paris-fr', 'rome-it', 'barcelona-es', 'vienna-at', 'zurich-ch', 'athens-gr']
+              slugs: ['prague-cz', 'berlin-de', 'london-uk', 'paris-fr', 'rome-it', 'barcelona-es', 'vienna-at', 'zurich-ch', 'athens-gr', 'amsterdam-nl', 'madrid-es', 'brussels-be', 'warsaw-pl', 'budapest-hu', 'lisbon-pt', 'dublin-ie', 'stockholm-se', 'copenhagen-dk', 'oslo-no', 'helsinki-fi', 'bratislava-sk']
             },
             {
               title: "Asia & Pacific",
               description: "Exotic destinations and futuristic metropolises.",
-              slugs: ['tokyo-jp']
+              slugs: ['tokyo-jp', 'kyoto-jp', 'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk', 'taipei-tw', 'bangkok-th', 'singapore-sg', 'kuala-lumpur-my', 'hanoi-vn', 'ho-chi-minh-vn', 'jakarta-id', 'bali-id', 'manila-ph', 'mumbai-in', 'new-delhi-in', 'dubai-ae', 'istanbul-tr']
             }
           ].map((category) => {
             // Filter cities for this category
@@ -242,8 +242,17 @@ export default async function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
                   {categoryCities.map((city) => {
                     // Dynamic image mapping (Standardized to [slug]-hero.webp, with png fallback for legacy/generated)
-                    // Legacy PNGs: tokyo-jp, prague-cz, berlin-de
-                    const isPng = ['tokyo-jp', 'prague-cz', 'berlin-de'].includes(city.slug);
+                    // Legacy PNGs + Newly generated AI images
+                    const isPng = ['tokyo-jp', 'prague-cz', 'berlin-de',
+                      'amsterdam-nl', 'madrid-es', 'brussels-be',
+                      'warsaw-pl', 'budapest-hu', 'lisbon-pt',
+                      'dublin-ie', 'stockholm-se', 'copenhagen-dk',
+                      'oslo-no', 'helsinki-fi', 'bratislava-sk',
+                      'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk', 'taipei-tw',
+                      'bangkok-th', 'singapore-sg', 'kuala-lumpur-my', 'hanoi-vn', 'ho-chi-minh-vn',
+                      'jakarta-id', 'bali-id', 'manila-ph', 'mumbai-in', 'new-delhi-in',
+                      'dubai-ae', 'istanbul-tr', 'kyoto-jp'
+                    ].includes(city.slug);
                     const cityImage = `/images/${city.slug}-hero.${isPng ? 'png' : 'webp'}`;
 
                     return (

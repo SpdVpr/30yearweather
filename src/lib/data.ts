@@ -183,6 +183,14 @@ export async function getAllCities(): Promise<string[]> {
     return [
         'prague-cz', 'berlin-de', 'tokyo-jp',
         'london-uk', 'paris-fr', 'rome-it',
-        'barcelona-es', 'vienna-at', 'zurich-ch', 'athens-gr'
+        'barcelona-es', 'vienna-at', 'zurich-ch', 'athens-gr',
+        'amsterdam-nl', 'madrid-es', 'brussels-be',
+        'warsaw-pl', 'budapest-hu', 'lisbon-pt',
+        'dublin-ie', 'stockholm-se', 'copenhagen-dk',
+        'oslo-no', 'helsinki-fi', 'bratislava-sk',
+        'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk', 'taipei-tw',
+        'bangkok-th', 'singapore-sg', 'kuala-lumpur-my', 'hanoi-vn', 'ho-chi-minh-vn',
+        'jakarta-id', 'bali-id', 'manila-ph', 'mumbai-in', 'new-delhi-in',
+        'dubai-ae', 'istanbul-tr', 'kyoto-jp'
     ];
 }
