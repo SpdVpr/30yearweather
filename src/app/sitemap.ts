@@ -4,14 +4,18 @@ import { getAllCities } from '@/lib/data';
 // CHANGE THIS TO YOUR PRODUCTION DOMAIN
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
 
+// Generate multiple sitemaps - one per city + one main sitemap
+// This scales to thousands of cities (each sitemap has ~379 URLs, well under 50k limit)
 export async function generateSitemaps() {
     const cities = await getAllCities();
-    // Add 'main' as the first sitemap for static pages
-    // Returns array of objects with id property: [{ id: 'main' }, { id: 'prague-cz' }, ...]
+    // Return array of sitemap IDs: [{ id: 'main' }, { id: 'prague-cz' }, ...]
     return [{ id: 'main' }, ...cities.map(city => ({ id: city }))];
 }
 
-export default async function sitemap({ id }: { id: string }): Promise<MetadataRoute.Sitemap> {
+export default async function sitemap(props: {
+    id: Promise<string>
+}): Promise<MetadataRoute.Sitemap> {
+    const id = await props.id;
     const urls: MetadataRoute.Sitemap = [];
 
     // 1. Main Sitemap (Homepage, static pages)
