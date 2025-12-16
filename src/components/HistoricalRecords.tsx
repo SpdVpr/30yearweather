@@ -2,18 +2,35 @@
 
 import { Card, Title, Table, TableHead, TableRow, TableHeaderCell, TableBody, TableCell, Badge } from "@tremor/react";
 import { motion } from "framer-motion";
+import { TrendingUp, TrendingDown, Minus } from "lucide-react";
 
 interface HistoricalRecord {
     year: number;
     temp_max: number;
     temp_min: number;
     precip: number;
-    snowfall?: number; // NEW
-    weather_code?: number; // NEW
+    snowfall?: number;
+    weather_code?: number;
 }
 
-export default function HistoricalRecords({ records }: { records: HistoricalRecord[] }) {
+interface HistoricalRecordsProps {
+    records: HistoricalRecord[];
+    avgTempMax?: number; // Average for comparison
+}
+
+export default function HistoricalRecords({ records, avgTempMax }: HistoricalRecordsProps) {
     if (!records || records.length === 0) return null;
+
+    // Calculate average from records if not provided
+    const calculatedAvg = avgTempMax ?? (records.reduce((sum, r) => sum + r.temp_max, 0) / records.length);
+
+    // Helper for trend indicator
+    const getTrendIndicator = (value: number, avg: number) => {
+        const diff = value - avg;
+        if (diff > 2) return { icon: <TrendingUp className="w-3 h-3" />, color: "text-rose-500", label: `+${diff.toFixed(1)}°` };
+        if (diff < -2) return { icon: <TrendingDown className="w-3 h-3" />, color: "text-blue-500", label: `${diff.toFixed(1)}°` };
+        return { icon: <Minus className="w-3 h-3" />, color: "text-gray-400", label: "avg" };
+    };
 
     // Helper function to interpret weather code
     const getWeatherEmoji = (code?: number, precip?: number, snowfall?: number) => {
@@ -79,40 +96,46 @@ export default function HistoricalRecords({ records }: { records: HistoricalReco
                         <TableRow className="bg-gray-50/50">
                             <TableHeaderCell className="pl-6">Year</TableHeaderCell>
                             <TableHeaderCell>Day Temp</TableHeaderCell>
-                            <TableHeaderCell>Night Temp</TableHeaderCell>
+                            <TableHeaderCell>vs Avg</TableHeaderCell>
+                            <TableHeaderCell>Night</TableHeaderCell>
                             <TableHeaderCell>Rain</TableHeaderCell>
-                            <TableHeaderCell>Snow</TableHeaderCell>
                             <TableHeaderCell className="pr-6 text-right">Conditions</TableHeaderCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {records.map((record) => (
-                            <TableRow key={record.year} className="hover:bg-gray-50/50 transition-colors">
-                                <TableCell className="pl-6 font-medium text-gray-700">
-                                    <div className="flex items-center gap-2">
-                                        <span>{record.year}</span>
-                                        <span className="text-lg">{getWeatherEmoji(record.weather_code, record.precip, record.snowfall)}</span>
-                                    </div>
-                                </TableCell>
-                                <TableCell>
-                                    <span className={record.temp_max > 25 ? "text-amber-600 font-semibold" : ""}>{record.temp_max}°C</span>
-                                </TableCell>
-                                <TableCell>{record.temp_min}°C</TableCell>
-                                <TableCell>{record.precip} mm</TableCell>
-                                <TableCell>
-                                    {record.snowfall !== undefined ? (
-                                        <span className={record.snowfall > 0 ? "text-cyan-600 font-semibold" : "text-gray-400"}>
-                                            {record.snowfall} cm
-                                        </span>
-                                    ) : (
-                                        <span className="text-gray-400">-</span>
-                                    )}
-                                </TableCell>
-                                <TableCell className="pr-6 text-right">
-                                    {getConditionBadge(record.weather_code, record.precip, record.snowfall)}
-                                </TableCell>
-                            </TableRow>
-                        ))}
+                        {records.map((record) => {
+                            const trend = getTrendIndicator(record.temp_max, calculatedAvg);
+                            return (
+                                <TableRow key={record.year} className="hover:bg-gray-50/50 transition-colors">
+                                    <TableCell className="pl-6 font-medium text-gray-700">
+                                        <div className="flex items-center gap-2">
+                                            <span>{record.year}</span>
+                                            <span className="text-lg">{getWeatherEmoji(record.weather_code, record.precip, record.snowfall)}</span>
+                                        </div>
+                                    </TableCell>
+                                    <TableCell>
+                                        <span className={record.temp_max > 25 ? "text-amber-600 font-semibold" : ""}>{record.temp_max}°C</span>
+                                    </TableCell>
+                                    <TableCell>
+                                        <div className={`flex items-center gap-1 text-xs font-medium ${trend.color}`}>
+                                            {trend.icon}
+                                            <span>{trend.label}</span>
+                                        </div>
+                                    </TableCell>
+                                    <TableCell>{record.temp_min}°C</TableCell>
+                                    <TableCell>
+                                        {record.precip > 0 ? (
+                                            <span className="text-blue-600">{record.precip} mm</span>
+                                        ) : (
+                                            <span className="text-gray-400">0 mm</span>
+                                        )}
+                                    </TableCell>
+                                    <TableCell className="pr-6 text-right">
+                                        {getConditionBadge(record.weather_code, record.precip, record.snowfall)}
+                                    </TableCell>
+                                </TableRow>
+                            );
+                        })}
                     </TableBody>
                 </Table>
             </Card>

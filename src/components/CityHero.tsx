@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
+import { calculateFeelsLike, getTempEmoji } from "@/lib/weather-utils";
 
 interface CityHeroProps {
     city: string;
@@ -13,9 +14,14 @@ interface CityHeroProps {
     tempMin: number;
     precipProb: number;
     dateSlug?: string;
+    windKmh?: number;
+    humidity?: number;
 }
 
-export default function CityHero({ city, citySlug, date, tempMax, tempMin, precipProb, dateSlug }: CityHeroProps) {
+export default function CityHero({ city, citySlug, date, tempMax, tempMin, precipProb, dateSlug, windKmh = 10, humidity = 50 }: CityHeroProps) {
+    // Calculate feels-like temperature
+    const feelsLikeMax = calculateFeelsLike(tempMax, windKmh, humidity);
+    const feelsLikeEmoji = getTempEmoji(feelsLikeMax);
     // Map city slug to hero image (Standardized naming)
     const isPng = ['tokyo-jp', 'prague-cz', 'berlin-de',
         'amsterdam-nl', 'madrid-es', 'brussels-be',
@@ -129,6 +135,20 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
                         <p className="text-3xl font-bold">{precipProb}%</p>
                         <p className="text-xs uppercase tracking-wider opacity-70">Rain</p>
                     </div>
+                </motion.div>
+
+                {/* Feels Like indicator - always show */}
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                    className="mt-4 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20"
+                >
+                    <p className="text-sm">
+                        {feelsLikeEmoji} Feels like <span className="font-bold">{feelsLikeMax}°C</span>
+                        {feelsLikeMax < tempMax - 0.5 && " (wind chill)"}
+                        {feelsLikeMax > tempMax + 0.5 && " (humidity)"}
+                    </p>
                 </motion.div>
             </div>
 

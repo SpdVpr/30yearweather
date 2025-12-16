@@ -4,7 +4,7 @@ import { Card, Title, Text } from "@tremor/react";
 import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, ReferenceLine, Tooltip, CartesianGrid } from 'recharts';
 import SunCalc from "suncalc";
 import { useMemo } from "react";
-import { Sunrise } from "lucide-react";
+import { Sunrise, Camera } from "lucide-react";
 
 interface AstronomyCardProps {
     date: string; // "MM-DD"
@@ -145,18 +145,51 @@ export default function AstronomyCard({ date, lat, lon, timezoneOffset = 0 }: As
                 </ResponsiveContainer>
             </div>
 
-            <div className="mt-4 grid grid-cols-3 gap-2 text-center text-sm border-t border-gray-50 pt-4">
+            <div className="mt-4 grid grid-cols-4 gap-2 text-center text-sm border-t border-gray-50 pt-4 pb-2">
                 <div>
-                    <p className="text-gray-400 text-[10px] uppercase tracking-wider">Sunrise</p>
+                    <p className="text-gray-400 text-[10px] uppercase tracking-wider">🌅 Sunrise</p>
                     <p className="font-semibold text-gray-700">{formatTime(sunTimes.sunrise)}</p>
                 </div>
                 <div>
-                    <p className="text-gray-400 text-[10px] uppercase tracking-wider">Noon</p>
+                    <p className="text-gray-400 text-[10px] uppercase tracking-wider">☀️ Noon</p>
                     <p className="font-semibold text-gray-700">{formatTime(sunTimes.solarNoon)}</p>
                 </div>
                 <div>
-                    <p className="text-gray-400 text-[10px] uppercase tracking-wider">Sunset</p>
+                    <p className="text-gray-400 text-[10px] uppercase tracking-wider">🌇 Sunset</p>
                     <p className="font-semibold text-gray-700">{formatTime(sunTimes.sunset)}</p>
+                </div>
+                <div>
+                    <p className="text-gray-400 text-[10px] uppercase tracking-wider">⏱️ Daylight</p>
+                    <p className="font-semibold text-gray-700">
+                        {(() => {
+                            const diff = sunTimes.sunset.getTime() - sunTimes.sunrise.getTime();
+                            const hours = Math.floor(diff / (1000 * 60 * 60));
+                            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                            return `${hours}h ${mins}m`;
+                        })()}
+                    </p>
+                </div>
+            </div>
+
+            {/* Golden Hour Section */}
+            <div className="mt-2 pt-3 border-t border-dashed border-gray-100 bg-orange-50/30 -mx-6 px-6 pb-2">
+                <div className="flex items-center justify-center gap-1.5 mb-2">
+                    <Camera className="w-3.5 h-3.5 text-orange-600" />
+                    <span className="text-[10px] font-bold text-orange-700 uppercase tracking-widest">Golden Hour</span>
+                </div>
+                <div className="flex justify-between items-center text-xs">
+                    <div className="text-left">
+                        <span className="text-gray-400 text-[10px] mr-2">Morning</span>
+                        <span className="font-medium text-slate-700 bg-white px-2 py-0.5 rounded border border-orange-100">
+                            {formatTime(sunTimes.sunrise)} - {formatTime(sunTimes.goldenHourEnd)}
+                        </span>
+                    </div>
+                    <div className="text-right">
+                        <span className="font-medium text-slate-700 bg-white px-2 py-0.5 rounded border border-orange-100">
+                            {formatTime(sunTimes.goldenHour)} - {formatTime(sunTimes.sunset)}
+                        </span>
+                        <span className="text-gray-400 text-[10px] ml-2">Evening</span>
+                    </div>
                 </div>
             </div>
         </Card>

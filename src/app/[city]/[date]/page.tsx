@@ -56,25 +56,11 @@ export async function generateMetadata({ params }: { params: { city: string; dat
 }
 
 // 2. Re-generate params for SSG
-export async function generateStaticParams() {
-    const cities = await getAllCities();
-    const allParams = [];
-
-    for (const city of cities) {
-        const data = await getCityData(city);
-        if (data && data.days) {
-            // Add all days
-            for (const date of Object.keys(data.days)) {
-                allParams.push({ city, date });
-            }
-            // Add all months (01..12)
-            for (let i = 1; i <= 12; i++) {
-                allParams.push({ city, date: i.toString().padStart(2, '0') });
-            }
-        }
-    }
-    return allParams;
-}
+// 2. ISR Configuration (On-Demand Generation)
+// We removed generateStaticParams to avoid building 15k+ pages at build time.
+// Instead, we build them on-demand when a user visits them, and cache them for 24 hours.
+export const dynamicParams = true;
+export const revalidate = 86400; // Revalidate once every 24 hours
 
 // 3. JSON-LD for Day/Month View
 const JsonLd = ({ data, date, dayData }: { data: any, date: string, dayData?: any }) => {
@@ -223,6 +209,57 @@ export default async function CityDatePage({
     if (weddingScore >= 80) verdict = "YES";
     else if (weddingScore < 50) verdict = "NO";
 
+    // Generate alternative dates (±7 days) for "Better Alternatives" feature
+    const alternativeDates = [];
+    for (let offset = -7; offset <= 7; offset++) {
+        if (offset === 0) continue; // Skip current date
+        const altDate = new Date(dateObj);
+        altDate.setDate(altDate.getDate() + offset);
+        const altSlug = `${(altDate.getMonth() + 1).toString().padStart(2, '0')}-${altDate.getDate().toString().padStart(2, '0')}`;
+        const altDayData = data.days[altSlug];
+        if (altDayData) {
+            alternativeDates.push({
+                dateSlug: altSlug,
+                dateFormatted: format(altDate, "MMMM d"),
+                score: altDayData.scores.wedding,
+                tempMax: altDayData.stats.temp_max,
+                precipProb: altDayData.stats.precip_prob,
+                improvement: altDayData.scores.wedding - weddingScore
+            });
+        }
+    }
+
+    // Generate city comparisons (popular cities for same date)
+    // Select a diverse set of popular destinations
+    const popularCities = [
+        { slug: 'prague-cz', name: 'Prague', country: 'Czech Republic' },
+        { slug: 'paris-fr', name: 'Paris', country: 'France' },
+        { slug: 'rome-it', name: 'Rome', country: 'Italy' },
+        { slug: 'barcelona-es', name: 'Barcelona', country: 'Spain' },
+        { slug: 'london-uk', name: 'London', country: 'United Kingdom' },
+        { slug: 'amsterdam-nl', name: 'Amsterdam', country: 'Netherlands' },
+        { slug: 'lisbon-pt', name: 'Lisbon', country: 'Portugal' },
+        { slug: 'tokyo-jp', name: 'Tokyo', country: 'Japan' },
+        { slug: 'dubai-ae', name: 'Dubai', country: 'UAE' },
+        { slug: 'bangkok-th', name: 'Bangkok', country: 'Thailand' },
+    ].filter(c => c.slug !== city); // Exclude current city
+
+    const cityComparisons = await Promise.all(
+        popularCities.slice(0, 6).map(async (c) => {
+            const cityData = await getCityData(c.slug);
+            if (!cityData || !cityData.days[date]) return null;
+            const dayStats = cityData.days[date];
+            return {
+                citySlug: c.slug,
+                cityName: c.name,
+                country: c.country,
+                tempMax: dayStats.stats.temp_max,
+                precipProb: dayStats.stats.precip_prob,
+                score: dayStats.scores.wedding
+            };
+        })
+    ).then(results => results.filter((r): r is NonNullable<typeof r> => r !== null));
+
     return (
         <main className="min-h-screen bg-slate-50">
             <DatePageTracker
@@ -242,6 +279,8 @@ export default async function CityDatePage({
                 tempMin={dayData.stats.temp_min}
                 precipProb={dayData.stats.precip_prob}
                 dateSlug={date}
+                windKmh={dayData.stats.wind_kmh}
+                humidity={dayData.stats.humidity_percent}
             />
 
             {/* 2. Main Dashboard (Programmatic SEO Structure) */}
@@ -269,6 +308,8 @@ export default async function CityDatePage({
                         return 2;
                     })()
                 }
+                alternativeDates={alternativeDates}
+                cityComparisons={cityComparisons}
             />
 
             {/* AI/SEO Citation Block - Helps Perplexity/GPT cite us */}
@@ -276,8 +317,10 @@ export default async function CityDatePage({
                 <div className="max-w-4xl mx-auto">
                     <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Data Source & Methodology</h3>
                     <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                        This historical weather report for <strong>{data.meta.name}</strong> on <strong>{formattedDate}</strong> is calculated based on 30 years of continuous satellite observation data (1991-2021) from the <strong>NASA POWER Project</strong>.
-                        Unlike standard 7-day forecasts which rely on models, this data represents actual recorded historical averages, providing a reliable baseline for planning long-term events like weddings or vacations.
+                        This historical weather report for <strong>{data.meta.name}</strong> on <strong>{formattedDate}</strong> is calculated based on 30 years of continuous historical data.
+                        Unlike standard 7-day forecasts which rely on models, this data represents actual recorded historical averages.
+                        <br /><br />
+                        <strong>Methodology V3 (Smart Forecast):</strong> This prediction uses our new "Smart Rolling Window" algorithm (smoothing ±2 days) and applies Recency Weighting to prioritize climate data from the last 10 years, ensuring the forecast reflects modern warming trends rather than outdated history.
                     </p>
                     <div className="bg-slate-100 p-4 rounded-md border border-slate-200">
                         <p className="text-xs font-mono text-slate-500 mb-1">CITE THIS DATA:</p>

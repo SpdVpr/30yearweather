@@ -2,13 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllCities, getCityData } from "@/lib/data";
 import {
-  Sun,
-  Map as MapIcon,
-  ArrowRight,
-  TrendingUp,
-  CloudRain,
-  Calendar
+  Heart,
+  Plane,
+  Camera,
+  Calendar,
+  Tent,
+  GraduationCap
 } from "lucide-react";
+import HeroSearch from "@/components/home/HeroSearch";
 
 export const metadata = {
   title: "Long-Range Weather Forecast | 365-Day Predictions Based on 30 Years of Data",
@@ -128,82 +129,108 @@ export default async function Home() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-8 leading-[1.1] tracking-tight drop-shadow-lg">
               Long-Range Weather<br /><span className="italic text-orange-200">Forecast</span> You Can Trust
             </h1>
-            <p className="text-lg md:text-xl text-stone-100 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md font-medium">
+            <p className="text-lg md:text-xl text-stone-100 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-md font-medium">
               Get weather forecasts for any date up to 365 days ahead. Based on 30 years of NASA satellite data, not guesswork. Perfect for weddings, travel, and events.
             </p>
 
-            <div className="flex justify-center gap-4">
-              <Link href="#cities" className="bg-white text-stone-900 px-8 py-4 rounded-full font-bold hover:bg-stone-100 transition-all flex items-center gap-2 shadow-xl hover:shadow-2xl hover:-translate-y-1">
-                Get Your Forecast <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
+            {/* Smart Search */}
+            <HeroSearch cities={cities} />
           </div>
         </div>
       </div>
 
-      {/* 3. Features (Bento Grid) */}
-      <section id="methodology" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div className="max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Science, not speculation.</h2>
-            <p className="text-stone-600">Standard forecasts change hourly. Our historical probability models give you the long-term truth about any destination.</p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
-          {/* Card 1: Temperature */}
-          <div className="bg-stone-100 rounded-3xl p-8 flex flex-col justify-between hover:bg-stone-200 transition-colors group relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-              <Sun className="w-32 h-32" />
-            </div>
-            <TrendingUp className="w-8 h-8 text-orange-600 mb-4" />
-            <div>
-              <h3 className="text-xl font-bold mb-2">Real Feel Temps</h3>
-              <p className="text-stone-600 text-sm">We don't just show averages. We show the probability of it being "too hot" or "too cold" for your comfort.</p>
-            </div>
+      {/* 3. Perfect For... (Use Cases) */}
+      <section id="use-cases" className="py-20 px-6 md:px-12 bg-white border-b border-stone-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-orange-600 font-bold text-sm uppercase tracking-widest">Who is this for?</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mt-3 mb-4">Perfect For...</h2>
+            <p className="text-stone-500 max-w-2xl mx-auto">Whether you're planning the biggest day of your life or just a weekend getaway, we've got you covered.</p>
           </div>
 
-          {/* Card 2: Rain (Wide) */}
-          <div className="md:col-span-2 bg-stone-900 text-white rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-purple-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
-              <div className="md:w-1/2">
-                <CloudRain className="w-10 h-10 text-blue-400 mb-6" />
-                <h3 className="text-2xl font-bold mb-4">Will it rain on your wedding?</h3>
-                <p className="text-stone-400">Our precipitation model calculates the exact % chance of rain for every specific day of the year, based on 10,950 days of history.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Wedding Planning */}
+            <div className="group relative bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-100 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-14 h-14 bg-rose-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Heart className="w-7 h-7 text-rose-600" />
               </div>
-              {/* Decorative Chart Placeholder */}
-              <div className="h-32 w-full md:w-1/2 flex items-end gap-1 opacity-50">
-                {[40, 60, 30, 80, 50, 20, 90, 40, 60, 30].map((h, i) => (
-                  <div key={i} className="flex-1 bg-blue-500 rounded-t-sm" style={{ height: `${h}%` }} />
-                ))}
+              <h3 className="text-xl font-bold text-stone-900 mb-2">Wedding Planning</h3>
+              <p className="text-stone-600 text-sm mb-4">Find the driest weekend in June. See the exact rain probability for your big day based on 30 years of data.</p>
+              <div className="flex items-center text-rose-600 text-sm font-semibold">
+                <span>Popular: June & September</span>
               </div>
             </div>
-          </div>
 
-          {/* Card 3: Crowds */}
-          <div className="md:col-span-1 bg-orange-100 text-orange-900 rounded-3xl p-8 flex flex-col justify-between hover:bg-orange-200 transition-colors">
-            <Calendar className="w-8 h-8 text-orange-600 mb-4" />
-            <div>
-              <h3 className="text-xl font-bold mb-2">Crowd Intelligence</h3>
-              <p className="text-orange-800/80 text-sm">New! We now track tourist density and seasonal pricing to find the hidden quiet weeks.</p>
-            </div>
-          </div>
-
-          {/* Card 4: Data Sources */}
-          <div className="md:col-span-2 bg-white border border-stone-200 rounded-3xl p-8 flex flex-col justify-between">
-            <div>
-              <h3 className="text-xl font-bold mb-2">Trusted Data Sources</h3>
-              <div className="flex flex-wrap gap-3 mt-4">
-                {["NASA POWER", "OpenStreetMap", "World Bank", "Sentinel-2", "ERA5"].map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600 border border-stone-200">
-                    {tag}
-                  </span>
-                ))}
+            {/* Travel Planning */}
+            <div className="group relative bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Plane className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-stone-900 mb-2">Travel & Vacations</h3>
+              <p className="text-stone-600 text-sm mb-4">Avoid monsoon season and tourist crowds. Know exactly what weather to expect before you book flights.</p>
+              <div className="flex items-center text-blue-600 text-sm font-semibold">
+                <span>Save on off-peak travel</span>
               </div>
             </div>
-            <div className="mt-8 text-xs text-stone-400 uppercase tracking-widest font-semibold">
-              Updated for 2025 Season
+
+            {/* Photography */}
+            <div className="group relative bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-100 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Camera className="w-7 h-7 text-amber-600" />
+              </div>
+              <h3 className="text-xl font-bold text-stone-900 mb-2">Photography Sessions</h3>
+              <p className="text-stone-600 text-sm mb-4">Plan golden hour shoots with confidence. Check sunshine hours and cloud cover for perfect lighting conditions.</p>
+              <div className="flex items-center text-amber-600 text-sm font-semibold">
+                <span>Best light: Spring & Fall</span>
+              </div>
+            </div>
+
+            {/* Outdoor Events */}
+            <div className="group relative bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-100 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Tent className="w-7 h-7 text-emerald-600" />
+              </div>
+              <h3 className="text-xl font-bold text-stone-900 mb-2">Outdoor Events</h3>
+              <p className="text-stone-600 text-sm mb-4">Festivals, concerts, sports events. Pick the date with the lowest rain risk and most comfortable temperatures.</p>
+              <div className="flex items-center text-emerald-600 text-sm font-semibold">
+                <span>Plan months ahead</span>
+              </div>
+            </div>
+
+            {/* Study Abroad */}
+            <div className="group relative bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-100 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-14 h-14 bg-violet-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <GraduationCap className="w-7 h-7 text-violet-600" />
+              </div>
+              <h3 className="text-xl font-bold text-stone-900 mb-2">Study Abroad</h3>
+              <p className="text-stone-600 text-sm mb-4">Moving to a new city for a semester? Know what clothes to pack and what weather to expect all year round.</p>
+              <div className="flex items-center text-violet-600 text-sm font-semibold">
+                <span>Year-round insights</span>
+              </div>
+            </div>
+
+            {/* Seasonal Planning */}
+            <div className="group relative bg-gradient-to-br from-stone-100 to-stone-50 border border-stone-200 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-14 h-14 bg-stone-200 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Calendar className="w-7 h-7 text-stone-600" />
+              </div>
+              <h3 className="text-xl font-bold text-stone-900 mb-2">Seasonal Planning</h3>
+              <p className="text-stone-600 text-sm mb-4">When does cherry blossom season start? When's the first snow? Historical patterns reveal the answers.</p>
+              <div className="flex items-center text-stone-600 text-sm font-semibold">
+                <span>Nature's calendar decoded</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Data Sources Badge */}
+          <div className="mt-16 text-center">
+            <p className="text-xs text-stone-400 uppercase tracking-widest font-semibold mb-4">Powered by trusted data</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {["NASA POWER", "Open-Meteo", "ERA5 Reanalysis", "30 Years of Data"].map(tag => (
+                <span key={tag} className="px-4 py-2 bg-stone-100 rounded-full text-xs font-medium text-stone-600 border border-stone-200">
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
         </div>
