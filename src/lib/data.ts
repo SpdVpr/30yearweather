@@ -200,16 +200,32 @@ export async function getCityData(slug: string): Promise<CityData | null> {
 export async function getAllCities(): Promise<string[]> {
     // Return list of available city slugs
     return [
-        'prague-cz', 'berlin-de', 'tokyo-jp',
-        'london-uk', 'paris-fr', 'rome-it',
+        // Europe (27 cities)
+        'prague-cz', 'berlin-de', 'london-uk', 'paris-fr', 'rome-it',
         'barcelona-es', 'vienna-at', 'zurich-ch', 'athens-gr',
         'amsterdam-nl', 'madrid-es', 'brussels-be',
         'warsaw-pl', 'budapest-hu', 'lisbon-pt',
         'dublin-ie', 'stockholm-se', 'copenhagen-dk',
-        'oslo-no', 'helsinki-fi', 'bratislava-sk',
-        'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk', 'taipei-tw',
+        'oslo-no', 'helsinki-fi', 'bratislava-sk', 'istanbul-tr',
+        'edinburgh-uk', 'munich-de', 'venice-it', 'krakow-pl', 'porto-pt',
+
+        // Asia (20 cities)
+        'tokyo-jp', 'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk', 'taipei-tw',
         'bangkok-th', 'singapore-sg', 'kuala-lumpur-my', 'hanoi-vn', 'ho-chi-minh-vn',
         'jakarta-id', 'bali-id', 'manila-ph', 'mumbai-in', 'new-delhi-in',
-        'dubai-ae', 'istanbul-tr', 'kyoto-jp'
+        'dubai-ae', 'kyoto-jp', 'osaka-jp', 'phuket-th', 'chiang-mai-th',
+
+        // North America (7 cities)
+        'new-york-us', 'los-angeles-us', 'san-francisco-us', 'miami-us',
+        'vancouver-ca', 'toronto-ca', 'mexico-city-mx',
+
+        // South America (4 cities)
+        'rio-de-janeiro-br', 'buenos-aires-ar', 'lima-pe', 'santiago-cl',
+
+        // Oceania (3 cities)
+        'sydney-au', 'melbourne-au', 'auckland-nz',
+
+        // Africa (2 cities)
+        'cape-town-za', 'marrakech-ma'
     ];
 }

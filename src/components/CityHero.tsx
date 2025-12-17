@@ -30,19 +30,8 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
     const displayMax = convertTemp(tempMax);
     const displayMin = convertTemp(tempMin);
     const displayFeelsLike = convertTemp(feelsLikeMaxC);
-    // Map city slug to hero image (Standardized naming)
-    const isPng = ['tokyo-jp', 'prague-cz', 'berlin-de',
-        'amsterdam-nl', 'madrid-es', 'brussels-be',
-        'warsaw-pl', 'budapest-hu', 'lisbon-pt',
-        'dublin-ie', 'stockholm-se', 'copenhagen-dk',
-        'dublin-ie', 'stockholm-se', 'copenhagen-dk',
-        'oslo-no', 'helsinki-fi', 'bratislava-sk',
-        'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk', 'taipei-tw',
-        'bangkok-th', 'singapore-sg', 'kuala-lumpur-my', 'hanoi-vn', 'ho-chi-minh-vn',
-        'jakarta-id', 'bali-id', 'manila-ph', 'mumbai-in', 'new-delhi-in',
-        'dubai-ae', 'istanbul-tr', 'kyoto-jp'
-    ].includes(citySlug);
-    const heroImage = `/images/${citySlug}-hero.${isPng ? 'png' : 'webp'}`;
+    // All hero images are now WebP (optimized from PNG)
+    const heroImage = `/images/${citySlug}-hero.webp`;
 
     // Logic for Next/Prev Day
     const [monthStr, dayStr] = (dateSlug || "01-01").split('-');

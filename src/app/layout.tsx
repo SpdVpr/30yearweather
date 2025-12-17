@@ -72,7 +72,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Enhanced Organization Schema with contact info
+  // Enhanced Organization Schema with creator and license info
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -81,6 +81,11 @@ export default function RootLayout({
     logo: `${baseUrl.toString()}icon.png`,
     description: 'Long-range weather forecasts based on 30 years of NASA satellite data',
     foundingDate: '2024',
+    creator: {
+      '@type': 'Organization',
+      name: '30YearWeather',
+      url: baseUrl.toString()
+    },
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Support',
@@ -93,6 +98,39 @@ export default function RootLayout({
       addressCountry: 'CZ'
     },
     sameAs: []
+  };
+
+  // CreativeWork Schema with license information
+  const creativeWorkSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: '30YearWeather Historical Weather Forecasts',
+    description: 'Long-range weather forecasts based on 30 years of historical NASA satellite data',
+    url: baseUrl.toString(),
+    creator: {
+      '@type': 'Organization',
+      name: '30YearWeather',
+      url: baseUrl.toString()
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: '30YearWeather',
+      url: baseUrl.toString(),
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl.toString()}icon.png`
+      }
+    },
+    license: 'https://creativecommons.org/licenses/by-nc/4.0/',
+    copyrightHolder: {
+      '@type': 'Organization',
+      name: '30YearWeather'
+    },
+    copyrightYear: '2025',
+    inLanguage: 'en-US',
+    keywords: 'weather forecast, long range weather, historical weather data, wedding planning, travel planning',
+    datePublished: '2024-01-01',
+    dateModified: new Date().toISOString().split('T')[0]
   };
 
   // WebSite Schema with SearchAction for Google Sitelinks Search Box
@@ -119,7 +157,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, websiteSchema]) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, websiteSchema, creativeWorkSchema]) }}
         />
       </head>
       <body

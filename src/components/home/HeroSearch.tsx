@@ -38,12 +38,13 @@ export default function HeroSearch({ cities }: HeroSearchProps) {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    const filteredCities = query === ""
+    const filteredCities = (query === ""
         ? cities
         : cities.filter((city) =>
             city.name.toLowerCase().includes(query.toLowerCase()) ||
             city.country.toLowerCase().includes(query.toLowerCase())
-        );
+        )
+    ).sort((a, b) => a.name.localeCompare(b.name));
 
     const handleSearch = () => {
         if (!selectedCity) return;

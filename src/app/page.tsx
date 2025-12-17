@@ -249,16 +249,38 @@ export default async function Home() {
             {
               title: "Europe",
               description: "Historic capitals and romantic getaways close to home.",
-              slugs: ['prague-cz', 'berlin-de', 'london-uk', 'paris-fr', 'rome-it', 'barcelona-es', 'vienna-at', 'zurich-ch', 'athens-gr', 'amsterdam-nl', 'madrid-es', 'brussels-be', 'warsaw-pl', 'budapest-hu', 'lisbon-pt', 'dublin-ie', 'stockholm-se', 'copenhagen-dk', 'oslo-no', 'helsinki-fi', 'bratislava-sk']
+              slugs: ['prague-cz', 'berlin-de', 'london-uk', 'paris-fr', 'rome-it', 'barcelona-es', 'vienna-at', 'zurich-ch', 'athens-gr', 'amsterdam-nl', 'madrid-es', 'brussels-be', 'warsaw-pl', 'budapest-hu', 'lisbon-pt', 'dublin-ie', 'stockholm-se', 'copenhagen-dk', 'oslo-no', 'helsinki-fi', 'bratislava-sk', 'istanbul-tr', 'edinburgh-uk', 'munich-de', 'venice-it', 'krakow-pl', 'porto-pt']
             },
             {
               title: "Asia & Pacific",
               description: "Exotic destinations and futuristic metropolises.",
-              slugs: ['tokyo-jp', 'kyoto-jp', 'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk', 'taipei-tw', 'bangkok-th', 'singapore-sg', 'kuala-lumpur-my', 'hanoi-vn', 'ho-chi-minh-vn', 'jakarta-id', 'bali-id', 'manila-ph', 'mumbai-in', 'new-delhi-in', 'dubai-ae', 'istanbul-tr']
+              slugs: ['tokyo-jp', 'kyoto-jp', 'osaka-jp', 'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk', 'taipei-tw', 'bangkok-th', 'phuket-th', 'chiang-mai-th', 'singapore-sg', 'kuala-lumpur-my', 'hanoi-vn', 'ho-chi-minh-vn', 'jakarta-id', 'bali-id', 'manila-ph', 'mumbai-in', 'new-delhi-in', 'dubai-ae']
+            },
+            {
+              title: "North America",
+              description: "Vibrant cities from coast to coast.",
+              slugs: ['new-york-us', 'los-angeles-us', 'san-francisco-us', 'miami-us', 'vancouver-ca', 'toronto-ca', 'mexico-city-mx']
+            },
+            {
+              title: "South America",
+              description: "Passionate cultures and breathtaking landscapes.",
+              slugs: ['rio-de-janeiro-br', 'buenos-aires-ar', 'lima-pe', 'santiago-cl']
+            },
+            {
+              title: "Oceania",
+              description: "Adventures down under and beyond.",
+              slugs: ['sydney-au', 'melbourne-au', 'auckland-nz']
+            },
+            {
+              title: "Africa",
+              description: "Diverse beauty from the Mediterranean to the Cape.",
+              slugs: ['cape-town-za', 'marrakech-ma']
             }
           ].map((category) => {
-            // Filter cities for this category
-            const categoryCities = cities.filter(c => category.slugs.includes(c.slug));
+            // Filter cities for this category and sort alphabetically by name
+            const categoryCities = cities
+              .filter(c => category.slugs.includes(c.slug))
+              .sort((a, b) => a.name.localeCompare(b.name));
 
             if (categoryCities.length === 0) return null;
 
@@ -271,19 +293,8 @@ export default async function Home() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
                   {categoryCities.map((city) => {
-                    // Dynamic image mapping (Standardized to [slug]-hero.webp, with png fallback for legacy/generated)
-                    // Legacy PNGs + Newly generated AI images
-                    const isPng = ['tokyo-jp', 'prague-cz', 'berlin-de',
-                      'amsterdam-nl', 'madrid-es', 'brussels-be',
-                      'warsaw-pl', 'budapest-hu', 'lisbon-pt',
-                      'dublin-ie', 'stockholm-se', 'copenhagen-dk',
-                      'oslo-no', 'helsinki-fi', 'bratislava-sk',
-                      'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk', 'taipei-tw',
-                      'bangkok-th', 'singapore-sg', 'kuala-lumpur-my', 'hanoi-vn', 'ho-chi-minh-vn',
-                      'jakarta-id', 'bali-id', 'manila-ph', 'mumbai-in', 'new-delhi-in',
-                      'dubai-ae', 'istanbul-tr', 'kyoto-jp'
-                    ].includes(city.slug);
-                    const cityImage = `/images/${city.slug}-hero.${isPng ? 'png' : 'webp'}`;
+                    // All hero images are now WebP (optimized)
+                    const cityImage = `/images/${city.slug}-hero.webp`;
 
                     return (
                       <Link key={city.slug} href={`/${city.slug}`} className="group block">
