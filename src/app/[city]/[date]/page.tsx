@@ -6,6 +6,8 @@ import MonthCalendarView from "@/components/MonthCalendarView";
 import { format } from "date-fns";
 import type { Metadata } from 'next';
 import DatePageTracker from "@/components/DatePageTracker";
+import SwipeNavigation from "@/components/SwipeNavigation";
+import UnitToggle from "@/components/UnitToggle";
 
 // 1. Dynamic Metadata Generation
 export async function generateMetadata({ params }: { params: { city: string; date: string } }): Promise<Metadata> {
@@ -158,11 +160,34 @@ const JsonLd = ({ data, date, dayData }: { data: any, date: string, dayData?: an
             mainEntityOfPage: `${baseUrl}/${citySlug}/${date}`
         };
 
+        const graphNodes: any[] = [destinationLd, datasetLd];
+
+        // --- FAQ SCHEMA (If Marine Data Exists) ---
+        if (dayData.marine) {
+            const swimAnswer = `Statistically, the water temperature in ${data.meta.name} in ${monthName} is around ${dayData.marine.water_temp}°C. It is considered ${dayData.marine.shiver_factor} and suitable mostly for ${dayData.marine.water_temp < 18 ? "quick dips" : "swimming"}. Waves are generally ${dayData.marine.family_safety.toLowerCase()} (${dayData.marine.wave_height}m).`;
+
+            const faqLd = {
+                '@type': 'FAQPage',
+                '@id': `${baseUrl}/${citySlug}/${date}#faq`,
+                mainEntity: [
+                    {
+                        '@type': 'Question',
+                        name: `Can you swim in ${data.meta.name} in ${monthName}?`,
+                        acceptedAnswer: {
+                            '@type': 'Answer',
+                            text: swimAnswer
+                        }
+                    }
+                ]
+            };
+            graphNodes.push(faqLd);
+        }
+
         schemaGraph = [
             breadcrumbLd,
             {
                 '@context': 'https://schema.org',
-                '@graph': [destinationLd, datasetLd]
+                '@graph': graphNodes
             }
         ];
     }
@@ -215,6 +240,14 @@ export default async function CityDatePage({
 
     const dateObj = new Date(2024, parseInt(date.split('-')[0]) - 1, parseInt(date.split('-')[1]));
     const formattedDate = format(dateObj, "MMMM d");
+
+    // Navigation for Swipe
+    const prevObj = new Date(dateObj); prevObj.setDate(prevObj.getDate() - 1);
+    const nextObj = new Date(dateObj); nextObj.setDate(nextObj.getDate() + 1);
+    const prevSlug = `${(prevObj.getMonth() + 1).toString().padStart(2, '0')}-${prevObj.getDate().toString().padStart(2, '0')}`;
+    const nextSlug = `${(nextObj.getMonth() + 1).toString().padStart(2, '0')}-${nextObj.getDate().toString().padStart(2, '0')}`;
+    const prevUrl = `/${city}/${prevSlug}`;
+    const nextUrl = `/${city}/${nextSlug}`;
 
     // Calculate verdict from wedding score
     const weddingScore = dayData.scores.wedding;
@@ -274,7 +307,7 @@ export default async function CityDatePage({
     ).then(results => results.filter((r): r is NonNullable<typeof r> => r !== null));
 
     return (
-        <main className="min-h-screen bg-slate-50">
+        <SwipeNavigation prevUrl={prevUrl} nextUrl={nextUrl} className="min-h-screen bg-slate-50">
             <DatePageTracker
                 cityName={data.meta.name}
                 date={formattedDate}
@@ -295,6 +328,8 @@ export default async function CityDatePage({
                 windKmh={dayData.stats.wind_kmh}
                 humidity={dayData.stats.humidity_percent}
             />
+
+
 
             {/* 2. Main Dashboard (Programmatic SEO Structure) */}
             <WeatherDashboard
@@ -344,6 +379,6 @@ export default async function CityDatePage({
                 </div>
             </section>
 
-        </main>
+        </SwipeNavigation>
     );
 }

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 import { calculateFeelsLike, getTempEmoji } from "@/lib/weather-utils";
+import UnitToggle from "@/components/UnitToggle";
+import { useUnit } from "@/context/UnitContext";
 
 interface CityHeroProps {
     city: string;
@@ -19,9 +21,15 @@ interface CityHeroProps {
 }
 
 export default function CityHero({ city, citySlug, date, tempMax, tempMin, precipProb, dateSlug, windKmh = 10, humidity = 50 }: CityHeroProps) {
-    // Calculate feels-like temperature
-    const feelsLikeMax = calculateFeelsLike(tempMax, windKmh, humidity);
-    const feelsLikeEmoji = getTempEmoji(feelsLikeMax);
+    const { unit, convertTemp } = useUnit();
+    // Calculate feels-like temperature (keep feelsLikeMax in C for emoji logic first)
+    const feelsLikeMaxC = calculateFeelsLike(tempMax, windKmh, humidity);
+    const feelsLikeEmoji = getTempEmoji(feelsLikeMaxC);
+
+    // Convert for display
+    const displayMax = convertTemp(tempMax);
+    const displayMin = convertTemp(tempMin);
+    const displayFeelsLike = convertTemp(feelsLikeMaxC);
     // Map city slug to hero image (Standardized naming)
     const isPng = ['tokyo-jp', 'prague-cz', 'berlin-de',
         'amsterdam-nl', 'madrid-es', 'brussels-be',
@@ -78,6 +86,8 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
                 <span className="text-sm font-medium">Back to Calendar</span>
             </Link>
 
+
+
             {/* Prev Day Arrow (Left Center) */}
             <Link
                 href={`/${citySlug}/${prevSlug}`}
@@ -124,11 +134,11 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
                     className="mt-8 flex gap-8 md:gap-12"
                 >
                     <div className="text-center">
-                        <p className="text-3xl font-bold">{tempMax}°</p>
+                        <p className="text-3xl font-bold">{displayMax}°</p>
                         <p className="text-xs uppercase tracking-wider opacity-70">High</p>
                     </div>
                     <div className="text-center">
-                        <p className="text-3xl font-bold">{tempMin}°</p>
+                        <p className="text-3xl font-bold">{displayMin}°</p>
                         <p className="text-xs uppercase tracking-wider opacity-70">Low</p>
                     </div>
                     <div className="text-center">
@@ -145,9 +155,9 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
                     className="mt-4 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20"
                 >
                     <p className="text-sm">
-                        {feelsLikeEmoji} Feels like <span className="font-bold">{feelsLikeMax}°C</span>
-                        {feelsLikeMax < tempMax - 0.5 && " (wind chill)"}
-                        {feelsLikeMax > tempMax + 0.5 && " (humidity)"}
+                        {feelsLikeEmoji} Feels like <span className="font-bold">{displayFeelsLike}°{unit}</span>
+                        {feelsLikeMaxC < tempMax - 0.5 && " (wind chill)"}
+                        {feelsLikeMaxC > tempMax + 0.5 && " (humidity)"}
                     </p>
                 </motion.div>
             </div>

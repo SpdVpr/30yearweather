@@ -17,6 +17,9 @@ import { calculateTourismScores, fetchTourismData, TourismDataset, getTourismIns
 import { calculateFeelsLike, getFeelsLikeDescription, getTempEmoji, getReliabilityInfo } from "@/lib/weather-utils";
 import BetterAlternatives from "./BetterAlternatives";
 import CompareCities from "./CompareCities";
+import MarineCard from "./MarineCard";
+import { useUnit } from "@/context/UnitContext";
+import UnitToggle from "@/components/UnitToggle";
 
 interface AlternativeDateData {
     dateSlug: string;
@@ -52,6 +55,7 @@ interface WeatherDashboardProps {
 
 export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, cityName, geoInfo, safetyProfile, timezoneOffset = 0, alternativeDates, cityComparisons }: WeatherDashboardProps) {
     const { stats, scores, clothing, historical_records, pressure_stats, health_impact, weather_condition } = dayData;
+    const { unit, convertTemp } = useUnit();
 
     // Tourism Data Fetching
     const [tourismData, setTourismData] = useState<TourismDataset | null>(null);
@@ -113,6 +117,11 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
     const feelsLikeDesc = getFeelsLikeDescription(stats.temp_max, feelsLikeMax);
     const feelsLikeEmoji = getTempEmoji(feelsLikeMax);
 
+    // Display Vals
+    const displayMax = convertTemp(stats.temp_max);
+    const displayMin = convertTemp(stats.temp_min);
+    const displayFeelsLike = convertTemp(feelsLikeMax);
+
     // Reliability Score calculation
     const reliabilityInfo = getReliabilityInfo(
         scores.reliability,
@@ -124,8 +133,8 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
     const chartData = historical_records
         ? historical_records.map(r => ({
             Year: r.year.toString(),
-            "Max Temp": r.temp_max,
-            "Min Temp": r.temp_min
+            "Max Temp": convertTemp(r.temp_max),
+            "Min Temp": convertTemp(r.temp_min)
         })).reverse()
         : [];
 
@@ -134,15 +143,18 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
 
             {/* 1. VERDICT / SUMMARY */}
             <section>
-                <div className="flex items-center gap-2 mb-4">
-                    <Info className="w-5 h-5 text-blue-600" />
-                    <h2 className="text-xl font-bold text-slate-800">
-                        Weather Verdict for {cityName} on {dateFormatted}
-                    </h2>
+                <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                        <Info className="w-5 h-5 text-blue-600" />
+                        <h2 className="text-xl font-bold text-slate-800">
+                            Weather Verdict for {cityName} on {dateFormatted}
+                        </h2>
+                    </div>
+                    <UnitToggle variant="light" />
                 </div>
                 <div className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl">
                     <p className="text-lg text-slate-700 font-medium">
-                        "{getVerdict()}. Expect average highs of {stats.temp_max}°C. {stats.precip_prob}% chance of {precipType.toLowerCase()}."
+                        "{getVerdict()}. Expect average highs of {displayMax}°{unit}. {stats.precip_prob}% chance of {precipType.toLowerCase()}."
                     </p>
                 </div>
             </section>
@@ -166,7 +178,7 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                     <div className="lg:col-span-2 grid grid-cols-2 lg:grid-cols-3 gap-4">
                         <StatCard
                             title="Average High"
-                            value={`${stats.temp_max}°C`}
+                            value={`${displayMax}°${unit}`}
                             subtext="Daytime Peak"
                             icon={<Thermometer className="w-5 h-5 text-rose-500" />}
                             tempValue={stats.temp_max}
@@ -174,7 +186,7 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                         />
                         <StatCard
                             title="Average Low"
-                            value={`${stats.temp_min}°C`}
+                            value={`${displayMin}°${unit}`}
                             subtext="Nighttime Low"
                             icon={<Thermometer className="w-5 h-5 text-blue-500" />}
                             tempValue={stats.temp_min}
@@ -183,7 +195,7 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                         {/* Feels Like - Always show */}
                         <StatCard
                             title="Feels Like"
-                            value={`${feelsLikeMax}°C`}
+                            value={`${displayFeelsLike}°${unit}`}
                             subtext={`${feelsLikeEmoji} ${feelsLikeDesc}`}
                             icon={<ThermometerSun className="w-5 h-5 text-amber-500" />}
                             tempValue={feelsLikeMax}
@@ -239,6 +251,11 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                     />
                 </div>
             </section>
+
+            {/* 2b. MARINE CONDITIONS (Added per user request) */}
+            {dayData.marine && (
+                <MarineCard marine={dayData.marine} />
+            )}
 
             {/* 3. ATMOSPHERIC & SOLAR (Consolidated to remove gaps) */}
             <section>
@@ -400,6 +417,21 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                             {safetyProfile?.seismic.risk_level === 'High' ? "Visitors should be aware of earthquake protocols." : "It is geologically stable."}
                         </AccordionBody>
                     </Accordion>
+                    {dayData?.marine ? (
+                        <Accordion>
+                            <AccordionHeader className="text-sm font-medium">Can I swim in {cityName} in {new Date(2024, parseInt(dateId.split('-')[0]) - 1, 1).toLocaleDateString('en-US', { month: 'long' })}?</AccordionHeader>
+                            <AccordionBody className="text-slate-600 text-sm leading-relaxed">
+                                Statistically, the water temperature in {cityName} on {dateFormatted} is around {dayData.marine.water_temp}°C.
+                                It is considered <strong>{dayData.marine.shiver_factor}</strong>.
+                                {dayData.marine.water_temp < 18
+                                    ? " It is chilly and suitable mostly for quick dips or wetsuits."
+                                    : dayData.marine.water_temp < 24
+                                        ? " It is refreshing for swimming."
+                                        : " It is warm and perfect for long swims."}
+                                {' '}Waves are generally {dayData.marine.family_safety.toLowerCase()} ({dayData.marine.wave_height}m).
+                            </AccordionBody>
+                        </Accordion>
+                    ) : <></>}
                 </AccordionList>
             </section>
 

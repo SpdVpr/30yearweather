@@ -10,6 +10,8 @@ import {
   GraduationCap
 } from "lucide-react";
 import HeroSearch from "@/components/home/HeroSearch";
+import Footer from "@/components/Footer";
+import UnitToggle from "@/components/UnitToggle";
 
 export const metadata = {
   title: "Long-Range Weather Forecast | 365-Day Predictions Based on 30 Years of Data",
@@ -97,16 +99,17 @@ export default async function Home() {
           </div>
           <div className="text-xl font-bold tracking-tight text-white drop-shadow-md">30YearWeather.</div>
         </div>
-        <div className="hidden md:flex gap-6 text-sm font-medium text-white/90">
+        <div className="hidden md:flex items-center gap-6 text-sm font-medium text-white/90">
           <a href="#cities" className="hover:text-white hover:underline transition-all">Destinations</a>
           <a href="#methodology" className="hover:text-white hover:underline transition-all">Methodology</a>
           <a href="#" className="hover:text-white hover:underline transition-all opacity-80">About</a>
+          <UnitToggle />
         </div>
       </nav>
       {/* 2. Hero Section (Immersive) */}
-      <div className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-stone-200">
+      <div className="relative w-full min-h-[85vh] flex items-center justify-center border-b border-stone-200">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
             src="/images/hero1-optimized.webp"
             alt="Couple planning trip in sunny city"
@@ -121,7 +124,7 @@ export default async function Home() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 w-full px-6 md:px-12 max-w-[1600px] mx-auto flex flex-col items-center text-center pt-20">
+        <div className="relative z-10 w-full px-6 md:px-12 max-w-[1600px] mx-auto flex flex-col items-center text-center pt-20 pb-20">
           <div className="animate-fade-in-up">
             <span className="inline-block py-1.5 px-4 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-widest">
               365-Day Weather Forecast
@@ -313,13 +316,7 @@ export default async function Home() {
               </div>
             );
           })}   {/* "Suggest a City" Block */}
-          <div className="flex flex-col justify-center items-center text-center p-12 border border-dashed border-stone-300 rounded-sm hover:bg-stone-50 transition-colors">
-            <h3 className="text-xl font-bold font-serif mb-2">Missing your city?</h3>
-            <p className="text-stone-500 mb-6 max-w-xs">We process new locations weekly. Request a destination for deep analysis.</p>
-            <button className="text-sm font-bold border-b-2 border-orange-500 pb-0.5 hover:text-orange-600 transition-colors">
-              Submit Request
-            </button>
-          </div>
+
         </div>
       </section>
 
@@ -375,34 +372,7 @@ export default async function Home() {
       </section >
 
       {/* Footer */}
-      < footer className="bg-stone-900 text-stone-400 py-24 px-6 md:px-12" >
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-          <div>
-            <h4 className="text-white text-2xl font-serif font-bold mb-6">30YearWeather.</h4>
-            <p className="max-w-xs leading-relaxed">
-              Making meteorology accessible for long-term planning. Because averages lie, but data doesn't.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-12 text-sm">
-            <div className="flex flex-col gap-4">
-              <span className="text-white font-bold mb-2">Product</span>
-              <a href="#" className="hover:text-white">Destinations</a>
-              <a href="#" className="hover:text-white">Methodology</a>
-              <a href="#" className="hover:text-white">API Access</a>
-            </div>
-            <div className="flex flex-col gap-4">
-              <span className="text-white font-bold mb-2">Company</span>
-              <a href="#" className="hover:text-white">About Us</a>
-              <a href="#" className="hover:text-white">Contact</a>
-              <a href="#" className="hover:text-white">Privacy</a>
-            </div>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-stone-800 text-xs flex justify-between">
-          <span>© 2025 30YearWeather Intelligence.</span>
-          <span>Prague, Czech Republic</span>
-        </div>
-      </footer >
-    </div >
+      <Footer />
+    </div>
   );
 }

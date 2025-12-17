@@ -11,8 +11,13 @@ export async function GET(request: NextRequest, { params }: { params: { slug: st
             return NextResponse.json({ error: "City not found" }, { status: 404 });
         }
 
-        // Optimize for LLM Context Window (Don't send 366 days of raw data)
-        // Instead, aggregate into Monthly insights.
+        // Parse query params
+        const searchParams = request.nextUrl.searchParams;
+        const minified = searchParams.get('minified') === 'true';
+
+        // Optimize for LLM Context Window (Don't send 366 days of raw data if minified=true)
+        // Otherwise, provide full rich data.
+
 
         const monthlyStats: Record<number, any> = {};
 
@@ -82,7 +87,45 @@ export async function GET(request: NextRequest, { params }: { params: { slug: st
 
             yearly_stats: data.yearly_stats,
             monthly_climate: monthlyStats,
-            // Include a few smart scores if available (Nomad, Wedding - logic from frontend should be moved to shared lib eventually)
+
+            // FULL DATA DUMP (Unless minified)
+            // Enrichment: Calculate derived metrics that are normally done on the frontend
+            daily_forecast: minified ? "Use ?minified=false to get full 365-day data" : Object.fromEntries(
+                Object.entries(data.days).map(([key, day]) => {
+                    // 1. Calculate Meteo-Health Score (0-100)
+                    let healthScore = 100;
+                    if (day.health_impact?.migraine_risk === 'High') healthScore -= 30;
+                    if (day.health_impact?.migraine_risk === 'Medium') healthScore -= 15;
+                    if (day.health_impact?.joint_pain_risk === 'High') healthScore -= 30;
+                    if (day.health_impact?.joint_pain_risk === 'Medium') healthScore -= 15;
+                    healthScore = Math.max(0, healthScore);
+
+                    // 2. Verdict Logic
+                    let verdict = "Mixed";
+                    if (day.scores.wedding > 80) verdict = "Excellent";
+                    else if (day.scores.wedding > 60) verdict = "Good";
+                    else if (day.scores.wedding < 40) verdict = "Poor";
+
+                    // 3. Marine Status (if coastal)
+                    let marineStatus = "N/A";
+                    if (day.marine) {
+                        if (day.marine.water_temp > 21 && day.marine.wave_height < 1.0) marineStatus = "Excellent Swim";
+                        else if (day.marine.water_temp < 18) marineStatus = "Cold Water";
+                        else marineStatus = "Mixed Conditions";
+                    }
+
+                    return [key, {
+                        ...day,
+                        calculated_metrics: {
+                            health_score: healthScore,
+                            verdict: verdict,
+                            marine_status: marineStatus
+                            // Feels like could be added here too if we want to duplicate the formula
+                        }
+                    }];
+                })
+            ),
+
             note: "Data based on 30-year historical analysis (1994-2024)."
         };
 

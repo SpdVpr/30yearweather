@@ -61,6 +61,15 @@ const config: Config = {
                 "tremor-title": ["1.125rem", { lineHeight: "1.75rem" }],
                 "tremor-metric": ["1.875rem", { lineHeight: "2.25rem" }],
             },
+            keyframes: {
+                fadeInUp: {
+                    '0%': { opacity: '0', transform: 'translateY(10px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' },
+                }
+            },
+            animation: {
+                'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+            },
         },
     },
     safelist: [

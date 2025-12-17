@@ -114,6 +114,15 @@ export interface HistoricalRecord {
     weather_code?: number; // NEW: WMO weather code
 }
 
+
+export interface MarineInfo {
+    water_temp: number; // °C
+    wave_height: number; // m
+    shiver_factor: "Polar Plunge" | "Refreshing Tonic" | "Swimming Pool" | "Tropical Bath" | "Hot Soup";
+    family_safety: "Lake-like" | "Fun Waves" | "Surfers Only";
+    jellyfish_warning: boolean;
+}
+
 export interface DayData {
     stats: DayStats;
     weather_condition?: WeatherCondition; // NEW: Weather description & icon
@@ -121,6 +130,7 @@ export interface DayData {
     pressure_stats?: PressureStats;
     health_impact?: HealthImpact;
     safety?: any; // Monthly safety data (seismic, hurricane, flood, air quality, volcano)
+    marine?: MarineInfo; // NEW: Marine data for coastal cities
     clothing: string[];
     events?: { description: string }[];
     historical_records?: HistoricalRecord[];
@@ -135,6 +145,7 @@ export interface CityData {
         desc?: string;
         geo_info?: GeoInfo; // NEW
         safety_profile?: SafetyProfile; // NEW
+        is_coastal?: boolean; // NEW
     };
     yearly_stats?: {
         avg_temp_annual: number;
