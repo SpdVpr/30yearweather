@@ -1,9 +1,7 @@
 import { ImageResponse } from 'next/og';
 import { getCityData } from '@/lib/data';
-import { join } from 'path';
-import { readFileSync, existsSync } from 'fs';
 
-export const runtime = 'nodejs';
+export const runtime = 'edge';
 
 export const size = {
     width: 1200,
@@ -23,13 +21,10 @@ export default async function Image({ params }: { params: { city: string; month:
     const monthNum = MONTH_MAP[monthLower];
     const dayPad = day.toString().padStart(2, '0');
 
-    // Load fonts
-    // 1. Main Text Font (Inter)
+    // Load font
     const fontData = await fetch(
         'https://raw.githubusercontent.com/vercel/satori/main/playground/public/inter-latin-ext-700-normal.woff'
     ).then((res) => res.arrayBuffer()).catch(() => null);
-
-
 
     // Default error response style
     const errorStyle = {
@@ -66,22 +61,6 @@ export default async function Image({ params }: { params: { city: string; month:
         );
     }
 
-    // Load image
-    const imagePath = join(process.cwd(), 'public', 'images', `${city}-hero.webp`);
-    let imageData = '';
-
-    // Fallback to png if webp missing, or just check existence
-    if (existsSync(imagePath)) {
-        const file = readFileSync(imagePath);
-        imageData = `data:image/webp;base64,${file.toString('base64')}`;
-    } else {
-        const pngPath = join(process.cwd(), 'public', 'images', `${city}-hero.png`);
-        if (existsSync(pngPath)) {
-            const file = readFileSync(pngPath);
-            imageData = `data:image/png;base64,${file.toString('base64')}`;
-        }
-    }
-
     // Stats
     const tempMax = Math.round(dayData.stats.temp_max);
     const tempMin = Math.round(dayData.stats.temp_min);
@@ -89,6 +68,7 @@ export default async function Image({ params }: { params: { city: string; month:
     const cityName = data.meta.name;
     const formattedDate = `${monthLower.charAt(0).toUpperCase() + monthLower.slice(1)} ${day}`;
 
+    // Use gradient background instead of hero image (edge runtime doesn't support fs)
     return new ImageResponse(
         (
             <div
@@ -99,86 +79,73 @@ export default async function Image({ params }: { params: { city: string; month:
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    backgroundColor: '#111',
+                    background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
                     position: 'relative',
                     fontFamily: '"Inter"',
                 }}
             >
-                {/* Background Image */}
-                {imageData ? (
-                    <img
-                        src={imageData}
-                        style={{
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                            opacity: 0.5,
-                        }}
-                    />
-                ) : (
-                    <div style={{
-                        position: 'absolute',
-                        top: 0, left: 0, width: '100%', height: '100%',
-                        background: 'linear-gradient(to bottom right, #1e293b, #0f172a)'
-                    }} />
-                )}
-
-                {/* Dark Gradient Overlay for text readability */}
+                {/* Gradient Overlay for depth */}
                 <div style={{
                     position: 'absolute',
                     top: 0,
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))',
+                    background: 'radial-gradient(circle at 30% 50%, rgba(16, 185, 129, 0.1), transparent 50%)',
                 }} />
 
                 <div style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'center',
+                    align Items: 'center',
                     justifyContent: 'center',
                     zIndex: 10,
                     color: 'white',
                     textAlign: 'center',
-                    textShadow: '0 2px 10px rgba(0,0,0,0.6)',
+                    padding: '60px',
                 }}>
                     <div style={{
-                        fontSize: 24,
+                        fontSize: 28,
                         textTransform: 'uppercase',
-                        letterSpacing: '4px',
-                        marginBottom: 20,
+                        letterSpacing: '6px',
+                        marginBottom: 30,
                         color: '#6EE7B7',
                         fontWeight: 600
                     }}>
                         Historical Weather Analysis
                     </div>
                     <div style={{
-                        fontSize: 64,
+                        fontSize: 68,
                         fontWeight: 900,
-                        maxWidth: '900px',
+                        maxWidth: '1000px',
                         lineHeight: 1.1,
-                        marginBottom: 30
+                        marginBottom: 40
                     }}>
                         Is {formattedDate} a Good Time to Visit {cityName}?
                     </div>
 
-                    <div style={{ display: 'flex', gap: '80px', marginTop: 40 }}>
+                    <div style={{ display: 'flex', gap: '100px', marginTop: 50 }}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            <span style={{ fontSize: 80, fontWeight: 800 }}>{tempMax}°</span>
-                            <span style={{ fontSize: 28, opacity: 0.9, textTransform: 'uppercase', letterSpacing: '2px' }}>High</span>
+                            <span style={{ fontSize: 90, fontWeight: 800, color: '#10b981' }}>{tempMax}°</span>
+                            <span style={{ fontSize: 30, opacity: 0.8, textTransform: 'uppercase', letterSpacing: '3px' }}>High</span>
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            <span style={{ fontSize: 80, fontWeight: 800 }}>{tempMin}°</span>
-                            <span style={{ fontSize: 28, opacity: 0.9, textTransform: 'uppercase', letterSpacing: '2px' }}>Low</span>
+                            <span style={{ fontSize: 90, fontWeight: 800, color: '#3b82f6' }}>{tempMin}°</span>
+                            <span style={{ fontSize: 30, opacity: 0.8, textTransform: 'uppercase', letterSpacing: '3px' }}>Low</span>
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            <span style={{ fontSize: 80, fontWeight: 800 }}>{precipProb}%</span>
-                            <span style={{ fontSize: 28, opacity: 0.9, textTransform: 'uppercase', letterSpacing: '2px' }}>Rain</span>
+                            <span style={{ fontSize: 90, fontWeight: 800, color: '#06b6d4' }}>{precipProb}%</span>
+                            <span style={{ fontSize: 30, opacity: 0.8, textTransform: 'uppercase', letterSpacing: '3px' }}>Rain</span>
                         </div>
+                    </div>
+
+                    <div style={{
+                        marginTop: 60,
+                        fontSize: 22,
+                        opacity: 0.7,
+                        letterSpacing: '2px'
+                    }}>
+                        30YearWeather.com • Based on 30 years of data
                     </div>
                 </div>
             </div>
