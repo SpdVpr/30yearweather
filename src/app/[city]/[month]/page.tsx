@@ -153,7 +153,7 @@ export default async function CityMonthPage({ params }: { params: { city: string
                             <span className="text-lg text-slate-500 mb-1">days</span>
                         </div>
                         <p className="text-sm text-slate-600 mt-2">
-                            Days with significant rainfall (>25% chance).
+                            Days with significant rainfall (&gt;25% chance).
                         </p>
                     </Card>
 
