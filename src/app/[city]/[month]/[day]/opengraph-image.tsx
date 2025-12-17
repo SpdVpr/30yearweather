@@ -1,5 +1,4 @@
 import { ImageResponse } from 'next/og';
-import { getCityData } from '@/lib/data';
 
 export const runtime = 'edge';
 
@@ -14,6 +13,19 @@ const MONTH_MAP: Record<string, string> = {
     january: '01', february: '02', march: '03', april: '04', may: '05', june: '06',
     july: '07', august: '08', september: '09', october: '10', november: '11', december: '12'
 };
+
+// Fetch city data from public JSON (edge runtime compatible)
+async function getCityDataFromPublic(city: string) {
+    try {
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
+        const response = await fetch(`${baseUrl}/data/${city}.json`);
+        if (!response.ok) return null;
+        return await response.json();
+    } catch (e) {
+        console.error('Error loading city data:', e);
+        return null;
+    }
+}
 
 export default async function Image({ params }: { params: { city: string; month: string; day: string } }) {
     const { city, month, day } = params;
@@ -45,7 +57,7 @@ export default async function Image({ params }: { params: { city: string; month:
         );
     }
 
-    const data = await getCityData(city);
+    const data = await getCityDataFromPublic(city);
     if (!data) {
         return new ImageResponse(
             <div style={errorStyle}>City not found</div>, { ...size }
