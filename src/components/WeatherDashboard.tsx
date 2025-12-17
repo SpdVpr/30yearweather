@@ -28,6 +28,7 @@ interface AlternativeDateData {
     tempMax: number;
     precipProb: number;
     improvement: number;
+    linkHref?: string;
 }
 
 interface CityComparisonData {
@@ -37,6 +38,7 @@ interface CityComparisonData {
     tempMax: number;
     precipProb: number;
     score: number;
+    linkHref?: string;
 }
 
 interface WeatherDashboardProps {

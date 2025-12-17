@@ -146,6 +146,8 @@ export interface CityData {
         geo_info?: GeoInfo; // NEW
         safety_profile?: SafetyProfile; // NEW
         is_coastal?: boolean; // NEW
+        timezone?: string; // e.g. "Asia/Makassar"
+        timezone_offset?: number; // Optional numerical offset if available
     };
     yearly_stats?: {
         avg_temp_annual: number;
@@ -201,31 +203,43 @@ export async function getAllCities(): Promise<string[]> {
     // Return list of available city slugs
     return [
         // Europe (27 cities)
-        'prague-cz', 'berlin-de', 'london-uk', 'paris-fr', 'rome-it',
-        'barcelona-es', 'vienna-at', 'zurich-ch', 'athens-gr',
-        'amsterdam-nl', 'madrid-es', 'brussels-be',
-        'warsaw-pl', 'budapest-hu', 'lisbon-pt',
-        'dublin-ie', 'stockholm-se', 'copenhagen-dk',
-        'oslo-no', 'helsinki-fi', 'bratislava-sk', 'istanbul-tr',
-        'edinburgh-uk', 'munich-de', 'venice-it', 'krakow-pl', 'porto-pt',
+        'prague', 'berlin', 'london', 'paris', 'rome',
+        'barcelona', 'vienna', 'zurich', 'athens',
+        'amsterdam', 'madrid', 'brussels',
+        'warsaw', 'budapest', 'lisbon',
+        'dublin', 'stockholm', 'copenhagen',
+        'oslo', 'helsinki', 'bratislava', 'istanbul',
+        'edinburgh', 'munich', 'venice', 'krakow', 'porto',
 
         // Asia (20 cities)
-        'tokyo-jp', 'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk', 'taipei-tw',
-        'bangkok-th', 'singapore-sg', 'kuala-lumpur-my', 'hanoi-vn', 'ho-chi-minh-vn',
-        'jakarta-id', 'bali-id', 'manila-ph', 'mumbai-in', 'new-delhi-in',
-        'dubai-ae', 'kyoto-jp', 'osaka-jp', 'phuket-th', 'chiang-mai-th',
+        'tokyo', 'seoul', 'beijing', 'shanghai', 'hong-kong', 'taipei',
+        'bangkok', 'singapore', 'kuala-lumpur', 'hanoi', 'ho-chi-minh',
+        'jakarta', 'bali', 'manila', 'mumbai', 'new-delhi',
+        'dubai', 'kyoto', 'osaka', 'phuket', 'chiang-mai',
 
         // North America (7 cities)
-        'new-york-us', 'los-angeles-us', 'san-francisco-us', 'miami-us',
-        'vancouver-ca', 'toronto-ca', 'mexico-city-mx',
+        'new-york', 'los-angeles', 'san-francisco', 'miami',
+        'vancouver', 'toronto', 'mexico-city',
 
         // South America (4 cities)
-        'rio-de-janeiro-br', 'buenos-aires-ar', 'lima-pe', 'santiago-cl',
+        'rio-de-janeiro', 'buenos-aires', 'lima', 'santiago',
 
         // Oceania (3 cities)
-        'sydney-au', 'melbourne-au', 'auckland-nz',
+        'sydney', 'melbourne', 'auckland',
 
         // Africa (2 cities)
-        'cape-town-za', 'marrakech-ma'
+        'cape-town', 'marrakech',
+
+        // Caribbean & Central America (5 cities) - NEW!
+        'cancun', 'punta-cana', 'nassau', 'san-juan', 'montego-bay',
+
+        // Mediterranean Resorts (5 cities) - NEW!
+        'palma-mallorca', 'nice', 'dubrovnik', 'santorini', 'las-palmas',
+
+        // Mountain & Adventure (5 cities) - NEW!
+        'reykjavik', 'queenstown', 'innsbruck', 'interlaken', 'whistler',
+
+        // Exotic & Luxury (5 cities) - NEW!
+        'bora-bora', 'male', 'ras-al-khaimah', 'zanzibar', 'cartagena'
     ];
 }

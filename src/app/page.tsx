@@ -249,32 +249,52 @@ export default async function Home() {
             {
               title: "Europe",
               description: "Historic capitals and romantic getaways close to home.",
-              slugs: ['prague-cz', 'berlin-de', 'london-uk', 'paris-fr', 'rome-it', 'barcelona-es', 'vienna-at', 'zurich-ch', 'athens-gr', 'amsterdam-nl', 'madrid-es', 'brussels-be', 'warsaw-pl', 'budapest-hu', 'lisbon-pt', 'dublin-ie', 'stockholm-se', 'copenhagen-dk', 'oslo-no', 'helsinki-fi', 'bratislava-sk', 'istanbul-tr', 'edinburgh-uk', 'munich-de', 'venice-it', 'krakow-pl', 'porto-pt']
+              slugs: ['prague', 'berlin', 'london', 'paris', 'rome', 'barcelona', 'vienna', 'zurich', 'athens', 'amsterdam', 'madrid', 'brussels', 'warsaw', 'budapest', 'lisbon', 'dublin', 'stockholm', 'copenhagen', 'oslo', 'helsinki', 'bratislava', 'istanbul', 'edinburgh', 'munich', 'venice', 'krakow', 'porto']
             },
             {
               title: "Asia & Pacific",
               description: "Exotic destinations and futuristic metropolises.",
-              slugs: ['tokyo-jp', 'kyoto-jp', 'osaka-jp', 'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk', 'taipei-tw', 'bangkok-th', 'phuket-th', 'chiang-mai-th', 'singapore-sg', 'kuala-lumpur-my', 'hanoi-vn', 'ho-chi-minh-vn', 'jakarta-id', 'bali-id', 'manila-ph', 'mumbai-in', 'new-delhi-in', 'dubai-ae']
+              slugs: ['tokyo', 'kyoto', 'osaka', 'seoul', 'beijing', 'shanghai', 'hong-kong', 'taipei', 'bangkok', 'phuket', 'chiang-mai', 'singapore', 'kuala-lumpur', 'hanoi', 'ho-chi-minh', 'jakarta', 'bali', 'manila', 'mumbai', 'new-delhi', 'dubai']
             },
             {
               title: "North America",
               description: "Vibrant cities from coast to coast.",
-              slugs: ['new-york-us', 'los-angeles-us', 'san-francisco-us', 'miami-us', 'vancouver-ca', 'toronto-ca', 'mexico-city-mx']
+              slugs: ['new-york', 'los-angeles', 'san-francisco', 'miami', 'vancouver', 'toronto', 'mexico-city']
             },
             {
               title: "South America",
               description: "Passionate cultures and breathtaking landscapes.",
-              slugs: ['rio-de-janeiro-br', 'buenos-aires-ar', 'lima-pe', 'santiago-cl']
+              slugs: ['rio-de-janeiro', 'buenos-aires', 'lima', 'santiago']
             },
             {
               title: "Oceania",
               description: "Adventures down under and beyond.",
-              slugs: ['sydney-au', 'melbourne-au', 'auckland-nz']
+              slugs: ['sydney', 'melbourne', 'auckland']
             },
             {
               title: "Africa",
               description: "Diverse beauty from the Mediterranean to the Cape.",
-              slugs: ['cape-town-za', 'marrakech-ma']
+              slugs: ['cape-town', 'marrakech', 'zanzibar']
+            },
+            {
+              title: "Caribbean & Tropical Paradise",
+              description: "All-inclusive resorts and pristine beaches.",
+              slugs: ['cancun', 'punta-cana', 'nassau', 'san-juan', 'montego-bay', 'bora-bora', 'male', 'cartagena']
+            },
+            {
+              title: "Mediterranean Escapes",
+              description: "Sun-soaked coastlines and island getaways.",
+              slugs: ['palma-mallorca', 'nice', 'dubrovnik', 'santorini', 'las-palmas']
+            },
+            {
+              title: "Mountain & Adventure",
+              description: "Alpine peaks, skiing, and outdoor thrills.",
+              slugs: ['reykjavik', 'queenstown', 'innsbruck', 'interlaken', 'whistler']
+            },
+            {
+              title: "Exotic & Luxury Retreats",
+              description: "Ultimate honeymoon and premium getaways.",
+              slugs: ['bora-bora', 'male', 'ras-al-khaimah', 'zanzibar']
             }
           ].map((category) => {
             // Filter cities for this category and sort alphabetically by name

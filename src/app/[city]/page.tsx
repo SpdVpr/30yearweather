@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCityData } from "@/lib/data";
@@ -15,8 +16,6 @@ export async function generateMetadata({ params }: { params: { city: string } })
     const cityName = data.meta.name;
     const description = data.meta.desc || `Get accurate long-range weather forecasts for ${cityName} up to 365 days ahead. Based on 30 years of historical data. See rain probabilities, temperatures, and best months to visit ${cityName}.`;
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
-
     return {
         title: `${cityName} Weather Forecast - 365 Day Long-Range Forecast`,
         description: description,
@@ -27,45 +26,21 @@ export async function generateMetadata({ params }: { params: { city: string } })
         openGraph: {
             title: `${cityName} Weather Forecast - 365 Day Long-Range Forecast`,
             description: description,
-            images: [
-                {
-                    url: '/images/hero1-optimized.webp',
-                    width: 1200,
-                    height: 630,
-                    alt: `${cityName} Weather Forecast`,
-                }
-            ],
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title: `${cityName} Weather Forecast - 365 Day Long-Range Forecast`,
-            description: description,
-            images: ['/images/hero1-optimized.webp'],
         }
     };
 }
 
 // 2. JSON-LD Component
-const JsonLd = ({ data, slug }: { data: any, slug: string }) => {
+const JsonLd = ({ data, slug, faqStats }: { data: any, slug: string, faqStats: any[] }) => {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
 
-    // Breadcrumbs: Home > City
+    // Breadcrumbs
     const breadcrumbLd = {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-            {
-                '@type': 'ListItem',
-                position: 1,
-                name: 'Home',
-                item: baseUrl
-            },
-            {
-                '@type': 'ListItem',
-                position: 2,
-                name: data.meta.name,
-                item: `${baseUrl}/${slug}`
-            }
+            { '@type': 'ListItem', position: 1, name: 'Home', item: baseUrl },
+            { '@type': 'ListItem', position: 2, name: data.meta.name, item: `${baseUrl}/${slug}` }
         ]
     };
 
@@ -83,10 +58,45 @@ const JsonLd = ({ data, slug }: { data: any, slug: string }) => {
         url: `${baseUrl}/${slug}`
     };
 
+    // FAQ Schema
+    const hottest = faqStats.reduce((a, b) => a.avgTemp > b.avgTemp ? a : b);
+    const wettest = faqStats.reduce((a, b) => a.avgRain > b.avgRain ? a : b);
+
+    const faqLd = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+            {
+                '@type': 'Question',
+                name: `When is the hottest month in ${data.meta.name}?`,
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: `${hottest.name} is historically the hottest month with average highs of ${hottest.avgTemp}°C.`
+                }
+            },
+            {
+                '@type': 'Question',
+                name: `When does it rain the most in ${data.meta.name}?`,
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: `${wettest.name} has the highest rain probability (${wettest.avgRain}%).`
+                }
+            },
+            {
+                '@type': 'Question',
+                name: `What is the best time to visit ${data.meta.name}?`,
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: `Based on historical weather data, the best months are usually ${faqStats.filter(m => m.status.includes("Perfect") || m.status.includes("Pleasant")).map(m => m.name).slice(0, 3).join(", ") || "summer months"}.`
+                }
+            }
+        ]
+    };
+
     return (
         <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbLd, destinationLd]) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbLd, destinationLd, faqLd]) }}
         />
     );
 };
@@ -127,19 +137,24 @@ export default async function CityIndexPage({
         let status = "Neutral";
         let color = "stone";
 
-        if (avgTemp >= 20 && avgTemp <= 28 && avgRain < 30) {
+        if (avgTemp >= 20 && avgTemp <= 28 && avgRain < 25) {
             status = "✨ Perfect";
             color = "emerald";
+        } else if (avgTemp >= 15 && avgTemp <= 30 && avgRain < 35) {
+            status = "😊 Pleasant";
+            color = "teal";
         } else if (avgTemp < 5) {
             status = "❄️ Cold";
             color = "blue";
         } else if (avgRain > 40) {
             status = "🌧️ Rainy";
             color = "slate";
-        } else if (avgTemp > 28) {
+        } else if (avgTemp > 30) {
             status = "🔥 Hot";
             color = "orange";
         }
+
+        const monthNameSlug = format(new Date(2024, month - 1, 1), "MMMM").toLowerCase();
 
         return {
             monthNum: month,
@@ -148,17 +163,22 @@ export default async function CityIndexPage({
             avgRain,
             status,
             color,
-            link: `/${city}/${monthKey}` // Link to month calendar view
+            link: `/${city}/${monthNameSlug}`
         };
     });
+
+    // Helper for FAQ display
+    const hottest = monthlyStats.reduce((a, b) => a.avgTemp > b.avgTemp ? a : b);
+    const wettest = monthlyStats.reduce((a, b) => a.avgRain > b.avgRain ? a : b);
+    const bestMonths = monthlyStats.filter(m => m.status.includes("Perfect") || m.status.includes("Pleasant")).map(m => m.name);
 
     return (
         <div className="min-h-screen bg-stone-50 text-stone-900 pb-20">
             <CityPageTracker cityName={data.meta.name} citySlug={city} />
-            <JsonLd data={data} slug={city} />
+            <JsonLd data={data} slug={city} faqStats={monthlyStats} />
 
             {/* Navbar / Breadcrumb */}
-            <div className="bg-white border-b border-stone-200 px-6 py-4">
+            <div className="bg-white border-b border-stone-200 px-6 py-4 sticky top-0 z-30">
                 <div className="max-w-6xl mx-auto flex items-center gap-4">
                     <Link href="/" className="text-stone-500 hover:text-orange-600 transition-colors">
                         <ArrowLeft className="w-5 h-5" />
@@ -173,7 +193,6 @@ export default async function CityIndexPage({
                 <div className="mb-12">
                     <h2 className="text-4xl font-serif font-bold mb-4">When to visit {data.meta.name}?</h2>
                     <p className="text-lg text-stone-600 max-w-2xl">
-                        {/* Use the rich description here as well if available, falling back to static text */}
                         {data.meta.desc ? data.meta.desc : "We've analyzed 30 years of weather data to help you pick the perfect month. Below is the historical average for every month of the year."}
                     </p>
 
@@ -203,10 +222,6 @@ export default async function CityIndexPage({
                                     Our analysis of the last 30 years shows a clear warming trend for {data.meta.name}.
                                     Temperatures have risen by <span className="font-bold text-orange-700">+{data.yearly_stats.warming_trend}°C</span>
                                     when comparing the 1994-1998 average vs the 2020-2024 average.
-                                    <br />
-                                    <span className="text-sm opacity-80 mt-1 block">
-                                        * Our forecasts are weighted to prioritize this recent data (Smart Recency Weighting), giving you a more realistic outlook for 2025.
-                                    </span>
                                 </p>
                             </div>
                         </div>
@@ -247,6 +262,38 @@ export default async function CityIndexPage({
                             </Card>
                         </Link>
                     ))}
+                </div>
+
+                {/* FAQ Section (SEO Optimized) */}
+                <div className="mt-20 pt-12 border-t border-stone-200">
+                    <h2 className="text-3xl font-serif font-bold text-stone-900 mb-8">Frequently Asked Questions</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                        <div>
+                            <h3 className="font-bold text-lg text-stone-900 mb-2">When is the best time to visit {data.meta.name}?</h3>
+                            <p className="text-stone-600 leading-relaxed">
+                                Ideally, look for months with mild temperatures (20-25°C) and low rain chance.
+                                Based on historical data, {bestMonths.slice(0, 3).join(", ") || "summer months"} are usually great choices.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-lg text-stone-900 mb-2">When is the hottest month?</h3>
+                            <p className="text-stone-600 leading-relaxed">
+                                {hottest.name} is historically the hottest month in {data.meta.name} with average highs of {hottest.avgTemp}°C.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-lg text-stone-900 mb-2">Which month has the most rain?</h3>
+                            <p className="text-stone-600 leading-relaxed">
+                                {wettest.name} typically sees the highest probability of rain ({wettest.avgRain}%).
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-lg text-stone-900 mb-2">Is {data.meta.name} expensive?</h3>
+                            <p className="text-stone-600 leading-relaxed">
+                                Prices vary by season. The "Perfect" weather months usually coincide with peak tourist season and higher prices, while the rainy or cold months offer better deals.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>

@@ -12,6 +12,7 @@ interface AlternativeDate {
     tempMax: number;
     precipProb: number;
     improvement: number;   // vs current date
+    linkHref?: string;   // Optional override for clean URLs (e.g. /bali/july/18)
 }
 
 interface BetterAlternativesProps {
@@ -72,7 +73,7 @@ export default function BetterAlternatives({
                     {betterDates.map((alt, index) => (
                         <Link
                             key={alt.dateSlug}
-                            href={`/${citySlug}/${alt.dateSlug}`}
+                            href={alt.linkHref || `/${citySlug}/${alt.dateSlug}`}
                             className="block"
                         >
                             <motion.div

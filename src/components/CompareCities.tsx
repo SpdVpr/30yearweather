@@ -12,6 +12,7 @@ interface CityComparison {
     tempMax: number;
     precipProb: number;
     score: number;
+    linkHref?: string;
 }
 
 interface CompareCitiesProps {
@@ -66,7 +67,7 @@ export default function CompareCities({
                         return (
                             <Link
                                 key={city.citySlug}
-                                href={`/${city.citySlug}/${dateSlug}`}
+                                href={city.linkHref || `/${city.citySlug}/${dateSlug}`}
                                 className="block"
                             >
                                 <motion.div
