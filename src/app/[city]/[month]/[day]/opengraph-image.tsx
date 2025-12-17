@@ -97,7 +97,7 @@ export default async function Image({ params }: { params: { city: string; month:
                 <div style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    align Items: 'center',
+                    alignItems: 'center',
                     justifyContent: 'center',
                     zIndex: 10,
                     color: 'white',
