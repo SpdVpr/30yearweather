@@ -1,7 +1,9 @@
 import { ImageResponse } from 'next/og';
 import { getCityData } from '@/lib/data';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
-// Use nodejs runtime to allow file system access (works in production/Linux)
+// Use nodejs runtime to allow file system access
 export const runtime = 'nodejs';
 
 export const size = {
@@ -16,6 +18,21 @@ const MONTH_MAP: Record<string, string> = {
     july: '07', august: '08', september: '09', october: '10', november: '11', december: '12'
 };
 
+// Memoize font loading to avoid reading from disk on every request
+let fontBuffer: ArrayBuffer | null = null;
+function getFont() {
+    if (fontBuffer) return fontBuffer;
+    try {
+        const fontPath = join(process.cwd(), 'public', 'fonts', 'Inter-Bold.ttf');
+        const buffer = readFileSync(fontPath);
+        fontBuffer = buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength);
+        return fontBuffer;
+    } catch (e) {
+        console.error('Error loading local font:', e);
+        return null;
+    }
+}
+
 export default async function Image({ params }: { params: { city: string; month: string; day: string } }) {
     try {
         const { city, month, day } = params;
@@ -23,10 +40,7 @@ export default async function Image({ params }: { params: { city: string; month:
         const monthNum = MONTH_MAP[monthLower];
         const dayPad = day.toString().padStart(2, '0');
 
-        // Load font
-        const fontData = await fetch(
-            'https://raw.githubusercontent.com/vercel/satori/main/playground/public/inter-latin-ext-700-normal.woff'
-        ).then((res) => res.arrayBuffer()).catch(() => null);
+        const fontData = getFont();
 
         // Default error response style
         const errorStyle = {
