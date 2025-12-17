@@ -200,46 +200,22 @@ export async function getCityData(slug: string): Promise<CityData | null> {
 }
 
 export async function getAllCities(): Promise<string[]> {
-    // Return list of available city slugs
-    return [
-        // Europe (27 cities)
-        'prague', 'berlin', 'london', 'paris', 'rome',
-        'barcelona', 'vienna', 'zurich', 'athens',
-        'amsterdam', 'madrid', 'brussels',
-        'warsaw', 'budapest', 'lisbon',
-        'dublin', 'stockholm', 'copenhagen',
-        'oslo', 'helsinki', 'bratislava', 'istanbul',
-        'edinburgh', 'munich', 'venice', 'krakow', 'porto',
+    // Return list of available city slugs from public/data folder
+    try {
+        const dataDirectory = path.join(process.cwd(), 'public', 'data');
+        if (!fs.existsSync(dataDirectory)) {
+            console.warn('Data directory not found:', dataDirectory);
+            return [];
+        }
 
-        // Asia (20 cities)
-        'tokyo', 'seoul', 'beijing', 'shanghai', 'hong-kong', 'taipei',
-        'bangkok', 'singapore', 'kuala-lumpur', 'hanoi', 'ho-chi-minh',
-        'jakarta', 'bali', 'manila', 'mumbai', 'new-delhi',
-        'dubai', 'kyoto', 'osaka', 'phuket', 'chiang-mai',
+        const fileNames = fs.readdirSync(dataDirectory);
+        const slugs = fileNames
+            .filter(fileName => fileName.endsWith('.json'))
+            .map(fileName => fileName.replace(/\.json$/, ''));
 
-        // North America (7 cities)
-        'new-york', 'los-angeles', 'san-francisco', 'miami',
-        'vancouver', 'toronto', 'mexico-city',
-
-        // South America (4 cities)
-        'rio-de-janeiro', 'buenos-aires', 'lima', 'santiago',
-
-        // Oceania (3 cities)
-        'sydney', 'melbourne', 'auckland',
-
-        // Africa (2 cities)
-        'cape-town', 'marrakech',
-
-        // Caribbean & Central America (5 cities) - NEW!
-        'cancun', 'punta-cana', 'nassau', 'san-juan', 'montego-bay',
-
-        // Mediterranean Resorts (5 cities) - NEW!
-        'palma-mallorca', 'nice', 'dubrovnik', 'santorini', 'las-palmas',
-
-        // Mountain & Adventure (5 cities) - NEW!
-        'reykjavik', 'queenstown', 'innsbruck', 'interlaken', 'whistler',
-
-        // Exotic & Luxury (5 cities) - NEW!
-        'bora-bora', 'male', 'ras-al-khaimah', 'zanzibar', 'cartagena'
-    ];
+        return slugs;
+    } catch (error) {
+        console.error("Error getting all cities:", error);
+        return [];
+    }
 }

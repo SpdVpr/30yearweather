@@ -1,282 +1,128 @@
-# 🚀 OPTIMALIZOVANÝ NÁVOD - Import Nových Měst
+# 🚀 OFFICIAL WORKFLOW: Adding New Cities (v3.0)
 
-**Verze:** 2.0 (Prosinec 2024)  
-**Čas na 1 město:** ~2 minuty (s caching)  
-**Cíl:** Maximální rychlost, žádné zbytečné regenerace
-
----
-
-## 📋 RYCHLÝ CHECKLIST
-
-### Před zahájením
-- [ ] Máš připravené: název města, země, GPS souřadnice, ISO kód země, timezone
-- [ ] Rozhodl jsi se, jestli město je pobřežní (`is_coastal: true/false`)
-
-### Kroky
-1. [ ] Přidej město do `backend/config.py` (LOCATIONS)
-2. [ ] Přidej město do `src/lib/data.ts` (getAllCities)
-3. [ ] Přidej město na homepage `src/app/page.tsx` (kategorie)
-4. [ ] Spusť ETL s skip logikou (jen nová města!)
-5. [ ] (Volitelné) Vygeneruj hero obrázky
+**Version:** 3.0 (December 2024)  
+**Goal:** Consistent, high-quality, SEO-optimized weather pages for tourists.
 
 ---
 
-## 🎯 KROK ZA KROKEM
+## 📋 PRE-FLIGHT CHECKLIST
 
-### KROK 1: Backend Config (`backend/config.py`)
+Before adding a city, ensure you have:
+1.  **Correct Coordinates (CRITICAL):**
+    *   For **Beach Destinations (Bali, Phuket, etc.)**: Use coordinates for the *main tourist beach*, NOT the city center/airport.
+        *   *Bad:* Bali (Denpasar City) -> Rain data is wrong (inland mountains).
+        *   *Good:* Bali (Kuta Beach) -> Accurate beach weather.
+    *   For **Cities (Paris, London)**: Use the city center.
+2.  **Timezone:** Correct IANA string (e.g., `Asia/Bangkok`). Important for the Solar Elevation chart.
+3.  **Category:** Decide which homepage category fits best (Exotic, Mountains, etc.).
 
-**Otevři:** `backend/config.py`  
-**Najdi:** `LOCATIONS = {`  
-**Přidej město před poslední `}`:**
+---
+
+## 🎯 STEP-BY-STEP GUIDE
+
+### PHASE 1: Configuration (`backend/config.py`)
+
+1.  Open `backend/config.py`.
+2.  Add your new city to the `LOCATIONS` dictionary. Use this template:
 
 ```python
-    'new-york-us': {
-        "name": "New York",
-        "country": "United States",
-        "lat": 40.7128,
-        "lon": -74.0060,
-        "is_coastal": True,           # ⚠️ True pokud u moře!
-        "timezone": "America/New_York" # ⚠️ Důležité pro správné časy!
+    'city-slug': {
+        "name": "City Name",
+        "country": "Country Name",
+        "lat": 0.0000,      # Check Google Maps (Right click -> Coordinates)
+        "lon": 0.0000,
+        "is_coastal": True, # True = Download Marine Data (water temp, waves)
+        "timezone": "Region/City", # VITAL for sun position accuracy!
+        # Optional:
+        "desc": "Custom SEO description overrides default generation." 
     },
 ```
 
-**💡 Tipy:**
-- GPS najdeš na Google Maps (klikni pravým tlačítkem)
-- Timezone: https://timeapi.io/time-zones
-- is_coastal: True pokud je město do 50km od moře
+---
+
+### PHASE 2: Data Generation (ETL)
+
+The ETL pipeline downloads raw data (cached) and processes it into the JSON format the frontend needs.
+
+1.  **Run the ETL script:**
+    ```bash
+    # From root directory
+    python backend/etl.py
+    ```
+
+2.  **How it works:**
+    *   It checks `backend/data/raw_weather/`. If raw data exists, it uses it (Fast).
+    *   If not, it downloads 30 years of history from Open-Meteo (Slow).
+    *   It calculates stats using **Smart Tourism Logic** (Rain threshold > 3.0mm, weighted recency).
+    *   Output is saved to `public/data/[slug].json`.
+
+    > **⚡ TIP:** If you changed coordinates for an existing city, you MUST delete its raw cache first to force a re-download!
+    > `del backend\data\raw_weather\city-slug_raw.json`
 
 ---
 
-### KROK 2: Frontend Cities (`src/lib/data.ts`)
+### PHASE 3: Frontend Registration
 
-**Otevři:** `src/lib/data.ts`  
-**Najdi:** `export async function getAllCities()`  
-**Přidej slug do správné kategorie:**
+Next.js needs to know about the city to build the pages and display it on the homepage.
 
-```typescript
-// North America (7 cities)
-'new-york-us', 'los-angeles-us', ...
-```
+1.  **Register usage (`src/lib/data.ts`):**
+    *   Add the `slug` to the `getAllCities()` list inside the correct region comment block.
+    *   *Why?* This tells Next.js to generate static pages (`[city]/page.tsx`) during build.
 
-**⚠️ Důležité:** Bez tohoto kroku se město NEOBJEVÍ na homepage!
-
----
-
-### KROK 3: Homepage Categories (`src/app/page.tsx`)
-
-**Otevři:** `src/app/page.tsx`  
-**Najdi řádek ~260:** `{/* Categorized City Lists */}`  
-**Přidej slug do příslušné kategorie:**
-
-```typescript
-{
-  title: "North America",
-  description: "Vibrant cities from coast to coast.",
-  slugs: ['new-york-us', 'los-angeles-us', ...] // <- Přidej sem
-}
-```
-
-**A TAKÉ aktualizuj isPng pole (řádek ~300):**
-
-```typescript
-const isPng = [
-  // ...existing cities...
-  'new-york-us', // <- Přidej nové město pokud má PNG obrázek
-].includes(city.slug);
-```
+2.  **Add to Homepage (`src/app/page.tsx`):**
+    *   Find the `categorizedCities` array.
+    *   Add the `slug` to the `slugs` array of the appropriate section (e.g., "Exotic & Tropical").
 
 ---
 
-### KROK 4: Spusť ETL se Skip Logikou ⚡
+### PHASE 4: Assets (Images)
 
-**⚠️ DŮLEŽITÁ ZMĚNA:** ETL nyní automaticky přeskakuje existující města!
+Every city needs a high-quality Hero image.
 
-**Jak to funguje:**
-- Před zpracováním každého města zkontroluje: `public/data/{slug}.json`
-- Pokud soubor EXISTUJE → přeskočí ⏭️
-- Pokud soubor NEEXISTUJE → zpracuje 🔄
-
-**Spuštění:**
-```bash
-cd backend
-.\venv\Scripts\python etl.py
-```
-
-**Co se stane:**
-```
-📍 Processing New York (new-york-us)
-   🌐 Fetching weather data...  ✅
-   ✅ Data saved
-
-📍 Processing Prague (prague-cz)
-   ⏭️  SKIPPED - Data already exists (last modified: 2024-12-17)
-
-📍 Processing Sydney (sydney-au)
-   🌐 Fetching weather data...  ✅
-   ✅ Data saved
-```
-
-**Force regenerace všech měst:**
-```bash
-# Smaž raw cache aby se stáhlo znovu
-rm backend/data/raw_weather/new-york-us_raw.json
-
-# Nebo smaž finální output
-rm public/data/new-york-us.json
-
-# Pak spusť ETL normálně
-python etl.py
-```
+1.  **Generate Image:**
+    *   Use Midjourney/DALL-E.
+    *   **Prompt:** `"Beautiful cinematic shot of [City/Beach], sunny day, photorealistic, 8k --ar 16:9"`
+2.  **Save File:**
+    *   Path: `public/images/[slug]-hero.png` (or `.webp`).
+    *   Example: `public/images/oslo-hero.webp`.
+3.  **Optimize (Optional but Recommended):**
+    *   If you saved as PNG, run our optimizer script:
+    ```bash
+    python convert_heroes_to_webp.py
+    ```
+    *   This automatically converts all PNGs to optimized WebP.
 
 ---
 
-### KROK 5: Hero Obrázky (Volitelné)
+### PHASE 5: Validation & Navigation
 
-**Vygeneruj AI obrázek pro město:**
-
-**Prompt:**
-```
-Cinematic cityscape photo of [CITY NAME], iconic landmarks visible, 
-golden hour lighting, warm tones, premium travel photography, 8k resolution,
-professional composition, vibrant colors
-```
-
-**Ulož jako:**
-```
-public/images/{slug}-hero.png
-```
-
-**Příklad:** `public/images/new-york-us-hero.png`
-
-**💡 Tip:** Použij Midjourney, DALL-E nebo Stable Diffusion
+1.  **Run Dev Server:**
+    ```bash
+    npm run dev
+    ```
+2.  **Check the URL:** Go to `http://localhost:3000/city-slug`.
+    *   Does the rainfall looking realistic? (If too high for a dry season, check coords).
+    *   Is the "Verdict" accurate?
+    *   Does the Solar Chart show high noon correctly? (If skewed, check Timezone).
+3.  **Check Sitemap:** The new city should appear at `http://localhost:3000/sitemaps/city-slug.xml`.
 
 ---
 
-## 🔧 AUTOMATIZACE PRO BULK IMPORT
+## 🔧 TROUBLESHOOTING
 
-Pokud přidáváš více měst najednou (5+), použij helper skripty:
+**Problem:** "The rain probability seems way too high for Bali in August!"
+**Fix:** You likely used **inland** coordinates (mountains/rainforest). Change `config.py` to use a coastal point (e.g., Kuta Beach), delete raw cache, and re-run ETL.
 
-### Helper: Patch Config Cities
-```bash
-# Použij připravený skript který přidá město do config.py
-python patch_config_cities.py
-```
+**Problem:** "Sun graph shows high noon at 6 AM."
+**Fix:** The `timezone` in `config.py` is wrong. Update it to the correct IANA string (e.g., `Asia/Makassar` for Bali, not `Asia/Jakarta`).
 
-Nebo vytvořit vlastní seznam měst:
-
-```python
-NEW_CITIES = {
-    'your-city-slug': {
-        "name": "Your City",
-        "country": "Country",
-        "lat": 0.0,
-        "lon": 0.0,
-        "is_coastal": False,
-        "timezone": "Timezone/Name"
-    }
-}
-```
+**Problem:** "Image is missing on the card."
+**Fix:** Ensure the filename matches `[slug]-hero.webp` exactly in `public/images`.
 
 ---
 
-## 📊 SKIP LOGIKA - JAK FUNGUJE
-
-### Co kontroluje ETL:
-
-1. **Existuje `public/data/{slug}.json`?**
-   - ANO → ⏭️ SKIP
-   - NE → 🔄 ZPRACUJ
-
-2. **Existuje `backend/data/raw_weather/{slug}_raw.json`?**
-   - ANO → ✅ Použij cache (nesta huj znovu)
-   - NE → 📥 Stáhni z API
-
-### Kdy se regeneruje:
-
-- ❌ **NIKDY automaticky** - ETL přeskočí existující města
-- ✅ **Pouze pokud:**
-  - Smažeš `public/data/{slug}.json`
-  - Nebo smažeš `backend/data/raw_weather/{slug}_raw.json`
-
-### Výhody:
-
-- ⚡ **10x rychlejší** - zpracuje jen nová města
-- 💾 **Šetří bandwidth** - používá cachované raw data
-- 🛡️ **Bezpečné** - neničí existující data
-- 🎯 **Přesné** - vždy vidíš co se zpracovává
-
----
-
-## 🚨 TROUBLESHOOTING
-
-### Město se neobjevuje na homepage
-✅ **Fix:** Zkontroluj že je v `src/lib/data.ts` a `src/app/page.tsx`
-
-### ETL říká "SKIPPED" ale já chci regenerovat
-✅ **Fix:** Smaž `public/data/{slug}.json` a spusť znovu
-
-### Chybí marine data u pobřežního města
-✅ **Fix:** Zkontroluj že má `is_coastal: True` v config.py
-
-### Obrázek se nenačítá
-✅ **Fix:** Zkontroluj že je v `isPng` poli na homepage nebo změň na .webp
-
----
-
-## 📝 TEMPLATE PRO NOVÉ MĚSTO
-
-```python
-# backend/config.py
-'city-slug-cc': {
-    "name": "City Name",
-    "country": "Country Name",
-    "lat": 0.0000,
-    "lon": 0.0000,
-    "is_coastal": False,  # True/False
-    "timezone": "Continent/City"
-},
-```
-
-```typescript
-// src/lib/data.ts - přidej do správné kategorie
-'city-slug-cc',
-
-// src/app/page.tsx - přidej do kategorie
-slugs: ['city-slug-cc', ...]
-
-// src/app/page.tsx - přidej do isPng pokud má PNG
-'city-slug-cc',
-```
-
----
-
-## ⏱️ ČASOVÉ ODHADY
-
-| Aktivita | Čas | Note |
-|----------|-----|------|
-| Přidání do config.py | 2 min | Copy-paste + úprava |
-| Přidání do frontend | 3 min | 2 soubory |
-| ETL 1 nového města | 2-5 min | S caching |
-| ETL 10 nových měst | 20-50 min | Paralelně |
-| Vygenerování obrázků | 5-10 min/město | AI generování |
-
-**Celkem pro 1 město:** ~10-20 minut (včetně testování)
-
----
-
-## ✅ HOTOVO!
-
-Po dokončení těchto kroků:
-- ✅ Město se objeví na homepage
-- ✅ Město má svou stránku `/city-slug`
-- ✅ Město má data pro všech 365 dní
-- ✅ Město má bezpečnostní analýzu
-- ✅ Pobřežní města mají marine data
-
-**Otestuj:** `http://localhost:3005/city-slug`
-
----
-
-**Vytvořeno:** 17. prosince 2024  
-**Autor:** 30YearWeather Team  
-**Další update:** Při změnách v ETL procesu
+**Summary for Success:**
+1. Config (Correct Coords!)
+2. ETL (Run Python)
+3. Frontend (Register Slug)
+4. Images (WebP)

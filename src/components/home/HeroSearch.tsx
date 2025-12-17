@@ -49,11 +49,13 @@ export default function HeroSearch({ cities }: HeroSearchProps) {
     const handleSearch = () => {
         if (!selectedCity) return;
 
-        // Format date MM-DD
-        const m = month.padStart(2, '0');
-        const d = day.padStart(2, '0');
+        // Get month name (lowercase)
+        const monthIndex = parseInt(month) - 1;
+        const date = new Date(2024, monthIndex, 1);
+        const monthName = date.toLocaleString('en-US', { month: 'long' }).toLowerCase();
 
-        router.push(`/${selectedCity.slug}/${m}-${d}`);
+        // Navigate to /city/month/day (e.g. /bali/december/17)
+        router.push(`/${selectedCity.slug}/${monthName}/${day}`);
     };
 
     const daysInMonth = 31;
