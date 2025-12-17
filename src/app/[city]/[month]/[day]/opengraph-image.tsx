@@ -1,16 +1,8 @@
 import { ImageResponse } from 'next/og';
-import { getCityData } from '@/lib/data';
-import { readFileSync } from 'fs';
-import { join } from 'path';
 
-// Use nodejs runtime to allow file system access
-export const runtime = 'nodejs';
-
-export const size = {
-    width: 1200,
-    height: 630,
-};
-
+export const runtime = 'edge';
+export const alt = 'Historical Weather Analysis';
+export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 const MONTH_MAP: Record<string, string> = {
@@ -18,172 +10,106 @@ const MONTH_MAP: Record<string, string> = {
     july: '07', august: '08', september: '09', october: '10', november: '11', december: '12'
 };
 
-// Memoize font loading to avoid reading from disk on every request
-let fontBuffer: ArrayBuffer | null = null;
-function getFont() {
-    if (fontBuffer) return fontBuffer;
-    try {
-        const fontPath = join(process.cwd(), 'public', 'fonts', 'Inter-Bold.ttf');
-        const buffer = readFileSync(fontPath);
-        fontBuffer = buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength);
-        return fontBuffer;
-    } catch (e) {
-        console.error('Error loading local font:', e);
-        return null;
-    }
-}
-
 export default async function Image({ params }: { params: { city: string; month: string; day: string } }) {
+    const { city, month, day } = params;
+    const monthLower = month.toLowerCase();
+    const monthNum = MONTH_MAP[monthLower];
+    const dayPad = day.padStart(2, '0');
+
     try {
-        const { city, month, day } = params;
-        const monthLower = month.toLowerCase();
-        const monthNum = MONTH_MAP[monthLower];
-        const dayPad = day.toString().padStart(2, '0');
+        // Use an absolute URL for fetching data in Edge runtime
+        const baseUrl = 'https://www.30yearweather.com';
 
-        const fontData = getFont();
+        // Fetch font and data in parallel
+        const [fontRes, dataRes] = await Promise.all([
+            fetch('https://raw.githubusercontent.com/google/fonts/main/ofl/inter/static/Inter-Bold.ttf'),
+            fetch(`${baseUrl}/data/${city}.json`)
+        ]);
 
-        // Default error response style
-        const errorStyle = {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-            height: '100%',
-            backgroundColor: '#0f172a',
-            color: '#cbd5e1',
-            fontSize: 48,
-            fontWeight: 'bold',
-            fontFamily: 'sans-serif',
-        };
-
-        if (!monthNum) {
-            return new ImageResponse(
-                <div style={errorStyle}>Date not found</div>, { ...size }
-            );
+        if (!fontRes.ok || !dataRes.ok) {
+            throw new Error(`Failed to fetch: font=${fontRes.status}, data=${dataRes.status}`);
         }
 
-        const data = await getCityData(city);
-        if (!data) {
-            return new ImageResponse(
-                <div style={errorStyle}>City not found</div>, { ...size }
-            );
-        }
+        const [fontData, data] = await Promise.all([
+            fontRes.arrayBuffer(),
+            dataRes.ok ? dataRes.json() : null
+        ]);
 
-        const dateKey = `${monthNum}-${dayPad}`;
-        const dayData = data.days[dateKey];
+        if (!data || !data.days) throw new Error('Data structure invalid or city not found');
 
-        if (!dayData) {
-            return new ImageResponse(
-                <div style={errorStyle}>Data not found</div>, { ...size }
-            );
-        }
+        const dayData = data.days[`${monthNum}-${dayPad}`];
+        if (!dayData) throw new Error('No data for this specific day');
 
-        // Stats
         const tempMax = Math.round(dayData.stats.temp_max);
         const tempMin = Math.round(dayData.stats.temp_min);
         const precipProb = dayData.stats.precip_prob;
         const cityName = data.meta.name;
-        const formattedDate = `${monthLower.charAt(0).toUpperCase() + monthLower.slice(1)} ${day}`;
+        const formattedDate = `${month.charAt(0).toUpperCase() + month.slice(1)} ${day}`;
 
-        // Use gradient background
         return new ImageResponse(
             (
-                <div
-                    style={{
-                        height: '100%',
-                        width: '100%',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
-                        position: 'relative',
-                        fontFamily: '"Inter"',
-                    }}
-                >
-                    {/* Gradient Overlay for depth */}
-                    <div style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        background: 'radial-gradient(circle at 30% 50%, rgba(16, 185, 129, 0.1), transparent 50%)',
-                    }} />
-
-                    <div style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        zIndex: 10,
-                        color: 'white',
-                        textAlign: 'center',
-                        padding: '60px',
-                    }}>
-                        <div style={{
-                            fontSize: 28,
-                            textTransform: 'uppercase',
-                            letterSpacing: '6px',
-                            marginBottom: 30,
-                            color: '#6EE7B7',
-                            fontWeight: 600
-                        }}>
-                            Historical Weather Analysis
+                <div style={{
+                    height: '100%',
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: '#0f172a',
+                    color: 'white',
+                    fontFamily: 'Inter',
+                    padding: '60px',
+                    textAlign: 'center',
+                }}>
+                    <div style={{ fontSize: 32, color: '#10b981', marginBottom: 20, fontWeight: 700 }}>HISTORICAL WEATHER</div>
+                    <div style={{ fontSize: 72, fontWeight: 900, marginBottom: 50 }}>{cityName} • {formattedDate}</div>
+                    <div style={{ display: 'flex', gap: 100 }}>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ fontSize: 24, opacity: 0.6, marginBottom: 10 }}>HIGH</div>
+                            <div style={{ fontSize: 90, fontWeight: 900 }}>{tempMax}°</div>
                         </div>
-                        <div style={{
-                            fontSize: 68,
-                            fontWeight: 900,
-                            maxWidth: '1000px',
-                            lineHeight: 1.1,
-                            marginBottom: 40
-                        }}>
-                            Is {formattedDate} a Good Time to Visit {cityName}?
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ fontSize: 24, opacity: 0.6, marginBottom: 10 }}>LOW</div>
+                            <div style={{ fontSize: 90, fontWeight: 900, color: '#3b82f6' }}>{tempMin}°</div>
                         </div>
-
-                        <div style={{ display: 'flex', gap: '100px', marginTop: 50 }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                <span style={{ fontSize: 90, fontWeight: 800, color: '#10b981' }}>{tempMax}°</span>
-                                <span style={{ fontSize: 30, opacity: 0.8, textTransform: 'uppercase', letterSpacing: '3px' }}>High</span>
-                            </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                <span style={{ fontSize: 90, fontWeight: 800, color: '#3b82f6' }}>{tempMin}°</span>
-                                <span style={{ fontSize: 30, opacity: 0.8, textTransform: 'uppercase', letterSpacing: '3px' }}>Low</span>
-                            </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                <span style={{ fontSize: 90, fontWeight: 800, color: '#06b6d4' }}>{precipProb}%</span>
-                                <span style={{ fontSize: 30, opacity: 0.8, textTransform: 'uppercase', letterSpacing: '3px' }}>Rain</span>
-                            </div>
-                        </div>
-
-                        <div style={{
-                            marginTop: 60,
-                            fontSize: 22,
-                            opacity: 0.7,
-                            letterSpacing: '2px'
-                        }}>
-                            30YearWeather.com • Based on 30 years of data
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ fontSize: 24, opacity: 0.6, marginBottom: 10 }}>RAIN</div>
+                            <div style={{ fontSize: 90, fontWeight: 900, color: '#06b6d4' }}>{precipProb}%</div>
                         </div>
                     </div>
+                    <div style={{ marginTop: 60, fontSize: 24, opacity: 0.4 }}>30yearweather.com</div>
                 </div>
             ),
             {
                 ...size,
-                fonts: fontData ? [
-                    { name: 'Inter', data: fontData, style: 'normal' as const, weight: 400 as const },
-                    { name: 'Inter', data: fontData, style: 'normal' as const, weight: 600 as const },
-                    { name: 'Inter', data: fontData, style: 'normal' as const, weight: 800 as const },
-                    { name: 'Inter', data: fontData, style: 'normal' as const, weight: 900 as const },
-                ] : [],
-                emoji: 'twemoji',
+                fonts: [{
+                    name: 'Inter',
+                    data: fontData,
+                    style: 'normal',
+                    weight: 700,
+                }]
             }
         );
     } catch (e) {
-        console.error(e);
+        console.error('OG Image Generation Error:', e);
+        // Minimal fallback that doesn't need external resources
         return new ImageResponse(
-            <div style={{ color: 'white', background: 'black', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                Error generating image
-            </div>,
+            (
+                <div style={{
+                    height: '100%',
+                    width: '100%',
+                    background: '#0f172a',
+                    color: 'white',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}>
+                    <div style={{ fontSize: 80, fontWeight: 900 }}>30YearWeather</div>
+                    <div style={{ fontSize: 40, marginTop: 20, opacity: 0.7 }}>{city.toUpperCase()} • {month.toUpperCase()} {day}</div>
+                    <div style={{ fontSize: 20, marginTop: 40, opacity: 0.3 }}>Weather for any day, based on 30 years of data</div>
+                </div>
+            ),
             { ...size }
         );
     }
