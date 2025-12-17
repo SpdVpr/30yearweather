@@ -47,6 +47,18 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     return {
         title: `${cityName} Weather on ${formattedDate}: Is it a good time to visit?`,
         description: `Planning to visit ${cityName} on ${formattedDate}? Historical data shows ${tempAvg}°C, ${dayData.stats.precip_prob}% rain risk. See full report.`,
+        openGraph: {
+            title: `${cityName} Weather on ${formattedDate}`,
+            description: `Historical data shows ${tempAvg}°C, ${dayData.stats.precip_prob}% rain risk.`,
+            type: 'website',
+            locale: 'en_US',
+            siteName: '30YearWeather',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${cityName} Weather on ${formattedDate}`,
+            description: `Historical data: ${tempAvg}°C, ${dayData.stats.precip_prob}% rain risk.`,
+        },
         alternates: {
             canonical: `/${city}/${monthLower}/${day}`,
         }
