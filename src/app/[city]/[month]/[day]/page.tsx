@@ -53,11 +53,20 @@ export async function generateMetadata({ params }: { params: { city: string; mon
             type: 'website',
             locale: 'en_US',
             siteName: '30YearWeather',
+            images: [
+                {
+                    url: `/images/${city}-hero.webp`,
+                    width: 1200,
+                    height: 630,
+                    alt: `${cityName} Skyline`,
+                },
+            ],
         },
         twitter: {
             card: 'summary_large_image',
             title: `${cityName} Weather on ${formattedDate}`,
             description: `Historical data: ${tempAvg}°C, ${dayData.stats.precip_prob}% rain risk.`,
+            images: [`/images/${city}-hero.webp`],
         },
         alternates: {
             canonical: `/${city}/${monthLower}/${day}`,
