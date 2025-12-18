@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Search, Calendar, MapPin, ChevronDown, CalendarDays } from "lucide-react";
+import Link from "next/link";
+import { Search, Calendar, MapPin, ChevronDown, CalendarDays, Sparkles } from "lucide-react";
 
 interface CityOption {
     slug: string;
@@ -184,6 +185,20 @@ export default function HeroSearch({ cities }: HeroSearchProps) {
                     <span>Search</span>
                 </button>
 
+            </div>
+
+            <div className="mt-6 flex justify-center">
+                <Link
+                    href="/finder"
+                    className="group flex items-center gap-3 px-5 py-2.5 bg-slate-900/60 hover:bg-slate-900/80 backdrop-blur-md border border-white/10 rounded-full transition-all hover:scale-105 hover:shadow-lg hover:shadow-orange-500/20"
+                >
+                    <div className="bg-orange-500/20 p-1.5 rounded-full group-hover:bg-orange-500/30 transition-colors">
+                        <Sparkles className="w-4 h-4 text-orange-400 group-hover:text-orange-300 animate-pulse" />
+                    </div>
+                    <span className="text-white text-sm font-medium">
+                        Not sure where to go? <span className="text-orange-300 font-bold group-hover:text-orange-200 ml-1">Try Smart Finder</span>
+                    </span>
+                </Link>
             </div>
         </div>
     );
