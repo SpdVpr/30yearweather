@@ -6,6 +6,7 @@ import WeatherDashboard from "@/components/WeatherDashboard";
 import DayVerdict from "@/components/DayVerdict";
 import { format } from "date-fns";
 import type { Metadata } from 'next';
+import Link from "next/link";
 import DatePageTracker from "@/components/DatePageTracker";
 import SwipeNavigation from "@/components/SwipeNavigation";
 
@@ -210,13 +211,43 @@ export default async function CityDayPage({
                         {
                             "@context": "https://schema.org",
                             "@type": "WeatherForecast",
-                            "name": `${data.meta.name} ${day} ${monthDisplay} Historical Weather`,
+                            "name": `${data.meta.name} Weather on ${monthDisplay} ${day}`,
+                            "url": `https://30yearweather.com/${city}/${monthLower}/${day}`,
                             "temperature": `${dayData.stats.temp_max}°C`,
                             "precipitationProbability": (dayData.stats.precip_prob / 100).toFixed(2),
                             "dateIssued": `2025-${monthNum}-${dayPad}`,
+                            "about": {
+                                "@type": "Place",
+                                "name": data.meta.name,
+                                "address": {
+                                    "@type": "PostalAddress",
+                                    "addressCountry": data.meta.country || "Global"
+                                }
+                            },
                             "dataSource": {
                                 "@type": "Dataset",
                                 "name": "NASA POWER 1991-2021"
+                            },
+                            "mainEntity": {
+                                "@type": "FAQPage",
+                                "mainEntity": [
+                                    {
+                                        "@type": "Question",
+                                        "name": `What is the weather in ${data.meta.name} on ${monthDisplay} ${day}?`,
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": `Historically, on ${monthDisplay} ${day}, ${data.meta.name} averages a high of ${dayData.stats.temp_max}°C and a low of ${dayData.stats.temp_min}°C. The probability of rain is ${dayData.stats.precip_prob}%.`
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": `Does it snow in ${data.meta.name} on ${monthDisplay} ${day}?`,
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": dayData.stats.temp_min > 2 ? `No, historically it is too warm for snow in ${data.meta.name} on this date.` : `While rare, temperatures have occasionally dropped low enough for wintry conditions in the past.`
+                                        }
+                                    }
+                                ]
                             }
                         },
                         {
@@ -228,70 +259,73 @@ export default async function CityDayPage({
                                 { "@type": "ListItem", "position": 3, "name": monthDisplay, "item": `https://30yearweather.com/${city}/${monthLower}` },
                                 { "@type": "ListItem", "position": 4, "name": day.toString(), "item": `https://30yearweather.com/${city}/${monthLower}/${day}` }
                             ]
-                        },
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "FAQPage",
-                            "mainEntity": [
-                                {
-                                    "@type": "Question",
-                                    "name": `What is the weather in ${data.meta.name} on ${monthDisplay} ${day}?`,
-                                    "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": `Historically, on ${monthDisplay} ${day}, ${data.meta.name} averages a high of ${dayData.stats.temp_max}°C and a low of ${dayData.stats.temp_min}°C. The probability of rain is ${dayData.stats.precip_prob}%.`
-                                    }
-                                },
-                                {
-                                    "@type": "Question",
-                                    "name": `Is it a good time to visit ${data.meta.name} on ${monthDisplay} ${day}?`,
-                                    "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": `Our wedding/event reliability score for this date is ${dayData.scores.wedding}/100. ${verdict === 'YES' ? 'It is an excellent time with stable conditions.' : verdict === 'NO' ? 'Conditions can be unpredictable; consider indoor alternatives.' : 'Conditions are moderate.'}`
-                                    }
-                                }
-                            ]
                         }
                     ])
                 }}
             />
 
-            <CityHero
-                city={data.meta.name}
-                citySlug={city}
-                date={formattedDate}
-                tempMax={dayData.stats.temp_max}
-                tempMin={dayData.stats.temp_min}
-                precipProb={dayData.stats.precip_prob}
-                dateSlug={dateKey} // Keeping MM-DD for internal logic if needed
-                windKmh={dayData.stats.wind_kmh}
-                humidity={dayData.stats.humidity_percent}
-            />
+            <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto">
+                <div itemProp="articleBody">
+                    {/* Add more context in intro for SEO/AI as requested */}
+                    <div className="bg-white border-b border-slate-100 px-6 py-8">
+                        <p className="text-slate-600 leading-relaxed text-lg max-w-4xl">
+                            Planning a trip to <strong>{data.meta.name}</strong> on <strong>{monthDisplay} {day}</strong>?
+                            Our historical weather analysis based on 30 years of NASA satellite data shows that
+                            {monthDisplay} typically offers {dayData.stats.temp_max > 25 ? 'vibrant summer conditions' : dayData.stats.temp_max > 15 ? 'pleasant mild weather' : 'bracing seasonal atmosphere'}
+                            averaging {dayData.stats.temp_max}°C with a {dayData.stats.precip_prob}% historical precipitation risk.
+                            Explore our detailed breakdown below to plan your visit with data-backed confidence.
+                        </p>
 
-            <DayVerdict
-                score={dayData.scores.wedding}
-                precipProb={dayData.stats.precip_prob}
-                city={data.meta.name}
-                month={format(dateObj, "MMMM")}
-                day={dateObj.getDate()}
-                tempMax={dayData.stats.temp_max}
-                humidity={dayData.stats.humidity_percent || 0}
-                citySlug={city}
-                monthSlug={monthLower}
-            />
+                        {/* Internal links for SEO hierarchy */}
+                        <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium">
+                            <Link href={`/${city}`} className="text-orange-600 hover:underline">Best Time to Visit {data.meta.name}</Link>
+                            <span className="text-slate-300">|</span>
+                            <Link href={`/${city}/${monthLower}`} className="text-orange-600 hover:underline">{monthDisplay} Weather in {data.meta.name}</Link>
+                            <span className="text-slate-300">|</span>
+                            <Link href="/#cities" className="text-orange-600 hover:underline">Compare Destinations</Link>
+                        </div>
+                    </div>
 
-            <WeatherDashboard
-                dayData={dayData}
-                lat={data.meta.lat}
-                lon={data.meta.lon}
-                dateId={dateKey}
-                citySlug={city}
-                cityName={data.meta.name}
-                geoInfo={data.meta.geo_info}
-                safetyProfile={data.meta.safety_profile}
-                timezoneOffset={calculatedOffset}
-                alternativeDates={alternativeDates} // Contains new linkHref property?
-                cityComparisons={cityComparisons}
-            />
+                    <CityHero
+                        city={data.meta.name}
+                        citySlug={city}
+                        date={formattedDate}
+                        tempMax={dayData.stats.temp_max}
+                        tempMin={dayData.stats.temp_min}
+                        precipProb={dayData.stats.precip_prob}
+                        dateSlug={dateKey} // Keeping MM-DD for internal logic if needed
+                        windKmh={dayData.stats.wind_kmh}
+                        humidity={dayData.stats.humidity_percent}
+                        imageAlt={`${data.meta.name} street view during ${monthDisplay}`}
+                    />
+
+                    <DayVerdict
+                        score={dayData.scores.wedding}
+                        precipProb={dayData.stats.precip_prob}
+                        city={data.meta.name}
+                        month={format(dateObj, "MMMM")}
+                        day={dateObj.getDate()}
+                        tempMax={dayData.stats.temp_max}
+                        humidity={dayData.stats.humidity_percent || 0}
+                        citySlug={city}
+                        monthSlug={monthLower}
+                    />
+
+                    <WeatherDashboard
+                        dayData={dayData}
+                        lat={data.meta.lat}
+                        lon={data.meta.lon}
+                        dateId={dateKey}
+                        citySlug={city}
+                        cityName={data.meta.name}
+                        geoInfo={data.meta.geo_info}
+                        safetyProfile={data.meta.safety_profile}
+                        timezoneOffset={calculatedOffset}
+                        alternativeDates={alternativeDates} // Contains new linkHref property?
+                        cityComparisons={cityComparisons}
+                    />
+                </div>
+            </article>
         </SwipeNavigation>
     );
 }

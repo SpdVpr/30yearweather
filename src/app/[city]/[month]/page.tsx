@@ -48,7 +48,10 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     return {
         title: `${cityName} ${monthDisplay} Weather Forecast | ${avgMax}°C, ${avgRain}% Rain | 30 Years NASA Data`,
         description: `Planning to visit ${cityName} in ${monthDisplay}? Historical weather data shows average highs of ${avgMax}°C and ${avgRain}% precipitation risk. Explore daily 30-year averages.`,
-        keywords: [`${cityName} in ${monthLower}`, `${cityName} weather ${monthLower}`, `visiting ${cityName} in ${monthLower}`, `what to wear in ${cityName} in ${monthLower}`]
+        keywords: [`${cityName} in ${monthLower}`, `${cityName} weather ${monthLower}`, `visiting ${cityName} in ${monthLower}`, `what to wear in ${cityName} in ${monthLower}`],
+        alternates: {
+            canonical: `/${city}/${monthLower}`,
+        }
     };
 }
 
@@ -174,104 +177,115 @@ export default async function CityMonthPage({ params }: { params: { city: string
                 </div>
             </div>
 
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+            <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+                <div itemProp="articleBody">
 
-                {/* 1. KEY STATS CARDS */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                    {/* Temperature */}
-                    <Card className="ring-1 ring-slate-200 shadow-sm p-6 bg-gradient-to-br from-white to-slate-50">
-                        <div className="flex items-start justify-between mb-4">
-                            <div className="p-2 bg-orange-100 rounded-lg text-orange-600">
-                                <Thermometer className="w-6 h-6" />
+                    {/* 1. KEY STATS CARDS */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                        {/* Temperature */}
+                        <Card className="ring-1 ring-slate-200 shadow-sm p-6 bg-gradient-to-br from-white to-slate-50">
+                            <div className="flex items-start justify-between mb-4">
+                                <div className="p-2 bg-orange-100 rounded-lg text-orange-600">
+                                    <Thermometer className="w-6 h-6" />
+                                </div>
+                                <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Temperature</span>
                             </div>
-                            <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Temperature</span>
-                        </div>
-                        <div className="flex items-end gap-2">
-                            <span className="text-4xl font-bold text-slate-800">{avgMax}°</span>
-                            <span className="text-lg text-slate-500 mb-1">/ {avgMin}°</span>
-                        </div>
-                        <p className="text-sm text-slate-600 mt-2">
-                            Average daytime high vs nighttime low.
-                        </p>
-                    </Card>
-
-                    {/* Rain */}
-                    <Card className="ring-1 ring-slate-200 shadow-sm p-6 bg-gradient-to-br from-white to-slate-50">
-                        <div className="flex items-start justify-between mb-4">
-                            <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
-                                <CloudRain className="w-6 h-6" />
+                            <div className="flex items-end gap-2">
+                                <span className="text-4xl font-bold text-slate-800">{avgMax}°</span>
+                                <span className="text-lg text-slate-500 mb-1">/ {avgMin}°</span>
                             </div>
-                            <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Precipitation</span>
-                        </div>
-                        <div className="flex items-end gap-2">
-                            <span className="text-4xl font-bold text-slate-800">{Math.round((rainyDays25 / daysCount) * 30)}</span>
-                            <span className="text-lg text-slate-500 mb-1">days</span>
-                        </div>
-                        <p className="text-sm text-slate-600 mt-2">
-                            Days with significant rainfall (&gt;25% chance).
-                        </p>
-                    </Card>
+                            <p className="text-sm text-slate-600 mt-2">
+                                Average daytime high vs nighttime low.
+                            </p>
+                        </Card>
 
-                    {/* Verdict/Pack */}
-                    <Card className="ring-1 ring-slate-200 shadow-sm p-6 bg-gradient-to-br from-white to-slate-50">
-                        <div className="flex items-start justify-between mb-4">
-                            <div className="p-2 bg-emerald-100 rounded-lg text-emerald-600">
-                                <Info className="w-6 h-6" />
+                        {/* Rain */}
+                        <Card className="ring-1 ring-slate-200 shadow-sm p-6 bg-gradient-to-br from-white to-slate-50">
+                            <div className="flex items-start justify-between mb-4">
+                                <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+                                    <CloudRain className="w-6 h-6" />
+                                </div>
+                                <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Precipitation</span>
                             </div>
-                            <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Travel Advice</span>
-                        </div>
-                        <p className="font-medium text-slate-800 text-lg leading-snug">
-                            {avgRainProb < 20
-                                ? "Pack light! It's mostly dry."
-                                : avgRainProb < 50
-                                    ? "Pack a mix: sun & light rain gear."
-                                    : "Bring a raincoat & umbrella."}
-                        </p>
-                        <p className="text-sm text-slate-600 mt-2">
-                            {season} season in {cityName}.
-                            {avgMax > 28 ? " Heat warnings possible." : ""}
-                        </p>
-                    </Card>
-                </div>
+                            <div className="flex items-end gap-2">
+                                <span className="text-4xl font-bold text-slate-800">{Math.round((rainyDays25 / daysCount) * 30)}</span>
+                                <span className="text-lg text-slate-500 mb-1">days</span>
+                            </div>
+                            <p className="text-sm text-slate-600 mt-2">
+                                Days with significant rainfall (&gt;25% chance).
+                            </p>
+                        </Card>
 
-                {/* 2. INTRO TEXT (SEO) */}
-                <div className="mb-12 max-w-3xl">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">Is {monthDisplay} a good time to visit {cityName}?</h2>
-                    <p className="text-slate-600 leading-relaxed text-lg">
-                        Based on our analysis of 30 years of historical weather data, <strong>{monthDisplay}</strong> in {cityName} is characterized by
-                        avg highs of <strong>{avgMax}°C</strong>.
-                        {rainyDays50 > 5
-                            ? ` Be prepared for some wet days, as there are typically around ${Math.round((rainyDays50 / daysCount) * 30)} days with high rain probability.`
-                            : " It is a relatively dry month, perfect for outdoor exploration."}
-                    </p>
-                </div>
-
-                {/* 3. CALENDAR VIEW */}
-                <div id="calendar-view" className="scroll-mt-24">
-                    <div className="flex items-center gap-2 mb-6">
-                        <Calendar className="w-5 h-5 text-indigo-600" />
-                        <h2 className="text-xl font-bold text-slate-800">Daily Forecast for {monthDisplay}</h2>
+                        {/* Verdict/Pack */}
+                        <Card className="ring-1 ring-slate-200 shadow-sm p-6 bg-gradient-to-br from-white to-slate-50">
+                            <div className="flex items-start justify-between mb-4">
+                                <div className="p-2 bg-emerald-100 rounded-lg text-emerald-600">
+                                    <Info className="w-6 h-6" />
+                                </div>
+                                <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Travel Advice</span>
+                            </div>
+                            <p className="font-medium text-slate-800 text-lg leading-snug">
+                                {avgRainProb < 20
+                                    ? "Pack light! It's mostly dry."
+                                    : avgRainProb < 50
+                                        ? "Pack a mix: sun & light rain gear."
+                                        : "Bring a raincoat & umbrella."}
+                            </p>
+                            <p className="text-sm text-slate-600 mt-2">
+                                {season} season in {cityName}.
+                                {avgMax > 28 ? " Heat warnings possible." : ""}
+                            </p>
+                        </Card>
                     </div>
-                    {/* The specialized calendar component */}
-                    <MonthCalendarView city={city} month={monthNum} data={data} />
-                </div>
 
-                {/* 4. FAQ (Structured Data Candidate) */}
-                <div className="mt-16 border-t border-slate-200 pt-12">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-8">Frequent Questions about {monthDisplay}</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 className="font-bold text-slate-800 mb-2">How cold is {cityName} in {monthDisplay}?</h3>
-                            <p className="text-slate-600 text-sm">Nights can drop to {avgMin}°C, while days average around {avgMax}°C. {avgMin < 5 ? "It gets quite cold, bring layers." : "It stays relatively mild."}</p>
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-slate-800 mb-2">Does it rain a lot in {cityName}?</h3>
-                            <p className="text-slate-600 text-sm">In {monthDisplay}, the average chance of rain on any given day is {avgRainProb}%. You can expect about {Math.round((rainyDays50 / daysCount) * 30)} rainy days throughout the month.</p>
+                    {/* 2. INTRO TEXT (SEO) */}
+                    <div className="mb-12 max-w-3xl">
+                        <h2 className="text-2xl font-bold text-slate-900 mb-4">Is {monthDisplay} a good time to visit {cityName}?</h2>
+                        <p className="text-slate-600 leading-relaxed text-lg">
+                            Based on our analysis of 30 years of historical weather data, <strong>{monthDisplay}</strong> in {cityName} is characterized by
+                            avg highs of <strong>{avgMax}°C</strong>.
+                            {rainyDays50 > 5
+                                ? ` Be prepared for some wet days, as there are typically around ${Math.round((rainyDays50 / daysCount) * 30)} days with high rain probability.`
+                                : " It is a relatively dry month, perfect for outdoor exploration."}
+                        </p>
+
+                        {/* Internal links for SEO hierarchy */}
+                        <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium">
+                            <Link href={`/${city}`} className="text-orange-600 hover:underline">Best Time to Visit {data.meta.name}</Link>
+                            <span className="text-slate-300">|</span>
+                            <Link href={`/${city}/${monthLower}/${new Date().getDate()}`} className="text-orange-600 hover:underline">Weather in {data.meta.name} Today</Link>
+                            <span className="text-slate-300">|</span>
+                            <Link href="/#cities" className="text-orange-600 hover:underline">Compare Destinations</Link>
                         </div>
                     </div>
-                </div>
 
-            </main>
+                    {/* 3. CALENDAR VIEW */}
+                    <div id="calendar-view" className="scroll-mt-24">
+                        <div className="flex items-center gap-2 mb-6">
+                            <Calendar className="w-5 h-5 text-indigo-600" />
+                            <h2 className="text-xl font-bold text-slate-800">Daily Forecast for {monthDisplay}</h2>
+                        </div>
+                        {/* The specialized calendar component */}
+                        <MonthCalendarView city={city} month={monthNum} data={data} />
+                    </div>
+
+                    {/* 4. FAQ (Structured Data Candidate) */}
+                    <div className="mt-16 border-t border-slate-200 pt-12">
+                        <h2 className="text-2xl font-bold text-slate-900 mb-8">Frequent Questions about {monthDisplay}</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 className="font-bold text-slate-800 mb-2">How cold is {cityName} in {monthDisplay}?</h3>
+                                <p className="text-slate-600 text-sm">Nights can drop to {avgMin}°C, while days average around {avgMax}°C. {avgMin < 5 ? "It gets quite cold, bring layers." : "It stays relatively mild."}</p>
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-slate-800 mb-2">Does it rain a lot in {cityName}?</h3>
+                                <p className="text-slate-600 text-sm">In {monthDisplay}, the average chance of rain on any given day is {avgRainProb}%. You can expect about {Math.round((rainyDays50 / daysCount) * 30)} rainy days throughout the month.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
         </div>
     );
 }

@@ -187,115 +187,123 @@ export default async function CityIndexPage({
                 </div>
             </div>
 
-            <main className="max-w-6xl mx-auto px-6 py-12">
+            <article itemScope itemType="https://schema.org/Article" className="max-w-6xl mx-auto px-6 py-12">
+                <div itemProp="articleBody">
+                    {/* Header */}
+                    <div className="mb-12">
+                        <h2 className="text-4xl font-serif font-bold mb-4">When to visit {data.meta.name}?</h2>
+                        <p className="text-lg text-stone-600 max-w-2xl">
+                            {data.meta.desc ? data.meta.desc : `We've analyzed 30 years of weather data for ${data.meta.name} to help you pick the perfect month. Below is the historical average for every month of the year.`}
+                        </p>
 
-                {/* Header */}
-                <div className="mb-12">
-                    <h2 className="text-4xl font-serif font-bold mb-4">When to visit {data.meta.name}?</h2>
-                    <p className="text-lg text-stone-600 max-w-2xl">
-                        {data.meta.desc ? data.meta.desc : "We've analyzed 30 years of weather data to help you pick the perfect month. Below is the historical average for every month of the year."}
-                    </p>
+                        {/* Internal links for SEO hierarchy */}
+                        <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium">
+                            <Link href="/" className="text-orange-600 hover:underline">All Destinations</Link>
+                            <span className="text-stone-300">|</span>
+                            <Link href="/#faq" className="text-orange-600 hover:underline">How it works</Link>
+                        </div>
 
-                    {/* Methodology Badge */}
-                    <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm border border-emerald-100">
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                        </span>
-                        <span className="font-medium">Forecast V3: Smart Rolling Window (+/- 2 days smoothing)</span>
+                        {/* Methodology Badge */}
+                        <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm border border-emerald-100">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                            </span>
+                            <span className="font-medium">Forecast V3: Smart Rolling Window (+/- 2 days smoothing)</span>
+                        </div>
                     </div>
-                </div>
 
-                {/* Global Warming Insight Card */}
-                {data.yearly_stats && data.yearly_stats.warming_trend > 0 && (
-                    <Card className="mb-12 bg-gradient-to-br from-orange-50 to-amber-50 border-orange-100">
-                        <div className="flex items-start gap-4">
-                            <div className="p-3 bg-white rounded-xl shadow-sm border border-orange-100">
-                                <TrendingUp className="w-8 h-8 text-orange-600" />
+                    {/* Global Warming Insight Card */}
+                    {data.yearly_stats && data.yearly_stats.warming_trend > 0 && (
+                        <Card className="mb-12 bg-gradient-to-br from-orange-50 to-amber-50 border-orange-100">
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 bg-white rounded-xl shadow-sm border border-orange-100">
+                                    <TrendingUp className="w-8 h-8 text-orange-600" />
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold text-stone-900 flex items-center gap-2">
+                                        Climate Trend Detected
+                                        <Badge color="orange" size="xs">Important</Badge>
+                                    </h3>
+                                    <p className="text-stone-600 mt-1 max-w-3xl">
+                                        Our analysis of the last 30 years shows a clear warming trend for {data.meta.name}.
+                                        Temperatures have risen by <span className="font-bold text-orange-700">+{data.yearly_stats.warming_trend}°C</span>
+                                        when comparing the 1994-1998 average vs the 2020-2024 average.
+                                    </p>
+                                </div>
+                            </div>
+                        </Card>
+                    )}
+
+                    {/* Months Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {monthlyStats.map((stat) => (
+                            <Link key={stat.monthNum} href={stat.link}>
+                                <Card decoration="top" decorationColor={stat.color as any} className="hover:shadow-lg transition-all cursor-pointer group h-full border-stone-100 bg-white">
+                                    <div className="flex justify-between items-start mb-4">
+                                        <Title className="font-serif text-xl">{stat.name}</Title>
+                                        <Badge color={stat.color as any}>{stat.status}</Badge>
+                                    </div>
+
+                                    <div className="grid grid-cols-2 gap-4 mt-6">
+                                        <div className="flex flex-col gap-1">
+                                            <Text className="text-xs uppercase tracking-wider text-stone-400 font-semibold">Avg High</Text>
+                                            <div className="flex items-center gap-2 text-stone-700">
+                                                <Thermometer className="w-4 h-4 text-orange-500" />
+                                                <span className="text-lg font-medium">{stat.avgTemp}°C</span>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-1">
+                                            <Text className="text-xs uppercase tracking-wider text-stone-400 font-semibold">Rain Chance</Text>
+                                            <div className="flex items-center gap-2 text-stone-700">
+                                                <CloudRain className="w-4 h-4 text-blue-500" />
+                                                <span className="text-lg font-medium">{stat.avgRain}%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-6 pt-4 border-t border-stone-100 flex justify-between items-center text-sm text-stone-500 group-hover:text-orange-600 transition-colors">
+                                        <span>Explore daily data</span>
+                                        <ArrowRight className="w-4 h-4" />
+                                    </div>
+                                </Card>
+                            </Link>
+                        ))}
+                    </div>
+
+                    {/* FAQ Section (SEO Optimized) */}
+                    <div className="mt-20 pt-12 border-t border-stone-200">
+                        <h2 className="text-3xl font-serif font-bold text-stone-900 mb-8">Frequently Asked Questions</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                            <div>
+                                <h3 className="font-bold text-lg text-stone-900 mb-2">When is the best time to visit {data.meta.name}?</h3>
+                                <p className="text-stone-600 leading-relaxed">
+                                    Ideally, look for months with mild temperatures (20-25°C) and low rain chance.
+                                    Based on historical data, {bestMonths.slice(0, 3).join(", ") || "summer months"} are usually great choices.
+                                </p>
                             </div>
                             <div>
-                                <h3 className="text-lg font-bold text-stone-900 flex items-center gap-2">
-                                    Climate Trend Detected
-                                    <Badge color="orange" size="xs">Important</Badge>
-                                </h3>
-                                <p className="text-stone-600 mt-1 max-w-3xl">
-                                    Our analysis of the last 30 years shows a clear warming trend for {data.meta.name}.
-                                    Temperatures have risen by <span className="font-bold text-orange-700">+{data.yearly_stats.warming_trend}°C</span>
-                                    when comparing the 1994-1998 average vs the 2020-2024 average.
+                                <h3 className="font-bold text-lg text-stone-900 mb-2">When is the hottest month?</h3>
+                                <p className="text-stone-600 leading-relaxed">
+                                    {hottest.name} is historically the hottest month in {data.meta.name} with average highs of {hottest.avgTemp}°C.
+                                </p>
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-lg text-stone-900 mb-2">Which month has the most rain?</h3>
+                                <p className="text-stone-600 leading-relaxed">
+                                    {wettest.name} typically sees the highest probability of rain ({wettest.avgRain}%).
+                                </p>
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-lg text-stone-900 mb-2">Is {data.meta.name} expensive?</h3>
+                                <p className="text-stone-600 leading-relaxed">
+                                    Prices vary by season. The "Perfect" weather months usually coincide with peak tourist season and higher prices, while the rainy or cold months offer better deals.
                                 </p>
                             </div>
                         </div>
-                    </Card>
-                )}
-
-                {/* Months Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {monthlyStats.map((stat) => (
-                        <Link key={stat.monthNum} href={stat.link}>
-                            <Card decoration="top" decorationColor={stat.color as any} className="hover:shadow-lg transition-all cursor-pointer group h-full border-stone-100 bg-white">
-                                <div className="flex justify-between items-start mb-4">
-                                    <Title className="font-serif text-xl">{stat.name}</Title>
-                                    <Badge color={stat.color as any}>{stat.status}</Badge>
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-4 mt-6">
-                                    <div className="flex flex-col gap-1">
-                                        <Text className="text-xs uppercase tracking-wider text-stone-400 font-semibold">Avg High</Text>
-                                        <div className="flex items-center gap-2 text-stone-700">
-                                            <Thermometer className="w-4 h-4 text-orange-500" />
-                                            <span className="text-lg font-medium">{stat.avgTemp}°C</span>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col gap-1">
-                                        <Text className="text-xs uppercase tracking-wider text-stone-400 font-semibold">Rain Chance</Text>
-                                        <div className="flex items-center gap-2 text-stone-700">
-                                            <CloudRain className="w-4 h-4 text-blue-500" />
-                                            <span className="text-lg font-medium">{stat.avgRain}%</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="mt-6 pt-4 border-t border-stone-100 flex justify-between items-center text-sm text-stone-500 group-hover:text-orange-600 transition-colors">
-                                    <span>Explore daily data</span>
-                                    <ArrowRight className="w-4 h-4" />
-                                </div>
-                            </Card>
-                        </Link>
-                    ))}
-                </div>
-
-                {/* FAQ Section (SEO Optimized) */}
-                <div className="mt-20 pt-12 border-t border-stone-200">
-                    <h2 className="text-3xl font-serif font-bold text-stone-900 mb-8">Frequently Asked Questions</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-                        <div>
-                            <h3 className="font-bold text-lg text-stone-900 mb-2">When is the best time to visit {data.meta.name}?</h3>
-                            <p className="text-stone-600 leading-relaxed">
-                                Ideally, look for months with mild temperatures (20-25°C) and low rain chance.
-                                Based on historical data, {bestMonths.slice(0, 3).join(", ") || "summer months"} are usually great choices.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-lg text-stone-900 mb-2">When is the hottest month?</h3>
-                            <p className="text-stone-600 leading-relaxed">
-                                {hottest.name} is historically the hottest month in {data.meta.name} with average highs of {hottest.avgTemp}°C.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-lg text-stone-900 mb-2">Which month has the most rain?</h3>
-                            <p className="text-stone-600 leading-relaxed">
-                                {wettest.name} typically sees the highest probability of rain ({wettest.avgRain}%).
-                            </p>
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-lg text-stone-900 mb-2">Is {data.meta.name} expensive?</h3>
-                            <p className="text-stone-600 leading-relaxed">
-                                Prices vary by season. The "Perfect" weather months usually coincide with peak tourist season and higher prices, while the rainy or cold months offer better deals.
-                            </p>
-                        </div>
                     </div>
                 </div>
-            </main>
+            </article>
         </div>
     );
 }

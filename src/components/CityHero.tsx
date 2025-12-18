@@ -19,9 +19,10 @@ interface CityHeroProps {
     dateSlug?: string;
     windKmh?: number;
     humidity?: number;
+    imageAlt?: string;
 }
 
-export default function CityHero({ city, citySlug, date, tempMax, tempMin, precipProb, dateSlug, windKmh = 10, humidity = 50 }: CityHeroProps) {
+export default function CityHero({ city, citySlug, date, tempMax, tempMin, precipProb, dateSlug, windKmh = 10, humidity = 50, imageAlt }: CityHeroProps) {
     const { unit, convertTemp } = useUnit();
     // Calculate feels-like temperature (keep feelsLikeMax in C for emoji logic first)
     const feelsLikeMaxC = calculateFeelsLike(tempMax, windKmh, humidity);
@@ -59,7 +60,7 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
             {/* Background Image */}
             <Image
                 src={heroImage}
-                alt={`${city} View`}
+                alt={imageAlt || `${city} View`}
                 fill
                 className="object-cover"
                 priority

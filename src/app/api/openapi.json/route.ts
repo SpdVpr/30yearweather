@@ -59,12 +59,41 @@ export async function GET() {
                             "in": "path",
                             "required": true,
                             "schema": { "type": "string" },
-                            "description": "City slug (e.g., prague-cz, tokyo-jp)"
+                            "description": "City slug (e.g., prague, tokyo)"
                         }
                     ],
                     "responses": {
                         "200": {
                             "description": "City intelligence data",
+                            "content": { "application/json": {} }
+                        }
+                    }
+                }
+            },
+            "/api/v1/weather/{city}/{date}": {
+                "get": {
+                    "operationId": "getDailyWeather",
+                    "summary": "Get weather for a specific date",
+                    "description": "Returns 30-year historical averages and scores for a specific day.",
+                    "parameters": [
+                        {
+                            "name": "city",
+                            "in": "path",
+                            "required": true,
+                            "schema": { "type": "string" },
+                            "description": "City slug"
+                        },
+                        {
+                            "name": "date",
+                            "in": "path",
+                            "required": true,
+                            "schema": { "type": "string", "pattern": "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$" },
+                            "description": "Date in MM-DD format"
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "Daily weather intelligence",
                             "content": { "application/json": {} }
                         }
                     }
