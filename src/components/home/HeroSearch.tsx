@@ -64,7 +64,7 @@ export default function HeroSearch({ cities }: HeroSearchProps) {
 
     return (
         <div className="w-full max-w-5xl mx-auto mt-8 relative z-20">
-            <div className="bg-white/95 backdrop-blur-sm p-2 sm:p-3 rounded-2xl sm:rounded-3xl shadow-2xl border border-white/20 flex flex-col lg:flex-row gap-2">
+            <div className="bg-white/95 backdrop-blur-sm p-2 sm:p-3 rounded-2xl sm:rounded-3xl shadow-2xl border border-white/20 flex flex-col lg:flex-row gap-2 relative z-30">
 
                 {/* 1. City Input (Flex Grow) */}
                 <div className="flex-[2] relative" ref={wrapperRef}>
