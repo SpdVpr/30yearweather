@@ -30,9 +30,24 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     const cityName = data.meta.name;
     const monthDisplay = monthLower.charAt(0).toUpperCase() + monthLower.slice(1);
 
+    // Aggregation for metadata
+    let totalMax = 0;
+    let totalRain = 0;
+    let count = 0;
+    Object.entries(data.days).forEach(([key, day]: [string, any]) => {
+        if (key.startsWith(monthNum + "-")) {
+            totalMax += day.stats.temp_max;
+            totalRain += day.stats.precip_prob;
+            count++;
+        }
+    });
+
+    const avgMax = count ? Math.round(totalMax / count) : 0;
+    const avgRain = count ? Math.round(totalRain / count) : 0;
+
     return {
-        title: `${cityName} in ${monthDisplay}: Weather, Prices & Travel Guide`,
-        description: `Is ${monthDisplay} a good time to visit ${cityName}? Historical weather data shows avg temps of X°C and Y% rain risk. See daily forecasts and packing tips.`,
+        title: `${cityName} ${monthDisplay} Weather Forecast | ${avgMax}°C, ${avgRain}% Rain | 30 Years NASA Data`,
+        description: `Planning to visit ${cityName} in ${monthDisplay}? Historical weather data shows average highs of ${avgMax}°C and ${avgRain}% precipitation risk. Explore daily 30-year averages.`,
         keywords: [`${cityName} in ${monthLower}`, `${cityName} weather ${monthLower}`, `visiting ${cityName} in ${monthLower}`, `what to wear in ${cityName} in ${monthLower}`]
     };
 }

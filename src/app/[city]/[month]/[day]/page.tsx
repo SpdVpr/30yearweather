@@ -39,17 +39,20 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     if (!dayData) return { title: 'Date not found' };
 
     const cityName = data.meta.name;
-    const formattedDate = `${monthLower.charAt(0).toUpperCase() + monthLower.slice(1)} ${day}`;
-    // e.g. July 17
+    const monthDisplay = monthLower.charAt(0).toUpperCase() + monthLower.slice(1);
 
+    // Perplexity Recommended Format: "Bali 18 July Weather Forecast | 26.5°C, 8% Rain Chance | 30 Years NASA Data"
     const tempAvg = dayData.stats.temp_max;
+    const rainProb = dayData.stats.precip_prob;
+    const title = `${cityName} ${day} ${monthDisplay} Weather Forecast | ${tempAvg}°C, ${rainProb}% Rain Chance | 30 Years NASA Data`;
+    const description = `Historical weather for ${cityName} on ${day} ${monthDisplay}. 30-year averages: ${tempAvg}°C daytime high, ${rainProb}% rain probability. Ideal for travel and wedding planning.`;
 
     return {
-        title: `${cityName} Weather on ${formattedDate}: Is it a good time to visit?`,
-        description: `Planning to visit ${cityName} on ${formattedDate}? Historical data shows ${tempAvg}°C, ${dayData.stats.precip_prob}% rain risk. See full report.`,
+        title: title,
+        description: description,
         openGraph: {
-            title: `${cityName} Weather on ${formattedDate}`,
-            description: `Historical data shows ${tempAvg}°C, ${dayData.stats.precip_prob}% rain risk.`,
+            title: `${cityName} Weather: ${day} ${monthDisplay}`,
+            description: `Historical data shows ${tempAvg}°C, ${rainProb}% rain risk.`,
             type: 'website',
             locale: 'en_US',
             siteName: '30YearWeather',
@@ -64,8 +67,8 @@ export async function generateMetadata({ params }: { params: { city: string; mon
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${cityName} Weather on ${formattedDate}`,
-            description: `Historical data: ${tempAvg}°C, ${dayData.stats.precip_prob}% rain risk.`,
+            title: `${cityName} Weather: ${day} ${monthDisplay}`,
+            description: `Historical data: ${tempAvg}°C, ${rainProb}% rain risk.`,
             images: [`/images/${city}-hero.webp`],
         },
         alternates: {
@@ -82,6 +85,7 @@ export default async function CityDayPage({
     const { city, month, day } = params;
     const monthLower = month.toLowerCase();
     const monthNum = MONTH_MAP[monthLower];
+    const monthDisplay = monthLower.charAt(0).toUpperCase() + monthLower.slice(1);
 
     if (!monthNum) notFound();
 
@@ -198,7 +202,24 @@ export default async function CityDayPage({
                 date={formattedDate}
                 verdict={verdict}
             />
-            {/* JSON-LD removed for brevity in this step, should add back */}
+            {/* Structured Data: WeatherForecast */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "WeatherForecast",
+                        "name": `${data.meta.name} ${day} ${monthDisplay} Historical Weather`,
+                        "temperature": `${dayData.stats.temp_max}°C`,
+                        "precipitationProbability": (dayData.stats.precip_prob / 100).toFixed(2),
+                        "dateIssued": `2025-${monthNum}-${dayPad}`,
+                        "dataSource": {
+                            "@type": "Dataset",
+                            "name": "NASA POWER 1991-2021"
+                        }
+                    })
+                }}
+            />
 
             <CityHero
                 city={data.meta.name}

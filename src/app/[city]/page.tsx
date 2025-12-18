@@ -17,14 +17,14 @@ export async function generateMetadata({ params }: { params: { city: string } })
     const description = data.meta.desc || `Get accurate long-range weather forecasts for ${cityName} up to 365 days ahead. Based on 30 years of historical data. See rain probabilities, temperatures, and best months to visit ${cityName}.`;
 
     return {
-        title: `${cityName} Weather Forecast - 365 Day Long-Range Forecast`,
+        title: `${cityName} Weather Forecast | 365-Day Monthly Climate | 30 Years NASA Data`,
         description: description,
         keywords: [`${cityName} weather forecast`, `${cityName} long range forecast`, `${cityName} weather`, `best time to visit ${cityName}`, `${cityName} weather by month`, `${cityName} 365 day forecast`],
         alternates: {
             canonical: `/${params.city}`,
         },
         openGraph: {
-            title: `${cityName} Weather Forecast - 365 Day Long-Range Forecast`,
+            title: `${cityName} Weather Forecast | 365-Day Monthly Climate`,
             description: description,
         }
     };
