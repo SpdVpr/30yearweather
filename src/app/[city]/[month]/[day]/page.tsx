@@ -202,22 +202,56 @@ export default async function CityDayPage({
                 date={formattedDate}
                 verdict={verdict}
             />
-            {/* Structured Data: WeatherForecast */}
+            {/* Structured Data: WeatherForecast, Breadcrumbs, FAQ */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "WeatherForecast",
-                        "name": `${data.meta.name} ${day} ${monthDisplay} Historical Weather`,
-                        "temperature": `${dayData.stats.temp_max}°C`,
-                        "precipitationProbability": (dayData.stats.precip_prob / 100).toFixed(2),
-                        "dateIssued": `2025-${monthNum}-${dayPad}`,
-                        "dataSource": {
-                            "@type": "Dataset",
-                            "name": "NASA POWER 1991-2021"
+                    __html: JSON.stringify([
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "WeatherForecast",
+                            "name": `${data.meta.name} ${day} ${monthDisplay} Historical Weather`,
+                            "temperature": `${dayData.stats.temp_max}°C`,
+                            "precipitationProbability": (dayData.stats.precip_prob / 100).toFixed(2),
+                            "dateIssued": `2025-${monthNum}-${dayPad}`,
+                            "dataSource": {
+                                "@type": "Dataset",
+                                "name": "NASA POWER 1991-2021"
+                            }
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://30yearweather.com" },
+                                { "@type": "ListItem", "position": 2, "name": data.meta.name, "item": `https://30yearweather.com/${city}` },
+                                { "@type": "ListItem", "position": 3, "name": monthDisplay, "item": `https://30yearweather.com/${city}/${monthLower}` },
+                                { "@type": "ListItem", "position": 4, "name": day.toString(), "item": `https://30yearweather.com/${city}/${monthLower}/${day}` }
+                            ]
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "FAQPage",
+                            "mainEntity": [
+                                {
+                                    "@type": "Question",
+                                    "name": `What is the weather in ${data.meta.name} on ${monthDisplay} ${day}?`,
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": `Historically, on ${monthDisplay} ${day}, ${data.meta.name} averages a high of ${dayData.stats.temp_max}°C and a low of ${dayData.stats.temp_min}°C. The probability of rain is ${dayData.stats.precip_prob}%.`
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": `Is it a good time to visit ${data.meta.name} on ${monthDisplay} ${day}?`,
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": `Our wedding/event reliability score for this date is ${dayData.scores.wedding}/100. ${verdict === 'YES' ? 'It is an excellent time with stable conditions.' : verdict === 'NO' ? 'Conditions can be unpredictable; consider indoor alternatives.' : 'Conditions are moderate.'}`
+                                    }
+                                }
+                            ]
                         }
-                    })
+                    ])
                 }}
             />
 

@@ -110,9 +110,49 @@ export default async function CityMonthPage({ params }: { params: { city: string
     };
     const [verdictText, verdictClass] = getVerdict();
 
+    const baseUrl = "https://30yearweather.com";
+
+    const jsonLd = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrl },
+                { "@type": "ListItem", "position": 2, "name": cityName, "item": `${baseUrl}/${city}` },
+                { "@type": "ListItem", "position": 3, "name": monthDisplay, "item": `${baseUrl}/${city}/${monthLower}` }
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": `Is ${monthDisplay} a good time to visit ${cityName}?`,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": `Historically, ${monthDisplay} in ${cityName} has average highs of ${avgMax}°C and around ${Math.round((rainyDays25 / daysCount) * 30)} days with significant rain chance. It is considered the ${season} season and is generally ${verdictText.toLowerCase()}.`
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": `How much does it rain in ${cityName} during ${monthDisplay}?`,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": `The average probability of rain in ${monthDisplay} is ${avgRainProb}%. Expect about ${Math.round((rainyDays50 / daysCount) * 30)} days with a high chance of precipitation.`
+                    }
+                }
+            ]
+        }
+    ];
+
     return (
         <div className="min-h-screen bg-slate-50 pb-20">
             <DatePageTracker cityName={data.meta.name} date={monthDisplay} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 
             {/* Navbar */}
             <div className="bg-white border-b border-slate-200 sticky top-0 z-40">
