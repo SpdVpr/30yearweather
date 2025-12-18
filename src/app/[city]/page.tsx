@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCityData } from "@/lib/data";
 import { Card, Title, Text, Badge } from "@tremor/react";
-import { ArrowLeft, ArrowRight, Thermometer, CloudRain, TrendingUp } from "lucide-react";
+import { ArrowLeft, ArrowRight, Thermometer, CloudRain, TrendingUp, MapPin, Info } from "lucide-react";
 import { format } from "date-fns";
 import type { Metadata } from 'next';
 import CityPageTracker from "@/components/CityPageTracker";
@@ -55,7 +55,10 @@ const JsonLd = ({ data, slug, faqStats }: { data: any, slug: string, faqStats: a
             latitude: data.meta.lat,
             longitude: data.meta.lon
         },
-        url: `${baseUrl}/${slug}`
+        url: `${baseUrl}/${slug}`,
+        sameAs: [
+            `https://en.wikipedia.org/wiki/${data.meta.name.replace(/\s+/g, '_')}`,
+        ]
     };
 
     // FAQ Schema
@@ -270,6 +273,83 @@ export default async function CityIndexPage({
                             </Link>
                         ))}
                     </div>
+
+                    {/* New: About & Location Section (SEO Text + Map) */}
+                    <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div>
+                            <div className="flex items-center gap-2 mb-4 text-orange-600 font-bold uppercase tracking-widest text-xs">
+                                <Info className="w-4 h-4" />
+                                <span>About the destination</span>
+                            </div>
+                            <h2 className="text-3xl font-serif font-bold text-stone-900 mb-6">About {data.meta.name}</h2>
+                            <div className="prose prose-stone prose-lg">
+                                <p className="leading-relaxed">
+                                    {data.meta.desc ? data.meta.desc : `${data.meta.name} is a prominent destination in ${data.meta.country}.`}
+                                </p>
+                                <p className="leading-relaxed mt-4">
+                                    Geographically located at latitude <strong>{data.meta.lat}</strong> and longitude <strong>{data.meta.lon}</strong>,
+                                    {data.meta.name} exhibits specific climate patterns influenced by its location.
+                                    Historical data indicates that <strong>{hottest.name}</strong> is typically the warmest month, offering optimal conditions for sun-seekers,
+                                    while <strong>{wettest.name}</strong> often presents the highest chance of precipitation.
+                                </p>
+                                <p className="leading-relaxed mt-4">
+                                    For travelers planning a visit to {data.meta.name}, understanding these seasonal nuances is key to a comfortable trip.
+                                    Our 30-year dataset provides a reliability benchmark, ensuring you know exactly what to expect.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="relative h-min bg-stone-100 rounded-2xl overflow-hidden border border-stone-200">
+                            <div className="flex items-center gap-2 px-4 py-3 bg-white border-b border-stone-200">
+                                <MapPin className="w-4 h-4 text-orange-600" />
+                                <span className="text-xs font-bold uppercase tracking-wider text-stone-600">Location Map</span>
+                            </div>
+                            <div className="aspect-video w-full bg-stone-200 relative">
+                                <iframe
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    loading="lazy"
+                                    allowFullScreen
+                                    src={`https://maps.google.com/maps?q=${data.meta.lat},${data.meta.lon}&hl=en&z=6&output=embed`}
+                                ></iframe>
+                            </div>
+                            <div className="px-4 py-2 bg-stone-50 text-xs text-stone-400 text-center">
+                                Coordinates: {data.meta.lat}, {data.meta.lon}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* New: LMM/AI Optimized Data Table */}
+                    <div className="mt-20 overflow-x-auto">
+                        <div className="mb-4">
+                            <h3 className="text-xl font-serif font-bold text-stone-900">Climate Data Summary for AI Agents</h3>
+                            <p className="text-sm text-stone-500">Structured historical data for easy parsing.</p>
+                        </div>
+                        <table className="min-w-full text-sm text-left text-stone-600 border border-stone-200 bg-white rounded-lg shadow-sm">
+                            <thead className="bg-stone-50 text-stone-900 font-bold uppercase text-xs">
+                                <tr>
+                                    <th className="px-4 py-3 border-b">Month</th>
+                                    <th className="px-4 py-3 border-b">Avg High (°C)</th>
+                                    <th className="px-4 py-3 border-b">Rain Probability (%)</th>
+                                    <th className="px-4 py-3 border-b">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {monthlyStats.map((stat) => (
+                                    <tr key={stat.monthNum} className="border-b last:border-0 hover:bg-stone-50 transition-colors">
+                                        <td className="px-4 py-3 font-medium text-stone-900">{stat.name}</td>
+                                        <td className="px-4 py-3">{stat.avgTemp}°C</td>
+                                        <td className="px-4 py-3">{stat.avgRain}%</td>
+                                        <td className="px-4 py-3 flex items-center gap-2">
+                                            <span className={`w-2 h-2 rounded-full bg-${stat.color}-500`}></span>
+                                            {stat.status}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+
 
                     {/* FAQ Section (SEO Optimized) */}
                     <div className="mt-20 pt-12 border-t border-stone-200">
