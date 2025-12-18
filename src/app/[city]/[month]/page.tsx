@@ -7,6 +7,7 @@ import DatePageTracker from "@/components/DatePageTracker";
 import { Card, Text, Title, Grid, Col } from "@tremor/react";
 import { ArrowLeft, Thermometer, CloudRain, Sun, Calendar, Info } from "lucide-react";
 import type { Metadata } from 'next';
+import Header from "@/components/common/Header";
 
 // Helper for month mapping
 const MONTH_MAP: Record<string, string> = {
@@ -157,24 +158,16 @@ export default async function CityMonthPage({ params }: { params: { city: string
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
-            {/* Navbar */}
-            <div className="bg-white border-b border-slate-200 sticky top-0 z-40">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <Link href={`/${city}`} className="p-2 -ml-2 hover:bg-slate-100 rounded-full transition-colors text-slate-500">
-                            <ArrowLeft className="w-5 h-5" />
-                        </Link>
-                        <div className="flex flex-col">
-                            <h1 className="text-lg font-bold text-slate-900 leading-tight">
-                                {cityName} in {monthDisplay}
-                            </h1>
-                            <span className="text-xs text-slate-500 font-medium">Historical Weather Guide</span>
-                        </div>
-                    </div>
-                    <div className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${verdictClass}`}>
-                        {verdictText}
-                    </div>
-                </div>
+            <Header
+                breadcrumb={{
+                    label: `${cityName} in ${monthDisplay}`,
+                    href: `/${city}`,
+                    sublabel: "Historical Weather Guide"
+                }}
+            />
+
+            <div className="pt-16">
+                {/* Content starts after the unified header */}
             </div>
 
             <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto px-4 sm:px-6 py-8">

@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Thermometer, CloudRain, TrendingUp, MapPin, Info
 import { format } from "date-fns";
 import type { Metadata } from 'next';
 import CityPageTracker from "@/components/CityPageTracker";
+import Header from "@/components/common/Header";
 
 // 1. Dynamic Metadata
 export async function generateMetadata({ params }: { params: { city: string } }): Promise<Metadata> {
@@ -180,14 +181,16 @@ export default async function CityIndexPage({
             <CityPageTracker cityName={data.meta.name} citySlug={city} />
             <JsonLd data={data} slug={city} faqStats={monthlyStats} />
 
-            {/* Navbar / Breadcrumb */}
-            <div className="bg-white border-b border-stone-200 px-6 py-4 sticky top-0 z-30">
-                <div className="max-w-6xl mx-auto flex items-center gap-4">
-                    <Link href="/" className="text-stone-500 hover:text-orange-600 transition-colors">
-                        <ArrowLeft className="w-5 h-5" />
-                    </Link>
-                    <h1 className="text-xl font-bold font-serif">{data.meta.name} <span className="text-stone-400 font-sans font-normal text-sm">/ 30-Year Analysis</span></h1>
-                </div>
+            <Header
+                breadcrumb={{
+                    label: data.meta.name,
+                    href: "/",
+                    sublabel: "30-Year Analysis"
+                }}
+            />
+
+            <div className="pt-16">
+                {/* Content starts after the unified header */}
             </div>
 
             <article itemScope itemType="https://schema.org/Article" className="max-w-6xl mx-auto px-6 py-12">

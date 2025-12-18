@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { ArrowLeft, Database, Satellite, Calculator, GitBranch, Shield, ChartBar, Thermometer, CloudRain, Wind } from "lucide-react";
 import type { Metadata } from 'next';
+import Header from "@/components/common/Header";
 
 export const metadata: Metadata = {
     title: "Methodology | How We Calculate Weather Forecasts | 30YearWeather",
@@ -47,18 +48,17 @@ export default function MethodologyPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
-            {/* Navigation */}
-            <nav className="bg-white border-b border-stone-200 py-4 px-6 md:px-12 sticky top-0 z-30">
-                <div className="max-w-6xl mx-auto flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition-colors font-medium">
-                        <ArrowLeft className="w-4 h-4" />
-                        Back to Home
-                    </Link>
-                    <Link href="/about" className="text-orange-600 hover:text-orange-700 font-medium">
-                        About Us →
-                    </Link>
-                </div>
-            </nav>
+            <Header
+                breadcrumb={{
+                    label: "Our Methodology",
+                    href: "/",
+                    sublabel: "Scientific Approach"
+                }}
+            />
+
+            <div className="pt-16">
+                {/* Unified navigation handles back links */}
+            </div>
 
             <main className="max-w-4xl mx-auto px-6 py-16">
                 {/* Header */}

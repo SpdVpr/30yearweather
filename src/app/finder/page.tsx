@@ -1,5 +1,6 @@
 import IntelligentSearch from "@/components/search/IntelligentSearch";
 import { Metadata } from 'next';
+import Header from "@/components/common/Header";
 
 export const metadata: Metadata = {
     title: 'Smart Travel Finder | 30YearWeather - Find Your Perfect Destination',
@@ -22,8 +23,15 @@ export const metadata: Metadata = {
 
 export default function FinderPage() {
     return (
-        <main className="min-h-screen bg-slate-50 pt-24 pb-12">
-            <div className="container mx-auto px-4">
+        <main className="min-h-screen bg-slate-50 pb-12">
+            <Header
+                breadcrumb={{
+                    label: "Smart Travel Finder",
+                    href: "/",
+                    sublabel: "AI Discovery Engine"
+                }}
+            />
+            <div className="container mx-auto px-4 pt-24">
                 <div className="text-center mb-10">
                     <h1 className="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">
                         Design Your <span className="text-orange-600">Perfect Trip</span>

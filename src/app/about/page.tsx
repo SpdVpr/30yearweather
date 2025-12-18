@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { ArrowLeft, Database, Satellite, Calculator, CheckCircle2, Users, Target, Zap } from "lucide-react";
 import type { Metadata } from 'next';
+import Header from "@/components/common/Header";
 
 export const metadata: Metadata = {
     title: "About Us | 30YearWeather - Long-Range Weather Intelligence",
@@ -44,18 +45,17 @@ export default function AboutPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
-            {/* Navigation */}
-            <nav className="bg-white border-b border-stone-200 py-4 px-6 md:px-12 sticky top-0 z-30">
-                <div className="max-w-6xl mx-auto flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition-colors font-medium">
-                        <ArrowLeft className="w-4 h-4" />
-                        Back to Home
-                    </Link>
-                    <Link href="/methodology" className="text-orange-600 hover:text-orange-700 font-medium">
-                        Our Methodology →
-                    </Link>
-                </div>
-            </nav>
+            <Header
+                breadcrumb={{
+                    label: "About 30YearWeather",
+                    href: "/",
+                    sublabel: "Our Story & Mission"
+                }}
+            />
+
+            <div className="pt-16">
+                {/* Secondary navigation if needed, or just content */}
+            </div>
 
             <main className="max-w-6xl mx-auto px-6 py-16">
                 {/* Hero Section */}

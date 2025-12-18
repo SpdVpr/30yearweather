@@ -70,14 +70,6 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
             <div className="absolute inset-0 bg-black/40" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90" />
 
-            {/* Back Button (Absolute Top Left) */}
-            <Link
-                href={`/${citySlug}/${currentMonthSlug}`}
-                className="absolute top-6 left-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors border border-white/20"
-            >
-                <ArrowLeft className="w-4 h-4" />
-                <span className="text-sm font-medium">Back to Calendar</span>
-            </Link>
 
 
 

@@ -9,6 +9,7 @@ import type { Metadata } from 'next';
 import Link from "next/link";
 import DatePageTracker from "@/components/DatePageTracker";
 import SwipeNavigation from "@/components/SwipeNavigation";
+import Header from "@/components/common/Header";
 
 const MONTH_MAP: Record<string, string> = {
     january: '01', february: '02', march: '03', april: '04', may: '05', june: '06',
@@ -254,6 +255,14 @@ export default async function CityDayPage({
                             ]
                         }
                     ])
+                }}
+            />
+
+            <Header
+                breadcrumb={{
+                    label: `${data.meta.name}, ${formattedDate}`,
+                    href: `/${city}/${monthLower}`,
+                    sublabel: "Daily Weather Detail"
                 }}
             />
 

@@ -2,6 +2,7 @@
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import Header from "@/components/common/Header";
 
 export const metadata = {
     title: "GDPR Compliance | 30YearWeather",
@@ -11,12 +12,14 @@ export const metadata = {
 export default function GDPRPage() {
     return (
         <div className="min-h-screen bg-stone-50 text-stone-900 font-sans">
-            <nav className="bg-white border-b border-stone-200 py-4 px-6 md:px-12">
-                <Link href="/" className="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition-colors font-medium">
-                    <ArrowLeft className="w-4 h-4" />
-                    Back to Home
-                </Link>
-            </nav>
+            <Header
+                breadcrumb={{
+                    label: "GDPR Compliance",
+                    href: "/",
+                    sublabel: "Data Rights"
+                }}
+            />
+            <div className="pt-16" />
 
             <main className="max-w-4xl mx-auto px-6 py-12 md:py-20">
                 <h1 className="text-4xl font-serif font-bold mb-8">GDPR Compliance</h1>
