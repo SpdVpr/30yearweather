@@ -264,40 +264,22 @@ export default async function CityDayPage({
                 }}
             />
 
+            {/* Hero Section */}
+            <CityHero
+                city={data.meta.name}
+                citySlug={city}
+                date={formattedDate}
+                tempMax={dayData.stats.temp_max}
+                tempMin={dayData.stats.temp_min}
+                precipProb={dayData.stats.precip_prob}
+                dateSlug={dateKey}
+                windKmh={dayData.stats.wind_kmh}
+                humidity={dayData.stats.humidity_percent}
+                imageAlt={`${data.meta.name} street view during ${monthDisplay}`}
+            />
+
             <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto">
                 <div itemProp="articleBody">
-                    {/* Add more context in intro for SEO/AI as requested */}
-                    <div className="bg-white border-b border-slate-100 px-6 py-8">
-                        <p className="text-slate-600 leading-relaxed text-lg max-w-4xl">
-                            Planning a trip to <strong>{data.meta.name}</strong> on <strong>{monthDisplay} {day}</strong>?
-                            Our historical weather analysis based on 30 years of NASA satellite data shows that
-                            {monthDisplay} typically offers {dayData.stats.temp_max > 25 ? 'vibrant summer conditions' : dayData.stats.temp_max > 15 ? 'pleasant mild weather' : 'bracing seasonal atmosphere'}
-                            averaging {dayData.stats.temp_max}°C with a {dayData.stats.precip_prob}% historical precipitation risk.
-                            Explore our detailed breakdown below to plan your visit with data-backed confidence.
-                        </p>
-
-                        {/* Internal links for SEO hierarchy */}
-                        <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium">
-                            <Link href={`/${city}`} className="text-orange-600 hover:underline">Best Time to Visit {data.meta.name}</Link>
-                            <span className="text-slate-300">|</span>
-                            <Link href={`/${city}/${monthLower}`} className="text-orange-600 hover:underline">{monthDisplay} Weather in {data.meta.name}</Link>
-                            <span className="text-slate-300">|</span>
-                            <Link href="/#cities" className="text-orange-600 hover:underline">Compare Destinations</Link>
-                        </div>
-                    </div>
-
-                    <CityHero
-                        city={data.meta.name}
-                        citySlug={city}
-                        date={formattedDate}
-                        tempMax={dayData.stats.temp_max}
-                        tempMin={dayData.stats.temp_min}
-                        precipProb={dayData.stats.precip_prob}
-                        dateSlug={dateKey} // Keeping MM-DD for internal logic if needed
-                        windKmh={dayData.stats.wind_kmh}
-                        humidity={dayData.stats.humidity_percent}
-                        imageAlt={`${data.meta.name} street view during ${monthDisplay}`}
-                    />
 
                     <DayVerdict
                         score={dayData.scores.wedding}

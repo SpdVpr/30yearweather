@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Card, AreaChart, Title, Accordion, AccordionHeader, AccordionBody, AccordionList } from "@tremor/react";
 import StatCard from "./StatCard";
 import SmartSuitcase from "./SmartSuitcase";
@@ -391,6 +392,25 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                     />
                 </section>
             )}
+
+            {/* 7b. SEO Context & Links (Moved here per request) */}
+            <section className="bg-white border-b border-slate-100 px-6 py-8 rounded-xl ring-1 ring-slate-200">
+                <p className="text-slate-600 leading-relaxed text-lg">
+                    Planning a trip to <strong>{cityName}</strong> on <strong>{dateFormatted}</strong>?
+                    Our historical weather analysis based on 30 years of NASA satellite data shows that
+                    this time of year typically offers {stats.temp_max > 25 ? 'vibrant summer conditions' : stats.temp_max > 15 ? 'pleasant mild weather' : 'bracing seasonal atmosphere'}
+                    averaging {stats.temp_max}°C with a {stats.precip_prob}% historical precipitation risk.
+                    Use the data above and below to plan your visit with data-backed confidence.
+                </p>
+
+                <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium">
+                    <Link href={`/${citySlug}`} className="text-orange-600 hover:underline">Best Time to Visit {cityName}</Link>
+                    <span className="text-slate-300">|</span>
+                    <Link href={`/${citySlug}/${new Date(2024, month - 1, 1).toLocaleString('en-US', { month: 'long' }).toLowerCase()}`} className="text-orange-600 hover:underline">Weather in {cityName} (Month View)</Link>
+                    <span className="text-slate-300">|</span>
+                    <Link href="/#cities" className="text-orange-600 hover:underline">Compare Destinations</Link>
+                </div>
+            </section>
 
             {/* 8. FAQ */}
             <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
