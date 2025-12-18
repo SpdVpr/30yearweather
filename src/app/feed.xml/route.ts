@@ -14,13 +14,26 @@ export async function GET() {
     // Let's stick to simple generation to ensure speed.
     // We will generate the XML string manually.
 
+    const escapeXml = (unsafe: string) => {
+        return unsafe.replace(/[<>&'"]/g, (c) => {
+            switch (c) {
+                case '<': return '&lt;';
+                case '>': return '&gt;';
+                case '&': return '&amp;';
+                case '\'': return '&apos;';
+                case '"': return '&quot;';
+                default: return c;
+            }
+        });
+    };
+
     const items = await Promise.all(citySlugs.map(async (slug) => {
         const data = await getCityData(slug);
         if (!data) return '';
 
         return `
         <item>
-            <title>${data.meta.name} Weather Forecast & Climate Guide</title>
+            <title>${escapeXml(data.meta.name)} Weather Forecast &amp; Climate Guide</title>
             <link>${BASE_URL}/${slug}</link>
             <guid>${BASE_URL}/${slug}</guid>
             <description><![CDATA[${data.meta.desc || `30-year historical weather analysis for ${data.meta.name}. Plan your trip with data-backed confidence.`}]]></description>
