@@ -400,7 +400,14 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                     Our historical weather analysis based on 30 years of NASA satellite data shows that
                     this time of year typically offers {stats.temp_max > 25 ? 'vibrant summer conditions' : stats.temp_max > 15 ? 'pleasant mild weather' : 'bracing seasonal atmosphere'}
                     averaging {stats.temp_max}°C with a {stats.precip_prob}% historical precipitation risk.
-                    Use the data above and below to plan your visit with data-backed confidence.
+
+                    {historical_records && historical_records.length > 0 && (() => {
+                        const hottest = historical_records.reduce((a, b) => a.temp_max > b.temp_max ? a : b);
+                        const coldest = historical_records.reduce((a, b) => a.temp_min < b.temp_min ? a : b);
+                        return ` For context, the hottest ${dateFormatted} recorded in the last 30 years saw temperatures hit ${hottest.temp_max}°C in ${hottest.year}, while the coldest dropped to ${coldest.temp_min}°C in ${coldest.year}.`;
+                    })()}
+
+                    {' '}Use the data above and below to plan your visit with data-backed confidence.
                 </p>
 
                 <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium">
