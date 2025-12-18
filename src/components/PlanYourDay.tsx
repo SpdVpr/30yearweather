@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Sun, Sunrise, Sunset, Moon, Coffee, Camera, Utensils, Wine, Bike, TreePine, Building, Umbrella } from "lucide-react";
 import { getTempEmoji } from "@/lib/weather-utils";
+import { useUnit } from "@/context/UnitContext";
 
 interface PlanYourDayProps {
     tempMax: number;
@@ -23,12 +24,14 @@ interface TimeSlot {
 }
 
 export default function PlanYourDay({ tempMax, tempMin, precipProb, sunriseTime = "06:30", sunsetTime = "20:00", isRainy }: PlanYourDayProps) {
+    const { unit, convertTemp } = useUnit();
+
     // Estimate temperatures throughout the day
     const tempRange = tempMax - tempMin;
-    const morningTemp = Math.round(tempMin + tempRange * 0.3);
-    const noonTemp = Math.round(tempMax);
-    const afternoonTemp = Math.round(tempMax - tempRange * 0.1);
-    const eveningTemp = Math.round(tempMin + tempRange * 0.4);
+    const morningTempRaw = Math.round(tempMin + tempRange * 0.3);
+    const noonTempRaw = Math.round(tempMax);
+    const afternoonTempRaw = Math.round(tempMax - tempRange * 0.1);
+    const eveningTempRaw = Math.round(tempMin + tempRange * 0.4);
 
     // Activity suitability based on conditions
     const goodForOutdoor = !isRainy && tempMax >= 10 && tempMax <= 32;
@@ -43,7 +46,7 @@ export default function PlanYourDay({ tempMax, tempMin, precipProb, sunriseTime 
             time: sunriseTime,
             label: "Morning",
             icon: <Sunrise className="w-6 h-6 text-amber-500" />,
-            temp: morningTemp,
+            temp: morningTempRaw,
             bgClass: "from-amber-100 to-orange-50",
             activities: [
                 { name: "Sunrise photos", icon: <Camera className="w-4 h-4" />, suitable: goodForPhotos },
@@ -55,7 +58,7 @@ export default function PlanYourDay({ tempMax, tempMin, precipProb, sunriseTime 
             time: "12:00",
             label: "Midday",
             icon: <Sun className="w-6 h-6 text-yellow-500" />,
-            temp: noonTemp,
+            temp: noonTempRaw,
             bgClass: "from-yellow-100 to-amber-50",
             activities: [
                 { name: "Sightseeing", icon: <Building className="w-4 h-4" />, suitable: goodForSightseeing },
@@ -67,7 +70,7 @@ export default function PlanYourDay({ tempMax, tempMin, precipProb, sunriseTime 
             time: "15:00",
             label: "Afternoon",
             icon: <Sun className="w-6 h-6 text-orange-400" />,
-            temp: afternoonTemp,
+            temp: afternoonTempRaw,
             bgClass: "from-orange-100 to-rose-50",
             activities: [
                 { name: "Bike tour", icon: <Bike className="w-4 h-4" />, suitable: goodForBiking },
@@ -79,7 +82,7 @@ export default function PlanYourDay({ tempMax, tempMin, precipProb, sunriseTime 
             time: sunsetTime,
             label: "Evening",
             icon: <Sunset className="w-6 h-6 text-rose-500" />,
-            temp: eveningTemp,
+            temp: eveningTempRaw,
             bgClass: "from-rose-100 to-purple-50",
             activities: [
                 { name: "Sunset views", icon: <Camera className="w-4 h-4" />, suitable: goodForPhotos },
@@ -100,7 +103,7 @@ export default function PlanYourDay({ tempMax, tempMin, precipProb, sunriseTime 
                 )}
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {timeSlots.map((slot, index) => (
                     <motion.div
                         key={slot.label}
@@ -110,16 +113,16 @@ export default function PlanYourDay({ tempMax, tempMin, precipProb, sunriseTime 
                         transition={{ delay: index * 0.1 }}
                         className={`p-4 rounded-xl bg-gradient-to-br ${slot.bgClass} border border-white/50 shadow-sm`}
                     >
-                        <div className="flex items-center justify-between mb-3">
-                            <div className="flex items-center gap-2">
-                                {slot.icon}
-                                <div>
-                                    <p className="font-semibold text-slate-800">{slot.label}</p>
-                                    <p className="text-xs text-slate-500">{slot.time}</p>
+                        <div className="flex items-center justify-between mb-3 underline-offset-4">
+                            <div className="flex items-center gap-2 min-w-0">
+                                <div className="shrink-0">{slot.icon}</div>
+                                <div className="min-w-0">
+                                    <p className="font-semibold text-slate-800 text-sm md:text-base truncate">{slot.label}</p>
+                                    <p className="text-[10px] md:text-xs text-slate-500">{slot.time}</p>
                                 </div>
                             </div>
-                            <div className="text-right">
-                                <p className="text-lg font-bold text-slate-800">{slot.temp}°C</p>
+                            <div className="text-right shrink-0">
+                                <p className="text-base md:text-lg font-bold text-slate-800">{convertTemp(slot.temp)}°{unit}</p>
                                 <p className="text-xs">{getTempEmoji(slot.temp)}</p>
                             </div>
                         </div>

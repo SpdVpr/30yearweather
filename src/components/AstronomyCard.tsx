@@ -175,20 +175,20 @@ export default function AstronomyCard({ date, lat, lon, timezoneOffset = 0 }: As
             <div className="mt-2 pt-3 border-t border-dashed border-gray-100 bg-orange-50/30 -mx-6 px-6 pb-2">
                 <div className="flex items-center justify-center gap-1.5 mb-2">
                     <Camera className="w-3.5 h-3.5 text-orange-600" />
-                    <span className="text-[10px] font-bold text-orange-700 uppercase tracking-widest">Golden Hour</span>
+                    <span className="text-[10px] font-bold text-orange-700 uppercase tracking-widest whitespace-nowrap">Golden Hour</span>
                 </div>
-                <div className="flex justify-between items-center text-xs">
-                    <div className="text-left">
-                        <span className="text-gray-400 text-[10px] mr-2">Morning</span>
-                        <span className="font-medium text-slate-700 bg-white px-2 py-0.5 rounded border border-orange-100">
+                <div className="flex justify-between items-start sm:items-center text-xs">
+                    <div className="flex flex-col items-center sm:flex-row sm:items-center gap-0.5 sm:gap-2">
+                        <span className="text-gray-400 text-[10px]">Morning</span>
+                        <span className="font-medium text-slate-700 bg-white px-2 py-0.5 rounded border border-orange-100 whitespace-nowrap">
                             {formatTime(sunTimes.sunrise)} - {formatTime(sunTimes.goldenHourEnd)}
                         </span>
                     </div>
-                    <div className="text-right">
-                        <span className="font-medium text-slate-700 bg-white px-2 py-0.5 rounded border border-orange-100">
+                    <div className="flex flex-col-reverse items-center sm:flex-row sm:items-center gap-0.5 sm:gap-2">
+                        <span className="font-medium text-slate-700 bg-white px-2 py-0.5 rounded border border-orange-100 whitespace-nowrap">
                             {formatTime(sunTimes.goldenHour)} - {formatTime(sunTimes.sunset)}
                         </span>
-                        <span className="text-gray-400 text-[10px] ml-2">Evening</span>
+                        <span className="text-gray-400 text-[10px]">Evening</span>
                     </div>
                 </div>
             </div>

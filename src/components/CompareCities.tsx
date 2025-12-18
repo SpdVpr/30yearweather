@@ -76,30 +76,27 @@ export default function CompareCities({
                                     transition={{ delay: index * 0.05 }}
                                     className="flex items-center justify-between p-3 rounded-lg bg-white border border-gray-100 hover:border-indigo-300 hover:shadow-md transition-all group"
                                 >
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold">
+                                    <div className="flex items-center gap-3 min-w-0 flex-1">
+                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold shrink-0">
                                             {index + 1}
                                         </div>
-                                        <div>
-                                            <p className="font-semibold text-gray-900">{city.cityName}</p>
-                                            <p className="text-xs text-gray-500">{city.country}</p>
+                                        <div className="min-w-0">
+                                            <p className="font-semibold text-gray-900 truncate">{city.cityName}</p>
+                                            <p className="text-xs text-gray-500 truncate">{city.country}</p>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-3 shrink-0">
                                         <div className="flex items-center gap-2 text-xs text-gray-500">
                                             <Thermometer className="w-3 h-3 text-rose-400" />
                                             <span>{city.tempMax}°C</span>
                                         </div>
-                                        <div className="flex items-center gap-2 text-xs text-gray-500">
+                                        <div className="flex items-center gap-2 text-xs text-gray-500 hidden sm:flex">
                                             {city.precipProb > 30 ? (
                                                 <CloudRain className="w-3 h-3 text-blue-400" />
                                             ) : (
                                                 <Sun className="w-3 h-3 text-amber-400" />
                                             )}
                                             <span>{city.precipProb}%</span>
-                                        </div>
-                                        <div className={`px-2 py-1 rounded-full text-xs font-bold ${badge.bg} ${badge.text}`}>
-                                            {city.score}
                                         </div>
                                         <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-indigo-500 transition-colors" />
                                     </div>

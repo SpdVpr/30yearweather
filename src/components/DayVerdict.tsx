@@ -55,7 +55,7 @@ export default function DayVerdict({ precipProb, city, month, day, tempMax, city
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="w-full max-w-5xl mx-auto -mt-20 relative z-30 px-4 mb-12"
+            className="w-full max-w-5xl mx-auto -mt-12 md:-mt-20 relative z-30 px-4 mb-12"
         >
             <div className={`p-6 md:p-8 rounded-3xl shadow-2xl border-2 ${bgClass} bg-white/95 backdrop-blur-md`}>
                 <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
