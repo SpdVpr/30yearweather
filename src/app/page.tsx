@@ -17,6 +17,9 @@ export const metadata = {
   title: "Long-Range Weather Forecast | 365-Day Predictions Based on 30 Years of Data",
   description: "Get accurate long-range weather forecasts for any date up to 365 days ahead. Based on 30 years of NASA satellite data. Perfect for wedding planning, travel, and events.",
   keywords: ["long range weather forecast", "365 day weather forecast", "year ahead weather forecast", "weather forecast", "long term weather forecast", "extended weather forecast", "wedding weather forecast", "travel weather forecast", "historical weather forecast", "30 year weather data"],
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default async function Home() {
@@ -69,7 +72,7 @@ export default async function Home() {
         name: 'What cities have long-range weather forecasts?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'We currently provide 365-day weather forecasts for Prague and Berlin with detailed 30-year analysis. We are rapidly expanding to cover 100+ major cities worldwide in 2025, including Paris, Rome, Barcelona, London, and New York.'
+          text: 'We currently provide 365-day weather forecasts for 84+ cities worldwide including Prague, Paris, Rome, Barcelona, London, Tokyo, Bali, Dubai, New York, and many more. Each city has detailed 30-year historical analysis covering all 366 days of the year.'
         }
       },
       {
@@ -101,8 +104,8 @@ export default async function Home() {
         </div>
         <div className="hidden md:flex items-center gap-6 text-sm font-medium text-white/90">
           <a href="#cities" className="hover:text-white hover:underline transition-all">Destinations</a>
-          <a href="#methodology" className="hover:text-white hover:underline transition-all">Methodology</a>
-          <a href="#" className="hover:text-white hover:underline transition-all opacity-80">About</a>
+          <a href="/methodology" className="hover:text-white hover:underline transition-all">Methodology</a>
+          <a href="/about" className="hover:text-white hover:underline transition-all">About</a>
           <UnitToggle />
         </div>
       </nav>
@@ -387,8 +390,8 @@ export default async function Home() {
           <div className="border-b border-stone-200 pb-6">
             <h3 className="text-xl font-bold mb-3">What cities have long-range weather forecasts?</h3>
             <p className="text-stone-600 leading-relaxed">
-              We currently provide 365-day weather forecasts for Prague and Berlin with detailed 30-year analysis. We are
-              rapidly expanding to cover 100+ major cities worldwide in 2025, including Paris, Rome, Barcelona, London, and New York.
+              We currently provide 365-day weather forecasts for <strong>84+ cities worldwide</strong> including Prague, Paris, Rome, Barcelona,
+              London, Tokyo, Bali, Dubai, New York, Sydney, and many more. Each city has detailed 30-year historical analysis covering all 366 days of the year.
             </p>
           </div>
 

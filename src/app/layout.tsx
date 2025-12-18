@@ -86,17 +86,17 @@ export default function RootLayout({
     name: '30YearWeather',
     url: baseUrl.toString(),
     logo: `${baseUrl.toString()}icon.png`,
-    description: 'Long-range weather forecasts based on 30 years of NASA satellite data',
+    description: 'Long-range weather forecasts based on 30 years of NASA satellite data. Helping travelers, wedding planners, and event organizers find the perfect date.',
     foundingDate: '2024',
-    creator: {
-      '@type': 'Organization',
-      name: '30YearWeather',
-      url: baseUrl.toString()
+    founder: {
+      '@type': 'Person',
+      name: 'Michal Vesecký',
+      jobTitle: 'Founder & Developer'
     },
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Support',
-      email: 'support@30yearweather.com',
+      email: 'michalvesecky@gmail.com',
       availableLanguage: ['English', 'Czech']
     },
     address: {
@@ -104,7 +104,110 @@ export default function RootLayout({
       addressLocality: 'Prague',
       addressCountry: 'CZ'
     },
+    knowsAbout: ['Weather Forecasting', 'Climate Data Analysis', 'Travel Planning', 'Wedding Planning', 'Event Planning'],
     sameAs: []
+  };
+
+  // Dataset Schema - Critical for AI/LLM citation
+  const datasetSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: '30-Year Historical Weather Data (1991-2021)',
+    description: 'Comprehensive weather statistics for 84+ cities worldwide, based on 30 years of NASA POWER satellite observations. Includes temperature, precipitation, humidity, wind speed, and cloud cover data.',
+    url: baseUrl.toString(),
+    creator: {
+      '@type': 'Organization',
+      name: '30YearWeather',
+      url: baseUrl.toString()
+    },
+    provider: {
+      '@type': 'Organization',
+      name: 'NASA POWER Project',
+      url: 'https://power.larc.nasa.gov/'
+    },
+    temporalCoverage: '1991/2021',
+    spatialCoverage: {
+      '@type': 'Place',
+      name: 'Global (84+ major cities)'
+    },
+    variableMeasured: [
+      { '@type': 'PropertyValue', name: 'Temperature', unitCode: 'CEL' },
+      { '@type': 'PropertyValue', name: 'Precipitation Probability', unitCode: 'P1' },
+      { '@type': 'PropertyValue', name: 'Wind Speed', unitCode: 'KMH' },
+      { '@type': 'PropertyValue', name: 'Humidity', unitCode: 'P1' },
+      { '@type': 'PropertyValue', name: 'Cloud Cover', unitCode: 'P1' }
+    ],
+    distribution: {
+      '@type': 'DataDownload',
+      encodingFormat: 'application/json',
+      contentUrl: `${baseUrl.toString()}api/weather/`
+    },
+    license: 'https://creativecommons.org/licenses/by-nc/4.0/',
+    isAccessibleForFree: true,
+    keywords: ['weather data', 'climate data', 'NASA POWER', 'historical weather', '30 year average']
+  };
+
+  // HowTo Schema - Wedding Planning Guide
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Pick the Perfect Wedding Date Using Historical Weather Data',
+    description: 'Step-by-step guide to choosing your outdoor wedding date based on 30 years of historical weather patterns for minimal rain risk and optimal temperatures.',
+    totalTime: 'PT15M',
+    tool: [
+      { '@type': 'HowToTool', name: '30YearWeather City Forecast' }
+    ],
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: 'Choose Your Destination',
+        text: 'Select your wedding city from our 84+ destinations. Each city has detailed weather data for all 366 days.',
+        url: `${baseUrl.toString()}#cities`
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: 'Identify Your Preferred Months',
+        text: 'Look at the monthly overview to find months with temperatures between 18-26°C and rain probability under 25%.'
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: 'Compare Specific Dates',
+        text: 'Drill down to daily forecasts to compare rain probabilities, temperatures, and our Wedding Score for each date.'
+      },
+      {
+        '@type': 'HowToStep',
+        position: 4,
+        name: 'Check Alternative Dates',
+        text: 'Review nearby dates (±7 days) to find the lowest risk option. Our tool shows improvement percentages.'
+      },
+      {
+        '@type': 'HowToStep',
+        position: 5,
+        name: 'Plan Your Backup',
+        text: 'Even with low rain probability, always have an indoor backup plan. Weather is never 100% predictable.'
+      }
+    ]
+  };
+
+  // WebSite Schema with SearchAction for Google Sitelinks Search Box
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: '30YearWeather',
+    url: baseUrl.toString(),
+    description: '365-day weather forecasts based on 30 years of historical NASA satellite data. Perfect for wedding planning, travel, and events.',
+    inLanguage: 'en-US',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${baseUrl.toString()}?search={search_term_string}`
+      },
+      'query-input': 'required name=search_term_string'
+    }
   };
 
   // CreativeWork Schema with license information
@@ -135,26 +238,9 @@ export default function RootLayout({
     },
     copyrightYear: '2025',
     inLanguage: 'en-US',
-    keywords: 'weather forecast, long range weather, historical weather data, wedding planning, travel planning',
-    datePublished: '2024-01-01',
+    keywords: 'weather forecast, long range weather, historical weather data, wedding planning, travel planning, event planning, NASA POWER data',
+    datePublished: '2024-12-01',
     dateModified: new Date().toISOString().split('T')[0]
-  };
-
-  // WebSite Schema with SearchAction for Google Sitelinks Search Box
-  const websiteSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: '30YearWeather',
-    url: baseUrl.toString(),
-    description: '365-day weather forecasts based on 30 years of historical data',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${baseUrl.toString()}?search={search_term_string}`
-      },
-      'query-input': 'required name=search_term_string'
-    }
   };
 
   return (
@@ -164,7 +250,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, websiteSchema, creativeWorkSchema]) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, websiteSchema, creativeWorkSchema, datasetSchema, howToSchema]) }}
         />
       </head>
       <body

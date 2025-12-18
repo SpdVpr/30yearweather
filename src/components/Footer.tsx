@@ -11,18 +11,23 @@ export default function Footer() {
                         Making meteorology accessible for long-term planning. Because averages lie, but data doesn't.
                     </p>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-sm">
                     <div className="flex flex-col gap-3">
                         <span className="text-white font-bold mb-1">Product</span>
                         <Link href="/#cities" className="hover:text-white transition-colors">Destinations</Link>
-                        <Link href="/#methodology" className="hover:text-white transition-colors">Methodology</Link>
+                        <Link href="/methodology" className="hover:text-white transition-colors">Methodology</Link>
                         <Link href="/api-docs" className="hover:text-white transition-colors">API Access</Link>
                     </div>
                     <div className="flex flex-col gap-3">
                         <span className="text-white font-bold mb-1">Company</span>
+                        <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
                         <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
                         <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                        <span className="text-white font-bold mb-1">Legal</span>
                         <Link href="/gdpr" className="hover:text-white transition-colors">GDPR</Link>
+                        <Link href="/privacy#cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
                     </div>
                     <div className="flex flex-col gap-3">
                         <span className="text-white font-bold mb-1">Contact</span>

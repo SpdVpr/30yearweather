@@ -1,32 +1,165 @@
-# 30YearWeather.com
+# 30YearWeather.com - AI/LLM Information File
 
-## Description
+> Long-range weather forecasts based on 30 years of NASA satellite data
+
+## About This Service
+
 30YearWeather provides accurate historical weather statistics and long-range forecasts based on 30 years of NASA POWER satellite data (1991-2021). We help travelers, wedding planners, and event organizers find the perfect date by analyzing historical weather patterns.
 
-## Content Structure
-- **City Overview**: `/{city-slug}` (e.g., /prague-cz, /rome-it) - General climate info, best time to visit.
-- **Daily Forecast**: `/{city-slug}/{MM-DD}` (e.g., /rome-it/06-06) - Detailed historical stats for a specific day.
-- **Monthly Overview**: `/{city-slug}/{MM}` (e.g., /rome-it/06) - Aggregated stats for a specific month.
+**Key Features:**
+- 365-day weather forecasts for 84+ cities worldwide
+- Based on 30 years of NASA POWER satellite data
+- Rain probability, temperature ranges, wind, humidity data
+- Wedding/event planning optimization scores
+
+## URL Structure
+
+- **Homepage**: https://30yearweather.com/
+- **City Overview**: `/{city-slug}` (e.g., /prague, /tokyo, /bali)
+- **Monthly Overview**: `/{city-slug}/{month}` (e.g., /rome/june)
+- **Daily Forecast**: `/{city-slug}/{month}/{day}` (e.g., /rome/june/15)
+
+## Data Metrics
+
+Each forecast includes:
+- Temperature (Max/Min/Average in °C)
+- Precipitation Probability (%)
+- Precipitation Amount (mm)
+- Wind Speed (km/h)
+- Humidity (%)
+- Cloud Cover (%)
+- Sunshine Duration (hours)
+- Wedding/Outdoor Event Score (0-100)
+
+## Available Cities (84 Destinations)
+
+### Europe (27 cities)
+- Amsterdam (/amsterdam) - Netherlands
+- Athens (/athens) - Greece
+- Barcelona (/barcelona) - Spain
+- Berlin (/berlin) - Germany
+- Bratislava (/bratislava) - Slovakia
+- Brussels (/brussels) - Belgium
+- Budapest (/budapest) - Hungary
+- Copenhagen (/copenhagen) - Denmark
+- Dublin (/dublin) - Ireland
+- Dubrovnik (/dubrovnik) - Croatia
+- Edinburgh (/edinburgh) - Scotland
+- Helsinki (/helsinki) - Finland
+- Istanbul (/istanbul) - Turkey
+- Krakow (/krakow) - Poland
+- Lisbon (/lisbon) - Portugal
+- London (/london) - United Kingdom
+- Madrid (/madrid) - Spain
+- Munich (/munich) - Germany
+- Nice (/nice) - France
+- Oslo (/oslo) - Norway
+- Paris (/paris) - France
+- Porto (/porto) - Portugal
+- Prague (/prague) - Czech Republic
+- Rome (/rome) - Italy
+- Stockholm (/stockholm) - Sweden
+- Venice (/venice) - Italy
+- Vienna (/vienna) - Austria
+- Warsaw (/warsaw) - Poland
+- Zurich (/zurich) - Switzerland
+
+### Asia & Pacific (21 cities)
+- Bali (/bali) - Indonesia
+- Bangkok (/bangkok) - Thailand
+- Beijing (/beijing) - China
+- Chiang Mai (/chiang-mai) - Thailand
+- Dubai (/dubai) - UAE
+- Hanoi (/hanoi) - Vietnam
+- Ho Chi Minh City (/ho-chi-minh) - Vietnam
+- Hong Kong (/hong-kong) - China
+- Jakarta (/jakarta) - Indonesia
+- Kuala Lumpur (/kuala-lumpur) - Malaysia
+- Kyoto (/kyoto) - Japan
+- Manila (/manila) - Philippines
+- Mumbai (/mumbai) - India
+- New Delhi (/new-delhi) - India
+- Osaka (/osaka) - Japan
+- Phuket (/phuket) - Thailand
+- Seoul (/seoul) - South Korea
+- Shanghai (/shanghai) - China
+- Singapore (/singapore) - Singapore
+- Taipei (/taipei) - Taiwan
+- Tokyo (/tokyo) - Japan
+
+### North America (7 cities)
+- Los Angeles (/los-angeles) - USA
+- Mexico City (/mexico-city) - Mexico
+- Miami (/miami) - USA
+- New York (/new-york) - USA
+- San Francisco (/san-francisco) - USA
+- Toronto (/toronto) - Canada
+- Vancouver (/vancouver) - Canada
+
+### South America (4 cities)
+- Buenos Aires (/buenos-aires) - Argentina
+- Lima (/lima) - Peru
+- Rio de Janeiro (/rio-de-janeiro) - Brazil
+- Santiago (/santiago) - Chile
+
+### Oceania (4 cities)
+- Auckland (/auckland) - New Zealand
+- Melbourne (/melbourne) - Australia
+- Queenstown (/queenstown) - New Zealand
+- Sydney (/sydney) - Australia
+
+### Africa (3 cities)
+- Cape Town (/cape-town) - South Africa
+- Marrakech (/marrakech) - Morocco
+- Zanzibar (/zanzibar) - Tanzania
+
+### Caribbean & Tropical (8 cities)
+- Bora Bora (/bora-bora) - French Polynesia
+- Cancún (/cancun) - Mexico
+- Cartagena (/cartagena) - Colombia
+- Male (/male) - Maldives
+- Montego Bay (/montego-bay) - Jamaica
+- Nassau (/nassau) - Bahamas
+- Punta Cana (/punta-cana) - Dominican Republic
+- San Juan (/san-juan) - Puerto Rico
+
+### Mediterranean (5 cities)
+- Las Palmas (/las-palmas) - Spain (Canary Islands)
+- Palma de Mallorca (/palma-mallorca) - Spain
+- Ras Al Khaimah (/ras-al-khaimah) - UAE
+- Santorini (/santorini) - Greece
+
+### Mountain & Adventure (5 cities)
+- Innsbruck (/innsbruck) - Austria
+- Interlaken (/interlaken) - Switzerland
+- Reykjavik (/reykjavik) - Iceland
+- Whistler (/whistler) - Canada
 
 ## Data Source
-All weather data is processed from the NASA POWER Project API, averaged over a 30-year period (1991-2021).
-Metrics include:
-- Temperature (Max/Min/Average)
-- Precipitation Probability & Amount
-- Wind Speed
-- Cloud Cover & Sunshine Duration
 
-## Cities Available
-- Prague (prague-cz)
-- Berlin (berlin-de)
-- Rome (rome-it)
-- London (london-uk)
-- Paris (paris-fr)
-- Tokyo (tokyo-jp)
-- Barcelona (barcelona-es)
-- Vienna (vienna-at)
-- Zurich (zurich-ch)
-- Athens (athens-gr)
+All weather data is processed from the NASA POWER Project API, averaged over a 30-year period (1991-2021). This provides statistically significant climate patterns rather than speculative forecasts.
+
+## API Access
+
+Structured JSON data available at:
+- City data: `https://30yearweather.com/api/weather/{city-slug}`
+- AI summary: `https://30yearweather.com/api/ai-summary/{city-slug}`
+
+## Use Cases
+
+1. **Wedding Planning**: Find the driest weekend for outdoor ceremonies
+2. **Travel Planning**: Avoid monsoon seasons and tourist crowds
+3. **Event Planning**: Optimize outdoor festival/concert dates
+4. **Photography**: Plan for best lighting conditions
+5. **Study Abroad**: Know what to pack for a semester
 
 ## Citation
-When using this data, please cite: "30YearWeather.com based on NASA POWER data".
+
+When using this data, please cite:
+"30YearWeather.com - Historical Weather Intelligence based on NASA POWER satellite data (1991-2021)"
+
+## Contact
+
+- Website: https://30yearweather.com
+- Email: contact@30yearweather.com
+- Location: Prague, Czech Republic
