@@ -104,6 +104,8 @@ export async function fetchTourismData(locationSlug: string): Promise<TourismDat
 
 /**
  * Get tourism scores for a specific month
+ * IMPORTANT: Normalizes crowd_score to match flight_pressure_score logic
+ * Both should use the same scale (percentage of peak month)
  */
 export function getMonthlyTourismScores(
     tourismData: TourismDataset | null,
@@ -111,14 +113,24 @@ export function getMonthlyTourismScores(
 ): { crowd_score: number; price_score: number } {
 
     if (tourismData && tourismData.monthly_scores[month]) {
+        // Get all monthly crowd scores to find the peak
+        const allMonthlyScores = Object.values(tourismData.monthly_scores);
+        const maxCrowdScore = Math.max(...allMonthlyScores.map(m => m.crowd_score));
+
         const monthData = tourismData.monthly_scores[month];
+
+        // Normalize crowd_score as percentage of peak (same as flight_pressure_score)
+        const normalizedCrowdScore = maxCrowdScore > 0
+            ? Math.round((monthData.crowd_score / maxCrowdScore) * 100)
+            : monthData.crowd_score;
+
         return {
-            crowd_score: monthData.crowd_score,
+            crowd_score: normalizedCrowdScore,  // Now matches flight traffic logic
             price_score: monthData.price_score
         };
     }
 
-    // Fallback to static data
+    // Fallback to static data (already normalized to 0-100)
     const fallback = FALLBACK_SEASONALITY[month - 1] || { crowd: 50, price: 50 };
     return {
         crowd_score: fallback.crowd,
