@@ -332,21 +332,22 @@ export default async function CityDayPage({
                 }}
             />
 
-            {/* Hero Section */}
-            <CityHero
-                city={data.meta.name}
-                citySlug={city}
-                date={formattedDate}
-                tempMax={dayData.stats.temp_max}
-                tempMin={dayData.stats.temp_min}
-                precipProb={dayData.stats.precip_prob}
-                dateSlug={dateKey}
-                windKmh={dayData.stats.wind_kmh}
-                humidity={dayData.stats.humidity_percent}
-                imageAlt={`${data.meta.name} street view during ${monthDisplay}`}
-            />
+            <main>
+                {/* Hero Section */}
+                <CityHero
+                    city={data.meta.name}
+                    citySlug={city}
+                    date={formattedDate}
+                    tempMax={dayData.stats.temp_max}
+                    tempMin={dayData.stats.temp_min}
+                    precipProb={dayData.stats.precip_prob}
+                    dateSlug={dateKey}
+                    windKmh={dayData.stats.wind_kmh}
+                    humidity={dayData.stats.humidity_percent}
+                    imageAlt={`${data.meta.name} street view during ${monthDisplay}`}
+                />
 
-            <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto">
+                <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto">
                 <div itemProp="articleBody" className="space-y-12">
 
                     <DayVerdict
@@ -382,6 +383,7 @@ export default async function CityDayPage({
                     />
                 </div>
             </article>
+            </main>
         </SwipeNavigation>
     );
 }

@@ -207,7 +207,8 @@ export default async function CityMonthPage({ params }: { params: { city: string
                 {/* Content starts after the unified header */}
             </div>
 
-            <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+            <main>
+                <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
                 <div itemProp="articleBody">
 
                     {/* H1 Heading for SEO */}
@@ -413,6 +414,7 @@ export default async function CityMonthPage({ params }: { params: { city: string
 
                 </div>
             </article>
+            </main>
         </div>
     );
 }

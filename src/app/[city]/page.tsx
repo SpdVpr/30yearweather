@@ -274,7 +274,8 @@ export default async function CityIndexPage({
                 {/* Content starts after the unified header */}
             </div>
 
-            <article itemScope itemType="https://schema.org/Article" className="max-w-6xl mx-auto px-6 py-12">
+            <main>
+                <article itemScope itemType="https://schema.org/Article" className="max-w-6xl mx-auto px-6 py-12">
                 <div itemProp="articleBody">
                     {/* Header */}
                     <div className="mb-12">
@@ -491,6 +492,7 @@ export default async function CityIndexPage({
                     </div>
                 </div>
             </article>
+            </main>
         </div>
     );
 }

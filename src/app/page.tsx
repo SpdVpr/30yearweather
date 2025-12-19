@@ -95,22 +95,22 @@ export default async function Home() {
       />
 
       {/* 1. Navbar (Minimalist with Logo) */}
-      <nav className="absolute top-0 w-full z-50 py-6 px-6 md:px-12 flex justify-between items-center bg-gradient-to-b from-black/50 to-transparent">
-        <div className="flex items-center gap-3">
+      <header className="absolute top-0 w-full z-50 py-6 px-6 md:px-12 flex justify-between items-center bg-gradient-to-b from-black/50 to-transparent">
+        <nav className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/20 shadow-lg bg-white flex items-center justify-center p-0.5">
             <img src="/logo.svg" alt="30YearWeather Logo" className="w-full h-full object-contain" />
           </div>
           <div className="text-xl font-bold tracking-tight text-white drop-shadow-md">30YearWeather.</div>
-        </div>
-        <div className="hidden md:flex items-center gap-6 text-sm font-medium text-white/90">
+        </nav>
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-white/90">
           <a href="#cities" className="hover:text-white hover:underline transition-all">Destinations</a>
           <a href="/methodology" className="hover:text-white hover:underline transition-all">Methodology</a>
           <a href="/about" className="hover:text-white hover:underline transition-all">About</a>
           <UnitToggle />
-        </div>
-      </nav>
+        </nav>
+      </header>
       {/* 2. Hero Section (Immersive) */}
-      <div className="relative w-full min-h-[85vh] flex items-center justify-center border-b border-stone-200">
+      <section className="relative w-full min-h-[85vh] flex items-center justify-center border-b border-stone-200">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
@@ -143,10 +143,12 @@ export default async function Home() {
             <HeroSearch cities={cities} />
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* 3. Perfect For... (Use Cases) */}
-      <section id="use-cases" className="py-20 px-6 md:px-12 bg-white border-b border-stone-100">
+      {/* Main Content */}
+      <main>
+        {/* 3. Perfect For... (Use Cases) */}
+        <section id="use-cases" className="py-20 px-6 md:px-12 bg-white border-b border-stone-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-orange-700 font-bold text-sm uppercase tracking-widest">Historical Weather Data Analysis</span>
@@ -403,7 +405,8 @@ export default async function Home() {
             </p>
           </div>
         </div>
-      </section >
+      </section>
+      </main>
 
       {/* Footer */}
       <Footer />

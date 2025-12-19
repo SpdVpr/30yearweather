@@ -88,6 +88,8 @@ export default function HeroSearch({ cities }: HeroSearchProps) {
                                 }}
                                 onFocus={() => setIsOpen(true)}
                                 aria-label="Search for destination city"
+                                autoComplete="off"
+                                name="destination"
                             />
                         </div>
                         {selectedCity && (
@@ -137,6 +139,8 @@ export default function HeroSearch({ cities }: HeroSearchProps) {
                                         onChange={(e) => setMonth(e.target.value)}
                                         className="bg-transparent font-bold text-stone-900 outline-none appearance-none cursor-pointer hover:text-orange-600 w-full p-0 text-sm sm:text-base leading-none absolute inset-0 opacity-0 z-10"
                                         aria-label="Select month"
+                                        autoComplete="off"
+                                        name="travel-month"
                                     >
                                         {Array.from({ length: 12 }, (_, i) => i + 1).map(m => (
                                             <option key={m} value={m}>{new Date(2024, m - 1, 1).toLocaleString('en-US', { month: 'long' })}</option>
@@ -166,6 +170,8 @@ export default function HeroSearch({ cities }: HeroSearchProps) {
                                         onChange={(e) => setDay(e.target.value)}
                                         className="bg-transparent font-bold text-stone-900 outline-none appearance-none cursor-pointer hover:text-orange-600 w-full p-0 text-sm sm:text-base leading-none absolute inset-0 opacity-0 z-10"
                                         aria-label="Select day"
+                                        autoComplete="off"
+                                        name="travel-day"
                                     >
                                         {days.map(d => (
                                             <option key={d} value={d}>{d}</option>
