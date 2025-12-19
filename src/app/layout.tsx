@@ -254,7 +254,6 @@ export default function RootLayout({
 
         {/* Preload critical resources */}
         <link rel="preload" as="image" href="/logo.svg" type="image/svg+xml" />
-        <link rel="preload" as="image" href="/images/hero1-optimized.webp" type="image/webp" fetchPriority="high" />
 
         {/* Inline critical CSS for above-the-fold content */}
         <style dangerouslySetInnerHTML={{ __html: `

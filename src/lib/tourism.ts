@@ -60,46 +60,16 @@ const FALLBACK_SEASONALITY = [
 /**
  * Fetch pre-computed tourism data from Firestore
  * Cached on client-side for 24 hours
+ *
+ * NOTE: Tourism data is pre-computed during ETL and embedded in city JSON files.
+ * This function is kept for backward compatibility but returns null to avoid 404 errors.
+ * Real tourism data should be passed from server components via city data.
  */
 export async function fetchTourismData(locationSlug: string): Promise<TourismDataset | null> {
-    try {
-        // Check localStorage cache first
-        const cacheKey = `tourism_v2_${locationSlug}`; // Changed to v2 to force refresh
-        const cached = localStorage.getItem(cacheKey);
-
-        if (cached) {
-            const { data, timestamp } = JSON.parse(cached);
-            const age = Date.now() - timestamp;
-
-            // Cache valid for 24 hours
-            if (age < 24 * 60 * 60 * 1000) {
-                console.log('✅ Using cached tourism data for', locationSlug);
-                return data;
-            }
-        }
-
-        console.log('🔄 Fetching fresh tourism data for', locationSlug);
-        // Fetch from Firestore (via your API route or direct)
-        const response = await fetch(`/api/tourism/${locationSlug}`);
-
-        if (!response.ok) {
-            throw new Error('Failed to fetch tourism data');
-        }
-
-        const data: TourismDataset = await response.json();
-
-        // Cache for future use
-        localStorage.setItem(cacheKey, JSON.stringify({
-            data,
-            timestamp: Date.now()
-        }));
-
-        return data;
-
-    } catch (error) {
-        console.warn('Failed to fetch tourism data, using fallback:', error);
-        return null;
-    }
+    // Tourism data is now embedded in city JSON files during ETL
+    // No need to fetch from API - just return null and use fallback scores
+    console.log('ℹ️ Tourism data is embedded in city JSON, skipping API fetch for', locationSlug);
+    return null;
 }
 
 /**
