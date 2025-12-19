@@ -67,18 +67,23 @@ export default function MonthTravelInfo({ cityName, monthNum, flightInfo }: Mont
                             <Icon className={`w-6 h-6 text-${status.color}-600`} />
                         </div>
                         <div>
+                            <p className="text-sm font-medium text-stone-700">{MONTH_NAMES[monthNum - 1]}</p>
                             <p className="text-sm text-stone-500">{status.desc}</p>
-                            <p className="text-xs text-orange-600 mt-2 font-medium">
-                                📈 Peak season: {peakMonthName} (~{maxFlights.toLocaleString()} slots/day)
-                            </p>
-                            <p className="text-xs text-stone-400 mt-1">
-                                {currentMonthFlights > 0
-                                    ? `~${currentMonthFlights.toLocaleString()} landing slots (est. daily)`
-                                    : "Limited flight data available"}
-                            </p>
                         </div>
                     </div>
 
+                    {/* Current Month Stats */}
+                    <div className="bg-white/50 rounded-lg p-4 mb-4">
+                        <p className="text-xs text-stone-500 mb-1">This Month's Traffic</p>
+                        <p className="text-2xl font-bold text-stone-900">
+                            {currentMonthFlights > 0
+                                ? `${currentMonthFlights.toLocaleString()}`
+                                : "N/A"}
+                        </p>
+                        <p className="text-xs text-stone-400">landing slots/day (est.)</p>
+                    </div>
+
+                    {/* Crowd Level Progress */}
                     <div className="space-y-2">
                         <div className="flex justify-between text-sm">
                             <span className="text-stone-600">Crowd Level</span>
@@ -91,37 +96,48 @@ export default function MonthTravelInfo({ cityName, monthNum, flightInfo }: Mont
                         />
                     </div>
 
-                    <p className="text-xs text-stone-400 mt-4">
-                        Peak season: <strong>{peakMonthName}</strong> (~{maxFlights.toLocaleString()} slots/day)
-                    </p>
-                    {flightInfo.peak_daily_arrivals && (
-                        <p className="text-xs text-stone-400 mt-1">
-                            ~{flightInfo.peak_daily_arrivals.toLocaleString()} landing slots on peak month's typical day
+                    {/* Peak Season Reference */}
+                    <div className="mt-4 pt-4 border-t border-stone-200">
+                        <p className="text-xs text-stone-500 mb-1">Peak Season Reference</p>
+                        <p className="text-sm font-medium text-orange-600">
+                            {peakMonthName}: {maxFlights.toLocaleString()} slots/day
                         </p>
-                    )}
-                    <p className="text-[10px] text-stone-300 mt-1">
-                        Based on mid-month sample data
-                    </p>
+                        <p className="text-[10px] text-stone-300 mt-1">
+                            Based on mid-month sample data
+                        </p>
+                    </div>
                 </div>
 
                 {/* Right: Mini Seasonality Chart */}
                 <div>
                     <p className="text-sm font-medium text-stone-700 mb-3">Landing Slots Pattern</p>
-                    <div className="flex items-end justify-between h-16 gap-0.5">
+                    <div className="flex items-end justify-between gap-0.5" style={{ height: '100px' }}>
                         {MONTH_NAMES.map((name, idx) => {
                             const value = seasonality[idx + 1] || 0;
                             const height = maxFlights > 0 ? (value / maxFlights) * 100 : 0;
                             const isCurrentMonth = idx + 1 === monthNum;
 
+                            // Color based on traffic level
+                            const ratio = maxFlights > 0 ? value / maxFlights : 0;
+                            let barColor = 'bg-emerald-400'; // Low
+                            if (ratio >= 0.85) barColor = 'bg-red-500'; // Peak
+                            else if (ratio >= 0.6) barColor = 'bg-orange-500'; // High
+                            else if (ratio >= 0.4) barColor = 'bg-yellow-400'; // Shoulder
+                            else if (ratio >= 0.2) barColor = 'bg-emerald-400'; // Low
+                            else barColor = 'bg-cyan-300'; // Off-peak
+
                             return (
-                                <div key={name} className="flex flex-col items-center flex-1" title={`${name}: ${value} flights`}>
+                                <div key={name} className="flex flex-col items-center flex-1 gap-1" title={`${name}: ${value} slots/day`}>
+                                    {/* Value label above bar */}
+                                    <span className={`text-[9px] font-medium ${isCurrentMonth ? 'text-orange-600 font-bold' : 'text-stone-500'}`}>
+                                        {value > 0 ? value : ''}
+                                    </span>
+                                    {/* Bar */}
                                     <div
-                                        className={`w-full rounded-t transition-all ${isCurrentMonth
-                                            ? 'bg-orange-500'
-                                            : 'bg-blue-300 hover:bg-blue-400'
-                                            }`}
-                                        style={{ height: `${height}%`, minHeight: value > 0 ? '4px' : '0' }}
+                                        className={`w-full rounded-t transition-all ${isCurrentMonth ? 'ring-2 ring-orange-500' : ''} ${barColor} hover:opacity-80`}
+                                        style={{ height: `${height}%`, minHeight: value > 0 ? '8px' : '0' }}
                                     />
+                                    {/* Month label */}
                                     <span className={`text-[9px] mt-1 ${isCurrentMonth ? 'text-orange-600 font-bold' : 'text-stone-400'}`}>
                                         {name.slice(0, 1)}
                                     </span>
@@ -130,7 +146,7 @@ export default function MonthTravelInfo({ cityName, monthNum, flightInfo }: Mont
                         })}
                     </div>
                     <p className="text-xs text-stone-400 mt-2 text-center">
-                        Based on mid-month sample • Orange = current month
+                        Slots/day • Orange ring = current month
                     </p>
                 </div>
             </div>

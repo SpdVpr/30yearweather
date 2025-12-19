@@ -406,6 +406,7 @@ export default async function CityIndexPage({
                     {/* Travel Intelligence Section */}
                     <TravelInsights
                         cityName={data.meta.name}
+                        citySlug={city}
                         flightInfo={data.meta?.flight_info}
                         healthInfo={data.meta?.health_info}
                     />

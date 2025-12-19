@@ -255,6 +255,16 @@ export default async function CityMonthPage({ params }: { params: { city: string
                         flightInfo={data.meta.flight_info}
                     />
 
+                    {/* 3. CALENDAR VIEW - Moved up for better UX */}
+                    <div id="calendar-view" className="scroll-mt-24 mb-12">
+                        <div className="flex items-center gap-2 mb-6">
+                            <Calendar className="w-5 h-5 text-indigo-600" />
+                            <h2 className="text-xl font-bold text-slate-800">Daily Forecast for {monthDisplay}</h2>
+                        </div>
+                        {/* The specialized calendar component */}
+                        <MonthCalendarView city={city} month={monthNum} data={data} />
+                    </div>
+
                     {/* 2. INTRO TEXT (SEO) - Expanded for LLM optimization */}
                     <div className="mb-12 max-w-3xl">
                         <h2 className="text-2xl font-bold text-slate-900 mb-4">Is {monthDisplay} a good time to visit {cityName}?</h2>
@@ -316,16 +326,6 @@ export default async function CityMonthPage({ params }: { params: { city: string
                             <span className="text-slate-300">|</span>
                             <Link href="/#cities" className="text-orange-600 hover:underline">Compare Destinations</Link>
                         </div>
-                    </div>
-
-                    {/* 3. CALENDAR VIEW */}
-                    <div id="calendar-view" className="scroll-mt-24">
-                        <div className="flex items-center gap-2 mb-6">
-                            <Calendar className="w-5 h-5 text-indigo-600" />
-                            <h2 className="text-xl font-bold text-slate-800">Daily Forecast for {monthDisplay}</h2>
-                        </div>
-                        {/* The specialized calendar component */}
-                        <MonthCalendarView city={city} month={monthNum} data={data} />
                     </div>
 
                     {/* 4. FAQ (Structured Data Compatible) - Fixed consistency */}

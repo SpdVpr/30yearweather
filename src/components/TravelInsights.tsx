@@ -1,7 +1,8 @@
 "use client";
 
 import { Card, Badge, ProgressBar } from "@tremor/react";
-import { Plane, Stethoscope, MapPin, AlertTriangle, CheckCircle } from "lucide-react";
+import { Plane, Stethoscope, MapPin, AlertTriangle, CheckCircle, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 interface FlightInfo {
     source: string;
@@ -24,6 +25,7 @@ interface HealthInfo {
 
 interface TravelInsightsProps {
     cityName: string;
+    citySlug: string;
     flightInfo?: FlightInfo | null;
     healthInfo?: HealthInfo | null;
 }
@@ -31,7 +33,7 @@ interface TravelInsightsProps {
 // Month names for seasonality chart
 const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-export default function TravelInsights({ cityName, flightInfo, healthInfo }: TravelInsightsProps) {
+export default function TravelInsights({ cityName, citySlug, flightInfo, healthInfo }: TravelInsightsProps) {
     // If no data at all, don't render
     if (!flightInfo && !healthInfo) {
         return null;
@@ -111,20 +113,34 @@ export default function TravelInsights({ cityName, flightInfo, healthInfo }: Tra
                         {flightInfo.seasonality && Object.keys(flightInfo.seasonality).length > 0 && (
                             <div className="mb-6">
                                 <h4 className="text-sm font-medium text-stone-700 mb-3">Landing Slots Pattern</h4>
-                                <div className="flex items-end justify-between h-16 gap-1">
+                                <div className="flex items-end justify-between gap-1" style={{ height: '100px' }}>
                                     {MONTH_NAMES.map((month, idx) => {
                                         const value = flightInfo.seasonality?.[idx + 1] || 0;
                                         const maxValue = Math.max(...Object.values(flightInfo.seasonality || {}));
                                         const height = maxValue > 0 ? (value / maxValue) * 100 : 0;
                                         const isPeak = peakMonth?.month === month;
 
+                                        // Color based on traffic level
+                                        const ratio = maxValue > 0 ? value / maxValue : 0;
+                                        let barColor = 'bg-emerald-400'; // Low
+                                        if (ratio >= 0.85) barColor = 'bg-red-500'; // Peak
+                                        else if (ratio >= 0.6) barColor = 'bg-orange-500'; // High
+                                        else if (ratio >= 0.4) barColor = 'bg-yellow-400'; // Shoulder
+                                        else if (ratio >= 0.2) barColor = 'bg-emerald-400'; // Low
+                                        else barColor = 'bg-cyan-300'; // Off-peak
+
                                         return (
-                                            <div key={month} className="flex flex-col items-center flex-1">
+                                            <div key={month} className="flex flex-col items-center flex-1 gap-1" title={`${month}: ${value} slots/day`}>
+                                                {/* Value label above bar */}
+                                                <span className={`text-[9px] font-medium ${isPeak ? 'text-orange-600 font-bold' : 'text-stone-500'}`}>
+                                                    {value > 0 ? value : ''}
+                                                </span>
+                                                {/* Bar */}
                                                 <div
-                                                    className={`w-full rounded-t transition-all ${isPeak ? 'bg-orange-500' : 'bg-blue-400'}`}
-                                                    style={{ height: `${height}%`, minHeight: value > 0 ? '4px' : '0' }}
-                                                    title={`${month}: ${value} landing slots`}
+                                                    className={`w-full rounded-t transition-all ${isPeak ? 'ring-2 ring-orange-500' : ''} ${barColor} hover:opacity-80`}
+                                                    style={{ height: `${height}%`, minHeight: value > 0 ? '8px' : '0' }}
                                                 />
+                                                {/* Month label */}
                                                 <span className="text-[10px] text-stone-400 mt-1">{month}</span>
                                             </div>
                                         );
@@ -136,7 +152,7 @@ export default function TravelInsights({ cityName, flightInfo, healthInfo }: Tra
                                     </p>
                                 )}
                                 <p className="text-[10px] text-stone-300 mt-1 text-center">
-                                    Based on mid-month sample data
+                                    Slots/day • Based on mid-month sample data
                                 </p>
                             </div>
                         )}
@@ -164,9 +180,18 @@ export default function TravelInsights({ cityName, flightInfo, healthInfo }: Tra
                 {/* Health Advisory Card */}
                 {healthInfo && (
                     <Card className="col-span-1 bg-gradient-to-br from-white to-emerald-50/30 border-emerald-100">
-                        <div className="flex items-center gap-2 mb-4">
-                            <Stethoscope className="w-5 h-5 text-emerald-600" />
-                            <h3 className="font-bold text-stone-900">Health Advisory</h3>
+                        <div className="flex items-center justify-between mb-4">
+                            <div className="flex items-center gap-2">
+                                <Stethoscope className="w-5 h-5 text-emerald-600" />
+                                <h3 className="font-bold text-stone-900">Health Advisory</h3>
+                            </div>
+                            <Link
+                                href={`/${citySlug}/health`}
+                                className="text-xs font-medium text-emerald-600 hover:text-emerald-700 flex items-center gap-1 transition-colors"
+                            >
+                                View Details
+                                <ArrowRight className="w-3 h-3" />
+                            </Link>
                         </div>
 
                         {healthInfo.vaccines.length > 0 ? (
@@ -195,15 +220,33 @@ export default function TravelInsights({ cityName, flightInfo, healthInfo }: Tra
                                     </p>
                                 )}
 
-                                <p className="text-xs text-stone-500 mt-4 pt-3 border-t border-stone-100">
+                                <Link
+                                    href={`/${citySlug}/health`}
+                                    className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors group"
+                                >
+                                    <span>See complete health guide</span>
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+
+                                <p className="text-xs text-stone-500 mt-2">
                                     Source: CDC Travelers' Health. Consult a physician 4-6 weeks before travel.
                                 </p>
                             </>
                         ) : (
-                            <div className="flex items-center gap-2 text-emerald-700">
-                                <CheckCircle className="w-5 h-5" />
-                                <span className="font-medium">No special vaccinations required</span>
-                            </div>
+                            <>
+                                <div className="flex items-center gap-2 text-emerald-700 mb-4">
+                                    <CheckCircle className="w-5 h-5" />
+                                    <span className="font-medium">No special vaccinations required</span>
+                                </div>
+
+                                <Link
+                                    href={`/${citySlug}/health`}
+                                    className="mt-2 pt-3 border-t border-stone-100 flex items-center justify-between text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors group"
+                                >
+                                    <span>View complete health information</span>
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            </>
                         )}
                     </Card>
                 )}
