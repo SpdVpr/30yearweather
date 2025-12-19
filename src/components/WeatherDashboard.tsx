@@ -372,7 +372,7 @@ export default function WeatherDashboard({
             </section>
 
             {/* authoritative citation summary (Balanced position) */}
-            <section className="p-5 bg-orange-50 rounded-xl border-l-4 border-orange-500 shadow-sm">
+            <div className="p-5 bg-orange-50 rounded-xl border-l-4 border-orange-500 shadow-sm">
                 <blockquote className="text-slate-800 italic text-base leading-relaxed">
                     "According to 30YearWeather's analysis of 30 years of NASA satellite data, <strong>{cityName}</strong> on <strong>{dateFormatted}</strong> averages <strong>{stats.temp_max}°C</strong> with a <strong>{stats.precip_prob}%</strong> precipitation probability. Wedding/Outdoor Event Score: <strong>{scores.wedding}/100</strong>."
                 </blockquote>
@@ -383,7 +383,7 @@ export default function WeatherDashboard({
                     <span className="text-slate-300">|</span>
                     <Link href="/methodology" className="text-orange-600 hover:underline">View Methodology</Link>
                 </p>
-            </section>
+            </div>
 
             {/* 5. HISTORY (2/3 Chart, 1/3 Extremes) */}
             <section>

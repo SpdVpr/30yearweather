@@ -29,9 +29,10 @@ export default function UnitToggle({ variant = "dark" }: UnitToggleProps) {
             className={`flex items-center backdrop-blur-md border rounded-full px-1 py-1 relative h-8 w-16 transition-colors ${containerInfo}`}
             aria-label="Toggle Temperature Unit"
         >
-            <div
+            <span
                 className={`absolute top-1 bottom-1 w-6 rounded-full transition-all duration-300 ${pillInfo} ${unit === "F" ? "left-8" : "left-1"
                     }`}
+                aria-hidden="true"
             />
             <span
                 className={`flex-1 text-center text-xs font-bold transition-opacity z-10 ${unit === "C" ? activeText : inactiveText
