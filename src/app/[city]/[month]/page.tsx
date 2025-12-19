@@ -52,8 +52,8 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     // Optimized title (50-60 characters)
     const title = `${cityName} in ${monthDisplay} | Weather & Climate Guide`;
 
-    // Optimized description (100-130 characters)
-    const description = `${cityName} ${monthDisplay} weather: ${avgMax}°C avg high, ${avgRain}% rain chance. 30-year climate data for travel planning.`;
+    // Optimized description (140-160 characters for SEO)
+    const description = `${cityName} ${monthDisplay} weather: ${avgMax}°C avg high, ${avgRain}% rain chance. Historical climate data from 30 years of NASA satellite observations. Plan your perfect trip.`;
 
     return {
         title: title,
