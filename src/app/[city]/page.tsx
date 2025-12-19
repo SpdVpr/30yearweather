@@ -405,8 +405,7 @@ export default async function CityIndexPage({
                             </div>
                             <div className="aspect-video w-full bg-stone-200 relative">
                                 <iframe
-                                    width="100%"
-                                    height="100%"
+                                    className="absolute inset-0 w-full h-full"
                                     style={{ border: 0 }}
                                     loading="lazy"
                                     allowFullScreen
