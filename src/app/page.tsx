@@ -14,8 +14,8 @@ import Footer from "@/components/Footer";
 import UnitToggle from "@/components/UnitToggle";
 
 export const metadata = {
-  title: "Long-Range Weather Forecast | 365-Day Predictions Based on 30 Years of Data",
-  description: "Get accurate long-range weather forecasts for any date up to 365 days ahead. Based on 30 years of NASA satellite data. Perfect for wedding planning, travel, and events.",
+  title: "Long-Range Weather Forecast | 30YearWeather",
+  description: "Accurate 365-day weather forecasts based on 30 years of NASA data. Plan weddings, travel, and events with confidence. Historical climate insights.",
   keywords: ["long range weather forecast", "365 day weather forecast", "year ahead weather forecast", "weather forecast", "long term weather forecast", "extended weather forecast", "wedding weather forecast", "travel weather forecast", "historical weather forecast", "30 year weather data"],
   alternates: {
     canonical: '/',
