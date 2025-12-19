@@ -136,6 +136,38 @@ export interface DayData {
     historical_records?: HistoricalRecord[];
 }
 
+// NEW: Flight connectivity data
+export interface FlightInfo {
+    source: string;
+    peak_daily_arrivals?: number;
+    total_daily_arrivals?: number;
+    pressure_score: number;
+    seasonality?: Record<number, number>;
+    top_routes?: string[];
+    delays?: {
+        median_delay?: string;
+        delay_index?: string;
+        cancelled_percent?: number;
+    };
+    icao?: string;
+}
+
+// NEW: Health/Vaccination advisory
+export interface HealthInfo {
+    source: string;
+    vaccines: Array<{ disease: string; recommendation: string }>;
+    non_vaccine_diseases?: Array<{ disease: string; advice: string }>;
+    notices?: string[];
+}
+
+// NEW: AI-generated SEO content
+export interface SeoContent {
+    seo_title: string;
+    meta_description: string;
+    ai_overview: string;
+    tags: string[];
+}
+
 export interface CityData {
     meta: {
         name: string;
@@ -148,6 +180,10 @@ export interface CityData {
         is_coastal?: boolean; // NEW
         timezone?: string; // e.g. "Asia/Makassar"
         timezone_offset?: number; // Optional numerical offset if available
+        // NEW: Flight, Health, and SEO data
+        flight_info?: FlightInfo;
+        health_info?: HealthInfo;
+        seo_content?: SeoContent;
     };
     yearly_stats?: {
         avg_temp_annual: number;

@@ -105,7 +105,10 @@ export default function RootLayout({
       addressCountry: 'CZ'
     },
     knowsAbout: ['Weather Forecasting', 'Climate Data Analysis', 'Travel Planning', 'Wedding Planning', 'Event Planning'],
-    sameAs: []
+    sameAs: [
+      'https://twitter.com/30yearweather',
+      'https://www.linkedin.com/company/30yearweather',
+    ]
   };
 
   // Dataset Schema - Critical for AI/LLM citation

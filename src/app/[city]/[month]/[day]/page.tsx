@@ -10,6 +10,7 @@ import Link from "next/link";
 import DatePageTracker from "@/components/DatePageTracker";
 import SwipeNavigation from "@/components/SwipeNavigation";
 import Header from "@/components/common/Header";
+import DayTravelInfo from "@/components/DayTravelInfo";
 
 const MONTH_MAP: Record<string, string> = {
     january: '01', february: '02', march: '03', april: '04', may: '05', june: '06',
@@ -43,11 +44,30 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     const cityName = data.meta.name;
     const monthDisplay = monthLower.charAt(0).toUpperCase() + monthLower.slice(1);
 
-    // Perplexity Recommended Format: "Bali 18 July Weather Forecast | 26.5°C, 8% Rain Chance | 30 Years NASA Data"
     const tempAvg = dayData.stats.temp_max;
     const rainProb = dayData.stats.precip_prob;
+
+    // NEW: Enhanced SEO with tourism and health context
+    const flightPressure = data.meta.flight_info?.pressure_score;
+    const holidayEvent = dayData.events?.[0]?.description;
+    const vaccineCount = data.meta.health_info?.vaccines?.length || 0;
+
+    // Build dynamic description
+    let descExtra = "";
+    if (flightPressure && flightPressure >= 70) {
+        descExtra += " Peak tourist season - book early.";
+    } else if (flightPressure && flightPressure < 30) {
+        descExtra += " Off-peak with fewer crowds.";
+    }
+    if (holidayEvent) {
+        descExtra += ` Note: ${holidayEvent} falls on this date.`;
+    }
+    if (vaccineCount > 5) {
+        descExtra += " Travel vaccines recommended.";
+    }
+
     const title = `${cityName} ${day} ${monthDisplay} Weather Forecast | ${tempAvg}°C, ${rainProb}% Rain Chance | 30 Years NASA Data`;
-    const description = `Historical weather for ${cityName} on ${day} ${monthDisplay}. 30-year averages: ${tempAvg}°C daytime high, ${rainProb}% rain probability. Ideal for travel and wedding planning.`;
+    const description = `Historical weather for ${cityName} on ${day} ${monthDisplay}. 30-year averages: ${tempAvg}°C daytime high, ${rainProb}% rain probability.${descExtra} Ideal for travel and wedding planning.`;
 
     return {
         title: title,
@@ -281,7 +301,7 @@ export default async function CityDayPage({
             />
 
             <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto">
-                <div itemProp="articleBody">
+                <div itemProp="articleBody" className="space-y-12">
 
                     <DayVerdict
                         score={dayData.scores.wedding}
@@ -293,6 +313,9 @@ export default async function CityDayPage({
                         humidity={dayData.stats.humidity_percent || 0}
                         citySlug={city}
                         monthSlug={monthLower}
+                        flightPressure={data.meta.flight_info?.pressure_score}
+                        holidayName={dayData.events?.[0]?.description || null}
+                        vaccineCount={data.meta.health_info?.vaccines?.length}
                     />
 
                     <WeatherDashboard
@@ -302,11 +325,14 @@ export default async function CityDayPage({
                         dateId={dateKey}
                         citySlug={city}
                         cityName={data.meta.name}
+                        countryName={data.meta.country}
                         geoInfo={data.meta.geo_info}
                         safetyProfile={data.meta.safety_profile}
                         timezoneOffset={calculatedOffset}
-                        alternativeDates={alternativeDates} // Contains new linkHref property?
+                        alternativeDates={alternativeDates}
                         cityComparisons={cityComparisons}
+                        flightInfo={data.meta.flight_info}
+                        healthInfo={data.meta.health_info}
                     />
                 </div>
             </article>

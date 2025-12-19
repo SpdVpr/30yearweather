@@ -21,6 +21,8 @@ import CompareCities from "./CompareCities";
 import MarineCard from "./MarineCard";
 import { useUnit } from "@/context/UnitContext";
 import UnitToggle from "@/components/UnitToggle";
+import DayTravelInfo from "./DayTravelInfo";
+import { format } from "date-fns";
 
 interface AlternativeDateData {
     dateSlug: string;
@@ -54,9 +56,15 @@ interface WeatherDashboardProps {
     timezoneOffset?: number;
     alternativeDates?: AlternativeDateData[];
     cityComparisons?: CityComparisonData[];
+    flightInfo?: any;
+    healthInfo?: any;
+    countryName?: string;
 }
 
-export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, cityName, geoInfo, safetyProfile, timezoneOffset = 0, alternativeDates, cityComparisons }: WeatherDashboardProps) {
+export default function WeatherDashboard({
+    dayData, lat, lon, dateId, citySlug, cityName, geoInfo, safetyProfile,
+    timezoneOffset = 0, alternativeDates, cityComparisons, flightInfo, healthInfo, countryName
+}: WeatherDashboardProps) {
     const { stats, scores, clothing, historical_records, pressure_stats, health_impact, weather_condition } = dayData;
     const { unit, convertTemp } = useUnit();
 
@@ -98,6 +106,14 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
         if (humidity < 60) return "Comfortable";
         if (humidity < 70) return "Slightly humid";
         return "Humid / Damp"; // In winter typically 'Damp', summer 'Muggy'
+    };
+
+    const getPressureLabel = (score: number) => {
+        if (score >= 80) return { label: "Major Hub", color: "red" };
+        if (score >= 60) return { label: "Well Connected", color: "orange" };
+        if (score >= 40) return { label: "Moderate Traffic", color: "yellow" };
+        if (score >= 20) return { label: "Low Traffic", color: "emerald" };
+        return { label: "Remote Destination", color: "cyan" };
     };
 
     const getSunshineDescription = (hours: number | undefined) => {
@@ -162,9 +178,7 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                 </div>
             </section>
 
-
-
-            {/* 2. PLAN YOUR DAY (Clothing + Key Stats) */}
+            {/* 3. PLAN YOUR DAY (Clothing + Key Stats) */}
             <section>
                 <h2 className="text-xl font-bold text-slate-800 mb-4">
                     What to wear in {cityName}?
@@ -244,7 +258,6 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                     </div>
                 </div>
 
-                {/* Plan Your Day Timeline */}
                 <div className="mt-8">
                     <PlanYourDay
                         tempMax={stats.temp_max}
@@ -255,12 +268,27 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                 </div>
             </section>
 
+            {/* Travel Planning & Logistics - POSITIONED UNDER PLAN YOUR DAY */}
+            <div className="pt-4 border-t border-stone-100">
+                <DayTravelInfo
+                    cityName={cityName}
+                    countryName={countryName || ""}
+                    date={dateFormatted}
+                    dateKey={dateId}
+                    monthNum={month}
+                    citySlug={citySlug}
+                    holidays={dayData.events?.reduce((acc, e) => ({ ...acc, [dateId]: e.description }), {}) || undefined}
+                    flightInfo={flightInfo}
+                    healthInfo={healthInfo}
+                />
+            </div>
+
             {/* 2b. MARINE CONDITIONS (Added per user request) */}
             {dayData.marine && (
                 <MarineCard marine={dayData.marine} />
             )}
 
-            {/* 3. ATMOSPHERIC & SOLAR (Consolidated to remove gaps) */}
+            {/* 4. ATMOSPHERIC & SOLAR (Consolidated to remove gaps) */}
             <section>
                 <h2 className="text-xl font-bold text-slate-800 mb-4">
                     Atmospheric Conditions
@@ -343,6 +371,20 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                 </div>
             </section>
 
+            {/* authoritative citation summary (Balanced position) */}
+            <section className="p-5 bg-orange-50 rounded-xl border-l-4 border-orange-500 shadow-sm">
+                <blockquote className="text-slate-800 italic text-base leading-relaxed">
+                    "According to 30YearWeather's analysis of 30 years of NASA satellite data, <strong>{cityName}</strong> on <strong>{dateFormatted}</strong> averages <strong>{stats.temp_max}°C</strong> with a <strong>{stats.precip_prob}%</strong> precipitation probability. Wedding/Outdoor Event Score: <strong>{scores.wedding}/100</strong>."
+                </blockquote>
+                <p className="text-xs text-slate-500 mt-3 flex flex-wrap items-center gap-2">
+                    <span className="font-semibold">— Source: 30YearWeather.com</span>
+                    <span className="text-slate-300">|</span>
+                    <span>Data: NASA POWER (1991-2021)</span>
+                    <span className="text-slate-300">|</span>
+                    <Link href="/methodology" className="text-orange-600 hover:underline">View Methodology</Link>
+                </p>
+            </section>
+
             {/* 5. HISTORY (2/3 Chart, 1/3 Extremes) */}
             <section>
                 <h2 className="text-xl font-bold text-slate-800 mb-4">
@@ -393,35 +435,75 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                 </section>
             )}
 
-            {/* 7b. SEO Context & Links (Moved here per request) */}
-            <section className="bg-white border-b border-slate-100 px-6 py-8 rounded-xl ring-1 ring-slate-200">
-                <p className="text-slate-600 leading-relaxed text-lg">
-                    Planning a trip to <strong>{cityName}</strong> on <strong>{dateFormatted}</strong>?
-                    Our historical weather analysis based on 30 years of NASA satellite data shows that
-                    this time of year typically offers {stats.temp_max > 25 ? 'vibrant summer conditions' : stats.temp_max > 15 ? 'pleasant mild weather' : 'bracing seasonal atmosphere'}
-                    {' '}averaging {stats.temp_max}°C with a {stats.precip_prob}% historical precipitation risk.
+            {/* 8. SEO-OPTIMIZED TRAVEL SUMMARY - Positioned for search engine visibility */}
+            <section className="bg-gradient-to-br from-orange-50 to-amber-50 px-6 py-8 rounded-xl ring-1 ring-orange-200 shadow-sm">
+                <h2 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                    📍 {cityName} Weather Summary for {dateFormatted}
+                </h2>
+                <article className="prose prose-slate max-w-none">
+                    <p className="text-slate-700 leading-relaxed text-base">
+                        Planning a trip to <strong>{cityName}</strong> on <strong>{dateFormatted}</strong>?
+                        Our historical weather analysis based on 30 years of NASA satellite data shows that
+                        this time of year {stats.temp_max > 25 ? 'typically offers vibrant summer conditions' : stats.temp_max > 15 ? 'is characterized by pleasant mild weather' : 'offers a bracing seasonal atmosphere'}
+                        {' '}averaging <strong>{stats.temp_max}°C</strong> with a <strong>{stats.precip_prob}%</strong> historical precipitation risk.
+                    </p>
+
+                    {dayData.events && dayData.events.length > 0 && (
+                        <p className="text-slate-700 leading-relaxed text-base mt-3">
+                            <strong>🎉 Local Event:</strong> The date coincides with <strong>{dayData.events[0].description}</strong>, which may influence local business hours and event availability.
+                        </p>
+                    )}
+
+                    {flightInfo?.seasonality?.[month] && (
+                        <p className="text-slate-700 leading-relaxed text-base mt-3">
+                            <strong>✈️ Travel Logistics:</strong> Approximately <strong>{flightInfo.seasonality[month].toLocaleString()} landing slots</strong> available daily during this period, indicating {flightInfo.pressure_score > 70 ? 'peak tourist activity' : 'manageable crowd levels'}.
+                        </p>
+                    )}
+
+                    {healthInfo?.vaccines?.length > 0 && (
+                        <p className="text-slate-700 leading-relaxed text-base mt-3">
+                            <strong>💉 Health Advisory:</strong> {healthInfo.vaccines.length} vaccinations are recommended for {countryName}, including <strong>{healthInfo.vaccines[0].disease}</strong>.
+                        </p>
+                    )}
+
+                    {dayData.marine && (
+                        <p className="text-slate-700 leading-relaxed text-base mt-3">
+                            <strong>🌊 Coastal Conditions:</strong> Water temperature averages <strong>{convertTemp(dayData.marine.water_temp)}°{unit}</strong> ({dayData.marine.shiver_factor.toLowerCase()}). Wave conditions are generally <strong>{dayData.marine.family_safety.toLowerCase()}</strong> with heights around {dayData.marine.wave_height}m.
+                        </p>
+                    )}
 
                     {historical_records && historical_records.length > 0 && (() => {
                         const hottest = historical_records.reduce((a, b) => a.temp_max > b.temp_max ? a : b);
                         const coldest = historical_records.reduce((a, b) => a.temp_min < b.temp_min ? a : b);
-                        return ` For context, the hottest ${dateFormatted} recorded in the last 30 years saw temperatures hit ${hottest.temp_max}°C in ${hottest.year}, while the coldest dropped to ${coldest.temp_min}°C in ${coldest.year}.`;
+                        return (
+                            <p className="text-slate-700 leading-relaxed text-base mt-3">
+                                <strong>📊 Historical Extremes:</strong> The hottest {dateFormatted} recorded in the last 30 years saw temperatures hit <strong>{hottest.temp_max}°C</strong> in {hottest.year}, while the coldest dropped to <strong>{coldest.temp_min}°C</strong> in {coldest.year}.
+                            </p>
+                        );
                     })()}
+                </article>
 
-                    {' '}Use the data above and below to plan your visit with data-backed confidence.
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium">
-                    <Link href={`/${citySlug}`} className="text-orange-600 hover:underline">Best Time to Visit {cityName}</Link>
-                    <span className="text-slate-300">|</span>
-                    <Link href={`/${citySlug}/${new Date(2024, month - 1, 1).toLocaleString('en-US', { month: 'long' }).toLowerCase()}`} className="text-orange-600 hover:underline">Weather in {cityName} (Month View)</Link>
-                    <span className="text-slate-300">|</span>
-                    <Link href="/#cities" className="text-orange-600 hover:underline">Compare Destinations</Link>
+                <div className="mt-6 flex flex-wrap gap-4 text-sm font-medium">
+                    <Link href={`/${citySlug}`} className="inline-flex items-center gap-1 text-orange-700 hover:text-orange-900 hover:underline">
+                        → Best Time to Visit {cityName}
+                    </Link>
+                    <span className="text-orange-300">|</span>
+                    <Link href={`/${citySlug}/${new Date(2024, month - 1, 1).toLocaleString('en-US', { month: 'long' }).toLowerCase()}`} className="inline-flex items-center gap-1 text-orange-700 hover:text-orange-900 hover:underline">
+                        → {cityName} Weather ({new Date(2024, month - 1, 1).toLocaleString('en-US', { month: 'long' })})
+                    </Link>
+                    <span className="text-orange-300">|</span>
+                    <Link href="/#cities" className="inline-flex items-center gap-1 text-orange-700 hover:text-orange-900 hover:underline">
+                        → Compare All Destinations
+                    </Link>
                 </div>
             </section>
 
-            {/* 8. FAQ */}
-            <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                <h2 className="text-xl font-bold text-slate-800 mb-6">Frequently Asked Questions</h2>
+            {/* 9. FAQ - Always at the very bottom for optimal SEO structure */}
+            <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <Info className="w-5 h-5 text-blue-500" />
+                    Frequently Asked Questions
+                </h2>
                 <AccordionList>
                     <Accordion>
                         <AccordionHeader className="text-sm font-medium">Will it snow in {cityName} on {dateFormatted}?</AccordionHeader>
@@ -432,32 +514,50 @@ export default function WeatherDashboard({ dayData, lat, lon, dateId, citySlug, 
                                 : ` Temperatures are generally too warm for snow (${stats.temp_min}°C - ${stats.temp_max}°C). Expect rain if anything.`}
                         </AccordionBody>
                     </Accordion>
+
                     <Accordion>
-                        <AccordionHeader className="text-sm font-medium">Is it windy in {cityName} in {month === 12 || month < 3 ? 'Winter' : 'this season'}?</AccordionHeader>
+                        <AccordionHeader className="text-sm font-medium">Is it windy in {cityName} {month === 12 || month < 3 ? 'in Winter' : 'during this season'}?</AccordionHeader>
                         <AccordionBody className="text-slate-600 text-sm leading-relaxed">
                             The average wind speed on {dateFormatted} is {stats.wind_kmh} km/h.
-                            {stats.wind_kmh > 20 ? " It can be quite breezy, so a windbreaker is recommended." : " It is generally calm."}
+                            {stats.wind_kmh > 20 ? " It can be quite breezy, so a windbreaker is recommended for outdoor activities." : " It is generally calm."}
                         </AccordionBody>
                     </Accordion>
+
                     <Accordion>
-                        <AccordionHeader className="text-sm font-medium">Is {cityName} safe for tourists?</AccordionHeader>
+                        <AccordionHeader className="text-sm font-medium">What are the travel logistics for {cityName}?</AccordionHeader>
                         <AccordionBody className="text-slate-600 text-sm leading-relaxed">
-                            {safetyProfile ? `The seismic risk is classified as ${safetyProfile.seismic.risk_level}. ` : "General safety data is positive. "}
-                            {safetyProfile?.seismic.risk_level === 'High' ? "Visitors should be aware of earthquake protocols." : "It is geologically stable."}
+                            {flightInfo ? (
+                                <p className="mb-2">There are roughly {flightInfo.seasonality?.[month]?.toLocaleString()} daily landing slots. The tourist traffic is considered <strong>{getPressureLabel(flightInfo.pressure_score).label.toLowerCase()}</strong>.</p>
+                            ) : null}
+                            {dayData.events && dayData.events.length > 0 ? (
+                                <p><strong>{dayData.events[0].description}</strong> takes place on this day, which could affect local business availability.</p>
+                            ) : (
+                                <p>No major holidays are recorded for this specific date in {countryName}, suggesting standard business operations.</p>
+                            )}
                         </AccordionBody>
                     </Accordion>
+
+                    <Accordion>
+                        <AccordionHeader className="text-sm font-medium">Are there any health or safety concerns?</AccordionHeader>
+                        <AccordionBody className="text-slate-600 text-sm leading-relaxed">
+                            {healthInfo?.vaccines?.length > 0 ? (
+                                <p className="mb-2">CDC recommends {healthInfo.vaccines.length} vaccinations for {countryName}, including {healthInfo.vaccines.slice(0, 2).map((v: any) => v.disease).join(" and ")}.</p>
+                            ) : null}
+                            {safetyProfile ? (
+                                <p>The seismic risk is classified as <strong>{safetyProfile.seismic.risk_level}</strong>. {safetyProfile.seismic.risk_level === 'High' ? "Visitors should familiarize themselves with earthquake safety." : "The region is geologically stable."}</p>
+                            ) : null}
+                        </AccordionBody>
+                    </Accordion>
+
                     {dayData?.marine ? (
                         <Accordion>
-                            <AccordionHeader className="text-sm font-medium">Can I swim in {cityName} in {new Date(2024, parseInt(dateId.split('-')[0]) - 1, 1).toLocaleDateString('en-US', { month: 'long' })}?</AccordionHeader>
+                            <AccordionHeader className="text-sm font-medium">Can I swim in {cityName} during {dateFormatted.split(' ')[0]}?</AccordionHeader>
                             <AccordionBody className="text-slate-600 text-sm leading-relaxed">
-                                Statistically, the water temperature in {cityName} on {dateFormatted} is around {dayData.marine.water_temp}°C.
-                                It is considered <strong>{dayData.marine.shiver_factor}</strong>.
+                                Statistically, the water temperature is {dayData.marine.water_temp}°C (<strong>{dayData.marine.shiver_factor}</strong>).
                                 {dayData.marine.water_temp < 18
-                                    ? " It is chilly and suitable mostly for quick dips or wetsuits."
-                                    : dayData.marine.water_temp < 24
-                                        ? " It is refreshing for swimming."
-                                        : " It is warm and perfect for long swims."}
-                                {' '}Waves are generally {dayData.marine.family_safety.toLowerCase()} ({dayData.marine.wave_height}m).
+                                    ? " It is chilly and suitable mostly for quick dips."
+                                    : " It is comfortable for swimming."}
+                                {' '}Waves average {dayData.marine.wave_height}m, rated as {dayData.marine.family_safety.toLowerCase()}.
                             </AccordionBody>
                         </Accordion>
                     ) : <></>}

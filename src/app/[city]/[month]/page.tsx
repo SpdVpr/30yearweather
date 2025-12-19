@@ -8,6 +8,7 @@ import { Card, Text, Title, Grid, Col } from "@tremor/react";
 import { ArrowLeft, Thermometer, CloudRain, Sun, Calendar, Info } from "lucide-react";
 import type { Metadata } from 'next';
 import Header from "@/components/common/Header";
+import MonthTravelInfo from "@/components/MonthTravelInfo";
 
 // Helper for month mapping
 const MONTH_MAP: Record<string, string> = {
@@ -143,7 +144,23 @@ export default async function CityMonthPage({ params }: { params: { city: string
                     "name": `How much does it rain in ${cityName} during ${monthDisplay}?`,
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": `The average probability of rain in ${monthDisplay} is ${avgRainProb}%. Expect about ${Math.round((rainyDays50 / daysCount) * 30)} days with a high chance of precipitation.`
+                        "text": `The average probability of rain in ${monthDisplay} is ${avgRainProb}%. Expect about ${Math.round((rainyDays25 / daysCount) * 30)} days with noticeable precipitation (>25% daily chance).`
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": `What should I pack for ${cityName} in ${monthDisplay}?`,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": avgRainProb > 40 ? `Pack waterproof clothing and an umbrella. Temperatures range from ${avgMin}°C to ${avgMax}°C.` : avgMax > 28 ? `Pack light, breathable clothing. Sun protection is essential with temps around ${avgMax}°C.` : `Pack layers for temperatures between ${avgMin}°C and ${avgMax}°C.`
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": `Is ${monthDisplay} peak season or off-season in ${cityName}?`,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": avgRainProb < 30 && avgMax >= 20 && avgMax <= 28 ? `${monthDisplay} is typically peak tourist season in ${cityName} due to ideal weather conditions.` : avgRainProb > 45 ? `${monthDisplay} is considered off-season in ${cityName}, offering fewer crowds and lower prices.` : `${monthDisplay} is a shoulder season in ${cityName}, balancing decent weather with moderate crowds.`
                     }
                 }
             ]
@@ -231,16 +248,65 @@ export default async function CityMonthPage({ params }: { params: { city: string
                         </Card>
                     </div>
 
-                    {/* 2. INTRO TEXT (SEO) */}
+                    {/* Tourist Season Analysis */}
+                    <MonthTravelInfo
+                        cityName={cityName}
+                        monthNum={parseInt(monthNum)}
+                        flightInfo={data.meta.flight_info}
+                    />
+
+                    {/* 2. INTRO TEXT (SEO) - Expanded for LLM optimization */}
                     <div className="mb-12 max-w-3xl">
                         <h2 className="text-2xl font-bold text-slate-900 mb-4">Is {monthDisplay} a good time to visit {cityName}?</h2>
-                        <p className="text-slate-600 leading-relaxed text-lg">
-                            Based on our analysis of 30 years of historical weather data, <strong>{monthDisplay}</strong> in {cityName} is characterized by
-                            avg highs of <strong>{avgMax}°C</strong>.
-                            {rainyDays50 > 5
-                                ? ` Be prepared for some wet days, as there are typically around ${Math.round((rainyDays50 / daysCount) * 30)} days with high rain probability.`
-                                : " It is a relatively dry month, perfect for outdoor exploration."}
-                        </p>
+                        <div className="prose prose-slate prose-lg">
+                            <p className="text-slate-600 leading-relaxed">
+                                Based on our analysis of <strong>30 years of historical weather data</strong> from NASA satellites,
+                                <strong>{monthDisplay}</strong> in {cityName} is characterized by average daytime highs of <strong>{avgMax}°C</strong>
+                                and nighttime lows around <strong>{avgMin}°C</strong>.
+                            </p>
+                            <p className="text-slate-600 leading-relaxed mt-3">
+                                {rainyDays25 > 15
+                                    ? `This is the ${season.toLowerCase()} season with notable precipitation. Expect around ${Math.round((rainyDays25 / daysCount) * 30)} days with measurable rainfall. Pack waterproof layers and plan indoor alternatives.`
+                                    : rainyDays25 > 8
+                                        ? `${monthDisplay} offers a mix of sunny and occasional rainy days with about ${Math.round((rainyDays25 / daysCount) * 30)} days seeing precipitation. An umbrella is advisable but shouldn't disrupt most plans.`
+                                        : `${monthDisplay} is one of the drier periods in ${cityName}, with only around ${Math.round((rainyDays25 / daysCount) * 30)} days typically seeing rain. Ideal for outdoor activities and sightseeing.`}
+                            </p>
+                            <p className="text-slate-600 leading-relaxed mt-3">
+                                {avgMax > 30
+                                    ? `The heat can be intense during midday hours. We recommend starting outdoor activities early morning or late afternoon. Stay hydrated and seek shade during peak sun hours (11am-3pm).`
+                                    : avgMax > 25
+                                        ? `The weather is warm and pleasant for most outdoor activities. Light, breathable clothing is recommended. Don't forget sunscreen and a hat for extended time outdoors.`
+                                        : avgMax > 18
+                                            ? `Temperatures are mild and comfortable for walking tours and outdoor exploration. Layers are useful as mornings and evenings can be cooler.`
+                                            : `The weather is cool, so dress in warm layers. This can be a great time for fewer crowds at popular attractions.`}
+                            </p>
+                        </div>
+
+                        {/* What to Pack Section */}
+                        <div className="mt-6 p-4 bg-white rounded-xl border border-slate-200">
+                            <h3 className="font-bold text-slate-800 mb-2">📦 Packing Essentials for {monthDisplay}</h3>
+                            <ul className="text-sm text-slate-600 grid grid-cols-2 gap-2">
+                                {avgMax > 28 && <li>✓ Lightweight, breathable clothing</li>}
+                                {avgMax > 28 && <li>✓ High SPF sunscreen</li>}
+                                {avgMax <= 28 && avgMax > 18 && <li>✓ Light layers for variable temps</li>}
+                                {avgMax <= 18 && <li>✓ Warm jacket or coat</li>}
+                                {avgMax <= 10 && <li>✓ Thermal underwear</li>}
+                                {avgRainProb > 30 && <li>✓ Waterproof jacket or umbrella</li>}
+                                {avgRainProb > 50 && <li>✓ Waterproof footwear</li>}
+                                <li>✓ Comfortable walking shoes</li>
+                                <li>✓ Reusable water bottle</li>
+                            </ul>
+                        </div>
+
+                        {/* Season Verdict Badge */}
+                        <div className="mt-4 inline-flex items-center gap-2">
+                            <span className={`px-3 py-1 rounded-full text-sm font-medium ${verdictClass}`}>
+                                {verdictText} Season
+                            </span>
+                            <span className="text-xs text-slate-500">
+                                Based on {(daysCount * 30).toLocaleString()}+ historical observations
+                            </span>
+                        </div>
 
                         {/* Internal links for SEO hierarchy */}
                         <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium">
@@ -262,18 +328,56 @@ export default async function CityMonthPage({ params }: { params: { city: string
                         <MonthCalendarView city={city} month={monthNum} data={data} />
                     </div>
 
-                    {/* 4. FAQ (Structured Data Candidate) */}
+                    {/* 4. FAQ (Structured Data Compatible) - Fixed consistency */}
                     <div className="mt-16 border-t border-slate-200 pt-12">
-                        <h2 className="text-2xl font-bold text-slate-900 mb-8">Frequent Questions about {monthDisplay}</h2>
+                        <h2 className="text-2xl font-bold text-slate-900 mb-8">Frequently Asked Questions: {cityName} in {monthDisplay}</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div>
-                                <h3 className="font-bold text-slate-800 mb-2">How cold is {cityName} in {monthDisplay}?</h3>
-                                <p className="text-slate-600 text-sm">Nights can drop to {avgMin}°C, while days average around {avgMax}°C. {avgMin < 5 ? "It gets quite cold, bring layers." : "It stays relatively mild."}</p>
+                            <div className="p-4 bg-white rounded-lg border border-slate-100">
+                                <h3 className="font-bold text-slate-800 mb-2">🌡️ What are the temperatures in {cityName} during {monthDisplay}?</h3>
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    Daytime highs average <strong>{avgMax}°C</strong>, while nights drop to around <strong>{avgMin}°C</strong>.
+                                    {avgMax - avgMin > 12 ? " There's a significant day/night temperature swing, so pack layers." : " Temperatures remain fairly consistent throughout the day."}
+                                    {avgMin < 5 ? " It can get quite cold—thermal layers recommended." : avgMax > 30 ? " Heat can be intense—stay hydrated." : ""}
+                                </p>
                             </div>
-                            <div>
-                                <h3 className="font-bold text-slate-800 mb-2">Does it rain a lot in {cityName}?</h3>
-                                <p className="text-slate-600 text-sm">In {monthDisplay}, the average chance of rain on any given day is {avgRainProb}%. You can expect about {Math.round((rainyDays50 / daysCount) * 30)} rainy days throughout the month.</p>
+                            <div className="p-4 bg-white rounded-lg border border-slate-100">
+                                <h3 className="font-bold text-slate-800 mb-2">🌧️ How many rainy days are there in {monthDisplay}?</h3>
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    Based on 30 years of data, expect around <strong>{Math.round((rainyDays25 / daysCount) * 30)} days</strong> with measurable rainfall (&gt;25% daily chance).
+                                    The average daily rain probability is {avgRainProb}%.
+                                    {avgRainProb > 50 ? " Definitely pack rain gear." : avgRainProb > 30 ? " An umbrella is a good idea." : " Rain is unlikely to disrupt your plans."}
+                                </p>
                             </div>
+                            <div className="p-4 bg-white rounded-lg border border-slate-100">
+                                <h3 className="font-bold text-slate-800 mb-2">👗 What should I wear in {cityName} in {monthDisplay}?</h3>
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    {avgMax > 28
+                                        ? "Light, breathable fabrics like cotton and linen. Don't forget sunglasses and a hat. Sandals or breathable shoes work well."
+                                        : avgMax > 20
+                                            ? "Comfortable casual wear with a light jacket for evenings. Comfortable walking shoes are essential."
+                                            : avgMax > 10
+                                                ? "Layers are key. A medium-weight jacket, sweaters, and closed-toe shoes. Consider a scarf for windy days."
+                                                : "Warm winter clothing: insulated jacket, thermal layers, boots, gloves, and a warm hat."}
+                                </p>
+                            </div>
+                            <div className="p-4 bg-white rounded-lg border border-slate-100">
+                                <h3 className="font-bold text-slate-800 mb-2">💰 Is {monthDisplay} expensive or cheap to visit {cityName}?</h3>
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    {avgRainProb < 25 && avgMax >= 18 && avgMax <= 28
+                                        ? "This is typically peak season with higher prices for flights and accommodation. Book 2-3 months ahead for best rates."
+                                        : avgRainProb > 45
+                                            ? "This is off-peak season. Expect lower prices and fewer crowds at attractions. Great for budget travelers."
+                                            : "This is shoulder season—a sweet spot with moderate prices and manageable crowds."}
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Citation Block for LLM */}
+                        <div className="mt-8 p-4 bg-slate-100 rounded-lg border-l-4 border-orange-500">
+                            <p className="text-sm text-slate-700 italic">
+                                "According to 30YearWeather's analysis of 30 years of NASA satellite data, {cityName} in {monthDisplay} averages {avgMax}°C with a {avgRainProb}% precipitation probability."
+                            </p>
+                            <p className="text-xs text-slate-500 mt-1">— Source: 30YearWeather.com | Methodology: <Link href="/methodology" className="text-orange-600 hover:underline">Rolling Window Algorithm</Link></p>
                         </div>
                     </div>
 

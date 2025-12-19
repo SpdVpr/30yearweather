@@ -84,17 +84,30 @@ export default function SafetyProfileCard({ safetyProfile, cityName }: SafetyPro
                             {seismic.seismic_score}/100
                         </Badge>
                     </div>
-                    
-                    <div className="flex items-center gap-2 mb-2">
+
+                    <div className="flex items-center gap-2 mb-3">
                         <Activity className="w-4 h-4 text-gray-500" />
                         <Text className="text-sm text-gray-600">
                             Risk Level: <span className="font-semibold">{seismic.risk_level}</span>
                         </Text>
                     </div>
 
-                    <Text className="text-sm text-gray-600 leading-relaxed">
-                        {riskMessage}
-                    </Text>
+                    {/* Styled info box for risk message */}
+                    <div className={`p-3 rounded-lg border ${seismic.risk_level === 'Stable' || seismic.risk_level === 'Low'
+                            ? 'bg-emerald-50 border-emerald-200'
+                            : seismic.risk_level === 'Medium'
+                                ? 'bg-amber-50 border-amber-200'
+                                : 'bg-red-50 border-red-200'
+                        }`}>
+                        <Text className={`text-sm leading-relaxed ${seismic.risk_level === 'Stable' || seismic.risk_level === 'Low'
+                                ? 'text-emerald-800'
+                                : seismic.risk_level === 'Medium'
+                                    ? 'text-amber-800'
+                                    : 'text-red-800'
+                            }`}>
+                            {riskMessage}
+                        </Text>
+                    </div>
                 </div>
 
                 {/* Statistics */}
@@ -195,8 +208,8 @@ export default function SafetyProfileCard({ safetyProfile, cityName }: SafetyPro
                             <Badge
                                 color={
                                     air_quality.aqi <= 50 ? "emerald" :
-                                    air_quality.aqi <= 100 ? "yellow" :
-                                    air_quality.aqi <= 150 ? "orange" : "red"
+                                        air_quality.aqi <= 100 ? "yellow" :
+                                            air_quality.aqi <= 150 ? "orange" : "red"
                                 }
                                 size="sm"
                             >
@@ -214,34 +227,34 @@ export default function SafetyProfileCard({ safetyProfile, cityName }: SafetyPro
 
                 {/* Safety Tips for High Risk Areas */}
                 {(seismic.risk_level === "High" || seismic.risk_level === "Very High" ||
-                  volcano?.risk_level === "High" || volcano?.risk_level === "Very High") && (
-                    <div className="mt-4 p-3 bg-red-50 rounded-lg border border-red-200">
-                        <div className="flex items-start gap-2">
-                            <AlertTriangle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                            <div>
-                                <Text className="text-sm font-semibold text-red-900 mb-1">
-                                    Safety Tips for {cityName}
-                                </Text>
-                                <ul className="text-xs text-red-800 space-y-1 list-disc list-inside">
-                                    {(seismic.risk_level === "High" || seismic.risk_level === "Very High") && (
-                                        <>
-                                            <li>Download earthquake alert apps</li>
-                                            <li>Locate emergency exits and evacuation routes</li>
-                                        </>
-                                    )}
-                                    {(volcano?.risk_level === "High" || volcano?.risk_level === "Very High") && (
-                                        <>
-                                            <li>Monitor volcanic activity alerts</li>
-                                            <li>Know evacuation zones for volcanic eruptions</li>
-                                        </>
-                                    )}
-                                    <li>Keep emergency supplies (water, flashlight, first aid kit)</li>
-                                    <li>Ensure your travel insurance covers natural disasters</li>
-                                </ul>
+                    volcano?.risk_level === "High" || volcano?.risk_level === "Very High") && (
+                        <div className="mt-4 p-3 bg-red-50 rounded-lg border border-red-200">
+                            <div className="flex items-start gap-2">
+                                <AlertTriangle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                                <div>
+                                    <Text className="text-sm font-semibold text-red-900 mb-1">
+                                        Safety Tips for {cityName}
+                                    </Text>
+                                    <ul className="text-xs text-red-800 space-y-1 list-disc list-inside">
+                                        {(seismic.risk_level === "High" || seismic.risk_level === "Very High") && (
+                                            <>
+                                                <li>Download earthquake alert apps</li>
+                                                <li>Locate emergency exits and evacuation routes</li>
+                                            </>
+                                        )}
+                                        {(volcano?.risk_level === "High" || volcano?.risk_level === "Very High") && (
+                                            <>
+                                                <li>Monitor volcanic activity alerts</li>
+                                                <li>Know evacuation zones for volcanic eruptions</li>
+                                            </>
+                                        )}
+                                        <li>Keep emergency supplies (water, flashlight, first aid kit)</li>
+                                        <li>Ensure your travel insurance covers natural disasters</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                )}
+                    )}
             </div>
         </Card>
     );

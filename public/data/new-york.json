@@ -6,7 +6,7 @@
     "lon": -74.006,
     "is_coastal": true,
     "timezone": "America/New_York",
-    "last_updated": "2025-12-17T17:43:55.334672",
+    "last_updated": "2025-12-19T13:04:40.841946",
     "geo_info": {
       "elevation": 32.0,
       "is_high_altitude": false,
@@ -53,13 +53,57 @@
         }
       },
       "air_quality": {
-        "aqi": 83,
-        "pm25": 21.1,
-        "pm10": 21.3,
+        "aqi": 61,
+        "pm25": 8.0,
+        "pm10": 11.6,
         "category": "Moderate",
         "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"
       }
+    },
+    "flight_info": {
+      "source": "seasonal",
+      "peak_daily_arrivals": 697,
+      "pressure_score": 85,
+      "seasonality": {
+        "1": 573,
+        "2": 585,
+        "3": 604,
+        "4": 656,
+        "5": 694,
+        "6": 673,
+        "7": 667,
+        "8": 697,
+        "9": 632,
+        "10": 611,
+        "11": 591,
+        "12": 595
+      },
+      "top_routes": [
+        "Los Angeles (LAX)",
+        "London Heathrow (LHR)",
+        "San Francisco (SFO)",
+        "Boston General Edward Lawrence Logan (BOS)",
+        "Orlando (MCO)"
+      ],
+      "delays": {
+        "median_delay": "N/A",
+        "cancelled_percent": 0,
+        "delay_index": "N/A"
+      },
+      "icao": "KJFK"
+    },
+    "health_info": {
+      "source": "https://wwwnc.cdc.gov/travel/destinations/traveler/none/united-states",
+      "vaccines": [],
+      "non_vaccine_diseases": [],
+      "notices": []
+    },
+    "seo_content": {
+      "seo_title": "About New York",
+      "meta_description": "New York is a global hub. New York weather is pleasant. Healthy travel to New York is priority.",
+      "ai_overview": "New York is a global hub.\n\nHealthy travel to New York is priority.\n\nNew York weather is pleasant.",
+      "tags": []
     }
   },
   "yearly_stats": {
@@ -76,7 +120,7 @@
         "temp_max": 5.6,
         "temp_min": -1.7,
         "precip_mm": 1.7,
-        "precip_prob": 24.0,
+        "precip_prob": 27.0,
         "wind_kmh": 17.8,
         "clouds_percent": 61.0,
         "pressure_hpa": 1016.9,
@@ -90,7 +134,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 40,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -137,7 +181,12 @@
         "Scarf",
         "Gloves"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "New Year's Day"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -226,7 +275,7 @@
         "temp_max": 5.3,
         "temp_min": -2.0,
         "precip_mm": 1.7,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 18.4,
         "clouds_percent": 60.0,
         "pressure_hpa": 1016.5,
@@ -240,7 +289,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 38,
         "reliability": 44.0
       },
       "pressure_stats": {
@@ -376,7 +425,7 @@
         "temp_max": 5.1,
         "temp_min": -2.3,
         "precip_mm": 1.6,
-        "precip_prob": 21.0,
+        "precip_prob": 23.0,
         "wind_kmh": 18.1,
         "clouds_percent": 60.0,
         "pressure_hpa": 1016.4,
@@ -390,7 +439,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 38,
         "reliability": 43.0
       },
       "pressure_stats": {
@@ -526,7 +575,7 @@
         "temp_max": 4.7,
         "temp_min": -2.7,
         "precip_mm": 1.7,
-        "precip_prob": 23.0,
+        "precip_prob": 24.0,
         "wind_kmh": 18.1,
         "clouds_percent": 61.0,
         "pressure_hpa": 1016.2,
@@ -540,7 +589,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 35,
         "reliability": 41.0
       },
       "pressure_stats": {
@@ -676,7 +725,7 @@
         "temp_max": 4.0,
         "temp_min": -3.1,
         "precip_mm": 1.9,
-        "precip_prob": 24.0,
+        "precip_prob": 27.0,
         "wind_kmh": 18.3,
         "clouds_percent": 59.0,
         "pressure_hpa": 1015.9,
@@ -690,7 +739,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 31,
         "reliability": 38.0
       },
       "pressure_stats": {
@@ -826,7 +875,7 @@
         "temp_max": 3.6,
         "temp_min": -3.5,
         "precip_mm": 1.5,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.2,
         "clouds_percent": 57.0,
         "pressure_hpa": 1016.3,
@@ -976,7 +1025,7 @@
         "temp_max": 3.5,
         "temp_min": -3.8,
         "precip_mm": 1.4,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.8,
         "clouds_percent": 57.0,
         "pressure_hpa": 1016.7,
@@ -990,7 +1039,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 29,
         "reliability": 41.0
       },
       "pressure_stats": {
@@ -1126,7 +1175,7 @@
         "temp_max": 3.5,
         "temp_min": -3.9,
         "precip_mm": 1.5,
-        "precip_prob": 20.0,
+        "precip_prob": 23.0,
         "wind_kmh": 19.1,
         "clouds_percent": 55.0,
         "pressure_hpa": 1017.0,
@@ -1140,7 +1189,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 29,
         "reliability": 40.0
       },
       "pressure_stats": {
@@ -1276,7 +1325,7 @@
         "temp_max": 3.6,
         "temp_min": -3.8,
         "precip_mm": 1.4,
-        "precip_prob": 19.0,
+        "precip_prob": 21.0,
         "wind_kmh": 18.8,
         "clouds_percent": 54.0,
         "pressure_hpa": 1017.7,
@@ -1426,7 +1475,7 @@
         "temp_max": 4.6,
         "temp_min": -3.3,
         "precip_mm": 1.5,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.5,
         "clouds_percent": 55.0,
         "pressure_hpa": 1018.0,
@@ -1440,7 +1489,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 35,
         "reliability": 43.0
       },
       "pressure_stats": {
@@ -1576,7 +1625,7 @@
         "temp_max": 5.4,
         "temp_min": -2.9,
         "precip_mm": 1.4,
-        "precip_prob": 20.0,
+        "precip_prob": 24.0,
         "wind_kmh": 18.6,
         "clouds_percent": 57.0,
         "pressure_hpa": 1017.5,
@@ -1590,7 +1639,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 38,
         "reliability": 44.0
       },
       "pressure_stats": {
@@ -1726,7 +1775,7 @@
         "temp_max": 5.2,
         "temp_min": -3.0,
         "precip_mm": 1.6,
-        "precip_prob": 19.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.4,
         "clouds_percent": 58.0,
         "pressure_hpa": 1017.8,
@@ -1740,7 +1789,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 38,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -1876,7 +1925,7 @@
         "temp_max": 4.7,
         "temp_min": -3.3,
         "precip_mm": 1.6,
-        "precip_prob": 20.0,
+        "precip_prob": 23.0,
         "wind_kmh": 18.4,
         "clouds_percent": 60.0,
         "pressure_hpa": 1018.5,
@@ -1890,7 +1939,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 35,
         "reliability": 44.0
       },
       "pressure_stats": {
@@ -2026,7 +2075,7 @@
         "temp_max": 4.6,
         "temp_min": -3.7,
         "precip_mm": 1.6,
-        "precip_prob": 22.0,
+        "precip_prob": 24.0,
         "wind_kmh": 18.4,
         "clouds_percent": 60.0,
         "pressure_hpa": 1018.1,
@@ -2040,7 +2089,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 33,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -2176,7 +2225,7 @@
         "temp_max": 3.8,
         "temp_min": -4.3,
         "precip_mm": 1.3,
-        "precip_prob": 20.0,
+        "precip_prob": 21.0,
         "wind_kmh": 18.5,
         "clouds_percent": 60.0,
         "pressure_hpa": 1017.9,
@@ -2326,7 +2375,7 @@
         "temp_max": 3.0,
         "temp_min": -4.6,
         "precip_mm": 1.7,
-        "precip_prob": 21.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.8,
         "clouds_percent": 60.0,
         "pressure_hpa": 1018.0,
@@ -2340,7 +2389,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 26,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -2476,7 +2525,7 @@
         "temp_max": 3.1,
         "temp_min": -4.6,
         "precip_mm": 1.8,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 18.7,
         "clouds_percent": 60.0,
         "pressure_hpa": 1017.1,
@@ -2490,7 +2539,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 26,
         "reliability": 49.0
       },
       "pressure_stats": {
@@ -2626,7 +2675,7 @@
         "temp_max": 3.2,
         "temp_min": -4.7,
         "precip_mm": 1.7,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 20.2,
         "clouds_percent": 58.0,
         "pressure_hpa": 1016.0,
@@ -2640,7 +2689,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 28,
         "reliability": 50.0
       },
       "pressure_stats": {
@@ -2776,7 +2825,7 @@
         "temp_max": 2.4,
         "temp_min": -5.1,
         "precip_mm": 1.4,
-        "precip_prob": 19.0,
+        "precip_prob": 22.0,
         "wind_kmh": 20.0,
         "clouds_percent": 56.0,
         "pressure_hpa": 1016.9,
@@ -2790,7 +2839,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 22,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -2926,7 +2975,7 @@
         "temp_max": 2.2,
         "temp_min": -5.6,
         "precip_mm": 1.3,
-        "precip_prob": 17.0,
+        "precip_prob": 20.0,
         "wind_kmh": 19.8,
         "clouds_percent": 55.0,
         "pressure_hpa": 1018.1,
@@ -2940,7 +2989,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 22,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -2987,7 +3036,12 @@
         "Scarf",
         "Gloves"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Martin Luther King, Jr. Day"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -3076,7 +3130,7 @@
         "temp_max": 2.1,
         "temp_min": -5.8,
         "precip_mm": 1.2,
-        "precip_prob": 18.0,
+        "precip_prob": 20.0,
         "wind_kmh": 19.2,
         "clouds_percent": 56.0,
         "pressure_hpa": 1018.6,
@@ -3090,7 +3144,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 21,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -3226,7 +3280,7 @@
         "temp_max": 2.1,
         "temp_min": -6.0,
         "precip_mm": 1.4,
-        "precip_prob": 19.0,
+        "precip_prob": 20.0,
         "wind_kmh": 19.2,
         "clouds_percent": 56.0,
         "pressure_hpa": 1019.1,
@@ -3240,7 +3294,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 21,
         "reliability": 43.0
       },
       "pressure_stats": {
@@ -3376,7 +3430,7 @@
         "temp_max": 2.3,
         "temp_min": -5.8,
         "precip_mm": 1.9,
-        "precip_prob": 20.0,
+        "precip_prob": 21.0,
         "wind_kmh": 18.5,
         "clouds_percent": 57.0,
         "pressure_hpa": 1019.6,
@@ -3390,7 +3444,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 22,
         "reliability": 42.0
       },
       "pressure_stats": {
@@ -3540,7 +3594,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 24,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -3690,7 +3744,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 27,
         "reliability": 44.0
       },
       "pressure_stats": {
@@ -3840,7 +3894,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 28,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -3976,7 +4030,7 @@
         "temp_max": 3.5,
         "temp_min": -4.4,
         "precip_mm": 1.2,
-        "precip_prob": 20.0,
+        "precip_prob": 21.0,
         "wind_kmh": 19.2,
         "clouds_percent": 57.0,
         "pressure_hpa": 1017.5,
@@ -3990,7 +4044,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 28,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -4140,7 +4194,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 29,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -4276,7 +4330,7 @@
         "temp_max": 3.2,
         "temp_min": -5.0,
         "precip_mm": 0.9,
-        "precip_prob": 15.0,
+        "precip_prob": 16.0,
         "wind_kmh": 18.8,
         "clouds_percent": 56.0,
         "pressure_hpa": 1018.0,
@@ -4290,7 +4344,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 28,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -4426,7 +4480,7 @@
         "temp_max": 3.2,
         "temp_min": -5.2,
         "precip_mm": 0.8,
-        "precip_prob": 15.0,
+        "precip_prob": 16.0,
         "wind_kmh": 18.4,
         "clouds_percent": 57.0,
         "pressure_hpa": 1018.2,
@@ -4440,7 +4494,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 28,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -4576,7 +4630,7 @@
         "temp_max": 3.4,
         "temp_min": -5.3,
         "precip_mm": 0.9,
-        "precip_prob": 16.0,
+        "precip_prob": 17.0,
         "wind_kmh": 18.0,
         "clouds_percent": 58.0,
         "pressure_hpa": 1018.4,
@@ -4590,7 +4644,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 29,
         "reliability": 49.0
       },
       "pressure_stats": {
@@ -4726,7 +4780,7 @@
         "temp_max": 3.7,
         "temp_min": -5.1,
         "precip_mm": 1.3,
-        "precip_prob": 18.0,
+        "precip_prob": 19.0,
         "wind_kmh": 18.0,
         "clouds_percent": 59.0,
         "pressure_hpa": 1018.8,
@@ -4740,7 +4794,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 29,
         "reliability": 49.0
       },
       "pressure_stats": {
@@ -4876,7 +4930,7 @@
         "temp_max": 4.0,
         "temp_min": -4.8,
         "precip_mm": 1.5,
-        "precip_prob": 21.0,
+        "precip_prob": 23.0,
         "wind_kmh": 18.0,
         "clouds_percent": 59.0,
         "pressure_hpa": 1018.8,
@@ -5026,7 +5080,7 @@
         "temp_max": 4.4,
         "temp_min": -4.6,
         "precip_mm": 1.9,
-        "precip_prob": 21.0,
+        "precip_prob": 23.0,
         "wind_kmh": 18.6,
         "clouds_percent": 59.0,
         "pressure_hpa": 1018.4,
@@ -5040,7 +5094,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 32,
         "reliability": 49.0
       },
       "pressure_stats": {
@@ -5176,7 +5230,7 @@
         "temp_max": 4.3,
         "temp_min": -4.5,
         "precip_mm": 2.0,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 18.6,
         "clouds_percent": 56.0,
         "pressure_hpa": 1018.5,
@@ -5190,7 +5244,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 31,
         "reliability": 50.0
       },
       "pressure_stats": {
@@ -5326,7 +5380,7 @@
         "temp_max": 4.4,
         "temp_min": -4.4,
         "precip_mm": 2.0,
-        "precip_prob": 23.0,
+        "precip_prob": 26.0,
         "wind_kmh": 18.2,
         "clouds_percent": 56.0,
         "pressure_hpa": 1018.5,
@@ -5340,7 +5394,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 31,
         "reliability": 50.0
       },
       "pressure_stats": {
@@ -5476,7 +5530,7 @@
         "temp_max": 4.3,
         "temp_min": -4.4,
         "precip_mm": 1.7,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 18.0,
         "clouds_percent": 55.0,
         "pressure_hpa": 1018.8,
@@ -5490,7 +5544,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 31,
         "reliability": 50.0
       },
       "pressure_stats": {
@@ -5626,7 +5680,7 @@
         "temp_max": 4.3,
         "temp_min": -4.4,
         "precip_mm": 1.6,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 17.7,
         "clouds_percent": 54.0,
         "pressure_hpa": 1019.1,
@@ -5640,7 +5694,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 31,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -5776,7 +5830,7 @@
         "temp_max": 4.6,
         "temp_min": -4.3,
         "precip_mm": 1.3,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 17.2,
         "clouds_percent": 55.0,
         "pressure_hpa": 1019.1,
@@ -5790,7 +5844,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 33,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -5926,7 +5980,7 @@
         "temp_max": 4.8,
         "temp_min": -4.1,
         "precip_mm": 1.2,
-        "precip_prob": 23.0,
+        "precip_prob": 24.0,
         "wind_kmh": 17.0,
         "clouds_percent": 57.0,
         "pressure_hpa": 1018.6,
@@ -5940,7 +5994,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 34,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -6076,7 +6130,7 @@
         "temp_max": 4.6,
         "temp_min": -4.1,
         "precip_mm": 1.2,
-        "precip_prob": 21.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.4,
         "clouds_percent": 58.0,
         "pressure_hpa": 1018.5,
@@ -6090,7 +6144,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 33,
         "reliability": 49.0
       },
       "pressure_stats": {
@@ -6226,7 +6280,7 @@
         "temp_max": 4.4,
         "temp_min": -4.1,
         "precip_mm": 1.4,
-        "precip_prob": 22.0,
+        "precip_prob": 23.0,
         "wind_kmh": 19.0,
         "clouds_percent": 59.0,
         "pressure_hpa": 1017.6,
@@ -6240,7 +6294,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 32,
         "reliability": 49.0
       },
       "pressure_stats": {
@@ -6376,7 +6430,7 @@
         "temp_max": 4.3,
         "temp_min": -4.0,
         "precip_mm": 1.6,
-        "precip_prob": 21.0,
+        "precip_prob": 22.0,
         "wind_kmh": 19.7,
         "clouds_percent": 59.0,
         "pressure_hpa": 1017.2,
@@ -6390,7 +6444,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 32,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -6437,7 +6491,12 @@
         "Scarf",
         "Gloves"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Lincoln's Birthday"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -6540,7 +6599,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 32,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -6676,7 +6735,7 @@
         "temp_max": 4.3,
         "temp_min": -4.0,
         "precip_mm": 1.9,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 20.3,
         "clouds_percent": 59.0,
         "pressure_hpa": 1017.1,
@@ -6690,7 +6749,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 33,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -6826,7 +6885,7 @@
         "temp_max": 4.4,
         "temp_min": -3.9,
         "precip_mm": 1.9,
-        "precip_prob": 26.0,
+        "precip_prob": 28.0,
         "wind_kmh": 20.4,
         "clouds_percent": 58.0,
         "pressure_hpa": 1017.0,
@@ -6840,7 +6899,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 32,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -6976,7 +7035,7 @@
         "temp_max": 4.8,
         "temp_min": -4.0,
         "precip_mm": 2.0,
-        "precip_prob": 26.0,
+        "precip_prob": 28.0,
         "wind_kmh": 20.7,
         "clouds_percent": 57.0,
         "pressure_hpa": 1017.5,
@@ -6990,7 +7049,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 34,
         "reliability": 43.0
       },
       "pressure_stats": {
@@ -7126,7 +7185,7 @@
         "temp_max": 5.0,
         "temp_min": -3.9,
         "precip_mm": 1.7,
-        "precip_prob": 26.0,
+        "precip_prob": 28.0,
         "wind_kmh": 20.8,
         "clouds_percent": 57.0,
         "pressure_hpa": 1017.8,
@@ -7140,7 +7199,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 34,
         "reliability": 43.0
       },
       "pressure_stats": {
@@ -7187,7 +7246,12 @@
         "Scarf",
         "Gloves"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Presidents Day"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -7276,7 +7340,7 @@
         "temp_max": 5.1,
         "temp_min": -3.7,
         "precip_mm": 1.5,
-        "precip_prob": 22.0,
+        "precip_prob": 25.0,
         "wind_kmh": 20.8,
         "clouds_percent": 56.0,
         "pressure_hpa": 1018.0,
@@ -7290,7 +7354,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 36,
         "reliability": 42.0
       },
       "pressure_stats": {
@@ -7426,7 +7490,7 @@
         "temp_max": 5.2,
         "temp_min": -3.7,
         "precip_mm": 1.5,
-        "precip_prob": 21.0,
+        "precip_prob": 22.0,
         "wind_kmh": 20.4,
         "clouds_percent": 54.0,
         "pressure_hpa": 1018.9,
@@ -7440,7 +7504,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 38,
         "reliability": 43.0
       },
       "pressure_stats": {
@@ -7576,7 +7640,7 @@
         "temp_max": 5.6,
         "temp_min": -3.5,
         "precip_mm": 1.4,
-        "precip_prob": 23.0,
+        "precip_prob": 24.0,
         "wind_kmh": 19.8,
         "clouds_percent": 55.0,
         "pressure_hpa": 1019.5,
@@ -7590,7 +7654,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 37,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -7726,7 +7790,7 @@
         "temp_max": 6.1,
         "temp_min": -2.9,
         "precip_mm": 1.1,
-        "precip_prob": 19.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.7,
         "clouds_percent": 57.0,
         "pressure_hpa": 1019.4,
@@ -7740,7 +7804,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 41,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -7876,7 +7940,7 @@
         "temp_max": 6.5,
         "temp_min": -2.5,
         "precip_mm": 1.5,
-        "precip_prob": 21.0,
+        "precip_prob": 23.0,
         "wind_kmh": 19.0,
         "clouds_percent": 58.0,
         "pressure_hpa": 1018.8,
@@ -7890,7 +7954,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 43,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -8026,7 +8090,7 @@
         "temp_max": 6.8,
         "temp_min": -2.3,
         "precip_mm": 2.0,
-        "precip_prob": 26.0,
+        "precip_prob": 28.0,
         "wind_kmh": 19.2,
         "clouds_percent": 60.0,
         "pressure_hpa": 1017.8,
@@ -8040,7 +8104,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 43,
         "reliability": 49.0
       },
       "pressure_stats": {
@@ -8176,7 +8240,7 @@
         "temp_max": 6.9,
         "temp_min": -2.1,
         "precip_mm": 1.7,
-        "precip_prob": 22.0,
+        "precip_prob": 25.0,
         "wind_kmh": 19.5,
         "clouds_percent": 61.0,
         "pressure_hpa": 1017.4,
@@ -8190,7 +8254,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 44,
         "reliability": 49.0
       },
       "pressure_stats": {
@@ -8326,7 +8390,7 @@
         "temp_max": 7.2,
         "temp_min": -2.0,
         "precip_mm": 1.5,
-        "precip_prob": 21.0,
+        "precip_prob": 25.0,
         "wind_kmh": 19.6,
         "clouds_percent": 59.0,
         "pressure_hpa": 1016.6,
@@ -8340,7 +8404,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 46,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -8476,7 +8540,7 @@
         "temp_max": 7.2,
         "temp_min": -2.0,
         "precip_mm": 1.7,
-        "precip_prob": 24.0,
+        "precip_prob": 27.0,
         "wind_kmh": 20.4,
         "clouds_percent": 57.0,
         "pressure_hpa": 1016.3,
@@ -8490,7 +8554,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 47,
         "reliability": 44.0
       },
       "pressure_stats": {
@@ -8626,7 +8690,7 @@
         "temp_max": 7.4,
         "temp_min": -1.9,
         "precip_mm": 1.6,
-        "precip_prob": 26.0,
+        "precip_prob": 29.0,
         "wind_kmh": 19.6,
         "clouds_percent": 58.0,
         "pressure_hpa": 1015.9,
@@ -8640,7 +8704,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 45,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -8776,7 +8840,7 @@
         "temp_max": 7.4,
         "temp_min": -1.9,
         "precip_mm": 1.8,
-        "precip_prob": 26.0,
+        "precip_prob": 28.0,
         "wind_kmh": 19.6,
         "clouds_percent": 58.0,
         "pressure_hpa": 1015.7,
@@ -8790,7 +8854,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 46,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -8926,7 +8990,7 @@
         "temp_max": 7.3,
         "temp_min": -2.0,
         "precip_mm": 2.2,
-        "precip_prob": 33.0,
+        "precip_prob": 35.0,
         "wind_kmh": 20.2,
         "clouds_percent": 59.0,
         "pressure_hpa": 1015.4,
@@ -8940,7 +9004,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 44,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -9061,7 +9125,7 @@
         "temp_max": 7.0,
         "temp_min": -2.1,
         "precip_mm": 2.1,
-        "precip_prob": 31.0,
+        "precip_prob": 33.0,
         "wind_kmh": 20.4,
         "clouds_percent": 58.0,
         "pressure_hpa": 1015.5,
@@ -9075,7 +9139,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 43,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -9212,7 +9276,7 @@
         "temp_max": 6.9,
         "temp_min": -2.2,
         "precip_mm": 2.1,
-        "precip_prob": 30.0,
+        "precip_prob": 31.0,
         "wind_kmh": 20.3,
         "clouds_percent": 58.0,
         "pressure_hpa": 1016.2,
@@ -9226,7 +9290,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 44,
         "reliability": 50.0
       },
       "pressure_stats": {
@@ -9271,7 +9335,8 @@
       "clothing": [
         "Heavy Coat",
         "Scarf",
-        "Gloves"
+        "Gloves",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -9362,7 +9427,7 @@
         "temp_max": 6.9,
         "temp_min": -2.2,
         "precip_mm": 2.3,
-        "precip_prob": 29.0,
+        "precip_prob": 30.0,
         "wind_kmh": 20.8,
         "clouds_percent": 58.0,
         "pressure_hpa": 1016.3,
@@ -9376,7 +9441,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 44,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -9421,7 +9486,8 @@
       "clothing": [
         "Heavy Coat",
         "Scarf",
-        "Gloves"
+        "Gloves",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -9512,7 +9578,7 @@
         "temp_max": 7.1,
         "temp_min": -2.1,
         "precip_mm": 2.3,
-        "precip_prob": 31.0,
+        "precip_prob": 33.0,
         "wind_kmh": 20.4,
         "clouds_percent": 56.0,
         "pressure_hpa": 1016.7,
@@ -9526,7 +9592,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 43,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -9663,7 +9729,7 @@
         "temp_max": 7.5,
         "temp_min": -1.8,
         "precip_mm": 2.0,
-        "precip_prob": 25.0,
+        "precip_prob": 28.0,
         "wind_kmh": 20.3,
         "clouds_percent": 55.0,
         "pressure_hpa": 1017.1,
@@ -9677,7 +9743,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 48,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -9813,7 +9879,7 @@
         "temp_max": 8.0,
         "temp_min": -1.5,
         "precip_mm": 2.2,
-        "precip_prob": 24.0,
+        "precip_prob": 27.0,
         "wind_kmh": 20.2,
         "clouds_percent": 55.0,
         "pressure_hpa": 1017.6,
@@ -9827,7 +9893,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 51,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -9963,7 +10029,7 @@
         "temp_max": 8.5,
         "temp_min": -1.2,
         "precip_mm": 2.4,
-        "precip_prob": 26.0,
+        "precip_prob": 29.0,
         "wind_kmh": 20.2,
         "clouds_percent": 56.0,
         "pressure_hpa": 1017.4,
@@ -9977,7 +10043,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 53,
         "reliability": 41.0
       },
       "pressure_stats": {
@@ -10113,7 +10179,7 @@
         "temp_max": 9.2,
         "temp_min": -0.8,
         "precip_mm": 2.0,
-        "precip_prob": 24.0,
+        "precip_prob": 27.0,
         "wind_kmh": 20.2,
         "clouds_percent": 54.0,
         "pressure_hpa": 1017.4,
@@ -10127,7 +10193,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 57,
         "reliability": 42.0
       },
       "pressure_stats": {
@@ -10263,7 +10329,7 @@
         "temp_max": 9.4,
         "temp_min": -0.5,
         "precip_mm": 1.7,
-        "precip_prob": 21.0,
+        "precip_prob": 23.0,
         "wind_kmh": 20.4,
         "clouds_percent": 54.0,
         "pressure_hpa": 1017.4,
@@ -10277,7 +10343,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 59,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -10427,7 +10493,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 59,
         "reliability": 44.0
       },
       "pressure_stats": {
@@ -10563,7 +10629,7 @@
         "temp_max": 9.5,
         "temp_min": -0.2,
         "precip_mm": 1.9,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 20.0,
         "clouds_percent": 57.0,
         "pressure_hpa": 1016.6,
@@ -10577,7 +10643,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 57,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -10727,7 +10793,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 62,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -10877,7 +10943,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 62,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -11013,7 +11079,7 @@
         "temp_max": 9.9,
         "temp_min": 0.3,
         "precip_mm": 1.5,
-        "precip_prob": 20.0,
+        "precip_prob": 21.0,
         "wind_kmh": 18.8,
         "clouds_percent": 60.0,
         "pressure_hpa": 1016.5,
@@ -11027,7 +11093,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 61,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -11177,7 +11243,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 64,
         "reliability": 45.0
       },
       "pressure_stats": {
@@ -11313,7 +11379,7 @@
         "temp_max": 10.1,
         "temp_min": 0.6,
         "precip_mm": 1.1,
-        "precip_prob": 17.0,
+        "precip_prob": 18.0,
         "wind_kmh": 18.8,
         "clouds_percent": 58.0,
         "pressure_hpa": 1017.1,
@@ -11327,7 +11393,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 64,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -11463,7 +11529,7 @@
         "temp_max": 9.9,
         "temp_min": 0.6,
         "precip_mm": 1.6,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.4,
         "clouds_percent": 59.0,
         "pressure_hpa": 1017.7,
@@ -11477,7 +11543,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 62,
         "reliability": 49.0
       },
       "pressure_stats": {
@@ -11613,7 +11679,7 @@
         "temp_max": 10.0,
         "temp_min": 0.6,
         "precip_mm": 2.1,
-        "precip_prob": 24.0,
+        "precip_prob": 28.0,
         "wind_kmh": 18.5,
         "clouds_percent": 60.0,
         "pressure_hpa": 1017.4,
@@ -11627,7 +11693,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 60,
         "reliability": 49.0
       },
       "pressure_stats": {
@@ -11763,7 +11829,7 @@
         "temp_max": 10.0,
         "temp_min": 0.7,
         "precip_mm": 2.2,
-        "precip_prob": 24.0,
+        "precip_prob": 27.0,
         "wind_kmh": 20.3,
         "clouds_percent": 59.0,
         "pressure_hpa": 1017.1,
@@ -11777,7 +11843,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 62,
         "reliability": 50.0
       },
       "pressure_stats": {
@@ -11913,7 +11979,7 @@
         "temp_max": 9.7,
         "temp_min": 0.5,
         "precip_mm": 2.1,
-        "precip_prob": 23.0,
+        "precip_prob": 28.0,
         "wind_kmh": 20.3,
         "clouds_percent": 59.0,
         "pressure_hpa": 1017.7,
@@ -11927,7 +11993,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 60,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -12063,7 +12129,7 @@
         "temp_max": 10.1,
         "temp_min": 0.7,
         "precip_mm": 2.4,
-        "precip_prob": 27.0,
+        "precip_prob": 31.0,
         "wind_kmh": 20.6,
         "clouds_percent": 59.0,
         "pressure_hpa": 1017.5,
@@ -12077,7 +12143,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 60,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -12122,7 +12188,8 @@
       "clothing": [
         "Heavy Coat",
         "Scarf",
-        "Gloves"
+        "Gloves",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -12213,7 +12280,7 @@
         "temp_max": 10.4,
         "temp_min": 0.9,
         "precip_mm": 1.7,
-        "precip_prob": 24.0,
+        "precip_prob": 27.0,
         "wind_kmh": 20.2,
         "clouds_percent": 58.0,
         "pressure_hpa": 1017.4,
@@ -12227,7 +12294,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 64,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -12363,7 +12430,7 @@
         "temp_max": 10.5,
         "temp_min": 1.0,
         "precip_mm": 1.4,
-        "precip_prob": 22.0,
+        "precip_prob": 23.0,
         "wind_kmh": 20.2,
         "clouds_percent": 57.0,
         "pressure_hpa": 1017.8,
@@ -12377,7 +12444,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 66,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -12513,7 +12580,7 @@
         "temp_max": 10.7,
         "temp_min": 1.0,
         "precip_mm": 1.1,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 19.1,
         "clouds_percent": 55.0,
         "pressure_hpa": 1018.6,
@@ -12527,7 +12594,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 65,
         "reliability": 52.0
       },
       "pressure_stats": {
@@ -12663,7 +12730,7 @@
         "temp_max": 11.3,
         "temp_min": 1.6,
         "precip_mm": 1.2,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.8,
         "clouds_percent": 57.0,
         "pressure_hpa": 1018.3,
@@ -12677,7 +12744,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 69,
         "reliability": 52.0
       },
       "pressure_stats": {
@@ -12813,7 +12880,7 @@
         "temp_max": 11.8,
         "temp_min": 2.1,
         "precip_mm": 1.5,
-        "precip_prob": 21.0,
+        "precip_prob": 24.0,
         "wind_kmh": 18.9,
         "clouds_percent": 59.0,
         "pressure_hpa": 1017.9,
@@ -12827,7 +12894,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 71,
         "reliability": 51.0
       },
       "pressure_stats": {
@@ -12963,7 +13030,7 @@
         "temp_max": 12.0,
         "temp_min": 2.4,
         "precip_mm": 1.8,
-        "precip_prob": 22.0,
+        "precip_prob": 25.0,
         "wind_kmh": 19.6,
         "clouds_percent": 57.0,
         "pressure_hpa": 1017.4,
@@ -12977,7 +13044,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 71,
         "reliability": 51.0
       },
       "pressure_stats": {
@@ -13113,7 +13180,7 @@
         "temp_max": 12.4,
         "temp_min": 2.6,
         "precip_mm": 2.1,
-        "precip_prob": 25.0,
+        "precip_prob": 29.0,
         "wind_kmh": 19.6,
         "clouds_percent": 58.0,
         "pressure_hpa": 1016.8,
@@ -13127,7 +13194,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 72,
         "reliability": 50.0
       },
       "pressure_stats": {
@@ -13263,7 +13330,7 @@
         "temp_max": 12.6,
         "temp_min": 3.1,
         "precip_mm": 2.6,
-        "precip_prob": 31.0,
+        "precip_prob": 34.0,
         "wind_kmh": 19.8,
         "clouds_percent": 63.0,
         "pressure_hpa": 1015.6,
@@ -13277,7 +13344,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 70,
         "reliability": 51.0
       },
       "pressure_stats": {
@@ -13414,7 +13481,7 @@
         "temp_max": 12.7,
         "temp_min": 3.1,
         "precip_mm": 2.5,
-        "precip_prob": 32.0,
+        "precip_prob": 34.0,
         "wind_kmh": 20.2,
         "clouds_percent": 61.0,
         "pressure_hpa": 1015.3,
@@ -13428,7 +13495,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 73,
         "reliability": 52.0
       },
       "pressure_stats": {
@@ -13565,7 +13632,7 @@
         "temp_max": 12.7,
         "temp_min": 3.1,
         "precip_mm": 2.2,
-        "precip_prob": 31.0,
+        "precip_prob": 33.0,
         "wind_kmh": 20.4,
         "clouds_percent": 62.0,
         "pressure_hpa": 1014.9,
@@ -13579,7 +13646,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 73,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -13716,7 +13783,7 @@
         "temp_max": 13.0,
         "temp_min": 3.4,
         "precip_mm": 2.3,
-        "precip_prob": 33.0,
+        "precip_prob": 35.0,
         "wind_kmh": 20.0,
         "clouds_percent": 65.0,
         "pressure_hpa": 1014.3,
@@ -13730,7 +13797,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 71,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -13867,7 +13934,7 @@
         "temp_max": 12.8,
         "temp_min": 3.6,
         "precip_mm": 2.1,
-        "precip_prob": 29.0,
+        "precip_prob": 32.0,
         "wind_kmh": 20.2,
         "clouds_percent": 65.0,
         "pressure_hpa": 1014.2,
@@ -13881,7 +13948,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 75,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -13926,7 +13993,8 @@
       "clothing": [
         "Heavy Coat",
         "Scarf",
-        "Gloves"
+        "Gloves",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -14017,7 +14085,7 @@
         "temp_max": 13.0,
         "temp_min": 3.6,
         "precip_mm": 1.9,
-        "precip_prob": 27.0,
+        "precip_prob": 30.0,
         "wind_kmh": 20.0,
         "clouds_percent": 62.0,
         "pressure_hpa": 1014.4,
@@ -14031,7 +14099,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 75,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -14076,7 +14144,8 @@
       "clothing": [
         "Heavy Coat",
         "Scarf",
-        "Gloves"
+        "Gloves",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -14167,7 +14236,7 @@
         "temp_max": 13.3,
         "temp_min": 3.8,
         "precip_mm": 1.9,
-        "precip_prob": 28.0,
+        "precip_prob": 31.0,
         "wind_kmh": 19.9,
         "clouds_percent": 64.0,
         "pressure_hpa": 1014.0,
@@ -14181,7 +14250,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 75,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -14226,7 +14295,8 @@
       "clothing": [
         "Heavy Coat",
         "Scarf",
-        "Gloves"
+        "Gloves",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -14317,7 +14387,7 @@
         "temp_max": 13.3,
         "temp_min": 4.0,
         "precip_mm": 1.7,
-        "precip_prob": 26.0,
+        "precip_prob": 30.0,
         "wind_kmh": 20.0,
         "clouds_percent": 64.0,
         "pressure_hpa": 1013.9,
@@ -14331,7 +14401,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 76,
         "reliability": 49.0
       },
       "pressure_stats": {
@@ -14467,7 +14537,7 @@
         "temp_max": 13.3,
         "temp_min": 3.7,
         "precip_mm": 1.7,
-        "precip_prob": 25.0,
+        "precip_prob": 28.0,
         "wind_kmh": 19.5,
         "clouds_percent": 61.0,
         "pressure_hpa": 1014.4,
@@ -14481,7 +14551,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 77,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -14617,7 +14687,7 @@
         "temp_max": 13.6,
         "temp_min": 3.7,
         "precip_mm": 1.6,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 19.3,
         "clouds_percent": 60.0,
         "pressure_hpa": 1014.8,
@@ -14631,7 +14701,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 80,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -14767,7 +14837,7 @@
         "temp_max": 13.5,
         "temp_min": 3.8,
         "precip_mm": 1.6,
-        "precip_prob": 21.0,
+        "precip_prob": 23.0,
         "wind_kmh": 19.3,
         "clouds_percent": 60.0,
         "pressure_hpa": 1015.4,
@@ -14781,7 +14851,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 80,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -14917,7 +14987,7 @@
         "temp_max": 13.9,
         "temp_min": 4.2,
         "precip_mm": 2.0,
-        "precip_prob": 25.0,
+        "precip_prob": 26.0,
         "wind_kmh": 19.4,
         "clouds_percent": 61.0,
         "pressure_hpa": 1015.7,
@@ -14931,7 +15001,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 81,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -15067,7 +15137,7 @@
         "temp_max": 14.8,
         "temp_min": 4.7,
         "precip_mm": 2.0,
-        "precip_prob": 26.0,
+        "precip_prob": 27.0,
         "wind_kmh": 19.1,
         "clouds_percent": 59.0,
         "pressure_hpa": 1015.8,
@@ -15081,7 +15151,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 86,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -15217,7 +15287,7 @@
         "temp_max": 15.7,
         "temp_min": 5.5,
         "precip_mm": 1.9,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 19.0,
         "clouds_percent": 59.0,
         "pressure_hpa": 1015.6,
@@ -15231,7 +15301,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 80,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -15366,7 +15436,7 @@
         "temp_max": 16.1,
         "temp_min": 6.1,
         "precip_mm": 1.9,
-        "precip_prob": 26.0,
+        "precip_prob": 27.0,
         "wind_kmh": 18.8,
         "clouds_percent": 60.0,
         "pressure_hpa": 1015.2,
@@ -15380,7 +15450,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 81,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -15515,7 +15585,7 @@
         "temp_max": 16.7,
         "temp_min": 6.4,
         "precip_mm": 1.9,
-        "precip_prob": 25.0,
+        "precip_prob": 28.0,
         "wind_kmh": 19.2,
         "clouds_percent": 59.0,
         "pressure_hpa": 1014.6,
@@ -15529,7 +15599,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 82,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -15664,7 +15734,7 @@
         "temp_max": 16.9,
         "temp_min": 6.6,
         "precip_mm": 1.5,
-        "precip_prob": 22.0,
+        "precip_prob": 25.0,
         "wind_kmh": 18.6,
         "clouds_percent": 57.0,
         "pressure_hpa": 1014.5,
@@ -15678,7 +15748,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 84,
         "reliability": 47.0
       },
       "pressure_stats": {
@@ -15813,7 +15883,7 @@
         "temp_max": 16.4,
         "temp_min": 6.2,
         "precip_mm": 1.3,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.4,
         "clouds_percent": 56.0,
         "pressure_hpa": 1015.0,
@@ -15827,7 +15897,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 83,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -15962,7 +16032,7 @@
         "temp_max": 16.1,
         "temp_min": 6.2,
         "precip_mm": 1.6,
-        "precip_prob": 25.0,
+        "precip_prob": 27.0,
         "wind_kmh": 18.5,
         "clouds_percent": 57.0,
         "pressure_hpa": 1015.2,
@@ -15976,7 +16046,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 81,
         "reliability": 44.0
       },
       "pressure_stats": {
@@ -16111,7 +16181,7 @@
         "temp_max": 16.3,
         "temp_min": 6.2,
         "precip_mm": 1.5,
-        "precip_prob": 23.0,
+        "precip_prob": 26.0,
         "wind_kmh": 18.5,
         "clouds_percent": 57.0,
         "pressure_hpa": 1015.9,
@@ -16125,7 +16195,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 82,
         "reliability": 44.0
       },
       "pressure_stats": {
@@ -16260,7 +16330,7 @@
         "temp_max": 16.3,
         "temp_min": 6.3,
         "precip_mm": 1.2,
-        "precip_prob": 21.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.4,
         "clouds_percent": 59.0,
         "pressure_hpa": 1016.6,
@@ -16274,7 +16344,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 83,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -16320,7 +16390,12 @@
         "Light Jacket",
         "Long Pants"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Good Friday"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -16409,7 +16484,7 @@
         "temp_max": 16.4,
         "temp_min": 6.4,
         "precip_mm": 1.4,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 18.6,
         "clouds_percent": 62.0,
         "pressure_hpa": 1016.7,
@@ -16423,7 +16498,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 82,
         "reliability": 50.0
       },
       "pressure_stats": {
@@ -16558,7 +16633,7 @@
         "temp_max": 16.6,
         "temp_min": 6.6,
         "precip_mm": 1.9,
-        "precip_prob": 25.0,
+        "precip_prob": 26.0,
         "wind_kmh": 19.1,
         "clouds_percent": 63.0,
         "pressure_hpa": 1016.3,
@@ -16572,7 +16647,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 82,
         "reliability": 52.0
       },
       "pressure_stats": {
@@ -16707,7 +16782,7 @@
         "temp_max": 16.9,
         "temp_min": 6.6,
         "precip_mm": 1.7,
-        "precip_prob": 20.0,
+        "precip_prob": 21.0,
         "wind_kmh": 19.2,
         "clouds_percent": 62.0,
         "pressure_hpa": 1016.3,
@@ -16721,7 +16796,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 85,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -16856,7 +16931,7 @@
         "temp_max": 16.8,
         "temp_min": 6.8,
         "precip_mm": 1.9,
-        "precip_prob": 21.0,
+        "precip_prob": 22.0,
         "wind_kmh": 19.4,
         "clouds_percent": 61.0,
         "pressure_hpa": 1015.8,
@@ -16870,7 +16945,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 84,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -17005,7 +17080,7 @@
         "temp_max": 16.8,
         "temp_min": 6.9,
         "precip_mm": 2.4,
-        "precip_prob": 26.0,
+        "precip_prob": 27.0,
         "wind_kmh": 19.4,
         "clouds_percent": 60.0,
         "pressure_hpa": 1015.3,
@@ -17019,7 +17094,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 83,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -17154,7 +17229,7 @@
         "temp_max": 16.5,
         "temp_min": 6.9,
         "precip_mm": 2.2,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 19.0,
         "clouds_percent": 59.0,
         "pressure_hpa": 1015.2,
@@ -17168,7 +17243,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 83,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -17303,7 +17378,7 @@
         "temp_max": 16.6,
         "temp_min": 7.0,
         "precip_mm": 1.8,
-        "precip_prob": 21.0,
+        "precip_prob": 23.0,
         "wind_kmh": 18.9,
         "clouds_percent": 58.0,
         "pressure_hpa": 1015.5,
@@ -17317,7 +17392,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 84,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -17452,7 +17527,7 @@
         "temp_max": 16.7,
         "temp_min": 7.2,
         "precip_mm": 1.9,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 19.0,
         "clouds_percent": 59.0,
         "pressure_hpa": 1015.8,
@@ -17466,7 +17541,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 84,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -17601,7 +17676,7 @@
         "temp_max": 17.0,
         "temp_min": 7.3,
         "precip_mm": 1.7,
-        "precip_prob": 22.0,
+        "precip_prob": 25.0,
         "wind_kmh": 18.8,
         "clouds_percent": 58.0,
         "pressure_hpa": 1016.1,
@@ -17615,7 +17690,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 85,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -17750,7 +17825,7 @@
         "temp_max": 17.5,
         "temp_min": 7.5,
         "precip_mm": 1.7,
-        "precip_prob": 20.0,
+        "precip_prob": 23.0,
         "wind_kmh": 18.6,
         "clouds_percent": 58.0,
         "pressure_hpa": 1016.1,
@@ -17764,7 +17839,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 87,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -17899,7 +17974,7 @@
         "temp_max": 18.5,
         "temp_min": 8.2,
         "precip_mm": 1.7,
-        "precip_prob": 21.0,
+        "precip_prob": 24.0,
         "wind_kmh": 18.8,
         "clouds_percent": 59.0,
         "pressure_hpa": 1015.6,
@@ -17913,7 +17988,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 90,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -18048,7 +18123,7 @@
         "temp_max": 19.1,
         "temp_min": 8.8,
         "precip_mm": 1.8,
-        "precip_prob": 24.0,
+        "precip_prob": 28.0,
         "wind_kmh": 18.4,
         "clouds_percent": 60.0,
         "pressure_hpa": 1015.1,
@@ -18062,7 +18137,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 91,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -18197,7 +18272,7 @@
         "temp_max": 19.3,
         "temp_min": 9.3,
         "precip_mm": 2.2,
-        "precip_prob": 28.0,
+        "precip_prob": 32.0,
         "wind_kmh": 17.2,
         "clouds_percent": 62.0,
         "pressure_hpa": 1014.8,
@@ -18211,7 +18286,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 90,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -18255,7 +18330,8 @@
       },
       "clothing": [
         "Light Jacket",
-        "Long Pants"
+        "Long Pants",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -18346,7 +18422,7 @@
         "temp_max": 19.3,
         "temp_min": 9.6,
         "precip_mm": 2.3,
-        "precip_prob": 32.0,
+        "precip_prob": 35.0,
         "wind_kmh": 17.2,
         "clouds_percent": 64.0,
         "pressure_hpa": 1014.9,
@@ -18360,7 +18436,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 89,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -18496,7 +18572,7 @@
         "temp_max": 19.1,
         "temp_min": 9.9,
         "precip_mm": 2.3,
-        "precip_prob": 35.0,
+        "precip_prob": 38.0,
         "wind_kmh": 17.0,
         "clouds_percent": 66.0,
         "pressure_hpa": 1015.1,
@@ -18510,7 +18586,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 87,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -18646,7 +18722,7 @@
         "temp_max": 18.7,
         "temp_min": 9.7,
         "precip_mm": 2.2,
-        "precip_prob": 34.0,
+        "precip_prob": 36.0,
         "wind_kmh": 16.6,
         "clouds_percent": 66.0,
         "pressure_hpa": 1015.7,
@@ -18660,7 +18736,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 87,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -18796,7 +18872,7 @@
         "temp_max": 18.6,
         "temp_min": 9.6,
         "precip_mm": 2.1,
-        "precip_prob": 30.0,
+        "precip_prob": 32.0,
         "wind_kmh": 16.4,
         "clouds_percent": 66.0,
         "pressure_hpa": 1015.9,
@@ -18810,7 +18886,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 89,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -18946,7 +19022,7 @@
         "temp_max": 18.6,
         "temp_min": 9.6,
         "precip_mm": 1.9,
-        "precip_prob": 28.0,
+        "precip_prob": 31.0,
         "wind_kmh": 16.7,
         "clouds_percent": 67.0,
         "pressure_hpa": 1015.8,
@@ -18960,7 +19036,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 89,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -19004,7 +19080,8 @@
       },
       "clothing": [
         "Light Jacket",
-        "Long Pants"
+        "Long Pants",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -19095,7 +19172,7 @@
         "temp_max": 18.8,
         "temp_min": 9.7,
         "precip_mm": 1.7,
-        "precip_prob": 22.0,
+        "precip_prob": 24.0,
         "wind_kmh": 16.8,
         "clouds_percent": 65.0,
         "pressure_hpa": 1015.4,
@@ -19109,7 +19186,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 93,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -19244,7 +19321,7 @@
         "temp_max": 19.2,
         "temp_min": 9.8,
         "precip_mm": 1.7,
-        "precip_prob": 21.0,
+        "precip_prob": 22.0,
         "wind_kmh": 16.5,
         "clouds_percent": 64.0,
         "pressure_hpa": 1015.4,
@@ -19258,7 +19335,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -19304,7 +19381,12 @@
         "Light Jacket",
         "Long Pants"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Truman Day"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -19393,7 +19475,7 @@
         "temp_max": 19.5,
         "temp_min": 9.9,
         "precip_mm": 1.8,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 17.8,
         "clouds_percent": 64.0,
         "pressure_hpa": 1015.5,
@@ -19407,7 +19489,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -19542,7 +19624,7 @@
         "temp_max": 19.2,
         "temp_min": 10.0,
         "precip_mm": 1.9,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 18.3,
         "clouds_percent": 64.0,
         "pressure_hpa": 1015.8,
@@ -19556,7 +19638,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 93,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -19705,7 +19787,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 94,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -19840,7 +19922,7 @@
         "temp_max": 19.7,
         "temp_min": 10.0,
         "precip_mm": 1.7,
-        "precip_prob": 27.0,
+        "precip_prob": 28.0,
         "wind_kmh": 17.8,
         "clouds_percent": 62.0,
         "pressure_hpa": 1016.5,
@@ -19854,7 +19936,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 94,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -19989,7 +20071,7 @@
         "temp_max": 20.1,
         "temp_min": 10.5,
         "precip_mm": 1.8,
-        "precip_prob": 29.0,
+        "precip_prob": 30.0,
         "wind_kmh": 18.0,
         "clouds_percent": 63.0,
         "pressure_hpa": 1016.0,
@@ -20003,7 +20085,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 93,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -20138,7 +20220,7 @@
         "temp_max": 20.3,
         "temp_min": 10.8,
         "precip_mm": 2.0,
-        "precip_prob": 30.0,
+        "precip_prob": 32.0,
         "wind_kmh": 18.0,
         "clouds_percent": 62.0,
         "pressure_hpa": 1015.6,
@@ -20152,7 +20234,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 92,
         "reliability": 58.0
       },
       "pressure_stats": {
@@ -20288,7 +20370,7 @@
         "temp_max": 20.7,
         "temp_min": 11.0,
         "precip_mm": 1.7,
-        "precip_prob": 26.0,
+        "precip_prob": 27.0,
         "wind_kmh": 17.1,
         "clouds_percent": 62.0,
         "pressure_hpa": 1015.7,
@@ -20302,7 +20384,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 60.0
       },
       "pressure_stats": {
@@ -20437,7 +20519,7 @@
         "temp_max": 21.1,
         "temp_min": 11.4,
         "precip_mm": 1.9,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 17.5,
         "clouds_percent": 64.0,
         "pressure_hpa": 1015.5,
@@ -20451,7 +20533,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 59.0
       },
       "pressure_stats": {
@@ -20586,7 +20668,7 @@
         "temp_max": 20.9,
         "temp_min": 11.6,
         "precip_mm": 1.9,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 17.5,
         "clouds_percent": 64.0,
         "pressure_hpa": 1015.6,
@@ -20600,7 +20682,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -20735,7 +20817,7 @@
         "temp_max": 20.8,
         "temp_min": 11.4,
         "precip_mm": 1.4,
-        "precip_prob": 20.0,
+        "precip_prob": 21.0,
         "wind_kmh": 16.8,
         "clouds_percent": 62.0,
         "pressure_hpa": 1016.4,
@@ -20749,7 +20831,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 97,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -20898,7 +20980,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 97,
         "reliability": 51.0
       },
       "pressure_stats": {
@@ -21047,7 +21129,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 52.0
       },
       "pressure_stats": {
@@ -21182,7 +21264,7 @@
         "temp_max": 21.3,
         "temp_min": 12.0,
         "precip_mm": 1.4,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 16.6,
         "clouds_percent": 62.0,
         "pressure_hpa": 1016.6,
@@ -21196,7 +21278,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -21331,7 +21413,7 @@
         "temp_max": 21.4,
         "temp_min": 12.3,
         "precip_mm": 1.7,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 16.8,
         "clouds_percent": 63.0,
         "pressure_hpa": 1016.6,
@@ -21345,7 +21427,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 51.0
       },
       "pressure_stats": {
@@ -21480,7 +21562,7 @@
         "temp_max": 21.9,
         "temp_min": 12.6,
         "precip_mm": 1.8,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 17.0,
         "clouds_percent": 64.0,
         "pressure_hpa": 1016.2,
@@ -21494,7 +21576,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 51.0
       },
       "pressure_stats": {
@@ -21629,7 +21711,7 @@
         "temp_max": 22.5,
         "temp_min": 12.9,
         "precip_mm": 1.6,
-        "precip_prob": 22.0,
+        "precip_prob": 25.0,
         "wind_kmh": 16.6,
         "clouds_percent": 64.0,
         "pressure_hpa": 1016.2,
@@ -21643,7 +21725,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -21778,7 +21860,7 @@
         "temp_max": 22.7,
         "temp_min": 13.2,
         "precip_mm": 1.7,
-        "precip_prob": 24.0,
+        "precip_prob": 28.0,
         "wind_kmh": 16.4,
         "clouds_percent": 66.0,
         "pressure_hpa": 1016.2,
@@ -21792,7 +21874,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 94,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -21927,7 +22009,7 @@
         "temp_max": 22.9,
         "temp_min": 13.5,
         "precip_mm": 1.6,
-        "precip_prob": 22.0,
+        "precip_prob": 26.0,
         "wind_kmh": 15.5,
         "clouds_percent": 66.0,
         "pressure_hpa": 1016.2,
@@ -21941,7 +22023,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -21987,7 +22069,12 @@
         "T-Shirt",
         "Light Clothing"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Memorial Day"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -22076,7 +22163,7 @@
         "temp_max": 23.3,
         "temp_min": 13.8,
         "precip_mm": 1.4,
-        "precip_prob": 23.0,
+        "precip_prob": 28.0,
         "wind_kmh": 15.6,
         "clouds_percent": 63.0,
         "pressure_hpa": 1016.0,
@@ -22090,7 +22177,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -22225,7 +22312,7 @@
         "temp_max": 23.4,
         "temp_min": 14.1,
         "precip_mm": 1.6,
-        "precip_prob": 27.0,
+        "precip_prob": 31.0,
         "wind_kmh": 15.4,
         "clouds_percent": 62.0,
         "pressure_hpa": 1015.5,
@@ -22239,7 +22326,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 94,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -22283,7 +22370,8 @@
       },
       "clothing": [
         "T-Shirt",
-        "Light Clothing"
+        "Light Clothing",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -22374,7 +22462,7 @@
         "temp_max": 23.4,
         "temp_min": 14.1,
         "precip_mm": 1.8,
-        "precip_prob": 28.0,
+        "precip_prob": 32.0,
         "wind_kmh": 16.0,
         "clouds_percent": 59.0,
         "pressure_hpa": 1015.1,
@@ -22388,7 +22476,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 94,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -22432,7 +22520,8 @@
       },
       "clothing": [
         "T-Shirt",
-        "Light Clothing"
+        "Light Clothing",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -22523,7 +22612,7 @@
         "temp_max": 23.9,
         "temp_min": 14.1,
         "precip_mm": 1.7,
-        "precip_prob": 24.0,
+        "precip_prob": 28.0,
         "wind_kmh": 16.3,
         "clouds_percent": 55.0,
         "pressure_hpa": 1014.7,
@@ -22537,7 +22626,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -22672,7 +22761,7 @@
         "temp_max": 23.9,
         "temp_min": 14.1,
         "precip_mm": 2.3,
-        "precip_prob": 29.0,
+        "precip_prob": 32.0,
         "wind_kmh": 17.0,
         "clouds_percent": 55.0,
         "pressure_hpa": 1014.5,
@@ -22686,7 +22775,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -22730,7 +22819,8 @@
       },
       "clothing": [
         "T-Shirt",
-        "Light Clothing"
+        "Light Clothing",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -22821,7 +22911,7 @@
         "temp_max": 23.9,
         "temp_min": 14.0,
         "precip_mm": 2.6,
-        "precip_prob": 29.0,
+        "precip_prob": 31.0,
         "wind_kmh": 17.1,
         "clouds_percent": 57.0,
         "pressure_hpa": 1014.1,
@@ -22835,7 +22925,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -22879,7 +22969,8 @@
       },
       "clothing": [
         "T-Shirt",
-        "Light Clothing"
+        "Light Clothing",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -22970,7 +23061,7 @@
         "temp_max": 24.1,
         "temp_min": 14.1,
         "precip_mm": 2.6,
-        "precip_prob": 27.0,
+        "precip_prob": 29.0,
         "wind_kmh": 17.1,
         "clouds_percent": 59.0,
         "pressure_hpa": 1014.0,
@@ -22984,7 +23075,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 95,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -23119,7 +23210,7 @@
         "temp_max": 24.1,
         "temp_min": 14.4,
         "precip_mm": 2.7,
-        "precip_prob": 29.0,
+        "precip_prob": 31.0,
         "wind_kmh": 17.0,
         "clouds_percent": 62.0,
         "pressure_hpa": 1013.7,
@@ -23133,7 +23224,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -23177,7 +23268,8 @@
       },
       "clothing": [
         "T-Shirt",
-        "Light Clothing"
+        "Light Clothing",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -23282,7 +23374,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -23432,7 +23524,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -23567,7 +23659,7 @@
         "temp_max": 24.8,
         "temp_min": 15.2,
         "precip_mm": 1.7,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 16.6,
         "clouds_percent": 60.0,
         "pressure_hpa": 1013.0,
@@ -23581,7 +23673,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -23716,7 +23808,7 @@
         "temp_max": 24.9,
         "temp_min": 15.4,
         "precip_mm": 1.6,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 16.5,
         "clouds_percent": 59.0,
         "pressure_hpa": 1013.1,
@@ -23730,7 +23822,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -23865,7 +23957,7 @@
         "temp_max": 25.2,
         "temp_min": 15.6,
         "precip_mm": 1.4,
-        "precip_prob": 21.0,
+        "precip_prob": 22.0,
         "wind_kmh": 16.3,
         "clouds_percent": 57.0,
         "pressure_hpa": 1013.3,
@@ -23879,7 +23971,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 97,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -24014,7 +24106,7 @@
         "temp_max": 25.5,
         "temp_min": 15.9,
         "precip_mm": 1.4,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 15.6,
         "clouds_percent": 59.0,
         "pressure_hpa": 1013.6,
@@ -24028,7 +24120,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 59.0
       },
       "pressure_stats": {
@@ -24163,7 +24255,7 @@
         "temp_max": 25.5,
         "temp_min": 16.2,
         "precip_mm": 2.1,
-        "precip_prob": 25.0,
+        "precip_prob": 27.0,
         "wind_kmh": 15.5,
         "clouds_percent": 62.0,
         "pressure_hpa": 1013.7,
@@ -24177,7 +24269,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 96,
         "reliability": 60.0
       },
       "pressure_stats": {
@@ -24312,7 +24404,7 @@
         "temp_max": 25.2,
         "temp_min": 16.4,
         "precip_mm": 2.6,
-        "precip_prob": 30.0,
+        "precip_prob": 31.0,
         "wind_kmh": 15.6,
         "clouds_percent": 64.0,
         "pressure_hpa": 1013.6,
@@ -24326,7 +24418,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 60.0
       },
       "pressure_stats": {
@@ -24370,7 +24462,8 @@
       },
       "clothing": [
         "T-Shirt",
-        "Light Clothing"
+        "Light Clothing",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -24461,7 +24554,7 @@
         "temp_max": 25.1,
         "temp_min": 16.5,
         "precip_mm": 2.6,
-        "precip_prob": 30.0,
+        "precip_prob": 32.0,
         "wind_kmh": 15.6,
         "clouds_percent": 63.0,
         "pressure_hpa": 1013.9,
@@ -24475,7 +24568,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 60.0
       },
       "pressure_stats": {
@@ -24611,7 +24704,7 @@
         "temp_max": 25.0,
         "temp_min": 16.4,
         "precip_mm": 2.7,
-        "precip_prob": 33.0,
+        "precip_prob": 35.0,
         "wind_kmh": 15.7,
         "clouds_percent": 64.0,
         "pressure_hpa": 1014.1,
@@ -24625,7 +24718,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 92,
         "reliability": 63.0
       },
       "pressure_stats": {
@@ -24761,7 +24854,7 @@
         "temp_max": 24.8,
         "temp_min": 16.3,
         "precip_mm": 2.6,
-        "precip_prob": 32.0,
+        "precip_prob": 33.0,
         "wind_kmh": 15.6,
         "clouds_percent": 63.0,
         "pressure_hpa": 1014.3,
@@ -24775,7 +24868,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 65.0
       },
       "pressure_stats": {
@@ -24911,7 +25004,7 @@
         "temp_max": 25.0,
         "temp_min": 16.2,
         "precip_mm": 2.3,
-        "precip_prob": 31.0,
+        "precip_prob": 32.0,
         "wind_kmh": 15.6,
         "clouds_percent": 61.0,
         "pressure_hpa": 1014.7,
@@ -24925,7 +25018,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 64.0
       },
       "pressure_stats": {
@@ -25061,7 +25154,7 @@
         "temp_max": 25.5,
         "temp_min": 16.5,
         "precip_mm": 1.9,
-        "precip_prob": 29.0,
+        "precip_prob": 30.0,
         "wind_kmh": 15.3,
         "clouds_percent": 60.0,
         "pressure_hpa": 1015.1,
@@ -25075,7 +25168,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 65.0
       },
       "pressure_stats": {
@@ -25210,7 +25303,7 @@
         "temp_max": 25.7,
         "temp_min": 16.8,
         "precip_mm": 2.0,
-        "precip_prob": 27.0,
+        "precip_prob": 28.0,
         "wind_kmh": 15.3,
         "clouds_percent": 62.0,
         "pressure_hpa": 1015.4,
@@ -25224,7 +25317,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -25359,7 +25452,7 @@
         "temp_max": 26.2,
         "temp_min": 17.1,
         "precip_mm": 2.1,
-        "precip_prob": 25.0,
+        "precip_prob": 26.0,
         "wind_kmh": 15.2,
         "clouds_percent": 60.0,
         "pressure_hpa": 1015.5,
@@ -25373,7 +25466,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 97,
         "reliability": 64.0
       },
       "pressure_stats": {
@@ -25508,7 +25601,7 @@
         "temp_max": 26.6,
         "temp_min": 17.5,
         "precip_mm": 1.9,
-        "precip_prob": 23.0,
+        "precip_prob": 26.0,
         "wind_kmh": 15.6,
         "clouds_percent": 60.0,
         "pressure_hpa": 1015.5,
@@ -25522,7 +25615,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 63.0
       },
       "pressure_stats": {
@@ -25568,7 +25661,12 @@
         "T-Shirt",
         "Light Clothing"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Juneteenth National Independence Day"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -25657,7 +25755,7 @@
         "temp_max": 27.0,
         "temp_min": 17.9,
         "precip_mm": 2.0,
-        "precip_prob": 23.0,
+        "precip_prob": 26.0,
         "wind_kmh": 16.2,
         "clouds_percent": 59.0,
         "pressure_hpa": 1015.4,
@@ -25671,7 +25769,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 62.0
       },
       "pressure_stats": {
@@ -25806,7 +25904,7 @@
         "temp_max": 27.4,
         "temp_min": 18.2,
         "precip_mm": 2.1,
-        "precip_prob": 22.0,
+        "precip_prob": 24.0,
         "wind_kmh": 16.6,
         "clouds_percent": 58.0,
         "pressure_hpa": 1015.2,
@@ -25820,7 +25918,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 96,
         "reliability": 61.0
       },
       "pressure_stats": {
@@ -25955,7 +26053,7 @@
         "temp_max": 28.0,
         "temp_min": 18.6,
         "precip_mm": 1.7,
-        "precip_prob": 20.0,
+        "precip_prob": 23.0,
         "wind_kmh": 16.4,
         "clouds_percent": 56.0,
         "pressure_hpa": 1014.9,
@@ -25969,7 +26067,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 97,
         "reliability": 61.0
       },
       "pressure_stats": {
@@ -26104,7 +26202,7 @@
         "temp_max": 28.3,
         "temp_min": 19.0,
         "precip_mm": 1.5,
-        "precip_prob": 21.0,
+        "precip_prob": 24.0,
         "wind_kmh": 16.6,
         "clouds_percent": 56.0,
         "pressure_hpa": 1014.7,
@@ -26118,7 +26216,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 62.0
       },
       "pressure_stats": {
@@ -26253,7 +26351,7 @@
         "temp_max": 28.5,
         "temp_min": 19.2,
         "precip_mm": 2.1,
-        "precip_prob": 26.0,
+        "precip_prob": 28.0,
         "wind_kmh": 16.4,
         "clouds_percent": 56.0,
         "pressure_hpa": 1014.6,
@@ -26267,7 +26365,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 64.0
       },
       "pressure_stats": {
@@ -26402,7 +26500,7 @@
         "temp_max": 28.6,
         "temp_min": 19.3,
         "precip_mm": 2.1,
-        "precip_prob": 26.0,
+        "precip_prob": 27.0,
         "wind_kmh": 16.2,
         "clouds_percent": 57.0,
         "pressure_hpa": 1014.5,
@@ -26416,7 +26514,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 95,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -26565,7 +26663,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -26700,7 +26798,7 @@
         "temp_max": 28.6,
         "temp_min": 19.4,
         "precip_mm": 2.0,
-        "precip_prob": 25.0,
+        "precip_prob": 26.0,
         "wind_kmh": 16.3,
         "clouds_percent": 58.0,
         "pressure_hpa": 1014.7,
@@ -26714,7 +26812,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -26849,7 +26947,7 @@
         "temp_max": 28.6,
         "temp_min": 19.4,
         "precip_mm": 2.4,
-        "precip_prob": 28.0,
+        "precip_prob": 29.0,
         "wind_kmh": 16.3,
         "clouds_percent": 57.0,
         "pressure_hpa": 1014.3,
@@ -26863,7 +26961,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -27012,7 +27110,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -27147,7 +27245,7 @@
         "temp_max": 28.7,
         "temp_min": 19.4,
         "precip_mm": 2.0,
-        "precip_prob": 25.0,
+        "precip_prob": 26.0,
         "wind_kmh": 15.5,
         "clouds_percent": 53.0,
         "pressure_hpa": 1014.3,
@@ -27161,7 +27259,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -27296,7 +27394,7 @@
         "temp_max": 28.7,
         "temp_min": 19.4,
         "precip_mm": 2.3,
-        "precip_prob": 28.0,
+        "precip_prob": 29.0,
         "wind_kmh": 15.2,
         "clouds_percent": 53.0,
         "pressure_hpa": 1014.4,
@@ -27310,7 +27408,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 67.0
       },
       "pressure_stats": {
@@ -27445,7 +27543,7 @@
         "temp_max": 28.7,
         "temp_min": 19.5,
         "precip_mm": 2.1,
-        "precip_prob": 28.0,
+        "precip_prob": 29.0,
         "wind_kmh": 15.2,
         "clouds_percent": 54.0,
         "pressure_hpa": 1014.5,
@@ -27459,7 +27557,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 67.0
       },
       "pressure_stats": {
@@ -27594,7 +27692,7 @@
         "temp_max": 29.0,
         "temp_min": 19.7,
         "precip_mm": 1.7,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 15.2,
         "clouds_percent": 53.0,
         "pressure_hpa": 1014.6,
@@ -27608,7 +27706,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -27743,7 +27841,7 @@
         "temp_max": 29.2,
         "temp_min": 19.9,
         "precip_mm": 1.4,
-        "precip_prob": 21.0,
+        "precip_prob": 23.0,
         "wind_kmh": 15.2,
         "clouds_percent": 52.0,
         "pressure_hpa": 1014.8,
@@ -27757,7 +27855,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -27803,7 +27901,12 @@
         "T-Shirt",
         "Light Clothing"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Independence Day"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -27892,7 +27995,7 @@
         "temp_max": 29.3,
         "temp_min": 20.1,
         "precip_mm": 1.6,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 15.2,
         "clouds_percent": 54.0,
         "pressure_hpa": 1014.7,
@@ -27906,7 +28009,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 94,
         "reliability": 64.0
       },
       "pressure_stats": {
@@ -28041,7 +28144,7 @@
         "temp_max": 29.4,
         "temp_min": 20.4,
         "precip_mm": 1.6,
-        "precip_prob": 25.0,
+        "precip_prob": 27.0,
         "wind_kmh": 15.4,
         "clouds_percent": 53.0,
         "pressure_hpa": 1014.4,
@@ -28055,7 +28158,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 93,
         "reliability": 65.0
       },
       "pressure_stats": {
@@ -28190,7 +28293,7 @@
         "temp_max": 29.2,
         "temp_min": 20.5,
         "precip_mm": 1.9,
-        "precip_prob": 27.0,
+        "precip_prob": 28.0,
         "wind_kmh": 15.9,
         "clouds_percent": 53.0,
         "pressure_hpa": 1014.1,
@@ -28204,7 +28307,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 93,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -28339,7 +28442,7 @@
         "temp_max": 28.9,
         "temp_min": 20.3,
         "precip_mm": 1.9,
-        "precip_prob": 26.0,
+        "precip_prob": 28.0,
         "wind_kmh": 16.2,
         "clouds_percent": 53.0,
         "pressure_hpa": 1014.1,
@@ -28353,7 +28456,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 94,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -28488,7 +28591,7 @@
         "temp_max": 28.9,
         "temp_min": 20.3,
         "precip_mm": 1.9,
-        "precip_prob": 27.0,
+        "precip_prob": 28.0,
         "wind_kmh": 16.4,
         "clouds_percent": 53.0,
         "pressure_hpa": 1014.2,
@@ -28502,7 +28605,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 94,
         "reliability": 70.0
       },
       "pressure_stats": {
@@ -28637,7 +28740,7 @@
         "temp_max": 28.9,
         "temp_min": 20.1,
         "precip_mm": 1.6,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 16.8,
         "clouds_percent": 52.0,
         "pressure_hpa": 1014.6,
@@ -28651,7 +28754,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 94,
         "reliability": 74.0
       },
       "pressure_stats": {
@@ -28786,7 +28889,7 @@
         "temp_max": 28.7,
         "temp_min": 20.0,
         "precip_mm": 1.9,
-        "precip_prob": 25.0,
+        "precip_prob": 26.0,
         "wind_kmh": 17.2,
         "clouds_percent": 54.0,
         "pressure_hpa": 1014.9,
@@ -28800,7 +28903,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 94,
         "reliability": 73.0
       },
       "pressure_stats": {
@@ -28935,7 +29038,7 @@
         "temp_max": 28.9,
         "temp_min": 20.1,
         "precip_mm": 1.8,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 16.3,
         "clouds_percent": 54.0,
         "pressure_hpa": 1015.1,
@@ -28949,7 +29052,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 74.0
       },
       "pressure_stats": {
@@ -29098,7 +29201,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 72.0
       },
       "pressure_stats": {
@@ -29247,7 +29350,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 95,
         "reliability": 70.0
       },
       "pressure_stats": {
@@ -29396,7 +29499,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -29531,7 +29634,7 @@
         "temp_max": 30.0,
         "temp_min": 21.0,
         "precip_mm": 1.7,
-        "precip_prob": 25.0,
+        "precip_prob": 26.0,
         "wind_kmh": 14.5,
         "clouds_percent": 53.0,
         "pressure_hpa": 1014.6,
@@ -29545,7 +29648,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 93,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -29680,7 +29783,7 @@
         "temp_max": 30.1,
         "temp_min": 21.2,
         "precip_mm": 1.6,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 14.8,
         "clouds_percent": 52.0,
         "pressure_hpa": 1014.2,
@@ -29694,7 +29797,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 93,
         "reliability": 67.0
       },
       "pressure_stats": {
@@ -29829,7 +29932,7 @@
         "temp_max": 30.2,
         "temp_min": 21.0,
         "precip_mm": 1.5,
-        "precip_prob": 24.0,
+        "precip_prob": 27.0,
         "wind_kmh": 15.2,
         "clouds_percent": 52.0,
         "pressure_hpa": 1013.9,
@@ -29843,7 +29946,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 92,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -29978,7 +30081,7 @@
         "temp_max": 29.9,
         "temp_min": 20.9,
         "precip_mm": 1.6,
-        "precip_prob": 24.0,
+        "precip_prob": 27.0,
         "wind_kmh": 15.5,
         "clouds_percent": 53.0,
         "pressure_hpa": 1013.8,
@@ -29992,7 +30095,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 92,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -30127,7 +30230,7 @@
         "temp_max": 29.7,
         "temp_min": 20.7,
         "precip_mm": 1.8,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 15.6,
         "clouds_percent": 53.0,
         "pressure_hpa": 1014.0,
@@ -30141,7 +30244,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 93,
         "reliability": 64.0
       },
       "pressure_stats": {
@@ -30276,7 +30379,7 @@
         "temp_max": 29.4,
         "temp_min": 20.5,
         "precip_mm": 2.3,
-        "precip_prob": 26.0,
+        "precip_prob": 28.0,
         "wind_kmh": 15.8,
         "clouds_percent": 56.0,
         "pressure_hpa": 1014.3,
@@ -30290,7 +30393,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 63.0
       },
       "pressure_stats": {
@@ -30425,7 +30528,7 @@
         "temp_max": 29.1,
         "temp_min": 20.5,
         "precip_mm": 3.1,
-        "precip_prob": 34.0,
+        "precip_prob": 37.0,
         "wind_kmh": 16.0,
         "clouds_percent": 58.0,
         "pressure_hpa": 1014.7,
@@ -30439,7 +30542,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 89,
         "reliability": 62.0
       },
       "pressure_stats": {
@@ -30589,7 +30692,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 64.0
       },
       "pressure_stats": {
@@ -30739,7 +30842,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 63.0
       },
       "pressure_stats": {
@@ -30889,7 +30992,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 64.0
       },
       "pressure_stats": {
@@ -31038,7 +31141,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 65.0
       },
       "pressure_stats": {
@@ -31187,7 +31290,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -31322,7 +31425,7 @@
         "temp_max": 29.5,
         "temp_min": 20.3,
         "precip_mm": 1.8,
-        "precip_prob": 22.0,
+        "precip_prob": 23.0,
         "wind_kmh": 15.0,
         "clouds_percent": 54.0,
         "pressure_hpa": 1014.7,
@@ -31336,7 +31439,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -31471,7 +31574,7 @@
         "temp_max": 29.2,
         "temp_min": 20.3,
         "precip_mm": 2.1,
-        "precip_prob": 25.0,
+        "precip_prob": 26.0,
         "wind_kmh": 14.8,
         "clouds_percent": 55.0,
         "pressure_hpa": 1014.9,
@@ -31485,7 +31588,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -31620,7 +31723,7 @@
         "temp_max": 29.0,
         "temp_min": 20.2,
         "precip_mm": 2.2,
-        "precip_prob": 28.0,
+        "precip_prob": 29.0,
         "wind_kmh": 14.5,
         "clouds_percent": 54.0,
         "pressure_hpa": 1015.3,
@@ -31634,7 +31737,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -31769,7 +31872,7 @@
         "temp_max": 28.8,
         "temp_min": 20.0,
         "precip_mm": 1.9,
-        "precip_prob": 28.0,
+        "precip_prob": 29.0,
         "wind_kmh": 14.1,
         "clouds_percent": 53.0,
         "pressure_hpa": 1015.7,
@@ -31783,7 +31886,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 94,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -31918,7 +32021,7 @@
         "temp_max": 28.9,
         "temp_min": 20.0,
         "precip_mm": 2.2,
-        "precip_prob": 27.0,
+        "precip_prob": 29.0,
         "wind_kmh": 14.0,
         "clouds_percent": 53.0,
         "pressure_hpa": 1015.8,
@@ -31932,7 +32035,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -32067,7 +32170,7 @@
         "temp_max": 28.9,
         "temp_min": 20.3,
         "precip_mm": 2.2,
-        "precip_prob": 28.0,
+        "precip_prob": 29.0,
         "wind_kmh": 14.0,
         "clouds_percent": 53.0,
         "pressure_hpa": 1015.8,
@@ -32081,7 +32184,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -32216,7 +32319,7 @@
         "temp_max": 29.1,
         "temp_min": 20.2,
         "precip_mm": 1.8,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 14.0,
         "clouds_percent": 52.0,
         "pressure_hpa": 1016.0,
@@ -32230,7 +32333,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 70.0
       },
       "pressure_stats": {
@@ -32365,7 +32468,7 @@
         "temp_max": 29.0,
         "temp_min": 20.2,
         "precip_mm": 1.9,
-        "precip_prob": 23.0,
+        "precip_prob": 26.0,
         "wind_kmh": 14.3,
         "clouds_percent": 54.0,
         "pressure_hpa": 1016.0,
@@ -32379,7 +32482,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 70.0
       },
       "pressure_stats": {
@@ -32514,7 +32617,7 @@
         "temp_max": 28.8,
         "temp_min": 20.2,
         "precip_mm": 2.2,
-        "precip_prob": 25.0,
+        "precip_prob": 28.0,
         "wind_kmh": 14.3,
         "clouds_percent": 55.0,
         "pressure_hpa": 1015.9,
@@ -32528,7 +32631,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 70.0
       },
       "pressure_stats": {
@@ -32663,7 +32766,7 @@
         "temp_max": 28.6,
         "temp_min": 20.0,
         "precip_mm": 2.1,
-        "precip_prob": 27.0,
+        "precip_prob": 30.0,
         "wind_kmh": 14.4,
         "clouds_percent": 54.0,
         "pressure_hpa": 1015.9,
@@ -32677,7 +32780,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -32721,7 +32824,8 @@
       },
       "clothing": [
         "T-Shirt",
-        "Light Clothing"
+        "Light Clothing",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -32812,7 +32916,7 @@
         "temp_max": 28.6,
         "temp_min": 19.9,
         "precip_mm": 2.0,
-        "precip_prob": 29.0,
+        "precip_prob": 32.0,
         "wind_kmh": 14.8,
         "clouds_percent": 54.0,
         "pressure_hpa": 1015.7,
@@ -32826,7 +32930,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -32870,7 +32974,8 @@
       },
       "clothing": [
         "T-Shirt",
-        "Light Clothing"
+        "Light Clothing",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -32961,7 +33066,7 @@
         "temp_max": 28.6,
         "temp_min": 20.0,
         "precip_mm": 2.5,
-        "precip_prob": 29.0,
+        "precip_prob": 33.0,
         "wind_kmh": 14.8,
         "clouds_percent": 54.0,
         "pressure_hpa": 1015.2,
@@ -32975,7 +33080,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 92,
         "reliability": 70.0
       },
       "pressure_stats": {
@@ -33019,7 +33124,8 @@
       },
       "clothing": [
         "T-Shirt",
-        "Light Clothing"
+        "Light Clothing",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -33110,7 +33216,7 @@
         "temp_max": 28.6,
         "temp_min": 20.1,
         "precip_mm": 2.4,
-        "precip_prob": 31.0,
+        "precip_prob": 34.0,
         "wind_kmh": 14.4,
         "clouds_percent": 54.0,
         "pressure_hpa": 1015.0,
@@ -33124,7 +33230,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 92,
         "reliability": 70.0
       },
       "pressure_stats": {
@@ -33260,7 +33366,7 @@
         "temp_max": 28.7,
         "temp_min": 20.2,
         "precip_mm": 2.6,
-        "precip_prob": 32.0,
+        "precip_prob": 36.0,
         "wind_kmh": 14.4,
         "clouds_percent": 53.0,
         "pressure_hpa": 1015.0,
@@ -33274,7 +33380,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 91,
         "reliability": 70.0
       },
       "pressure_stats": {
@@ -33410,7 +33516,7 @@
         "temp_max": 28.6,
         "temp_min": 20.2,
         "precip_mm": 2.7,
-        "precip_prob": 31.0,
+        "precip_prob": 35.0,
         "wind_kmh": 14.6,
         "clouds_percent": 56.0,
         "pressure_hpa": 1014.8,
@@ -33424,7 +33530,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 91,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -33560,7 +33666,7 @@
         "temp_max": 28.3,
         "temp_min": 20.2,
         "precip_mm": 2.8,
-        "precip_prob": 31.0,
+        "precip_prob": 35.0,
         "wind_kmh": 14.5,
         "clouds_percent": 57.0,
         "pressure_hpa": 1015.0,
@@ -33574,7 +33680,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 92,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -33710,7 +33816,7 @@
         "temp_max": 28.2,
         "temp_min": 20.1,
         "precip_mm": 2.7,
-        "precip_prob": 32.0,
+        "precip_prob": 36.0,
         "wind_kmh": 14.4,
         "clouds_percent": 58.0,
         "pressure_hpa": 1015.4,
@@ -33724,7 +33830,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 92,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -33860,7 +33966,7 @@
         "temp_max": 28.2,
         "temp_min": 20.1,
         "precip_mm": 2.7,
-        "precip_prob": 33.0,
+        "precip_prob": 36.0,
         "wind_kmh": 14.5,
         "clouds_percent": 58.0,
         "pressure_hpa": 1015.6,
@@ -33874,7 +33980,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 92,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -34010,7 +34116,7 @@
         "temp_max": 27.9,
         "temp_min": 19.8,
         "precip_mm": 2.4,
-        "precip_prob": 33.0,
+        "precip_prob": 36.0,
         "wind_kmh": 14.5,
         "clouds_percent": 58.0,
         "pressure_hpa": 1015.8,
@@ -34024,7 +34130,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 92,
         "reliability": 70.0
       },
       "pressure_stats": {
@@ -34160,7 +34266,7 @@
         "temp_max": 27.8,
         "temp_min": 19.7,
         "precip_mm": 2.4,
-        "precip_prob": 32.0,
+        "precip_prob": 35.0,
         "wind_kmh": 14.2,
         "clouds_percent": 57.0,
         "pressure_hpa": 1015.9,
@@ -34174,7 +34280,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 92,
         "reliability": 71.0
       },
       "pressure_stats": {
@@ -34310,7 +34416,7 @@
         "temp_max": 27.6,
         "temp_min": 19.6,
         "precip_mm": 2.4,
-        "precip_prob": 32.0,
+        "precip_prob": 35.0,
         "wind_kmh": 14.2,
         "clouds_percent": 56.0,
         "pressure_hpa": 1015.9,
@@ -34324,7 +34430,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 92,
         "reliability": 70.0
       },
       "pressure_stats": {
@@ -34460,7 +34566,7 @@
         "temp_max": 27.3,
         "temp_min": 19.3,
         "precip_mm": 2.4,
-        "precip_prob": 29.0,
+        "precip_prob": 32.0,
         "wind_kmh": 14.5,
         "clouds_percent": 56.0,
         "pressure_hpa": 1015.7,
@@ -34474,7 +34580,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -34518,7 +34624,8 @@
       },
       "clothing": [
         "T-Shirt",
-        "Light Clothing"
+        "Light Clothing",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -34609,7 +34716,7 @@
         "temp_max": 26.9,
         "temp_min": 19.1,
         "precip_mm": 2.4,
-        "precip_prob": 29.0,
+        "precip_prob": 32.0,
         "wind_kmh": 14.4,
         "clouds_percent": 57.0,
         "pressure_hpa": 1015.5,
@@ -34623,7 +34730,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 94,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -34667,7 +34774,8 @@
       },
       "clothing": [
         "T-Shirt",
-        "Light Clothing"
+        "Light Clothing",
+        "Umbrella"
       ],
       "events": [],
       "historical_records": [
@@ -34758,7 +34866,7 @@
         "temp_max": 26.8,
         "temp_min": 18.8,
         "precip_mm": 2.3,
-        "precip_prob": 27.0,
+        "precip_prob": 29.0,
         "wind_kmh": 14.4,
         "clouds_percent": 55.0,
         "pressure_hpa": 1015.7,
@@ -34772,7 +34880,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 96,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -34907,7 +35015,7 @@
         "temp_max": 26.7,
         "temp_min": 18.5,
         "precip_mm": 1.9,
-        "precip_prob": 23.0,
+        "precip_prob": 26.0,
         "wind_kmh": 14.6,
         "clouds_percent": 52.0,
         "pressure_hpa": 1016.1,
@@ -34921,7 +35029,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 97,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -35056,7 +35164,7 @@
         "temp_max": 26.9,
         "temp_min": 18.4,
         "precip_mm": 1.4,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 14.4,
         "clouds_percent": 51.0,
         "pressure_hpa": 1016.4,
@@ -35070,7 +35178,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -35205,7 +35313,7 @@
         "temp_max": 27.2,
         "temp_min": 18.4,
         "precip_mm": 1.3,
-        "precip_prob": 19.0,
+        "precip_prob": 21.0,
         "wind_kmh": 14.7,
         "clouds_percent": 48.0,
         "pressure_hpa": 1016.6,
@@ -35219,7 +35327,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 72.0
       },
       "pressure_stats": {
@@ -35354,7 +35462,7 @@
         "temp_max": 27.4,
         "temp_min": 18.5,
         "precip_mm": 0.9,
-        "precip_prob": 14.0,
+        "precip_prob": 15.0,
         "wind_kmh": 14.4,
         "clouds_percent": 46.0,
         "pressure_hpa": 1017.0,
@@ -35368,7 +35476,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 100,
         "reliability": 73.0
       },
       "pressure_stats": {
@@ -35503,7 +35611,7 @@
         "temp_max": 27.5,
         "temp_min": 18.6,
         "precip_mm": 0.9,
-        "precip_prob": 13.0,
+        "precip_prob": 14.0,
         "wind_kmh": 14.2,
         "clouds_percent": 49.0,
         "pressure_hpa": 1017.1,
@@ -35517,7 +35625,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 100,
         "reliability": 72.0
       },
       "pressure_stats": {
@@ -35652,7 +35760,7 @@
         "temp_max": 27.6,
         "temp_min": 18.8,
         "precip_mm": 1.3,
-        "precip_prob": 15.0,
+        "precip_prob": 16.0,
         "wind_kmh": 14.4,
         "clouds_percent": 51.0,
         "pressure_hpa": 1016.8,
@@ -35666,7 +35774,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 100,
         "reliability": 70.0
       },
       "pressure_stats": {
@@ -35801,7 +35909,7 @@
         "temp_max": 27.4,
         "temp_min": 18.9,
         "precip_mm": 1.4,
-        "precip_prob": 17.0,
+        "precip_prob": 18.0,
         "wind_kmh": 14.8,
         "clouds_percent": 52.0,
         "pressure_hpa": 1016.4,
@@ -35815,7 +35923,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 99,
         "reliability": 70.0
       },
       "pressure_stats": {
@@ -35964,7 +36072,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 99,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -36099,7 +36207,7 @@
         "temp_max": 26.9,
         "temp_min": 18.6,
         "precip_mm": 1.3,
-        "precip_prob": 20.0,
+        "precip_prob": 21.0,
         "wind_kmh": 14.9,
         "clouds_percent": 56.0,
         "pressure_hpa": 1016.7,
@@ -36113,7 +36221,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 67.0
       },
       "pressure_stats": {
@@ -36262,7 +36370,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 65.0
       },
       "pressure_stats": {
@@ -36411,7 +36519,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 67.0
       },
       "pressure_stats": {
@@ -36546,7 +36654,7 @@
         "temp_max": 26.5,
         "temp_min": 17.9,
         "precip_mm": 1.3,
-        "precip_prob": 21.0,
+        "precip_prob": 22.0,
         "wind_kmh": 14.6,
         "clouds_percent": 53.0,
         "pressure_hpa": 1017.0,
@@ -36560,7 +36668,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 67.0
       },
       "pressure_stats": {
@@ -36606,7 +36714,12 @@
         "T-Shirt",
         "Light Clothing"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Labour Day"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -36695,7 +36808,7 @@
         "temp_max": 26.5,
         "temp_min": 17.8,
         "precip_mm": 1.4,
-        "precip_prob": 22.0,
+        "precip_prob": 23.0,
         "wind_kmh": 14.9,
         "clouds_percent": 50.0,
         "pressure_hpa": 1017.1,
@@ -36709,7 +36822,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 67.0
       },
       "pressure_stats": {
@@ -36844,7 +36957,7 @@
         "temp_max": 26.6,
         "temp_min": 17.8,
         "precip_mm": 1.6,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 15.4,
         "clouds_percent": 50.0,
         "pressure_hpa": 1016.9,
@@ -36858,7 +36971,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -36993,7 +37106,7 @@
         "temp_max": 26.6,
         "temp_min": 17.7,
         "precip_mm": 1.5,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 15.5,
         "clouds_percent": 51.0,
         "pressure_hpa": 1016.8,
@@ -37007,7 +37120,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 97,
         "reliability": 67.0
       },
       "pressure_stats": {
@@ -37142,7 +37255,7 @@
         "temp_max": 26.4,
         "temp_min": 17.6,
         "precip_mm": 1.7,
-        "precip_prob": 25.0,
+        "precip_prob": 27.0,
         "wind_kmh": 15.6,
         "clouds_percent": 50.0,
         "pressure_hpa": 1016.8,
@@ -37156,7 +37269,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -37291,7 +37404,7 @@
         "temp_max": 25.9,
         "temp_min": 17.3,
         "precip_mm": 2.0,
-        "precip_prob": 27.0,
+        "precip_prob": 28.0,
         "wind_kmh": 15.8,
         "clouds_percent": 51.0,
         "pressure_hpa": 1017.2,
@@ -37305,7 +37418,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 65.0
       },
       "pressure_stats": {
@@ -37440,7 +37553,7 @@
         "temp_max": 25.4,
         "temp_min": 17.0,
         "precip_mm": 2.4,
-        "precip_prob": 28.0,
+        "precip_prob": 29.0,
         "wind_kmh": 15.5,
         "clouds_percent": 54.0,
         "pressure_hpa": 1017.4,
@@ -37454,7 +37567,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 96,
         "reliability": 64.0
       },
       "pressure_stats": {
@@ -37589,7 +37702,7 @@
         "temp_max": 25.3,
         "temp_min": 16.9,
         "precip_mm": 2.4,
-        "precip_prob": 28.0,
+        "precip_prob": 29.0,
         "wind_kmh": 15.4,
         "clouds_percent": 54.0,
         "pressure_hpa": 1017.4,
@@ -37603,7 +37716,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 96,
         "reliability": 65.0
       },
       "pressure_stats": {
@@ -37738,7 +37851,7 @@
         "temp_max": 25.2,
         "temp_min": 16.9,
         "precip_mm": 2.1,
-        "precip_prob": 26.0,
+        "precip_prob": 27.0,
         "wind_kmh": 14.7,
         "clouds_percent": 54.0,
         "pressure_hpa": 1017.7,
@@ -37752,7 +37865,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 96,
         "reliability": 65.0
       },
       "pressure_stats": {
@@ -37887,7 +38000,7 @@
         "temp_max": 25.0,
         "temp_min": 16.8,
         "precip_mm": 2.1,
-        "precip_prob": 25.0,
+        "precip_prob": 27.0,
         "wind_kmh": 14.6,
         "clouds_percent": 54.0,
         "pressure_hpa": 1018.1,
@@ -37901,7 +38014,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 96,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -38036,7 +38149,7 @@
         "temp_max": 25.1,
         "temp_min": 16.8,
         "precip_mm": 1.9,
-        "precip_prob": 23.0,
+        "precip_prob": 24.0,
         "wind_kmh": 14.8,
         "clouds_percent": 54.0,
         "pressure_hpa": 1018.2,
@@ -38050,7 +38163,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 97,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -38185,7 +38298,7 @@
         "temp_max": 25.2,
         "temp_min": 16.7,
         "precip_mm": 1.7,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 15.0,
         "clouds_percent": 53.0,
         "pressure_hpa": 1018.3,
@@ -38199,7 +38312,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -38334,7 +38447,7 @@
         "temp_max": 24.9,
         "temp_min": 16.4,
         "precip_mm": 1.5,
-        "precip_prob": 18.0,
+        "precip_prob": 20.0,
         "wind_kmh": 15.0,
         "clouds_percent": 53.0,
         "pressure_hpa": 1018.5,
@@ -38348,7 +38461,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -38483,7 +38596,7 @@
         "temp_max": 24.4,
         "temp_min": 16.0,
         "precip_mm": 1.3,
-        "precip_prob": 17.0,
+        "precip_prob": 18.0,
         "wind_kmh": 14.8,
         "clouds_percent": 52.0,
         "pressure_hpa": 1018.8,
@@ -38497,7 +38610,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 99,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -38632,7 +38745,7 @@
         "temp_max": 24.2,
         "temp_min": 15.8,
         "precip_mm": 1.1,
-        "precip_prob": 16.0,
+        "precip_prob": 17.0,
         "wind_kmh": 14.7,
         "clouds_percent": 52.0,
         "pressure_hpa": 1018.7,
@@ -38646,7 +38759,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 99,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -38781,7 +38894,7 @@
         "temp_max": 24.0,
         "temp_min": 15.6,
         "precip_mm": 1.2,
-        "precip_prob": 16.0,
+        "precip_prob": 18.0,
         "wind_kmh": 14.6,
         "clouds_percent": 51.0,
         "pressure_hpa": 1018.5,
@@ -38795,7 +38908,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 99,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -38930,7 +39043,7 @@
         "temp_max": 23.7,
         "temp_min": 15.3,
         "precip_mm": 1.2,
-        "precip_prob": 16.0,
+        "precip_prob": 18.0,
         "wind_kmh": 14.8,
         "clouds_percent": 49.0,
         "pressure_hpa": 1018.5,
@@ -38944,7 +39057,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 99,
         "reliability": 69.0
       },
       "pressure_stats": {
@@ -39093,7 +39206,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 100,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -39228,7 +39341,7 @@
         "temp_max": 23.8,
         "temp_min": 15.0,
         "precip_mm": 1.0,
-        "precip_prob": 15.0,
+        "precip_prob": 16.0,
         "wind_kmh": 15.3,
         "clouds_percent": 50.0,
         "pressure_hpa": 1018.3,
@@ -39242,7 +39355,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 100,
         "reliability": 68.0
       },
       "pressure_stats": {
@@ -39377,7 +39490,7 @@
         "temp_max": 23.6,
         "temp_min": 14.9,
         "precip_mm": 1.3,
-        "precip_prob": 18.0,
+        "precip_prob": 19.0,
         "wind_kmh": 15.8,
         "clouds_percent": 48.0,
         "pressure_hpa": 1018.2,
@@ -39391,7 +39504,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 65.0
       },
       "pressure_stats": {
@@ -39540,7 +39653,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 64.0
       },
       "pressure_stats": {
@@ -39689,7 +39802,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 64.0
       },
       "pressure_stats": {
@@ -39838,7 +39951,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 97,
         "reliability": 63.0
       },
       "pressure_stats": {
@@ -39987,7 +40100,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 97,
         "reliability": 62.0
       },
       "pressure_stats": {
@@ -40136,7 +40249,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 97,
         "reliability": 65.0
       },
       "pressure_stats": {
@@ -40285,7 +40398,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 96,
         "reliability": 67.0
       },
       "pressure_stats": {
@@ -40420,7 +40533,7 @@
         "temp_max": 21.8,
         "temp_min": 14.4,
         "precip_mm": 2.6,
-        "precip_prob": 25.0,
+        "precip_prob": 26.0,
         "wind_kmh": 17.0,
         "clouds_percent": 59.0,
         "pressure_hpa": 1017.1,
@@ -40434,7 +40547,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 96,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -40583,7 +40696,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 95,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -40718,7 +40831,7 @@
         "temp_max": 21.1,
         "temp_min": 13.5,
         "precip_mm": 2.8,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 16.8,
         "clouds_percent": 54.0,
         "pressure_hpa": 1017.7,
@@ -40732,7 +40845,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 96,
         "reliability": 65.0
       },
       "pressure_stats": {
@@ -40867,7 +40980,7 @@
         "temp_max": 20.7,
         "temp_min": 12.9,
         "precip_mm": 2.6,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 16.0,
         "clouds_percent": 55.0,
         "pressure_hpa": 1018.4,
@@ -40881,7 +40994,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 96,
         "reliability": 63.0
       },
       "pressure_stats": {
@@ -41016,7 +41129,7 @@
         "temp_max": 20.7,
         "temp_min": 12.6,
         "precip_mm": 2.4,
-        "precip_prob": 21.0,
+        "precip_prob": 22.0,
         "wind_kmh": 16.0,
         "clouds_percent": 54.0,
         "pressure_hpa": 1018.8,
@@ -41030,7 +41143,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 97,
         "reliability": 59.0
       },
       "pressure_stats": {
@@ -41179,7 +41292,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -41328,7 +41441,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 99,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -41477,7 +41590,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 99,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -41612,7 +41725,7 @@
         "temp_max": 21.0,
         "temp_min": 12.5,
         "precip_mm": 0.8,
-        "precip_prob": 18.0,
+        "precip_prob": 19.0,
         "wind_kmh": 16.6,
         "clouds_percent": 49.0,
         "pressure_hpa": 1019.5,
@@ -41626,7 +41739,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -41761,7 +41874,7 @@
         "temp_max": 20.5,
         "temp_min": 12.2,
         "precip_mm": 0.8,
-        "precip_prob": 18.0,
+        "precip_prob": 19.0,
         "wind_kmh": 16.6,
         "clouds_percent": 50.0,
         "pressure_hpa": 1019.7,
@@ -41775,7 +41888,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -41910,7 +42023,7 @@
         "temp_max": 20.2,
         "temp_min": 11.9,
         "precip_mm": 1.0,
-        "precip_prob": 18.0,
+        "precip_prob": 20.0,
         "wind_kmh": 16.6,
         "clouds_percent": 52.0,
         "pressure_hpa": 1019.3,
@@ -41924,7 +42037,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 98,
         "reliability": 59.0
       },
       "pressure_stats": {
@@ -42059,7 +42172,7 @@
         "temp_max": 19.9,
         "temp_min": 11.6,
         "precip_mm": 1.6,
-        "precip_prob": 20.0,
+        "precip_prob": 21.0,
         "wind_kmh": 17.6,
         "clouds_percent": 54.0,
         "pressure_hpa": 1018.6,
@@ -42073,7 +42186,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 97,
         "reliability": 61.0
       },
       "pressure_stats": {
@@ -42208,7 +42321,7 @@
         "temp_max": 19.2,
         "temp_min": 11.2,
         "precip_mm": 1.8,
-        "precip_prob": 20.0,
+        "precip_prob": 23.0,
         "wind_kmh": 17.9,
         "clouds_percent": 54.0,
         "pressure_hpa": 1018.5,
@@ -42222,7 +42335,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 64.0
       },
       "pressure_stats": {
@@ -42357,7 +42470,7 @@
         "temp_max": 18.8,
         "temp_min": 10.9,
         "precip_mm": 1.9,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.0,
         "clouds_percent": 56.0,
         "pressure_hpa": 1018.3,
@@ -42371,7 +42484,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 94,
         "reliability": 66.0
       },
       "pressure_stats": {
@@ -42506,7 +42619,7 @@
         "temp_max": 18.7,
         "temp_min": 10.8,
         "precip_mm": 2.0,
-        "precip_prob": 22.0,
+        "precip_prob": 24.0,
         "wind_kmh": 17.6,
         "clouds_percent": 56.0,
         "pressure_hpa": 1017.5,
@@ -42520,7 +42633,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 67.0
       },
       "pressure_stats": {
@@ -42655,7 +42768,7 @@
         "temp_max": 18.6,
         "temp_min": 10.6,
         "precip_mm": 2.0,
-        "precip_prob": 22.0,
+        "precip_prob": 23.0,
         "wind_kmh": 18.2,
         "clouds_percent": 53.0,
         "pressure_hpa": 1016.5,
@@ -42669,7 +42782,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 93,
         "reliability": 67.0
       },
       "pressure_stats": {
@@ -42804,7 +42917,7 @@
         "temp_max": 18.2,
         "temp_min": 10.2,
         "precip_mm": 2.0,
-        "precip_prob": 22.0,
+        "precip_prob": 24.0,
         "wind_kmh": 18.0,
         "clouds_percent": 52.0,
         "pressure_hpa": 1015.7,
@@ -42818,7 +42931,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 92,
         "reliability": 67.0
       },
       "pressure_stats": {
@@ -42864,7 +42977,12 @@
         "Light Jacket",
         "Long Pants"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Indigenous Peoples' Day"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -42953,7 +43071,7 @@
         "temp_max": 18.0,
         "temp_min": 9.9,
         "precip_mm": 1.8,
-        "precip_prob": 21.0,
+        "precip_prob": 23.0,
         "wind_kmh": 17.6,
         "clouds_percent": 52.0,
         "pressure_hpa": 1014.8,
@@ -42967,7 +43085,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 92,
         "reliability": 65.0
       },
       "pressure_stats": {
@@ -43102,7 +43220,7 @@
         "temp_max": 17.6,
         "temp_min": 9.4,
         "precip_mm": 1.6,
-        "precip_prob": 19.0,
+        "precip_prob": 20.0,
         "wind_kmh": 17.8,
         "clouds_percent": 49.0,
         "pressure_hpa": 1014.6,
@@ -43116,7 +43234,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 91,
         "reliability": 62.0
       },
       "pressure_stats": {
@@ -43265,7 +43383,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 91,
         "reliability": 62.0
       },
       "pressure_stats": {
@@ -43400,7 +43518,7 @@
         "temp_max": 17.2,
         "temp_min": 8.7,
         "precip_mm": 1.6,
-        "precip_prob": 19.0,
+        "precip_prob": 20.0,
         "wind_kmh": 18.2,
         "clouds_percent": 47.0,
         "pressure_hpa": 1015.4,
@@ -43414,7 +43532,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 89,
         "reliability": 62.0
       },
       "pressure_stats": {
@@ -43549,7 +43667,7 @@
         "temp_max": 17.3,
         "temp_min": 8.6,
         "precip_mm": 1.0,
-        "precip_prob": 16.0,
+        "precip_prob": 17.0,
         "wind_kmh": 17.8,
         "clouds_percent": 45.0,
         "pressure_hpa": 1015.8,
@@ -43563,7 +43681,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 90,
         "reliability": 61.0
       },
       "pressure_stats": {
@@ -43712,7 +43830,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 91,
         "reliability": 59.0
       },
       "pressure_stats": {
@@ -43847,7 +43965,7 @@
         "temp_max": 17.3,
         "temp_min": 8.7,
         "precip_mm": 1.1,
-        "precip_prob": 16.0,
+        "precip_prob": 17.0,
         "wind_kmh": 17.9,
         "clouds_percent": 47.0,
         "pressure_hpa": 1016.3,
@@ -43861,7 +43979,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 91,
         "reliability": 59.0
       },
       "pressure_stats": {
@@ -43996,7 +44114,7 @@
         "temp_max": 17.3,
         "temp_min": 8.8,
         "precip_mm": 1.3,
-        "precip_prob": 17.0,
+        "precip_prob": 19.0,
         "wind_kmh": 17.4,
         "clouds_percent": 47.0,
         "pressure_hpa": 1016.6,
@@ -44010,7 +44128,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 90,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -44145,7 +44263,7 @@
         "temp_max": 17.1,
         "temp_min": 8.6,
         "precip_mm": 0.9,
-        "precip_prob": 13.0,
+        "precip_prob": 14.0,
         "wind_kmh": 17.2,
         "clouds_percent": 49.0,
         "pressure_hpa": 1017.1,
@@ -44159,7 +44277,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -44294,7 +44412,7 @@
         "temp_max": 16.6,
         "temp_min": 8.6,
         "precip_mm": 1.3,
-        "precip_prob": 16.0,
+        "precip_prob": 17.0,
         "wind_kmh": 17.4,
         "clouds_percent": 53.0,
         "pressure_hpa": 1017.6,
@@ -44308,7 +44426,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 89,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -44443,7 +44561,7 @@
         "temp_max": 16.4,
         "temp_min": 8.5,
         "precip_mm": 1.9,
-        "precip_prob": 19.0,
+        "precip_prob": 20.0,
         "wind_kmh": 17.2,
         "clouds_percent": 55.0,
         "pressure_hpa": 1018.1,
@@ -44457,7 +44575,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 88,
         "reliability": 59.0
       },
       "pressure_stats": {
@@ -44592,7 +44710,7 @@
         "temp_max": 16.3,
         "temp_min": 8.3,
         "precip_mm": 2.1,
-        "precip_prob": 19.0,
+        "precip_prob": 20.0,
         "wind_kmh": 17.1,
         "clouds_percent": 56.0,
         "pressure_hpa": 1018.6,
@@ -44606,7 +44724,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 88,
         "reliability": 60.0
       },
       "pressure_stats": {
@@ -44741,7 +44859,7 @@
         "temp_max": 15.7,
         "temp_min": 8.1,
         "precip_mm": 2.5,
-        "precip_prob": 21.0,
+        "precip_prob": 23.0,
         "wind_kmh": 17.4,
         "clouds_percent": 58.0,
         "pressure_hpa": 1018.4,
@@ -44755,7 +44873,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 85,
         "reliability": 62.0
       },
       "pressure_stats": {
@@ -44890,7 +45008,7 @@
         "temp_max": 15.3,
         "temp_min": 7.8,
         "precip_mm": 2.9,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 17.4,
         "clouds_percent": 57.0,
         "pressure_hpa": 1018.0,
@@ -44904,7 +45022,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 83,
         "reliability": 63.0
       },
       "pressure_stats": {
@@ -45039,7 +45157,7 @@
         "temp_max": 15.3,
         "temp_min": 7.7,
         "precip_mm": 2.7,
-        "precip_prob": 25.0,
+        "precip_prob": 27.0,
         "wind_kmh": 17.8,
         "clouds_percent": 57.0,
         "pressure_hpa": 1017.4,
@@ -45053,7 +45171,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 82,
         "reliability": 61.0
       },
       "pressure_stats": {
@@ -45188,7 +45306,7 @@
         "temp_max": 15.3,
         "temp_min": 7.4,
         "precip_mm": 2.0,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 18.0,
         "clouds_percent": 56.0,
         "pressure_hpa": 1017.2,
@@ -45202,7 +45320,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 82,
         "reliability": 59.0
       },
       "pressure_stats": {
@@ -45337,7 +45455,7 @@
         "temp_max": 15.2,
         "temp_min": 7.2,
         "precip_mm": 1.7,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 17.7,
         "clouds_percent": 54.0,
         "pressure_hpa": 1017.1,
@@ -45351,7 +45469,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 82,
         "reliability": 58.0
       },
       "pressure_stats": {
@@ -45500,7 +45618,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 83,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -45649,7 +45767,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 93,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -45784,7 +45902,7 @@
         "temp_max": 14.7,
         "temp_min": 6.0,
         "precip_mm": 0.5,
-        "precip_prob": 11.0,
+        "precip_prob": 12.0,
         "wind_kmh": 16.6,
         "clouds_percent": 47.0,
         "pressure_hpa": 1020.1,
@@ -45798,7 +45916,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 97,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -45933,7 +46051,7 @@
         "temp_max": 14.4,
         "temp_min": 5.9,
         "precip_mm": 0.6,
-        "precip_prob": 9.0,
+        "precip_prob": 11.0,
         "wind_kmh": 16.7,
         "clouds_percent": 47.0,
         "pressure_hpa": 1020.6,
@@ -45947,7 +46065,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 96,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -46082,7 +46200,7 @@
         "temp_max": 14.4,
         "temp_min": 5.8,
         "precip_mm": 0.5,
-        "precip_prob": 10.0,
+        "precip_prob": 12.0,
         "wind_kmh": 17.7,
         "clouds_percent": 46.0,
         "pressure_hpa": 1020.5,
@@ -46096,7 +46214,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -46231,7 +46349,7 @@
         "temp_max": 14.3,
         "temp_min": 5.9,
         "precip_mm": 0.7,
-        "precip_prob": 13.0,
+        "precip_prob": 14.0,
         "wind_kmh": 17.8,
         "clouds_percent": 48.0,
         "pressure_hpa": 1020.4,
@@ -46245,7 +46363,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 95,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -46380,7 +46498,7 @@
         "temp_max": 14.5,
         "temp_min": 5.9,
         "precip_mm": 0.9,
-        "precip_prob": 15.0,
+        "precip_prob": 18.0,
         "wind_kmh": 17.4,
         "clouds_percent": 49.0,
         "pressure_hpa": 1019.7,
@@ -46394,7 +46512,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 90,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -46529,7 +46647,7 @@
         "temp_max": 14.3,
         "temp_min": 5.7,
         "precip_mm": 1.0,
-        "precip_prob": 17.0,
+        "precip_prob": 20.0,
         "wind_kmh": 18.2,
         "clouds_percent": 48.0,
         "pressure_hpa": 1018.8,
@@ -46543,7 +46661,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 88,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -46678,7 +46796,7 @@
         "temp_max": 13.9,
         "temp_min": 5.2,
         "precip_mm": 0.9,
-        "precip_prob": 17.0,
+        "precip_prob": 18.0,
         "wind_kmh": 18.4,
         "clouds_percent": 49.0,
         "pressure_hpa": 1018.7,
@@ -46692,7 +46810,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 86,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -46828,7 +46946,7 @@
         "temp_max": 13.4,
         "temp_min": 4.9,
         "precip_mm": 1.2,
-        "precip_prob": 18.0,
+        "precip_prob": 21.0,
         "wind_kmh": 18.2,
         "clouds_percent": 50.0,
         "pressure_hpa": 1018.6,
@@ -46842,7 +46960,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 83,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -46978,7 +47096,7 @@
         "temp_max": 12.9,
         "temp_min": 4.5,
         "precip_mm": 1.4,
-        "precip_prob": 20.0,
+        "precip_prob": 24.0,
         "wind_kmh": 18.3,
         "clouds_percent": 52.0,
         "pressure_hpa": 1018.5,
@@ -46992,7 +47110,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 79,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -47128,7 +47246,7 @@
         "temp_max": 12.2,
         "temp_min": 4.0,
         "precip_mm": 1.5,
-        "precip_prob": 20.0,
+        "precip_prob": 24.0,
         "wind_kmh": 18.7,
         "clouds_percent": 53.0,
         "pressure_hpa": 1018.9,
@@ -47142,7 +47260,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 75,
         "reliability": 57.0
       },
       "pressure_stats": {
@@ -47189,7 +47307,12 @@
         "Scarf",
         "Gloves"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Veterans Day"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -47278,7 +47401,7 @@
         "temp_max": 11.6,
         "temp_min": 3.6,
         "precip_mm": 1.4,
-        "precip_prob": 20.0,
+        "precip_prob": 23.0,
         "wind_kmh": 18.2,
         "clouds_percent": 55.0,
         "pressure_hpa": 1019.2,
@@ -47292,7 +47415,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 73,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -47428,7 +47551,7 @@
         "temp_max": 11.5,
         "temp_min": 3.5,
         "precip_mm": 2.0,
-        "precip_prob": 24.0,
+        "precip_prob": 28.0,
         "wind_kmh": 18.0,
         "clouds_percent": 55.0,
         "pressure_hpa": 1018.5,
@@ -47442,7 +47565,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 71,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -47578,7 +47701,7 @@
         "temp_max": 11.0,
         "temp_min": 3.1,
         "precip_mm": 1.8,
-        "precip_prob": 21.0,
+        "precip_prob": 23.0,
         "wind_kmh": 18.0,
         "clouds_percent": 55.0,
         "pressure_hpa": 1018.2,
@@ -47592,7 +47715,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 70,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -47728,7 +47851,7 @@
         "temp_max": 10.8,
         "temp_min": 3.0,
         "precip_mm": 1.4,
-        "precip_prob": 19.0,
+        "precip_prob": 20.0,
         "wind_kmh": 17.0,
         "clouds_percent": 53.0,
         "pressure_hpa": 1018.3,
@@ -47742,7 +47865,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 70,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -47878,7 +48001,7 @@
         "temp_max": 10.8,
         "temp_min": 2.9,
         "precip_mm": 1.4,
-        "precip_prob": 19.0,
+        "precip_prob": 20.0,
         "wind_kmh": 16.5,
         "clouds_percent": 52.0,
         "pressure_hpa": 1018.2,
@@ -47892,7 +48015,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 70,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -48028,7 +48151,7 @@
         "temp_max": 10.6,
         "temp_min": 2.7,
         "precip_mm": 1.4,
-        "precip_prob": 18.0,
+        "precip_prob": 20.0,
         "wind_kmh": 16.8,
         "clouds_percent": 50.0,
         "pressure_hpa": 1018.4,
@@ -48042,7 +48165,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 69,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -48178,7 +48301,7 @@
         "temp_max": 10.2,
         "temp_min": 2.4,
         "precip_mm": 0.8,
-        "precip_prob": 14.0,
+        "precip_prob": 17.0,
         "wind_kmh": 16.4,
         "clouds_percent": 50.0,
         "pressure_hpa": 1019.3,
@@ -48192,7 +48315,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 68,
         "reliability": 59.0
       },
       "pressure_stats": {
@@ -48328,7 +48451,7 @@
         "temp_max": 10.1,
         "temp_min": 2.4,
         "precip_mm": 1.1,
-        "precip_prob": 19.0,
+        "precip_prob": 22.0,
         "wind_kmh": 16.0,
         "clouds_percent": 53.0,
         "pressure_hpa": 1019.1,
@@ -48342,7 +48465,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 66,
         "reliability": 58.0
       },
       "pressure_stats": {
@@ -48478,7 +48601,7 @@
         "temp_max": 9.7,
         "temp_min": 2.1,
         "precip_mm": 1.3,
-        "precip_prob": 17.0,
+        "precip_prob": 22.0,
         "wind_kmh": 17.2,
         "clouds_percent": 54.0,
         "pressure_hpa": 1018.7,
@@ -48492,7 +48615,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 64,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -48628,7 +48751,7 @@
         "temp_max": 9.6,
         "temp_min": 1.9,
         "precip_mm": 1.3,
-        "precip_prob": 17.0,
+        "precip_prob": 20.0,
         "wind_kmh": 17.6,
         "clouds_percent": 52.0,
         "pressure_hpa": 1018.3,
@@ -48642,7 +48765,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 63,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -48778,7 +48901,7 @@
         "temp_max": 9.6,
         "temp_min": 2.0,
         "precip_mm": 1.4,
-        "precip_prob": 20.0,
+        "precip_prob": 23.0,
         "wind_kmh": 18.0,
         "clouds_percent": 54.0,
         "pressure_hpa": 1018.2,
@@ -48792,7 +48915,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 62,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -48928,7 +49051,7 @@
         "temp_max": 9.8,
         "temp_min": 2.2,
         "precip_mm": 2.0,
-        "precip_prob": 25.0,
+        "precip_prob": 26.0,
         "wind_kmh": 18.4,
         "clouds_percent": 58.0,
         "pressure_hpa": 1017.4,
@@ -48942,7 +49065,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 62,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -49092,7 +49215,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 64,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -49242,7 +49365,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 65,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -49392,7 +49515,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 64,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -49542,7 +49665,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 63,
         "reliability": 56.0
       },
       "pressure_stats": {
@@ -49589,7 +49712,12 @@
         "Scarf",
         "Gloves"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Thanksgiving Day"
+        }
+      ],
       "historical_records": [
         {
           "year": 2025,
@@ -49678,7 +49806,7 @@
         "temp_max": 9.2,
         "temp_min": 1.7,
         "precip_mm": 1.6,
-        "precip_prob": 21.0,
+        "precip_prob": 22.0,
         "wind_kmh": 18.4,
         "clouds_percent": 56.0,
         "pressure_hpa": 1017.0,
@@ -49692,7 +49820,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 61,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -49828,7 +49956,7 @@
         "temp_max": 8.7,
         "temp_min": 1.4,
         "precip_mm": 1.7,
-        "precip_prob": 22.0,
+        "precip_prob": 23.0,
         "wind_kmh": 17.8,
         "clouds_percent": 56.0,
         "pressure_hpa": 1017.6,
@@ -49842,7 +49970,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 58,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -49978,7 +50106,7 @@
         "temp_max": 8.5,
         "temp_min": 1.2,
         "precip_mm": 2.0,
-        "precip_prob": 25.0,
+        "precip_prob": 27.0,
         "wind_kmh": 17.8,
         "clouds_percent": 56.0,
         "pressure_hpa": 1017.5,
@@ -49992,7 +50120,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 56,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -50128,7 +50256,7 @@
         "temp_max": 8.4,
         "temp_min": 0.8,
         "precip_mm": 1.8,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 17.6,
         "clouds_percent": 54.0,
         "pressure_hpa": 1017.6,
@@ -50142,7 +50270,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 56,
         "reliability": 55.0
       },
       "pressure_stats": {
@@ -50278,7 +50406,7 @@
         "temp_max": 7.9,
         "temp_min": 0.6,
         "precip_mm": 1.8,
-        "precip_prob": 22.0,
+        "precip_prob": 24.0,
         "wind_kmh": 17.0,
         "clouds_percent": 55.0,
         "pressure_hpa": 1017.9,
@@ -50292,7 +50420,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 54,
         "reliability": 52.0
       },
       "pressure_stats": {
@@ -50428,7 +50556,7 @@
         "temp_max": 7.8,
         "temp_min": 0.5,
         "precip_mm": 2.0,
-        "precip_prob": 23.0,
+        "precip_prob": 24.0,
         "wind_kmh": 17.2,
         "clouds_percent": 57.0,
         "pressure_hpa": 1017.6,
@@ -50442,7 +50570,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 53,
         "reliability": 50.0
       },
       "pressure_stats": {
@@ -50578,7 +50706,7 @@
         "temp_max": 7.2,
         "temp_min": 0.1,
         "precip_mm": 1.5,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 17.6,
         "clouds_percent": 56.0,
         "pressure_hpa": 1018.1,
@@ -50592,7 +50720,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 51,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -50728,7 +50856,7 @@
         "temp_max": 6.6,
         "temp_min": -0.4,
         "precip_mm": 1.5,
-        "precip_prob": 19.0,
+        "precip_prob": 21.0,
         "wind_kmh": 17.0,
         "clouds_percent": 58.0,
         "pressure_hpa": 1019.0,
@@ -50742,7 +50870,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 48,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -50878,7 +51006,7 @@
         "temp_max": 6.2,
         "temp_min": -0.6,
         "precip_mm": 2.2,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 18.0,
         "clouds_percent": 62.0,
         "pressure_hpa": 1019.0,
@@ -50892,7 +51020,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 44,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -51028,7 +51156,7 @@
         "temp_max": 6.2,
         "temp_min": -0.7,
         "precip_mm": 2.3,
-        "precip_prob": 28.0,
+        "precip_prob": 30.0,
         "wind_kmh": 18.1,
         "clouds_percent": 63.0,
         "pressure_hpa": 1018.4,
@@ -51042,7 +51170,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 42,
         "reliability": 50.0
       },
       "pressure_stats": {
@@ -51178,7 +51306,7 @@
         "temp_max": 6.1,
         "temp_min": -0.8,
         "precip_mm": 2.2,
-        "precip_prob": 26.0,
+        "precip_prob": 30.0,
         "wind_kmh": 18.0,
         "clouds_percent": 62.0,
         "pressure_hpa": 1018.6,
@@ -51192,7 +51320,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 41,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -51328,7 +51456,7 @@
         "temp_max": 6.3,
         "temp_min": -0.9,
         "precip_mm": 2.2,
-        "precip_prob": 25.0,
+        "precip_prob": 28.0,
         "wind_kmh": 17.4,
         "clouds_percent": 62.0,
         "pressure_hpa": 1018.7,
@@ -51342,7 +51470,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 43,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -51478,7 +51606,7 @@
         "temp_max": 6.6,
         "temp_min": -0.7,
         "precip_mm": 2.5,
-        "precip_prob": 27.0,
+        "precip_prob": 29.0,
         "wind_kmh": 17.4,
         "clouds_percent": 62.0,
         "pressure_hpa": 1018.5,
@@ -51492,7 +51620,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 45,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -51628,7 +51756,7 @@
         "temp_max": 6.6,
         "temp_min": -0.7,
         "precip_mm": 2.4,
-        "precip_prob": 27.0,
+        "precip_prob": 29.0,
         "wind_kmh": 17.4,
         "clouds_percent": 62.0,
         "pressure_hpa": 1018.7,
@@ -51642,7 +51770,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 45,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -51778,7 +51906,7 @@
         "temp_max": 6.4,
         "temp_min": -0.8,
         "precip_mm": 2.4,
-        "precip_prob": 23.0,
+        "precip_prob": 26.0,
         "wind_kmh": 18.2,
         "clouds_percent": 60.0,
         "pressure_hpa": 1019.4,
@@ -51792,7 +51920,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 44,
         "reliability": 51.0
       },
       "pressure_stats": {
@@ -51928,7 +52056,7 @@
         "temp_max": 6.2,
         "temp_min": -1.0,
         "precip_mm": 2.1,
-        "precip_prob": 20.0,
+        "precip_prob": 21.0,
         "wind_kmh": 18.2,
         "clouds_percent": 60.0,
         "pressure_hpa": 1020.2,
@@ -51942,7 +52070,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 45,
         "reliability": 52.0
       },
       "pressure_stats": {
@@ -52078,7 +52206,7 @@
         "temp_max": 6.1,
         "temp_min": -1.0,
         "precip_mm": 2.5,
-        "precip_prob": 25.0,
+        "precip_prob": 26.0,
         "wind_kmh": 18.1,
         "clouds_percent": 62.0,
         "pressure_hpa": 1020.1,
@@ -52092,7 +52220,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 43,
         "reliability": 52.0
       },
       "pressure_stats": {
@@ -52242,7 +52370,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 42,
         "reliability": 51.0
       },
       "pressure_stats": {
@@ -52378,7 +52506,7 @@
         "temp_max": 6.0,
         "temp_min": -1.1,
         "precip_mm": 2.1,
-        "precip_prob": 26.0,
+        "precip_prob": 27.0,
         "wind_kmh": 17.4,
         "clouds_percent": 60.0,
         "pressure_hpa": 1018.9,
@@ -52392,7 +52520,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 43,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -52528,7 +52656,7 @@
         "temp_max": 6.0,
         "temp_min": -1.1,
         "precip_mm": 2.1,
-        "precip_prob": 26.0,
+        "precip_prob": 27.0,
         "wind_kmh": 17.4,
         "clouds_percent": 60.0,
         "pressure_hpa": 1018.9,
@@ -52542,7 +52670,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 43,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -52692,7 +52820,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 42,
         "reliability": 54.0
       },
       "pressure_stats": {
@@ -52828,7 +52956,7 @@
         "temp_max": 5.6,
         "temp_min": -1.6,
         "precip_mm": 1.8,
-        "precip_prob": 24.0,
+        "precip_prob": 25.0,
         "wind_kmh": 17.1,
         "clouds_percent": 59.0,
         "pressure_hpa": 1018.8,
@@ -52842,7 +52970,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 41,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -52978,7 +53106,7 @@
         "temp_max": 5.5,
         "temp_min": -1.9,
         "precip_mm": 1.4,
-        "precip_prob": 22.0,
+        "precip_prob": 25.0,
         "wind_kmh": 17.1,
         "clouds_percent": 57.0,
         "pressure_hpa": 1018.7,
@@ -52992,7 +53120,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 40,
         "reliability": 53.0
       },
       "pressure_stats": {
@@ -53128,7 +53256,7 @@
         "temp_max": 5.3,
         "temp_min": -2.3,
         "precip_mm": 1.7,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 17.6,
         "clouds_percent": 58.0,
         "pressure_hpa": 1019.3,
@@ -53142,7 +53270,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 39,
         "reliability": 50.0
       },
       "pressure_stats": {
@@ -53278,7 +53406,7 @@
         "temp_max": 5.2,
         "temp_min": -2.5,
         "precip_mm": 1.8,
-        "precip_prob": 18.0,
+        "precip_prob": 21.0,
         "wind_kmh": 17.5,
         "clouds_percent": 58.0,
         "pressure_hpa": 1019.8,
@@ -53292,7 +53420,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 39,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -53428,7 +53556,7 @@
         "temp_max": 5.4,
         "temp_min": -2.3,
         "precip_mm": 2.1,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 17.4,
         "clouds_percent": 60.0,
         "pressure_hpa": 1019.3,
@@ -53442,7 +53570,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 39,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -53578,7 +53706,7 @@
         "temp_max": 5.5,
         "temp_min": -2.3,
         "precip_mm": 2.3,
-        "precip_prob": 24.0,
+        "precip_prob": 26.0,
         "wind_kmh": 17.7,
         "clouds_percent": 59.0,
         "pressure_hpa": 1019.1,
@@ -53592,7 +53720,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 39,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -53742,7 +53870,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 10,
+        "wedding": 38,
         "reliability": 46.0
       },
       "pressure_stats": {
@@ -53789,7 +53917,12 @@
         "Scarf",
         "Gloves"
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "holiday",
+          "description": "Christmas Day"
+        }
+      ],
       "historical_records": [
         {
           "year": 2024,
@@ -53878,7 +54011,7 @@
         "temp_max": 5.1,
         "temp_min": -2.1,
         "precip_mm": 1.7,
-        "precip_prob": 20.0,
+        "precip_prob": 21.0,
         "wind_kmh": 17.9,
         "clouds_percent": 58.0,
         "pressure_hpa": 1019.7,
@@ -53892,7 +54025,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 39,
         "reliability": 48.0
       },
       "pressure_stats": {
@@ -54042,7 +54175,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 39,
         "reliability": 49.0
       },
       "pressure_stats": {
@@ -54178,7 +54311,7 @@
         "temp_max": 5.5,
         "temp_min": -1.6,
         "precip_mm": 1.4,
-        "precip_prob": 20.0,
+        "precip_prob": 22.0,
         "wind_kmh": 17.6,
         "clouds_percent": 58.0,
         "pressure_hpa": 1018.6,
@@ -54192,7 +54325,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 41,
         "reliability": 51.0
       },
       "pressure_stats": {
@@ -54328,7 +54461,7 @@
         "temp_max": 5.6,
         "temp_min": -1.4,
         "precip_mm": 1.5,
-        "precip_prob": 23.0,
+        "precip_prob": 25.0,
         "wind_kmh": 17.3,
         "clouds_percent": 59.0,
         "pressure_hpa": 1018.0,
@@ -54342,7 +54475,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 41,
         "reliability": 51.0
       },
       "pressure_stats": {
@@ -54478,7 +54611,7 @@
         "temp_max": 6.0,
         "temp_min": -1.3,
         "precip_mm": 1.5,
-        "precip_prob": 25.0,
+        "precip_prob": 27.0,
         "wind_kmh": 17.3,
         "clouds_percent": 61.0,
         "pressure_hpa": 1017.2,
@@ -54492,7 +54625,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 42,
         "reliability": 52.0
       },
       "pressure_stats": {
@@ -54628,7 +54761,7 @@
         "temp_max": 5.9,
         "temp_min": -1.5,
         "precip_mm": 1.6,
-        "precip_prob": 26.0,
+        "precip_prob": 28.0,
         "wind_kmh": 17.5,
         "clouds_percent": 62.0,
         "pressure_hpa": 1017.1,
@@ -54642,7 +54775,7 @@
         "severity": "cloudy"
       },
       "scores": {
-        "wedding": 30,
+        "wedding": 41,
         "reliability": 52.0
       },
       "pressure_stats": {

@@ -91,13 +91,18 @@ export default function BetterAlternatives({
                                         </p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <div className={`px-2 py-1 rounded-full text-xs font-bold border ${getScoreColor(alt.score)}`}>
-                                        {alt.score}
+                                <div className="flex items-center gap-3">
+                                    {/* Wedding Score - Clear label */}
+                                    <div className="text-right">
+                                        <p className="text-[10px] text-gray-400 uppercase tracking-wide">Score</p>
+                                        <p className={`text-lg font-bold ${alt.score >= 80 ? 'text-emerald-600' : alt.score >= 60 ? 'text-amber-600' : 'text-slate-600'}`}>
+                                            {alt.score}
+                                        </p>
                                     </div>
-                                    <div className="flex items-center gap-1 text-emerald-600 text-xs font-medium">
-                                        <TrendingUp className="w-3 h-3" />
-                                        +{alt.improvement}
+                                    {/* Improvement badge */}
+                                    <div className={`px-2 py-1 rounded-lg text-xs font-bold bg-emerald-100 text-emerald-700 border border-emerald-200`}>
+                                        <TrendingUp className="w-3 h-3 inline mr-1" />
+                                        +{alt.improvement} pts
                                     </div>
                                     <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-emerald-500 transition-colors" />
                                 </div>

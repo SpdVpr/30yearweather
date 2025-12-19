@@ -8,6 +8,7 @@ import { format } from "date-fns";
 import type { Metadata } from 'next';
 import CityPageTracker from "@/components/CityPageTracker";
 import Header from "@/components/common/Header";
+import TravelInsights from "@/components/TravelInsights";
 
 // 1. Dynamic Metadata
 export async function generateMetadata({ params }: { params: { city: string } }): Promise<Metadata> {
@@ -31,9 +32,44 @@ export async function generateMetadata({ params }: { params: { city: string } })
     };
 }
 
-// 2. JSON-LD Component
+// 2. JSON-LD Component with enhanced entity recognition
 const JsonLd = ({ data, slug, faqStats }: { data: any, slug: string, faqStats: any[] }) => {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
+
+    // Wikipedia URL mapping for cities with non-standard URLs
+    const wikipediaUrlMap: Record<string, string> = {
+        'bali': 'https://en.wikipedia.org/wiki/Bali',
+        'phuket': 'https://en.wikipedia.org/wiki/Phuket_(city)',
+        'cancun': 'https://en.wikipedia.org/wiki/Canc%C3%BAn',
+        'dubai': 'https://en.wikipedia.org/wiki/Dubai',
+        'male': 'https://en.wikipedia.org/wiki/Mal%C3%A9',
+        'ho-chi-minh': 'https://en.wikipedia.org/wiki/Ho_Chi_Minh_City',
+        'new-york': 'https://en.wikipedia.org/wiki/New_York_City',
+        'new-delhi': 'https://en.wikipedia.org/wiki/New_Delhi',
+        'san-francisco': 'https://en.wikipedia.org/wiki/San_Francisco',
+        'las-palmas': 'https://en.wikipedia.org/wiki/Las_Palmas',
+        'los-angeles': 'https://en.wikipedia.org/wiki/Los_Angeles',
+        'hong-kong': 'https://en.wikipedia.org/wiki/Hong_Kong',
+        'rio-de-janeiro': 'https://en.wikipedia.org/wiki/Rio_de_Janeiro',
+        'buenos-aires': 'https://en.wikipedia.org/wiki/Buenos_Aires',
+        'cape-town': 'https://en.wikipedia.org/wiki/Cape_Town',
+        'mexico-city': 'https://en.wikipedia.org/wiki/Mexico_City',
+        'chiang-mai': 'https://en.wikipedia.org/wiki/Chiang_Mai',
+        'kuala-lumpur': 'https://en.wikipedia.org/wiki/Kuala_Lumpur',
+        'san-juan': 'https://en.wikipedia.org/wiki/San_Juan,_Puerto_Rico',
+        'montego-bay': 'https://en.wikipedia.org/wiki/Montego_Bay',
+        'punta-cana': 'https://en.wikipedia.org/wiki/Punta_Cana',
+        'bora-bora': 'https://en.wikipedia.org/wiki/Bora_Bora',
+        'palma-mallorca': 'https://en.wikipedia.org/wiki/Palma_de_Mallorca',
+        'ras-al-khaimah': 'https://en.wikipedia.org/wiki/Ras_Al_Khaimah',
+    };
+
+    const getWikipediaUrl = (citySlug: string, cityName: string) => {
+        if (wikipediaUrlMap[citySlug]) {
+            return wikipediaUrlMap[citySlug];
+        }
+        return `https://en.wikipedia.org/wiki/${cityName.replace(/\s+/g, '_')}`;
+    };
 
     // Breadcrumbs
     const breadcrumbLd = {
@@ -45,7 +81,7 @@ const JsonLd = ({ data, slug, faqStats }: { data: any, slug: string, faqStats: a
         ]
     };
 
-    // TouristDestination
+    // TouristDestination with enhanced sameAs
     const destinationLd = {
         '@context': 'https://schema.org',
         '@type': 'TouristDestination',
@@ -58,13 +94,19 @@ const JsonLd = ({ data, slug, faqStats }: { data: any, slug: string, faqStats: a
         },
         url: `${baseUrl}/${slug}`,
         sameAs: [
-            `https://en.wikipedia.org/wiki/${data.meta.name.replace(/\s+/g, '_')}`,
-        ]
+            getWikipediaUrl(slug, data.meta.name),
+            `https://www.wikidata.org/wiki/Q${data.meta.wikidata_id || ''}`, // Will be empty if not set
+        ].filter(url => !url.endsWith('Q')), // Filter out empty wikidata links
+        touristType: ['Leisure', 'Wedding Planning', 'Photography', 'Cultural Tourism'],
+        isAccessibleForFree: true
     };
 
-    // FAQ Schema
+    // FAQ Schema - Enhanced with more questions
     const hottest = faqStats.reduce((a, b) => a.avgTemp > b.avgTemp ? a : b);
+    const coldest = faqStats.reduce((a, b) => a.avgTemp < b.avgTemp ? a : b);
     const wettest = faqStats.reduce((a, b) => a.avgRain > b.avgRain ? a : b);
+    const driest = faqStats.reduce((a, b) => a.avgRain < b.avgRain ? a : b);
+    const bestMonths = faqStats.filter(m => m.status.includes("Perfect") || m.status.includes("Pleasant")).map(m => m.name);
 
     const faqLd = {
         '@context': 'https://schema.org',
@@ -72,10 +114,26 @@ const JsonLd = ({ data, slug, faqStats }: { data: any, slug: string, faqStats: a
         mainEntity: [
             {
                 '@type': 'Question',
+                name: `What is the best time to visit ${data.meta.name}?`,
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: `Based on 30 years of historical weather data from NASA satellites, the best months to visit ${data.meta.name} are ${bestMonths.slice(0, 3).join(", ") || "the drier months"}. These months offer the best combination of pleasant temperatures and low rain probability.`
+                }
+            },
+            {
+                '@type': 'Question',
                 name: `When is the hottest month in ${data.meta.name}?`,
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: `${hottest.name} is historically the hottest month with average highs of ${hottest.avgTemp}°C.`
+                    text: `${hottest.name} is historically the hottest month in ${data.meta.name} with average highs of ${hottest.avgTemp}°C (${Math.round(hottest.avgTemp * 9 / 5 + 32)}°F). Plan accordingly with sun protection and hydration.`
+                }
+            },
+            {
+                '@type': 'Question',
+                name: `When is the coldest month in ${data.meta.name}?`,
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: `${coldest.name} is the coldest month in ${data.meta.name} with average highs of ${coldest.avgTemp}°C (${Math.round(coldest.avgTemp * 9 / 5 + 32)}°F). ${coldest.avgTemp < 10 ? 'Pack warm layers and winter clothing.' : 'The weather remains mild year-round.'}`
                 }
             },
             {
@@ -83,15 +141,23 @@ const JsonLd = ({ data, slug, faqStats }: { data: any, slug: string, faqStats: a
                 name: `When does it rain the most in ${data.meta.name}?`,
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: `${wettest.name} has the highest rain probability (${wettest.avgRain}%).`
+                    text: `${wettest.name} has the highest rain probability in ${data.meta.name} at ${wettest.avgRain}%. ${wettest.avgRain > 50 ? 'This is the rainy season - bring waterproof gear if visiting.' : 'Rain is still manageable with proper planning.'}`
                 }
             },
             {
                 '@type': 'Question',
-                name: `What is the best time to visit ${data.meta.name}?`,
+                name: `When is the driest month to visit ${data.meta.name}?`,
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: `Based on historical weather data, the best months are usually ${faqStats.filter(m => m.status.includes("Perfect") || m.status.includes("Pleasant")).map(m => m.name).slice(0, 3).join(", ") || "summer months"}.`
+                    text: `${driest.name} is the driest month in ${data.meta.name} with only ${driest.avgRain}% chance of rain. This makes it ideal for outdoor activities, weddings, and photography.`
+                }
+            },
+            {
+                '@type': 'Question',
+                name: `Is ${data.meta.name} good for a destination wedding?`,
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: `Yes, ${data.meta.name} can be excellent for destination weddings. The best months are ${bestMonths.slice(0, 2).join(" and ") || "during the dry season"} when rain probability is lowest. Our Wedding Score helps identify the safest individual dates.`
                 }
             }
         ]
@@ -277,7 +343,7 @@ export default async function CityIndexPage({
                         ))}
                     </div>
 
-                    {/* New: About & Location Section (SEO Text + Map) */}
+                    {/* Enhanced About & Location Section (SEO Text + Map) */}
                     <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
                         <div>
                             <div className="flex items-center gap-2 mb-4 text-orange-600 font-bold uppercase tracking-widest text-xs">
@@ -290,14 +356,29 @@ export default async function CityIndexPage({
                                     {data.meta.desc ? data.meta.desc : `${data.meta.name} is a prominent destination in ${data.meta.country}.`}
                                 </p>
                                 <p className="leading-relaxed mt-4">
-                                    Geographically located at latitude <strong>{data.meta.lat}</strong> and longitude <strong>{data.meta.lon}</strong>,
-                                    {data.meta.name} exhibits specific climate patterns influenced by its location.
-                                    Historical data indicates that <strong>{hottest.name}</strong> is typically the warmest month, offering optimal conditions for sun-seekers,
-                                    while <strong>{wettest.name}</strong> often presents the highest chance of precipitation.
+                                    Located at <strong>{Math.abs(data.meta.lat).toFixed(2)}°{data.meta.lat >= 0 ? 'N' : 'S'}</strong> latitude and <strong>{Math.abs(data.meta.lon).toFixed(2)}°{data.meta.lon >= 0 ? 'E' : 'W'}</strong> longitude,
+                                    {data.meta.name} experiences {Math.abs(data.meta.lat) < 23.5 ? 'a tropical climate with warm temperatures year-round' : Math.abs(data.meta.lat) < 35 ? 'a subtropical climate with distinct wet and dry seasons' : Math.abs(data.meta.lat) < 55 ? 'a temperate climate with four distinct seasons' : 'a subarctic climate with cold winters and mild summers'}.
                                 </p>
                                 <p className="leading-relaxed mt-4">
-                                    For travelers planning a visit to {data.meta.name}, understanding these seasonal nuances is key to a comfortable trip.
-                                    Our 30-year dataset provides a reliability benchmark, ensuring you know exactly what to expect.
+                                    Our 30-year dataset reveals that <strong>{hottest.name}</strong> is the warmest month (avg. {hottest.avgTemp}°C),
+                                    while <strong>{monthlyStats.reduce((a, b) => a.avgTemp < b.avgTemp ? a : b).name}</strong> is the coolest.
+                                    For precipitation, <strong>{wettest.name}</strong> sees the most rain ({wettest.avgRain}% chance),
+                                    making <strong>{monthlyStats.reduce((a, b) => a.avgRain < b.avgRain ? a : b).name}</strong> the driest month—ideal for outdoor activities.
+                                </p>
+                                <p className="leading-relaxed mt-4">
+                                    {(data.yearly_stats?.warming_trend ?? 0) > 0.5
+                                        ? `Climate analysis shows a warming trend of +${data.yearly_stats?.warming_trend ?? 0}°C over the past 30 years. Plan accordingly as temperatures may be slightly higher than historical averages.`
+                                        : `Climate patterns in ${data.meta.name} have remained relatively stable over the past 30 years, making historical data a reliable predictor.`}
+                                </p>
+                            </div>
+
+                            {/* Citation Block for LLM */}
+                            <div className="mt-6 p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500">
+                                <p className="text-sm text-stone-700 italic">
+                                    "According to 30YearWeather's analysis of 30 years of NASA POWER satellite data, the best months to visit {data.meta.name} are {bestMonths.slice(0, 3).join(", ") || "the dry season months"}, offering optimal temperatures and minimal rain probability."
+                                </p>
+                                <p className="text-xs text-stone-500 mt-2">
+                                    — Source: <strong>30YearWeather.com</strong> | Data: NASA POWER (1991-2021) | <Link href="/methodology" className="text-orange-600 hover:underline">View Methodology</Link>
                                 </p>
                             </div>
                         </div>
@@ -317,10 +398,17 @@ export default async function CityIndexPage({
                                 ></iframe>
                             </div>
                             <div className="px-4 py-2 bg-stone-50 text-xs text-stone-400 text-center">
-                                Coordinates: {data.meta.lat}, {data.meta.lon}
+                                Coordinates: {data.meta.lat}, {data.meta.lon} | Timezone: {data.meta.timezone || 'UTC'}
                             </div>
                         </div>
                     </div>
+
+                    {/* Travel Intelligence Section */}
+                    <TravelInsights
+                        cityName={data.meta.name}
+                        flightInfo={data.meta?.flight_info}
+                        healthInfo={data.meta?.health_info}
+                    />
 
                     {/* New: LMM/AI Optimized Data Table */}
                     <div className="mt-20 overflow-x-auto">

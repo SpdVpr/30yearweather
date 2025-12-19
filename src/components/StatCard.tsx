@@ -13,6 +13,8 @@ interface StatCardProps {
     color?: "slate" | "emerald" | "rose" | "blue" | "amber" | "cyan" | "red" | "orange";
     delay?: number;
     tempValue?: number; // For dynamic temperature-based coloring
+    noClamp?: boolean;
+    centered?: boolean;
 }
 
 // Helper to get color based on temperature
@@ -24,7 +26,7 @@ function getTempColor(temp: number): string {
     return "bg-red-50 border-red-200 text-red-900";
 }
 
-export default function StatCard({ title, value, subtext, icon, color = "slate", delay = 0, tempValue }: StatCardProps) {
+export default function StatCard({ title, value, subtext, icon, color = "slate", delay = 0, tempValue, noClamp, centered }: StatCardProps) {
     const colorMap: Record<string, string> = {
         slate: "bg-slate-50 border-slate-200 text-slate-900",
         emerald: "bg-emerald-50 border-emerald-200 text-emerald-900",
@@ -46,15 +48,25 @@ export default function StatCard({ title, value, subtext, icon, color = "slate",
             viewport={{ once: true }}
             transition={{ delay: delay * 0.1, duration: 0.5 }}
         >
-            <div className={clsx("p-4 md:p-6 rounded-xl border shadow-sm h-full flex flex-col justify-between transition-all hover:shadow-md", cardColor)}>
-                <div className="flex justify-between items-start mb-4">
+            <div className={clsx(
+                "p-4 md:p-6 rounded-xl border shadow-sm h-full flex flex-col transition-all hover:shadow-md",
+                cardColor,
+                centered && "items-center text-center"
+            )}>
+                <div className={clsx("flex justify-between items-start mb-4 self-stretch", centered && "flex-col items-center gap-2")}>
                     <Text className="opacity-70 font-medium uppercase tracking-wide text-[10px] md:text-xs truncate">{title}</Text>
                     {icon && <div className={clsx("p-1.5 md:p-2 rounded-lg bg-white/50 backdrop-blur-sm shrink-0")}>{icon}</div>}
                 </div>
 
-                <div>
-                    <Metric className="text-2xl md:text-3xl font-bold">{value}</Metric>
-                    {subtext && <Text className="mt-1 text-[11px] md:text-sm opacity-80 line-clamp-2">{subtext}</Text>}
+                <div className="w-full">
+                    <Metric className="text-2xl md:text-3xl font-bold leading-none">{value}</Metric>
+                    <div className="min-h-[2rem] md:min-h-[2.5rem] flex flex-col justify-start mt-2">
+                        {subtext && (
+                            <Text className={clsx("text-[11px] md:text-sm opacity-80 leading-snug", !noClamp && "line-clamp-2")}>
+                                {subtext}
+                            </Text>
+                        )}
+                    </div>
                 </div>
             </div>
         </motion.div>
