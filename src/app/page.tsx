@@ -14,9 +14,9 @@ import Footer from "@/components/Footer";
 import UnitToggle from "@/components/UnitToggle";
 
 export const metadata = {
-  title: "Long-Range Weather Forecast | 30YearWeather",
-  description: "Accurate 365-day weather forecasts based on 30 years of NASA data. Plan weddings, travel, and events with confidence. Historical climate insights.",
-  keywords: ["long range weather forecast", "365 day weather forecast", "year ahead weather forecast", "weather forecast", "long term weather forecast", "extended weather forecast", "wedding weather forecast", "travel weather forecast", "historical weather forecast", "30 year weather data"],
+  title: "Weather Forecast & Historical Data | 30YearWeather",
+  description: "Weather forecast and historical data analysis based on 30 years of NASA satellite data. Accurate long-range forecasts for travel, weddings, and event planning.",
+  keywords: ["weather forecast", "historical weather data", "weather data analysis", "long range weather forecast", "365 day weather forecast", "historical data", "weather analysis", "climate data", "30 year weather data", "NASA weather data"],
   alternates: {
     canonical: '/',
   },
@@ -133,10 +133,10 @@ export default async function Home() {
               365-Day Weather Forecast
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-8 leading-[1.1] tracking-tight drop-shadow-lg">
-              Long-Range Weather<br /><span className="italic text-orange-200">Forecast</span> You Can Trust
+              Weather Forecast &<br /><span className="italic text-orange-200">Historical Data</span> Analysis
             </h1>
             <p className="text-lg md:text-xl text-stone-100 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-md font-medium">
-              Get weather forecasts for any date up to 365 days ahead. Based on 30 years of NASA satellite data, not guesswork. Perfect for weddings, travel, and events.
+              Long-range weather forecasts based on 30 years of historical weather data analysis. NASA satellite data for accurate predictions up to 365 days ahead.
             </p>
 
             {/* Smart Search */}
@@ -149,9 +149,9 @@ export default async function Home() {
       <section id="use-cases" className="py-20 px-6 md:px-12 bg-white border-b border-stone-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-orange-600 font-bold text-sm uppercase tracking-widest">Who is this for?</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mt-3 mb-4">Perfect For...</h2>
-            <p className="text-stone-500 max-w-2xl mx-auto">Whether you're planning the biggest day of your life or just a weekend getaway, we've got you covered.</p>
+            <span className="text-orange-600 font-bold text-sm uppercase tracking-widest">Historical Weather Data Analysis</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mt-3 mb-4">Weather Forecast for Every Occasion</h2>
+            <p className="text-stone-500 max-w-2xl mx-auto">Use historical weather data and forecast analysis to plan your events with confidence. 30 years of climate data at your fingertips.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -161,7 +161,7 @@ export default async function Home() {
                 <Heart className="w-7 h-7 text-rose-600" />
               </div>
               <h3 className="text-xl font-bold text-stone-900 mb-2">Wedding Planning</h3>
-              <p className="text-stone-600 text-sm mb-4">Find the driest weekend in June. See the exact rain probability for your big day based on 30 years of data.</p>
+              <p className="text-stone-600 text-sm mb-4">Historical weather data analysis reveals the driest weekends. Weather forecast based on 30 years of climate data for your perfect day.</p>
               <div className="flex items-center text-rose-600 text-sm font-semibold">
                 <span>Popular: June & September</span>
               </div>
@@ -173,7 +173,7 @@ export default async function Home() {
                 <Plane className="w-7 h-7 text-blue-600" />
               </div>
               <h3 className="text-xl font-bold text-stone-900 mb-2">Travel & Vacations</h3>
-              <p className="text-stone-600 text-sm mb-4">Avoid monsoon season and tourist crowds. Know exactly what weather to expect before you book flights.</p>
+              <p className="text-stone-600 text-sm mb-4">Historical data analysis helps avoid monsoon season. Long-range weather forecast shows exactly what to expect before booking.</p>
               <div className="flex items-center text-blue-600 text-sm font-semibold">
                 <span>Save on off-peak travel</span>
               </div>
@@ -185,7 +185,7 @@ export default async function Home() {
                 <Camera className="w-7 h-7 text-amber-600" />
               </div>
               <h3 className="text-xl font-bold text-stone-900 mb-2">Photography Sessions</h3>
-              <p className="text-stone-600 text-sm mb-4">Plan golden hour shoots with confidence. Check sunshine hours and cloud cover for perfect lighting conditions.</p>
+              <p className="text-stone-600 text-sm mb-4">Weather data analysis for golden hour planning. Historical forecast data shows sunshine hours and cloud cover patterns.</p>
               <div className="flex items-center text-amber-600 text-sm font-semibold">
                 <span>Best light: Spring & Fall</span>
               </div>
@@ -197,7 +197,7 @@ export default async function Home() {
                 <Tent className="w-7 h-7 text-emerald-600" />
               </div>
               <h3 className="text-xl font-bold text-stone-900 mb-2">Outdoor Events</h3>
-              <p className="text-stone-600 text-sm mb-4">Festivals, concerts, sports events. Pick the date with the lowest rain risk and most comfortable temperatures.</p>
+              <p className="text-stone-600 text-sm mb-4">Weather forecast analysis for festivals and concerts. Historical data reveals dates with lowest rain risk and ideal temperatures.</p>
               <div className="flex items-center text-emerald-600 text-sm font-semibold">
                 <span>Plan months ahead</span>
               </div>
@@ -209,7 +209,7 @@ export default async function Home() {
                 <GraduationCap className="w-7 h-7 text-violet-600" />
               </div>
               <h3 className="text-xl font-bold text-stone-900 mb-2">Study Abroad</h3>
-              <p className="text-stone-600 text-sm mb-4">Moving to a new city for a semester? Know what clothes to pack and what weather to expect all year round.</p>
+              <p className="text-stone-600 text-sm mb-4">Historical weather data for semester planning. Year-round forecast analysis helps you pack right and prepare for climate conditions.</p>
               <div className="flex items-center text-violet-600 text-sm font-semibold">
                 <span>Year-round insights</span>
               </div>
@@ -221,7 +221,7 @@ export default async function Home() {
                 <Calendar className="w-7 h-7 text-stone-600" />
               </div>
               <h3 className="text-xl font-bold text-stone-900 mb-2">Seasonal Planning</h3>
-              <p className="text-stone-600 text-sm mb-4">When does cherry blossom season start? When's the first snow? Historical patterns reveal the answers.</p>
+              <p className="text-stone-600 text-sm mb-4">Historical weather data analysis reveals seasonal patterns. Weather forecast data shows cherry blossom timing and first snow dates.</p>
               <div className="flex items-center text-stone-600 text-sm font-semibold">
                 <span>Nature's calendar decoded</span>
               </div>
@@ -362,44 +362,44 @@ export default async function Home() {
           <div className="border-b border-stone-200 pb-6">
             <h3 className="text-xl font-bold mb-3">How far ahead can you forecast weather?</h3>
             <p className="text-stone-600 leading-relaxed">
-              We provide long-range weather forecasts for any date up to 365 days ahead. Unlike traditional 7-day forecasts,
-              our predictions are based on 30 years of NASA POWER satellite data, showing you what the weather was actually
-              like on your chosen date over the past three decades.
+              We provide long-range weather forecasts for any date up to 365 days ahead. Our historical weather data analysis
+              is based on 30 years of NASA POWER satellite data, showing you what the weather was actually like on your chosen
+              date over the past three decades. This historical data provides reliable forecast insights.
             </p>
           </div>
 
           <div className="border-b border-stone-200 pb-6">
             <h3 className="text-xl font-bold mb-3">How accurate is a long-range weather forecast?</h3>
             <p className="text-stone-600 leading-relaxed">
-              Our long-range forecasts are based on historical probability, not speculation. While traditional 7-day forecasts
-              are only 80% accurate and anything beyond 10 days is unreliable, our 30-year historical data shows you the actual
-              probability of rain, temperature ranges, and weather patterns for your specific date. This makes it significantly
-              more reliable for long-term planning.
+              Our weather forecast analysis is based on historical data probability, not speculation. While traditional 7-day forecasts
+              are only 80% accurate and anything beyond 10 days is unreliable, our 30-year historical weather data shows you the actual
+              probability of rain, temperature ranges, and weather patterns for your specific date. This historical data analysis makes
+              it significantly more reliable for long-term planning.
             </p>
           </div>
 
           <div className="border-b border-stone-200 pb-6">
             <h3 className="text-xl font-bold mb-3">Can I get a weather forecast for my wedding date?</h3>
             <p className="text-stone-600 leading-relaxed">
-              Absolutely! Our wedding weather forecast tool is perfect for planning outdoor weddings. You can see the exact
-              probability of rain, average temperatures, and crowd levels for any date in your chosen city. This helps you
-              pick the perfect outdoor wedding date with confidence, even if your wedding is 6-12 months away.
+              Absolutely! Our wedding weather forecast analysis is perfect for planning outdoor weddings. Historical weather data
+              shows the exact probability of rain, average temperatures, and crowd levels for any date in your chosen city. This
+              data analysis helps you pick the perfect outdoor wedding date with confidence, even if your wedding is 6-12 months away.
             </p>
           </div>
 
           <div className="border-b border-stone-200 pb-6">
             <h3 className="text-xl font-bold mb-3">What cities have long-range weather forecasts?</h3>
             <p className="text-stone-600 leading-relaxed">
-              We currently provide 365-day weather forecasts for <strong>84+ cities worldwide</strong> including Prague, Paris, Rome, Barcelona,
-              London, Tokyo, Bali, Dubai, New York, Sydney, and many more. Each city has detailed 30-year historical analysis covering all 366 days of the year.
+              We currently provide 365-day weather forecasts and historical data analysis for <strong>84+ cities worldwide</strong> including Prague, Paris, Rome, Barcelona,
+              London, Tokyo, Bali, Dubai, New York, Sydney, and many more. Each city has detailed 30-year historical weather data covering all 366 days of the year.
             </p>
           </div>
 
           <div className="pb-6">
             <h3 className="text-xl font-bold mb-3">Is the long-range weather forecast free?</h3>
             <p className="text-stone-600 leading-relaxed">
-              Yes! Our long-range weather forecasts are completely free for personal use. We believe everyone should have
-              access to reliable weather predictions for planning their weddings, vacations, and important life events.
+              Yes! Our long-range weather forecasts and historical data analysis are completely free for personal use. We believe everyone should have
+              access to reliable weather data and forecast predictions for planning their weddings, vacations, and important life events.
             </p>
           </div>
         </div>
