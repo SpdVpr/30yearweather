@@ -44,7 +44,25 @@ export default function DayTravelInfo({
         return { label: "Minimal", color: "cyan" as const, desc: "Off-peak" };
     };
 
-    const pressure = flightInfo ? getPressureInfo(flightInfo.pressure_score) : { label: "N/A", color: "slate" as const, desc: "No data" };
+    // Calculate monthly pressure score (relative to peak month)
+    const calculateMonthlyPressure = (): number => {
+        if (!flightInfo?.seasonality) return 0;
+
+        const seasonality = flightInfo.seasonality;
+        const currentMonthFlights = seasonality[monthNum] || 0;
+        const allValues = Object.values(seasonality).filter(v => v > 0);
+
+        if (allValues.length === 0 || currentMonthFlights === 0) return 0;
+
+        const maxFlights = Math.max(...allValues);
+        // Calculate percentage of peak and scale to 0-100
+        const percentOfPeak = (currentMonthFlights / maxFlights) * 100;
+
+        return Math.round(percentOfPeak);
+    };
+
+    const monthlyPressureScore = calculateMonthlyPressure();
+    const pressure = flightInfo ? getPressureInfo(monthlyPressureScore) : { label: "N/A", color: "slate" as const, desc: "No data" };
 
     // VACCINE FILTERING LOGIC
     // We only want to show "Required" for entry or "Recommended for MOST"
@@ -92,7 +110,7 @@ export default function DayTravelInfo({
                 <StatCard
                     title="Tourist Traffic"
                     value={pressure.label}
-                    subtext={`${flightInfo?.pressure_score || 0}/100 pressure index`}
+                    subtext={`${monthlyPressureScore}/100 pressure index`}
                     icon={<Plane className="w-5 h-5 text-blue-500" />}
                     color={pressure.color}
                     delay={1}

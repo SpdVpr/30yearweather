@@ -47,27 +47,54 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     const tempAvg = dayData.stats.temp_max;
     const rainProb = dayData.stats.precip_prob;
 
+    // Calculate monthly pressure score (relative to peak month)
+    const calculateMonthlyPressure = (): number => {
+        if (!data.meta.flight_info?.seasonality) return 0;
+
+        const seasonality = data.meta.flight_info.seasonality;
+        const currentMonthFlights = seasonality[parseInt(monthNum)] || 0;
+        const allValues = Object.values(seasonality).filter(v => v > 0);
+
+        if (allValues.length === 0 || currentMonthFlights === 0) return 0;
+
+        const maxFlights = Math.max(...allValues);
+        // Calculate percentage of peak and scale to 0-100
+        const percentOfPeak = (currentMonthFlights / maxFlights) * 100;
+
+        return Math.round(percentOfPeak);
+    };
+
     // NEW: Enhanced SEO with tourism and health context
-    const flightPressure = data.meta.flight_info?.pressure_score;
+    const monthlyFlightPressure = calculateMonthlyPressure();
     const holidayEvent = dayData.events?.[0]?.description;
     const vaccineCount = data.meta.health_info?.vaccines?.length || 0;
 
-    // Build dynamic description
-    let descExtra = "";
-    if (flightPressure && flightPressure >= 70) {
-        descExtra += " Peak tourist season - book early.";
-    } else if (flightPressure && flightPressure < 30) {
-        descExtra += " Off-peak with fewer crowds.";
-    }
-    if (holidayEvent) {
-        descExtra += ` Note: ${holidayEvent} falls on this date.`;
-    }
-    if (vaccineCount > 5) {
-        descExtra += " Travel vaccines recommended.";
+    // Shortened month name for SEO (e.g., "November" → "Nov")
+    const monthShort = monthDisplay.length > 4 ? monthDisplay.substring(0, 3) : monthDisplay;
+
+    // Build dynamic description extras (keep concise for 140-155 char limit)
+    let seasonContext = "";
+    if (monthlyFlightPressure >= 70) {
+        seasonContext = "Peak season - book early.";
+    } else if (monthlyFlightPressure < 30) {
+        seasonContext = "Off-peak with fewer crowds.";
+    } else {
+        seasonContext = "Moderate tourist activity.";
     }
 
-    const title = `${cityName} ${day} ${monthDisplay} Weather Forecast | ${tempAvg}°C, ${rainProb}% Rain Chance | 30 Years NASA Data`;
-    const description = `Historical weather for ${cityName} on ${day} ${monthDisplay}. 30-year averages: ${tempAvg}°C daytime high, ${rainProb}% rain probability.${descExtra} Ideal for travel and wedding planning.`;
+    // Optional: Add holiday context if present (but watch length)
+    let holidayNote = "";
+    if (holidayEvent && holidayEvent.length < 30) {
+        holidayNote = ` ${holidayEvent}.`;
+    }
+
+    // SEO-optimized title (target: 50-60 chars)
+    // Format: "City Mon DD Weather: 17°C, 19% Rain | 30-Year Data"
+    const title = `${cityName} ${monthShort} ${day} Weather: ${tempAvg}°C, ${rainProb}% Rain | 30-Year Data`;
+
+    // SEO-optimized description (target: 140-155 chars)
+    // Format: "City Mon DD: 17°C avg, 19% rain chance. Season context. 30-year NASA climate data for travel planning."
+    const description = `${cityName} ${monthShort} ${day}: ${tempAvg}°C avg, ${rainProb}% rain chance. ${seasonContext}${holidayNote} 30-year NASA climate data for travel planning.`;
 
     return {
         title: title,
@@ -129,6 +156,25 @@ export default async function CityDayPage({
     // Date Object for calculations
     const dateObj = new Date(2024, parseInt(monthNum) - 1, parseInt(day));
     const formattedDate = format(dateObj, "MMMM d");
+
+    // Calculate monthly pressure score (relative to peak month)
+    const calculateMonthlyPressure = (): number => {
+        if (!data.meta.flight_info?.seasonality) return 0;
+
+        const seasonality = data.meta.flight_info.seasonality;
+        const currentMonthFlights = seasonality[parseInt(monthNum)] || 0;
+        const allValues = Object.values(seasonality).filter(v => v > 0);
+
+        if (allValues.length === 0 || currentMonthFlights === 0) return 0;
+
+        const maxFlights = Math.max(...allValues);
+        // Calculate percentage of peak and scale to 0-100
+        const percentOfPeak = (currentMonthFlights / maxFlights) * 100;
+
+        return Math.round(percentOfPeak);
+    };
+
+    const monthlyFlightPressure = calculateMonthlyPressure();
 
     // Navigation
     const prevObj = new Date(dateObj); prevObj.setDate(prevObj.getDate() - 1);
@@ -313,7 +359,7 @@ export default async function CityDayPage({
                         humidity={dayData.stats.humidity_percent || 0}
                         citySlug={city}
                         monthSlug={monthLower}
-                        flightPressure={data.meta.flight_info?.pressure_score}
+                        flightPressure={monthlyFlightPressure}
                         holidayName={dayData.events?.[0]?.description || null}
                         vaccineCount={data.meta.health_info?.vaccines?.length}
                     />
