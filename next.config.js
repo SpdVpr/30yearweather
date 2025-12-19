@@ -48,17 +48,23 @@ const nextConfig = {
 
         const redirects = [];
 
-        // Redirect old numeric month format to new month name format
-        // Pattern: /city/MM/DD -> /city/monthname/DD
+        // OLD FORMAT 1: /city/MM-DD -> /city/monthname/DD
+        // Example: /prague-cz/07-15 -> /prague-cz/july/15
         Object.entries(monthMap).forEach(([numMonth, monthName]) => {
-            redirects.push({
-                source: `/:city/${numMonth}/:day`,
-                destination: `/:city/${monthName}/:day`,
-                permanent: true, // 301 redirect for SEO
-            });
+            // Match patterns like: /prague-cz/07-15
+            // Regex: /:city/MM-DD where MM is 01-12 and DD is 01-31
+            for (let day = 1; day <= 31; day++) {
+                const dayStr = day.toString().padStart(2, '0');
+                redirects.push({
+                    source: `/:city/${numMonth}-${dayStr}`,
+                    destination: `/:city/${monthName}/${dayStr}`,
+                    permanent: true, // 301 redirect for SEO
+                });
+            }
         });
 
-        // Also redirect month-only pages: /city/MM -> /city/monthname
+        // OLD FORMAT 2: /city/MM -> /city/monthname
+        // Example: /prague-cz/07 -> /prague-cz/july
         Object.entries(monthMap).forEach(([numMonth, monthName]) => {
             redirects.push({
                 source: `/:city/${numMonth}`,
