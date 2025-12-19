@@ -251,6 +251,18 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#ea580c" />
         <link rel="manifest" href="/manifest.json" />
+
+        {/* Preload critical resources */}
+        <link rel="preload" as="image" href="/logo.svg" type="image/svg+xml" />
+        <link rel="preload" as="image" href="/images/hero1-optimized.webp" type="image/webp" fetchpriority="high" />
+
+        {/* Inline critical CSS for above-the-fold content */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          body{margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif}
+          .hero-section{min-height:85vh;position:relative;display:flex;align-items:center;justify-content:center}
+          .nav-bar{position:absolute;top:0;width:100%;z-index:50;padding:1.5rem}
+        `}} />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, websiteSchema, creativeWorkSchema, datasetSchema, howToSchema]) }}

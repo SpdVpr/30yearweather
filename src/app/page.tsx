@@ -97,8 +97,8 @@ export default async function Home() {
       {/* 1. Navbar (Minimalist with Logo) */}
       <nav className="absolute top-0 w-full z-50 py-6 px-6 md:px-12 flex justify-between items-center bg-gradient-to-b from-black/50 to-transparent">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/20 shadow-lg bg-white flex items-center justify-center">
-            <img src="/favicon_io/android-chrome-192x192.png" alt="30YearWeather Logo" className="w-full h-full object-cover" />
+          <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/20 shadow-lg bg-white flex items-center justify-center p-0.5">
+            <img src="/logo.svg" alt="30YearWeather Logo" className="w-full h-full object-contain" />
           </div>
           <div className="text-xl font-bold tracking-tight text-white drop-shadow-md">30YearWeather.</div>
         </div>
@@ -119,7 +119,7 @@ export default async function Home() {
             fill
             className="object-cover"
             priority
-            quality={90}
+            quality={75}
           />
           {/* Gradient Overlay for Text Readability - Stronger for centered text */}
           <div className="absolute inset-0 bg-black/40" />
@@ -149,9 +149,9 @@ export default async function Home() {
       <section id="use-cases" className="py-20 px-6 md:px-12 bg-white border-b border-stone-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-orange-600 font-bold text-sm uppercase tracking-widest">Historical Weather Data Analysis</span>
+            <span className="text-orange-700 font-bold text-sm uppercase tracking-widest">Historical Weather Data Analysis</span>
             <h2 className="text-3xl md:text-4xl font-serif font-bold mt-3 mb-4">Weather Forecast for Every Occasion</h2>
-            <p className="text-stone-500 max-w-2xl mx-auto">Use historical weather data and forecast analysis to plan your events with confidence. 30 years of climate data at your fingertips.</p>
+            <p className="text-stone-600 max-w-2xl mx-auto">Use historical weather data and forecast analysis to plan your events with confidence. 30 years of climate data at your fingertips.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -230,7 +230,7 @@ export default async function Home() {
 
           {/* Data Sources Badge */}
           <div className="mt-16 text-center">
-            <p className="text-xs text-stone-400 uppercase tracking-widest font-semibold mb-4">Powered by trusted data</p>
+            <p className="text-xs text-stone-600 uppercase tracking-widest font-semibold mb-4">Powered by trusted data</p>
             <div className="flex flex-wrap justify-center gap-3">
               {["NASA POWER", "Open-Meteo", "ERA5 Reanalysis", "30 Years of Data"].map(tag => (
                 <span key={tag} className="px-4 py-2 bg-stone-100 rounded-full text-xs font-medium text-stone-600 border border-stone-200">
@@ -245,7 +245,7 @@ export default async function Home() {
       {/* 4. Cities List (Editorial Style) */}
       <section id="cities" className="bg-white py-24 border-t border-stone-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <h2 className="text-sm font-bold text-stone-400 uppercase tracking-widest mb-12">Curated Destinations</h2>
+          <h2 className="text-sm font-bold text-stone-600 uppercase tracking-widest mb-12">Curated Destinations</h2>
 
           {/* Categorized City Lists */}
           {[

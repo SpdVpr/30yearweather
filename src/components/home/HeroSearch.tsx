@@ -74,8 +74,9 @@ export default function HeroSearch({ cities }: HeroSearchProps) {
                     >
                         <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-stone-400 group-hover:text-orange-500 transition-colors mr-2 sm:mr-3 shrink-0" />
                         <div className="flex-1 flex flex-col justify-center overflow-hidden h-full">
-                            <label className="text-[9px] sm:text-[10px] text-stone-400 font-bold uppercase tracking-widest mb-0.5 cursor-pointer block leading-none">Destination</label>
+                            <label htmlFor="city-input" className="text-[9px] sm:text-[10px] text-stone-500 font-bold uppercase tracking-widest mb-0.5 cursor-pointer block leading-none">Destination</label>
                             <input
+                                id="city-input"
                                 type="text"
                                 className="w-full bg-transparent border-none outline-none text-stone-900 font-bold placeholder-stone-300 p-0 text-sm sm:text-base leading-none truncate h-5 sm:h-6"
                                 placeholder="Where to?"
@@ -86,6 +87,7 @@ export default function HeroSearch({ cities }: HeroSearchProps) {
                                     setIsOpen(true);
                                 }}
                                 onFocus={() => setIsOpen(true)}
+                                aria-label="Search for destination city"
                             />
                         </div>
                         {selectedCity && (
@@ -127,12 +129,14 @@ export default function HeroSearch({ cities }: HeroSearchProps) {
                         <div className="flex items-center h-12 sm:h-16 px-3 sm:px-5 bg-stone-50 hover:bg-white border border-transparent hover:border-orange-200 rounded-xl sm:rounded-2xl transition-all cursor-pointer relative">
                             <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-stone-400 group-hover:text-orange-500 transition-colors mr-2 sm:mr-3 shrink-0" />
                             <div className="flex-1 flex flex-col justify-center h-full overflow-hidden">
-                                <label className="text-[9px] sm:text-[10px] text-stone-400 font-bold uppercase tracking-widest mb-0.5 block leading-none">Month</label>
+                                <label htmlFor="month-select" className="text-[9px] sm:text-[10px] text-stone-500 font-bold uppercase tracking-widest mb-0.5 block leading-none">Month</label>
                                 <div className="h-5 sm:h-6 flex items-center">
                                     <select
+                                        id="month-select"
                                         value={month}
                                         onChange={(e) => setMonth(e.target.value)}
                                         className="bg-transparent font-bold text-stone-900 outline-none appearance-none cursor-pointer hover:text-orange-600 w-full p-0 text-sm sm:text-base leading-none absolute inset-0 opacity-0 z-10"
+                                        aria-label="Select month"
                                     >
                                         {Array.from({ length: 12 }, (_, i) => i + 1).map(m => (
                                             <option key={m} value={m}>{new Date(2024, m - 1, 1).toLocaleString('en-US', { month: 'long' })}</option>
@@ -154,12 +158,14 @@ export default function HeroSearch({ cities }: HeroSearchProps) {
                         <div className="flex items-center h-12 sm:h-16 px-3 sm:px-5 bg-stone-50 hover:bg-white border border-transparent hover:border-orange-200 rounded-xl sm:rounded-2xl transition-all cursor-pointer relative">
                             <CalendarDays className="w-4 h-4 sm:w-5 sm:h-5 text-stone-400 group-hover:text-orange-500 transition-colors mr-2 sm:mr-3 shrink-0" />
                             <div className="flex-1 flex flex-col justify-center h-full">
-                                <label className="text-[9px] sm:text-[10px] text-stone-400 font-bold uppercase tracking-widest mb-0.5 block leading-none">Day</label>
+                                <label htmlFor="day-select" className="text-[9px] sm:text-[10px] text-stone-500 font-bold uppercase tracking-widest mb-0.5 block leading-none">Day</label>
                                 <div className="h-5 sm:h-6 flex items-center">
                                     <select
+                                        id="day-select"
                                         value={day}
                                         onChange={(e) => setDay(e.target.value)}
                                         className="bg-transparent font-bold text-stone-900 outline-none appearance-none cursor-pointer hover:text-orange-600 w-full p-0 text-sm sm:text-base leading-none absolute inset-0 opacity-0 z-10"
+                                        aria-label="Select day"
                                     >
                                         {days.map(d => (
                                             <option key={d} value={d}>{d}</option>

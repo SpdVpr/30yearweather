@@ -1,0 +1,26 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="96" cy="96" r="96" fill="#F97316"/>
+  
+  <!-- Sun rays -->
+  <g opacity="0.3">
+    <line x1="96" y1="20" x2="96" y2="40" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <line x1="96" y1="152" x2="96" y2="172" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <line x1="20" y1="96" x2="40" y2="96" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <line x1="152" y1="96" x2="172" y2="96" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <line x1="40" y1="40" x2="54" y2="54" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <line x1="138" y1="138" x2="152" y2="152" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <line x1="152" y1="40" x2="138" y2="54" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <line x1="54" y1="138" x2="40" y2="152" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Sun circle -->
+  <circle cx="96" cy="96" r="45" fill="#FFF7ED"/>
+  
+  <!-- "30" text -->
+  <text x="96" y="85" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#F97316" text-anchor="middle">30</text>
+  
+  <!-- "Y" text -->
+  <text x="96" y="115" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#EA580C" text-anchor="middle">Y</text>
+</svg>
+

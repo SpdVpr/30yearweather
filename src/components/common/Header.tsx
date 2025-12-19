@@ -20,9 +20,9 @@ export default function Header({ breadcrumb }: HeaderProps) {
                     <Link href="/" className="flex items-center gap-3 shrink-0 group transition-transform hover:scale-[1.02]">
                         <div className="w-8 h-8 rounded-lg overflow-hidden border border-stone-200 shadow-sm bg-white flex items-center justify-center p-0.5 group-hover:shadow-orange-200 transition-all">
                             <img
-                                src="/favicon_io/android-chrome-192x192.png"
+                                src="/logo.svg"
                                 alt="30YearWeather Logo"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-contain"
                             />
                         </div>
                         <div className="hidden sm:flex flex-col">
