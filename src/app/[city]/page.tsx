@@ -16,18 +16,33 @@ export async function generateMetadata({ params }: { params: { city: string } })
     if (!data) return { title: 'City not found' };
 
     const cityName = data.meta.name;
-    const description = data.meta.desc || `Get accurate long-range weather forecasts for ${cityName} up to 365 days ahead. Based on 30 years of historical data. See rain probabilities, temperatures, and best months to visit ${cityName}.`;
+
+    // Optimized meta description (100-130 characters)
+    const description = data.meta.desc
+        ? (data.meta.desc.length > 130 ? data.meta.desc.substring(0, 127) + '...' : data.meta.desc)
+        : `${cityName} weather forecast based on 30 years of NASA data. Best months to visit, temperatures & rain probability.`;
+
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
 
     return {
-        title: `${cityName} Weather Forecast | 365-Day Monthly Climate | 30 Years NASA Data`,
+        // Optimized title (50-60 characters)
+        title: `${cityName} Weather Forecast | 30-Year Climate Data`,
         description: description,
         keywords: [`${cityName} weather forecast`, `${cityName} long range forecast`, `${cityName} weather`, `best time to visit ${cityName}`, `${cityName} weather by month`, `${cityName} 365 day forecast`],
         alternates: {
-            canonical: `/${params.city}`,
+            canonical: `${baseUrl}/${params.city}`,
+            languages: {
+                'en': `${baseUrl}/${params.city}`,
+                'x-default': `${baseUrl}/${params.city}`,
+            }
         },
         openGraph: {
-            title: `${cityName} Weather Forecast | 365-Day Monthly Climate`,
+            title: `${cityName} Weather Forecast | 30-Year Climate Data`,
             description: description,
+            url: `${baseUrl}/${params.city}`,
+            siteName: '30YearWeather',
+            locale: 'en_US',
+            type: 'website',
         }
     };
 }
@@ -263,7 +278,7 @@ export default async function CityIndexPage({
                 <div itemProp="articleBody">
                     {/* Header */}
                     <div className="mb-12">
-                        <h2 className="text-4xl font-serif font-bold mb-4">When to visit {data.meta.name}?</h2>
+                        <h1 className="text-4xl font-serif font-bold mb-4">{data.meta.name} Weather Forecast</h1>
                         <p className="text-lg text-stone-600 max-w-2xl">
                             {data.meta.desc ? data.meta.desc : `We've analyzed 30 years of weather data for ${data.meta.name} to help you pick the perfect month. Below is the historical average for every month of the year.`}
                         </p>

@@ -47,12 +47,32 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     const avgMax = count ? Math.round(totalMax / count) : 0;
     const avgRain = count ? Math.round(totalRain / count) : 0;
 
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
+
+    // Optimized title (50-60 characters)
+    const title = `${cityName} in ${monthDisplay} | Weather & Climate Guide`;
+
+    // Optimized description (100-130 characters)
+    const description = `${cityName} ${monthDisplay} weather: ${avgMax}°C avg high, ${avgRain}% rain chance. 30-year climate data for travel planning.`;
+
     return {
-        title: `${cityName} ${monthDisplay} Weather Forecast | ${avgMax}°C, ${avgRain}% Rain | 30 Years NASA Data`,
-        description: `Planning to visit ${cityName} in ${monthDisplay}? Historical weather data shows average highs of ${avgMax}°C and ${avgRain}% precipitation risk. Explore daily 30-year averages.`,
+        title: title,
+        description: description,
         keywords: [`${cityName} in ${monthLower}`, `${cityName} weather ${monthLower}`, `visiting ${cityName} in ${monthLower}`, `what to wear in ${cityName} in ${monthLower}`],
         alternates: {
-            canonical: `/${city}/${monthLower}`,
+            canonical: `${baseUrl}/${city}/${monthLower}`,
+            languages: {
+                'en': `${baseUrl}/${city}/${monthLower}`,
+                'x-default': `${baseUrl}/${city}/${monthLower}`,
+            }
+        },
+        openGraph: {
+            title: title,
+            description: description,
+            url: `${baseUrl}/${city}/${monthLower}`,
+            siteName: '30YearWeather',
+            locale: 'en_US',
+            type: 'website',
         }
     };
 }
@@ -189,6 +209,16 @@ export default async function CityMonthPage({ params }: { params: { city: string
 
             <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
                 <div itemProp="articleBody">
+
+                    {/* H1 Heading for SEO */}
+                    <div className="mb-8">
+                        <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
+                            {cityName} Weather in {monthDisplay}
+                        </h1>
+                        <p className="text-lg text-slate-600">
+                            Historical climate data based on 30 years of NASA satellite observations
+                        </p>
+                    </div>
 
                     {/* 1. KEY STATS CARDS */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

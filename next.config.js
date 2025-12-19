@@ -32,27 +32,17 @@ const nextConfig = {
     async redirects() {
         // Map numeric months to month names
         const monthMap = {
-            '01': 'january',
-            '02': 'february',
-            '03': 'march',
-            '04': 'april',
-            '05': 'may',
-            '06': 'june',
-            '07': 'july',
-            '08': 'august',
-            '09': 'september',
-            '10': 'october',
-            '11': 'november',
-            '12': 'december',
+            '01': 'january', '02': 'february', '03': 'march', '04': 'april',
+            '05': 'may', '06': 'june', '07': 'july', '08': 'august',
+            '09': 'september', '10': 'october', '11': 'november', '12': 'december',
         };
 
         const redirects = [];
 
         // OLD FORMAT 1: /city/MM-DD -> /city/monthname/DD
-        // Example: /prague-cz/07-15 -> /prague-cz/july/15
+        // Example: /prague/07-15 -> /prague/july/15
+        // Generate all 372 daily redirects (12 months × 31 days)
         Object.entries(monthMap).forEach(([numMonth, monthName]) => {
-            // Match patterns like: /prague-cz/07-15
-            // Regex: /:city/MM-DD where MM is 01-12 and DD is 01-31
             for (let day = 1; day <= 31; day++) {
                 const dayStr = day.toString().padStart(2, '0');
                 redirects.push({
@@ -64,7 +54,8 @@ const nextConfig = {
         });
 
         // OLD FORMAT 2: /city/MM -> /city/monthname
-        // Example: /prague-cz/07 -> /prague-cz/july
+        // Example: /prague/07 -> /prague/july
+        // Generate 12 monthly redirects
         Object.entries(monthMap).forEach(([numMonth, monthName]) => {
             redirects.push({
                 source: `/:city/${numMonth}`,
