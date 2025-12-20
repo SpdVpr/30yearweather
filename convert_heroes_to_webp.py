@@ -29,6 +29,10 @@ def convert_png_to_webp(input_dir="public/images", quality=80):
         # Skip if WebP already exists
         webp_file = png_file.with_suffix('.webp')
         
+        if webp_file.exists():
+            # print(f"⏩ Skipping {png_file.name} (WebP already exists)")
+            continue
+        
         try:
             with Image.open(png_file) as img:
                 # Convert RGBA to RGB if necessary

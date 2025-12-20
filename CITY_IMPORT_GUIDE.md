@@ -61,6 +61,27 @@ The ETL pipeline downloads raw data (cached) and processes it into the JSON form
 
 ---
 
+### PHASE 2.5: Additional Data (Flights & Health)
+
+To make the city pages complete, we need flight connection data and health advisories.
+
+1.  **Register Airport (backend/airport_codes.py):**
+    *   Find the ICAO code for the city's main airport (e.g., Lyon -> 'LFLL').
+    *   Add it to the dictionary in `backend/airport_codes.py`.
+    *   **Verify the ICAO code is correct** to ensure data fetching works.
+
+2.  **Download Flight Data:**
+    *   Run: `python download_seasonal_flights.py`
+    *   This script now uses **smart date selection** to find the most recent available flight data (past/future) to build a robust seasonality profile.
+    *   It also fetches **Top Routes** and **Delay Statistics**.
+    *   If specific months are empty, it automatically fills gaps with the annual average.
+
+3.  **Download Health Data:**
+    *   Run: `python download_health_cdc.py`
+    *   This scrapes the latest vaccine requirements from the CDC website.
+
+---
+
 ### PHASE 3: Frontend Registration
 
 Next.js needs to know about the city to build the pages and display it on the homepage.
@@ -76,21 +97,26 @@ Next.js needs to know about the city to build the pages and display it on the ho
 ---
 
 ### PHASE 4: Assets (Images)
-
+    
 Every city needs a high-quality Hero image.
-
-1.  **Generate Image:**
-    *   Use Midjourney/DALL-E.
-    *   **Prompt:** `"Beautiful cinematic shot of [City/Beach], sunny day, photorealistic, 8k --ar 16:9"`
-2.  **Save File:**
-    *   Path: `public/images/[slug]-hero.png` (or `.webp`).
-    *   Example: `public/images/oslo-hero.webp`.
-3.  **Optimize (Optional but Recommended):**
-    *   If you saved as PNG, run our optimizer script:
+    
+1.  **Generate & Convert Automatically (Recommended):**
+    *   Open `scripts/generate_city_hero.py`.
+    *   Update the `PROMPT` and `FILENAME` variables at the bottom of the script.
+    *   Run the script:
     ```bash
-    python convert_heroes_to_webp.py
+    python scripts/generate_city_hero.py
     ```
-    *   This automatically converts all PNGs to optimized WebP.
+    *   **What this does:**
+        *   Generates the image using Ideogram API.
+        *   Automatically downloads it to `public/images/`.
+        *   Automatically optimizes and converts it to WebP format.
+
+2.  **Manual Alternative:**
+    *   Use Midjourney/Ideogram manually.
+    *   **Prompt:** `"Beautiful cinematic shot of [City/Beach], sunny day, photorealistic, 8k --ar 4:3"`
+    *   Save as PNG to `public/images/[slug]-hero.png`.
+    *   Run optimizer: `python convert_heroes_to_webp.py`
 
 ---
 

@@ -1,11 +1,15 @@
+
 import os
 import json
 import statistics
 from datetime import datetime
 
 # Configuration
-INPUT_DIR = os.path.join(os.getcwd(), "public", "data")
-OUTPUT_FILE = os.path.join(os.getcwd(), "public", "search-index.json")
+# Assuming script is run from project root
+BASE_DIR = os.getcwd()
+INPUT_DIR = os.path.join(BASE_DIR, "public", "data")
+OUTPUT_FILE = os.path.join(BASE_DIR, "public", "search-index.json")
+TOURISM_DIR = os.path.join(BASE_DIR, "backend", "data", "tourism")
 
 # Simple seasonal fallback (copied from frontend logic as a base)
 FALLBACK_SEASONALITY = [
@@ -29,6 +33,24 @@ def analyze_city(file_path):
 
     meta = data.get("meta", {})
     days = data.get("days", {})
+    slug = os.path.splitext(os.path.basename(file_path))[0]
+
+    # Try to load real tourism data from backend
+    tourism_scores = {} # month_int -> {crowd, price}
+    tourism_path = os.path.join(TOURISM_DIR, f"{slug}_tourism.json")
+    if os.path.exists(tourism_path):
+        try:
+            with open(tourism_path, "r", encoding="utf-8") as f:
+                t_data = json.load(f)
+                # t_data['monthly_scores'] keys are strings "1", "2"...
+                for m_str, scores in t_data.get('monthly_scores', {}).items():
+                    tourism_scores[int(m_str)] = {
+                        "crowd": scores.get('crowd_score', 50),
+                        "price": scores.get('price_score', 50)
+                    }
+            # print(f"   Using real tourism data for {slug}")
+        except Exception as e:
+            print(f"   Failed to load tourism data for {slug}: {e}")
 
     # Structure to hold monthly aggregations
     months_data = {}
@@ -48,8 +70,8 @@ def analyze_city(file_path):
     # Iterate through all days
     for date_key, day_data in days.items():
         try:
-            date_obj = datetime.strptime(f"2024-{date_key}", "%Y-%m-%d")
-            month = date_obj.month
+            # Date Key Format: "MM-DD"
+            month = int(date_key.split('-')[0])
             
             stats = day_data.get("stats", {})
             
@@ -57,7 +79,7 @@ def analyze_city(file_path):
             months_data[month]["temp_max"].append(stats.get("temp_max", 0))
             months_data[month]["temp_min"].append(stats.get("temp_min", 0))
             
-            # Rain (if precip_prob > 20% or precip_mm > 1.0)
+            # Rain (if precip_prob > 25% or precip_mm > 1.0)
             if stats.get("precip_prob", 0) > 25 or stats.get("precip_mm", 0) > 1.0:
                 months_data[month]["rain_days"] += 1
                 
@@ -83,8 +105,11 @@ def analyze_city(file_path):
         d = months_data[m]
         count = d["count"] if d["count"] > 0 else 1
         
-        # Tourism fallback
-        tourism = FALLBACK_SEASONALITY[m-1]
+        # Tourism fallback or real
+        if m in tourism_scores:
+            tourism = tourism_scores[m]
+        else:
+            tourism = FALLBACK_SEASONALITY[m-1]
 
         m_stats = {
             "m": m,
@@ -107,7 +132,7 @@ def analyze_city(file_path):
         final_months.append(m_stats)
 
     return {
-        "slug": os.path.splitext(os.path.basename(file_path))[0],
+        "slug": slug,
         "name": meta.get("name"),
         "country": meta.get("country"),
         "coords": {
@@ -129,12 +154,13 @@ def main():
     files = [f for f in os.listdir(INPUT_DIR) if f.endswith(".json")]
     print(f"Found {len(files)} cities.")
 
+    success_count = 0
     for filename in files:
         file_path = os.path.join(INPUT_DIR, filename)
         try:
             city_data = analyze_city(file_path)
             index.append(city_data)
-            # print(f"Encoded {city_data['name']}")
+            success_count += 1
         except Exception as e:
             print(f"Failed to process {filename}: {e}")
 
@@ -142,7 +168,7 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(index, f, indent=None)  # Minified
         
-    print(f"✅ Search index generated at {OUTPUT_FILE} ({len(index)} cities)")
+    print(f"✅ Search index generated at {OUTPUT_FILE} ({success_count} cities)")
 
 if __name__ == "__main__":
     main()
