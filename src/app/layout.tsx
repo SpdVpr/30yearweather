@@ -41,16 +41,19 @@ export const metadata: Metadata = {
     images: ['/images/hero1-optimized.webp'],
   },
   manifest: '/manifest.json',
+  // Icons are now handled by Next.js file-based conventions:
+  // - src/app/favicon.ico (used as fallback)
+  // - src/app/icon.png (512x512, automatically resized to multiple sizes including 48x48 for Google)
+  // - src/app/apple-icon.png (for iOS devices)
+  // This ensures Google Search gets the proper 48x48+ icon it requires
   icons: {
     icon: [
-      { url: '/favicon_io/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon_io/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon_io/favicon.ico' }
+      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon_io/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon_io/favicon-32x32.png', sizes: '32x32', type: 'image/png' }
     ],
-    apple: '/favicon_io/apple-touch-icon.png',
-    other: [
-      { rel: 'icon', url: '/favicon_io/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { rel: 'icon', url: '/favicon_io/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' }
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }
     ]
   },
   robots: {
@@ -256,7 +259,8 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/logo.svg" type="image/svg+xml" />
 
         {/* Inline critical CSS for above-the-fold content */}
-        <style dangerouslySetInnerHTML={{ __html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           body{margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif}
           .hero-section{min-height:85vh;position:relative;display:flex;align-items:center;justify-content:center}
           .nav-bar{position:absolute;top:0;width:100%;z-index:50;padding:1.5rem}
