@@ -9,7 +9,9 @@ Google má zaindexované staré URL s country code suffixem (např. `helsinki-fi
 
 ## ✅ Řešení
 
-### 1. Přidány Redirecty v `next.config.js`
+### 1. Přidány Redirecty v `src/middleware.ts`
+
+**Důležité:** Původně byly redirecty v `next.config.js`, ale ~95,740 statických redirectů překračovalo 5MB limit na Vercelu. Proto byly přesunuty do middleware pro dynamické zpracování.
 
 Implementovány kompletní redirecty pro všechny staré URL formáty:
 
@@ -69,10 +71,12 @@ public/images/lyon-fr-hero.webp → lyon-hero.webp
 
 ## 📊 Statistiky
 
-- **Celkem redirectů:** ~95,740
+- **Implementace:** Edge Middleware (dynamické redirecty)
+- **Velikost middleware:** 28.1 kB (místo 5MB+ statických redirectů)
 - **Starých slugů:** ~150 měst
 - **Typů redirectů:** 6 různých formátů
 - **HTTP status:** 301 (Permanent Redirect) - důležité pro SEO
+- **Performance:** O(1) lookup díky hash mapě
 
 ## 🚀 Deployment
 
@@ -106,23 +110,27 @@ Po nasazení otestovat:
 
 ## ⚠️ Poznámky
 
-- **Performance:** Next.js varuje při >1000 redirectech. Máme ~95k, ale je to nutné pro SEO.
-- **Alternative:** Pokud by to způsobovalo problémy, můžeme použít Edge Middleware pro dynamické redirecty.
-- **Monitoring:** Sledovat response times po nasazení.
+- **Performance:** Edge Middleware běží na Vercel Edge Network, takže redirecty jsou velmi rychlé
+- **Vercel Limit:** Původní řešení se statickými redirecty v `next.config.js` překračovalo 5MB limit
+- **Řešení:** Přesun do middleware umožňuje dynamické zpracování bez limitů
+- **Monitoring:** Sledovat response times po nasazení (očekáváme <50ms overhead)
 
 ## 📝 Soubory změněny
 
-1. `next.config.js` - přidány redirecty
-2. `backend/config.py` - opraveno `lyon-fr` → `lyon`
-3. Datové soubory pro Lyon přejmenovány
-4. `generate_old_slug_mapping.py` - helper script s kompletním mappingem
+1. `src/middleware.ts` - přidána logika pro dynamické redirecty (28.1 kB)
+2. `next.config.js` - zjednodušeno (redirecty přesunuty do middleware)
+3. `backend/config.py` - opraveno `lyon-fr` → `lyon`
+4. Datové soubory pro Lyon přejmenovány
+5. `generate_old_slug_mapping.py` - helper script s kompletním mappingem
 
 ## ✅ Checklist
 
-- [x] Redirecty implementovány v `next.config.js`
+- [x] Redirecty implementovány v `src/middleware.ts`
+- [x] `next.config.js` zjednodušeno (prázdné redirects)
 - [x] Lyon slug opraven v `backend/config.py`
 - [x] Lyon datové soubory přejmenovány
-- [x] Build test úspěšný
+- [x] Build test úspěšný (middleware 28.1 kB)
+- [x] Vyřešen Vercel 5MB limit problém
 - [ ] Deploy na produkci
 - [ ] Verifikace v Google Search Console
 - [ ] Monitoring 404 errors
