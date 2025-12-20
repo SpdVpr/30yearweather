@@ -105,18 +105,78 @@ async function main() {
                 }
             }
 
-            // Extract weather data
-            const avgTemp = cityJson.meta?.averageTemperature || 20;
-            const rainfall = cityJson.meta?.averageRainfall || 50;
+            // Extract REAL weather data from city JSON
+            const yearlyStats = cityJson.yearly_stats;
+            const meta = cityJson.meta;
+            const days = cityJson.days;
+
+            // Get average annual temperature
+            const avgTempAnnual = yearlyStats?.avg_temp_annual || 20;
+
+            // Find best months based on hottest_month and analyze days data
+            const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+
+            // Calculate monthly averages from days data
+            const monthlyData: { month: number; avgTemp: number; avgRain: number; avgScore: number }[] = [];
+
+            for (let m = 1; m <= 12; m++) {
+                const monthDays = Object.entries(days).filter(([key]) => {
+                    const [month] = key.split('-').map(Number);
+                    return month === m;
+                });
+
+                if (monthDays.length > 0) {
+                    const temps = monthDays.map(([, d]: [string, any]) => d.stats?.temp_max || 20);
+                    const rains = monthDays.map(([, d]: [string, any]) => d.stats?.precip_prob || 0);
+                    const scores = monthDays.map(([, d]: [string, any]) => d.scores?.wedding || 50);
+
+                    monthlyData.push({
+                        month: m,
+                        avgTemp: temps.reduce((a, b) => a + b, 0) / temps.length,
+                        avgRain: rains.reduce((a, b) => a + b, 0) / rains.length,
+                        avgScore: scores.reduce((a, b) => a + b, 0) / scores.length
+                    });
+                }
+            }
+
+            // Find 2 best months (highest average score, comfortable temp 15-28°C)
+            const sortedMonths = monthlyData
+                .filter(m => m.avgTemp >= 10 && m.avgTemp <= 32) // Filter extreme temps
+                .sort((a, b) => b.avgScore - a.avgScore);
+
+            const bestMonth1 = sortedMonths[0] || monthlyData[4]; // May fallback
+            const bestMonth2 = sortedMonths[1] || monthlyData[8]; // September fallback
+
+            const bestMonthNames = [
+                MONTH_NAMES[bestMonth1.month - 1],
+                MONTH_NAMES[bestMonth2.month - 1]
+            ];
+
+            // Calculate average temp for best months
+            const avgTempMin = Math.round(Math.min(bestMonth1.avgTemp, bestMonth2.avgTemp) - 5);
+            const avgTempMax = Math.round(Math.max(bestMonth1.avgTemp, bestMonth2.avgTemp));
+
+            // Average rain probability for best months
+            const avgRainProb = Math.round((bestMonth1.avgRain + bestMonth2.avgRain) / 2);
+
+            // Determine crowd level from flight pressure score
+            const pressureScore = meta?.flight_info?.pressure_score || 50;
+            let crowds: CityData['crowds'] = 'Moderate';
+            if (pressureScore >= 80) crowds = 'Very Busy';
+            else if (pressureScore >= 60) crowds = 'Busy';
+            else if (pressureScore >= 40) crowds = 'Moderate';
+            else if (pressureScore >= 20) crowds = 'Quiet';
+            else crowds = 'Very Quiet';
 
             const cityData: CityData = {
                 name: cityName,
                 slug: slug,
-                bestMonths: getBestMonths(cityJson.dailyData),
-                avgTempMin: Math.round(avgTemp - 4),
-                avgTempMax: Math.round(avgTemp + 4),
-                rainProbability: Math.min(Math.round(rainfall / 5), 30),
-                crowds: 'Moderate',
+                bestMonths: bestMonthNames,
+                avgTempMin: avgTempMin,
+                avgTempMax: avgTempMax,
+                rainProbability: avgRainProb,
+                crowds: crowds,
                 heroImagePath: heroPath
             };
 

@@ -7,7 +7,7 @@ export interface CityData {
     avgTempMin: number;
     avgTempMax: number;
     rainProbability: number;
-    crowds: 'Low' | 'Moderate' | 'High' | 'Very High';
+    crowds: 'Very Quiet' | 'Quiet' | 'Moderate' | 'Busy' | 'Very Busy';
     heroImagePath: string;
 }
 
