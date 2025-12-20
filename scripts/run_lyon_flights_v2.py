@@ -6,7 +6,10 @@ import time
 import random
 
 # CONFIG
-API_KEY = "5de5692f22msh01fc088bbb2705bp1fa920jsn526e9d191954"
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv('RAPIDAPI_KEY')
 HOST = "aerodatabox.p.rapidapi.com"
 TARGET_SLUG = "lyon-fr"
 TARGET_ICAO = "LFLL"

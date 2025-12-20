@@ -14,7 +14,7 @@ load_dotenv(os.path.join(base_dir, '.env'))
 
 RAPIDAPI_KEY = os.getenv('RAPIDAPI_KEY')
 if not RAPIDAPI_KEY:
-    RAPIDAPI_KEY = "5de5692f22msh01fc088bbb2705bp1fa920jsn526e9d191954" # Fallback from working script
+    print("Warning: RAPIDAPI_KEY not found in environment variables.")
 
 RAPIDAPI_HOST = "aerodatabox.p.rapidapi.com"
 

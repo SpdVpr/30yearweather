@@ -1,7 +1,11 @@
 import requests
 import json
 
-API_KEY = "5de5692f22msh01fc088bbb2705bp1fa920jsn526e9d191954"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv('RAPIDAPI_KEY')
 HOST = "aerodatabox.p.rapidapi.com"
 
 def test_connection():
