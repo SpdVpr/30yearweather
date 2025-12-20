@@ -40,7 +40,7 @@ async function getAllCities(): Promise<CityData[]> {
             avgTempMin: 15,
             avgTempMax: 20,
             rainProbability: 20,
-            crowds: 'High',
+            crowds: 'Busy',
             heroImagePath: path.join(process.cwd(), 'public', 'images', 'paris-hero.webp')
         },
         {
