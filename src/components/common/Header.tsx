@@ -21,7 +21,9 @@ export default function Header({ breadcrumb }: HeaderProps) {
                         <div className="w-8 h-8 rounded-lg overflow-hidden border border-stone-200 shadow-sm bg-white flex items-center justify-center p-0.5 group-hover:shadow-orange-200 transition-all">
                             <img
                                 src="/logo.svg"
-                                alt="30YearWeather Logo"
+                                alt="30YearWeather - Historical Weather Forecast"
+                                width={28}
+                                height={28}
                                 className="w-full h-full object-contain"
                             />
                         </div>
@@ -60,18 +62,21 @@ export default function Header({ breadcrumb }: HeaderProps) {
                                 <div className="flex flex-col">
                                     <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-stone-400 mb-0.5">
                                         {breadcrumb.href && (
-                                            <Link href={breadcrumb.href} className="hover:text-orange-600 transition-colors flex items-center gap-1 group/back">
+                                            <Link
+                                                href={breadcrumb.href}
+                                                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-100 text-orange-700 hover:bg-orange-200 transition-all font-bold text-[11px] uppercase tracking-wide group/back"
+                                            >
                                                 <ArrowLeft className="w-3 h-3 group-hover/back:-translate-x-0.5 transition-transform" />
-                                                Return
+                                                Back
                                             </Link>
                                         )}
                                         {!breadcrumb.href && <span>Historical Data</span>}
                                         <span className="text-stone-200">/</span>
                                         <span className="text-stone-300">{breadcrumb.sublabel || "Forecast"}</span>
                                     </div>
-                                    <h2 className="text-lg font-bold text-stone-950 font-serif leading-none tracking-tight">
+                                    <span className="text-lg font-bold text-stone-950 font-serif leading-none tracking-tight">
                                         {breadcrumb.label}
-                                    </h2>
+                                    </span>
                                 </div>
                             </div>
                         </>

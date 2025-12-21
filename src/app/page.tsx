@@ -98,7 +98,7 @@ export default async function Home() {
       <header className="absolute top-0 w-full z-50 py-6 px-6 md:px-12 flex justify-between items-center bg-gradient-to-b from-black/50 to-transparent">
         <nav className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/20 shadow-lg bg-white flex items-center justify-center p-0.5">
-            <img src="/logo.svg" alt="30YearWeather Logo" className="w-full h-full object-contain" />
+            <img src="/logo.svg" alt="30YearWeather - Historical Weather Forecast Logo" width="28" height="28" className="w-full h-full object-contain" />
           </div>
           <div className="text-xl font-bold tracking-tight text-white drop-shadow-md">30YearWeather.</div>
         </nav>
@@ -115,7 +115,7 @@ export default async function Home() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
             src="/images/hero1-optimized.webp"
-            alt="Couple planning trip in sunny city"
+            alt="Historical weather forecast and climate data analysis for travel planning"
             fill
             className="object-cover"
             priority
@@ -331,7 +331,7 @@ export default async function Home() {
                           <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-stone-100 mb-4 shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1">
                             <Image
                               src={cityImage}
-                              alt={city.name}
+                              alt={`${city.name} weather forecast - historical climate data for ${city.country}`}
                               fill
                               className="object-cover transition-transform duration-700 group-hover:scale-110"
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

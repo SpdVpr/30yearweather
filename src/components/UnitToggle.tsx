@@ -27,7 +27,7 @@ export default function UnitToggle({ variant = "dark" }: UnitToggleProps) {
         <button
             onClick={toggleUnit}
             className={`flex items-center backdrop-blur-md border rounded-full px-1 py-1 relative h-8 w-16 transition-colors ${containerInfo}`}
-            aria-label="Toggle Temperature Unit"
+            aria-label="Temperature unit: Celsius or Fahrenheit"
         >
             <span
                 className={`absolute top-1 bottom-1 w-6 rounded-full transition-all duration-300 ${pillInfo} ${unit === "F" ? "left-8" : "left-1"

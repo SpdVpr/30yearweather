@@ -351,7 +351,7 @@ export default async function CityIndexPage({
                                 <Map className="w-4 h-4" />
                                 View on Map
                             </a>
-                            <button className="p-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors">
+                            <button className="p-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors" aria-label="Save to favorites">
                                 <Bookmark className="w-5 h-5" />
                             </button>
                         </div>
@@ -490,6 +490,7 @@ export default async function CityIndexPage({
                                                 style={{ border: 0 }}
                                                 loading="lazy"
                                                 allowFullScreen
+                                                title={`Map of ${data.meta.name}, ${data.meta.country}`}
                                                 src={`https://maps.google.com/maps?q=${data.meta.lat},${data.meta.lon}&hl=en&z=8&output=embed`}
                                             ></iframe>
                                         </div>
@@ -538,7 +539,7 @@ export default async function CityIndexPage({
                                                         <TrendingUp className="w-6 h-6 text-orange-600" />
                                                     </div>
                                                     <div>
-                                                        <h4 className="font-bold text-stone-900">Climate Trend Detected</h4>
+                                                        <h3 className="font-bold text-stone-900">Climate Trend Detected</h3>
                                                         <Badge color="orange" size="xs">Important</Badge>
                                                     </div>
                                                 </div>
@@ -565,7 +566,7 @@ export default async function CityIndexPage({
                                                     </svg>
                                                 </div>
                                                 <div>
-                                                    <h4 className="font-bold text-stone-900">Best Time to Visit</h4>
+                                                    <h3 className="font-bold text-stone-900">Best Time to Visit</h3>
                                                     <span className="text-xs text-stone-500">NASA POWER Data (1991-2021)</span>
                                                 </div>
                                             </div>
