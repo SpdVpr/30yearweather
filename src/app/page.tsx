@@ -335,6 +335,7 @@ export default async function Home() {
                               fill
                               className="object-cover transition-transform duration-700 group-hover:scale-110"
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                              quality={65}
                             />
 
                             <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 text-xs font-bold uppercase tracking-widest text-stone-900 border border-white/50 rounded-sm">

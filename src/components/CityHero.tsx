@@ -64,6 +64,8 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
                 fill
                 className="object-cover"
                 priority
+                quality={90}
+                sizes="100vw"
             />
 
             {/* Overlay */}
