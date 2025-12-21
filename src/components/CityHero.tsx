@@ -77,6 +77,7 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
             <Link
                 href={`/${citySlug}/${prevMonthSlug}/${prevDay}`}
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/20 hover:bg-black/50 backdrop-blur-md text-white border border-white/10 transition-all hover:scale-110 hidden md:flex"
+                aria-label="Previous Day"
             >
                 <ArrowLeft className="w-6 h-6" />
             </Link>
@@ -85,6 +86,7 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
             <Link
                 href={`/${citySlug}/${nextMonthSlug}/${nextDay}`}
                 className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/20 hover:bg-black/50 backdrop-blur-md text-white border border-white/10 transition-all hover:scale-110 hidden md:flex"
+                aria-label="Next Day"
             >
                 <ArrowRight className="w-6 h-6" />
             </Link>

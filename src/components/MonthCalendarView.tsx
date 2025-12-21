@@ -76,7 +76,7 @@ export default function MonthCalendarView({
                 const { status, bgColor, borderColor, Icon, iconColor } = getDayInfo(temp, rain);
 
                 return (
-                    <Link key={dateKey} href={`/${city}/${monthSlug}/${dayNum}`}>
+                    <Link key={dateKey} href={`/${city}/${monthSlug}/${dayNum}`} aria-label={`View weather for day ${parseInt(dayNum)}`}>
                         <div className={`
                             ${bgColor} border ${borderColor} 
                             rounded-xl p-2 cursor-pointer hover:shadow-lg transition-all hover:scale-[1.03]

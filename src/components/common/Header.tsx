@@ -42,6 +42,7 @@ export default function Header({ breadcrumb }: HeaderProps) {
                                         <Link
                                             href={breadcrumb.href}
                                             className="p-2 hover:bg-orange-50 rounded-full transition-all text-stone-400 hover:text-orange-600 shrink-0"
+                                            aria-label="Go back"
                                         >
                                             <ArrowLeft className="w-4 h-4" />
                                         </Link>
