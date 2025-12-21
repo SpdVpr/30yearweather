@@ -9,6 +9,7 @@ import type { Metadata } from 'next';
 import Link from "next/link";
 import DatePageTracker from "@/components/DatePageTracker";
 import SwipeNavigation from "@/components/SwipeNavigation";
+import Footer from "@/components/Footer";
 import Header from "@/components/common/Header";
 import DayTravelInfo from "@/components/DayTravelInfo";
 
@@ -348,42 +349,43 @@ export default async function CityDayPage({
                 />
 
                 <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto">
-                <div itemProp="articleBody" className="space-y-12">
+                    <div itemProp="articleBody" className="space-y-12">
 
-                    <DayVerdict
-                        score={dayData.scores.wedding}
-                        precipProb={dayData.stats.precip_prob}
-                        city={data.meta.name}
-                        month={format(dateObj, "MMMM")}
-                        day={dateObj.getDate()}
-                        tempMax={dayData.stats.temp_max}
-                        humidity={dayData.stats.humidity_percent || 0}
-                        citySlug={city}
-                        monthSlug={monthLower}
-                        flightPressure={monthlyFlightPressure}
-                        holidayName={dayData.events?.[0]?.description || null}
-                        vaccineCount={data.meta.health_info?.vaccines?.length}
-                    />
+                        <DayVerdict
+                            score={dayData.scores.wedding}
+                            precipProb={dayData.stats.precip_prob}
+                            city={data.meta.name}
+                            month={format(dateObj, "MMMM")}
+                            day={dateObj.getDate()}
+                            tempMax={dayData.stats.temp_max}
+                            humidity={dayData.stats.humidity_percent || 0}
+                            citySlug={city}
+                            monthSlug={monthLower}
+                            flightPressure={monthlyFlightPressure}
+                            holidayName={dayData.events?.[0]?.description || null}
+                            vaccineCount={data.meta.health_info?.vaccines?.length}
+                        />
 
-                    <WeatherDashboard
-                        dayData={dayData}
-                        lat={data.meta.lat}
-                        lon={data.meta.lon}
-                        dateId={dateKey}
-                        citySlug={city}
-                        cityName={data.meta.name}
-                        countryName={data.meta.country}
-                        geoInfo={data.meta.geo_info}
-                        safetyProfile={data.meta.safety_profile}
-                        timezoneOffset={calculatedOffset}
-                        alternativeDates={alternativeDates}
-                        cityComparisons={cityComparisons}
-                        flightInfo={data.meta.flight_info}
-                        healthInfo={data.meta.health_info}
-                    />
-                </div>
-            </article>
+                        <WeatherDashboard
+                            dayData={dayData}
+                            lat={data.meta.lat}
+                            lon={data.meta.lon}
+                            dateId={dateKey}
+                            citySlug={city}
+                            cityName={data.meta.name}
+                            countryName={data.meta.country}
+                            geoInfo={data.meta.geo_info}
+                            safetyProfile={data.meta.safety_profile}
+                            timezoneOffset={calculatedOffset}
+                            alternativeDates={alternativeDates}
+                            cityComparisons={cityComparisons}
+                            flightInfo={data.meta.flight_info}
+                            healthInfo={data.meta.health_info}
+                        />
+                    </div>
+                </article>
             </main>
+            <Footer />
         </SwipeNavigation>
     );
 }

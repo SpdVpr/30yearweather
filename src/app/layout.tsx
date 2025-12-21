@@ -99,7 +99,7 @@ export default function RootLayout({
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Support',
-      email: 'michalvesecky@gmail.com',
+      email: '30yearweather@gmail.com',
       availableLanguage: ['English', 'Czech']
     },
     address: {

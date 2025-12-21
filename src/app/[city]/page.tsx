@@ -1,6 +1,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 import { getCityData } from "@/lib/data";
 import { Card, Title, Text, Badge } from "@tremor/react";
@@ -678,13 +679,10 @@ export default async function CityIndexPage({
             </main>
 
             {/* Footer */}
-            <footer className="bg-white border-t border-stone-200 py-8 mt-16">
-                <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-                    <p className="text-sm text-stone-500">
-                        © {new Date().getFullYear()} 30YearWeather. Historical data based on 30-year averages.
-                    </p>
-                </div>
-            </footer>
+            {/* Footer */}
+            <div className="mt-16">
+                <Footer />
+            </div>
         </div>
     );
 }

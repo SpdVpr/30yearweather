@@ -9,6 +9,7 @@ import { Thermometer, CloudRain, Sun, Calendar, Droplets, Wind, ArrowRight } fro
 import type { Metadata } from 'next';
 import Header from "@/components/common/Header";
 import TravelInsights from "@/components/TravelInsights";
+import Footer from "@/components/Footer";
 
 // Helper for month mapping
 const MONTH_MAP: Record<string, string> = {
@@ -192,7 +193,7 @@ export default async function CityMonthPage({ params }: { params: { city: string
     ];
 
     return (
-        <div className="min-h-screen bg-stone-50 pb-20">
+        <div className="min-h-screen bg-stone-50 flex flex-col">
             <DatePageTracker cityName={data.meta.name} date={monthDisplay} />
             <script
                 type="application/ld+json"
@@ -208,8 +209,8 @@ export default async function CityMonthPage({ params }: { params: { city: string
             />
 
             {/* Hero Section - Full width on mobile, boxed on desktop */}
-            <section className="relative pt-16 md:pt-24 max-w-7xl mx-auto md:px-6 lg:px-8">
-                <div className="relative h-[500px] md:h-[400px] w-full overflow-hidden rounded-none md:rounded-2xl">
+            <section className="w-full relative pt-16 md:pt-24 max-w-7xl mx-auto md:px-6 lg:px-8">
+                <div className="relative h-[500px] md:h-[400px] w-full overflow-hidden rounded-none md:rounded-2xl bg-stone-800">
                     <Image
                         src={heroImage}
                         alt={`${cityName} weather in ${monthDisplay} - ${data.meta.country}`}
@@ -274,7 +275,7 @@ export default async function CityMonthPage({ params }: { params: { city: string
             </section>
 
             {/* Stats Cards */}
-            <main className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mt-8">
+            <main className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mt-8">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8">
                     {/* Avg High */}
                     <div className="bg-white rounded-xl p-4 md:p-5 shadow-sm border border-stone-100">
@@ -479,16 +480,10 @@ export default async function CityMonthPage({ params }: { params: { city: string
                     </div>
                 </section>
 
-                {/* Back to City Link */}
-                <div className="text-center">
-                    <Link
-                        href={`/${city}`}
-                        className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold"
-                    >
-                        ← Back to {cityName} Overview
-                    </Link>
-                </div>
-            </main>
-        </div>
+            </main >
+            <div className="mt-auto">
+                <Footer />
+            </div>
+        </div >
     );
 }
