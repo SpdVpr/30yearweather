@@ -300,9 +300,9 @@ export default async function CityIndexPage({
                 }}
             />
 
-            {/* Hero Section - Content Width (1280px) */}
-            <section className="relative pt-24 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-                <div className="relative h-[420px] md:h-[500px] w-full overflow-hidden rounded-2xl">
+            {/* Hero Section - Full width on mobile, boxed on desktop */}
+            <section className="relative pt-16 md:pt-24 max-w-7xl mx-auto md:px-6 lg:px-8">
+                <div className="relative h-[500px] md:h-[500px] w-full overflow-hidden rounded-none md:rounded-2xl">
                     <Image
                         src={heroImage}
                         alt={`${data.meta.name} weather and climate - scenic view of ${data.meta.name}, ${data.meta.country}`}

@@ -56,7 +56,7 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
     const nextDay = nextObj.getDate();
 
     return (
-        <div className="relative h-[70vh] w-full overflow-hidden group">
+        <div className="relative h-[70vh] w-full overflow-hidden group pt-16 md:pt-24">
             {/* Background Image */}
             <Image
                 src={heroImage}

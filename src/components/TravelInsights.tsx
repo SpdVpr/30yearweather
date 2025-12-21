@@ -189,8 +189,8 @@ export default function TravelInsights({ cityName, citySlug, flightInfo, healthI
                             {seasonalityInsights && (
                                 <div className="lg:col-span-6">
                                     <h4 className="text-sm font-semibold text-stone-700 mb-4">Monthly Traffic Distribution</h4>
-                                    <div className="bg-stone-50 rounded-xl p-4 border border-stone-100">
-                                        <div className="flex items-end justify-between gap-2 mb-4" style={{ height: '160px' }}>
+                                    <div className="bg-stone-50 rounded-xl p-4 border border-stone-100 overflow-x-auto">
+                                        <div className="flex items-end justify-between gap-1 sm:gap-2 mb-4 min-w-[320px]" style={{ height: '160px' }}>
                                             {MONTH_NAMES.map((month, idx) => {
                                                 const entry = seasonalityInsights.entries.find(e => e.month === idx + 1);
                                                 const value = entry?.value || 0;
