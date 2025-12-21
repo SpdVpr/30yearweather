@@ -290,6 +290,13 @@ export default async function CityDayPage({
                                 "name": "NASA POWER 1991-2021",
                                 "description": "30-year historical weather data from NASA Prediction Of Worldwide Energy Resources (POWER) project, providing satellite-derived meteorological observations including temperature, precipitation, humidity, and wind speed data from 1991 to 2021.",
                                 "url": "https://power.larc.nasa.gov/",
+                                "license": "https://power.larc.nasa.gov/docs/services/faq/#how-do-i-cite-the-power-data",
+                                "isAccessibleForFree": true,
+                                "creator": {
+                                    "@type": "Organization",
+                                    "name": "NASA Langley Research Center",
+                                    "url": "https://www.nasa.gov/"
+                                },
                                 "provider": {
                                     "@type": "Organization",
                                     "name": "NASA Langley Research Center",
