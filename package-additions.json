@@ -1,0 +1,17 @@
+{
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "generate:social": "tsx scripts/generate-social-content.ts"
+    },
+    "dependencies": {
+        "canvas": "^2.11.2",
+        "sharp": "^0.33.1"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.0",
+        "tsx": "^4.7.0"
+    }
+}

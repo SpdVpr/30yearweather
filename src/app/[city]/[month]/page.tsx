@@ -2,19 +2,21 @@
 import { getCityData } from "@/lib/data";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import MonthCalendarView from "@/components/MonthCalendarView";
 import DatePageTracker from "@/components/DatePageTracker";
-import { Card, Text, Title, Grid, Col } from "@tremor/react";
-import { ArrowLeft, Thermometer, CloudRain, Sun, Calendar, Info } from "lucide-react";
+import { Thermometer, CloudRain, Sun, Calendar, Droplets, Wind, ArrowRight } from "lucide-react";
 import type { Metadata } from 'next';
 import Header from "@/components/common/Header";
-import MonthTravelInfo from "@/components/MonthTravelInfo";
+import TravelInsights from "@/components/TravelInsights";
 
 // Helper for month mapping
 const MONTH_MAP: Record<string, string> = {
     january: '01', february: '02', march: '03', april: '04', may: '05', june: '06',
     july: '07', august: '08', september: '09', october: '10', november: '11', december: '12'
 };
+
+const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 export const dynamicParams = true;
 export const revalidate = 86400;
@@ -32,7 +34,6 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     const cityName = data.meta.name;
     const monthDisplay = monthLower.charAt(0).toUpperCase() + monthLower.slice(1);
 
-    // Aggregation for metadata
     let totalMax = 0;
     let totalRain = 0;
     let count = 0;
@@ -49,10 +50,7 @@ export async function generateMetadata({ params }: { params: { city: string; mon
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
 
-    // Optimized title (50-60 characters)
     const title = `${cityName} in ${monthDisplay} | Weather & Climate Guide`;
-
-    // Optimized description (140-160 characters for SEO)
     const description = `${cityName} ${monthDisplay} weather: ${avgMax}°C avg high, ${avgRain}% rain chance. Historical climate data from 30 years of NASA satellite observations. Plan your perfect trip.`;
 
     return {
@@ -81,7 +79,6 @@ export default async function CityMonthPage({ params }: { params: { city: string
     const { city, month } = params;
     const monthLower = month.toLowerCase();
 
-    // Validate month
     const monthNum = MONTH_MAP[monthLower];
     if (!monthNum) {
         notFound();
@@ -92,32 +89,47 @@ export default async function CityMonthPage({ params }: { params: { city: string
 
     const monthDisplay = monthLower.charAt(0).toUpperCase() + monthLower.slice(1);
     const cityName = data.meta.name;
+    const monthIndex = parseInt(monthNum) - 1;
 
-    // --- Statistics Aggregation ---
+    // Hero image
+    const heroImage = `/images/${city}-hero.webp`;
+
+    // Statistics Aggregation
     let totalMax = 0;
     let totalMin = 0;
     let totalRainProb = 0;
-    let rainyDays25 = 0; // chance > 25%
-    let rainyDays50 = 0; // chance > 50%
+    let totalSunHours = 0;
+    let rainyDays25 = 0;
     let daysCount = 0;
-    let sunniestDay = { prob: 0, day: 0 }; // lowest rain prob
+    let hottestDay = { temp: -100, day: 0 };
+    let coolestDay = { temp: 100, day: 0 };
 
     Object.entries(data.days).forEach(([key, day]) => {
         if (key.startsWith(monthNum + "-")) {
             totalMax += day.stats.temp_max;
             totalMin += day.stats.temp_min;
             totalRainProb += day.stats.precip_prob;
+            totalSunHours += (day.stats as any).sun_hours ?? 8;
             if (day.stats.precip_prob > 25) rainyDays25++;
-            if (day.stats.precip_prob > 50) rainyDays50++;
             daysCount++;
+
+            const dayNum = parseInt(key.split('-')[1]);
+            if (day.stats.temp_max > hottestDay.temp) {
+                hottestDay = { temp: day.stats.temp_max, day: dayNum };
+            }
+            if (day.stats.temp_min < coolestDay.temp) {
+                coolestDay = { temp: day.stats.temp_min, day: dayNum };
+            }
         }
     });
 
     const avgMax = Math.round(totalMax / daysCount);
     const avgMin = Math.round(totalMin / daysCount);
     const avgRainProb = Math.round(totalRainProb / daysCount);
+    const avgSunHours = Math.round(totalSunHours / daysCount);
+    const rainyDaysCount = Math.round((rainyDays25 / daysCount) * daysCount);
 
-    // Dynamic Text Generation
+    // Season context
     const getSeasonContext = () => {
         const m = parseInt(monthNum);
         if (m >= 12 || m <= 2) return "Winter";
@@ -127,13 +139,21 @@ export default async function CityMonthPage({ params }: { params: { city: string
     };
     const season = getSeasonContext();
 
+    // Verdict
     const getVerdict = () => {
-        if (avgRainProb > 40) return ["Wet Season", "bg-blue-100 text-blue-800"];
-        if (avgMax < 10) return ["Chilly & Crisp", "bg-cyan-100 text-cyan-800"];
-        if (avgMax > 25) return ["Warm & Sunny", "bg-orange-100 text-orange-800"];
-        return ["Mild & Pleasant", "bg-emerald-100 text-emerald-800"];
+        if (avgRainProb > 40) return { text: "Wet Season", emoji: "🌧️", color: "blue" };
+        if (avgMax < 10) return { text: "Cool & Crisp", emoji: "❄️", color: "cyan" };
+        if (avgMax > 28) return { text: "Hot & Sunny", emoji: "☀️", color: "orange" };
+        if (avgMax > 20) return { text: "Warm & Pleasant", emoji: "😊", color: "emerald" };
+        return { text: "Mild & Comfortable", emoji: "🌤️", color: "teal" };
     };
-    const [verdictText, verdictClass] = getVerdict();
+    const verdict = getVerdict();
+
+    // Next/Prev months
+    const prevMonthIndex = monthIndex === 0 ? 11 : monthIndex - 1;
+    const nextMonthIndex = monthIndex === 11 ? 0 : monthIndex + 1;
+    const prevMonth = MONTH_NAMES[prevMonthIndex].toLowerCase();
+    const nextMonth = MONTH_NAMES[nextMonthIndex].toLowerCase();
 
     const baseUrl = "https://30yearweather.com";
 
@@ -156,31 +176,15 @@ export default async function CityMonthPage({ params }: { params: { city: string
                     "name": `Is ${monthDisplay} a good time to visit ${cityName}?`,
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": `Historically, ${monthDisplay} in ${cityName} has average highs of ${avgMax}°C and around ${Math.round((rainyDays25 / daysCount) * 30)} days with significant rain chance. It is considered the ${season} season and is generally ${verdictText.toLowerCase()}.`
+                        "text": `Based on 30 years of NASA data, ${monthDisplay} in ${cityName} has average highs of ${avgMax}°C and ${rainyDaysCount} rainy days. It is ${verdict.text.toLowerCase()} season.`
                     }
                 },
                 {
                     "@type": "Question",
-                    "name": `How much does it rain in ${cityName} during ${monthDisplay}?`,
+                    "name": `What is the weather like in ${cityName} in ${monthDisplay}?`,
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": `The average probability of rain in ${monthDisplay} is ${avgRainProb}%. Expect about ${Math.round((rainyDays25 / daysCount) * 30)} days with noticeable precipitation (>25% daily chance).`
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": `What should I pack for ${cityName} in ${monthDisplay}?`,
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": avgRainProb > 40 ? `Pack waterproof clothing and an umbrella. Temperatures range from ${avgMin}°C to ${avgMax}°C.` : avgMax > 28 ? `Pack light, breathable clothing. Sun protection is essential with temps around ${avgMax}°C.` : `Pack layers for temperatures between ${avgMin}°C and ${avgMax}°C.`
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": `Is ${monthDisplay} peak season or off-season in ${cityName}?`,
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": avgRainProb < 30 && avgMax >= 20 && avgMax <= 28 ? `${monthDisplay} is typically peak tourist season in ${cityName} due to ideal weather conditions.` : avgRainProb > 45 ? `${monthDisplay} is considered off-season in ${cityName}, offering fewer crowds and lower prices.` : `${monthDisplay} is a shoulder season in ${cityName}, balancing decent weather with moderate crowds.`
+                        "text": `Expect temperatures between ${avgMin}°C and ${avgMax}°C with ${avgRainProb}% average rain probability and about ${avgSunHours} hours of sunshine daily.`
                     }
                 }
             ]
@@ -188,7 +192,7 @@ export default async function CityMonthPage({ params }: { params: { city: string
     ];
 
     return (
-        <div className="min-h-screen bg-slate-50 pb-20">
+        <div className="min-h-screen bg-stone-50 pb-20">
             <DatePageTracker cityName={data.meta.name} date={monthDisplay} />
             <script
                 type="application/ld+json"
@@ -199,221 +203,291 @@ export default async function CityMonthPage({ params }: { params: { city: string
                 breadcrumb={{
                     label: `${cityName} in ${monthDisplay}`,
                     href: `/${city}`,
-                    sublabel: "Historical Weather Guide"
+                    sublabel: "Monthly Weather Guide"
                 }}
             />
 
-            <div className="pt-16">
-                {/* Content starts after the unified header */}
-            </div>
+            {/* Hero Section - Content Width (1280px) */}
+            <section className="relative pt-24 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+                <div className="relative h-[320px] md:h-[400px] w-full overflow-hidden rounded-2xl">
+                    <Image
+                        src={heroImage}
+                        alt={`${cityName} weather in ${monthDisplay} - ${data.meta.country}`}
+                        fill
+                        className="object-cover"
+                        priority
+                        sizes="100vw"
+                        quality={85}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
 
-            <main>
-                <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-                <div itemProp="articleBody">
+                    <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10">
+                        {/* Breadcrumbs */}
+                        <nav className="flex items-center gap-2 text-xs text-white/70 mb-4" aria-label="Breadcrumb">
+                            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                            <span>/</span>
+                            <Link href={`/${city}`} className="hover:text-white transition-colors">{cityName}</Link>
+                            <span>/</span>
+                            <span className="text-white font-medium">{monthDisplay}</span>
+                        </nav>
 
-                    {/* H1 Heading for SEO */}
-                    <div className="mb-8">
-                        <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
+                        {/* Season Badge */}
+                        <div className="mb-3">
+                            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider border border-white/20">
+                                <span>{verdict.emoji}</span>
+                                {verdict.text}
+                            </span>
+                        </div>
+
+                        {/* H1 */}
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                             {cityName} Weather in {monthDisplay}
                         </h1>
-                        <p className="text-lg text-slate-600">
-                            Historical climate data based on 30 years of NASA satellite observations
+
+                        {/* SEO Description */}
+                        <p className="text-white/90 text-base md:text-lg max-w-3xl mb-6 leading-relaxed">
+                            Plan your {monthDisplay} trip to {cityName}, {data.meta.country}.
+                            Based on <strong>30 years of NASA data</strong>, expect temperatures of {avgMax}°C (high) to {avgMin}°C (low),
+                            with {avgRainProb}% rain probability and {avgSunHours} hours of daily sunshine.
+                            {rainyDaysCount > 10
+                                ? ` Pack rain gear for around ${rainyDaysCount} rainy days.`
+                                : ` Great conditions with only ${rainyDaysCount} rainy days expected.`}
                         </p>
-                    </div>
 
-                    {/* 1. KEY STATS CARDS */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                        {/* Temperature */}
-                        <Card className="ring-1 ring-slate-200 shadow-sm p-6 bg-gradient-to-br from-white to-slate-50">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="p-2 bg-orange-100 rounded-lg text-orange-600">
-                                    <Thermometer className="w-6 h-6" />
-                                </div>
-                                <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Temperature</span>
-                            </div>
-                            <div className="flex items-end gap-2">
-                                <span className="text-4xl font-bold text-slate-800">{avgMax}°</span>
-                                <span className="text-lg text-slate-500 mb-1">/ {avgMin}°</span>
-                            </div>
-                            <p className="text-sm text-slate-600 mt-2">
-                                Average daytime high vs nighttime low.
-                            </p>
-                        </Card>
-
-                        {/* Rain */}
-                        <Card className="ring-1 ring-slate-200 shadow-sm p-6 bg-gradient-to-br from-white to-slate-50">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
-                                    <CloudRain className="w-6 h-6" />
-                                </div>
-                                <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Precipitation</span>
-                            </div>
-                            <div className="flex items-end gap-2">
-                                <span className="text-4xl font-bold text-slate-800">{Math.round((rainyDays25 / daysCount) * 30)}</span>
-                                <span className="text-lg text-slate-500 mb-1">days</span>
-                            </div>
-                            <p className="text-sm text-slate-600 mt-2">
-                                Days with significant rainfall (&gt;25% chance).
-                            </p>
-                        </Card>
-
-                        {/* Verdict/Pack */}
-                        <Card className="ring-1 ring-slate-200 shadow-sm p-6 bg-gradient-to-br from-white to-slate-50">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="p-2 bg-emerald-100 rounded-lg text-emerald-600">
-                                    <Info className="w-6 h-6" />
-                                </div>
-                                <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Travel Advice</span>
-                            </div>
-                            <p className="font-medium text-slate-800 text-lg leading-snug">
-                                {avgRainProb < 20
-                                    ? "Pack light! It's mostly dry."
-                                    : avgRainProb < 50
-                                        ? "Pack a mix: sun & light rain gear."
-                                        : "Bring a raincoat & umbrella."}
-                            </p>
-                            <p className="text-sm text-slate-600 mt-2">
-                                {season} season in {cityName}.
-                                {avgMax > 28 ? " Heat warnings possible." : ""}
-                            </p>
-                        </Card>
-                    </div>
-
-                    {/* Tourist Season Analysis */}
-                    <MonthTravelInfo
-                        cityName={cityName}
-                        monthNum={parseInt(monthNum)}
-                        flightInfo={data.meta.flight_info}
-                    />
-
-                    {/* 3. CALENDAR VIEW - Moved up for better UX */}
-                    <div id="calendar-view" className="scroll-mt-24 mb-12">
-                        <div className="flex items-center gap-2 mb-6">
-                            <Calendar className="w-5 h-5 text-indigo-600" />
-                            <h2 className="text-xl font-bold text-slate-800">Daily Forecast for {monthDisplay}</h2>
-                        </div>
-                        {/* The specialized calendar component */}
-                        <MonthCalendarView city={city} month={monthNum} data={data} />
-                    </div>
-
-                    {/* 2. INTRO TEXT (SEO) - Expanded for LLM optimization */}
-                    <div className="mb-12 max-w-3xl">
-                        <h2 className="text-2xl font-bold text-slate-900 mb-4">Is {monthDisplay} a good time to visit {cityName}?</h2>
-                        <div className="prose prose-slate prose-lg">
-                            <p className="text-slate-600 leading-relaxed">
-                                Based on our analysis of <strong>30 years of historical weather data</strong> from NASA satellites,
-                                <strong>{monthDisplay}</strong> in {cityName} is characterized by average daytime highs of <strong>{avgMax}°C</strong>
-                                and nighttime lows around <strong>{avgMin}°C</strong>.
-                            </p>
-                            <p className="text-slate-600 leading-relaxed mt-3">
-                                {rainyDays25 > 15
-                                    ? `This is the ${season.toLowerCase()} season with notable precipitation. Expect around ${Math.round((rainyDays25 / daysCount) * 30)} days with measurable rainfall. Pack waterproof layers and plan indoor alternatives.`
-                                    : rainyDays25 > 8
-                                        ? `${monthDisplay} offers a mix of sunny and occasional rainy days with about ${Math.round((rainyDays25 / daysCount) * 30)} days seeing precipitation. An umbrella is advisable but shouldn't disrupt most plans.`
-                                        : `${monthDisplay} is one of the drier periods in ${cityName}, with only around ${Math.round((rainyDays25 / daysCount) * 30)} days typically seeing rain. Ideal for outdoor activities and sightseeing.`}
-                            </p>
-                            <p className="text-slate-600 leading-relaxed mt-3">
-                                {avgMax > 30
-                                    ? `The heat can be intense during midday hours. We recommend starting outdoor activities early morning or late afternoon. Stay hydrated and seek shade during peak sun hours (11am-3pm).`
-                                    : avgMax > 25
-                                        ? `The weather is warm and pleasant for most outdoor activities. Light, breathable clothing is recommended. Don't forget sunscreen and a hat for extended time outdoors.`
-                                        : avgMax > 18
-                                            ? `Temperatures are mild and comfortable for walking tours and outdoor exploration. Layers are useful as mornings and evenings can be cooler.`
-                                            : `The weather is cool, so dress in warm layers. This can be a great time for fewer crowds at popular attractions.`}
-                            </p>
-                        </div>
-
-                        {/* What to Pack Section */}
-                        <div className="mt-6 p-4 bg-white rounded-xl border border-slate-200">
-                            <h3 className="font-bold text-slate-800 mb-2">📦 Packing Essentials for {monthDisplay}</h3>
-                            <ul className="text-sm text-slate-600 grid grid-cols-2 gap-2">
-                                {avgMax > 28 && <li>✓ Lightweight, breathable clothing</li>}
-                                {avgMax > 28 && <li>✓ High SPF sunscreen</li>}
-                                {avgMax <= 28 && avgMax > 18 && <li>✓ Light layers for variable temps</li>}
-                                {avgMax <= 18 && <li>✓ Warm jacket or coat</li>}
-                                {avgMax <= 10 && <li>✓ Thermal underwear</li>}
-                                {avgRainProb > 30 && <li>✓ Waterproof jacket or umbrella</li>}
-                                {avgRainProb > 50 && <li>✓ Waterproof footwear</li>}
-                                <li>✓ Comfortable walking shoes</li>
-                                <li>✓ Reusable water bottle</li>
-                            </ul>
-                        </div>
-
-                        {/* Season Verdict Badge */}
-                        <div className="mt-4 inline-flex items-center gap-2">
-                            <span className={`px-3 py-1 rounded-full text-sm font-medium ${verdictClass}`}>
-                                {verdictText} Season
-                            </span>
-                            <span className="text-xs text-slate-500">
-                                Based on {(daysCount * 30).toLocaleString()}+ historical observations
-                            </span>
-                        </div>
-
-                        {/* Internal links for SEO hierarchy */}
-                        <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium">
-                            <Link href={`/${city}`} className="text-orange-600 hover:underline">Best Time to Visit {data.meta.name}</Link>
-                            <span className="text-slate-300">|</span>
-                            <Link href={`/${city}/${monthLower}/${new Date().getDate()}`} className="text-orange-600 hover:underline">Weather in {data.meta.name} Today</Link>
-                            <span className="text-slate-300">|</span>
-                            <Link href="/#cities" className="text-orange-600 hover:underline">Compare Destinations</Link>
+                        {/* Month Navigation */}
+                        <div className="flex items-center gap-3">
+                            <Link
+                                href={`/${city}/${prevMonth}`}
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-sm font-medium transition-colors border border-white/20"
+                            >
+                                ← {MONTH_NAMES[prevMonthIndex]}
+                            </Link>
+                            <Link
+                                href={`/${city}/${nextMonth}`}
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition-colors"
+                            >
+                                {MONTH_NAMES[nextMonthIndex]} →
+                            </Link>
                         </div>
                     </div>
-
-                    {/* 4. FAQ (Structured Data Compatible) - Fixed consistency */}
-                    <div className="mt-16 border-t border-slate-200 pt-12">
-                        <h2 className="text-2xl font-bold text-slate-900 mb-8">Frequently Asked Questions: {cityName} in {monthDisplay}</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="p-4 bg-white rounded-lg border border-slate-100">
-                                <h3 className="font-bold text-slate-800 mb-2">🌡️ What are the temperatures in {cityName} during {monthDisplay}?</h3>
-                                <p className="text-slate-600 text-sm leading-relaxed">
-                                    Daytime highs average <strong>{avgMax}°C</strong>, while nights drop to around <strong>{avgMin}°C</strong>.
-                                    {avgMax - avgMin > 12 ? " There's a significant day/night temperature swing, so pack layers." : " Temperatures remain fairly consistent throughout the day."}
-                                    {avgMin < 5 ? " It can get quite cold—thermal layers recommended." : avgMax > 30 ? " Heat can be intense—stay hydrated." : ""}
-                                </p>
-                            </div>
-                            <div className="p-4 bg-white rounded-lg border border-slate-100">
-                                <h3 className="font-bold text-slate-800 mb-2">🌧️ How many rainy days are there in {monthDisplay}?</h3>
-                                <p className="text-slate-600 text-sm leading-relaxed">
-                                    Based on 30 years of data, expect around <strong>{Math.round((rainyDays25 / daysCount) * 30)} days</strong> with measurable rainfall (&gt;25% daily chance).
-                                    The average daily rain probability is {avgRainProb}%.
-                                    {avgRainProb > 50 ? " Definitely pack rain gear." : avgRainProb > 30 ? " An umbrella is a good idea." : " Rain is unlikely to disrupt your plans."}
-                                </p>
-                            </div>
-                            <div className="p-4 bg-white rounded-lg border border-slate-100">
-                                <h3 className="font-bold text-slate-800 mb-2">👗 What should I wear in {cityName} in {monthDisplay}?</h3>
-                                <p className="text-slate-600 text-sm leading-relaxed">
-                                    {avgMax > 28
-                                        ? "Light, breathable fabrics like cotton and linen. Don't forget sunglasses and a hat. Sandals or breathable shoes work well."
-                                        : avgMax > 20
-                                            ? "Comfortable casual wear with a light jacket for evenings. Comfortable walking shoes are essential."
-                                            : avgMax > 10
-                                                ? "Layers are key. A medium-weight jacket, sweaters, and closed-toe shoes. Consider a scarf for windy days."
-                                                : "Warm winter clothing: insulated jacket, thermal layers, boots, gloves, and a warm hat."}
-                                </p>
-                            </div>
-                            <div className="p-4 bg-white rounded-lg border border-slate-100">
-                                <h3 className="font-bold text-slate-800 mb-2">💰 Is {monthDisplay} expensive or cheap to visit {cityName}?</h3>
-                                <p className="text-slate-600 text-sm leading-relaxed">
-                                    {avgRainProb < 25 && avgMax >= 18 && avgMax <= 28
-                                        ? "This is typically peak season with higher prices for flights and accommodation. Book 2-3 months ahead for best rates."
-                                        : avgRainProb > 45
-                                            ? "This is off-peak season. Expect lower prices and fewer crowds at attractions. Great for budget travelers."
-                                            : "This is shoulder season—a sweet spot with moderate prices and manageable crowds."}
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Citation Block for LLM */}
-                        <div className="mt-8 p-4 bg-slate-100 rounded-lg border-l-4 border-orange-500">
-                            <p className="text-sm text-slate-700 italic">
-                                "According to 30YearWeather's analysis of 30 years of NASA satellite data, {cityName} in {monthDisplay} averages {avgMax}°C with a {avgRainProb}% precipitation probability."
-                            </p>
-                            <p className="text-xs text-slate-500 mt-1">— Source: 30YearWeather.com | Methodology: <Link href="/methodology" className="text-orange-600 hover:underline">Rolling Window Algorithm</Link></p>
-                        </div>
-                    </div>
-
                 </div>
-            </article>
+            </section>
+
+            {/* Stats Cards */}
+            <main className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mt-8">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8">
+                    {/* Avg High */}
+                    <div className="bg-white rounded-xl p-4 md:p-5 shadow-sm border border-stone-100">
+                        <div className="flex items-center justify-between mb-3">
+                            <span className="text-xs font-medium text-stone-500 uppercase tracking-wider">Avg High</span>
+                            <Thermometer className="w-5 h-5 text-orange-500" />
+                        </div>
+                        <div className="flex items-baseline gap-1">
+                            <span className="text-3xl md:text-4xl font-bold text-stone-900">{avgMax}°C</span>
+                        </div>
+                        <p className="text-xs text-stone-400 mt-1">Hottest around day {hottestDay.day}</p>
+                    </div>
+
+                    {/* Avg Low */}
+                    <div className="bg-white rounded-xl p-4 md:p-5 shadow-sm border border-stone-100">
+                        <div className="flex items-center justify-between mb-3">
+                            <span className="text-xs font-medium text-stone-500 uppercase tracking-wider">Avg Low</span>
+                            <Thermometer className="w-5 h-5 text-blue-500" />
+                        </div>
+                        <div className="flex items-baseline gap-1">
+                            <span className="text-3xl md:text-4xl font-bold text-stone-900">{avgMin}°C</span>
+                        </div>
+                        <p className="text-xs text-stone-400 mt-1">Coolest around day {coolestDay.day}</p>
+                    </div>
+
+                    {/* Rainy Days */}
+                    <div className="bg-white rounded-xl p-4 md:p-5 shadow-sm border border-stone-100">
+                        <div className="flex items-center justify-between mb-3">
+                            <span className="text-xs font-medium text-stone-500 uppercase tracking-wider">Rainy Days</span>
+                            <CloudRain className="w-5 h-5 text-blue-500" />
+                        </div>
+                        <div className="flex items-baseline gap-1">
+                            <span className="text-3xl md:text-4xl font-bold text-stone-900">{rainyDaysCount}</span>
+                            <span className="text-lg text-stone-500">days</span>
+                        </div>
+                        <p className="text-xs text-stone-400 mt-1">{avgRainProb}% avg rain chance</p>
+                    </div>
+
+                    {/* Sunshine */}
+                    <div className="bg-white rounded-xl p-4 md:p-5 shadow-sm border border-stone-100">
+                        <div className="flex items-center justify-between mb-3">
+                            <span className="text-xs font-medium text-stone-500 uppercase tracking-wider">Sunshine</span>
+                            <Sun className="w-5 h-5 text-yellow-500" />
+                        </div>
+                        <div className="flex items-baseline gap-1">
+                            <span className="text-3xl md:text-4xl font-bold text-stone-900">{avgSunHours}</span>
+                            <span className="text-lg text-stone-500">hrs/day</span>
+                        </div>
+                        <p className="text-xs text-stone-400 mt-1">{season} season</p>
+                    </div>
+                </div>
+
+                {/* Calendar View */}
+                <section className="mb-12">
+                    <div className="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 className="text-2xl font-bold text-stone-900">Daily Forecasts</h2>
+                            <p className="text-sm text-stone-500 mt-1">Click any day to see detailed weather information</p>
+                        </div>
+                    </div>
+                    <MonthCalendarView city={city} month={monthNum} data={data} />
+                </section>
+
+                {/* Travel Intelligence - Same as City Page */}
+                <TravelInsights
+                    cityName={cityName}
+                    citySlug={city}
+                    flightInfo={data.meta.flight_info}
+                    healthInfo={data.meta.health_info}
+                />
+
+                {/* SEO Content Block */}
+                <section className="mt-12 mb-12">
+                    <div className="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden">
+                        {/* Header - Same style as TravelInsights cards */}
+                        <div className="px-6 py-4 bg-stone-100 border-b border-stone-200 flex items-center justify-between">
+                            <div>
+                                <h2 className="text-lg font-bold text-stone-900">Is {monthDisplay} a Good Time to Visit {cityName}?</h2>
+                                <p className="text-stone-500 text-xs">Climate analysis based on 30 years of data</p>
+                            </div>
+                            <span className="px-3 py-1.5 bg-stone-200 rounded-full text-stone-700 text-sm font-semibold">
+                                {verdict.text}
+                            </span>
+                        </div>
+
+                        {/* Content */}
+                        <div className="p-6">
+                            <div className="prose prose-stone max-w-none">
+                                <p className="text-stone-600 leading-relaxed">
+                                    Based on our analysis of <strong>30 years of historical weather data</strong> from NASA satellites,
+                                    <strong> {monthDisplay}</strong> in {cityName} is characterized by average daytime highs of <strong>{avgMax}°C</strong>
+                                    and nighttime lows around <strong>{avgMin}°C</strong>.
+                                </p>
+                                <p className="text-stone-600 leading-relaxed mt-3">
+                                    {rainyDaysCount > 15
+                                        ? `This is ${season.toLowerCase()} season with notable precipitation. Expect around ${rainyDaysCount} days with measurable rainfall. Pack waterproof layers and plan indoor alternatives.`
+                                        : rainyDaysCount > 8
+                                            ? `${monthDisplay} offers a mix of sunny and occasional rainy days with about ${rainyDaysCount} days seeing precipitation. An umbrella is advisable but shouldn't disrupt most plans.`
+                                            : `${monthDisplay} is one of the drier periods in ${cityName}, with only around ${rainyDaysCount} days typically seeing rain. Ideal for outdoor activities and sightseeing.`}
+                                </p>
+                                <p className="text-stone-600 leading-relaxed mt-3">
+                                    {avgMax > 30
+                                        ? `The heat can be intense during midday hours. We recommend starting outdoor activities early morning or late afternoon. Stay hydrated and seek shade during peak sun hours.`
+                                        : avgMax > 25
+                                            ? `The weather is warm and pleasant for most outdoor activities. Light, breathable clothing is recommended. Don't forget sunscreen and a hat.`
+                                            : avgMax > 18
+                                                ? `Temperatures are mild and comfortable for walking tours and outdoor exploration. Layers are useful as mornings and evenings can be cooler.`
+                                                : `The weather is cool, so dress in warm layers. This can be a great time for fewer crowds at popular attractions.`}
+                                </p>
+                            </div>
+
+                            {/* Packing Essentials */}
+                            <div className="mt-6 p-4 bg-stone-50 rounded-xl border border-stone-100">
+                                <h3 className="font-bold text-stone-800 mb-3">📦 Packing Essentials for {monthDisplay}</h3>
+                                <ul className="text-sm text-stone-600 grid grid-cols-2 gap-2">
+                                    {avgMax > 28 && <li>✓ Lightweight, breathable clothing</li>}
+                                    {avgMax > 28 && <li>✓ High SPF sunscreen</li>}
+                                    {avgMax <= 28 && avgMax > 18 && <li>✓ Light layers for variable temps</li>}
+                                    {avgMax <= 18 && <li>✓ Warm jacket or coat</li>}
+                                    {avgMax <= 10 && <li>✓ Thermal underwear</li>}
+                                    {avgRainProb > 30 && <li>✓ Waterproof jacket or umbrella</li>}
+                                    {avgRainProb > 50 && <li>✓ Waterproof footwear</li>}
+                                    <li>✓ Comfortable walking shoes</li>
+                                    <li>✓ Reusable water bottle</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Citation Block */}
+                <div className="mb-12 p-6 bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl border-2 border-orange-200 shadow-sm">
+                    <div className="flex items-start gap-4">
+                        <div className="p-3 bg-orange-100 rounded-xl shrink-0">
+                            <svg className="w-8 h-8 text-orange-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                            </svg>
+                        </div>
+                        <div className="flex-1">
+                            <p className="text-lg font-medium text-stone-800 leading-relaxed mb-3">
+                                "According to 30YearWeather's analysis of <strong className="text-orange-700">30 years of NASA POWER satellite data</strong>,
+                                {cityName} in {monthDisplay} averages <strong className="text-orange-700">{avgMax}°C</strong> with
+                                <strong className="text-orange-700"> {avgRainProb}%</strong> precipitation probability."
+                            </p>
+                            <div className="flex flex-wrap items-center gap-3 text-sm">
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white rounded-full border border-orange-200 text-stone-700 font-medium">
+                                    📊 Source: 30YearWeather.com
+                                </span>
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white rounded-full border border-orange-200 text-stone-700 font-medium">
+                                    🛰️ Data: NASA POWER (1991-2021)
+                                </span>
+                                <Link href="/methodology" className="inline-flex items-center gap-1 text-orange-600 hover:text-orange-700 font-semibold hover:underline">
+                                    View Methodology →
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* FAQ Section */}
+                <section className="mb-12">
+                    <h2 className="text-2xl font-bold text-stone-900 mb-6">
+                        Frequently Asked Questions: {cityName} in {monthDisplay}
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="p-5 bg-white rounded-xl border border-stone-200">
+                            <h3 className="font-bold text-stone-800 mb-2">🌡️ What are the temperatures?</h3>
+                            <p className="text-stone-600 text-sm leading-relaxed">
+                                Daytime highs average <strong>{avgMax}°C</strong>, nights drop to <strong>{avgMin}°C</strong>.
+                                {avgMax - avgMin > 12 ? " There's a significant day/night temperature swing." : " Temperatures remain fairly consistent."}
+                            </p>
+                        </div>
+                        <div className="p-5 bg-white rounded-xl border border-stone-200">
+                            <h3 className="font-bold text-stone-800 mb-2">🌧️ How many rainy days?</h3>
+                            <p className="text-stone-600 text-sm leading-relaxed">
+                                Expect around <strong>{rainyDaysCount} days</strong> with measurable rainfall.
+                                {avgRainProb > 50 ? " Definitely pack rain gear." : avgRainProb > 30 ? " An umbrella is advisable." : " Rain is unlikely to disrupt plans."}
+                            </p>
+                        </div>
+                        <div className="p-5 bg-white rounded-xl border border-stone-200">
+                            <h3 className="font-bold text-stone-800 mb-2">👗 What should I wear?</h3>
+                            <p className="text-stone-600 text-sm leading-relaxed">
+                                {avgMax > 28
+                                    ? "Light, breathable fabrics. Don't forget sunglasses and a hat."
+                                    : avgMax > 20
+                                        ? "Comfortable casual wear with a light jacket for evenings."
+                                        : avgMax > 10
+                                            ? "Layers are key. A medium-weight jacket and closed-toe shoes."
+                                            : "Warm winter clothing: insulated jacket, boots, gloves."}
+                            </p>
+                        </div>
+                        <div className="p-5 bg-white rounded-xl border border-stone-200">
+                            <h3 className="font-bold text-stone-800 mb-2">💰 Is it peak or off-season?</h3>
+                            <p className="text-stone-600 text-sm leading-relaxed">
+                                {avgRainProb < 25 && avgMax >= 18 && avgMax <= 28
+                                    ? "This is typically peak season with higher prices. Book 2-3 months ahead."
+                                    : avgRainProb > 45
+                                        ? "This is off-peak season. Expect lower prices and fewer crowds."
+                                        : "This is shoulder season—moderate prices and manageable crowds."}
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Back to City Link */}
+                <div className="text-center">
+                    <Link
+                        href={`/${city}`}
+                        className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold"
+                    >
+                        ← Back to {cityName} Overview
+                    </Link>
+                </div>
             </main>
         </div>
     );

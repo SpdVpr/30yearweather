@@ -3,7 +3,7 @@ import os
 import sys
 
 # Configuration
-API_KEY = "ZZYYK-I_5-AUne-V2k5YOA0O8UIBAJGDx51CgiTekioQ61VekIsU3ZL9FQAKg8UfHD8ny5jWgKxqMmEm-HdTxg"
+API_KEY = os.getenv("IDEOGRAM_API_KEY")
 # Using the generally compatible endpoint. If 2.0/3.0 specific is needed, we might need to adjust.
 # Based on search results, V2 endpoint is commonly https://api.ideogram.ai/generate
 API_URL = "https://api.ideogram.ai/generate"

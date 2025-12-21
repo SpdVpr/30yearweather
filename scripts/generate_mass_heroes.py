@@ -5,7 +5,7 @@ import time
 import json
 
 # Configuration
-API_KEY = "ZZYYK-I_5-AUne-V2k5YOA0O8UIBAJGDx51CgiTekioQ61VekIsU3ZL9FQAKg8UfHD8ny5jWgKxqMmEm-HdTxg"
+API_KEY = os.getenv("IDEOGRAM_API_KEY")
 API_URL = "https://api.ideogram.ai/generate"
 
 # Project Paths

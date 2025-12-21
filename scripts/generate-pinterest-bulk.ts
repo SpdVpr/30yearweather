@@ -188,8 +188,8 @@ async function main() {
             const outputPath = path.join(outputDir, `${slug}.png`);
             await fs.writeFile(outputPath, buffer);
 
-            // Add to CSV
-            const imageUrl = `${BASE_URL}/pinterest/${slug}.png`;
+            // Add to CSV - with cache busting to force Pinterest to refetch
+            const imageUrl = `${BASE_URL}/pinterest/${slug}.png?v=2`;
             const title = `Best Time to Visit ${cityName} - 30 Year Weather Analysis`;
             const description = `Planning a ${cityName} trip? Based on 30 years of NASA data:\\n✨ Best: ${cityData.bestMonths.join(' & ')}\\n🌡️ ${cityData.avgTempMin}-${cityData.avgTempMax}°C\\n🌧️ ${cityData.rainProbability}% rain\\n\\n#${slug.replace(/-/g, '')} #besttimetovisit #travelplanning`;
             const link = `${BASE_URL}/${slug}?utm_source=pinterest&utm_medium=pin&utm_campaign=bulk`;
