@@ -108,7 +108,7 @@ export default function DayTravelInfo({
 
                 {/* Card 2: Traffic Pressure */}
                 <StatCard
-                    title="Tourist Traffic"
+                    title="Flight Traffic"
                     value={pressure.label}
                     subtext={`${monthlyPressureScore}/100 pressure index`}
                     icon={<Plane className="w-5 h-5 text-blue-500" />}
