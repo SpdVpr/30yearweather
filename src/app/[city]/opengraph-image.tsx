@@ -58,6 +58,31 @@ export default async function Image({ params }: { params: { city: string } }) {
             .slice(0, 3)
             .map(m => monthNames[m.idx]);
 
+        // Check if PNG hero image exists (try HEAD request)
+        let heroImageUrl: string | null = null;
+        try {
+            const pngUrl = `${baseUrl}/images/${city}-hero.png`;
+            const pngCheck = await fetch(pngUrl, { method: 'HEAD' });
+            if (pngCheck.ok) {
+                heroImageUrl = pngUrl;
+            }
+        } catch {
+            // PNG doesn't exist, try webp
+        }
+
+        // If no PNG, try WebP
+        if (!heroImageUrl) {
+            try {
+                const webpUrl = `${baseUrl}/images/${city}-hero.webp`;
+                const webpCheck = await fetch(webpUrl, { method: 'HEAD' });
+                if (webpCheck.ok) {
+                    heroImageUrl = webpUrl;
+                }
+            } catch {
+                // WebP doesn't exist either
+            }
+        }
+
         return new ImageResponse(
             (
                 <div style={{
@@ -66,165 +91,211 @@ export default async function Image({ params }: { params: { city: string } }) {
                     display: 'flex',
                     flexDirection: 'column',
                     background: 'linear-gradient(145deg, #1c1917 0%, #292524 50%, #44403c 100%)',
-                    padding: '50px',
+                    position: 'relative',
                 }}>
-                    {/* Header */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                            <div style={{
-                                width: '52px',
-                                height: '52px',
-                                borderRadius: '12px',
-                                background: 'linear-gradient(135deg, #ea580c 0%, #f97316 100%)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                            }}>
-                                <span style={{ fontSize: '24px', color: 'white', fontWeight: 'bold' }}>30</span>
-                            </div>
-                            <span style={{ fontSize: '26px', color: '#a8a29e', fontWeight: '600' }}>30YearWeather</span>
-                        </div>
-                        <div style={{
-                            background: 'rgba(255,255,255,0.1)',
-                            padding: '10px 20px',
-                            borderRadius: '24px',
-                            fontSize: '16px',
-                            color: '#d6d3d1',
-                        }}>
-                            📊 30 years of climate data
-                        </div>
-                    </div>
+                    {/* Background Image - only if URL is available */}
+                    {heroImageUrl && (
+                        <img
+                            src={heroImageUrl}
+                            alt=""
+                            width={1200}
+                            height={630}
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                            }}
+                        />
+                    )}
 
-                    {/* Main content */}
-                    <div style={{ display: 'flex', flex: 1, gap: '40px' }}>
-                        {/* Left side: City info */}
-                        <div style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center' }}>
-                            <span style={{ fontSize: '72px', marginBottom: '0' }}>🌍</span>
-                            <h1 style={{
-                                fontSize: '72px',
-                                fontWeight: 'bold',
-                                color: 'white',
-                                margin: '10px 0 0 0',
-                                lineHeight: 1.1,
-                            }}>
-                                {cityName}
-                            </h1>
-                            <div style={{
-                                fontSize: '28px',
-                                color: '#a8a29e',
-                                marginTop: '8px',
-                            }}>
-                                {country}
-                            </div>
-                            <div style={{
-                                fontSize: '22px',
-                                color: '#78716c',
-                                marginTop: '20px',
-                            }}>
-                                365-Day Weather Forecast
-                            </div>
+                    {/* Dark overlay for readability */}
+                    <div style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        background: heroImageUrl
+                            ? 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.85) 100%)'
+                            : 'transparent',
+                    }} />
 
-                            {/* Best months badge */}
-                            {bestMonths.length > 0 && (
+                    {/* Content Wrapper */}
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        width: '100%',
+                        height: '100%',
+                        padding: '50px',
+                        position: 'relative',
+                    }}>
+                        {/* Header */}
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                                 <div style={{
-                                    marginTop: '24px',
+                                    width: '52px',
+                                    height: '52px',
+                                    borderRadius: '12px',
+                                    background: 'linear-gradient(135deg, #ea580c 0%, #f97316 100%)',
                                     display: 'flex',
                                     alignItems: 'center',
-                                    gap: '12px',
+                                    justifyContent: 'center',
                                 }}>
-                                    <span style={{ fontSize: '16px', color: '#22c55e' }}>✨ Best time to visit:</span>
-                                    <span style={{
-                                        fontSize: '18px',
-                                        color: '#22c55e',
-                                        background: 'rgba(34, 197, 94, 0.15)',
-                                        padding: '6px 16px',
-                                        borderRadius: '20px',
-                                        fontWeight: '600',
+                                    <span style={{ fontSize: '24px', color: 'white', fontWeight: 'bold' }}>30</span>
+                                </div>
+                                <span style={{ fontSize: '26px', color: '#a8a29e', fontWeight: '600' }}>30YearWeather</span>
+                            </div>
+                            <div style={{
+                                background: 'rgba(255,255,255,0.1)',
+                                padding: '10px 20px',
+                                borderRadius: '24px',
+                                fontSize: '16px',
+                                color: '#d6d3d1',
+                            }}>
+                                📊 30 years of climate data
+                            </div>
+                        </div>
+
+                        {/* Main content */}
+                        <div style={{ display: 'flex', flex: 1, gap: '40px' }}>
+                            {/* Left side: City info */}
+                            <div style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center' }}>
+                                <span style={{ fontSize: '72px', marginBottom: '0' }}>🌍</span>
+                                <h1 style={{
+                                    fontSize: '72px',
+                                    fontWeight: 'bold',
+                                    color: 'white',
+                                    margin: '10px 0 0 0',
+                                    lineHeight: 1.1,
+                                    textShadow: heroImageUrl ? '0 4px 20px rgba(0,0,0,0.5)' : 'none',
+                                }}>
+                                    {cityName}
+                                </h1>
+                                <div style={{
+                                    fontSize: '28px',
+                                    color: '#a8a29e',
+                                    marginTop: '8px',
+                                    textShadow: heroImageUrl ? '0 2px 10px rgba(0,0,0,0.5)' : 'none',
+                                }}>
+                                    {country}
+                                </div>
+                                <div style={{
+                                    fontSize: '22px',
+                                    color: '#78716c',
+                                    marginTop: '20px',
+                                }}>
+                                    365-Day Weather Forecast
+                                </div>
+
+                                {/* Best months badge */}
+                                {bestMonths.length > 0 && (
+                                    <div style={{
+                                        marginTop: '24px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '12px',
                                     }}>
-                                        {bestMonths.join(', ')}
-                                    </span>
+                                        <span style={{ fontSize: '16px', color: '#22c55e' }}>✨ Best time to visit:</span>
+                                        <span style={{
+                                            fontSize: '18px',
+                                            color: '#22c55e',
+                                            background: 'rgba(34, 197, 94, 0.15)',
+                                            padding: '6px 16px',
+                                            borderRadius: '20px',
+                                            fontWeight: '600',
+                                        }}>
+                                            {bestMonths.join(', ')}
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Right side: Climate overview */}
+                            <div style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                gap: '16px',
+                                minWidth: '360px',
+                            }}>
+                                {/* Hottest month */}
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    background: heroImageUrl ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.05)',
+                                    borderRadius: '16px',
+                                    padding: '20px 28px',
+                                    gap: '20px',
+                                    border: heroImageUrl ? '1px solid rgba(255,255,255,0.2)' : 'none',
+                                }}>
+                                    <span style={{ fontSize: '36px' }}>🔥</span>
+                                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                        <span style={{ fontSize: '14px', color: '#a8a29e', marginBottom: '4px' }}>HOTTEST MONTH</span>
+                                        <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
+                                            <span style={{ fontSize: '36px', fontWeight: 'bold', color: '#f97316' }}>{monthNames[hottestMonth.idx]}</span>
+                                            <span style={{ fontSize: '24px', color: '#fbbf24' }}>{hottestMonth.temp}°C</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            )}
+
+                                {/* Coldest month */}
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    background: heroImageUrl ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.05)',
+                                    borderRadius: '16px',
+                                    padding: '20px 28px',
+                                    gap: '20px',
+                                    border: heroImageUrl ? '1px solid rgba(255,255,255,0.2)' : 'none',
+                                }}>
+                                    <span style={{ fontSize: '36px' }}>❄️</span>
+                                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                        <span style={{ fontSize: '14px', color: '#a8a29e', marginBottom: '4px' }}>COLDEST MONTH</span>
+                                        <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
+                                            <span style={{ fontSize: '36px', fontWeight: 'bold', color: '#60a5fa' }}>{monthNames[coldestMonth.idx]}</span>
+                                            <span style={{ fontSize: '24px', color: '#93c5fd' }}>{coldestMonth.temp}°C</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Driest month */}
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    background: heroImageUrl ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.05)',
+                                    borderRadius: '16px',
+                                    padding: '20px 28px',
+                                    gap: '20px',
+                                    border: heroImageUrl ? '1px solid rgba(255,255,255,0.2)' : 'none',
+                                }}>
+                                    <span style={{ fontSize: '36px' }}>☀️</span>
+                                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                        <span style={{ fontSize: '14px', color: '#a8a29e', marginBottom: '4px' }}>DRIEST MONTH</span>
+                                        <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
+                                            <span style={{ fontSize: '36px', fontWeight: 'bold', color: '#22c55e' }}>{monthNames[driestMonth.idx]}</span>
+                                            <span style={{ fontSize: '24px', color: '#86efac' }}>{driestMonth.rain}% rain</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        {/* Right side: Climate overview */}
+                        {/* Footer */}
                         <div style={{
+                            borderTop: '1px solid rgba(255,255,255,0.1)',
+                            paddingTop: '20px',
+                            marginTop: '20px',
                             display: 'flex',
-                            flexDirection: 'column',
                             justifyContent: 'center',
-                            gap: '16px',
-                            minWidth: '360px',
                         }}>
-                            {/* Hottest month */}
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                background: 'rgba(255,255,255,0.05)',
-                                borderRadius: '16px',
-                                padding: '20px 28px',
-                                gap: '20px',
-                            }}>
-                                <span style={{ fontSize: '36px' }}>🔥</span>
-                                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                    <span style={{ fontSize: '14px', color: '#a8a29e', marginBottom: '4px' }}>HOTTEST MONTH</span>
-                                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
-                                        <span style={{ fontSize: '36px', fontWeight: 'bold', color: '#f97316' }}>{monthNames[hottestMonth.idx]}</span>
-                                        <span style={{ fontSize: '24px', color: '#fbbf24' }}>{hottestMonth.temp}°C</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Coldest month */}
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                background: 'rgba(255,255,255,0.05)',
-                                borderRadius: '16px',
-                                padding: '20px 28px',
-                                gap: '20px',
-                            }}>
-                                <span style={{ fontSize: '36px' }}>❄️</span>
-                                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                    <span style={{ fontSize: '14px', color: '#a8a29e', marginBottom: '4px' }}>COLDEST MONTH</span>
-                                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
-                                        <span style={{ fontSize: '36px', fontWeight: 'bold', color: '#60a5fa' }}>{monthNames[coldestMonth.idx]}</span>
-                                        <span style={{ fontSize: '24px', color: '#93c5fd' }}>{coldestMonth.temp}°C</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Driest month */}
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                background: 'rgba(255,255,255,0.05)',
-                                borderRadius: '16px',
-                                padding: '20px 28px',
-                                gap: '20px',
-                            }}>
-                                <span style={{ fontSize: '36px' }}>☀️</span>
-                                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                    <span style={{ fontSize: '14px', color: '#a8a29e', marginBottom: '4px' }}>DRIEST MONTH</span>
-                                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
-                                        <span style={{ fontSize: '36px', fontWeight: 'bold', color: '#22c55e' }}>{monthNames[driestMonth.idx]}</span>
-                                        <span style={{ fontSize: '24px', color: '#86efac' }}>{driestMonth.rain}% rain</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <span style={{ fontSize: '18px', color: '#78716c' }}>
+                                🌐 30yearweather.com/{city}
+                            </span>
                         </div>
-                    </div>
-
-                    {/* Footer */}
-                    <div style={{
-                        borderTop: '1px solid rgba(255,255,255,0.1)',
-                        paddingTop: '20px',
-                        marginTop: '20px',
-                        display: 'flex',
-                        justifyContent: 'center',
-                    }}>
-                        <span style={{ fontSize: '18px', color: '#78716c' }}>
-                            🌐 30yearweather.com/{city}
-                        </span>
                     </div>
                 </div>
             ),
