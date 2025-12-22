@@ -85,7 +85,7 @@ export default function Header({ breadcrumb }: HeaderProps) {
 
                 <div className="flex items-center gap-3 md:gap-6 shrink-0">
                     <Link
-                        href="/finder"
+                        href="/#cities"
                         className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-orange-600 text-white text-[11px] md:text-xs font-black hover:bg-orange-700 transition-colors shadow-sm hover:shadow-orange-500/20"
                     >
                         <Search className="w-3 h-3 md:w-4 md:h-4" />
