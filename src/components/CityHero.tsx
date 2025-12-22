@@ -56,7 +56,7 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
     const nextDay = nextObj.getDate();
 
     return (
-        <div className="relative h-[70vh] w-full overflow-hidden group pt-16 md:pt-24">
+        <div className="relative min-h-[500px] h-[70vh] w-full overflow-hidden group pt-16 md:pt-24">
             {/* Background Image */}
             <Image
                 src={heroImage}
@@ -64,8 +64,8 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
                 fill
                 className="object-cover"
                 priority
-                quality={90}
-                sizes="100vw"
+                quality={60}
+                sizes="(max-width: 768px) 100vw, 100vw"
             />
 
             {/* Overlay */}
