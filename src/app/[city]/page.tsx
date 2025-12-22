@@ -11,6 +11,7 @@ import type { Metadata } from 'next';
 import CityPageTracker from "@/components/CityPageTracker";
 import Header from "@/components/common/Header";
 import TravelInsights from "@/components/TravelInsights";
+import LazyMap from "@/components/LazyMap";
 
 // 1. Dynamic Metadata
 export async function generateMetadata({ params }: { params: { city: string } }): Promise<Metadata> {
@@ -492,14 +493,11 @@ export default async function CityIndexPage({
                                 <div className="lg:col-span-1">
                                     <div className="rounded-xl overflow-hidden border border-stone-200 h-full flex flex-col">
                                         <div className="flex-1 min-h-[280px] bg-stone-100 relative">
-                                            <iframe
-                                                className="absolute inset-0 w-full h-full"
-                                                style={{ border: 0 }}
-                                                loading="lazy"
-                                                allowFullScreen
-                                                title={`Map of ${data.meta.name}, ${data.meta.country}`}
-                                                src={`https://maps.google.com/maps?q=${data.meta.lat},${data.meta.lon}&hl=en&z=8&output=embed`}
-                                            ></iframe>
+                                            <LazyMap
+                                                lat={data.meta.lat}
+                                                lon={data.meta.lon}
+                                                name={`${data.meta.name}, ${data.meta.country}`}
+                                            />
                                         </div>
                                         <div className="p-3 bg-stone-50 border-t border-stone-200">
                                             <p className="text-xs text-stone-600 mb-1">
