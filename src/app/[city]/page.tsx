@@ -303,6 +303,13 @@ export default async function CityIndexPage({
 
             {/* Hero Section - Full width on mobile, boxed on desktop */}
             <section className="relative pt-16 md:pt-24 max-w-7xl mx-auto md:px-6 lg:px-8">
+                {/* Desktop Breadcrumbs (above hero) */}
+                <nav className="hidden md:flex items-center gap-2 text-xs text-stone-500 mb-4" aria-label="Breadcrumb">
+                    <Link href="/" className="hover:text-stone-900 transition-colors">Home</Link>
+                    <span>/</span>
+                    <span className="text-stone-900 font-medium">{data.meta.name}</span>
+                </nav>
+
                 <div className="relative h-[500px] md:h-[500px] w-full overflow-hidden rounded-none md:rounded-2xl">
                     <Image
                         src={heroImage}
@@ -316,7 +323,7 @@ export default async function CityIndexPage({
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
 
                     <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12 max-w-7xl mx-auto">
-                        <nav className="flex items-center gap-2 text-xs text-white/70 mb-4" aria-label="Breadcrumb">
+                        <nav className="flex md:hidden items-center gap-2 text-xs text-white/70 mb-4" aria-label="Breadcrumb">
                             <Link href="/" className="hover:text-white transition-colors">Home</Link>
                             <span>/</span>
                             <span className="text-white font-medium">{data.meta.name}</span>
