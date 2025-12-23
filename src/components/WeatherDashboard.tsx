@@ -365,6 +365,7 @@ export default function WeatherDashboard({
                             <SafetyProfileCard
                                 safetyProfile={safetyProfile}
                                 cityName={cityName}
+                                currentMonth={month}
                             />
                         </div>
                     )}

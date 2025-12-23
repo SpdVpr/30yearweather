@@ -46,6 +46,8 @@ export interface SeismicRisk {
     max_magnitude: number | null;
     seismic_score: number;
     risk_level: "Stable" | "Low" | "Medium" | "High" | "Very High" | "Unknown";
+    last_event?: string;
+    monthly_distribution?: Record<number, number>;
 }
 
 export interface HurricaneRisk {
