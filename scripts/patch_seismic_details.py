@@ -74,10 +74,7 @@ def process_city(filename):
         safety = meta.get('safety_profile', {})
         seismic = safety.get('seismic', {})
         
-        # Skip if already has detailed data or no seismic data
-        if 'monthly_distribution' in seismic:
-            print(f"Skipping {filename} (already updated)")
-            return
+        # Force refresh all cities (no skip)
             
         lat = meta.get('lat')
         lon = meta.get('lon')

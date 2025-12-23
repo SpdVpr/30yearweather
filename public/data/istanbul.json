@@ -6,7 +6,7 @@
     "lon": 28.9784,
     "is_coastal": true,
     "timezone": "Europe/Istanbul",
-    "last_updated": "2025-12-20T11:32:35.921806",
+    "last_updated": "2025-12-23T09:08:28.586666",
     "geo_info": {
       "elevation": 36.0,
       "is_high_altitude": false,
@@ -52,18 +52,18 @@
         "elevation": 36.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 0.1,
-          "max_discharge": 0.1,
+          "avg_discharge": 0.2,
+          "max_discharge": 0.5,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 151,
-        "pm25": 16.8,
-        "pm10": 21.7,
-        "category": "Unhealthy",
-        "health_note": "Unhealthy. Everyone should reduce outdoor activities.",
+        "aqi": 61,
+        "pm25": 22.9,
+        "pm10": 26.7,
+        "category": "Moderate",
+        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"
       }
     },

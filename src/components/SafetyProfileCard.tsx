@@ -136,27 +136,82 @@ export default function SafetyProfileCard({ safetyProfile, cityName, currentMont
         ? seismic.monthly_distribution[currentMonth]
         : null;
 
-    const seismicExpanded = (seismic.last_event || monthlySeismicCount !== null) && (
-        <div className="flex flex-col gap-1">
+    // Human-friendly seismic advice based on risk level
+    const getSeismicAdvice = (level: string, count: number) => {
+        if (level === 'Stable') return "No earthquake preparedness needed. Enjoy your stay!";
+        if (level === 'Low') return "Very rare tremors. Standard travel precautions apply.";
+        if (level === 'Medium') return "Occasional tremors possible. Know your hotel's evacuation route.";
+        if (level === 'High') return "Earthquake risk elevated. Download a seismic alert app.";
+        return "High seismic zone. Familiarize yourself with 'Drop, Cover, Hold On' procedures.";
+    };
+
+    const seismicExpanded = (
+        <div className="flex flex-col gap-1.5">
+            {/* Always show 30y total */}
+            <div className="flex justify-between">
+                <span>Total events (30y):</span>
+                <span className="font-semibold">{seismic.count_30y || 0}</span>
+            </div>
+            {/* Show monthly if available */}
             {monthlySeismicCount !== null && (
                 <div className="flex justify-between">
-                    <span>Events in {getMonthName(currentMonth)} (30y):</span>
+                    <span>In {getMonthName(currentMonth)}:</span>
                     <span className="font-semibold">{monthlySeismicCount}</span>
                 </div>
             )}
+            {/* Last event */}
             {seismic.last_event && (
                 <div className="flex justify-between">
                     <span>Last recorded:</span>
                     <span className="font-semibold">{seismic.last_event}</span>
                 </div>
             )}
-            {/* Fallback to 30y total if no monthly data but we have last event */}
-            {monthlySeismicCount === null && (
-                <div className="flex justify-between border-t border-slate-200/50 pt-1 mt-1">
-                    <span>Total (30y):</span>
-                    <span className="font-semibold">{seismic.count_30y}</span>
+            {/* Human advice */}
+            <div className="mt-1.5 pt-1.5 border-t border-slate-200/50 text-[11px] italic text-slate-500">
+                💡 {getSeismicAdvice(seismic.risk_level, seismic.count_30y || 0)}
+            </div>
+        </div>
+    );
+
+    // --- Logic for Flood Risk ---
+
+    // Human-friendly flood advice
+    const getFloodAdvice = (level: string) => {
+        if (level === 'Minimal' || level === 'Low') return "Flooding is rare. No special precautions needed.";
+        if (level === 'Medium') return "Flash floods possible during heavy rain. Avoid low-lying areas.";
+        return "High flood risk. Check weather forecasts daily and know evacuation routes.";
+    };
+
+    // Extract meaningful flood info
+    const floodExpanded = flood && (
+        <div className="flex flex-col gap-1.5">
+            {/* Risk score if available */}
+            {flood.risk_score !== undefined && (
+                <div className="flex justify-between">
+                    <span>Risk score:</span>
+                    <span className="font-semibold">{flood.risk_score}/100</span>
                 </div>
             )}
+            {/* Elevation context */}
+            {flood.elevation !== null && flood.elevation !== undefined && (
+                <div className="flex justify-between">
+                    <span>Elevation:</span>
+                    <span className="font-semibold">{flood.elevation}m</span>
+                </div>
+            )}
+            {/* All risk factors */}
+            {flood.risk_factors && flood.risk_factors.length > 1 && (
+                <div className="mt-1 pt-1 border-t border-slate-200/50">
+                    <span className="text-[10px] uppercase tracking-wider text-slate-400 mb-1 block">Risk factors:</span>
+                    {flood.risk_factors.slice(0, 3).map((factor, i) => (
+                        <div key={i} className="text-[11px] text-slate-500">• {factor}</div>
+                    ))}
+                </div>
+            )}
+            {/* Human advice */}
+            <div className="mt-1.5 pt-1.5 border-t border-slate-200/50 text-[11px] italic text-slate-500">
+                💡 {getFloodAdvice(flood.risk_level)}
+            </div>
         </div>
     );
 
@@ -240,8 +295,7 @@ export default function SafetyProfileCard({ safetyProfile, cityName, currentMont
                             title="Seismic Activity"
                             level={seismic.risk_level}
                             detail={getSeismicMessage(seismic.risk_level)}
-                            subDetail={`${seismic.count_30y} events in 30y`}
-                            expandedDetail={seismicExpanded} // Use the new expanded detail
+                            expandedDetail={seismicExpanded}
                         />
 
                         {/* Hurricane / Storms */}
@@ -258,10 +312,11 @@ export default function SafetyProfileCard({ safetyProfile, cityName, currentMont
                         {/* Floods */}
                         {flood && (
                             <RiskItem
-                                icon={Waves} // Changed from Droplets to Waves for better semantics, fallbacks to icons
+                                icon={Waves}
                                 title="Flood Risk"
                                 level={flood.risk_level}
-                                detail={flood.risk_factors?.[0] || "No major flood risks detected."}
+                                detail={getFloodMessage(flood.risk_level)}
+                                expandedDetail={floodExpanded}
                             />
                         )}
 
@@ -297,9 +352,18 @@ export default function SafetyProfileCard({ safetyProfile, cityName, currentMont
 
 // Helper Text Generators
 function getSeismicMessage(level: string) {
-    if (level === 'Stable' || level === 'Low') return "Region is geologically stable.";
-    if (level === 'Medium') return "Occasional moderate tremors reported.";
-    return "Region is seismically active. Preparedness advised.";
+    if (level === 'Stable') return "Zero seismic activity detected in 30 years.";
+    if (level === 'Low') return "Rare minor tremors. Buildings are earthquake-resistant.";
+    if (level === 'Medium') return "Moderate seismic activity. Occasional tremors possible.";
+    if (level === 'High') return "Active seismic zone. Multiple earthquakes per year.";
+    return "Very high seismic risk. Ring of Fire territory.";
+}
+
+function getFloodMessage(level: string) {
+    if (level === 'Minimal') return "Minimal flood risk. Well-drained terrain.";
+    if (level === 'Low') return "Low flood risk. Rare flash flood events.";
+    if (level === 'Medium') return "Moderate flood risk during monsoon/rainy season.";
+    return "High flood risk. Check local weather alerts.";
 }
 
 function getMonthName(month?: number): string {

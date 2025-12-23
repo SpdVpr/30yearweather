@@ -799,7 +799,14 @@ def fetch_earthquake_data(lat, lon, start_date, end_date, radius_km=100, min_mag
         min_magnitude: Minimum earthquake magnitude (default: 4.0)
 
     Returns:
-        dict with earthquake statistics
+        dict with earthquake statistics including:
+        - count_30y: Total earthquakes in period
+        - avg_per_year: Average earthquakes per year
+        - max_magnitude: Maximum recorded magnitude
+        - seismic_score: Stability score (0-100)
+        - risk_level: Risk classification
+        - last_event: Date of most recent earthquake (YYYY-MM-DD)
+        - monthly_distribution: Dict {1-12: count} of earthquakes per month
     """
     # Convert dates to strings if they are date objects
     if isinstance(start_date, datetime.date):
@@ -839,12 +846,27 @@ def fetch_earthquake_data(lat, lon, start_date, end_date, radius_km=100, min_mag
                 "avg_per_year": 0,
                 "max_magnitude": None,
                 "seismic_score": 100,
-                "risk_level": "Stable"
+                "risk_level": "Stable",
+                "last_event": None,
+                "monthly_distribution": {i: 0 for i in range(1, 13)}
             }
 
-        # Extract magnitudes
-        magnitudes = [f["properties"]["mag"] for f in data["features"]]
+        # Extract magnitudes and timestamps
+        features = data["features"]
+        magnitudes = [f["properties"]["mag"] for f in features]
         max_mag = max(magnitudes)
+
+        # Sort by time descending to get last event
+        features_sorted = sorted(features, key=lambda x: x["properties"]["time"], reverse=True)
+        last_event_ts = features_sorted[0]["properties"]["time"]
+        last_event_date = datetime.datetime.fromtimestamp(last_event_ts / 1000).strftime('%Y-%m-%d')
+
+        # Calculate monthly distribution
+        monthly_distribution = {i: 0 for i in range(1, 13)}
+        for f in features:
+            ts = f["properties"]["time"]
+            event_date = datetime.datetime.fromtimestamp(ts / 1000)
+            monthly_distribution[event_date.month] += 1
 
         # Calculate years span
         years_span = (datetime.datetime.strptime(end_date_str, "%Y-%m-%d") -
@@ -869,13 +891,16 @@ def fetch_earthquake_data(lat, lon, start_date, end_date, radius_km=100, min_mag
             risk_level = "Very High"
 
         print(f"   📊 Seismic Score: {seismic_score}/100 ({risk_level} risk)")
+        print(f"   📅 Last earthquake: {last_event_date}")
 
         return {
             "count_30y": count,
             "avg_per_year": round(avg_per_year, 1),
             "max_magnitude": round(max_mag, 1),
             "seismic_score": seismic_score,
-            "risk_level": risk_level
+            "risk_level": risk_level,
+            "last_event": last_event_date,
+            "monthly_distribution": monthly_distribution
         }
 
     except Exception as e:
@@ -885,7 +910,9 @@ def fetch_earthquake_data(lat, lon, start_date, end_date, radius_km=100, min_mag
             "avg_per_year": None,
             "max_magnitude": None,
             "seismic_score": None,
-            "risk_level": "Unknown"
+            "risk_level": "Unknown",
+            "last_event": None,
+            "monthly_distribution": None
         }
 
 def fetch_weather_data(lat, lon, start_date, end_date, slug):

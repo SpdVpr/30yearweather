@@ -17,9 +17,9 @@ You need the following information:
 
 ## Step 1: Update Backend ETL Scripts
 
-### 1.1 Add City to Weather ETL (`backend/etl_main.py`)
+### 1.1 Add City to Weather ETL (`backend/config.py`)
 
-Add the new city to the `LOCATIONS` list:
+Add the new city to the `LOCATIONS` dictionary:
 
 ```python
 LOCATIONS = [
@@ -70,20 +70,18 @@ LOCATIONS = [
 // turbo
 ### 2.1 Generate Weather Data
 ```bash
-cd backend
-python etl_main.py
+python backend/etl.py
 ```
 
-This will create: `frontend/public/data/berlin-de.json`
+This will create: `public/data/berlin-de.json`
 
 // turbo
 ### 2.2 Generate Tourism Data
 ```bash
-cd backend
-python etl_tourism.py
+python fix_missing_tourism.py
 ```
 
-This will create: `backend/data/tourism/berlin-de_tourism.json` and upload to Firestore.
+This will create: `backend/data/tourism/berlin-de_tourism.json`.
 
 ## Step 3: Add City Image (Optional but Recommended)
 
@@ -154,7 +152,7 @@ Once verified locally:
 - **Solution:** Check that `frontend/public/data/[slug].json` exists with valid data
 
 **Issue:** Tourism data missing
-- **Solution:** Check Firestore console for `tourism/[slug]` document
+- **Solution:** Run `python fix_missing_tourism.py` again or check `backend/data/tourism/[slug]_tourism.json`
 
 **Issue:** Image not loading
 - **Solution:** Verify image path and filename match exactly (case-sensitive)
@@ -162,8 +160,8 @@ Once verified locally:
 ## Bulk Adding Cities
 
 To add multiple cities at once:
-1. Update both `LOCATIONS` arrays in `etl_main.py` and `etl_tourism.py`
-2. Run both ETL scripts once
+1. Update `LOCATIONS` dictionary in `backend/config.py`
+2. Run `python backend/etl.py` then `python fix_missing_tourism.py`
 3. Add all city images to `public/images/`
 4. Update the image mapping in `page.tsx` with a switch/object lookup
 

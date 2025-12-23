@@ -6,7 +6,7 @@
     "lon": 19.945,
     "is_coastal": false,
     "timezone": "Europe/Warsaw",
-    "last_updated": "2025-12-20T11:33:00.340918",
+    "last_updated": "2025-12-23T09:08:52.560657",
     "geo_info": {
       "elevation": 215.0,
       "is_high_altitude": false,
@@ -49,19 +49,19 @@
         ],
         "elevation": 215.0,
         "api_data": {
-          "risk_level": "Low",
-          "avg_discharge": 73.0,
-          "max_discharge": 106.2,
-          "risk_note": "Normal river discharge levels.",
+          "risk_level": "Minimal",
+          "avg_discharge": 48.0,
+          "max_discharge": 76.5,
+          "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 177,
-        "pm25": 74.1,
-        "pm10": 76.5,
-        "category": "Unhealthy",
-        "health_note": "Unhealthy. Everyone should reduce outdoor activities.",
+        "aqi": 119,
+        "pm25": 21.6,
+        "pm10": 25.0,
+        "category": "Unhealthy for Sensitive",
+        "health_note": "Unhealthy for sensitive groups. Consider wearing a mask outdoors.",
         "source": "Open-Meteo CAMS"
       }
     },
