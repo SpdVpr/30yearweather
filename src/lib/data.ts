@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
-import fs from 'fs';
-import path from 'path';
+
+// Static list of cities for SSG - imported at build time
+// This file is small (~5KB) and can be bundled safely
+import citiesList from './cities-list.json';
 
 export interface DayStats {
     temp_max: number;
@@ -198,62 +200,63 @@ export interface CityData {
     days: Record<string, DayData>; // Key "MM-DD"
 }
 
-export async function getCityData(slug: string): Promise<CityData | null> {
-    // For build-time SSG, use local JSON files
-    // In production, you could switch to Firestore by uncommenting below
-
-    // Option 1: Local JSON (current approach for MVP)
-    try {
-        const filePath = path.join(process.cwd(), 'public', 'data', `${slug}.json`);
-        if (!fs.existsSync(filePath)) {
-            console.error(`File not found: ${filePath}`);
-            return null;
-        }
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        return JSON.parse(fileContents);
-    } catch (e) {
-        console.error(`Error loading data for ${slug}:`, e);
-        return null;
+/**
+ * Get the base URL for data fetching.
+ * Uses environment variables in production, localhost in development.
+ */
+function getBaseUrl(): string {
+    // In Vercel production/preview builds
+    if (process.env.VERCEL_URL) {
+        return `https://${process.env.VERCEL_URL}`;
     }
-
-    /* Option 2: Firestore (for future scaling)
-    try {
-        const admin = require('firebase-admin');
-        if (!admin.apps.length) {
-            // Initialize admin SDK with service account
-        }
-        const db = admin.firestore();
-        const docRef = db.collection('locations').doc(slug);
-        const doc = await docRef.get();
-        
-        if (!doc.exists) {
-            return null;
-        }
-        return doc.data() as CityData;
-    } catch (e) {
-        console.error(`Error fetching from Firestore for ${slug}:`, e);
-        return null;
+    // Explicit base URL from environment
+    if (process.env.NEXT_PUBLIC_BASE_URL) {
+        return process.env.NEXT_PUBLIC_BASE_URL;
     }
-    */
+    // Default for local development
+    return 'http://localhost:3000';
 }
 
-export async function getAllCities(): Promise<string[]> {
-    // Return list of available city slugs from public/data folder
+/**
+ * Fetch city data from CDN/static files.
+ * This approach keeps serverless functions under Vercel's 250MB limit
+ * by loading data via HTTP instead of bundling it.
+ * 
+ * For SSG: Data is fetched at build time and pages are pre-rendered.
+ * For ISR: Data is re-fetched on revalidation.
+ */
+export async function getCityData(slug: string): Promise<CityData | null> {
     try {
-        const dataDirectory = path.join(process.cwd(), 'public', 'data');
-        if (!fs.existsSync(dataDirectory)) {
-            console.warn('Data directory not found:', dataDirectory);
-            return [];
+        const baseUrl = getBaseUrl();
+        const url = `${baseUrl}/data/${slug}.json`;
+
+        const response = await fetch(url, {
+            // Cache for 1 hour, revalidate in background
+            next: { revalidate: 3600 }
+        });
+
+        if (!response.ok) {
+            if (response.status === 404) {
+                console.error(`City data not found: ${slug}`);
+                return null;
+            }
+            throw new Error(`Failed to fetch city data: ${response.status}`);
         }
 
-        const fileNames = fs.readdirSync(dataDirectory);
-        const slugs = fileNames
-            .filter(fileName => fileName.endsWith('.json'))
-            .map(fileName => fileName.replace(/\.json$/, ''));
-
-        return slugs;
+        return await response.json();
     } catch (error) {
-        console.error("Error getting all cities:", error);
-        return [];
+        console.error(`Error loading data for ${slug}:`, error);
+        return null;
     }
+}
+
+/**
+ * Get list of all available city slugs.
+ * Uses pre-generated static list for SSG compatibility.
+ * This avoids filesystem access which would bundle data files.
+ */
+export async function getAllCities(): Promise<string[]> {
+    // Return static list imported at build time
+    // This is a small JSON file (~5KB) that lists all city slugs
+    return citiesList as string[];
 }

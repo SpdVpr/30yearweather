@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // Exclude large data files from serverless function bundle
+    // This keeps the function under Vercel's 250MB limit
+    // Data will be fetched from CDN at runtime instead
+    experimental: {
+        outputFileTracingExcludes: {
+            '*': [
+                './public/data/**/*',
+            ],
+        },
+    },
     async headers() {
         return [
             {
