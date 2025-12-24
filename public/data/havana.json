@@ -6,7 +6,7 @@
     "lon": -82.3666,
     "is_coastal": true,
     "timezone": "America/Havana",
-    "last_updated": "2025-12-23T10:39:55.565216",
+    "last_updated": "2025-12-24T12:39:13.088562",
     "geo_info": {
       "elevation": 9.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.1,
         "max_magnitude": 4.7,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2021-06-29",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 1,
-          "7": 1,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Low"
       },
       "hurricane": {
         "zone": "Atlantic",
@@ -61,16 +46,16 @@
         "elevation": 9.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 0.8,
-          "max_discharge": 2.1,
+          "avg_discharge": 0.6,
+          "max_discharge": 1.1,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
         "aqi": 39,
-        "pm25": 5.5,
-        "pm10": 7.8,
+        "pm25": 5.7,
+        "pm10": 8.4,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"

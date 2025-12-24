@@ -6,7 +6,7 @@
     "lon": 98.295,
     "is_coastal": true,
     "timezone": "Asia/Bangkok",
-    "last_updated": "2025-12-23T09:11:04.004585",
+    "last_updated": "2025-12-24T12:25:17.792233",
     "geo_info": {
       "elevation": 0.0,
       "is_high_altitude": 0.0,
@@ -18,22 +18,7 @@
         "avg_per_year": 0.0,
         "max_magnitude": 4.2,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2015-05-05",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 1,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Low"
       },
       "hurricane": {
         "zone": "Indian Ocean",
@@ -57,16 +42,16 @@
         "elevation": 0.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 0.5,
+          "avg_discharge": 0.4,
           "max_discharge": 0.6,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 70,
-        "pm25": 8.8,
-        "pm10": 10.2,
+        "aqi": 79,
+        "pm25": 8.5,
+        "pm10": 8.8,
         "category": "Moderate",
         "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"

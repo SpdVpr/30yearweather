@@ -6,7 +6,7 @@
     "lon": 177.416,
     "is_coastal": true,
     "timezone": "Pacific/Fiji",
-    "last_updated": "2025-12-23T09:22:20.912481",
+    "last_updated": "2025-12-24T12:35:55.797825",
     "geo_info": {
       "elevation": 5.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.7,
         "max_magnitude": 5.5,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2023-10-07",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 3,
-          "3": 5,
-          "4": 0,
-          "5": 0,
-          "6": 3,
-          "7": 1,
-          "8": 1,
-          "9": 2,
-          "10": 2,
-          "11": 1,
-          "12": 3
-        }
+        "risk_level": "Low"
       },
       "hurricane": null,
       "volcano": null,
@@ -52,16 +37,16 @@
         "elevation": 5.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 25.0,
+          "avg_discharge": 26.1,
           "max_discharge": 27.6,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 17,
-        "pm25": 3.9,
-        "pm10": 5.3,
+        "aqi": 15,
+        "pm25": 4.4,
+        "pm10": 5.6,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"

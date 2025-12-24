@@ -6,7 +6,7 @@
     "lon": -0.1278,
     "is_coastal": false,
     "timezone": "Europe/London",
-    "last_updated": "2025-12-23T09:06:06.771035",
+    "last_updated": "2025-12-24T12:20:23.531456",
     "geo_info": {
       "elevation": 16.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.0,
         "max_magnitude": 4.6,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2007-04-28",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 1,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Low"
       },
       "hurricane": null,
       "volcano": null,
@@ -51,16 +36,16 @@
         "elevation": 16.0,
         "api_data": {
           "risk_level": "Low",
-          "avg_discharge": 95.4,
+          "avg_discharge": 100.9,
           "max_discharge": 166.1,
           "risk_note": "Normal river discharge levels.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 68,
-        "pm25": 24.3,
-        "pm10": 32.8,
+        "aqi": 54,
+        "pm25": 4.6,
+        "pm10": 9.8,
         "category": "Moderate",
         "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"

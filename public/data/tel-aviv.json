@@ -6,7 +6,7 @@
     "lon": 34.781,
     "is_coastal": true,
     "timezone": "Asia/Jerusalem",
-    "last_updated": "2025-12-23T09:20:50.655142",
+    "last_updated": "2025-12-24T12:34:41.992870",
     "geo_info": {
       "elevation": 21.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.5,
         "max_magnitude": 5.3,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2023-02-07",
-        "monthly_distribution": {
-          "1": 1,
-          "2": 3,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 2,
-          "8": 2,
-          "9": 2,
-          "10": 1,
-          "11": 2,
-          "12": 1
-        }
+        "risk_level": "Low"
       },
       "hurricane": null,
       "volcano": null,
@@ -52,16 +37,16 @@
         "elevation": 21.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 9.3,
-          "max_discharge": 17.1,
+          "avg_discharge": 7.8,
+          "max_discharge": 15.4,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 72,
-        "pm25": 21.4,
-        "pm10": 65.7,
+        "aqi": 69,
+        "pm25": 17.7,
+        "pm10": 31.8,
         "category": "Moderate",
         "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"

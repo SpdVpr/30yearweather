@@ -6,7 +6,7 @@
     "lon": -6.2603,
     "is_coastal": true,
     "timezone": "Europe/Dublin",
-    "last_updated": "2025-12-23T09:07:50.824962",
+    "last_updated": "2025-12-24T12:22:05.042318",
     "geo_info": {
       "elevation": 11.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0,
         "max_magnitude": null,
         "seismic_score": 100,
-        "risk_level": "Stable",
-        "last_event": null,
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Stable"
       },
       "hurricane": null,
       "volcano": null,
@@ -52,16 +37,16 @@
         "elevation": 11.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 31.5,
-          "max_discharge": 49.7,
+          "avg_discharge": 28.2,
+          "max_discharge": 40.4,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 48,
-        "pm25": 13.3,
-        "pm10": 17.2,
+        "aqi": 50,
+        "pm25": 5.3,
+        "pm10": 11.7,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"

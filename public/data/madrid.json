@@ -6,7 +6,7 @@
     "lon": -3.7038,
     "is_coastal": false,
     "timezone": "Europe/Madrid",
-    "last_updated": "2025-12-23T09:07:08.555655",
+    "last_updated": "2025-12-24T12:21:23.068992",
     "geo_info": {
       "elevation": 666.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.1,
         "max_magnitude": 4.2,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2008-04-28",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 1,
-          "5": 0,
-          "6": 1,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Low"
       },
       "hurricane": null,
       "volcano": null,
@@ -50,18 +35,18 @@
         "elevation": 666.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 2.2,
+          "avg_discharge": 2.1,
           "max_discharge": 3.1,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 32,
-        "pm25": 12.6,
-        "pm10": 16.7,
-        "category": "Good",
-        "health_note": "Air quality is excellent. Perfect for outdoor activities.",
+        "aqi": 64,
+        "pm25": 3.6,
+        "pm10": 5.4,
+        "category": "Moderate",
+        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"
       }
     },

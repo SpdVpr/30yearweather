@@ -6,7 +6,7 @@
     "lon": 54.377,
     "is_coastal": true,
     "timezone": "Asia/Dubai",
-    "last_updated": "2025-12-23T09:20:36.095889",
+    "last_updated": "2025-12-24T12:34:27.452391",
     "geo_info": {
       "elevation": 5.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0,
         "max_magnitude": null,
         "seismic_score": 100,
-        "risk_level": "Stable",
-        "last_event": null,
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Stable"
       },
       "hurricane": {
         "zone": "Indian Ocean",
@@ -61,16 +46,16 @@
         "elevation": 5.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 0.7,
+          "avg_discharge": 0.8,
           "max_discharge": 1.6,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 59,
-        "pm25": 10.0,
-        "pm10": 17.8,
+        "aqi": 64,
+        "pm25": 8.1,
+        "pm10": 8.4,
         "category": "Moderate",
         "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"

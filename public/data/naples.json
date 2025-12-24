@@ -6,7 +6,7 @@
     "lon": 14.268,
     "is_coastal": true,
     "timezone": "Europe/Paris",
-    "last_updated": "2025-12-23T09:16:29.322194",
+    "last_updated": "2025-12-24T12:30:43.671746",
     "geo_info": {
       "elevation": 19.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 1.3,
         "max_magnitude": 5.1,
         "seismic_score": 50,
-        "risk_level": "Medium",
-        "last_event": "2024-12-09",
-        "monthly_distribution": {
-          "1": 5,
-          "2": 3,
-          "3": 3,
-          "4": 1,
-          "5": 4,
-          "6": 0,
-          "7": 2,
-          "8": 2,
-          "9": 2,
-          "10": 3,
-          "11": 5,
-          "12": 3
-        }
+        "risk_level": "Medium"
       },
       "hurricane": null,
       "volcano": {
@@ -65,18 +50,18 @@
         "elevation": 19.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 2.3,
-          "max_discharge": 3.9,
+          "avg_discharge": 2.7,
+          "max_discharge": 4.8,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 78,
-        "pm25": 14.3,
-        "pm10": 17.4,
-        "category": "Moderate",
-        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
+        "aqi": 31,
+        "pm25": 2.8,
+        "pm10": 5.9,
+        "category": "Good",
+        "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"
       }
     },

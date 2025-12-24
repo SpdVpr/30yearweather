@@ -6,7 +6,7 @@
     "lon": -122.4194,
     "is_coastal": true,
     "timezone": "America/Los_Angeles",
-    "last_updated": "2025-12-23T09:04:46.331738",
+    "last_updated": "2025-12-24T12:19:04.564398",
     "geo_info": {
       "elevation": 18.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 1.1,
         "max_magnitude": 6.0,
         "seismic_score": 50,
-        "risk_level": "Medium",
-        "last_event": "2023-10-18",
-        "monthly_distribution": {
-          "1": 3,
-          "2": 4,
-          "3": 2,
-          "4": 0,
-          "5": 4,
-          "6": 2,
-          "7": 2,
-          "8": 4,
-          "9": 6,
-          "10": 5,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Medium"
       },
       "hurricane": {
         "zone": "Eastern Pacific",
@@ -61,16 +46,16 @@
         "elevation": 18.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 3.0,
+          "avg_discharge": 3.3,
           "max_discharge": 7.1,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 46,
-        "pm25": 22.4,
-        "pm10": 23.6,
+        "aqi": 29,
+        "pm25": 3.4,
+        "pm10": 5.5,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"

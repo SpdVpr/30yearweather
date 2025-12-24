@@ -6,7 +6,7 @@
     "lon": 19.945,
     "is_coastal": false,
     "timezone": "Europe/Warsaw",
-    "last_updated": "2025-12-23T09:08:52.560657",
+    "last_updated": "2025-12-24T12:23:05.538309",
     "geo_info": {
       "elevation": 215.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.3,
         "max_magnitude": 4.8,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2022-02-07",
-        "monthly_distribution": {
-          "1": 1,
-          "2": 2,
-          "3": 1,
-          "4": 2,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 1,
-          "11": 2,
-          "12": 1
-        }
+        "risk_level": "Low"
       },
       "hurricane": null,
       "volcano": null,
@@ -50,18 +35,18 @@
         "elevation": 215.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 48.0,
-          "max_discharge": 76.5,
+          "avg_discharge": 41.3,
+          "max_discharge": 66.6,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 119,
-        "pm25": 21.6,
-        "pm10": 25.0,
-        "category": "Unhealthy for Sensitive",
-        "health_note": "Unhealthy for sensitive groups. Consider wearing a mask outdoors.",
+        "aqi": 54,
+        "pm25": 6.5,
+        "pm10": 7.3,
+        "category": "Moderate",
+        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"
       }
     },

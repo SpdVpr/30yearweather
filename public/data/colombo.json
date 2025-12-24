@@ -6,7 +6,7 @@
     "lon": 79.861,
     "is_coastal": true,
     "timezone": "Asia/Kolkata",
-    "last_updated": "2025-12-23T10:36:31.184952",
+    "last_updated": "2025-12-24T12:33:48.405575",
     "geo_info": {
       "elevation": 9.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0,
         "max_magnitude": null,
         "seismic_score": 100,
-        "risk_level": "Stable",
-        "last_event": null,
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Stable"
       },
       "hurricane": {
         "zone": "Indian Ocean",
@@ -61,16 +46,16 @@
         "elevation": 9.0,
         "api_data": {
           "risk_level": "Low",
-          "avg_discharge": 280.8,
-          "max_discharge": 332.4,
+          "avg_discharge": 265.8,
+          "max_discharge": 308.0,
           "risk_note": "Normal river discharge levels.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 67,
-        "pm25": 10.4,
-        "pm10": 11.6,
+        "aqi": 69,
+        "pm25": 12.1,
+        "pm10": 13.2,
         "category": "Moderate",
         "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"

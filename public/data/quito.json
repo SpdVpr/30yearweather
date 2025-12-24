@@ -6,7 +6,7 @@
     "lon": -78.467,
     "is_coastal": false,
     "timezone": "America/Lima",
-    "last_updated": "2025-12-23T09:18:38.102849",
+    "last_updated": "2025-12-24T12:32:51.086091",
     "geo_info": {
       "elevation": 2926.0,
       "is_high_altitude": true,
@@ -22,22 +22,7 @@
         "avg_per_year": 2.0,
         "max_magnitude": 6,
         "seismic_score": 50,
-        "risk_level": "Medium",
-        "last_event": "2024-07-01",
-        "monthly_distribution": {
-          "1": 8,
-          "2": 1,
-          "3": 7,
-          "4": 6,
-          "5": 5,
-          "6": 5,
-          "7": 2,
-          "8": 4,
-          "9": 5,
-          "10": 5,
-          "11": 2,
-          "12": 3
-        }
+        "risk_level": "Medium"
       },
       "hurricane": null,
       "volcano": {
@@ -63,18 +48,18 @@
         "elevation": 2926.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 38.5,
+          "avg_discharge": 41.9,
           "max_discharge": 60.2,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 26,
-        "pm25": 0.6,
-        "pm10": 0.6,
-        "category": "Good",
-        "health_note": "Air quality is excellent. Perfect for outdoor activities.",
+        "aqi": 51,
+        "pm25": 19.2,
+        "pm10": 19.5,
+        "category": "Moderate",
+        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"
       }
     },

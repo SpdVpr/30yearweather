@@ -6,7 +6,7 @@
     "lon": 13.055,
     "is_coastal": false,
     "timezone": "Europe/Vienna",
-    "last_updated": "2025-12-23T10:37:53.131868",
+    "last_updated": "2025-12-24T12:37:14.689639",
     "geo_info": {
       "elevation": 430.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.1,
         "max_magnitude": 4.1,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2008-07-19",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 1,
-          "8": 0,
-          "9": 0,
-          "10": 1,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Low"
       },
       "hurricane": null,
       "volcano": null,
@@ -51,15 +36,15 @@
         "api_data": {
           "risk_level": "Minimal",
           "avg_discharge": 0.4,
-          "max_discharge": 0.5,
+          "max_discharge": 0.4,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 71,
-        "pm25": 19.0,
-        "pm10": 24.9,
+        "aqi": 91,
+        "pm25": 8.8,
+        "pm10": 9.7,
         "category": "Moderate",
         "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"

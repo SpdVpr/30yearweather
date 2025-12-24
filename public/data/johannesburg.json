@@ -6,7 +6,7 @@
     "lon": 28.047,
     "is_coastal": false,
     "timezone": "Africa/Johannesburg",
-    "last_updated": "2025-12-23T10:36:36.746870",
+    "last_updated": "2025-12-24T12:35:00.561054",
     "geo_info": {
       "elevation": 1749.0,
       "is_high_altitude": true,
@@ -22,22 +22,7 @@
         "avg_per_year": 3.4,
         "max_magnitude": 5,
         "seismic_score": 50,
-        "risk_level": "Medium",
-        "last_event": "2024-05-22",
-        "monthly_distribution": {
-          "1": 9,
-          "2": 11,
-          "3": 13,
-          "4": 6,
-          "5": 5,
-          "6": 8,
-          "7": 10,
-          "8": 13,
-          "9": 9,
-          "10": 10,
-          "11": 5,
-          "12": 7
-        }
+        "risk_level": "Medium"
       },
       "hurricane": null,
       "volcano": null,
@@ -50,18 +35,18 @@
         "elevation": 1749.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 1.2,
+          "avg_discharge": 1.4,
           "max_discharge": 3.6,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 65,
-        "pm25": 16.5,
-        "pm10": 16.6,
-        "category": "Moderate",
-        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
+        "aqi": 146,
+        "pm25": 39.0,
+        "pm10": 39.0,
+        "category": "Unhealthy for Sensitive",
+        "health_note": "Unhealthy for sensitive groups. Consider wearing a mask outdoors.",
         "source": "Open-Meteo CAMS"
       }
     },

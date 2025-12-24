@@ -6,7 +6,7 @@
     "lon": 106.8456,
     "is_coastal": true,
     "timezone": "Asia/Jakarta",
-    "last_updated": "2025-12-23T09:11:54.338559",
+    "last_updated": "2025-12-24T12:26:07.715120",
     "geo_info": {
       "elevation": 12.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 5.2,
         "max_magnitude": 7.5,
         "seismic_score": 20,
-        "risk_level": "High",
-        "last_event": "2024-12-24",
-        "monthly_distribution": {
-          "1": 8,
-          "2": 8,
-          "3": 19,
-          "4": 10,
-          "5": 11,
-          "6": 11,
-          "7": 17,
-          "8": 18,
-          "9": 8,
-          "10": 18,
-          "11": 16,
-          "12": 14
-        }
+        "risk_level": "High"
       },
       "hurricane": null,
       "volcano": null,
@@ -52,16 +37,16 @@
         "elevation": 12.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 29.8,
+          "avg_discharge": 31.1,
           "max_discharge": 49.0,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 162,
-        "pm25": 39.5,
-        "pm10": 39.8,
+        "aqi": 161,
+        "pm25": 106.9,
+        "pm10": 107.3,
         "category": "Unhealthy",
         "health_note": "Unhealthy. Everyone should reduce outdoor activities.",
         "source": "Open-Meteo CAMS"

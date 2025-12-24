@@ -6,7 +6,7 @@
     "lon": -74.006,
     "is_coastal": true,
     "timezone": "America/New_York",
-    "last_updated": "2025-12-23T09:04:09.044995",
+    "last_updated": "2025-12-24T12:18:28.524001",
     "geo_info": {
       "elevation": 32.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.0,
         "max_magnitude": 4.8,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2024-04-05",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 1,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Low"
       },
       "hurricane": {
         "zone": "Atlantic",
@@ -61,18 +46,18 @@
         "elevation": 32.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 6.8,
+          "avg_discharge": 6.9,
           "max_discharge": 12.6,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 46,
-        "pm25": 20.9,
-        "pm10": 21.3,
-        "category": "Good",
-        "health_note": "Air quality is excellent. Perfect for outdoor activities.",
+        "aqi": 64,
+        "pm25": 12.5,
+        "pm10": 12.9,
+        "category": "Moderate",
+        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"
       }
     },

@@ -6,7 +6,7 @@
     "lon": 22.9444,
     "is_coastal": true,
     "timezone": "Europe/Athens",
-    "last_updated": "2025-12-23T10:37:19.118533",
+    "last_updated": "2025-12-24T12:36:44.439391",
     "geo_info": {
       "elevation": 42.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 2.6,
         "max_magnitude": 5.3,
         "seismic_score": 50,
-        "risk_level": "Medium",
-        "last_event": "2024-12-24",
-        "monthly_distribution": {
-          "1": 6,
-          "2": 7,
-          "3": 1,
-          "4": 7,
-          "5": 16,
-          "6": 5,
-          "7": 4,
-          "8": 10,
-          "9": 4,
-          "10": 9,
-          "11": 9,
-          "12": 2
-        }
+        "risk_level": "Medium"
       },
       "hurricane": null,
       "volcano": null,
@@ -53,15 +38,15 @@
         "api_data": {
           "risk_level": "Minimal",
           "avg_discharge": 0.6,
-          "max_discharge": 0.7,
+          "max_discharge": 0.8,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 69,
-        "pm25": 17.6,
-        "pm10": 21.8,
+        "aqi": 56,
+        "pm25": 7.6,
+        "pm10": 8.6,
         "category": "Moderate",
         "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"

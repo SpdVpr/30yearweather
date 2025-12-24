@@ -6,7 +6,7 @@
     "lon": 123.8854,
     "is_coastal": true,
     "timezone": "Asia/Manila",
-    "last_updated": "2025-12-23T10:42:07.597283",
+    "last_updated": "2025-12-24T12:40:58.542383",
     "geo_info": {
       "elevation": 39.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 8.9,
         "max_magnitude": 7.1,
         "seismic_score": 20,
-        "risk_level": "High",
-        "last_event": "2024-09-29",
-        "monthly_distribution": {
-          "1": 8,
-          "2": 34,
-          "3": 7,
-          "4": 5,
-          "5": 10,
-          "6": 4,
-          "7": 5,
-          "8": 8,
-          "9": 6,
-          "10": 123,
-          "11": 20,
-          "12": 5
-        }
+        "risk_level": "High"
       },
       "hurricane": {
         "zone": "Western Pacific",
@@ -61,16 +46,16 @@
         "elevation": 39.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 1.5,
-          "max_discharge": 1.9,
+          "avg_discharge": 1.7,
+          "max_discharge": 2.6,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 26,
-        "pm25": 3.3,
-        "pm10": 3.9,
+        "aqi": 35,
+        "pm25": 6.2,
+        "pm10": 7.5,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"

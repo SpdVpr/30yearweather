@@ -6,7 +6,7 @@
     "lon": 11.4041,
     "is_coastal": false,
     "timezone": "Europe/Vienna",
-    "last_updated": "2025-12-23T09:15:07.904767",
+    "last_updated": "2025-12-24T12:29:22.695511",
     "geo_info": {
       "elevation": 580.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.2,
         "max_magnitude": 4.7,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2010-10-19",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 1,
-          "4": 0,
-          "5": 1,
-          "6": 2,
-          "7": 2,
-          "8": 0,
-          "9": 0,
-          "10": 2,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Low"
       },
       "hurricane": null,
       "volcano": null,
@@ -50,18 +35,18 @@
         "elevation": 580.0,
         "api_data": {
           "risk_level": "Low",
-          "avg_discharge": 106.9,
-          "max_discharge": 108.7,
+          "avg_discharge": 106.4,
+          "max_discharge": 107.9,
           "risk_note": "Normal river discharge levels.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 44,
-        "pm25": 11.1,
-        "pm10": 13.0,
-        "category": "Good",
-        "health_note": "Air quality is excellent. Perfect for outdoor activities.",
+        "aqi": 62,
+        "pm25": 20.0,
+        "pm10": 22.3,
+        "category": "Moderate",
+        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"
       }
     },

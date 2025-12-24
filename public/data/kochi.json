@@ -6,7 +6,7 @@
     "lon": 76.2673,
     "is_coastal": true,
     "timezone": "Asia/Kolkata",
-    "last_updated": "2025-12-23T10:41:34.920031",
+    "last_updated": "2025-12-24T12:40:33.854960",
     "geo_info": {
       "elevation": 6.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0,
         "max_magnitude": null,
         "seismic_score": 100,
-        "risk_level": "Stable",
-        "last_event": null,
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Stable"
       },
       "hurricane": {
         "zone": "Indian Ocean",
@@ -61,18 +46,18 @@
         "elevation": 6.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 3.8,
-          "max_discharge": 4.8,
+          "avg_discharge": 3.6,
+          "max_discharge": 4.3,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 151,
-        "pm25": 52.6,
-        "pm10": 54.7,
-        "category": "Unhealthy",
-        "health_note": "Unhealthy. Everyone should reduce outdoor activities.",
+        "aqi": 141,
+        "pm25": 35.0,
+        "pm10": 36.2,
+        "category": "Unhealthy for Sensitive",
+        "health_note": "Unhealthy for sensitive groups. Consider wearing a mask outdoors.",
         "source": "Open-Meteo CAMS"
       }
     },
@@ -257,7 +242,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.51,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -395,7 +386,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.51,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -533,7 +530,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.51,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -671,7 +674,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.53,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -809,7 +818,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.57,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -947,7 +962,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -1085,7 +1106,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -1223,7 +1250,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -1361,7 +1394,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -1499,7 +1538,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.55,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -1637,7 +1682,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.5,
+        "wave_height": 0.54,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -1775,7 +1826,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.5,
+        "wave_height": 0.54,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -1913,7 +1970,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.5,
+        "wave_height": 0.54,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -2051,7 +2114,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.55,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -2189,7 +2258,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.56,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -2327,7 +2402,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.56,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -2465,7 +2546,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.56,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -2603,7 +2690,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.57,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -2741,7 +2834,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.56,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -2879,7 +2978,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.55,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -3017,7 +3122,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.57,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -3155,7 +3266,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.61,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -3293,7 +3410,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -3431,7 +3554,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.68,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -3569,7 +3698,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.69,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -3707,7 +3842,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.68,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -3845,7 +3986,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.63,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -3983,7 +4130,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.57,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -4121,7 +4274,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.55,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -4259,7 +4418,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.56,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -4397,7 +4562,13 @@
           "monthly_precip_max": 53.9
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.56,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -4535,7 +4706,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.56,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -4673,7 +4850,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -4811,7 +4994,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.56,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -4949,7 +5138,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.55,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -5087,7 +5282,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.56,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -5225,7 +5426,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -5363,7 +5570,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -5501,7 +5714,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -5639,7 +5858,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -5777,7 +6002,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -5915,7 +6146,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -6053,7 +6290,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -6191,7 +6434,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -6329,7 +6578,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.6,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -6467,7 +6722,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.61,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -6605,7 +6866,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -6743,7 +7010,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -6881,7 +7154,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.2,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -7019,7 +7298,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.2,
+        "wave_height": 0.6,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -7157,7 +7442,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.3,
+        "wave_height": 0.61,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -7295,7 +7586,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.4,
+        "wave_height": 0.62,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -7433,7 +7730,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.4,
+        "wave_height": 0.63,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -7571,7 +7874,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.5,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -7709,7 +8018,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.5,
+        "wave_height": 0.64,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -7847,7 +8162,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.5,
+        "wave_height": 0.63,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -7985,7 +8306,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.5,
+        "wave_height": 0.62,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -8123,7 +8450,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.5,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -8261,7 +8594,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.6,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -8399,7 +8738,13 @@
           "monthly_precip_max": 23.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.6,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -8521,7 +8866,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.6,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -8659,7 +9010,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.6,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -8797,7 +9154,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.6,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -8935,7 +9298,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.7,
+        "wave_height": 0.61,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -9073,7 +9442,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.7,
+        "wave_height": 0.62,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -9211,7 +9586,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.7,
+        "wave_height": 0.64,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -9349,7 +9730,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.8,
+        "wave_height": 0.63,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -9487,7 +9874,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.8,
+        "wave_height": 0.64,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -9625,7 +10018,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.9,
+        "wave_height": 0.64,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -9763,7 +10162,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.9,
+        "wave_height": 0.64,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -9901,7 +10306,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.0,
+        "wave_height": 0.62,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -10039,7 +10450,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.0,
+        "wave_height": 0.62,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -10177,7 +10594,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.0,
+        "wave_height": 0.6,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -10315,7 +10738,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.1,
+        "wave_height": 0.61,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -10453,7 +10882,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.1,
+        "wave_height": 0.6,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -10591,7 +11026,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.1,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -10729,7 +11170,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.2,
+        "wave_height": 0.6,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -10867,7 +11314,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.2,
+        "wave_height": 0.61,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -11005,7 +11458,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.3,
+        "wave_height": 0.62,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -11143,7 +11602,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.3,
+        "wave_height": 0.63,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -11281,7 +11746,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.3,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -11419,7 +11890,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.4,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -11557,7 +12034,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.4,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -11695,7 +12178,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.5,
+        "wave_height": 0.64,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -11833,7 +12322,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.5,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -11971,7 +12466,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.6,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -12109,7 +12610,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.6,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -12247,7 +12754,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.6,
+        "wave_height": 0.66,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -12385,7 +12898,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.7,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -12523,7 +13042,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.7,
+        "wave_height": 0.66,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -12661,7 +13186,13 @@
           "monthly_precip_max": 29.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.7,
+        "wave_height": 0.67,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -12799,7 +13330,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.7,
+        "wave_height": 0.68,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -12938,7 +13475,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.7,
+        "wave_height": 0.68,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -13076,7 +13619,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.6,
+        "wave_height": 0.69,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -13215,7 +13764,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.6,
+        "wave_height": 0.68,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -13354,7 +13909,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.6,
+        "wave_height": 0.67,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -13493,7 +14054,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.7,
+        "wave_height": 0.66,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -13632,7 +14199,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.7,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -13771,7 +14344,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.8,
+        "wave_height": 0.66,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -13910,7 +14489,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.8,
+        "wave_height": 0.66,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -14049,7 +14634,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.9,
+        "wave_height": 0.68,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -14188,7 +14779,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.9,
+        "wave_height": 0.68,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -14327,7 +14924,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.9,
+        "wave_height": 0.71,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -14466,7 +15069,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.9,
+        "wave_height": 0.72,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -14605,7 +15214,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.0,
+        "wave_height": 0.7,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -14744,7 +15359,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.0,
+        "wave_height": 0.67,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -14883,7 +15504,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.1,
+        "wave_height": 0.67,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -15022,7 +15649,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.1,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -15161,7 +15794,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.2,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -15300,7 +15939,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.2,
+        "wave_height": 0.67,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -15439,7 +16084,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.3,
+        "wave_height": 0.69,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -15578,7 +16229,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.3,
+        "wave_height": 0.72,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -15717,7 +16374,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.3,
+        "wave_height": 0.74,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -15856,7 +16519,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.3,
+        "wave_height": 0.74,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -15995,7 +16664,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.3,
+        "wave_height": 0.74,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -16134,7 +16809,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.3,
+        "wave_height": 0.73,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -16273,7 +16954,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.3,
+        "wave_height": 0.69,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -16412,7 +17099,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.3,
+        "wave_height": 0.67,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -16551,7 +17244,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.3,
+        "wave_height": 0.68,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -16690,7 +17389,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.3,
+        "wave_height": 0.68,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -16829,7 +17534,13 @@
           "monthly_precip_max": 135.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.2,
+        "wave_height": 0.68,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -16968,7 +17679,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.2,
+        "wave_height": 0.69,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -17107,7 +17824,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.2,
+        "wave_height": 0.69,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -17246,7 +17969,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.2,
+        "wave_height": 0.69,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -17385,7 +18114,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.2,
+        "wave_height": 0.71,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -17524,7 +18259,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.1,
+        "wave_height": 0.73,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -17663,7 +18404,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.1,
+        "wave_height": 0.75,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -17802,7 +18549,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.1,
+        "wave_height": 0.81,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -17941,7 +18694,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.1,
+        "wave_height": 0.85,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -18080,7 +18839,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.0,
+        "wave_height": 0.87,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -18219,7 +18984,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.0,
+        "wave_height": 0.9,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -18358,7 +19129,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.0,
+        "wave_height": 0.94,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -18497,7 +19274,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 32.0,
+        "wave_height": 0.97,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -18636,7 +19419,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.9,
+        "wave_height": 1.01,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -18775,7 +19564,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.9,
+        "wave_height": 1.02,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -18914,7 +19709,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.8,
+        "wave_height": 1.04,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -19053,7 +19854,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.8,
+        "wave_height": 1.04,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -19192,7 +19999,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.7,
+        "wave_height": 1.04,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -19331,7 +20144,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.6,
+        "wave_height": 1.08,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -19470,7 +20289,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.5,
+        "wave_height": 1.13,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -19609,7 +20434,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.4,
+        "wave_height": 1.19,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -19748,7 +20579,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.3,
+        "wave_height": 1.26,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -19887,7 +20724,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.2,
+        "wave_height": 1.36,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -20026,7 +20869,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 31.0,
+        "wave_height": 1.44,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -20165,7 +21014,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.8,
+        "wave_height": 1.54,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -20304,7 +21159,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.6,
+        "wave_height": 1.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -20443,7 +21304,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.4,
+        "wave_height": 1.64,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -20582,7 +21449,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.2,
+        "wave_height": 1.69,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -20721,7 +21594,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 1.72,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -20860,7 +21739,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 1.75,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -20999,7 +21884,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 1.75,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -21138,7 +22029,13 @@
           "monthly_precip_max": 253.7
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 1.72,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -21277,7 +22174,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 1.62,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -21416,7 +22319,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 1.54,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -21555,7 +22464,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 1.43,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -21694,7 +22609,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.2,
+        "wave_height": 1.37,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -21833,7 +22754,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.2,
+        "wave_height": 1.36,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -21972,7 +22899,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.2,
+        "wave_height": 1.36,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -22111,7 +23044,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 1.36,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -22250,7 +23189,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 1.41,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -22389,7 +23334,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 1.45,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -22528,7 +23479,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 1.51,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -22667,7 +23624,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 1.6,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -22806,7 +23769,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 1.67,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -22945,7 +23914,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 1.75,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -23084,7 +24059,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.5,
+        "wave_height": 1.84,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -23223,7 +24204,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.4,
+        "wave_height": 1.87,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -23362,7 +24349,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.4,
+        "wave_height": 1.83,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -23501,7 +24494,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.4,
+        "wave_height": 1.76,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -23640,7 +24639,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.4,
+        "wave_height": 1.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -23779,7 +24784,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.5,
+        "wave_height": 1.55,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -23918,7 +24929,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.5,
+        "wave_height": 1.49,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -24057,7 +25074,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.4,
+        "wave_height": 1.52,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -24196,7 +25219,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.3,
+        "wave_height": 1.62,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -24335,7 +25364,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.2,
+        "wave_height": 1.75,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -24474,7 +25509,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.1,
+        "wave_height": 1.88,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -24613,7 +25654,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.0,
+        "wave_height": 1.99,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -24752,7 +25799,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.9,
+        "wave_height": 2.05,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -24891,7 +25944,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.8,
+        "wave_height": 2.06,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -25030,7 +26089,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.7,
+        "wave_height": 2.01,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -25169,7 +26234,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.7,
+        "wave_height": 1.97,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -25308,7 +26379,13 @@
           "monthly_precip_max": 108.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.7,
+        "wave_height": 1.95,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -25447,7 +26524,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.7,
+        "wave_height": 1.93,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -25586,7 +26669,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.7,
+        "wave_height": 1.98,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -25725,7 +26814,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.7,
+        "wave_height": 2.06,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -25864,7 +26959,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.6,
+        "wave_height": 2.18,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -26003,7 +27104,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.6,
+        "wave_height": 2.22,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -26142,7 +27249,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.6,
+        "wave_height": 2.22,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -26281,7 +27394,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.6,
+        "wave_height": 2.14,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -26420,7 +27539,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.5,
+        "wave_height": 2.06,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -26559,7 +27684,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.6,
+        "wave_height": 1.95,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -26698,7 +27829,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.6,
+        "wave_height": 1.85,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -26837,7 +27974,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.6,
+        "wave_height": 1.81,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -26976,7 +28119,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.5,
+        "wave_height": 1.78,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -27115,7 +28264,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.5,
+        "wave_height": 1.77,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -27254,7 +28409,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.3,
+        "wave_height": 1.83,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -27393,7 +28554,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.2,
+        "wave_height": 1.9,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -27532,7 +28699,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.0,
+        "wave_height": 1.99,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -27671,7 +28844,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.9,
+        "wave_height": 2.1,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -27810,7 +28989,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 2.15,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -27949,7 +29134,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.6,
+        "wave_height": 2.15,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -28088,7 +29279,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.6,
+        "wave_height": 2.15,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -28227,7 +29424,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.6,
+        "wave_height": 2.11,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -28366,7 +29569,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.6,
+        "wave_height": 2.03,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -28505,7 +29714,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.98,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -28644,7 +29859,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.93,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -28783,7 +30004,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.89,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -28922,7 +30149,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.81,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -29061,7 +30294,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.74,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -29200,7 +30439,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.69,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -29339,7 +30584,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.63,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -29478,7 +30729,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.64,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -29617,7 +30874,13 @@
           "monthly_precip_max": 100.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.67,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -29756,7 +31019,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.73,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -29895,7 +31164,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.81,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -30034,7 +31309,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.87,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -30173,7 +31454,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.87,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -30312,7 +31599,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.86,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -30451,7 +31744,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.8,
+        "wave_height": 1.82,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -30590,7 +31889,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.8,
+        "wave_height": 1.73,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -30729,7 +32034,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.64,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -30868,7 +32179,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.54,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -31007,7 +32324,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.46,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -31146,7 +32469,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.6,
+        "wave_height": 1.42,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -31285,7 +32614,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.6,
+        "wave_height": 1.39,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -31424,7 +32759,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.6,
+        "wave_height": 1.4,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -31563,7 +32904,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.6,
+        "wave_height": 1.43,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -31702,7 +33049,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.7,
+        "wave_height": 1.45,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -31841,7 +33194,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.8,
+        "wave_height": 1.48,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -31980,7 +33339,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 27.9,
+        "wave_height": 1.52,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -32119,7 +33484,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.1,
+        "wave_height": 1.49,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -32258,7 +33629,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.2,
+        "wave_height": 1.46,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -32397,7 +33774,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.3,
+        "wave_height": 1.46,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -32536,7 +33919,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.4,
+        "wave_height": 1.43,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -32675,7 +34064,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.5,
+        "wave_height": 1.39,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -32814,7 +34209,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.6,
+        "wave_height": 1.35,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -32953,7 +34354,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.6,
+        "wave_height": 1.3,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -33092,7 +34499,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.7,
+        "wave_height": 1.26,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -33231,7 +34644,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.8,
+        "wave_height": 1.26,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -33370,7 +34789,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.8,
+        "wave_height": 1.3,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -33509,7 +34934,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.8,
+        "wave_height": 1.35,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -33648,7 +35079,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.8,
+        "wave_height": 1.42,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -33787,7 +35224,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.7,
+        "wave_height": 1.47,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -33926,7 +35369,13 @@
           "monthly_precip_max": 115.0
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.6,
+        "wave_height": 1.48,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -34065,7 +35514,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.6,
+        "wave_height": 1.46,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -34204,7 +35659,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.5,
+        "wave_height": 1.45,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -34343,7 +35804,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.5,
+        "wave_height": 1.48,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -34482,7 +35949,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.5,
+        "wave_height": 1.48,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -34621,7 +36094,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.4,
+        "wave_height": 1.47,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -34760,7 +36239,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.4,
+        "wave_height": 1.47,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -34899,7 +36384,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.4,
+        "wave_height": 1.47,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -35038,7 +36529,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.4,
+        "wave_height": 1.41,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -35177,7 +36674,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.4,
+        "wave_height": 1.35,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -35316,7 +36819,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.4,
+        "wave_height": 1.3,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -35455,7 +36964,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.4,
+        "wave_height": 1.25,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -35594,7 +37109,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.5,
+        "wave_height": 1.19,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -35733,7 +37254,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.5,
+        "wave_height": 1.15,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -35872,7 +37399,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.6,
+        "wave_height": 1.13,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -36011,7 +37544,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.7,
+        "wave_height": 1.11,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -36150,7 +37689,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.7,
+        "wave_height": 1.11,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -36289,7 +37834,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.7,
+        "wave_height": 1.1,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -36428,7 +37979,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.8,
+        "wave_height": 1.09,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -36567,7 +38124,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.8,
+        "wave_height": 1.06,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -36706,7 +38269,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.9,
+        "wave_height": 1.04,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -36845,7 +38414,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 28.9,
+        "wave_height": 1.02,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -36984,7 +38559,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.0,
+        "wave_height": 1.02,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -37123,7 +38704,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.0,
+        "wave_height": 1.03,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -37262,7 +38849,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.0,
+        "wave_height": 1.04,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -37401,7 +38994,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.0,
+        "wave_height": 1.07,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -37540,7 +39139,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.0,
+        "wave_height": 1.11,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -37679,7 +39284,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.0,
+        "wave_height": 1.15,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -37818,7 +39429,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.0,
+        "wave_height": 1.2,
+        "shiver_factor": "Tropical Bath",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -37957,7 +39574,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.0,
+        "wave_height": 1.23,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -38096,7 +39719,13 @@
           "monthly_precip_max": 91.6
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.1,
+        "wave_height": 1.23,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": true
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -38235,7 +39864,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.1,
+        "wave_height": 1.21,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Surfers Only",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -38374,7 +40009,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.2,
+        "wave_height": 1.18,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -38513,7 +40154,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.3,
+        "wave_height": 1.12,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -38652,7 +40299,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.4,
+        "wave_height": 1.06,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -38791,7 +40444,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.5,
+        "wave_height": 1.0,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -38930,7 +40589,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.97,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -39069,7 +40734,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.94,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -39208,7 +40879,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.92,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -39347,7 +41024,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.94,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -39486,7 +41169,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.97,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -39625,7 +41314,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.99,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -39764,7 +41459,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 1.01,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -39903,7 +41604,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 1.07,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -40042,7 +41749,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 1.11,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -40181,7 +41894,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 1.14,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -40320,7 +42039,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 1.17,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -40459,7 +42184,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 1.15,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -40598,7 +42329,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 1.11,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -40737,7 +42474,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 1.04,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -40876,7 +42619,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.99,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -41015,7 +42764,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.94,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -41154,7 +42909,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.93,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -41293,7 +43054,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.92,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -41432,7 +43199,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.91,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -41571,7 +43344,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.91,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -41710,7 +43489,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.91,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -41849,7 +43634,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.6,
+        "wave_height": 0.92,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -41988,7 +43779,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.92,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -42127,7 +43924,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.91,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -42266,7 +44069,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.86,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -42405,7 +44214,13 @@
           "monthly_precip_max": 119.4
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.8,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -42544,7 +44359,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.73,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -42683,7 +44504,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.69,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -42822,7 +44649,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.67,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -42961,7 +44794,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.66,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -43100,7 +44939,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.66,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -43239,7 +45084,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.67,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -43378,7 +45229,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.67,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -43517,7 +45374,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -43656,7 +45519,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -43795,7 +45664,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -43934,7 +45809,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.2,
+        "wave_height": 0.67,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -44073,7 +45954,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.2,
+        "wave_height": 0.7,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -44212,7 +46099,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.3,
+        "wave_height": 0.74,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -44351,7 +46244,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.3,
+        "wave_height": 0.75,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -44490,7 +46389,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.4,
+        "wave_height": 0.75,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -44629,7 +46534,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.4,
+        "wave_height": 0.71,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -44768,7 +46679,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.4,
+        "wave_height": 0.68,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -44907,7 +46824,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.4,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -45046,7 +46969,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.4,
+        "wave_height": 0.63,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -45185,7 +47114,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.4,
+        "wave_height": 0.64,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -45324,7 +47259,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.3,
+        "wave_height": 0.64,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -45463,7 +47404,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.3,
+        "wave_height": 0.63,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -45602,7 +47549,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.2,
+        "wave_height": 0.62,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -45741,7 +47694,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.2,
+        "wave_height": 0.6,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -45880,7 +47839,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -46019,7 +47984,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -46158,7 +48129,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.1,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -46296,7 +48273,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.6,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -46434,7 +48417,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.63,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -46573,7 +48562,13 @@
           "monthly_precip_max": 120.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -46712,7 +48707,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.69,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -46850,7 +48851,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.72,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -46989,7 +48996,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.73,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing",
@@ -47128,7 +49141,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.71,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -47266,7 +49285,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.68,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -47404,7 +49429,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.64,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -47542,7 +49573,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.61,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -47680,7 +49717,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.6,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -47818,7 +49861,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.63,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -47956,7 +50005,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.65,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -48094,7 +50149,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.66,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -48232,7 +50293,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.66,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -48370,7 +50437,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.64,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -48508,7 +50581,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.61,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -48646,7 +50725,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -48784,7 +50869,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.56,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -48922,7 +51013,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.57,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -49060,7 +51157,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.58,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -49198,7 +51301,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.6,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -49336,7 +51445,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.7,
+        "wave_height": 0.62,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -49474,7 +51589,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.63,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -49612,7 +51733,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.63,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -49750,7 +51877,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.63,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -49888,7 +52021,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.62,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -50026,7 +52165,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.59,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -50164,7 +52309,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.8,
+        "wave_height": 0.56,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -50302,7 +52453,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.54,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -50440,7 +52597,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.53,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -50578,7 +52741,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 29.9,
+        "wave_height": 0.53,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -50716,7 +52885,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.52,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"
@@ -50854,7 +53029,13 @@
           "monthly_precip_max": 52.3
         }
       },
-      "marine": null,
+      "marine": {
+        "water_temp": 30.0,
+        "wave_height": 0.51,
+        "shiver_factor": "Hot Soup",
+        "family_safety": "Fun Waves",
+        "jellyfish_warning": false
+      },
       "clothing": [
         "T-Shirt",
         "Light Clothing"

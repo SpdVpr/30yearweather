@@ -6,7 +6,7 @@
     "lon": -75.4794,
     "is_coastal": true,
     "timezone": "America/Bogota",
-    "last_updated": "2025-12-23T09:15:53.173189",
+    "last_updated": "2025-12-24T12:30:08.142273",
     "geo_info": {
       "elevation": 13.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.1,
         "max_magnitude": 5.7,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2006-06-06",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 1,
-          "6": 3,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Low"
       },
       "hurricane": {
         "zone": "Atlantic",
@@ -61,16 +46,16 @@
         "elevation": 13.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 0.6,
-          "max_discharge": 0.7,
+          "avg_discharge": 0.5,
+          "max_discharge": 0.6,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 29,
-        "pm25": 6.2,
-        "pm10": 9.0,
+        "aqi": 27,
+        "pm25": 3.7,
+        "pm10": 4.9,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"

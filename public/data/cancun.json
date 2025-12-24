@@ -6,7 +6,7 @@
     "lon": -86.8515,
     "is_coastal": true,
     "timezone": "America/Cancun",
-    "last_updated": "2025-12-23T09:13:16.121874",
+    "last_updated": "2025-12-24T12:27:29.386629",
     "geo_info": {
       "elevation": 11.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0,
         "max_magnitude": null,
         "seismic_score": 100,
-        "risk_level": "Stable",
-        "last_event": null,
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Stable"
       },
       "hurricane": {
         "zone": "Atlantic",
@@ -61,16 +46,16 @@
         "elevation": 11.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 1.5,
-          "max_discharge": 1.9,
+          "avg_discharge": 1.6,
+          "max_discharge": 2.2,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 40,
-        "pm25": 4.8,
-        "pm10": 7.3,
+        "aqi": 35,
+        "pm25": 6.6,
+        "pm10": 10.1,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"

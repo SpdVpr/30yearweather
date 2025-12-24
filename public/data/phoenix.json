@@ -6,7 +6,7 @@
     "lon": -112.074,
     "is_coastal": false,
     "timezone": "America/Phoenix",
-    "last_updated": "2025-12-23T10:39:42.389039",
+    "last_updated": "2025-12-24T12:39:01.090266",
     "geo_info": {
       "elevation": 333.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.0,
         "max_magnitude": 4,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2015-11-02",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 1,
-          "12": 0
-        }
+        "risk_level": "Low"
       },
       "hurricane": null,
       "volcano": null,
@@ -50,16 +35,16 @@
         "elevation": 333.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 7.9,
-          "max_discharge": 9.3,
+          "avg_discharge": 7.6,
+          "max_discharge": 8.8,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 55,
-        "pm25": 12.6,
-        "pm10": 19.3,
+        "aqi": 51,
+        "pm25": 9.9,
+        "pm10": 10.3,
         "category": "Moderate",
         "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"

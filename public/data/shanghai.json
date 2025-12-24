@@ -6,7 +6,7 @@
     "lon": 121.4737,
     "is_coastal": true,
     "timezone": "Asia/Shanghai",
-    "last_updated": "2025-12-23T09:10:36.134588",
+    "last_updated": "2025-12-24T12:24:50.467894",
     "geo_info": {
       "elevation": 5.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0,
         "max_magnitude": null,
         "seismic_score": 100,
-        "risk_level": "Stable",
-        "last_event": null,
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Stable"
       },
       "hurricane": {
         "zone": "Western Pacific",
@@ -62,17 +47,17 @@
         "api_data": {
           "risk_level": "Minimal",
           "avg_discharge": 0.0,
-          "max_discharge": 0.1,
+          "max_discharge": 0.0,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 156,
-        "pm25": 60.1,
-        "pm10": 63.3,
-        "category": "Unhealthy",
-        "health_note": "Unhealthy. Everyone should reduce outdoor activities.",
+        "aqi": 119,
+        "pm25": 65.9,
+        "pm10": 70.8,
+        "category": "Unhealthy for Sensitive",
+        "health_note": "Unhealthy for sensitive groups. Consider wearing a mask outdoors.",
         "source": "Open-Meteo CAMS"
       }
     },

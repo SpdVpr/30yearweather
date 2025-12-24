@@ -6,7 +6,7 @@
     "lon": 30.7133,
     "is_coastal": true,
     "timezone": "Europe/Istanbul",
-    "last_updated": "2025-12-23T10:44:23.139618",
+    "last_updated": "2025-12-24T12:42:57.607221",
     "geo_info": {
       "elevation": 53.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 2.8,
         "max_magnitude": 5.5,
         "seismic_score": 50,
-        "risk_level": "Medium",
-        "last_event": "2024-12-30",
-        "monthly_distribution": {
-          "1": 4,
-          "2": 8,
-          "3": 5,
-          "4": 6,
-          "5": 6,
-          "6": 7,
-          "7": 8,
-          "8": 8,
-          "9": 11,
-          "10": 8,
-          "11": 7,
-          "12": 7
-        }
+        "risk_level": "Medium"
       },
       "hurricane": null,
       "volcano": null,
@@ -51,18 +36,18 @@
         "elevation": 53.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 3.8,
-          "max_discharge": 10.5,
+          "avg_discharge": 4.8,
+          "max_discharge": 10.8,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 50,
-        "pm25": 6.8,
-        "pm10": 10.1,
-        "category": "Good",
-        "health_note": "Air quality is excellent. Perfect for outdoor activities.",
+        "aqi": 54,
+        "pm25": 10.9,
+        "pm10": 12.4,
+        "category": "Moderate",
+        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"
       }
     },

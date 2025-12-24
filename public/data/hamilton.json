@@ -6,7 +6,7 @@
     "lon": 175.2793,
     "is_coastal": false,
     "timezone": "Pacific/Auckland",
-    "last_updated": "2025-12-23T10:45:10.103696",
+    "last_updated": "2025-12-24T12:43:32.740353",
     "geo_info": {
       "elevation": 50.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 10.2,
         "max_magnitude": 6.3,
         "seismic_score": 20,
-        "risk_level": "High",
-        "last_event": "2024-10-16",
-        "monthly_distribution": {
-          "1": 20,
-          "2": 28,
-          "3": 19,
-          "4": 24,
-          "5": 36,
-          "6": 26,
-          "7": 25,
-          "8": 23,
-          "9": 26,
-          "10": 34,
-          "11": 24,
-          "12": 26
-        }
+        "risk_level": "High"
       },
       "hurricane": null,
       "volcano": null,
@@ -51,15 +36,15 @@
         "api_data": {
           "risk_level": "Minimal",
           "avg_discharge": 0.5,
-          "max_discharge": 0.5,
+          "max_discharge": 0.6,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 25,
-        "pm25": 5.2,
-        "pm10": 7.8,
+        "aqi": 21,
+        "pm25": 5.9,
+        "pm10": 9.1,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"

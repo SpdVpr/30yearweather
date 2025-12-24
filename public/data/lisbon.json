@@ -6,7 +6,7 @@
     "lon": -9.1393,
     "is_coastal": true,
     "timezone": "Europe/Lisbon",
-    "last_updated": "2025-12-23T09:07:44.559978",
+    "last_updated": "2025-12-24T12:21:58.777960",
     "geo_info": {
       "elevation": 66.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.2,
         "max_magnitude": 5,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2024-08-26",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 2,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 2
-        }
+        "risk_level": "Low"
       },
       "hurricane": null,
       "volcano": null,
@@ -51,16 +36,16 @@
         "elevation": 66.0,
         "api_data": {
           "risk_level": "High",
-          "avg_discharge": 1505.9,
+          "avg_discharge": 1484.1,
           "max_discharge": 2083.5,
           "risk_note": "Very high river discharge detected. Flood risk is elevated.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 32,
-        "pm25": 7.0,
-        "pm10": 11.2,
+        "aqi": 28,
+        "pm25": 8.4,
+        "pm10": 9.7,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"

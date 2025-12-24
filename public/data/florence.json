@@ -6,7 +6,7 @@
     "lon": 11.2558,
     "is_coastal": false,
     "timezone": "Europe/Rome",
-    "last_updated": "2025-12-23T10:36:42.525406",
+    "last_updated": "2025-12-24T12:36:08.063428",
     "geo_info": {
       "elevation": 65.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 2.8,
         "max_magnitude": 5.3,
         "seismic_score": 50,
-        "risk_level": "Medium",
-        "last_event": "2023-09-18",
-        "monthly_distribution": {
-          "1": 8,
-          "2": 2,
-          "3": 7,
-          "4": 8,
-          "5": 21,
-          "6": 10,
-          "7": 10,
-          "8": 2,
-          "9": 9,
-          "10": 5,
-          "11": 1,
-          "12": 5
-        }
+        "risk_level": "Medium"
       },
       "hurricane": null,
       "volcano": null,
@@ -50,18 +35,18 @@
         "elevation": 65.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 8.3,
+          "avg_discharge": 8.8,
           "max_discharge": 10.7,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 65,
-        "pm25": 14.9,
-        "pm10": 19.4,
-        "category": "Moderate",
-        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
+        "aqi": 43,
+        "pm25": 4.3,
+        "pm10": 4.7,
+        "category": "Good",
+        "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"
       }
     },

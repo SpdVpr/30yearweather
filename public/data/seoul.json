@@ -6,7 +6,7 @@
     "lon": 126.978,
     "is_coastal": false,
     "timezone": "Asia/Seoul",
-    "last_updated": "2025-12-23T09:10:12.582254",
+    "last_updated": "2025-12-24T12:24:26.265908",
     "geo_info": {
       "elevation": 34.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0,
         "max_magnitude": null,
         "seismic_score": 100,
-        "risk_level": "Stable",
-        "last_event": null,
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Stable"
       },
       "hurricane": null,
       "volcano": null,
@@ -51,18 +36,18 @@
         "elevation": 34.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 1.1,
-          "max_discharge": 1.7,
+          "avg_discharge": 1.0,
+          "max_discharge": 1.2,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 125,
-        "pm25": 43.9,
-        "pm10": 45.2,
-        "category": "Unhealthy for Sensitive",
-        "health_note": "Unhealthy for sensitive groups. Consider wearing a mask outdoors.",
+        "aqi": 72,
+        "pm25": 28.5,
+        "pm10": 31.0,
+        "category": "Moderate",
+        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"
       }
     },

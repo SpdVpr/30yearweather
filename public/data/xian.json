@@ -6,7 +6,7 @@
     "lon": 108.9398,
     "is_coastal": false,
     "timezone": "Asia/Shanghai",
-    "last_updated": "2025-12-23T10:43:15.839642",
+    "last_updated": "2025-12-24T12:41:53.642825",
     "geo_info": {
       "elevation": 380.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.1,
         "max_magnitude": 4.8,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2009-11-05",
-        "monthly_distribution": {
-          "1": 1,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 1,
-          "12": 0
-        }
+        "risk_level": "Low"
       },
       "hurricane": null,
       "volcano": null,
@@ -51,17 +36,17 @@
         "api_data": {
           "risk_level": "Minimal",
           "avg_discharge": 0.6,
-          "max_discharge": 0.7,
+          "max_discharge": 0.6,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 150,
-        "pm25": 32.4,
-        "pm10": 33.9,
-        "category": "Unhealthy for Sensitive",
-        "health_note": "Unhealthy for sensitive groups. Consider wearing a mask outdoors.",
+        "aqi": 174,
+        "pm25": 97.6,
+        "pm10": 98.7,
+        "category": "Unhealthy",
+        "health_note": "Unhealthy. Everyone should reduce outdoor activities.",
         "source": "Open-Meteo CAMS"
       }
     },

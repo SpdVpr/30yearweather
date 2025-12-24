@@ -6,7 +6,7 @@
     "lon": -1.9812,
     "is_coastal": true,
     "timezone": "Europe/Madrid",
-    "last_updated": "2025-12-23T10:38:06.546282",
+    "last_updated": "2025-12-24T12:37:26.785736",
     "geo_info": {
       "elevation": 24.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.5,
         "max_magnitude": 4.7,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2020-10-01",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 2,
-          "3": 4,
-          "4": 1,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 1,
-          "9": 3,
-          "10": 4,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Low"
       },
       "hurricane": null,
       "volcano": null,
@@ -52,16 +37,16 @@
         "elevation": 24.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 2.4,
+          "avg_discharge": 2.5,
           "max_discharge": 3.2,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 24,
-        "pm25": 3.9,
-        "pm10": 6.4,
+        "aqi": 30,
+        "pm25": 12.1,
+        "pm10": 17.2,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"

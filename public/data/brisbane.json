@@ -6,7 +6,7 @@
     "lon": 153.025,
     "is_coastal": true,
     "timezone": "Australia/Brisbane",
-    "last_updated": "2025-12-23T09:21:58.078827",
+    "last_updated": "2025-12-24T12:35:33.214478",
     "geo_info": {
       "elevation": 21.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0,
         "max_magnitude": null,
         "seismic_score": 100,
-        "risk_level": "Stable",
-        "last_event": null,
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Stable"
       },
       "hurricane": null,
       "volcano": null,
@@ -52,18 +37,18 @@
         "elevation": 21.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 26.9,
-          "max_discharge": 39.0,
+          "avg_discharge": 25.2,
+          "max_discharge": 34.9,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 40,
-        "pm25": 11.2,
-        "pm10": 13.9,
-        "category": "Good",
-        "health_note": "Air quality is excellent. Perfect for outdoor activities.",
+        "aqi": 55,
+        "pm25": 12.6,
+        "pm10": 13.3,
+        "category": "Moderate",
+        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"
       }
     },

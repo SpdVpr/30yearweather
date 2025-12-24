@@ -6,7 +6,7 @@
     "lon": 5.3221,
     "is_coastal": true,
     "timezone": "Europe/Oslo",
-    "last_updated": "2025-12-23T10:37:47.173840",
+    "last_updated": "2025-12-24T12:37:08.964597",
     "geo_info": {
       "elevation": 14.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0.1,
         "max_magnitude": 4.1,
         "seismic_score": 80,
-        "risk_level": "Low",
-        "last_event": "2017-11-07",
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 1,
-          "9": 0,
-          "10": 0,
-          "11": 1,
-          "12": 0
-        }
+        "risk_level": "Low"
       },
       "hurricane": null,
       "volcano": null,
@@ -52,16 +37,16 @@
         "elevation": 14.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 2.4,
+          "avg_discharge": 2.2,
           "max_discharge": 3.0,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 30,
-        "pm25": 7.2,
-        "pm10": 10.0,
+        "aqi": 35,
+        "pm25": 6.6,
+        "pm10": 9.1,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"

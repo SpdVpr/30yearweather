@@ -6,7 +6,7 @@
     "lon": -8.6291,
     "is_coastal": true,
     "timezone": "Europe/Lisbon",
-    "last_updated": "2025-12-23T09:08:58.584247",
+    "last_updated": "2025-12-24T12:23:11.690251",
     "geo_info": {
       "elevation": 88.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 0,
         "max_magnitude": null,
         "seismic_score": 100,
-        "risk_level": "Stable",
-        "last_event": null,
-        "monthly_distribution": {
-          "1": 0,
-          "2": 0,
-          "3": 0,
-          "4": 0,
-          "5": 0,
-          "6": 0,
-          "7": 0,
-          "8": 0,
-          "9": 0,
-          "10": 0,
-          "11": 0,
-          "12": 0
-        }
+        "risk_level": "Stable"
       },
       "hurricane": null,
       "volcano": null,
@@ -51,18 +36,18 @@
         "elevation": 88.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 2.8,
+          "avg_discharge": 2.7,
           "max_discharge": 4.0,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 37,
-        "pm25": 5.8,
-        "pm10": 16.5,
-        "category": "Good",
-        "health_note": "Air quality is excellent. Perfect for outdoor activities.",
+        "aqi": 61,
+        "pm25": 10.3,
+        "pm10": 12.2,
+        "category": "Moderate",
+        "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"
       }
     },

@@ -6,7 +6,7 @@
     "lon": 135.5023,
     "is_coastal": true,
     "timezone": "Asia/Tokyo",
-    "last_updated": "2025-12-23T09:09:54.110632",
+    "last_updated": "2025-12-24T12:24:07.608946",
     "geo_info": {
       "elevation": 3.0,
       "is_high_altitude": false,
@@ -22,22 +22,7 @@
         "avg_per_year": 5.4,
         "max_magnitude": 6.9,
         "seismic_score": 20,
-        "risk_level": "High",
-        "last_event": "2024-12-15",
-        "monthly_distribution": {
-          "1": 32,
-          "2": 10,
-          "3": 14,
-          "4": 12,
-          "5": 15,
-          "6": 18,
-          "7": 14,
-          "8": 17,
-          "9": 9,
-          "10": 10,
-          "11": 10,
-          "12": 13
-        }
+        "risk_level": "High"
       },
       "hurricane": {
         "zone": "Western Pacific",
@@ -61,16 +46,16 @@
         "elevation": 3.0,
         "api_data": {
           "risk_level": "Minimal",
-          "avg_discharge": 3.7,
-          "max_discharge": 6.1,
+          "avg_discharge": 4.5,
+          "max_discharge": 9.5,
           "risk_note": "Low river discharge. Minimal flood risk.",
           "source": "Open-Meteo GloFAS"
         }
       },
       "air_quality": {
-        "aqi": 59,
-        "pm25": 16.9,
-        "pm10": 17.7,
+        "aqi": 80,
+        "pm25": 68.9,
+        "pm10": 70.1,
         "category": "Moderate",
         "health_note": "Air quality is acceptable. Sensitive individuals should limit prolonged outdoor exertion.",
         "source": "Open-Meteo CAMS"
