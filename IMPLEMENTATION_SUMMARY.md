@@ -65,7 +65,7 @@ python convert_heroes_to_webp.py
 ### Krok 4: ⚠️ UPLOAD NA VERCEL BLOB (KRITICKÉ!)
 ```powershell
 # Nastavit token (jednorázově, nebo z .env)
-$env:BLOB_READ_WRITE_TOKEN = "vercel_blob_rw_X0WHXO5QFycDLx3w_2UL85XtUDJ0tl5Ekb2dMsAuTRU0y5L"
+$env:BLOB_READ_WRITE_TOKEN = "vercel_blob_rw_..."
 
 # Upload nových měst na Blob
 npx tsx scripts/sync-blob.ts
@@ -94,13 +94,13 @@ git push origin main
 ### Lokální vývoj (.env)
 ```bash
 IDEOGRAM_API_KEY=your_ideogram_key
-BLOB_READ_WRITE_TOKEN=vercel_blob_rw_X0WHXO5QFycDLx3w_2UL85XtUDJ0tl5Ekb2dMsAuTRU0y5L
+BLOB_READ_WRITE_TOKEN=vercel_blob_rw_...
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_key
 ```
 
 ### Vercel Dashboard (Settings → Environment Variables)
 ```
-BLOB_READ_WRITE_TOKEN = vercel_blob_rw_X0WHXO5QFycDLx3w_2UL85XtUDJ0tl5Ekb2dMsAuTRU0y5L
+BLOB_READ_WRITE_TOKEN = vercel_blob_rw_...
 ```
 
 ---
