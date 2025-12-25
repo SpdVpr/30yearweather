@@ -1,8 +1,10 @@
 import { notFound } from 'next/navigation';
 
 // Static list of cities for SSG - imported at build time
-// This file is small (~5KB) and can be bundled safely
 import citiesList from './cities-list.json';
+
+// Blob URL mapping - maps city slugs to Vercel Blob URLs
+import blobUrls from './blob-urls.json';
 
 export interface DayStats {
     temp_max: number;
@@ -11,11 +13,10 @@ export interface DayStats {
     precip_prob: number;
     wind_kmh: number;
     clouds_percent: number;
-    pressure_hpa?: number; // Atmospheric pressure
-    // NEW: Extended weather variables
-    snowfall_cm?: number; // Snowfall in centimeters
-    sunshine_hours?: number; // Sunshine duration in hours
-    humidity_percent?: number; // Relative humidity percentage
+    pressure_hpa?: number;
+    snowfall_cm?: number;
+    sunshine_hours?: number;
+    humidity_percent?: number;
 }
 
 export interface PressureStats {
@@ -104,9 +105,9 @@ export interface DayScores {
 }
 
 export interface WeatherCondition {
-    description: string; // e.g., "Clear sky", "Overcast", "Heavy rain"
-    icon: string; // Icon suggestion (e.g., "sun", "cloud", "rain")
-    severity: string; // e.g., "clear", "cloudy", "rain", "snow", "storm"
+    description: string;
+    icon: string;
+    severity: string;
 }
 
 export interface HistoricalRecord {
@@ -114,14 +115,13 @@ export interface HistoricalRecord {
     temp_max: number;
     temp_min: number;
     precip: number;
-    snowfall?: number; // NEW: Snowfall data
-    weather_code?: number; // NEW: WMO weather code
+    snowfall?: number;
+    weather_code?: number;
 }
 
-
 export interface MarineInfo {
-    water_temp: number; // °C
-    wave_height: number; // m
+    water_temp: number;
+    wave_height: number;
     shiver_factor: "Polar Plunge" | "Refreshing Tonic" | "Swimming Pool" | "Tropical Bath" | "Hot Soup";
     family_safety: "Lake-like" | "Fun Waves" | "Surfers Only";
     jellyfish_warning: boolean;
@@ -129,18 +129,17 @@ export interface MarineInfo {
 
 export interface DayData {
     stats: DayStats;
-    weather_condition?: WeatherCondition; // NEW: Weather description & icon
+    weather_condition?: WeatherCondition;
     scores: DayScores;
     pressure_stats?: PressureStats;
     health_impact?: HealthImpact;
-    safety?: any; // Monthly safety data (seismic, hurricane, flood, air quality, volcano)
-    marine?: MarineInfo; // NEW: Marine data for coastal cities
+    safety?: any;
+    marine?: MarineInfo;
     clothing: string[];
     events?: { description: string }[];
     historical_records?: HistoricalRecord[];
 }
 
-// NEW: Flight connectivity data
 export interface FlightInfo {
     source: string;
     peak_daily_arrivals?: number;
@@ -156,7 +155,6 @@ export interface FlightInfo {
     icao?: string;
 }
 
-// NEW: Health/Vaccination advisory
 export interface HealthInfo {
     source: string;
     vaccines: Array<{ disease: string; recommendation: string }>;
@@ -164,7 +162,6 @@ export interface HealthInfo {
     notices?: string[];
 }
 
-// NEW: AI-generated SEO content
 export interface SeoContent {
     seo_title: string;
     meta_description: string;
@@ -179,12 +176,11 @@ export interface CityData {
         lat: number;
         lon: number;
         desc?: string;
-        geo_info?: GeoInfo; // NEW
-        safety_profile?: SafetyProfile; // NEW
-        is_coastal?: boolean; // NEW
-        timezone?: string; // e.g. "Asia/Makassar"
-        timezone_offset?: number; // Optional numerical offset if available
-        // NEW: Flight, Health, and SEO data
+        geo_info?: GeoInfo;
+        safety_profile?: SafetyProfile;
+        is_coastal?: boolean;
+        timezone?: string;
+        timezone_offset?: number;
         flight_info?: FlightInfo;
         health_info?: HealthInfo;
         seo_content?: SeoContent;
@@ -197,47 +193,36 @@ export interface CityData {
         wettest_month: number;
         total_days_analyzed: number;
     };
-    days: Record<string, DayData>; // Key "MM-DD"
+    days: Record<string, DayData>;
 }
 
 /**
- * Get the base URL for data fetching.
- * Uses environment variables in production, localhost in development.
- */
-function getBaseUrl(): string {
-    // In Vercel production/preview builds
-    if (process.env.VERCEL_URL) {
-        return `https://${process.env.VERCEL_URL}`;
-    }
-    // Explicit base URL from environment
-    if (process.env.NEXT_PUBLIC_BASE_URL) {
-        return process.env.NEXT_PUBLIC_BASE_URL;
-    }
-    // Default for local development
-    return 'http://localhost:3000';
-}
-
-/**
- * Fetch city data from CDN/static files.
- * This approach keeps serverless functions under Vercel's 250MB limit
- * by loading data via HTTP instead of bundling it.
+ * Fetch city data from Vercel Blob Storage.
  * 
- * For SSG: Data is fetched at build time and pages are pre-rendered.
- * For ISR: Data is re-fetched on revalidation.
+ * This approach:
+ * 1. Keeps serverless functions under Vercel's 250MB limit
+ * 2. Data is fetched at build time for SSG (pages are pre-rendered)
+ * 3. Blob URLs are always accessible (no VERCEL_URL issues)
+ * 4. Scales to 1000+ cities without any size limits
  */
 export async function getCityData(slug: string): Promise<CityData | null> {
     try {
-        const baseUrl = getBaseUrl();
-        const url = `${baseUrl}/data/${slug}.json`;
+        // Get the Blob URL for this city
+        const blobUrl = (blobUrls as Record<string, string>)[slug];
 
-        const response = await fetch(url, {
-            // Cache for 1 hour, revalidate in background
+        if (!blobUrl) {
+            console.error(`No blob URL found for city: ${slug}`);
+            return null;
+        }
+
+        const response = await fetch(blobUrl, {
+            // Cache for 1 hour, revalidate in background (ISR)
             next: { revalidate: 3600 }
         });
 
         if (!response.ok) {
             if (response.status === 404) {
-                console.error(`City data not found: ${slug}`);
+                console.error(`City data not found in blob: ${slug}`);
                 return null;
             }
             throw new Error(`Failed to fetch city data: ${response.status}`);
@@ -253,10 +238,7 @@ export async function getCityData(slug: string): Promise<CityData | null> {
 /**
  * Get list of all available city slugs.
  * Uses pre-generated static list for SSG compatibility.
- * This avoids filesystem access which would bundle data files.
  */
 export async function getAllCities(): Promise<string[]> {
-    // Return static list imported at build time
-    // This is a small JSON file (~5KB) that lists all city slugs
     return citiesList as string[];
 }
