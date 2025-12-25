@@ -21,11 +21,61 @@ export async function generateMetadata({ params }: { params: { city: string } })
     if (!data) return { title: 'City not found' };
 
     const cityName = data.meta.name;
+    const countryName = data.meta.country;
 
-    // Optimized meta description (100-130 characters)
-    const description = data.meta.desc
-        ? (data.meta.desc.length > 130 ? data.meta.desc.substring(0, 127) + '...' : data.meta.desc)
-        : `${cityName} weather forecast based on 30 years of NASA data. Best months to visit, temperatures & rain probability.`;
+    // Calculate quick stats for description
+    const weatherStats = Object.values(data.days).reduce((acc: any, day: any) => {
+        acc.tempMaxSum += day.stats.temp_max;
+        acc.tempMinSum += day.stats.temp_min || 0;
+        acc.count++;
+        return acc;
+    }, { tempMaxSum: 0, tempMinSum: 0, count: 0 });
+
+    const yearlyAvgHigh = Math.round(weatherStats.tempMaxSum / weatherStats.count);
+    const yearlyAvgLow = Math.round(weatherStats.tempMinSum / weatherStats.count);
+
+    // Find best months (simplified for metadata)
+    const monthlyScores = Array.from({ length: 12 }, (_, i) => {
+        const monthKey = (i + 1).toString().padStart(2, "0");
+        const daysInMonth = Object.entries(data.days).filter(([k]) => k.startsWith(monthKey));
+        if (!daysInMonth.length) return { month: i, score: 0, name: "" };
+
+        const avgTemp = daysInMonth.reduce((sum, [, d]: any) => sum + d.stats.temp_max, 0) / daysInMonth.length;
+        const avgRain = daysInMonth.reduce((sum, [, d]: any) => sum + d.stats.precip_prob, 0) / daysInMonth.length;
+
+        let score = 0;
+        if (avgTemp >= 20 && avgTemp <= 28) score += 2;
+        if (avgTemp >= 15 && avgTemp <= 30) score += 1;
+        if (avgRain < 25) score += 2;
+
+        return {
+            name: format(new Date(2024, i, 1), "MMMM"),
+            score
+        };
+    }).sort((a, b) => b.score - a.score);
+
+    const bestMonths = monthlyScores.slice(0, 2).map(m => m.name).join("-");
+
+    // Sea Temp
+    const marineInfo = (marineMetadata as Record<string, any>)[params.city];
+    let seaTempStr = "";
+    if (marineInfo) {
+        const marineDays = Object.values(data.days).filter((day: any) => day.marine?.water_temp !== undefined);
+        if (marineDays.length > 0) {
+            const totalTemp = marineDays.reduce((sum: number, day: any) => sum + (day.marine?.water_temp || 0), 0);
+            const avgSeaTemp = Math.round((totalTemp / marineDays.length) * 10) / 10;
+            seaTempStr = `Swimming temp: ${avgSeaTemp}°C. `;
+        }
+    }
+
+    // Generated Description (target 160-220 chars)
+    // Example: "Plan your trip to Ao Nang, Thailand. Based on 30 years of data, expect avg highs of 30°C and lows of 24°C. Best time to visit: January-February. Swimming temp: 29°C. Explore 365-day forecasts."
+    const generatedDesc = `Plan your holiday to ${cityName}, ${countryName} with 30-year weather data. Expect avg highs of ${yearlyAvgHigh}°C and lows of ${yearlyAvgLow}°C. Best time to visit: ${bestMonths}. ${seaTempStr}See daily forecasts.`;
+
+    // Use manual description if it exists and is long enough, otherwise use generated one
+    const description = (data.meta.desc && data.meta.desc.length > 100)
+        ? data.meta.desc
+        : generatedDesc;
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
 
