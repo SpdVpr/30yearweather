@@ -6,7 +6,7 @@
     "lon": 115.86,
     "is_coastal": true,
     "timezone": "Asia/Manila",
-    "last_updated": "2025-12-24T12:35:39.337747",
+    "last_updated": "2025-12-25T13:25:01.349319",
     "geo_info": {
       "elevation": 16.0,
       "is_high_altitude": false,
@@ -22,31 +22,29 @@
         "avg_per_year": 0,
         "max_magnitude": null,
         "seismic_score": 100,
-        "risk_level": "Stable"
+        "risk_level": "Stable",
+        "last_event": null,
+        "monthly_distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0,
+          "11": 0,
+          "12": 0
+        }
       },
       "hurricane": null,
       "volcano": null,
-      "flood": {
-        "risk_level": "High",
-        "risk_score": 60,
-        "risk_factors": [
-          "Low elevation (<20m)",
-          "Coastal location (storm surge risk)",
-          "Heavy rainfall events (100mm/day)"
-        ],
-        "elevation": 16.0,
-        "api_data": {
-          "risk_level": "Minimal",
-          "avg_discharge": 0.4,
-          "max_discharge": 0.5,
-          "risk_note": "Low river discharge. Minimal flood risk.",
-          "source": "Open-Meteo GloFAS"
-        }
-      },
       "air_quality": {
-        "aqi": 30,
-        "pm25": 1.5,
-        "pm10": 1.5,
+        "aqi": 34,
+        "pm25": 7.8,
+        "pm10": 9.1,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"
@@ -188,14 +186,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.6,
         "wave_height": 1.11,
@@ -328,14 +319,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.7,
         "wave_height": 1.07,
@@ -463,14 +447,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.8,
         "wave_height": 0.98,
@@ -599,14 +576,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.8,
         "wave_height": 0.98,
@@ -735,14 +705,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.9,
         "wave_height": 1.01,
@@ -871,14 +834,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.9,
         "wave_height": 1.07,
@@ -1007,14 +963,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.9,
         "wave_height": 1.14,
@@ -1143,14 +1092,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.9,
         "wave_height": 1.2,
@@ -1278,14 +1220,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.0,
         "wave_height": 1.16,
@@ -1413,14 +1348,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.0,
         "wave_height": 1.11,
@@ -1548,14 +1476,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.1,
         "wave_height": 1.07,
@@ -1683,14 +1604,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.2,
         "wave_height": 1.04,
@@ -1818,14 +1732,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.3,
         "wave_height": 1.07,
@@ -1953,14 +1860,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.3,
         "wave_height": 1.11,
@@ -2088,14 +1988,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.3,
         "wave_height": 1.12,
@@ -2223,14 +2116,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.3,
         "wave_height": 1.11,
@@ -2358,14 +2244,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.3,
         "wave_height": 1.07,
@@ -2493,14 +2372,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.5,
         "wave_height": 1.01,
@@ -2628,14 +2500,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.6,
         "wave_height": 0.93,
@@ -2763,14 +2628,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.7,
         "wave_height": 0.89,
@@ -2898,14 +2756,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.8,
         "wave_height": 0.88,
@@ -3033,14 +2884,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.9,
         "wave_height": 0.97,
@@ -3168,14 +3012,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.8,
         "wave_height": 1.05,
@@ -3303,14 +3140,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.8,
         "wave_height": 1.1,
@@ -3438,14 +3268,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.7,
         "wave_height": 1.14,
@@ -3573,14 +3396,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.7,
         "wave_height": 1.15,
@@ -3708,14 +3524,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.6,
         "wave_height": 1.11,
@@ -3849,14 +3658,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.4,
         "wave_height": 1.09,
@@ -3985,14 +3787,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.3,
         "wave_height": 1.09,
@@ -4120,14 +3915,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.3,
         "wave_height": 1.09,
@@ -4256,14 +4044,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 100.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.2,
         "wave_height": 1.07,
@@ -4392,14 +4173,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.2,
         "wave_height": 1.06,
@@ -4528,14 +4302,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.2,
         "wave_height": 1.04,
@@ -4664,14 +4431,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.1,
         "wave_height": 1.03,
@@ -4800,14 +4560,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.0,
         "wave_height": 1.05,
@@ -4936,14 +4689,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.9,
         "wave_height": 1.06,
@@ -5071,14 +4817,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.8,
         "wave_height": 1.02,
@@ -5206,14 +4945,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.9,
         "wave_height": 0.98,
@@ -5341,14 +5073,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.1,
         "wave_height": 0.96,
@@ -5476,14 +5201,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.3,
         "wave_height": 0.97,
@@ -5611,14 +5329,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.4,
         "wave_height": 1.03,
@@ -5746,14 +5457,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.4,
         "wave_height": 1.07,
@@ -5881,14 +5585,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.4,
         "wave_height": 1.09,
@@ -6016,14 +5713,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.4,
         "wave_height": 1.06,
@@ -6151,14 +5841,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.3,
         "wave_height": 1.0,
@@ -6286,14 +5969,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.3,
         "wave_height": 0.93,
@@ -6421,14 +6097,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.4,
         "wave_height": 0.93,
@@ -6556,14 +6225,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.4,
         "wave_height": 0.92,
@@ -6691,14 +6353,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.5,
         "wave_height": 0.91,
@@ -6826,14 +6481,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.6,
         "wave_height": 0.94,
@@ -6961,14 +6609,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.6,
         "wave_height": 0.98,
@@ -7096,14 +6737,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.6,
         "wave_height": 0.99,
@@ -7231,14 +6865,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.5,
         "wave_height": 1.01,
@@ -7366,14 +6993,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.3,
         "wave_height": 1.05,
@@ -7501,14 +7121,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.2,
         "wave_height": 1.06,
@@ -7636,14 +7249,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.1,
         "wave_height": 1.03,
@@ -7771,14 +7377,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.0,
         "wave_height": 1.03,
@@ -7906,14 +7505,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.0,
         "wave_height": 1.06,
@@ -8041,14 +7633,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.9,
         "wave_height": 1.1,
@@ -8176,14 +7761,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.4,
-          "monthly_precip_max": 45.3
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.9,
         "wave_height": 1.09,
@@ -8295,14 +7873,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.9,
         "wave_height": 1.09,
@@ -8430,14 +8001,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.0,
         "wave_height": 1.09,
@@ -8565,14 +8129,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.0,
         "wave_height": 1.11,
@@ -8705,14 +8262,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.0,
         "wave_height": 1.07,
@@ -8840,14 +8390,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.0,
         "wave_height": 1.02,
@@ -8975,14 +8518,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.9,
         "wave_height": 1.01,
@@ -9110,14 +8646,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.9,
         "wave_height": 1.03,
@@ -9245,14 +8774,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.8,
         "wave_height": 0.99,
@@ -9380,14 +8902,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.7,
         "wave_height": 0.96,
@@ -9515,14 +9030,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.7,
         "wave_height": 0.94,
@@ -9655,14 +9163,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.6,
         "wave_height": 0.93,
@@ -9790,14 +9291,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.5,
         "wave_height": 0.91,
@@ -9925,14 +9419,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.5,
         "wave_height": 0.9,
@@ -10060,14 +9547,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.5,
         "wave_height": 0.92,
@@ -10195,14 +9675,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.5,
         "wave_height": 0.94,
@@ -10330,14 +9803,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.5,
         "wave_height": 0.97,
@@ -10465,14 +9931,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.4,
         "wave_height": 1.01,
@@ -10600,14 +10059,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.3,
         "wave_height": 1.05,
@@ -10735,14 +10187,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.2,
         "wave_height": 1.08,
@@ -10870,14 +10315,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.1,
         "wave_height": 1.09,
@@ -11005,14 +10443,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.0,
         "wave_height": 1.02,
@@ -11140,14 +10571,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.9,
         "wave_height": 0.95,
@@ -11275,14 +10699,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.0,
         "wave_height": 0.88,
@@ -11410,14 +10827,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.0,
         "wave_height": 0.84,
@@ -11545,14 +10955,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.0,
         "wave_height": 0.79,
@@ -11680,14 +11083,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.0,
         "wave_height": 0.76,
@@ -11815,14 +11211,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.0,
         "wave_height": 0.75,
@@ -11950,14 +11339,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.0,
         "wave_height": 0.77,
@@ -12085,14 +11467,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.0,
         "wave_height": 0.78,
@@ -12220,14 +11595,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.0,
         "wave_height": 0.79,
@@ -12355,14 +11723,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 63.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.0,
         "wave_height": 0.81,
@@ -12490,14 +11851,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.9,
         "wave_height": 0.87,
@@ -12625,14 +11979,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.8,
         "wave_height": 0.88,
@@ -12760,14 +12107,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.7,
         "wave_height": 0.86,
@@ -12895,14 +12235,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.6,
         "wave_height": 0.82,
@@ -13030,14 +12363,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.4,
         "wave_height": 0.82,
@@ -13165,14 +12491,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.4,
         "wave_height": 0.82,
@@ -13300,14 +12619,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.3,
         "wave_height": 0.81,
@@ -13435,14 +12747,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.3,
         "wave_height": 0.91,
@@ -13570,14 +12875,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.2,
         "wave_height": 1.01,
@@ -13705,14 +13003,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.1,
         "wave_height": 1.08,
@@ -13840,14 +13131,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.0,
         "wave_height": 1.1,
@@ -13975,14 +13259,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.8,
         "wave_height": 1.12,
@@ -14110,14 +13387,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.7,
         "wave_height": 1.05,
@@ -14245,14 +13515,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.6,
         "wave_height": 1.04,
@@ -14380,14 +13643,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.5,
         "wave_height": 1.05,
@@ -14515,14 +13771,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.4,
         "wave_height": 1.03,
@@ -14650,14 +13899,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.3,
         "wave_height": 1.02,
@@ -14785,14 +14027,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.2,
         "wave_height": 0.98,
@@ -14925,14 +14160,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.2,
         "wave_height": 0.95,
@@ -15065,14 +14293,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.1,
         "wave_height": 0.92,
@@ -15205,14 +14426,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.1,
         "wave_height": 1.0,
@@ -15345,14 +14559,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.1,
         "wave_height": 1.09,
@@ -15480,14 +14687,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.0,
         "wave_height": 1.21,
@@ -15615,14 +14815,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.8,
         "wave_height": 1.24,
@@ -15750,14 +14943,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.5,
         "wave_height": 1.25,
@@ -15890,14 +15076,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.3,
         "wave_height": 1.15,
@@ -16025,14 +15204,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.2,
         "wave_height": 1.05,
@@ -16160,14 +15332,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 0.95,
@@ -16295,14 +15460,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.0,
         "wave_height": 0.91,
@@ -16430,14 +15588,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.9,
-          "monthly_precip_max": 30.5
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.0,
         "wave_height": 0.92,
@@ -16565,14 +15716,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 0.98,
@@ -16700,14 +15844,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 1.07,
@@ -16835,14 +15972,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.2,
         "wave_height": 1.13,
@@ -16970,14 +16100,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 1.15,
@@ -17105,14 +16228,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 1.13,
@@ -17245,14 +16361,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 1.03,
@@ -17380,14 +16489,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.2,
         "wave_height": 0.94,
@@ -17515,14 +16617,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.2,
         "wave_height": 0.96,
@@ -17650,14 +16745,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.3,
         "wave_height": 1.03,
@@ -17785,14 +16873,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.4,
         "wave_height": 1.11,
@@ -17920,14 +17001,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.4,
         "wave_height": 1.2,
@@ -18055,14 +17129,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.4,
         "wave_height": 1.23,
@@ -18190,14 +17257,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.3,
         "wave_height": 1.2,
@@ -18325,14 +17385,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.3,
         "wave_height": 1.15,
@@ -18460,14 +17513,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.2,
         "wave_height": 1.08,
@@ -18595,14 +17641,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 0.99,
@@ -18730,14 +17769,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 0.96,
@@ -18865,14 +17897,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.0,
         "wave_height": 0.93,
@@ -19000,14 +18025,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.9,
         "wave_height": 0.92,
@@ -19135,14 +18153,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.8,
         "wave_height": 1.0,
@@ -19270,14 +18281,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.7,
         "wave_height": 1.16,
@@ -19405,14 +18409,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.5,
         "wave_height": 1.29,
@@ -19540,14 +18537,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.3,
         "wave_height": 1.36,
@@ -19675,14 +18665,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.2,
         "wave_height": 1.38,
@@ -19810,14 +18793,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.1,
         "wave_height": 1.29,
@@ -19945,14 +18921,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.0,
         "wave_height": 1.19,
@@ -20080,14 +19049,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.0,
         "wave_height": 1.17,
@@ -20215,14 +19177,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.0,
         "wave_height": 1.19,
@@ -20350,14 +19305,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.0,
         "wave_height": 1.22,
@@ -20485,14 +19433,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.1,
         "wave_height": 1.23,
@@ -20620,14 +19561,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 62.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.1,
         "wave_height": 1.29,
@@ -20755,14 +19689,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.2,
         "wave_height": 1.32,
@@ -20890,14 +19817,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.2,
         "wave_height": 1.38,
@@ -21030,14 +19950,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.2,
         "wave_height": 1.47,
@@ -21165,14 +20078,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.2,
         "wave_height": 1.55,
@@ -21300,14 +20206,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.1,
         "wave_height": 1.55,
@@ -21435,14 +20334,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.1,
         "wave_height": 1.48,
@@ -21570,14 +20462,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.0,
         "wave_height": 1.42,
@@ -21706,14 +20591,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.0,
         "wave_height": 1.45,
@@ -21842,14 +20720,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.0,
         "wave_height": 1.54,
@@ -21983,14 +20854,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.9,
         "wave_height": 1.59,
@@ -22119,14 +20983,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.9,
         "wave_height": 1.66,
@@ -22255,14 +21112,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.8,
         "wave_height": 1.62,
@@ -22391,14 +21241,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.7,
         "wave_height": 1.53,
@@ -22526,14 +21369,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.7,
         "wave_height": 1.49,
@@ -22661,14 +21497,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.7,
         "wave_height": 1.44,
@@ -22796,14 +21625,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.6,
         "wave_height": 1.43,
@@ -22931,14 +21753,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.6,
         "wave_height": 1.5,
@@ -23066,14 +21881,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.6,
         "wave_height": 1.55,
@@ -23201,14 +22009,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.4,
         "wave_height": 1.53,
@@ -23337,14 +22138,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.3,
         "wave_height": 1.59,
@@ -23473,14 +22267,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.1,
         "wave_height": 1.63,
@@ -23609,14 +22396,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.8,
         "wave_height": 1.6,
@@ -23745,14 +22525,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.6,
         "wave_height": 1.47,
@@ -23880,14 +22653,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.4,
         "wave_height": 1.37,
@@ -24015,14 +22781,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.25,
@@ -24150,14 +22909,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.14,
@@ -24285,14 +23037,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.05,
@@ -24420,14 +23165,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.01,
@@ -24556,14 +23294,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 0.99,
@@ -24692,14 +23423,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.4,
-          "monthly_precip_max": 73.6
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.02,
@@ -24827,14 +23551,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.12,
@@ -24962,14 +23679,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.25,
@@ -25097,14 +23807,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.37,
@@ -25233,14 +23936,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.49,
@@ -25369,14 +24065,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.57,
@@ -25505,14 +24194,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.56,
@@ -25641,14 +24323,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.57,
@@ -25777,14 +24452,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.6,
@@ -25913,14 +24581,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.68,
@@ -26049,14 +24710,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.66,
@@ -26184,14 +24838,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.64,
@@ -26319,14 +24966,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.64,
@@ -26454,14 +25094,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.61,
@@ -26589,14 +25222,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.48,
@@ -26724,14 +25350,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.1,
         "wave_height": 1.44,
@@ -26859,14 +25478,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.1,
         "wave_height": 1.48,
@@ -26995,14 +25607,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.1,
         "wave_height": 1.52,
@@ -27131,14 +25736,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.0,
         "wave_height": 1.59,
@@ -27267,14 +25865,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.9,
         "wave_height": 1.68,
@@ -27403,14 +25994,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.9,
         "wave_height": 1.7,
@@ -27539,14 +26123,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.8,
         "wave_height": 1.72,
@@ -27675,14 +26252,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.7,
         "wave_height": 1.72,
@@ -27811,14 +26381,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.6,
         "wave_height": 1.67,
@@ -27947,14 +26510,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.6,
         "wave_height": 1.66,
@@ -28083,14 +26639,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.5,
         "wave_height": 1.69,
@@ -28219,14 +26768,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.4,
         "wave_height": 1.64,
@@ -28355,14 +26897,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.3,
         "wave_height": 1.65,
@@ -28491,14 +27026,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.3,
         "wave_height": 1.65,
@@ -28627,14 +27155,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.3,
         "wave_height": 1.63,
@@ -28763,14 +27284,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.4,
         "wave_height": 1.74,
@@ -28899,14 +27413,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.6,
-          "monthly_precip_max": 40.0
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.5,
         "wave_height": 1.94,
@@ -29035,14 +27542,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.6,
         "wave_height": 2.04,
@@ -29171,14 +27671,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.5,
         "wave_height": 2.05,
@@ -29307,14 +27800,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.5,
         "wave_height": 1.98,
@@ -29443,14 +27929,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.4,
         "wave_height": 1.78,
@@ -29584,14 +28063,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.4,
         "wave_height": 1.56,
@@ -29720,14 +28192,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.5,
         "wave_height": 1.47,
@@ -29856,14 +28321,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.6,
         "wave_height": 1.5,
@@ -29992,14 +28450,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.7,
         "wave_height": 1.57,
@@ -30128,14 +28579,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.8,
         "wave_height": 1.57,
@@ -30264,14 +28708,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 16.9,
         "wave_height": 1.54,
@@ -30400,14 +28837,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.0,
         "wave_height": 1.52,
@@ -30536,14 +28966,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.1,
         "wave_height": 1.51,
@@ -30672,14 +29095,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.55,
@@ -30808,14 +29224,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.64,
@@ -30944,14 +29353,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.65,
@@ -31080,14 +29482,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.59,
@@ -31216,14 +29611,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.54,
@@ -31352,14 +29740,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.52,
@@ -31487,14 +29868,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.48,
@@ -31622,14 +29996,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.46,
@@ -31757,14 +30124,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.46,
@@ -31892,14 +30252,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.45,
@@ -32027,14 +30380,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.45,
@@ -32162,14 +30508,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Poor"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.45,
@@ -32297,14 +30636,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.48,
@@ -32432,14 +30764,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.47,
@@ -32567,14 +30892,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.42,
@@ -32702,14 +31020,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.33,
@@ -32837,14 +31148,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.4,
         "wave_height": 1.28,
@@ -32972,14 +31276,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.5,
         "wave_height": 1.25,
@@ -33107,14 +31404,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.1,
-          "monthly_precip_max": 35.1
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.5,
         "wave_height": 1.26,
@@ -33242,14 +31532,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.5,
         "wave_height": 1.3,
@@ -33377,14 +31660,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.5,
         "wave_height": 1.38,
@@ -33512,14 +31788,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.6,
         "wave_height": 1.53,
@@ -33647,14 +31916,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.5,
         "wave_height": 1.69,
@@ -33782,14 +32044,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.4,
         "wave_height": 1.72,
@@ -33917,14 +32172,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.68,
@@ -34052,14 +32300,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.2,
         "wave_height": 1.6,
@@ -34187,14 +32428,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.1,
         "wave_height": 1.39,
@@ -34322,14 +32556,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.1,
         "wave_height": 1.15,
@@ -34457,14 +32684,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.3,
         "wave_height": 1.13,
@@ -34592,14 +32812,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.4,
         "wave_height": 1.26,
@@ -34727,14 +32940,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.5,
         "wave_height": 1.44,
@@ -34862,14 +33068,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.5,
         "wave_height": 1.6,
@@ -34997,14 +33196,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.6,
         "wave_height": 1.67,
@@ -35132,14 +33324,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.6,
         "wave_height": 1.61,
@@ -35267,14 +33452,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.7,
         "wave_height": 1.48,
@@ -35402,14 +33580,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.8,
         "wave_height": 1.37,
@@ -35537,14 +33708,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 17.9,
         "wave_height": 1.31,
@@ -35672,14 +33836,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.0,
         "wave_height": 1.29,
@@ -35807,14 +33964,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.0,
         "wave_height": 1.3,
@@ -35942,14 +34092,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.1,
         "wave_height": 1.28,
@@ -36077,14 +34220,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.2,
         "wave_height": 1.23,
@@ -36212,14 +34348,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.3,
         "wave_height": 1.2,
@@ -36347,14 +34476,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.4,
         "wave_height": 1.18,
@@ -36482,14 +34604,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.5,
         "wave_height": 1.17,
@@ -36617,14 +34732,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.6,
         "wave_height": 1.21,
@@ -36757,14 +34865,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.7,
         "wave_height": 1.2,
@@ -36892,14 +34993,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.7,
         "wave_height": 1.17,
@@ -37027,14 +35121,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.8,
         "wave_height": 1.28,
@@ -37167,14 +35254,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 27.8
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.8,
         "wave_height": 1.38,
@@ -37302,14 +35382,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.7,
         "wave_height": 1.46,
@@ -37437,14 +35510,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.7,
         "wave_height": 1.54,
@@ -37572,14 +35638,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.6,
         "wave_height": 1.59,
@@ -37707,14 +35766,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.6,
         "wave_height": 1.52,
@@ -37842,14 +35894,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.6,
         "wave_height": 1.39,
@@ -37977,14 +36022,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.7,
         "wave_height": 1.26,
@@ -38117,14 +36155,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 18.8,
         "wave_height": 1.17,
@@ -38252,14 +36283,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.0,
         "wave_height": 1.15,
@@ -38387,14 +36411,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.1,
         "wave_height": 1.18,
@@ -38522,14 +36539,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.2,
         "wave_height": 1.19,
@@ -38657,14 +36667,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.3,
         "wave_height": 1.21,
@@ -38792,14 +36795,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.4,
         "wave_height": 1.21,
@@ -38927,14 +36923,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.6,
         "wave_height": 1.19,
@@ -39062,14 +37051,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.7,
         "wave_height": 1.17,
@@ -39197,14 +37179,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.9,
         "wave_height": 1.2,
@@ -39332,14 +37307,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.0,
         "wave_height": 1.2,
@@ -39467,14 +37435,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.0,
         "wave_height": 1.26,
@@ -39602,14 +37563,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 1.3,
@@ -39737,14 +37691,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 1.29,
@@ -39872,14 +37819,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 1.28,
@@ -40007,14 +37947,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 1.27,
@@ -40142,14 +38075,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.0,
         "wave_height": 1.23,
@@ -40277,14 +38203,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.0,
         "wave_height": 1.18,
@@ -40412,14 +38331,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.9,
         "wave_height": 1.19,
@@ -40547,14 +38459,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.9,
         "wave_height": 1.21,
@@ -40682,14 +38587,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.9,
         "wave_height": 1.24,
@@ -40817,14 +38715,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.9,
         "wave_height": 1.23,
@@ -40952,14 +38843,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.9,
         "wave_height": 1.25,
@@ -41087,14 +38971,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 19.9,
         "wave_height": 1.26,
@@ -41222,14 +39099,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.0,
         "wave_height": 1.23,
@@ -41357,14 +39227,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.1,
-          "monthly_precip_max": 33.7
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.1,
         "wave_height": 1.17,
@@ -41492,14 +39355,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.2,
         "wave_height": 1.11,
@@ -41627,14 +39483,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.3,
         "wave_height": 1.07,
@@ -41762,14 +39611,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.4,
         "wave_height": 1.03,
@@ -41897,14 +39739,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.5,
         "wave_height": 1.05,
@@ -42037,14 +39872,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.6,
         "wave_height": 1.1,
@@ -42172,14 +40000,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.7,
         "wave_height": 1.12,
@@ -42307,14 +40128,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.8,
         "wave_height": 1.11,
@@ -42442,14 +40256,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.8,
         "wave_height": 1.11,
@@ -42577,14 +40384,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.8,
         "wave_height": 1.06,
@@ -42712,14 +40512,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.8,
         "wave_height": 1.02,
@@ -42847,14 +40640,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.8,
         "wave_height": 0.99,
@@ -42982,14 +40768,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 20.9,
         "wave_height": 0.96,
@@ -43117,14 +40896,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.0,
         "wave_height": 0.93,
@@ -43252,14 +41024,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.0,
         "wave_height": 0.91,
@@ -43387,14 +41152,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.1,
         "wave_height": 0.93,
@@ -43522,14 +41280,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.2,
         "wave_height": 0.94,
@@ -43657,14 +41408,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.3,
         "wave_height": 0.95,
@@ -43792,14 +41536,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.4,
         "wave_height": 0.92,
@@ -43927,14 +41664,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.5,
         "wave_height": 0.93,
@@ -44062,14 +41792,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.6,
         "wave_height": 0.95,
@@ -44197,14 +41920,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.6,
         "wave_height": 0.97,
@@ -44332,14 +42048,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.6,
         "wave_height": 0.98,
@@ -44467,14 +42176,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.6,
         "wave_height": 1.02,
@@ -44602,14 +42304,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.6,
         "wave_height": 1.04,
@@ -44737,14 +42432,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.5,
         "wave_height": 1.01,
@@ -44872,14 +42560,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.6,
         "wave_height": 0.99,
@@ -45007,14 +42688,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.6,
         "wave_height": 0.99,
@@ -45142,14 +42816,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.7,
         "wave_height": 0.98,
@@ -45277,14 +42944,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 21.9,
         "wave_height": 0.97,
@@ -45412,14 +43072,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 0.6,
-          "monthly_precip_max": 26.2
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.0,
         "wave_height": 1.02,
@@ -45547,14 +43200,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.2,
         "wave_height": 1.09,
@@ -45682,14 +43328,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.3,
         "wave_height": 1.14,
@@ -45817,14 +43456,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.4,
         "wave_height": 1.18,
@@ -45952,14 +43584,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.4,
         "wave_height": 1.22,
@@ -46087,14 +43712,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.3,
         "wave_height": 1.21,
@@ -46222,14 +43840,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.3,
         "wave_height": 1.17,
@@ -46357,14 +43968,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.3,
         "wave_height": 1.14,
@@ -46492,14 +44096,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.3,
         "wave_height": 1.11,
@@ -46627,14 +44224,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.4,
         "wave_height": 1.07,
@@ -46762,14 +44352,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.5,
         "wave_height": 1.03,
@@ -46897,14 +44480,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.7,
         "wave_height": 0.99,
@@ -47033,14 +44609,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 22.8,
         "wave_height": 0.95,
@@ -47168,14 +44737,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.0,
         "wave_height": 0.93,
@@ -47303,14 +44865,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.1,
         "wave_height": 0.96,
@@ -47438,14 +44993,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.1,
         "wave_height": 1.05,
@@ -47573,14 +45121,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.2,
         "wave_height": 1.13,
@@ -47708,14 +45249,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.3,
         "wave_height": 1.18,
@@ -47843,14 +45377,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.3,
         "wave_height": 1.23,
@@ -47978,14 +45505,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.4,
         "wave_height": 1.19,
@@ -48113,14 +45633,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.5,
         "wave_height": 1.12,
@@ -48248,14 +45761,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.7,
         "wave_height": 1.05,
@@ -48383,14 +45889,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.8,
         "wave_height": 1.06,
@@ -48519,14 +46018,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.0,
         "wave_height": 1.08,
@@ -48655,14 +46147,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.1,
         "wave_height": 1.1,
@@ -48791,14 +46276,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.1,
         "wave_height": 1.12,
@@ -48932,14 +46410,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 24.0,
         "wave_height": 1.1,
@@ -49072,14 +46543,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.8,
         "wave_height": 1.05,
@@ -49207,14 +46671,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.6,
         "wave_height": 1.03,
@@ -49342,14 +46799,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.5,
         "wave_height": 1.03,
@@ -49477,14 +46927,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.4,
         "wave_height": 1.0,
@@ -49612,14 +47055,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 0.3,
-          "monthly_precip_max": 57.4
-        }
-      },
+      "safety": {},
       "marine": {
         "water_temp": 23.5,
         "wave_height": 1.04,

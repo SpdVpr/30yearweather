@@ -1,51 +1,119 @@
 # Historical Weather Intelligence Platform - Implementation Summary
 
-## 🌍 Current Status: 170+ Cities Live!
+## 🌍 Current Status: 223 Cities Live!
 
-**Last Updated**: 2025-12-23
+**Last Updated**: 2025-12-25
 
 ---
 
-## 🚀 Quick Start - Adding New Cities
+## ⚡ CRITICAL: Vercel Blob Storage
 
-### Complete Workflow for Adding Cities
+**Data je uložena v Vercel Blob Storage** (ne v `public/data/`). Toto řeší Vercel 250MB limit a umožňuje škálování na 1000+ měst.
 
-#### Step 1: Prepare City Data
-Create or update `patch_config_50_cities.py` (or similar script) with new city definitions.
+### Architektura
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    VERCEL BLOB STORAGE                          │
+│  https://x0whxo5qfycdlx3w.public.blob.vercel-storage.com/      │
+│                                                                 │
+│  cities/prague.json, cities/london.json, ... (223 měst)        │
+│  Celková velikost: ~268 MB                                      │
+└─────────────────────────────────────────────────────────────────┘
+                              ↑
+                    fetch() při build time
+                              ↓
+┌─────────────────────────────────────────────────────────────────┐
+│                    NEXT.JS BUILD (Vercel)                       │
+│  src/lib/data.ts → getCityData() → fetch z Blob URL            │
+│  src/lib/blob-urls.json → mapování slug → URL                  │
+│                                                                 │
+│  Výsledek: SSG stránky (pre-rendered HTML)                     │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-#### Step 2: Run All ETL Scripts (in order)
+---
 
+## 🚀 WORKFLOW: Přidání nových měst
+
+### Krok 1: Připravit data měst
 ```powershell
-# 1. Patch config with new cities
-python patch_config_50_cities.py
+# 1. Přidat město do backend/config.py
+# 2. Přidat ICAO kód do backend/airport_codes.py
+```
 
-# 2. Download health data (CDC)
-python download_health_cdc.py
-
-# 3. Download holiday data
-python scripts/download_holidays.py
-
-# 4. Download seasonal flight data
-python download_seasonal_flights.py
-
-# 5. Run main weather ETL (30 years of data)
+### Krok 2: Spustit ETL pipeline
+```powershell
+# Stáhnout a zpracovat data
 python backend/etl.py
 
-# 6. Sync missing tourism data
+# Stáhnout podpůrná data (volitelné)
+python download_health_cdc.py
+python scripts/download_holidays.py
+python download_seasonal_flights.py
 python fix_missing_tourism.py
+```
 
-# 7. Generate hero images for new cities
-python scripts/generate_50_new_heroes.py
+### Krok 3: Generovat hero obrázky
+```powershell
+# Generovat AI obrázky (vyžaduje IDEOGRAM_API_KEY v .env)
+python scripts/generate_trending_heroes.py
 
-# 8. Convert PNG images to WebP
+# Převést do WebP
 python convert_heroes_to_webp.py
 ```
 
-#### Step 3: Verify
-- Check `public/data/` for new city JSON files
-- Check `public/images/` for hero images (both .png and .webp)
-- Check `backend/data/tourism/` for tourism data
-- Start dev server: `npm run dev`
+### Krok 4: ⚠️ UPLOAD NA VERCEL BLOB (KRITICKÉ!)
+```powershell
+# Nastavit token (jednorázově, nebo z .env)
+$env:BLOB_READ_WRITE_TOKEN = "vercel_blob_rw_X0WHXO5QFycDLx3w_2UL85XtUDJ0tl5Ekb2dMsAuTRU0y5L"
+
+# Upload nových měst na Blob
+npx tsx scripts/sync-blob.ts
+
+# Nebo upload všech měst (první spuštění)
+npx tsx scripts/upload-to-blob.ts
+```
+
+### Krok 5: Aktualizovat seznam měst
+```powershell
+# Regenerovat cities-list.json
+Get-ChildItem public\data -Filter "*.json" | ForEach-Object { $_.BaseName } | ConvertTo-Json -Compress | Out-File -FilePath "src\lib\cities-list.json" -Encoding utf8
+```
+
+### Krok 6: Commit a Deploy
+```powershell
+git add .
+git commit -m "Add new cities"
+git push origin main
+```
+
+---
+
+## 🔑 Environment Variables
+
+### Lokální vývoj (.env)
+```bash
+IDEOGRAM_API_KEY=your_ideogram_key
+BLOB_READ_WRITE_TOKEN=vercel_blob_rw_X0WHXO5QFycDLx3w_2UL85XtUDJ0tl5Ekb2dMsAuTRU0y5L
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_key
+```
+
+### Vercel Dashboard (Settings → Environment Variables)
+```
+BLOB_READ_WRITE_TOKEN = vercel_blob_rw_X0WHXO5QFycDLx3w_2UL85XtUDJ0tl5Ekb2dMsAuTRU0y5L
+```
+
+---
+
+## 📁 Klíčové soubory pro Blob
+
+| Soubor | Účel |
+|--------|------|
+| `src/lib/data.ts` | Načítá data z Blob URL (ne z fs!) |
+| `src/lib/blob-urls.json` | Mapování slug → Blob URL |
+| `src/lib/cities-list.json` | Seznam všech městských slugů |
+| `scripts/upload-to-blob.ts` | Upload všech měst na Blob |
+| `scripts/sync-blob.ts` | Sync pouze nových měst |
 
 ---
 
@@ -60,9 +128,8 @@ python convert_heroes_to_webp.py
 | `download_health_cdc.py` | CDC health advisories | Root |
 | `download_seasonal_flights.py` | Flight seasonality data | Root |
 | `scripts/download_holidays.py` | Public holiday data | `scripts/` |
-| `scripts/generate_50_new_heroes.py` | AI hero image generation | `scripts/` |
+| `scripts/generate_trending_heroes.py` | AI hero image generation | `scripts/` |
 | `convert_heroes_to_webp.py` | PNG to WebP conversion | Root |
-| `patch_config_50_cities.py` | Bulk add cities to config | Root |
 
 ---
 
@@ -70,11 +137,15 @@ python convert_heroes_to_webp.py
 
 ### Data Flow
 ```
-Open-Meteo API → backend/etl.py → public/data/{slug}.json
-                                ↓
-                          Frontend reads JSON
-                                ↓
-                          City pages render
+Open-Meteo API → backend/etl.py → public/data/{slug}.json (lokální)
+                                            ↓
+                               scripts/sync-blob.ts
+                                            ↓
+                              Vercel Blob Storage (cloud)
+                                            ↓
+                           src/lib/data.ts (fetch z Blob)
+                                            ↓
+                              SSG stránky (pre-rendered)
 ```
 
 ### Key Directories
@@ -92,17 +163,21 @@ d:/historical-weather/
 │       └── tourism/           # Tourism data JSONs
 │
 ├── public/
-│   ├── data/                  # City JSON files (output)
+│   ├── data/                  # City JSON files (LOCAL ONLY - not used in prod!)
 │   └── images/                # Hero images (.webp)
 │
 ├── src/
 │   ├── app/                   # Next.js pages
 │   ├── components/            # React components
 │   └── lib/
-│       └── data.ts            # Data fetching (auto-discovers cities)
+│       ├── data.ts            # Data fetching (FROM BLOB!)
+│       ├── blob-urls.json     # Slug → Blob URL mapping
+│       └── cities-list.json   # List of all city slugs
 │
-└── scripts/                   # Utility scripts
-    ├── generate_50_new_heroes.py
+└── scripts/
+    ├── upload-to-blob.ts      # Upload all cities
+    ├── sync-blob.ts           # Sync new cities only
+    ├── generate_trending_heroes.py
     └── download_holidays.py
 ```
 
@@ -115,7 +190,8 @@ The ETL scripts are smart - they skip already processed cities:
 - **Weather ETL**: Skips if `public/data/{slug}.json` exists
 - **Tourism ETL**: Skips if `backend/data/tourism/{slug}_tourism.json` exists
 - **Flights ETL**: Skips if `backend/data/raw_flights/{slug}_seasonal.json` exists
-- **Hero Images**: Skips if `public/images/{slug}-hero.png` exists
+- **Hero Images**: Skips if `public/images/{slug}-hero.png` or `.webp` exists
+- **Blob Sync**: Skips if city already exists in Blob storage
 
 This makes re-running safe and efficient!
 
@@ -129,8 +205,7 @@ Uses **Ideogram API** for AI-generated city hero images.
 - `IDEOGRAM_API_KEY` in `.env` file
 
 ### Scripts
-- `scripts/generate_50_new_heroes.py` - Generate for specific cities
-- `scripts/generate_mass_heroes.py` - Template for mass generation
+- `scripts/generate_trending_heroes.py` - Generate for new cities
 - `convert_heroes_to_webp.py` - Convert PNG → WebP (90% compression)
 
 ### Image Naming Convention
@@ -139,21 +214,7 @@ Uses **Ideogram API** for AI-generated city hero images.
 
 ---
 
-## 🔑 Environment Variables
-
-Required in `.env`:
-```
-IDEOGRAM_API_KEY=your_key_here
-```
-
-Optional (for Google Maps):
-```
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_key_here
-```
-
----
-
-## 📊 Data Sources
+##  Data Sources
 
 | Data Type | Source | API |
 |-----------|--------|-----|
@@ -173,13 +234,17 @@ NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_key_here
 
 ## 🐛 Common Issues & Solutions
 
-### Firebase Import Error
-**Error**: `ModuleNotFoundError: No module named 'firebase_admin'`
-**Solution**: Firebase is disabled. Already fixed in `etl_tourism.py`.
+### Vercel 250MB Limit
+**Error**: `Serverless Function has exceeded the unzipped maximum size of 250 MB`
+**Solution**: Data je v Blob storage. Ujistěte se, že `src/lib/data.ts` používá fetch z blob-urls.json.
 
-### wb_data UnboundLocalError
-**Error**: `cannot access local variable 'wb_data'`
-**Solution**: Already fixed - `wb_data = None` initialized at function start.
+### Blob Upload Fails
+**Error**: `BLOB_READ_WRITE_TOKEN not set`
+**Solution**: `$env:BLOB_READ_WRITE_TOKEN = "vercel_blob_rw_..."`
+
+### City Not Found After Deploy
+**Error**: 404 na nové město
+**Solution**: Zapomněli jste spustit `npx tsx scripts/sync-blob.ts` před deployem!
 
 ### Rate Limiting (429 errors)
 **Cause**: Too many API requests to Open-Meteo Marine or Overpass
@@ -189,11 +254,12 @@ NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_key_here
 
 ## 🏆 Current Metrics
 
-- **Total Cities**: 170+
-- **Data per City**: ~130KB JSON
+- **Total Cities**: 223
+- **Data per City**: ~1.2 MB JSON
 - **Historical Range**: 30 years (1995-2025)
 - **Days per City**: 366 (leap year coverage)
 - **Hero Images**: WebP (~150KB each, ~90% compression)
+- **Blob Storage Used**: ~268 MB
 
 ---
 
@@ -213,12 +279,37 @@ python backend/etl.py
 python fix_missing_tourism.py
 
 # Generate images for new cities
-python scripts/generate_50_new_heroes.py
+python scripts/generate_trending_heroes.py
 
 # Convert all PNG heroes to WebP
 python convert_heroes_to_webp.py
+
+# ⚠️ SYNC NEW CITIES TO BLOB (REQUIRED BEFORE DEPLOY!)
+$env:BLOB_READ_WRITE_TOKEN = "vercel_blob_rw_..."
+npx tsx scripts/sync-blob.ts
+
+# Update cities list
+Get-ChildItem public\data -Filter "*.json" | ForEach-Object { $_.BaseName } | ConvertTo-Json -Compress | Out-File -FilePath "src\lib\cities-list.json" -Encoding utf8
+
+# Deploy
+git add .
+git commit -m "Add new cities"
+git push origin main
 ```
 
 ---
 
-**Platform Status**: ✅ Production Ready with 170+ cities
+## ✅ Pre-Deploy Checklist
+
+Before pushing to GitHub:
+
+- [ ] New city JSONs exist in `public/data/`
+- [ ] New hero images exist in `public/images/` (WebP format)
+- [ ] **Cities uploaded to Blob** (`npx tsx scripts/sync-blob.ts`)
+- [ ] `src/lib/cities-list.json` updated
+- [ ] `src/lib/blob-urls.json` updated (automatic from sync-blob)
+- [ ] Local dev server tested (`npm run dev`)
+
+---
+
+**Platform Status**: ✅ Production Ready with 223 cities on Vercel Blob Storage

@@ -6,7 +6,7 @@
     "lon": 77.5946,
     "is_coastal": false,
     "timezone": "Asia/Kolkata",
-    "last_updated": "2025-12-24T12:40:24.554341",
+    "last_updated": "2025-12-25T13:29:48.179189",
     "geo_info": {
       "elevation": 910.0,
       "is_high_altitude": false,
@@ -22,29 +22,29 @@
         "avg_per_year": 0,
         "max_magnitude": null,
         "seismic_score": 100,
-        "risk_level": "Stable"
+        "risk_level": "Stable",
+        "last_event": null,
+        "monthly_distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0,
+          "11": 0,
+          "12": 0
+        }
       },
       "hurricane": null,
       "volcano": null,
-      "flood": {
-        "risk_level": "Medium",
-        "risk_score": 30,
-        "risk_factors": [
-          "Extreme rainfall events (127mm/day)"
-        ],
-        "elevation": 910.0,
-        "api_data": {
-          "risk_level": "Minimal",
-          "avg_discharge": 0.6,
-          "max_discharge": 0.6,
-          "risk_note": "Low river discharge. Minimal flood risk.",
-          "source": "Open-Meteo GloFAS"
-        }
-      },
       "air_quality": {
-        "aqi": 119,
-        "pm25": 40.0,
-        "pm10": 41.7,
+        "aqi": 124,
+        "pm25": 17.2,
+        "pm10": 18.4,
         "category": "Unhealthy for Sensitive",
         "health_note": "Unhealthy for sensitive groups. Consider wearing a mask outdoors.",
         "source": "Open-Meteo CAMS"
@@ -218,14 +218,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -347,14 +340,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -476,14 +462,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -605,14 +584,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -734,14 +706,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -863,14 +828,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -992,14 +950,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -1121,14 +1072,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -1250,14 +1194,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -1379,14 +1316,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -1508,14 +1438,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -1637,14 +1560,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -1766,14 +1682,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -1896,14 +1805,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -2026,14 +1928,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -2156,14 +2051,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -2286,14 +2174,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -2416,14 +2297,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -2546,14 +2420,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -2676,14 +2543,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -2806,14 +2666,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -2936,14 +2789,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -3066,14 +2912,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -3196,14 +3035,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -3326,14 +3158,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -3456,14 +3281,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -3586,14 +3404,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -3716,14 +3527,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -3846,14 +3650,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -3976,14 +3773,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -4106,14 +3896,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -4236,14 +4019,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -4366,14 +4142,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -4496,14 +4265,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -4626,14 +4388,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -4756,14 +4511,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -4886,14 +4634,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -5016,14 +4757,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -5146,14 +4880,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -5276,14 +5003,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -5406,14 +5126,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -5536,14 +5249,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -5666,14 +5372,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -5796,14 +5495,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -5926,14 +5618,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -6056,14 +5741,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -6186,14 +5864,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -6316,14 +5987,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -6446,14 +6110,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -6576,14 +6233,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -6706,14 +6356,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -6836,14 +6479,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -6966,14 +6602,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -7096,14 +6725,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -7226,14 +6848,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -7356,14 +6971,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -7486,14 +7094,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -7616,14 +7217,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -7746,14 +7340,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -7876,14 +7463,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.2,
-          "monthly_precip_max": 18.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -7990,14 +7570,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -8120,14 +7693,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -8250,14 +7816,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -8380,14 +7939,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -8510,14 +8062,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -8640,14 +8185,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -8770,14 +8308,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -8900,14 +8431,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -9030,14 +8554,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -9160,14 +8677,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -9290,14 +8800,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -9420,14 +8923,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -9550,14 +9046,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -9680,14 +9169,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -9810,14 +9292,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -9940,14 +9415,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -10070,14 +9538,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -10200,14 +9661,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -10330,14 +9784,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -10460,14 +9907,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -10590,14 +10030,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -10720,14 +10153,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -10850,14 +10276,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -10980,14 +10399,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -11110,14 +10522,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -11240,14 +10645,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -11370,14 +10768,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -11500,14 +10891,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -11630,14 +11014,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -11760,14 +11137,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -11890,14 +11260,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.5,
-          "monthly_precip_max": 30.1
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -12020,14 +11383,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -12150,14 +11506,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -12280,14 +11629,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -12410,14 +11752,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -12540,14 +11875,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -12670,14 +11998,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -12800,14 +12121,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -12930,14 +12244,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -13060,14 +12367,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -13190,14 +12490,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -13320,14 +12613,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -13450,14 +12736,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -13580,14 +12859,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -13710,14 +12982,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -13840,14 +13105,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -13970,14 +13228,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -14100,14 +13351,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -14230,14 +13474,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -14360,14 +13597,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -14490,14 +13720,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -14620,14 +13843,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -14749,14 +13965,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -14878,14 +14087,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -15008,14 +14210,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -15138,14 +14333,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -15268,14 +14456,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -15398,14 +14579,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -15528,14 +14702,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -15657,14 +14824,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -15786,14 +14946,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 1.4,
-          "monthly_precip_max": 44.5
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -15915,14 +15068,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -16044,14 +15190,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -16173,14 +15312,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -16302,14 +15434,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -16431,14 +15556,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -16560,14 +15678,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -16689,14 +15800,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -16818,14 +15922,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -16947,14 +16044,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -17077,14 +16167,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -17207,14 +16290,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -17337,14 +16413,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -17467,14 +16536,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -17597,14 +16659,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -17727,14 +16782,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -17857,14 +16905,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -17987,14 +17028,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -18117,14 +17151,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -18247,14 +17274,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -18377,14 +17397,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -18507,14 +17520,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -18637,14 +17643,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -18767,14 +17766,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -18897,14 +17889,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -19027,14 +18012,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -19157,14 +18135,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -19287,14 +18258,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -19417,14 +18381,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -19547,14 +18504,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -19677,14 +18627,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -19807,14 +18750,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 3.7,
-          "monthly_precip_max": 66.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -19937,14 +18873,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -20067,14 +18996,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -20197,14 +19119,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -20327,14 +19242,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -20457,14 +19365,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -20587,14 +19488,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -20717,14 +19611,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -20847,14 +19734,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -20977,14 +19857,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -21107,14 +19980,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -21237,14 +20103,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -21367,14 +20226,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -21497,14 +20349,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -21627,14 +20472,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -21757,14 +20595,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -21887,14 +20718,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -22017,14 +20841,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -22147,14 +20964,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -22277,14 +21087,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -22407,14 +21210,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -22537,14 +21333,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -22667,14 +21456,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -22797,14 +21579,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -22927,14 +21702,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -23057,14 +21825,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -23187,14 +21948,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -23317,14 +22071,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -23447,14 +22194,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -23577,14 +22317,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -23707,14 +22440,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 37.4
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -23837,14 +22563,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -23967,14 +22686,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -24097,14 +22809,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -24227,14 +22932,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -24357,14 +23055,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -24487,14 +23178,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -24617,14 +23301,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -24747,14 +23424,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -24877,14 +23547,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -25007,14 +23670,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -25137,14 +23793,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -25267,14 +23916,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -25397,14 +24039,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -25527,14 +24162,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -25657,14 +24285,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -25787,14 +24408,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -25917,14 +24531,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -26047,14 +24654,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -26177,14 +24777,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -26307,14 +24900,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -26437,14 +25023,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -26567,14 +25146,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -26697,14 +25269,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -26827,14 +25392,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -26957,14 +25515,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -27087,14 +25638,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -27217,14 +25761,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -27347,14 +25884,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -27477,14 +26007,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -27607,14 +26130,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -27737,14 +26253,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 64.9
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -27867,14 +26376,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -27997,14 +26499,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -28127,14 +26622,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -28257,14 +26745,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -28387,14 +26868,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -28517,14 +26991,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -28647,14 +27114,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -28777,14 +27237,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -28907,14 +27360,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -29037,14 +27483,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -29167,14 +27606,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -29297,14 +27729,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -29427,14 +27852,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -29557,14 +27975,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -29687,14 +28098,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -29817,14 +28221,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -29947,14 +28344,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -30077,14 +28467,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -30207,14 +28590,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -30337,14 +28713,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -30467,14 +28836,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -30597,14 +28959,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -30727,14 +29082,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -30857,14 +29205,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -30987,14 +29328,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -31117,14 +29451,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -31247,14 +29574,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -31377,14 +29697,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -31507,14 +29820,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -31637,14 +29943,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -31767,14 +30066,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.4,
-          "monthly_precip_max": 39.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -31897,14 +30189,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -32027,14 +30312,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -32157,14 +30435,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -32287,14 +30558,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -32417,14 +30681,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -32547,14 +30804,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -32677,14 +30927,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -32807,14 +31050,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -32937,14 +31173,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -33067,14 +31296,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -33197,14 +31419,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -33327,14 +31542,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -33457,14 +31665,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -33587,14 +31788,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -33717,14 +31911,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -33847,14 +32034,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -33977,14 +32157,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -34107,14 +32280,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -34237,14 +32403,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -34367,14 +32526,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -34497,14 +32649,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -34627,14 +32772,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -34757,14 +32895,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -34887,14 +33018,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -35017,14 +33141,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -35147,14 +33264,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -35277,14 +33387,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -35407,14 +33510,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -35537,14 +33633,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -35667,14 +33756,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 4.3,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -35797,14 +33879,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -35927,14 +34002,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -36057,14 +34125,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -36187,14 +34248,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -36317,14 +34371,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -36447,14 +34494,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -36577,14 +34617,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -36707,14 +34740,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -36837,14 +34863,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -36967,14 +34986,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -37097,14 +35109,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -37227,14 +35232,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -37357,14 +35355,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -37487,14 +35478,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -37617,14 +35601,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -37747,14 +35724,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -37877,14 +35847,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -38007,14 +35970,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -38137,14 +36093,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -38267,14 +36216,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -38397,14 +36339,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -38527,14 +36462,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -38657,14 +36585,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -38787,14 +36708,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -38917,14 +36831,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -39047,14 +36954,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -39176,14 +37076,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -39305,14 +37198,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -39434,14 +37320,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -39563,14 +37442,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -39692,14 +37564,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 10,
-          "monthly_precip_avg": 4.6,
-          "monthly_precip_max": 55.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -39821,14 +37686,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -39950,14 +37808,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -40080,14 +37931,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -40210,14 +38054,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -40340,14 +38177,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -40469,14 +38299,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -40599,14 +38422,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -40728,14 +38544,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -40857,14 +38666,7 @@
         "joint_pain_risk": "Medium",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -40986,14 +38788,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -41115,14 +38910,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -41244,14 +39032,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -41373,14 +39154,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -41502,14 +39276,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -41631,14 +39398,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -41760,14 +39520,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -41889,14 +39642,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -42018,14 +39764,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -42147,14 +39886,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -42276,14 +40008,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -42405,14 +40130,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -42534,14 +40252,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -42663,14 +40374,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -42792,14 +40496,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -42921,14 +40618,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -43050,14 +40740,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -43179,14 +40862,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -43308,14 +40984,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -43437,14 +41106,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -43566,14 +41228,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Low",
-          "risk_score": 15,
-          "monthly_precip_avg": 2.4,
-          "monthly_precip_max": 126.6
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -43695,14 +41350,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -43824,14 +41472,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -43953,14 +41594,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -44082,14 +41716,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -44211,14 +41838,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -44340,14 +41960,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -44469,14 +42082,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -44598,14 +42204,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -44727,14 +42326,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -44856,14 +42448,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -44985,14 +42570,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -45114,14 +42692,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -45243,14 +42814,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -45372,14 +42936,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -45501,14 +43058,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -45630,14 +43180,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -45759,14 +43302,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -45888,14 +43424,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -46017,14 +43546,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -46146,14 +43668,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -46275,14 +43790,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -46404,14 +43912,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -46533,14 +44034,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -46662,14 +44156,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -46791,14 +44278,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -46920,14 +44400,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -47049,14 +44522,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -47178,14 +44644,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -47307,14 +44766,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -47436,14 +44888,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",
@@ -47565,14 +45010,7 @@
         "joint_pain_risk": "Low",
         "fishing_conditions": "Fair"
       },
-      "safety": {
-        "flood": {
-          "risk_level": "Minimal",
-          "risk_score": 0,
-          "monthly_precip_avg": 0.8,
-          "monthly_precip_max": 45.2
-        }
-      },
+      "safety": {},
       "marine": null,
       "clothing": [
         "T-Shirt",

@@ -12,6 +12,8 @@ import CityPageTracker from "@/components/CityPageTracker";
 import Header from "@/components/common/Header";
 import TravelInsights from "@/components/TravelInsights";
 import LazyMap from "@/components/LazyMap";
+import SeaTemperatureCard from "@/components/SeaTemperatureCard";
+import marineMetadata from "@/lib/marine-metadata.json";
 
 // 1. Dynamic Metadata
 export async function generateMetadata({ params }: { params: { city: string } }): Promise<Metadata> {
@@ -277,6 +279,17 @@ export default async function CityIndexPage({
     const yearlyRainfall = monthlyStats.reduce((sum, m) => sum + m.totalRainMm, 0);
     const avgSunshineHrs = 8;
 
+    // Calculate average sea temperature (if coastal city)
+    const marineInfo = (marineMetadata as Record<string, any>)[city];
+    let avgSeaTemp: number | null = null;
+    if (marineInfo) {
+        const marineDays = Object.values(data.days).filter((day: any) => day.marine?.water_temp !== undefined);
+        if (marineDays.length > 0) {
+            const totalTemp = marineDays.reduce((sum: number, day: any) => sum + (day.marine?.water_temp || 0), 0);
+            avgSeaTemp = Math.round((totalTemp / marineDays.length) * 10) / 10;
+        }
+    }
+
     // Best months to visit
     const bestMonths = monthlyStats.filter(m => m.status.includes("Perfect") || m.status.includes("Pleasant")).map(m => m.name);
     const bestMonthsText = bestMonths.length > 0 ? bestMonths.slice(0, 2).join(" - ") : "Year-round";
@@ -345,6 +358,9 @@ export default async function CityIndexPage({
                             Plan your trip to {data.meta.name}, {data.meta.country} with confidence.
                             Based on <strong>30 years of NASA satellite data</strong>, expect average temperatures of {yearlyAvgHigh}°C (high) to {yearlyAvgLow}°C (low),
                             with {yearlyRainfall.toLocaleString()}mm annual rainfall.
+                            {marineInfo && avgSeaTemp !== null && (
+                                <> The <strong>{marineInfo.sea_name}</strong> averages <strong>{avgSeaTemp}°C</strong> for swimming.</>
+                            )}
                             {bestMonths.length > 0 && <> The <strong>best months to visit</strong> are <strong>{bestMonths.slice(0, 3).join(", ")}</strong> for optimal weather conditions.</>}
                             {' '}Explore daily forecasts for all 365 days.
                         </p>
@@ -417,6 +433,17 @@ export default async function CityIndexPage({
                         <p className="text-xs text-stone-400 mt-1">Peak in dry season</p>
                     </div>
                 </div>
+
+                {/* Sea Temperature Section - Only for coastal cities */}
+                {marineInfo && avgSeaTemp !== null && (
+                    <SeaTemperatureCard
+                        waterTemp={avgSeaTemp}
+                        seaName={marineInfo.sea_name}
+                        seaNameLocal={marineInfo.sea_name_local}
+                        cityName={data.meta.name}
+                        variant="full"
+                    />
+                )}
 
                 {/* Monthly Breakdown - Primary CTA Section */}
                 <section className="mb-12">

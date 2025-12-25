@@ -131,10 +131,13 @@ export default function SafetyProfileCard({ safetyProfile, cityName, currentMont
 
     // --- Logic for Seismic Monthly Data ---
 
-    // Get monthly count if available
-    const monthlySeismicCount = (currentMonth && seismic.monthly_distribution)
-        ? seismic.monthly_distribution[currentMonth]
+    // Get monthly data if available
+    const monthlyData = (currentMonth && seismic.monthly)
+        ? seismic.monthly[currentMonth.toString()]
         : null;
+
+    const monthlyCount = monthlyData ? monthlyData.count : null;
+    const monthlyLastEvent = monthlyData ? monthlyData.last_event : null;
 
     // Human-friendly seismic advice based on risk level
     const getSeismicAdvice = (level: string, count: number) => {
@@ -153,19 +156,25 @@ export default function SafetyProfileCard({ safetyProfile, cityName, currentMont
                 <span className="font-semibold">{seismic.count_30y || 0}</span>
             </div>
             {/* Show monthly if available */}
-            {monthlySeismicCount !== null && (
+            {monthlyCount !== null && (
                 <div className="flex justify-between">
-                    <span>In {getMonthName(currentMonth)}:</span>
-                    <span className="font-semibold">{monthlySeismicCount}</span>
+                    <span>In {getMonthName(currentMonth)} (30y):</span>
+                    <span className="font-semibold">{monthlyCount}</span>
                 </div>
             )}
-            {/* Last event */}
-            {seismic.last_event && (
+            {/* Last event in month */}
+            {monthlyLastEvent ? (
+                <div className="flex justify-between">
+                    <span>Last in {getMonthName(currentMonth)}:</span>
+                    <span className="font-semibold">{monthlyLastEvent}</span>
+                </div>
+            ) : (seismic.last_event && (
                 <div className="flex justify-between">
                     <span>Last recorded:</span>
                     <span className="font-semibold">{seismic.last_event}</span>
                 </div>
-            )}
+            ))}
+
             {/* Human advice */}
             <div className="mt-1.5 pt-1.5 border-t border-slate-200/50 text-[11px] italic text-slate-500">
                 💡 {getSeismicAdvice(seismic.risk_level, seismic.count_30y || 0)}
@@ -174,46 +183,21 @@ export default function SafetyProfileCard({ safetyProfile, cityName, currentMont
     );
 
     // --- Logic for Flood Risk ---
-
-    // Human-friendly flood advice
+    // DISABLED: Flood risk calculation was not reliable enough based on historical data.
+    // Keeping logic commented out for potential future use if better data source is found.
+    /*
     const getFloodAdvice = (level: string) => {
         if (level === 'Minimal' || level === 'Low') return "Flooding is rare. No special precautions needed.";
         if (level === 'Medium') return "Flash floods possible during heavy rain. Avoid low-lying areas.";
         return "High flood risk. Check weather forecasts daily and know evacuation routes.";
     };
-
-    // Extract meaningful flood info
+    
     const floodExpanded = flood && (
         <div className="flex flex-col gap-1.5">
-            {/* Risk score if available */}
-            {flood.risk_score !== undefined && (
-                <div className="flex justify-between">
-                    <span>Risk score:</span>
-                    <span className="font-semibold">{flood.risk_score}/100</span>
-                </div>
-            )}
-            {/* Elevation context */}
-            {flood.elevation !== null && flood.elevation !== undefined && (
-                <div className="flex justify-between">
-                    <span>Elevation:</span>
-                    <span className="font-semibold">{flood.elevation}m</span>
-                </div>
-            )}
-            {/* All risk factors */}
-            {flood.risk_factors && flood.risk_factors.length > 1 && (
-                <div className="mt-1 pt-1 border-t border-slate-200/50">
-                    <span className="text-[10px] uppercase tracking-wider text-slate-400 mb-1 block">Risk factors:</span>
-                    {flood.risk_factors.slice(0, 3).map((factor, i) => (
-                        <div key={i} className="text-[11px] text-slate-500">• {factor}</div>
-                    ))}
-                </div>
-            )}
-            {/* Human advice */}
-            <div className="mt-1.5 pt-1.5 border-t border-slate-200/50 text-[11px] italic text-slate-500">
-                💡 {getFloodAdvice(flood.risk_level)}
-            </div>
+             ... code omitted ...
         </div>
     );
+    */
 
     // --- Main Render ---
 
@@ -309,16 +293,18 @@ export default function SafetyProfileCard({ safetyProfile, cityName, currentMont
                             />
                         )}
 
-                        {/* Floods */}
+                        {/* Floods - REMOVED */}
+                        {/* 
                         {flood && (
                             <RiskItem
                                 icon={Waves}
                                 title="Flood Risk"
                                 level={flood.risk_level}
-                                detail={getFloodMessage(flood.risk_level)}
+                                detail={getFloodAdvice(flood.risk_level)}
                                 expandedDetail={floodExpanded}
                             />
-                        )}
+                        )} 
+                        */}
 
                         {/* Volcano */}
                         {volcano && (

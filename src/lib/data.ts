@@ -50,7 +50,12 @@ export interface SeismicRisk {
     seismic_score: number;
     risk_level: "Stable" | "Low" | "Medium" | "High" | "Very High" | "Unknown";
     last_event?: string;
-    monthly_distribution?: Record<number, number>;
+    monthly?: Record<string, {
+        count: number;
+        last_event: string | null;
+        last_event_mag: number | null;
+    }>;
+    monthly_distribution?: Record<number, number>; // Legacy support
 }
 
 export interface HurricaneRisk {

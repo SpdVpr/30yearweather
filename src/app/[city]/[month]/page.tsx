@@ -10,6 +10,8 @@ import type { Metadata } from 'next';
 import Header from "@/components/common/Header";
 import TravelInsights from "@/components/TravelInsights";
 import Footer from "@/components/Footer";
+import SeaTemperatureCard from "@/components/SeaTemperatureCard";
+import marineMetadata from "@/lib/marine-metadata.json";
 
 // Helper for month mapping
 const MONTH_MAP: Record<string, string> = {
@@ -129,6 +131,18 @@ export default async function CityMonthPage({ params }: { params: { city: string
     const avgRainProb = Math.round(totalRainProb / daysCount);
     const avgSunHours = Math.round(totalSunHours / daysCount);
     const rainyDaysCount = Math.round((rainyDays25 / daysCount) * daysCount);
+
+    // Calculate average sea temperature for this month (if coastal city)
+    const marineInfo = (marineMetadata as Record<string, any>)[city];
+    let avgSeaTemp: number | null = null;
+    if (marineInfo) {
+        const marineDaysForMonth = Object.entries(data.days)
+            .filter(([key, day]: [string, any]) => key.startsWith(monthNum + "-") && day.marine?.water_temp !== undefined);
+        if (marineDaysForMonth.length > 0) {
+            const totalTemp = marineDaysForMonth.reduce((sum: number, [, day]: [string, any]) => sum + (day.marine?.water_temp || 0), 0);
+            avgSeaTemp = Math.round((totalTemp / marineDaysForMonth.length) * 10) / 10;
+        }
+    }
 
     // Season context
     const getSeasonContext = () => {
@@ -259,6 +273,9 @@ export default async function CityMonthPage({ params }: { params: { city: string
                             Plan your {monthDisplay} trip to {cityName}, {data.meta.country}.
                             Based on <strong>30 years of NASA data</strong>, expect temperatures of {avgMax}°C (high) to {avgMin}°C (low),
                             with {avgRainProb}% rain probability and {avgSunHours} hours of daily sunshine.
+                            {marineInfo && avgSeaTemp !== null && (
+                                <> The <strong>{marineInfo.sea_name}</strong> averages <strong>{avgSeaTemp}°C</strong> in {monthDisplay}.</>
+                            )}
                             {rainyDaysCount > 10
                                 ? ` Pack rain gear for around ${rainyDaysCount} rainy days.`
                                 : ` Great conditions with only ${rainyDaysCount} rainy days expected.`}
@@ -336,6 +353,18 @@ export default async function CityMonthPage({ params }: { params: { city: string
                         <p className="text-xs text-stone-400 mt-1">{season} season</p>
                     </div>
                 </div>
+
+                {/* Sea Temperature Section - Only for coastal cities */}
+                {marineInfo && avgSeaTemp !== null && (
+                    <SeaTemperatureCard
+                        waterTemp={avgSeaTemp}
+                        seaName={marineInfo.sea_name}
+                        seaNameLocal={marineInfo.sea_name_local}
+                        monthName={monthDisplay}
+                        cityName={cityName}
+                        variant="full"
+                    />
+                )}
 
                 {/* Calendar View */}
                 <section className="mb-12">

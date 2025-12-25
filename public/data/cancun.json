@@ -6,7 +6,7 @@
     "lon": -86.8515,
     "is_coastal": true,
     "timezone": "America/Cancun",
-    "last_updated": "2025-12-24T12:27:29.386629",
+    "last_updated": "2025-12-25T13:16:14.258848",
     "geo_info": {
       "elevation": 11.0,
       "is_high_altitude": false,
@@ -22,7 +22,22 @@
         "avg_per_year": 0,
         "max_magnitude": null,
         "seismic_score": 100,
-        "risk_level": "Stable"
+        "risk_level": "Stable",
+        "last_event": null,
+        "monthly_distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0,
+          "11": 0,
+          "12": 0
+        }
       },
       "hurricane": {
         "zone": "Atlantic",
@@ -35,27 +50,10 @@
         "source": "NOAA Historical Climatology"
       },
       "volcano": null,
-      "flood": {
-        "risk_level": "High",
-        "risk_score": 75,
-        "risk_factors": [
-          "Low elevation (<20m)",
-          "Coastal location (storm surge risk)",
-          "Extreme rainfall events (211mm/day)"
-        ],
-        "elevation": 11.0,
-        "api_data": {
-          "risk_level": "Minimal",
-          "avg_discharge": 1.6,
-          "max_discharge": 2.2,
-          "risk_note": "Low river discharge. Minimal flood risk.",
-          "source": "Open-Meteo GloFAS"
-        }
-      },
       "air_quality": {
-        "aqi": 35,
-        "pm25": 6.6,
-        "pm10": 10.1,
+        "aqi": 43,
+        "pm25": 7.9,
+        "pm10": 11.5,
         "category": "Good",
         "health_note": "Air quality is excellent. Perfect for outdoor activities.",
         "source": "Open-Meteo CAMS"
@@ -226,12 +224,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -375,12 +367,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -519,12 +505,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -663,12 +643,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -807,12 +781,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -951,12 +919,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -1095,12 +1057,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -1239,12 +1195,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -1383,12 +1333,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -1527,12 +1471,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -1671,12 +1609,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -1815,12 +1747,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -1959,12 +1885,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -2103,12 +2023,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -2247,12 +2161,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -2391,12 +2299,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -2535,12 +2437,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -2679,12 +2575,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -2823,12 +2713,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -2967,12 +2851,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -3111,12 +2989,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -3255,12 +3127,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -3399,12 +3265,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -3543,12 +3403,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -3687,12 +3541,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -3831,12 +3679,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -3975,12 +3817,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -4119,12 +3955,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -4263,12 +4093,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -4407,12 +4231,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -4551,12 +4369,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 1.9,
-          "monthly_precip_max": 91.5
         }
       },
       "marine": {
@@ -4695,12 +4507,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -4839,12 +4645,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -4983,12 +4783,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -5132,12 +4926,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -5276,12 +5064,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -5420,12 +5202,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -5564,12 +5340,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -5708,12 +5478,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -5852,12 +5616,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -5996,12 +5754,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -6140,12 +5892,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -6284,12 +6030,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -6428,12 +6168,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -6572,12 +6306,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -6716,12 +6444,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -6860,12 +6582,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -7004,12 +6720,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -7148,12 +6858,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -7292,12 +6996,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -7436,12 +7134,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -7580,12 +7272,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -7724,12 +7410,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -7868,12 +7548,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -8012,12 +7686,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -8156,12 +7824,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -8300,12 +7962,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -8444,12 +8100,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -8588,12 +8238,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -8732,12 +8376,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.3,
-          "monthly_precip_max": 29.7
         }
       },
       "marine": {
@@ -8860,12 +8498,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -9004,12 +8636,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -9148,12 +8774,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -9292,12 +8912,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -9436,12 +9050,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -9580,12 +9188,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -9724,12 +9326,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -9868,12 +9464,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -10012,12 +9602,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -10156,12 +9740,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -10300,12 +9878,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -10444,12 +10016,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -10588,12 +10154,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -10732,12 +10292,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -10876,12 +10430,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -11020,12 +10568,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -11164,12 +10706,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -11313,12 +10849,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -11457,12 +10987,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -11601,12 +11125,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -11745,12 +11263,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -11889,12 +11401,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -12033,12 +11539,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -12177,12 +11677,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -12321,12 +11815,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -12465,12 +11953,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -12609,12 +12091,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -12753,12 +12229,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -12897,12 +12367,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -13041,12 +12505,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -13185,12 +12643,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.0,
-          "monthly_precip_max": 28.1
         }
       },
       "marine": {
@@ -13329,12 +12781,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -13473,12 +12919,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -13617,12 +13057,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -13761,12 +13195,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -13905,12 +13333,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -14049,12 +13471,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -14193,12 +13609,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -14337,12 +13747,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -14481,12 +13885,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -14625,12 +14023,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -14769,12 +14161,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -14913,12 +14299,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -15057,12 +14437,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -15201,12 +14575,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -15345,12 +14713,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -15489,12 +14851,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -15633,12 +14989,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -15782,12 +15132,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -15931,12 +15275,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -16075,12 +15413,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -16219,12 +15551,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -16363,12 +15689,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -16507,12 +15827,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -16651,12 +15965,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -16795,12 +16103,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -16939,12 +16241,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -17083,12 +16379,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -17227,12 +16517,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -17371,12 +16655,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -17515,12 +16793,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 1.2,
-          "monthly_precip_max": 31.0
         }
       },
       "marine": {
@@ -17659,12 +16931,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -17808,12 +17074,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -17952,12 +17212,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -18096,12 +17350,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -18240,12 +17488,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -18384,12 +17626,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -18528,12 +17764,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -18672,12 +17902,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -18816,12 +18040,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -18960,12 +18178,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -19104,12 +18316,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -19248,12 +18454,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -19392,12 +18592,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -19536,12 +18730,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -19680,12 +18868,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -19824,12 +19006,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -19968,12 +19144,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -20112,12 +19282,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -20256,12 +19420,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -20400,12 +19558,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -20544,12 +19696,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -20688,12 +19834,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -20832,12 +19972,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -20976,12 +20110,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -21120,12 +20248,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -21264,12 +20386,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -21408,12 +20524,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -21552,12 +20662,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -21696,12 +20800,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -21841,12 +20939,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -21986,12 +21078,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 2.5,
-          "monthly_precip_max": 66.6
         }
       },
       "marine": {
@@ -22131,12 +21217,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -22276,12 +21356,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -22421,12 +21495,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -22566,12 +21634,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -22711,12 +21773,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -22856,12 +21912,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -23001,12 +22051,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -23146,12 +22190,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -23291,12 +22329,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -23436,12 +22468,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -23581,12 +22607,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -23726,12 +22746,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -23871,12 +22885,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -24016,12 +23024,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -24161,12 +23163,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -24306,12 +23302,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -24451,12 +23441,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -24596,12 +23580,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -24741,12 +23719,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -24886,12 +23858,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -25031,12 +23997,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -25176,12 +24136,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -25321,12 +24275,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -25466,12 +24414,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -25611,12 +24553,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -25756,12 +24692,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -25901,12 +24831,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -26046,12 +24970,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -26191,12 +25109,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -26336,12 +25248,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.6,
-          "monthly_precip_max": 104.1
         }
       },
       "marine": {
@@ -26481,12 +25387,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -26625,12 +25525,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -26769,12 +25663,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -26913,12 +25801,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -27058,12 +25940,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -27203,12 +26079,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -27348,12 +26218,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -27493,12 +26357,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -27638,12 +26496,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -27783,12 +26635,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -27928,12 +26774,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -28072,12 +26912,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -28216,12 +27050,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -28360,12 +27188,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -28504,12 +27326,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -28648,12 +27464,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -28793,12 +27603,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -28938,12 +27742,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -29083,12 +27881,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -29228,12 +28020,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -29373,12 +28159,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -29518,12 +28298,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -29663,12 +28437,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -29808,12 +28576,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -29953,12 +28715,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -30098,12 +28854,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -30243,12 +28993,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -30388,12 +29132,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -30533,12 +29271,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -30678,12 +29410,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -30823,12 +29549,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.2,
-          "monthly_precip_max": 89.4
         }
       },
       "marine": {
@@ -30968,12 +29688,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -31113,12 +29827,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -31258,12 +29966,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -31403,12 +30105,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -31548,12 +30244,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -31693,12 +30383,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -31838,12 +30522,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -31983,12 +30661,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -32128,12 +30800,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -32273,12 +30939,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -32418,12 +31078,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -32563,12 +31217,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -32708,12 +31356,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -32853,12 +31495,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -32998,12 +31634,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -33143,12 +31773,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -33288,12 +31912,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -33433,12 +32051,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -33578,12 +32190,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -33723,12 +32329,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -33868,12 +32468,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -34013,12 +32607,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -34158,12 +32746,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -34303,12 +32885,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -34448,12 +33024,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -34593,12 +33163,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -34738,12 +33302,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -34883,12 +33441,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -35028,12 +33580,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -35173,12 +33719,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -35318,12 +33858,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 45,
-          "monthly_precip_avg": 3.9,
-          "monthly_precip_max": 64.8
         }
       },
       "marine": {
@@ -35463,12 +33997,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -35608,12 +34136,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -35753,12 +34275,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -35898,12 +34414,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -36043,12 +34553,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -36188,12 +34692,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -36333,12 +34831,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -36478,12 +34970,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -36623,12 +35109,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -36768,12 +35248,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -36913,12 +35387,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -37058,12 +35526,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -37203,12 +35665,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -37348,12 +35804,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -37493,12 +35943,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -37638,12 +36082,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -37788,12 +36226,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -37933,12 +36365,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -38078,12 +36504,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -38223,12 +36643,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -38368,12 +36782,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -38513,12 +36921,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -38658,12 +37060,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -38803,12 +37199,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -38948,12 +37338,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -39093,12 +37477,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -39238,12 +37616,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -39383,12 +37755,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -39528,12 +37894,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -39673,12 +38033,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 6.0,
-          "monthly_precip_max": 141.1
         }
       },
       "marine": {
@@ -39818,12 +38172,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -39963,12 +38311,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -40108,12 +38450,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -40253,12 +38589,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -40398,12 +38728,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -40543,12 +38867,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -40688,12 +39006,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -40833,12 +39145,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -40978,12 +39284,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -41123,12 +39423,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -41268,12 +39562,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -41413,12 +39701,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -41558,12 +39840,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -41703,12 +39979,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -41848,12 +40118,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -41993,12 +40257,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -42138,12 +40396,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -42283,12 +40535,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -42428,12 +40674,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -42573,12 +40813,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -42718,12 +40952,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -42863,12 +41091,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -43008,12 +41230,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -43153,12 +41369,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -43298,12 +41508,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -43443,12 +41647,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -43588,12 +41786,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -43733,12 +41925,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -43877,12 +42063,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -44022,12 +42202,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -44167,12 +42341,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 50,
-          "monthly_precip_avg": 5.9,
-          "monthly_precip_max": 211.1
         }
       },
       "marine": {
@@ -44312,12 +42480,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -44457,12 +42619,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -44602,12 +42758,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -44747,12 +42897,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -44892,12 +43036,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -45037,12 +43175,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -45182,12 +43314,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -45326,12 +43452,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -45470,12 +43590,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -45614,12 +43728,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -45759,12 +43867,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -45904,12 +44006,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -46049,12 +44145,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -46194,12 +44284,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -46339,12 +44423,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -46484,12 +44562,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -46629,12 +44701,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -46779,12 +44845,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -46923,12 +44983,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -47067,12 +45121,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -47211,12 +45259,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -47355,12 +45397,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -47499,12 +45535,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -47643,12 +45673,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -47787,12 +45811,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -47931,12 +45949,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -48075,12 +46087,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -48219,12 +46225,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -48363,12 +46363,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -48507,12 +46501,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 3.0,
-          "monthly_precip_max": 46.3
         }
       },
       "marine": {
@@ -48651,12 +46639,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -48795,12 +46777,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -48939,12 +46915,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -49083,12 +47053,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -49227,12 +47191,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -49371,12 +47329,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -49515,12 +47467,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -49659,12 +47605,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -49803,12 +47743,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -49947,12 +47881,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -50091,12 +48019,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -50235,12 +48157,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -50379,12 +48295,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -50523,12 +48433,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -50667,12 +48571,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -50811,12 +48709,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -50955,12 +48847,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -51100,12 +48986,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -51245,12 +49125,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -51389,12 +49263,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -51533,12 +49401,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -51677,12 +49539,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -51821,12 +49677,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -51965,12 +49815,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -52109,12 +49953,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -52258,12 +50096,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -52402,12 +50234,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -52546,12 +50372,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -52690,12 +50510,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -52834,12 +50648,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
@@ -52978,12 +50786,6 @@
           "monthly_avg_storms": 1.1,
           "season_months": "1-12",
           "source": "NOAA Historical Climatology"
-        },
-        "flood": {
-          "risk_level": "Medium",
-          "risk_score": 35,
-          "monthly_precip_avg": 2.0,
-          "monthly_precip_max": 45.2
         }
       },
       "marine": {
