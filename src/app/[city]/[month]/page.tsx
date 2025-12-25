@@ -24,6 +24,7 @@ const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'Ju
 export const dynamicParams = true;
 export const revalidate = 86400;
 
+// 1. Dynamic Metadata
 export async function generateMetadata({ params }: { params: { city: string; month: string } }): Promise<Metadata> {
     const { city, month } = params;
     const monthLower = month.toLowerCase();
@@ -37,29 +38,52 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     const cityName = data.meta.name;
     const monthDisplay = monthLower.charAt(0).toUpperCase() + monthLower.slice(1);
 
+    // Calculate detailed stats for the month
     let totalMax = 0;
-    let totalRain = 0;
+    let totalMin = 0;
+    let totalRainProb = 0;
+    let rainyDays25 = 0;
     let count = 0;
+
     Object.entries(data.days).forEach(([key, day]: [string, any]) => {
         if (key.startsWith(monthNum + "-")) {
             totalMax += day.stats.temp_max;
-            totalRain += day.stats.precip_prob;
+            totalMin += day.stats.temp_min || 0;
+            totalRainProb += day.stats.precip_prob;
+            if (day.stats.precip_prob > 25) rainyDays25++;
             count++;
         }
     });
 
     const avgMax = count ? Math.round(totalMax / count) : 0;
-    const avgRain = count ? Math.round(totalRain / count) : 0;
+    const avgMin = count ? Math.round(totalMin / count) : 0;
+    const avgRain = count ? Math.round(totalRainProb / count) : 0;
+    const rainyDaysCount = count ? Math.round((rainyDays25 / count) * count) : 0;
+
+    // Sea Temp
+    const marineInfo = (marineMetadata as Record<string, any>)[city];
+    let seaTempStr = "";
+    if (marineInfo) {
+        const marineDays = Object.entries(data.days)
+            .filter(([key, day]: [string, any]) => key.startsWith(monthNum + "-") && day.marine?.water_temp !== undefined);
+        if (marineDays.length > 0) {
+            const totalTemp = marineDays.reduce((sum: number, [, day]: [string, any]) => sum + (day.marine?.water_temp || 0), 0);
+            const avgSeaTemp = Math.round((totalTemp / marineDays.length) * 10) / 10;
+            seaTempStr = `Swimming temp: ${avgSeaTemp}°C. `;
+        }
+    }
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://30yearweather.com';
 
-    const title = `${cityName} in ${monthDisplay} | Weather & Climate Guide`;
-    const description = `${cityName} ${monthDisplay} weather: ${avgMax}°C avg high, ${avgRain}% rain chance. Historical climate data from 30 years of NASA satellite observations. Plan your perfect trip.`;
+    const title = `${cityName} Weather in ${monthDisplay} | 30-Year Forecast`;
+    // Target 160-220 characters
+    // Example: "Planning to visit Ao Nang in February? based on 30 years of data: expect avg highs of 32°C, lows of 24°C, and 3 rainy days. Swimming temp: 29°C. Read our travel guide."
+    const description = `Planning a trip to ${cityName} in ${monthDisplay}? Based on 30 years of data: expect avg highs of ${avgMax}°C, lows of ${avgMin}°C, and ${rainyDaysCount} rainy days. ${seaTempStr}Read our detailed travel guide.`;
 
     return {
         title: title,
         description: description,
-        keywords: [`${cityName} in ${monthLower}`, `${cityName} weather ${monthLower}`, `visiting ${cityName} in ${monthLower}`, `what to wear in ${cityName} in ${monthLower}`],
+        keywords: [`${cityName} in ${monthLower}`, `${cityName} weather ${monthLower}`, `visiting ${cityName} in ${monthLower}`, `what to wear in ${cityName} in ${monthLower}`, `${cityName} ${monthLower} temperature`],
         alternates: {
             canonical: `${baseUrl}/${city}/${monthLower}`,
             languages: {
