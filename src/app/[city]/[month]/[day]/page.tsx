@@ -12,6 +12,7 @@ import SwipeNavigation from "@/components/SwipeNavigation";
 import Footer from "@/components/Footer";
 import Header from "@/components/common/Header";
 import DayTravelInfo from "@/components/DayTravelInfo";
+import marineMetadata from "@/lib/marine-metadata.json";
 
 const MONTH_MAP: Record<string, string> = {
     january: '01', february: '02', march: '03', april: '04', may: '05', june: '06',
@@ -27,6 +28,7 @@ function getDateUrl(date: Date, city: string) {
     return `/${city}/${monthName}/${day}`;
 }
 
+// 1. Dynamic Metadata
 export async function generateMetadata({ params }: { params: { city: string; month: string; day: string } }): Promise<Metadata> {
     const { city, month, day } = params;
     const monthLower = month.toLowerCase();
@@ -46,6 +48,9 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     const monthDisplay = monthLower.charAt(0).toUpperCase() + monthLower.slice(1);
 
     const tempAvg = dayData.stats.temp_max;
+    // We don't have min temp in dayData.stats (based on type inference in original code it was accessing .temp_min but let's be safe and check if it exists or use default from stats)
+    // Actually the original code uses `dayData.stats.temp_min` in lines 113, so it must be there.
+    const tempLow = dayData.stats.temp_min;
     const rainProb = dayData.stats.precip_prob;
 
     // Calculate monthly pressure score (relative to peak month)
@@ -68,7 +73,6 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     // NEW: Enhanced SEO with tourism and health context
     const monthlyFlightPressure = calculateMonthlyPressure();
     const holidayEvent = dayData.events?.[0]?.description;
-    const vaccineCount = data.meta.health_info?.vaccines?.length || 0;
 
     // Shortened month name for SEO (e.g., "November" → "Nov")
     const monthShort = monthDisplay.length > 4 ? monthDisplay.substring(0, 3) : monthDisplay;
@@ -76,33 +80,40 @@ export async function generateMetadata({ params }: { params: { city: string; mon
     // Build dynamic description extras (keep concise for 140-155 char limit)
     let seasonContext = "";
     if (monthlyFlightPressure >= 70) {
-        seasonContext = "Peak season - book early.";
+        seasonContext = "Peak season";
     } else if (monthlyFlightPressure < 30) {
-        seasonContext = "Off-peak with fewer crowds.";
+        seasonContext = "Off-peak";
     } else {
-        seasonContext = "Moderate tourist activity.";
+        seasonContext = "Moderate crowds";
     }
 
     // Optional: Add holiday context if present (but watch length)
     let holidayNote = "";
     if (holidayEvent && holidayEvent.length < 30) {
-        holidayNote = ` ${holidayEvent}.`;
+        holidayNote = `, ${holidayEvent}`;
+    }
+
+    // Sea Temp
+    const marineInfo = (marineMetadata as Record<string, any>)[city];
+    let seaTempStr = "";
+    if (marineInfo && dayData.marine?.water_temp) {
+        seaTempStr = `Sea: ${dayData.marine.water_temp}°C. `;
     }
 
     // SEO-optimized title (target: 50-60 chars)
-    // Format: "City Mon DD Weather: 17°C, 19% Rain | 30-Year Data"
-    const title = `${cityName} ${monthShort} ${day} Weather: ${tempAvg}°C, ${rainProb}% Rain | 30-Year Data`;
+    // Format: "Ao Nang Weather Feb 04: 32°C, 22% Rain | 30-Year Data"
+    const title = `${cityName} Weather ${monthShort} ${day}: ${tempAvg}°C, ${rainProb}% Rain | 30-Year Data`;
 
-    // SEO-optimized description (target: 140-155 chars)
-    // Format: "City Mon DD: 17°C avg, 19% rain chance. Season context. 30-year NASA climate data for travel planning."
-    const description = `${cityName} ${monthShort} ${day}: ${tempAvg}°C avg, ${rainProb}% rain chance. ${seasonContext}${holidayNote} 30-year NASA climate data for travel planning.`;
+    // SEO-optimized description (target: 160-220 chars)
+    // Example: "Weather forecast for Ao Nang on February 4. Historical data shows avg highs of 32°C, lows of 24°C, and 22% rain chance. Peak season. Sea: 29°C. Read our analysis."
+    const description = `Weather forecast for ${cityName} on ${monthDisplay} ${day}. Historical data shows avg highs of ${tempAvg}°C, lows of ${tempLow}°C, and ${rainProb}% rain chance. ${seasonContext}${holidayNote}. ${seaTempStr}Read our analysis.`;
 
     return {
         title: title,
         description: description,
         openGraph: {
-            title: `${cityName} Weather: ${day} ${monthDisplay}`,
-            description: `Historical data shows ${tempAvg}°C, ${rainProb}% rain risk.`,
+            title: title,
+            description: description,
             type: 'website',
             locale: 'en_US',
             siteName: '30YearWeather',
@@ -110,8 +121,8 @@ export async function generateMetadata({ params }: { params: { city: string; mon
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${cityName} Weather: ${day} ${monthDisplay}`,
-            description: `Historical data: ${tempAvg}°C, ${rainProb}% rain risk.`,
+            title: title,
+            description: description,
             // images are auto-generated by opengraph-image.tsx
         },
         alternates: {
