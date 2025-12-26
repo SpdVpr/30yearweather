@@ -12,14 +12,59 @@ export async function GET(
   const urls: string[] = [];
 
   // 1. Main Sitemap (Homepage, static pages)
+  // 1. Main Sitemap (Homepage, static pages)
   if (cityId === 'main') {
-    urls.push(`
+    const staticPages = [
+      '', // Homepage
+      '/methodology',
+      '/about',
+      '/finder',
+      '/api-docs'
+    ];
+
+    staticPages.forEach(page => {
+      urls.push(`
   <url>
-    <loc>${BASE_URL}</loc>
+    <loc>${BASE_URL}${page}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>${page === '' ? '1.0' : '0.8'}</priority>
   </url>`);
+    });
+
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.join('\n')}
+</urlset>`;
+
+    return new NextResponse(sitemap, {
+      headers: {
+        'Content-Type': 'application/xml',
+        'Cache-Control': 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400',
+      },
+    });
+  }
+
+  // 2. Research Sitemap
+  if (cityId === 'research') {
+    const researchPages = [
+      '/research',
+      '/research/global-warming-prediction-2026',
+      '/research/global-eternal-spring-2026',
+      '/research/shoulder-season-index-2025',
+      '/research/beach-index-2025',
+      '/research/winter-sun-index-2025',
+    ];
+
+    researchPages.forEach(page => {
+      urls.push(`
+  <url>
+    <loc>${BASE_URL}${page}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>`);
+    });
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -101,6 +146,7 @@ export async function generateStaticParams() {
   const cities = await getAllCities();
   return [
     { city: 'main.xml' },
+    { city: 'research.xml' },
     ...cities.map(city => ({ city: `${city}.xml` }))
   ];
 }

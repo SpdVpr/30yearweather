@@ -29,6 +29,7 @@ export default function Footer() {
                         <span className="text-white font-bold mb-1">Product</span>
                         <Link href="/#cities" className="hover:text-white transition-colors">Destinations</Link>
                         <Link href="/finder" className="hover:text-white transition-colors flex items-center gap-2">Smart Finder <span className="px-1.5 py-0.5 rounded bg-orange-900/50 text-orange-400 text-[10px] font-bold">NEW</span></Link>
+                        <Link href="/research" className="hover:text-white transition-colors">Research</Link>
                         <Link href="/methodology" className="hover:text-white transition-colors">Methodology</Link>
                         <Link href="/api-docs" className="hover:text-white transition-colors">API Access</Link>
                     </div>

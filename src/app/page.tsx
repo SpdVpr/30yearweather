@@ -323,6 +323,7 @@ export default async function Home() {
         </nav>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-white/90">
           <a href="#cities" className="hover:text-white hover:underline transition-all">Destinations</a>
+          <Link href="/research" className="hover:text-white hover:underline transition-all">Research</Link>
           <a href="/methodology" className="hover:text-white hover:underline transition-all">Methodology</a>
           <a href="/about" className="hover:text-white hover:underline transition-all">About</a>
           <UnitToggle />
