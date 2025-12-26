@@ -29,11 +29,32 @@ def load_all_cities() -> List[str]:
     with open(PROJECT_ROOT / "src" / "lib" / "cities-list.json", "r", encoding="utf-8-sig") as f:
         return json.load(f)
 
-def get_continent(timezone: str) -> str:
+# Country to continent mapping for fallback
+COUNTRY_CONTINENT = {
+    "Kenya": "Africa", "South Africa": "Africa", "Morocco": "Africa", "Egypt": "Africa",
+    "Tanzania": "Africa", "Ethiopia": "Africa", "Nigeria": "Africa", "Ghana": "Africa",
+    "Colombia": "Americas", "Costa Rica": "Americas", "Brazil": "Americas", "Argentina": "Americas",
+    "Mexico": "Americas", "USA": "Americas", "Canada": "Americas", "Peru": "Americas", "Chile": "Americas",
+    "Panama": "Americas", "Ecuador": "Americas", "Uruguay": "Americas",
+    "Spain": "Europe", "France": "Europe", "Italy": "Europe", "Germany": "Europe", "UK": "Europe",
+    "Portugal": "Europe", "Greece": "Europe", "Croatia": "Europe", "Netherlands": "Europe",
+    "Thailand": "Asia", "Indonesia": "Asia", "Vietnam": "Asia", "Japan": "Asia", "India": "Asia",
+    "Philippines": "Asia", "Malaysia": "Asia", "Singapore": "Asia", "South Korea": "Asia",
+    "UAE": "Asia", "Turkey": "Asia", "Israel": "Asia", "Sri Lanka": "Asia", "Cambodia": "Asia",
+    "Australia": "Oceania", "New Zealand": "Oceania",
+    "Fiji": "Pacific", "French Polynesia": "Pacific", "Samoa": "Pacific",
+}
+
+def get_continent(timezone: str, country: str = "") -> str:
+    # First try country-based mapping (more reliable)
+    if country and country in COUNTRY_CONTINENT:
+        return COUNTRY_CONTINENT[country]
+    
+    # Fallback to timezone-based detection
+    if "Africa" in timezone: return "Africa"
     if "Europe" in timezone: return "Europe"
     if "Asia" in timezone: return "Asia"
     if "America" in timezone: return "Americas"
-    if "Africa" in timezone: return "Africa"
     if "Australia" in timezone: return "Oceania"
     if "Atlantic" in timezone: return "Atlantic"
     if "Pacific" in timezone: return "Pacific"
@@ -54,11 +75,12 @@ def analyze_city(city_slug: str) -> Optional[CityStats]:
              with open(file_path, "r", encoding="utf-8-sig") as f:
                 data = json.load(f)
             
-        # Basic metadata
-        name = data.get("name", city_slug)
-        country = data.get("country", "Unknown")
-        timezone = data.get("timezone", "")
-        continent = get_continent(timezone)
+        # Basic metadata - from nested "meta" object
+        meta = data.get("meta", {})
+        name = meta.get("name", city_slug)
+        country = meta.get("country", "Unknown")
+        timezone = meta.get("timezone", "")
+        continent = get_continent(timezone, country)
         
         # We need daily data to calculate "perfect days"
         days_data = data.get("days", {})
