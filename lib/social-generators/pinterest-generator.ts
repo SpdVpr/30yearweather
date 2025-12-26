@@ -435,7 +435,7 @@ async function generateDayPost(cityData: CityData, day: DayInfo): Promise<Buffer
 // HELPERS
 // =============================================
 
-async function drawHeroImage(ctx: any, imagePath: string, width: number, height: number) {
+async function drawHeroImage(ctx: any, imagePath: string | Buffer, width: number, height: number) {
     try {
         const heroImage = await loadImage(imagePath);
         const imgRatio = heroImage.width / heroImage.height;

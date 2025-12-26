@@ -8,7 +8,7 @@ export interface CityData {
     avgTempMax: number;
     rainProbability: number;
     crowds: 'Very Quiet' | 'Quiet' | 'Moderate' | 'Busy' | 'Very Busy';
-    heroImagePath: string;
+    heroImagePath: string | Buffer;
 }
 
 export interface PinMetadata {

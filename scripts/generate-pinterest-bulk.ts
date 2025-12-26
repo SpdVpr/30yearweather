@@ -8,6 +8,7 @@
 
 import fs from 'fs/promises';
 import path from 'path';
+import sharp from 'sharp';
 import { generatePinterestPin } from '../lib/social-generators/pinterest-generator';
 import type { CityData } from '../lib/social-generators/types';
 
@@ -22,18 +23,34 @@ function formatCityName(slug: string): string {
 }
 
 // Get region/board for city
-function getBoard(slug: string): string {
-    const asia = ['tokyo', 'kyoto', 'osaka', 'sapporo', 'fukuoka', 'seoul', 'busan', 'beijing', 'shanghai', 'chengdu', 'hong-kong', 'taipei', 'bangkok', 'phuket', 'chiang-mai', 'singapore', 'kuala-lumpur', 'jakarta', 'bali', 'hanoi', 'ho-chi-minh', 'manila', 'kathmandu', 'new-delhi', 'mumbai', 'male', 'almaty', 'tashkent'];
-    const americas = ['new-york', 'los-angeles', 'san-francisco', 'chicago', 'miami', 'las-vegas', 'new-orleans', 'boston', 'honolulu', 'toronto', 'vancouver', 'montreal', 'calgary', 'whistler', 'mexico-city', 'cancun', 'buenos-aires', 'rio-de-janeiro', 'sao-paulo', 'santiago', 'lima', 'cusco', 'bogota', 'cartagena', 'quito', 'san-jose-cr', 'san-juan', 'nassau', 'montego-bay', 'punta-cana'];
-    const oceania = ['sydney', 'melbourne', 'brisbane', 'perth', 'auckland', 'christchurch', 'queenstown', 'nadi', 'papeete', 'bora-bora'];
-    const middleEast = ['dubai', 'abu-dhabi', 'doha', 'muscat', 'ras-al-khaimah', 'tel-aviv', 'cairo', 'marrakech', 'casablanca'];
-    const africa = ['cape-town', 'nairobi', 'zanzibar'];
+function getBoard(slug: string, meta: any): string {
+    // 1. Explicit overrides for Middle East / N. Africa grouping
+    // Including Turkey in Europe by default, but Egypt/Morocco in Middle East/Africa grouping if desired
+    // Based on previous content, Cairo/Marrakech were in Middle East list.
+    const middleEast = [
+        'dubai', 'abu-dhabi', 'doha', 'muscat', 'ras-al-khaimah',
+        'tel-aviv', 'jerusalem', 'amman', 'jeddah', 'riyadh',
+        'kuwait-city', 'manama', 'beirut',
+        'cairo', 'hurghada', 'sharm-el-sheikh', 'luxor',
+        'marrakech', 'casablanca'
+    ];
 
-    if (asia.includes(slug)) return 'Best Time to Visit - Asia';
-    if (americas.includes(slug)) return 'Best Time to Visit - Americas';
-    if (oceania.includes(slug)) return 'Best Time to Visit - Oceania';
     if (middleEast.includes(slug)) return 'Best Time to Visit - Middle East';
-    if (africa.includes(slug)) return 'Best Time to Visit - Africa';
+
+    const tz = meta?.timezone || '';
+
+    if (tz.startsWith('Asia/')) return 'Best Time to Visit - Asia';
+    if (tz.startsWith('Africa/')) return 'Best Time to Visit - Africa';
+    if (tz.startsWith('America/')) return 'Best Time to Visit - Americas'; // North & South
+    if (tz.startsWith('Australia/') || tz.startsWith('Pacific/')) return 'Best Time to Visit - Oceania';
+
+    // Special cases
+    if (tz.startsWith('Indian/')) {
+        if (slug === 'male' || slug === 'maldives') return 'Best Time to Visit - Asia';
+        return 'Best Time to Visit - Africa'; // Mauritius, Seychelles
+    }
+
+    // Default to Europe (includes startWith('Europe/'), 'Atlantic/', etc.)
     return 'Best Time to Visit - Europe';
 }
 
@@ -87,17 +104,17 @@ async function main() {
             const heroPng = path.join(process.cwd(), 'public', 'images', `${slug}-hero.png`);
             const heroWebp = path.join(process.cwd(), 'public', 'images', `${slug}-hero.webp`);
 
-            let heroPath = '';
+            let heroPath: string | Buffer = '';
             try {
                 await fs.access(heroPng);
                 heroPath = heroPng;
             } catch {
                 try {
                     await fs.access(heroWebp);
-                    // webp exists but Canvas can't load it - skip this city
-                    console.log(`   ⚠️ ${slug} has only .webp (Canvas can't load), skipping`);
-                    errors++;
-                    continue;
+                    // Convert WebP to PNG buffer for Canvas
+                    console.log(`   🔄 Converting ${slug}.webp to PNG buffer...`);
+                    const webpBuffer = await fs.readFile(heroWebp);
+                    heroPath = await sharp(webpBuffer).png().toBuffer();
                 } catch {
                     console.log(`   ⚠️ No hero image for ${slug}, skipping`);
                     errors++;
@@ -193,7 +210,7 @@ async function main() {
             const title = `Best Time to Visit ${cityName} - 30 Year Weather Analysis`;
             const description = `Planning a ${cityName} trip? Based on 30 years of NASA data:\\n✨ Best: ${cityData.bestMonths.join(' & ')}\\n🌡️ ${cityData.avgTempMin}-${cityData.avgTempMax}°C\\n🌧️ ${cityData.rainProbability}% rain\\n\\n#${slug.replace(/-/g, '')} #besttimetovisit #travelplanning`;
             const link = `${BASE_URL}/${slug}?utm_source=pinterest&utm_medium=pin&utm_campaign=bulk`;
-            const board = getBoard(slug);
+            const board = getBoard(slug, meta);
 
             // Escape CSV fields
             const escapeCsv = (s: string) => `"${s.replace(/"/g, '""')}"`;
