@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Search, Check, Loader2, Sparkles } from "lucide-react";
+import { MapPin, Search, Check, Loader2, Sparkles, X } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 
 interface GeocodedCity {
@@ -19,6 +19,7 @@ interface GeocodedCity {
 export default function HomeLocationOnboarding() {
     const { user, userProfile, updateUserProfile, initializing } = useAuth();
     const [isOpen, setIsOpen] = useState(false);
+    const [isDismissed, setIsDismissed] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [searchResults, setSearchResults] = useState<GeocodedCity[]>([]);
     const [selectedCity, setSelectedCity] = useState<GeocodedCity | null>(null);
@@ -26,37 +27,35 @@ export default function HomeLocationOnboarding() {
     const [saving, setSaving] = useState(false);
     const [saved, setSaved] = useState(false);
 
-    // Check if user needs to set home location
-    // Check if user needs to set home location
-    // Check if user needs to set home location
+    // CRITICAL: Robust logic to determine if we should show the onboarding modal.
     useEffect(() => {
-        // 1. If still initializing or no user, we do nothing (default is closed)
-        if (initializing || !user) {
+        // 1. If manually dismissed in this session, don't reopen
+        if (isDismissed) return;
+
+        // 2. Default to closed if not initialized, no user, or no profile data yet.
+        if (initializing || !user || !userProfile) {
             setIsOpen(false);
             return;
         }
 
-        // 2. Wait until we have the profile data
-        if (!userProfile) return;
+        // 3. Check if the user already has a home location in their profile.
+        const homeLoc = userProfile.homeLocation;
+        const HasValidLocation = !!(
+            homeLoc &&
+            (typeof homeLoc === 'string' || (typeof homeLoc === 'object' && (homeLoc as any).name))
+        );
 
-        // 3. LOGIC FLIP:
-        // Only show IF profile is loaded AND homeLocation is clearly missing
-        const hasLocation = !!userProfile.homeLocation;
-
-        if (hasLocation) {
+        // 4. If they have a location, ensure the modal is closed and STAY closed.
+        if (HasValidLocation) {
             setIsOpen(false);
-        } else {
-            // Use a short delay just to ensure no race conditions with hydration/auth state
-            const timer = setTimeout(() => {
-                if (!userProfile.homeLocation) {
-                    setIsOpen(true);
-                }
-            }, 500);
-            return () => clearTimeout(timer);
+            return;
         }
-    }, [initializing, user, userProfile, userProfile?.homeLocation]);
 
-    // Debounced search
+        // 5. If they DON'T have a location, we show the modal.
+        setIsOpen(true);
+    }, [initializing, user, userProfile, userProfile?.homeLocation, isDismissed]);
+
+    // Debounced search logic for city selection
     useEffect(() => {
         if (searchQuery.length < 2) {
             setSearchResults([]);
@@ -88,6 +87,11 @@ export default function HomeLocationOnboarding() {
         setSearchResults([]);
     };
 
+    const handleClose = () => {
+        setIsOpen(false);
+        setIsDismissed(true);
+    };
+
     const handleSave = async () => {
         if (!selectedCity) return;
 
@@ -104,7 +108,7 @@ export default function HomeLocationOnboarding() {
             setSaved(true);
             setTimeout(() => {
                 setIsOpen(false);
-            }, 1500);
+            }, 1000);
         } catch (error) {
             console.error("Failed to save home location:", error);
         } finally {
@@ -112,30 +116,40 @@ export default function HomeLocationOnboarding() {
         }
     };
 
-    // Don't render anything if conditions aren't met
+    // Do not render anything if the modal is closed.
     if (!isOpen) return null;
 
     return (
         <AnimatePresence>
             {isOpen && (
                 <>
-                    {/* Backdrop - no close on click, user must complete */}
+                    {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        onClick={handleClose}
                         className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
                     />
 
-                    {/* Modal Container - centered with flexbox */}
+                    {/* Modal Container */}
                     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                            className="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden"
+                            className="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden relative"
                         >
-                            {/* Header with gradient */}
+                            {/* Close Button */}
+                            <button
+                                onClick={handleClose}
+                                className="absolute top-4 right-4 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all z-20"
+                                aria-label="Close"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+
+                            {/* Header */}
                             <div className="bg-gradient-to-br from-orange-500 to-amber-500 p-6 text-white">
                                 <div className="flex items-center gap-3 mb-2">
                                     <div className="p-2 bg-white/20 rounded-xl">
@@ -143,19 +157,18 @@ export default function HomeLocationOnboarding() {
                                     </div>
                                     <h2 className="text-xl font-bold">Welcome to 30YearWeather!</h2>
                                 </div>
-                                <p className="text-white/90 text-sm">
+                                <p className="text-white/90 text-sm pr-8">
                                     Set your home location to get personalized weather recommendations and find destinations near you.
                                 </p>
                             </div>
 
-                            {/* Content */}
+                            {/* City Search & Selection */}
                             <div className="p-5">
                                 <label className="flex items-center gap-2 text-sm font-semibold text-stone-700 mb-3">
                                     <MapPin className="w-4 h-4 text-orange-500" />
                                     Where do you live?
                                 </label>
 
-                                {/* Search Input */}
                                 <div className="relative mb-3">
                                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
                                     <input
@@ -171,7 +184,6 @@ export default function HomeLocationOnboarding() {
                                     )}
                                 </div>
 
-                                {/* Search Results */}
                                 {searchResults.length > 0 && (
                                     <div className="max-h-48 overflow-y-auto rounded-xl border border-stone-200 bg-white shadow-lg mb-3">
                                         {searchResults.map((city) => (
@@ -192,14 +204,12 @@ export default function HomeLocationOnboarding() {
                                     </div>
                                 )}
 
-                                {/* No Results */}
                                 {searchQuery.length >= 2 && !searching && searchResults.length === 0 && (
                                     <div className="p-4 text-center text-sm text-stone-500 bg-stone-50 rounded-xl mb-3">
                                         No cities found. Try a different search.
                                     </div>
                                 )}
 
-                                {/* Currently Selected */}
                                 {selectedCity && (
                                     <div className="p-4 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border border-orange-100">
                                         <div className="flex items-center gap-3">
@@ -216,7 +226,7 @@ export default function HomeLocationOnboarding() {
                                 )}
                             </div>
 
-                            {/* Footer */}
+                            {/* Action Button */}
                             <div className="p-4 border-t border-stone-100 bg-stone-50">
                                 <button
                                     onClick={handleSave}
