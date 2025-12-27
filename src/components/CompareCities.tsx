@@ -4,6 +4,7 @@ import { Card, Title, Text } from "@tremor/react";
 import { motion } from "framer-motion";
 import { Globe, ArrowRight, Sun, CloudRain, Thermometer } from "lucide-react";
 import Link from "next/link";
+import { useUnit } from "@/context/UnitContext";
 
 interface CityComparison {
     citySlug: string;
@@ -28,6 +29,7 @@ export default function CompareCities({
     dateFormatted,
     comparisons
 }: CompareCitiesProps) {
+    const { unit, convertTemp } = useUnit();
     // Filter out current city and sort by score
     const otherCities = comparisons
         .filter(c => c.citySlug !== currentCity)
@@ -88,7 +90,7 @@ export default function CompareCities({
                                     <div className="flex items-center gap-3 shrink-0">
                                         <div className="flex items-center gap-2 text-xs text-gray-500">
                                             <Thermometer className="w-3 h-3 text-rose-400" />
-                                            <span>{city.tempMax}°C</span>
+                                            <span>{Math.round(convertTemp(city.tempMax))}°{unit}</span>
                                         </div>
                                         <div className="flex items-center gap-2 text-xs text-gray-500 hidden sm:flex">
                                             {city.precipProb > 30 ? (

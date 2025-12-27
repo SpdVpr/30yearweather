@@ -4,12 +4,15 @@ import { Card, Title, Text } from "@tremor/react";
 import { motion } from "framer-motion";
 import { Trophy, Snowflake, Flame, Droplets } from "lucide-react";
 import { HistoricalRecord } from "@/lib/data";
+import { useUnit } from "@/context/UnitContext";
 
 interface ExtremesCardProps {
     records: HistoricalRecord[];
 }
 
 export default function ExtremesCard({ records }: ExtremesCardProps) {
+    const { unit, convertTemp } = useUnit();
+
     if (!records || records.length === 0) return null;
 
     // Find Extremes
@@ -49,7 +52,7 @@ export default function ExtremesCard({ records }: ExtremesCardProps) {
                             </div>
                         </div>
                         <div className="text-right flex-shrink-0 ml-2">
-                            <div className="font-bold text-orange-600 text-lg whitespace-nowrap">{hottest.temp_max}°</div>
+                            <div className="font-bold text-orange-600 text-lg whitespace-nowrap">{convertTemp(hottest.temp_max)}°{unit}</div>
                         </div>
                     </div>
 
@@ -65,7 +68,7 @@ export default function ExtremesCard({ records }: ExtremesCardProps) {
                             </div>
                         </div>
                         <div className="text-right flex-shrink-0 ml-2">
-                            <div className="font-bold text-blue-600 text-lg whitespace-nowrap">{coldest.temp_min}°</div>
+                            <div className="font-bold text-blue-600 text-lg whitespace-nowrap">{convertTemp(coldest.temp_min)}°{unit}</div>
                         </div>
                     </div>
 

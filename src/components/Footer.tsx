@@ -1,7 +1,11 @@
+"use client";
 
 import Link from "next/link";
+import { useConsent } from "@/context/ConsentContext";
 
 export default function Footer() {
+    const { openSettings } = useConsent();
+
     return (
         <footer className="bg-stone-900 text-stone-400 py-6 px-6 md:px-12 border-t border-stone-800">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-6">
@@ -43,6 +47,12 @@ export default function Footer() {
                         <span className="text-white font-bold mb-1">Legal</span>
                         <Link href="/gdpr" className="hover:text-white transition-colors">GDPR</Link>
                         <Link href="/privacy#cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
+                        <button
+                            onClick={openSettings}
+                            className="text-left hover:text-white transition-colors"
+                        >
+                            Cookie Settings
+                        </button>
                     </div>
                     <div className="flex flex-col gap-3">
                         <span className="text-white font-bold mb-1">Contact</span>

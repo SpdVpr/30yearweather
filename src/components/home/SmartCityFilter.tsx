@@ -17,8 +17,10 @@ import {
     Globe,
     Check,
     Heart,
+
     DollarSign
 } from "lucide-react";
+import { useUnit } from "@/context/UnitContext";
 
 interface CityInfo {
     slug: string;
@@ -101,9 +103,11 @@ const WAVE_RANGES = [
     { value: 'high', label: 'High (1.5m+)', icon: Waves, min: 1.5, color: 'text-indigo-600' },
 ];
 
+
 export default function SmartCityFilter({ cities, onFilterChange, totalCities }: SmartCityFilterProps) {
     const router = useRouter();
     const searchRef = useRef<HTMLInputElement>(null);
+    const { unit, convertTemp } = useUnit();
 
     // Filter state
     const [filters, setFilters] = useState<FilterState>({
@@ -364,7 +368,7 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                                         </div>
                                         {city.avgTemp && (
                                             <span className="text-xs font-medium text-stone-500 bg-stone-100 px-2 py-1 rounded">
-                                                {Math.round(city.avgTemp)}°C
+                                                {Math.round(convertTemp(city.avgTemp))}°{unit}
                                             </span>
                                         )}
                                     </button>
@@ -588,20 +592,32 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
 
                         {showTempDropdown && (
                             <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-2xl border border-stone-200 overflow-hidden z-50 w-48">
-                                {TEMP_RANGES.map(temp => (
-                                    <button
-                                        key={temp.value}
-                                        onClick={() => {
-                                            setFilters(prev => ({ ...prev, tempRange: temp.value as FilterState['tempRange'] }));
-                                            setShowTempDropdown(false);
-                                        }}
-                                        className={`w-full px-4 py-2 text-left hover:bg-orange-50 transition-colors flex items-center gap-3 text-sm ${filters.tempRange === temp.value ? 'bg-orange-100 text-orange-700 font-semibold' : ''
-                                            }`}
-                                    >
-                                        <temp.icon className={`w-4 h-4 ${(temp as any).color}`} />
-                                        {temp.label}
-                                    </button>
-                                ))}
+                                {TEMP_RANGES.map(temp => {
+                                    let label = temp.label;
+                                    if (unit === 'F' && temp.value !== 'all') {
+                                        const min = temp.min !== undefined ? Math.round(convertTemp(temp.min)) : null;
+                                        const max = temp.max !== undefined ? Math.round(convertTemp(temp.max)) : null;
+                                        if (temp.value === 'hot') label = `Hot (${min}°F+)`;
+                                        else if (temp.value === 'warm') label = `Warm (${min}-${max}°F)`;
+                                        else if (temp.value === 'mild') label = `Mild (${min}-${max}°F)`;
+                                        else if (temp.value === 'cool') label = `Cool (<${max}°F)`;
+                                    }
+
+                                    return (
+                                        <button
+                                            key={temp.value}
+                                            onClick={() => {
+                                                setFilters(prev => ({ ...prev, tempRange: temp.value as FilterState['tempRange'] }));
+                                                setShowTempDropdown(false);
+                                            }}
+                                            className={`w-full px-4 py-2 text-left hover:bg-orange-50 transition-colors flex items-center gap-3 text-sm ${filters.tempRange === temp.value ? 'bg-orange-100 text-orange-700 font-semibold' : ''
+                                                }`}
+                                        >
+                                            <temp.icon className={`w-4 h-4 ${(temp as any).color}`} />
+                                            {label}
+                                        </button>
+                                    );
+                                })}
                             </div>
                         )}
                     </div>
@@ -660,7 +676,7 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                             <Waves className="w-4 h-4" />
                             <span className="font-medium whitespace-nowrap">
                                 {filters.minWaterTemp
-                                    ? `> ${filters.minWaterTemp}°C`
+                                    ? `> ${Math.round(convertTemp(filters.minWaterTemp))}°${unit}`
                                     : filters.coastalOnly
                                         ? 'Beach Only'
                                         : 'Beach'}
@@ -689,14 +705,14 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                                     className={`w-full px-4 py-2.5 text-left hover:bg-teal-50 transition-colors flex items-center gap-3 text-sm ${filters.minWaterTemp === 20 ? 'bg-teal-100 text-teal-700 font-semibold' : ''}`}
                                 >
                                     <Thermometer className="w-4 h-4 text-cyan-600" />
-                                    {'>'} 20°C (Pleasant)
+                                    {'>'} {Math.round(convertTemp(20))}°{unit} (Pleasant)
                                 </button>
                                 <button
                                     onClick={() => { setFilters(prev => ({ ...prev, coastalOnly: true, minWaterTemp: 24 })); setShowBeachDropdown(false); }}
                                     className={`w-full px-4 py-2.5 text-left hover:bg-teal-50 transition-colors flex items-center gap-3 text-sm ${filters.minWaterTemp === 24 ? 'bg-teal-100 text-teal-700 font-semibold' : ''}`}
                                 >
                                     <Thermometer className="w-4 h-4 text-emerald-500" />
-                                    {'>'} 24°C (Warm)
+                                    {'>'} {Math.round(convertTemp(24))}°{unit} (Warm)
                                 </button>
                                 <button
                                     onClick={() => { setFilters(prev => ({ ...prev, coastalOnly: true, minWaterTemp: 27 })); setShowBeachDropdown(false); }}
@@ -704,7 +720,7 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                                 >
                                     <Thermometer className="w-4 h-4 text-orange-500" />
 
-                                    {'>'} 27°C (Tropical)
+                                    {'>'} {Math.round(convertTemp(27))}°{unit} (Tropical)
                                 </button>
                             </div>
                         )}

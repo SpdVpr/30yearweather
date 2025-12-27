@@ -4,6 +4,10 @@ import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import AnalyticsTracker from "@/components/AnalyticsTracker";
 import { UnitProvider } from "@/context/UnitContext";
+import { ConsentProvider } from "@/context/ConsentContext";
+import { AuthProvider } from "@/context/AuthContext";
+import CookieConsent from "@/components/CookieConsent";
+import HomeLocationOnboarding from "@/components/HomeLocationOnboarding";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -276,9 +280,15 @@ export default function RootLayout({
       >
         <GoogleAnalytics />
         <AnalyticsTracker />
-        <UnitProvider>
-          {children}
-        </UnitProvider>
+        <ConsentProvider>
+          <AuthProvider>
+            <UnitProvider>
+              {children}
+              <CookieConsent />
+              <HomeLocationOnboarding />
+            </UnitProvider>
+          </AuthProvider>
+        </ConsentProvider>
       </body>
     </html>
   );

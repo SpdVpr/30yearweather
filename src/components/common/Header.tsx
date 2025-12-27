@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { ArrowLeft, Search } from "lucide-react";
+import UnitToggle from "@/components/UnitToggle";
+import UserMenu from "../UserMenu";
 
 interface HeaderProps {
     breadcrumb?: {
@@ -14,84 +16,79 @@ interface HeaderProps {
 export default function Header({ breadcrumb }: HeaderProps) {
     return (
         <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-100 shadow-sm transition-all duration-300">
-            <div className="max-w-7xl mx-auto px-4 md:px-12 h-16 flex items-center justify-between">
-                <div className="flex items-center gap-4 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-3 md:px-12 h-14 md:h-16 flex items-center justify-between">
+                <div className="flex items-center gap-2 md:gap-4 overflow-hidden">
                     {/* Brand Logo */}
-                    <Link href="/" className="flex items-center gap-3 shrink-0 group transition-transform hover:scale-[1.02]">
+                    <Link href="/" className="flex items-center gap-2 md:gap-3 shrink-0 group transition-transform hover:scale-[1.02]">
                         <div className="w-8 h-8 rounded-lg overflow-hidden border border-stone-200 shadow-sm bg-white flex items-center justify-center p-0.5 group-hover:shadow-orange-200 transition-all">
                             <img
                                 src="/logo.svg"
-                                alt="30YearWeather - Historical Weather Forecast"
+                                alt="30YearWeather"
                                 width={28}
                                 height={28}
                                 className="w-full h-full object-contain"
                             />
                         </div>
-                        <div className="hidden sm:flex flex-col">
+                        {/* Hide brand text on mobile when breadcrumb exists */}
+                        <div className={`${breadcrumb ? 'hidden md:flex' : 'hidden sm:flex'} flex-col`}>
                             <span className="text-sm font-bold tracking-tight text-stone-900 leading-none">30YearWeather<span className="text-orange-600">.</span></span>
                             <span className="text-[9px] text-stone-400 font-bold uppercase tracking-widest mt-0.5 leading-none">Historical Forecast</span>
                         </div>
                     </Link>
 
-                    {/* Navigace a Breadcrumb */}
+                    {/* MOBILE: Compact breadcrumb - just the city/page name */}
                     {breadcrumb && (
-                        <>
-                            {/* MOBILE: Ponecháno podle preferencí uživatele (čára + ikona) */}
-                            <div className="flex md:hidden items-center">
-                                <div className="h-6 w-[1px] bg-stone-200 shrink-0 mx-6 xs:block hidden" />
-                                <div className="flex items-center gap-2 overflow-hidden pl-2">
+                        <div className="flex md:hidden items-center overflow-hidden">
+                            <div className="h-5 w-[1px] bg-stone-200 shrink-0 mx-2" />
+                            <span className="text-sm font-bold text-stone-800 truncate max-w-[120px]">
+                                {breadcrumb.label}
+                            </span>
+                        </div>
+                    )}
+
+                    {/* DESKTOP: Full breadcrumb with back button */}
+                    {breadcrumb && (
+                        <div className="hidden md:flex items-center gap-6 ml-4 pl-6 border-l border-stone-100 h-12">
+                            <div className="flex flex-col py-1">
+                                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-stone-400 mb-1">
                                     {breadcrumb.href && (
                                         <Link
                                             href={breadcrumb.href}
-                                            className="p-2 hover:bg-orange-50 rounded-full transition-all text-stone-400 hover:text-orange-600 shrink-0"
-                                            aria-label="Go back"
+                                            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-100 text-orange-700 hover:bg-orange-200 transition-all font-bold text-[11px] uppercase tracking-wide group/back"
                                         >
-                                            <ArrowLeft className="w-4 h-4" />
+                                            <ArrowLeft className="w-3 h-3 group-hover/back:-translate-x-0.5 transition-transform" />
+                                            Back
                                         </Link>
                                     )}
-                                    <div className="flex flex-col overflow-hidden py-1">
-                                        <span className="text-sm font-bold text-stone-900 truncate tracking-tight leading-tight">
-                                            {breadcrumb.label}
-                                        </span>
-                                    </div>
+                                    {!breadcrumb.href && <span>Historical Data</span>}
+                                    <span className="text-stone-200">/</span>
+                                    <span className="text-stone-300">{breadcrumb.sublabel || "Forecast"}</span>
                                 </div>
+                                <span className="text-lg font-bold text-stone-950 font-serif leading-tight tracking-tight">
+                                    {breadcrumb.label}
+                                </span>
                             </div>
-
-                            {/* DESKTOP: Profi Dashboard Layout (Logičtější UX pro široké obrazovky) */}
-                            <div className="hidden md:flex items-center gap-6 ml-8 pl-8 border-l border-stone-100 h-10">
-                                <div className="flex flex-col">
-                                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-stone-400 mb-0.5">
-                                        {breadcrumb.href && (
-                                            <Link
-                                                href={breadcrumb.href}
-                                                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-100 text-orange-700 hover:bg-orange-200 transition-all font-bold text-[11px] uppercase tracking-wide group/back"
-                                            >
-                                                <ArrowLeft className="w-3 h-3 group-hover/back:-translate-x-0.5 transition-transform" />
-                                                Back
-                                            </Link>
-                                        )}
-                                        {!breadcrumb.href && <span>Historical Data</span>}
-                                        <span className="text-stone-200">/</span>
-                                        <span className="text-stone-300">{breadcrumb.sublabel || "Forecast"}</span>
-                                    </div>
-                                    <span className="text-lg font-bold text-stone-950 font-serif leading-none tracking-tight">
-                                        {breadcrumb.label}
-                                    </span>
-                                </div>
-                            </div>
-                        </>
+                        </div>
                     )}
                 </div>
 
-                <div className="flex items-center gap-3 md:gap-6 shrink-0">
+                {/* Right side actions */}
+                <div className="flex items-center gap-2 md:gap-3 shrink-0">
+                    {/* Search - icon only on mobile, full on desktop */}
                     <Link
                         href="/#cities"
-                        className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-orange-600 text-white text-[11px] md:text-xs font-black hover:bg-orange-700 transition-colors shadow-sm hover:shadow-orange-500/20"
+                        className="flex items-center justify-center gap-2 h-9 md:h-10 w-9 md:w-auto md:px-4 rounded-xl bg-stone-100 hover:bg-stone-200 transition-colors"
+                        aria-label="Search cities"
                     >
-                        <Search className="w-3 h-3 md:w-4 md:h-4" />
-                        <span className="hidden xs:inline">Smart Finder</span>
-                        <span className="xs:hidden">Finder</span>
+                        <Search className="w-4 h-4 text-stone-500" />
+                        <span className="hidden md:inline text-sm text-stone-500 font-medium">Search cities...</span>
                     </Link>
+
+                    {/* Unit Toggle */}
+                    <UnitToggle variant="light" />
+
+                    {/* User Menu */}
+                    <UserMenu />
                 </div>
             </div>
         </header>

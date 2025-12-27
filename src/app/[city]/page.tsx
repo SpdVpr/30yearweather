@@ -5,15 +5,19 @@ import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 import { getCityData } from "@/lib/data";
 import { Card, Title, Text, Badge } from "@tremor/react";
-import { Thermometer, Droplets, Sun, CloudRain, MapPin, ArrowRight, Calendar, Bookmark, Map, TrendingUp, Info } from "lucide-react";
+import { Thermometer, Droplets, Sun, CloudRain, MapPin, ArrowRight, Calendar, Map, TrendingUp, Info } from "lucide-react";
 import { format } from "date-fns";
 import type { Metadata } from 'next';
 import CityPageTracker from "@/components/CityPageTracker";
 import Header from "@/components/common/Header";
+import MobileBreadcrumb from "@/components/MobileBreadcrumb";
 import TravelInsights from "@/components/TravelInsights";
 import LazyMap from "@/components/LazyMap";
 import SeaTemperatureCard from "@/components/SeaTemperatureCard";
 import marineMetadata from "@/lib/marine-metadata.json";
+import Temperature from "@/components/Temperature";
+import TemperatureUnitLabel from "@/components/TemperatureUnitLabel";
+import FavoriteButton from "@/components/FavoriteButton";
 
 // 1. Dynamic Metadata
 export async function generateMetadata({ params }: { params: { city: string } }): Promise<Metadata> {
@@ -365,8 +369,18 @@ export default async function CityIndexPage({
                 }}
             />
 
+            {/* Mobile Navigation */}
+            <div className="pt-14 md:hidden">
+                <MobileBreadcrumb
+                    cityName={data.meta.name}
+                    citySlug={city}
+                    monthName=""
+                    monthSlug=""
+                />
+            </div>
+
             {/* Hero Section - Full width on mobile, boxed on desktop */}
-            <section className="relative pt-16 md:pt-24 max-w-7xl mx-auto md:px-6 lg:px-8">
+            <section className="relative pt-0 md:pt-24 max-w-7xl mx-auto md:px-6 lg:px-8">
                 {/* Desktop Breadcrumbs (above hero) */}
                 <nav className="hidden md:flex items-center gap-2 text-xs text-stone-500 mb-4" aria-label="Breadcrumb">
                     <Link href="/" className="hover:text-stone-900 transition-colors">Home</Link>
@@ -406,10 +420,10 @@ export default async function CityIndexPage({
 
                         <p className="text-white/90 text-base md:text-lg max-w-3xl mb-6 leading-relaxed">
                             Plan your trip to {data.meta.name}, {data.meta.country} with confidence.
-                            Based on <strong>30 years of NASA satellite data</strong>, expect average temperatures of {yearlyAvgHigh}°C (high) to {yearlyAvgLow}°C (low),
+                            Based on <strong>30 years of NASA satellite data</strong>, expect average temperatures of <Temperature value={yearlyAvgHigh} /> (high) to <Temperature value={yearlyAvgLow} /> (low),
                             with {yearlyRainfall.toLocaleString()}mm annual rainfall.
                             {marineInfo && avgSeaTemp !== null && (
-                                <> The <strong>{marineInfo.sea_name}</strong> averages <strong>{avgSeaTemp}°C</strong> for swimming.</>
+                                <> The <strong>{marineInfo.sea_name}</strong> averages <strong><Temperature value={avgSeaTemp} /></strong> for swimming.</>
                             )}
                             {bestMonths.length > 0 && <> The <strong>best months to visit</strong> are <strong>{bestMonths.slice(0, 3).join(", ")}</strong> for optimal weather conditions.</>}
                             {' '}Explore daily forecasts for all 365 days.
@@ -425,9 +439,13 @@ export default async function CityIndexPage({
                                 <Map className="w-4 h-4" />
                                 View on Map
                             </a>
-                            <button className="p-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors" aria-label="Save to favorites">
-                                <Bookmark className="w-5 h-5" />
-                            </button>
+                            <FavoriteButton
+                                citySlug={city}
+                                cityName={data.meta.name}
+                                country={data.meta.country}
+                                variant="full"
+                                className="bg-white/10 hover:bg-white/20 border border-white/20 text-white"
+                            />
                         </div>
                     </div>
                 </div>
@@ -443,7 +461,7 @@ export default async function CityIndexPage({
                             <Thermometer className="w-5 h-5 text-orange-500" />
                         </div>
                         <div className="flex items-baseline gap-1">
-                            <span className="text-3xl md:text-4xl font-bold text-stone-900">{yearlyAvgHigh}°C</span>
+                            <span className="text-3xl md:text-4xl font-bold text-stone-900"><Temperature value={yearlyAvgHigh} /></span>
                         </div>
                         <p className="text-xs text-stone-400 mt-1">Peak in {hottest.name}</p>
                     </div>
@@ -454,7 +472,7 @@ export default async function CityIndexPage({
                             <Thermometer className="w-5 h-5 text-blue-500" />
                         </div>
                         <div className="flex items-baseline gap-1">
-                            <span className="text-3xl md:text-4xl font-bold text-stone-900">{yearlyAvgLow}°C</span>
+                            <span className="text-3xl md:text-4xl font-bold text-stone-900"><Temperature value={yearlyAvgLow} /></span>
                         </div>
                         <p className="text-xs text-stone-400 mt-1">Coolest in {coldest.name}</p>
                     </div>
@@ -531,7 +549,7 @@ export default async function CityIndexPage({
                                     <div className="space-y-2">
                                         <div className="flex items-center gap-2 text-stone-700">
                                             <Thermometer className="w-4 h-4 text-orange-500" />
-                                            <span className="text-lg font-bold">{stat.avgTemp}°C</span>
+                                            <span className="text-lg font-bold"><Temperature value={stat.avgTemp} /></span>
                                         </div>
                                         <div className="flex items-center gap-2 text-stone-700">
                                             <CloudRain className="w-4 h-4 text-blue-500" />
@@ -604,7 +622,7 @@ export default async function CityIndexPage({
                                             {data.meta.name} experiences {Math.abs(data.meta.lat) < 23.5 ? 'a tropical climate with warm temperatures year-round' : Math.abs(data.meta.lat) < 35 ? 'a subtropical climate with distinct wet and dry seasons' : Math.abs(data.meta.lat) < 55 ? 'a temperate climate with four distinct seasons' : 'a subarctic climate with cold winters and mild summers'}.
                                         </p>
                                         <p className="text-stone-600 leading-relaxed mt-3 text-base">
-                                            Based on 30 years of data, <strong>{hottest.name}</strong> is the warmest month (avg. {hottest.avgTemp}°C),
+                                            Based on 30 years of data, <strong>{hottest.name}</strong> is the warmest month (avg. <Temperature value={hottest.avgTemp} />),
                                             while <strong>{coldest.name}</strong> is the coolest.
                                             <strong> {wettest.name}</strong> sees the most rain ({wettest.avgRain}% chance),
                                             making <strong>{monthlyStats.reduce((a, b) => a.avgRain < b.avgRain ? a : b).name}</strong> the driest month.
@@ -660,7 +678,7 @@ export default async function CityIndexPage({
                                                     <p className="text-xs text-stone-500">Best months to visit</p>
                                                 </div>
                                                 <div className="text-right">
-                                                    <p className="text-2xl font-bold text-stone-800">{yearlyAvgHigh}°C</p>
+                                                    <p className="text-2xl font-bold text-stone-800"><Temperature value={yearlyAvgHigh} /></p>
                                                     <p className="text-xs text-stone-500">Avg High</p>
                                                 </div>
                                             </div>
@@ -695,6 +713,8 @@ export default async function CityIndexPage({
                     citySlug={city}
                     flightInfo={data.meta?.flight_info}
                     healthInfo={data.meta?.health_info}
+                    cityLat={data.meta.lat}
+                    cityLon={data.meta.lon}
                 />
 
                 {/* Climate Data Summary */}
@@ -707,7 +727,7 @@ export default async function CityIndexPage({
                         <thead className="bg-stone-50 text-stone-900 font-bold uppercase text-xs">
                             <tr>
                                 <th className="px-4 py-3 border-b">Month</th>
-                                <th className="px-4 py-3 border-b">Avg High (°C)</th>
+                                <th className="px-4 py-3 border-b">Avg High <TemperatureUnitLabel /></th>
                                 <th className="px-4 py-3 border-b">Rain Probability (%)</th>
                                 <th className="px-4 py-3 border-b">Status</th>
                             </tr>
@@ -716,7 +736,7 @@ export default async function CityIndexPage({
                             {monthlyStats.map((stat) => (
                                 <tr key={stat.monthNum} className="border-b last:border-0 hover:bg-stone-50 transition-colors">
                                     <td className="px-4 py-3 font-medium text-stone-900">{stat.name}</td>
-                                    <td className="px-4 py-3">{stat.avgTemp}°C</td>
+                                    <td className="px-4 py-3"><Temperature value={stat.avgTemp} /></td>
                                     <td className="px-4 py-3">{stat.avgRain}%</td>
                                     <td className="px-4 py-3 flex items-center gap-2">
                                         <span className={`w-2 h-2 rounded-full bg-${stat.color}-500`}></span>
@@ -735,14 +755,14 @@ export default async function CityIndexPage({
                         <div>
                             <h3 className="font-bold text-lg text-stone-900 mb-2">When is the best time to visit {data.meta.name}?</h3>
                             <p className="text-stone-600 leading-relaxed">
-                                Ideally, look for months with mild temperatures (20-25°C) and low rain chance.
+                                Honestly, look for months with mild temperatures (<Temperature value={20} />-<Temperature value={25} />) and low rain chance.
                                 Based on historical data, {bestMonths.slice(0, 3).join(", ") || "summer months"} are usually great choices.
                             </p>
                         </div>
                         <div>
                             <h3 className="font-bold text-lg text-stone-900 mb-2">When is the hottest month?</h3>
                             <p className="text-stone-600 leading-relaxed">
-                                {hottest.name} is historically the hottest month in {data.meta.name} with average highs of {hottest.avgTemp}°C.
+                                {hottest.name} is historically the hottest month in {data.meta.name} with average highs of <Temperature value={hottest.avgTemp} />.
                             </p>
                         </div>
                         <div>

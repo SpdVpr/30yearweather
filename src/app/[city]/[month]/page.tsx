@@ -8,10 +8,14 @@ import DatePageTracker from "@/components/DatePageTracker";
 import { Thermometer, CloudRain, Sun, Calendar, Droplets, Wind, ArrowRight } from "lucide-react";
 import type { Metadata } from 'next';
 import Header from "@/components/common/Header";
+import MobileBreadcrumb from "@/components/MobileBreadcrumb";
 import TravelInsights from "@/components/TravelInsights";
 import Footer from "@/components/Footer";
 import SeaTemperatureCard from "@/components/SeaTemperatureCard";
 import marineMetadata from "@/lib/marine-metadata.json";
+import Temperature from "@/components/Temperature";
+import FavoriteButton from "@/components/FavoriteButton";
+import SwipeNavigation from "@/components/SwipeNavigation";
 
 // Helper for month mapping
 const MONTH_MAP: Record<string, string> = {
@@ -194,6 +198,10 @@ export default async function CityMonthPage({ params }: { params: { city: string
     const prevMonth = MONTH_NAMES[prevMonthIndex].toLowerCase();
     const nextMonth = MONTH_NAMES[nextMonthIndex].toLowerCase();
 
+    // Swipe Navigation URLs
+    const prevUrl = `/${city}/${prevMonth}`;
+    const nextUrl = `/${city}/${nextMonth}`;
+
     const baseUrl = "https://30yearweather.com";
 
     const jsonLd = [
@@ -231,7 +239,7 @@ export default async function CityMonthPage({ params }: { params: { city: string
     ];
 
     return (
-        <div className="min-h-screen bg-stone-50 flex flex-col">
+        <SwipeNavigation prevUrl={prevUrl} nextUrl={nextUrl} className="min-h-screen bg-stone-50 flex flex-col">
             <DatePageTracker cityName={data.meta.name} date={monthDisplay} />
             <script
                 type="application/ld+json"
@@ -246,8 +254,22 @@ export default async function CityMonthPage({ params }: { params: { city: string
                 }}
             />
 
+            {/* Mobile Navigation */}
+            <div className="pt-14 md:hidden">
+                <MobileBreadcrumb
+                    cityName={cityName}
+                    citySlug={city}
+                    monthName={monthDisplay}
+                    monthSlug={monthLower}
+                    prevUrl={`/${city}/${prevMonth}`}
+                    nextUrl={`/${city}/${nextMonth}`}
+                    prevLabel={MONTH_NAMES[prevMonthIndex].slice(0, 3)}
+                    nextLabel={MONTH_NAMES[nextMonthIndex].slice(0, 3)}
+                />
+            </div>
+
             {/* Hero Section - Full width on mobile, boxed on desktop */}
-            <section className="w-full relative pt-16 md:pt-24 max-w-7xl mx-auto md:px-6 lg:px-8">
+            <section className="w-full relative pt-0 md:pt-24 max-w-7xl mx-auto md:px-6 lg:px-8">
                 {/* Desktop Breadcrumbs (above hero) */}
                 <nav className="hidden md:flex items-center gap-2 text-xs text-stone-500 mb-4" aria-label="Breadcrumb">
                     <Link href="/" className="hover:text-stone-900 transition-colors">Home</Link>
@@ -295,30 +317,33 @@ export default async function CityMonthPage({ params }: { params: { city: string
                         {/* SEO Description */}
                         <p className="text-white/90 text-base md:text-lg max-w-3xl mb-6 leading-relaxed">
                             Plan your {monthDisplay} trip to {cityName}, {data.meta.country}.
-                            Based on <strong>30 years of NASA data</strong>, expect temperatures of {avgMax}°C (high) to {avgMin}°C (low),
+                            Based on <strong>30 years of NASA data</strong>, expect temperatures of <Temperature value={avgMax} /> (high) to <Temperature value={avgMin} /> (low),
                             with {avgRainProb}% rain probability and {avgSunHours} hours of daily sunshine.
                             {marineInfo && avgSeaTemp !== null && (
-                                <> The <strong>{marineInfo.sea_name}</strong> averages <strong>{avgSeaTemp}°C</strong> in {monthDisplay}.</>
+                                <> The <strong>{marineInfo.sea_name}</strong> averages <strong><Temperature value={avgSeaTemp} /></strong> in {monthDisplay}.</>
                             )}
                             {rainyDaysCount > 10
                                 ? ` Pack rain gear for around ${rainyDaysCount} rainy days.`
                                 : ` Great conditions with only ${rainyDaysCount} rainy days expected.`}
                         </p>
 
-                        {/* Month Navigation */}
+                        {/* Month Navigation - Simplified for Swipe */}
                         <div className="flex items-center gap-3">
-                            <Link
-                                href={`/${city}/${prevMonth}`}
-                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-sm font-medium transition-colors border border-white/20"
-                            >
-                                ← {MONTH_NAMES[prevMonthIndex]}
-                            </Link>
-                            <Link
-                                href={`/${city}/${nextMonth}`}
-                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition-colors"
-                            >
-                                {MONTH_NAMES[nextMonthIndex]} →
-                            </Link>
+                            {/* Previous buttons removed in favor of SwipeNavigation arrows */}
+                            <FavoriteButton
+                                type="month"
+                                citySlug={city}
+                                cityName={cityName}
+                                country={data.meta.country}
+                                monthSlug={month}
+                                monthName={monthDisplay}
+                                variant="full"
+                                className="bg-white/10 hover:bg-white/20 border border-white/20 text-white"
+                                tempMax={avgMax}
+                                tempMin={avgMin}
+                                precipProb={avgRainProb}
+                                seaTemp={avgSeaTemp || undefined}
+                            />
                         </div>
                     </div>
                 </div>
@@ -334,7 +359,7 @@ export default async function CityMonthPage({ params }: { params: { city: string
                             <Thermometer className="w-5 h-5 text-orange-500" />
                         </div>
                         <div className="flex items-baseline gap-1">
-                            <span className="text-3xl md:text-4xl font-bold text-stone-900">{avgMax}°C</span>
+                            <span className="text-3xl md:text-4xl font-bold text-stone-900"><Temperature value={avgMax} /></span>
                         </div>
                         <p className="text-xs text-stone-400 mt-1">Hottest around day {hottestDay.day}</p>
                     </div>
@@ -346,7 +371,7 @@ export default async function CityMonthPage({ params }: { params: { city: string
                             <Thermometer className="w-5 h-5 text-blue-500" />
                         </div>
                         <div className="flex items-baseline gap-1">
-                            <span className="text-3xl md:text-4xl font-bold text-stone-900">{avgMin}°C</span>
+                            <span className="text-3xl md:text-4xl font-bold text-stone-900"><Temperature value={avgMin} /></span>
                         </div>
                         <p className="text-xs text-stone-400 mt-1">Coolest around day {coolestDay.day}</p>
                     </div>
@@ -407,6 +432,8 @@ export default async function CityMonthPage({ params }: { params: { city: string
                     citySlug={city}
                     flightInfo={data.meta.flight_info}
                     healthInfo={data.meta.health_info}
+                    cityLat={data.meta.lat}
+                    cityLon={data.meta.lon}
                 />
 
                 {/* SEO Content Block */}
@@ -428,8 +455,8 @@ export default async function CityMonthPage({ params }: { params: { city: string
                             <div className="prose prose-stone max-w-none">
                                 <p className="text-stone-600 leading-relaxed">
                                     Based on our analysis of <strong>30 years of historical weather data</strong> from NASA satellites,
-                                    <strong> {monthDisplay}</strong> in {cityName} is characterized by average daytime highs of <strong>{avgMax}°C</strong>
-                                    and nighttime lows around <strong>{avgMin}°C</strong>.
+                                    <strong> {monthDisplay}</strong> in {cityName} is characterized by average daytime highs of <strong><Temperature value={avgMax} /></strong>
+                                    and nighttime lows around <strong><Temperature value={avgMin} /></strong>.
                                 </p>
                                 <p className="text-stone-600 leading-relaxed mt-3">
                                     {rainyDaysCount > 15
@@ -479,7 +506,7 @@ export default async function CityMonthPage({ params }: { params: { city: string
                         <div className="flex-1">
                             <p className="text-lg font-medium text-stone-800 leading-relaxed mb-3">
                                 "According to 30YearWeather's analysis of <strong className="text-orange-700">30 years of NASA POWER satellite data</strong>,
-                                {cityName} in {monthDisplay} averages <strong className="text-orange-700">{avgMax}°C</strong> with
+                                {cityName} in {monthDisplay} averages <strong className="text-orange-700"><Temperature value={avgMax} /></strong> with
                                 <strong className="text-orange-700"> {avgRainProb}%</strong> precipitation probability."
                             </p>
                             <div className="flex flex-wrap items-center gap-3 text-sm">
@@ -506,7 +533,7 @@ export default async function CityMonthPage({ params }: { params: { city: string
                         <div className="p-5 bg-white rounded-xl border border-stone-200">
                             <h3 className="font-bold text-stone-800 mb-2">🌡️ What are the temperatures?</h3>
                             <p className="text-stone-600 text-sm leading-relaxed">
-                                Daytime highs average <strong>{avgMax}°C</strong>, nights drop to <strong>{avgMin}°C</strong>.
+                                Daytime highs average <strong><Temperature value={avgMax} /></strong>, nights drop to <strong><Temperature value={avgMin} /></strong>.
                                 {avgMax - avgMin > 12 ? " There's a significant day/night temperature swing." : " Temperatures remain fairly consistent."}
                             </p>
                         </div>
@@ -546,6 +573,6 @@ export default async function CityMonthPage({ params }: { params: { city: string
             <div className="mt-auto">
                 <Footer />
             </div>
-        </div >
+        </SwipeNavigation>
     );
 }

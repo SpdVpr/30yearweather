@@ -2,7 +2,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface SwipeNavigationProps {
@@ -52,6 +52,20 @@ export default function SwipeNavigation({ prevUrl, nextUrl, children, className 
         touchStartY.current = null;
     };
 
+    // Keyboard navigation
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'ArrowLeft') {
+                router.push(prevUrl);
+            } else if (e.key === 'ArrowRight') {
+                router.push(nextUrl);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [router, prevUrl, nextUrl]);
+
     return (
         <div
             onTouchStart={onTouchStart}
@@ -63,18 +77,17 @@ export default function SwipeNavigation({ prevUrl, nextUrl, children, className 
             {/* Floating Navigation Arrows - Visible on mobile/touch mainly, but useful for all */}
             <button
                 onClick={() => router.push(prevUrl)}
-                className="fixed left-2 top-1/2 -translate-y-1/2 z-40 p-2 bg-white/80 backdrop-blur-sm shadow-lg rounded-full border border-stone-200 text-stone-600 opacity-60 hover:opacity-100 transition-opacity md:hidden"
-                aria-label="Previous Day"
+                className="fixed left-2 md:left-8 top-1/2 -translate-y-1/2 z-[100] p-2 md:p-3 bg-white/80 backdrop-blur-md shadow-xl rounded-full border border-white/20 text-stone-900 transition-all hover:scale-110 active:scale-95"
+                aria-label="Previous Page"
             >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
-
             <button
                 onClick={() => router.push(nextUrl)}
-                className="fixed right-2 top-1/2 -translate-y-1/2 z-40 p-2 bg-white/80 backdrop-blur-sm shadow-lg rounded-full border border-stone-200 text-stone-600 opacity-60 hover:opacity-100 transition-opacity md:hidden"
-                aria-label="Next Day"
+                className="fixed right-2 md:right-8 top-1/2 -translate-y-1/2 z-[100] p-2 md:p-3 bg-white/80 backdrop-blur-md shadow-xl rounded-full border border-white/20 text-stone-900 transition-all hover:scale-110 active:scale-95"
+                aria-label="Next Page"
             >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
         </div>
     );

@@ -11,8 +11,10 @@ import DatePageTracker from "@/components/DatePageTracker";
 import SwipeNavigation from "@/components/SwipeNavigation";
 import Footer from "@/components/Footer";
 import Header from "@/components/common/Header";
+import MobileBreadcrumb from "@/components/MobileBreadcrumb";
 import DayTravelInfo from "@/components/DayTravelInfo";
 import marineMetadata from "@/lib/marine-metadata.json";
+import FavoriteButton from "@/components/FavoriteButton";
 
 const MONTH_MAP: Record<string, string> = {
     january: '01', february: '02', march: '03', april: '04', may: '05', june: '06',
@@ -268,6 +270,9 @@ export default async function CityDayPage({
         })
     ).then(results => results.filter((r): r is NonNullable<typeof r> => r !== null));
 
+    const marineInfo = (marineMetadata as Record<string, any>)[city];
+    const seaTemp = marineInfo ? (dayData as any).marine?.water_temp : undefined;
+
     return (
         <SwipeNavigation prevUrl={prevUrl} nextUrl={nextUrl} className="min-h-screen bg-slate-50">
             <DatePageTracker
@@ -358,11 +363,27 @@ export default async function CityDayPage({
                 }}
             />
 
+            {/* Mobile Navigation - visible only on mobile */}
+            <div className="pt-14 md:pt-16">
+                <MobileBreadcrumb
+                    cityName={data.meta.name}
+                    citySlug={city}
+                    monthName={monthDisplay}
+                    monthSlug={monthLower}
+                    day={parseInt(day)}
+                    prevUrl={prevUrl}
+                    nextUrl={nextUrl}
+                    prevLabel={format(prevObj, 'd')}
+                    nextLabel={format(nextObj, 'd')}
+                />
+            </div>
+
             <main>
                 {/* Hero Section */}
                 <CityHero
                     city={data.meta.name}
                     citySlug={city}
+                    country={data.meta.country}
                     date={formattedDate}
                     tempMax={dayData.stats.temp_max}
                     tempMin={dayData.stats.temp_min}
@@ -371,6 +392,7 @@ export default async function CityDayPage({
                     windKmh={dayData.stats.wind_kmh}
                     humidity={dayData.stats.humidity_percent}
                     imageAlt={`${data.meta.name} street view during ${monthDisplay}`}
+                    seaTemp={seaTemp}
                 />
 
                 <article itemScope itemType="https://schema.org/Article" className="max-w-7xl mx-auto">

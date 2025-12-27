@@ -4,6 +4,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle, AlertTriangle, XCircle, Calendar, ArrowRight, Plane, PartyPopper } from "lucide-react";
 import Link from "next/link";
+import { useUnit } from "@/context/UnitContext";
 
 interface DayVerdictProps {
     score: number;
@@ -37,7 +38,11 @@ export default function DayVerdict({
     let verdictDesc = "";
     let colorClass = "";
     let bgClass = "";
+
     let Icon = CheckCircle;
+
+    const { unit, convertTemp } = useUnit();
+    const displayTemp = `${Math.round(convertTemp(tempMax))}°${unit}`;
 
     // Seed for pseudo-randomness based on date and city
     const seed = city.length + day + (month.length * 2);
@@ -109,19 +114,19 @@ export default function DayVerdict({
         verdictTitle = "YES, IT'S PARADISE";
         colorClass = "text-emerald-700";
         bgClass = "bg-emerald-50 border-emerald-200";
-        verdictDesc = `${month} ${day} is statistically one of the best days of the year in ${city}. With minimal rain risk (${precipProb}%) and pleasant highs of ${tempMax}°C, it's ideal for outdoor adventures.${getTourismContext()}${getHolidayContext()}${getHealthContext()}`;
+        verdictDesc = `${month} ${day} is statistically one of the best days of the year in ${city}. With minimal rain risk (${precipProb}%) and pleasant highs of ${displayTemp}, it's ideal for outdoor adventures.${getTourismContext()}${getHolidayContext()}${getHealthContext()}`;
     } else if (precipProb < 40) {
         verdictTitle = "YES, GOOD CHOICE";
         colorClass = "text-blue-700";
         bgClass = "bg-blue-50 border-blue-200";
         Icon = CheckCircle;
-        verdictDesc = `${month} ${day} is generally a great time to visit ${city}. While there is a slight chance of rain (${precipProb}%), showers are usually brief. Expect comfortable ${tempMax}°C weather.${getTourismContext()}${getHolidayContext()}${getHealthContext()}`;
+        verdictDesc = `${month} ${day} is generally a great time to visit ${city}. While there is a slight chance of rain (${precipProb}%), showers are usually brief. Expect comfortable ${displayTemp} weather.${getTourismContext()}${getHolidayContext()}${getHealthContext()}`;
     } else if (precipProb < 70) {
         verdictTitle = "IT'S A GAMBLE";
         colorClass = "text-amber-700";
         bgClass = "bg-amber-50 border-amber-200";
         Icon = AlertTriangle;
-        verdictDesc = `${month} ${day} sees frequent showers in ${city}. Historical data shows a ${precipProb}% chance of rain, so pack accordingly. Temperatures average ${tempMax}°C.${getTourismContext()}${getHolidayContext()}${getHealthContext()}`;
+        verdictDesc = `${month} ${day} sees frequent showers in ${city}. Historical data shows a ${precipProb}% chance of rain, so pack accordingly. Temperatures average ${displayTemp}.${getTourismContext()}${getHolidayContext()}${getHealthContext()}`;
     } else {
         verdictTitle = "PROBABLY NOT";
         colorClass = "text-rose-700";

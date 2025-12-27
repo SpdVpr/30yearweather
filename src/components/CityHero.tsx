@@ -3,16 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { format } from "date-fns";
 import { calculateFeelsLike, getTempEmoji } from "@/lib/weather-utils";
 import UnitToggle from "@/components/UnitToggle";
 import { useUnit } from "@/context/UnitContext";
+import FavoriteButton from "@/components/FavoriteButton";
 
 interface CityHeroProps {
     city: string;
-    citySlug: string; // e.g. "prague-cz", "berlin-de"
-    date: string; // Formatted date e.g. "July 15"
+    citySlug: string;
+    country: string;
+    date: string;
     tempMax: number;
     tempMin: number;
     precipProb: number;
@@ -20,9 +22,10 @@ interface CityHeroProps {
     windKmh?: number;
     humidity?: number;
     imageAlt?: string;
+    seaTemp?: number;
 }
 
-export default function CityHero({ city, citySlug, date, tempMax, tempMin, precipProb, dateSlug, windKmh = 10, humidity = 50, imageAlt }: CityHeroProps) {
+export default function CityHero({ city, citySlug, country, date, tempMax, tempMin, precipProb, dateSlug, windKmh = 10, humidity = 50, imageAlt, seaTemp }: CityHeroProps) {
     const { unit, convertTemp } = useUnit();
     // Calculate feels-like temperature (keep feelsLikeMax in C for emoji logic first)
     const feelsLikeMaxC = calculateFeelsLike(tempMax, windKmh, humidity);
@@ -75,23 +78,7 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
 
 
 
-            {/* Prev Day Arrow (Left Center) */}
-            <Link
-                href={`/${citySlug}/${prevMonthSlug}/${prevDay}`}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/20 hover:bg-black/50 backdrop-blur-md text-white border border-white/10 transition-all hover:scale-110 hidden md:flex"
-                aria-label="Previous Day"
-            >
-                <ArrowLeft className="w-6 h-6" />
-            </Link>
-
-            {/* Next Day Arrow (Right Center) */}
-            <Link
-                href={`/${citySlug}/${nextMonthSlug}/${nextDay}`}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/20 hover:bg-black/50 backdrop-blur-md text-white border border-white/10 transition-all hover:scale-110 hidden md:flex"
-                aria-label="Next Day"
-            >
-                <ArrowRight className="w-6 h-6" />
-            </Link>
+            {/* Navigation handled by parent SwipeNavigation */}
 
 
             {/* Content */}
@@ -120,11 +107,11 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
                     className="mt-8 flex gap-8 md:gap-12"
                 >
                     <div className="text-center">
-                        <p className="text-3xl font-bold">{displayMax}°</p>
+                        <p className="text-3xl font-bold">{displayMax}°{unit}</p>
                         <p className="text-xs uppercase tracking-wider opacity-70">High</p>
                     </div>
                     <div className="text-center">
-                        <p className="text-3xl font-bold">{displayMin}°</p>
+                        <p className="text-3xl font-bold">{displayMin}°{unit}</p>
                         <p className="text-xs uppercase tracking-wider opacity-70">Low</p>
                     </div>
                     <div className="text-center">
@@ -138,13 +125,28 @@ export default function CityHero({ city, citySlug, date, tempMax, tempMin, preci
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8, duration: 0.6 }}
-                    className="mt-4 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20"
+                    className="mt-4 flex items-center gap-3"
                 >
-                    <p className="text-sm">
-                        {feelsLikeEmoji} Feels like <span className="font-bold">{displayFeelsLike}°{unit}</span>
-                        {feelsLikeMaxC < tempMax - 0.5 && " (wind chill)"}
-                        {feelsLikeMaxC > tempMax + 0.5 && " (humidity)"}
-                    </p>
+                    <div className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+                        <p className="text-sm">
+                            {feelsLikeEmoji} Feels like <span className="font-bold">{displayFeelsLike}°{unit}</span>
+                            {feelsLikeMaxC < tempMax - 0.5 && " (wind chill)"}
+                            {feelsLikeMaxC > tempMax + 0.5 && " (humidity)"}
+                        </p>
+                    </div>
+                    <FavoriteButton
+                        type="day"
+                        citySlug={citySlug}
+                        cityName={city}
+                        country={country}
+                        monthSlug={currentMonthSlug}
+                        monthName={format(currentObj, 'MMMM')}
+                        day={currentObj.getDate()}
+                        tempMax={tempMax}
+                        tempMin={tempMin}
+                        precipProb={precipProb}
+                        seaTemp={seaTemp}
+                    />
                 </motion.div>
             </div>
 

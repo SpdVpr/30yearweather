@@ -1,7 +1,7 @@
-
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { useAuth } from "./AuthContext";
 
 type Unit = "C" | "F";
 
@@ -16,6 +16,7 @@ const UnitContext = createContext<UnitContextType | undefined>(undefined);
 export function UnitProvider({ children }: { children: React.ReactNode }) {
     const [unit, setUnit] = useState<Unit>("C");
     const [mounted, setMounted] = useState(false);
+    const { user, userProfile, updateUserProfile } = useAuth();
 
     useEffect(() => {
         const savedUnit = localStorage.getItem("tempUnit") as Unit;
@@ -25,10 +26,26 @@ export function UnitProvider({ children }: { children: React.ReactNode }) {
         setMounted(true);
     }, []);
 
+    // Sync from profile when loaded
+    useEffect(() => {
+        if (userProfile?.temperatureUnit) {
+            setUnit(userProfile.temperatureUnit);
+            // Also sync to local storage for consistency
+            localStorage.setItem("tempUnit", userProfile.temperatureUnit);
+        }
+    }, [userProfile]);
+
     const toggleUnit = () => {
         setUnit((prev) => {
             const newUnit = prev === "C" ? "F" : "C";
             localStorage.setItem("tempUnit", newUnit);
+
+            // If logged in, save to profile
+            if (user) {
+                updateUserProfile({ temperatureUnit: newUnit }).catch(err =>
+                    console.error("Failed to save unit preference:", err)
+                );
+            }
             return newUnit;
         });
     };
@@ -37,17 +54,6 @@ export function UnitProvider({ children }: { children: React.ReactNode }) {
         if (unit === "C") return tempC;
         return Math.round((tempC * 9) / 5 + 32);
     };
-
-    // Prepare context value to avoid creating new object on every render if possible, 
-    // but simple value is fine for this scale.
-
-    // Prevent hydration mismatch by rendering children only after mount if unit differs from default?
-    // Actually, text content mismatch might happen if we render temperatures immediately.
-    // Ideally we should run this effect and trigger a re-render. 
-    // Since 'mounted' starts false, components consuming this might need to handle loading state 
-    // or just default to C until mounted. 
-    // For SEO, server renders C. Client hydrates C then switches to F if saved. This causes a flash.
-    // A solution is to accept the hydration mismatch or just suppress it for temp values.
 
     return (
         <UnitContext.Provider value={{ unit, toggleUnit, convertTemp }}>

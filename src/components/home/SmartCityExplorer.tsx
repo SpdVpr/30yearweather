@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Thermometer, Droplets, MapPin } from "lucide-react";
 import SmartCityFilter, { FilterState } from "./SmartCityFilter";
+import { useUnit } from "@/context/UnitContext";
 
 interface CityInfo {
     slug: string;
@@ -66,8 +67,9 @@ function generateSeoText(city: CityInfo): string {
 
 // City card component
 function CityCard({ city }: { city: CityInfo }) {
+    const { unit, convertTemp } = useUnit();
     const cityImage = `/images/${city.slug}-hero.webp`;
-    const tempDisplay = city.avgTemp !== undefined ? `${Math.round(city.avgTemp)}°C` : "—";
+    const tempDisplay = city.avgTemp !== undefined ? `${Math.round(convertTemp(city.avgTemp))}°${unit}` : "—";
     const seoText = city.desc && city.desc.length > 10 ? city.desc : generateSeoText(city);
 
     return (

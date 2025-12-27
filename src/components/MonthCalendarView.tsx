@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Sun, Cloud, CloudRain, CloudSun, Snowflake } from "lucide-react";
 import { format } from "date-fns";
+import Temperature from "@/components/Temperature";
 
 export default function MonthCalendarView({
     city,
@@ -95,7 +96,7 @@ export default function MonthCalendarView({
 
                             {/* Temperature and rain */}
                             <div className="flex items-center justify-between w-full text-xs sm:text-sm">
-                                <span className="font-bold text-stone-800">{temp}°</span>
+                                <span className="font-bold text-stone-800"><Temperature value={temp} /></span>
                                 <span className={`${rain > 30 ? 'text-blue-500 font-medium' : 'text-stone-400'}`}>
                                     {rain}%
                                 </span>

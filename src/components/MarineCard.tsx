@@ -47,7 +47,6 @@ export default function MarineCard({ marine }: { marine: MarineInfo }) {
     return (
         <section className="animate-fade-in-up">
             <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
-                <Waves className="w-6 h-6 text-blue-500" />
                 Marine Conditions
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

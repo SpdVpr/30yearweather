@@ -1,9 +1,13 @@
+
 "use client";
 
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { MapPin, AlertTriangle, CheckCircle, ArrowRight, TrendingUp, Calendar, Users } from "lucide-react";
+import { Plane, TrendingUp, Users, Calendar, AlertTriangle, Shield, CheckCircle, Info, MapPin, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useAuth } from "@/context/AuthContext";
+import { calculateFlightPath } from "@/lib/airports";
+import AuthModal from "./AuthModal";
 
 interface FlightInfo {
     source: string;
@@ -27,8 +31,11 @@ interface HealthInfo {
 interface TravelInsightsProps {
     cityName: string;
     citySlug: string;
-    flightInfo?: FlightInfo | null;
-    healthInfo?: HealthInfo | null;
+    flightInfo?: any;
+    healthInfo?: any;
+    cityLat?: number;
+    cityLon?: number;
+    showFullDetails?: boolean;
 }
 
 const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -90,9 +97,41 @@ const CircularGauge = ({ value, maxValue = 100, label }: { value: number; maxVal
     );
 };
 
-export default function TravelInsights({ cityName, citySlug, flightInfo, healthInfo }: TravelInsightsProps) {
+// Haversine formula
+function getDistance(lat1: number, lon1: number, lat2: number, lon2: number) {
+    const R = 6371; // km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+}
+
+export default function TravelInsights({
+    cityName,
+    citySlug,
+    flightInfo,
+    healthInfo,
+    cityLat,
+    cityLon,
+    showFullDetails = true // Default to true (show everything)
+}: TravelInsightsProps) {
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+    const { user, userProfile } = useAuth();
+    const [showAuthModal, setShowAuthModal] = useState(false);
+
+    // Flight Time Calculation
+    let flightTime: string | null = null;
+    // Advanced Flight Path Calculation
+    const homeLoc = userProfile?.homeLocation;
+    const homeLocObj = typeof homeLoc === 'object' && homeLoc !== null ? homeLoc : null;
+
+    const flightPath = (homeLocObj && cityLat && cityLon)
+        ? calculateFlightPath(homeLocObj.lat, homeLocObj.lng, cityLat, cityLon)
+        : null;
 
     if (!flightInfo && !healthInfo) return null;
 
@@ -125,14 +164,123 @@ export default function TravelInsights({ cityName, citySlug, flightInfo, healthI
             transition={{ duration: 0.5 }}
             className="mt-16"
         >
-            {/* Section Header - NO ICON */}
+            {/* Section Header */}
             <div className="mb-8">
                 <h2 className="text-2xl font-serif font-bold text-stone-900">Travel Intelligence</h2>
                 <p className="text-stone-500 mt-1">Exclusive flight analytics & health data for {cityName}</p>
             </div>
 
+            {/* ROBUST FLIGHT PLANNER UI - Light Theme, Unified Design */}
+            <div className="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden mb-6">
+                <div className="px-6 py-4 bg-stone-100 border-b border-stone-200 flex items-center justify-between">
+                    <div>
+                        <h3 className="text-lg font-bold text-stone-900">Smart Flight Estimator</h3>
+                        <p className="text-stone-500 text-xs">Airport-to-Airport Logistics</p>
+                    </div>
+                    {!userProfile?.homeLocation && (
+                        <>
+                            {user ? (
+                                <Link
+                                    href="/profile/settings"
+                                    className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg text-xs transition-colors"
+                                >
+                                    Set Home Location
+                                </Link>
+                            ) : (
+                                <button
+                                    onClick={() => setShowAuthModal(true)}
+                                    className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg text-xs transition-colors"
+                                >
+                                    Set Home Location
+                                </button>
+                            )}
+                        </>
+                    )}
+                </div>
+
+                {/* Auth Modal for non-logged in users */}
+                <AuthModal isOpen={showAuthModal} onClose={() => setShowAuthModal(false)} />
+
+                <div className="p-6 relative z-10">
+                    {flightPath ? (
+                        <div className="space-y-8">
+                            {/* Route Visualization */}
+                            <div className="flex items-center justify-between relative px-2">
+                                {/* Origin */}
+                                <div className="text-left relative z-10 w-24">
+                                    <div className="text-4xl font-black text-stone-900 tracking-tighter">{flightPath.origin.airport.code}</div>
+                                    <div className="font-bold text-xs text-stone-700 uppercase mt-1 truncate" title={flightPath.origin.airport.city}>
+                                        {flightPath.origin.airport.city}
+                                    </div>
+                                    <div className="text-[10px] font-medium text-stone-400 mt-0.5 flex items-center gap-1">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+                                        {Math.round(flightPath.origin.distance)}km drive
+                                    </div>
+                                </div>
+
+                                {/* Flight Path Line */}
+                                <div className="flex-1 mx-4 relative flex flex-col items-center">
+                                    <div className="w-full h-[2px] bg-stone-100 relative rounded-full overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-blue-500 to-blue-100 opacity-20"></div>
+                                        <motion.div
+                                            className="absolute top-1/2 -translate-y-1/2"
+                                            style={{ marginLeft: '-12px' }}
+                                            initial={{ left: '0%' }}
+                                            animate={{ left: '100%' }}
+                                            transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
+                                        >
+                                            <Plane className="w-6 h-6 text-blue-600 fill-blue-600 transform rotate-90" />
+                                        </motion.div>
+                                    </div>
+                                    <div className="mt-4 text-center bg-stone-50 px-3 py-1 rounded-lg border border-stone-100">
+                                        <div className="text-lg font-bold text-stone-900">{flightPath.flightTimeStr}</div>
+                                        <div className="text-[10px] text-stone-500 font-medium">{Math.round(flightPath.flightDist)} km direct</div>
+                                    </div>
+                                </div>
+
+                                {/* Destination */}
+                                <div className="text-right relative z-10 w-24">
+                                    <div className="text-4xl font-black text-stone-900 tracking-tighter">{flightPath.dest.airport.code}</div>
+                                    <div className="font-bold text-xs text-stone-700 uppercase mt-1 truncate" title={flightPath.dest.airport.city}>
+                                        {flightPath.dest.airport.city}
+                                    </div>
+                                    <div className="text-[10px] font-medium text-stone-400 mt-0.5 flex items-center justify-end gap-1">
+                                        {Math.round(flightPath.dest.distance)}km to city
+                                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="pt-5 border-t border-stone-100 flex flex-col sm:flex-row sm:justify-between gap-3 text-[11px] font-medium text-stone-500">
+                                <div className="flex items-center gap-1.5 min-w-0">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-stone-200 shrink-0"></div>
+                                    <span className="truncate">Departure via <span className="text-stone-900 font-bold">{flightPath.origin.airport.name}</span></span>
+                                </div>
+                                <div className="flex items-center gap-1.5 min-w-0">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></div>
+                                    <span className="truncate">Arrival at <span className="text-stone-900 font-bold">{flightPath.dest.airport.name}</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="text-center py-8 bg-stone-50 rounded-xl border border-stone-100 border-dashed">
+                            <p className="text-stone-600 font-medium mb-1">
+                                {userProfile?.homeLocation
+                                    ? "Unable to calculate flight path."
+                                    : " unlock smart flight estimates"}
+                            </p>
+                            <p className="text-xs text-stone-400">
+                                {userProfile?.homeLocation
+                                    ? "Please check your location settings."
+                                    : "Add your home location in settings to see airport details."}
+                            </p>
+                        </div>
+                    )}
+                </div>
+            </div>
+
             {/* Flight Analytics */}
-            {flightInfo && (
+            {showFullDetails && flightInfo && (
                 <div className="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden mb-6">
                     {/* Header - NEUTRAL */}
                     <div className="px-6 py-4 bg-stone-100 border-b border-stone-200 flex items-center justify-between">
@@ -208,13 +356,12 @@ export default function TravelInsights({ cityName, citySlug, flightInfo, healthI
                                                         <motion.div
                                                             className={`w-full max-w-[20px] rounded-t cursor-pointer
                                                                 ${isPeak ? 'bg-blue-700' : isLow ? 'bg-blue-300' : 'bg-blue-500'}
-                                                                hover:opacity-80 transition-opacity
-                                                            `}
+                                                                hover:opacity-80 transition-opacity`}
                                                             initial={{ height: 0 }}
                                                             animate={isInView ? { height: Math.max(heightPx, 6) } : {}}
                                                             transition={{ duration: 0.6, delay: idx * 0.04 }}
                                                         />
-                                                        <span className={`text-[10px] mt-2 ${isPeak ? 'text-blue-700 font-bold' : 'text-stone-500'}`}>
+                                                        <span className={`text-[10px] mt-2 ${isPeak ? 'text-blue-700 font-bold' : 'text-stone-500'} `}>
                                                             {month}
                                                         </span>
                                                     </div>
@@ -240,7 +387,7 @@ export default function TravelInsights({ cityName, citySlug, flightInfo, healthI
                                 <div className="lg:col-span-3">
                                     <h4 className="text-sm font-semibold text-stone-700 mb-3">Key Connections</h4>
                                     <div className="space-y-2">
-                                        {flightInfo.top_routes.slice(0, 6).map((route, idx) => (
+                                        {flightInfo.top_routes.slice(0, 6).map((route: any, idx: number) => (
                                             <motion.div
                                                 key={idx}
                                                 className="flex items-center gap-2 p-2.5 bg-stone-50 rounded-lg border border-stone-100 hover:border-blue-200 hover:bg-blue-50 transition-all cursor-pointer"
@@ -262,7 +409,7 @@ export default function TravelInsights({ cityName, citySlug, flightInfo, healthI
             )}
 
             {/* Health Advisory */}
-            {healthInfo && (
+            {showFullDetails && healthInfo && (
                 <div className="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden">
                     {/* Header - NEUTRAL */}
                     <div className="px-6 py-4 bg-stone-100 border-b border-stone-200 flex items-center justify-between">
@@ -278,7 +425,7 @@ export default function TravelInsights({ cityName, citySlug, flightInfo, healthI
                     <div className="p-6">
                         {healthInfo.vaccines.length > 0 ? (
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                                {healthInfo.vaccines.slice(0, 6).map((vac, idx) => (
+                                {healthInfo.vaccines.slice(0, 6).map((vac: any, idx: number) => (
                                     <motion.div
                                         key={idx}
                                         className="flex items-start gap-3 p-3 bg-stone-50 rounded-xl border border-stone-100 hover:border-amber-200 transition-all"

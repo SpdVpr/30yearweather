@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Card, AreaChart, Title, Accordion, AccordionHeader, AccordionBody, AccordionList } from "@tremor/react";
 import StatCard from "./StatCard";
 import SmartSuitcase from "./SmartSuitcase";
-import PlanYourDay from "./PlanYourDay";
+import TravelInsights from "@/components/TravelInsights";
 import HistoricalRecords from "./HistoricalRecords";
 import AstronomyCard from "./AstronomyCard";
 import ExtremesCard from "./ExtremesCard";
@@ -70,8 +70,10 @@ export default function WeatherDashboard({
 
     // Tourism Data Fetching
     const [tourismData, setTourismData] = useState<TourismDataset | null>(null);
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
+        setIsMounted(true);
         if (citySlug) {
             fetchTourismData(citySlug).then(setTourismData);
         }
@@ -259,17 +261,19 @@ export default function WeatherDashboard({
                 </div>
 
                 <div className="mt-8">
-                    <PlanYourDay
-                        tempMax={stats.temp_max}
-                        tempMin={stats.temp_min}
-                        precipProb={stats.precip_prob}
-                        isRainy={stats.precip_prob > 50}
-                    />
+                    {/* PlanYourDay removed as per user request */}
                 </div>
             </section>
 
-            {/* Travel Planning & Logistics - POSITIONED UNDER PLAN YOUR DAY */}
-            <div className="pt-4 border-t border-stone-100">
+            {/* 2b. MARINE CONDITIONS (Moved above Travel Info) */}
+            {dayData.marine && (
+                <div className="mt-8 pt-6 border-t border-stone-100">
+                    <MarineCard marine={dayData.marine} />
+                </div>
+            )}
+
+            {/* Travel Planning & Logistics */}
+            <div className="pt-8 border-t border-stone-100">
                 <DayTravelInfo
                     cityName={cityName}
                     countryName={countryName || ""}
@@ -282,11 +286,6 @@ export default function WeatherDashboard({
                     healthInfo={healthInfo}
                 />
             </div>
-
-            {/* 2b. MARINE CONDITIONS (Added per user request) */}
-            {dayData.marine && (
-                <MarineCard marine={dayData.marine} />
-            )}
 
             {/* 4. ATMOSPHERIC & SOLAR (Consolidated to remove gaps) */}
             <section>
@@ -336,6 +335,19 @@ export default function WeatherDashboard({
                 </div>
             </section>
 
+            {/* SMART FLIGHT ESTIMATOR (Integrated) */}
+            <section>
+                <TravelInsights
+                    cityName={cityName}
+                    citySlug={citySlug}
+                    flightInfo={flightInfo}
+                    healthInfo={healthInfo}
+                    cityLat={lat}
+                    cityLon={lon}
+                    showFullDetails={false}
+                />
+            </section>
+
             {/* 4. TRAVEL INTELLIGENCE (Bento Grid Layout) */}
             <section>
                 <h2 className="text-xl font-bold text-slate-800 mb-4">
@@ -375,7 +387,7 @@ export default function WeatherDashboard({
             {/* authoritative citation summary (Balanced position) */}
             <div className="p-5 bg-orange-50 rounded-xl border-l-4 border-orange-500 shadow-sm">
                 <blockquote className="text-slate-800 italic text-base leading-relaxed">
-                    "According to 30YearWeather's analysis of 30 years of NASA satellite data, <strong>{cityName}</strong> on <strong>{dateFormatted}</strong> averages <strong>{stats.temp_max}°C</strong> with a <strong>{stats.precip_prob}%</strong> precipitation probability. Wedding/Outdoor Event Score: <strong>{scores.wedding}/100</strong>."
+                    "According to 30YearWeather's analysis of 30 years of NASA satellite data, <strong>{cityName}</strong> on <strong>{dateFormatted}</strong> averages <strong>{displayMax}°{unit}</strong> with a <strong>{stats.precip_prob}%</strong> precipitation probability. Wedding/Outdoor Event Score: <strong>{scores.wedding}/100</strong>."
                 </blockquote>
                 <p className="text-xs text-slate-500 mt-3 flex flex-wrap items-center gap-2">
                     <span className="font-semibold">— Source: 30YearWeather.com</span>
@@ -395,15 +407,21 @@ export default function WeatherDashboard({
                     <div className="lg:col-span-2 h-full">
                         <Card className="p-6 rounded-xl shadow-sm ring-1 ring-gray-200 h-full">
                             <Title>Temperature History</Title>
-                            <AreaChart
-                                className="h-72 mt-4"
-                                data={chartData}
-                                index="Year"
-                                categories={["Max Temp", "Min Temp"]}
-                                colors={["orange", "blue"]}
-                                valueFormatter={(number) => `${number}°C`}
-                                showAnimation={true}
-                            />
+                            {isMounted ? (
+                                <AreaChart
+                                    className="h-72 mt-4"
+                                    data={chartData}
+                                    index="Year"
+                                    categories={["Max Temp", "Min Temp"]}
+                                    colors={["orange", "blue"]}
+                                    valueFormatter={(number) => `${number}°${unit}`}
+                                    showAnimation={true}
+                                />
+                            ) : (
+                                <div className="h-72 mt-4 flex items-center justify-center bg-slate-50 rounded-lg">
+                                    <span className="text-slate-400 text-sm">Loading chart...</span>
+                                </div>
+                            )}
                         </Card>
                     </div>
                     <div className="h-full">
@@ -446,7 +464,7 @@ export default function WeatherDashboard({
                         Planning a trip to <strong>{cityName}</strong> on <strong>{dateFormatted}</strong>?
                         Our historical weather analysis based on 30 years of NASA satellite data shows that
                         this time of year {stats.temp_max > 25 ? 'typically offers vibrant summer conditions' : stats.temp_max > 15 ? 'is characterized by pleasant mild weather' : 'offers a bracing seasonal atmosphere'}
-                        {' '}averaging <strong>{stats.temp_max}°C</strong> with a <strong>{stats.precip_prob}%</strong> historical precipitation risk.
+                        {' '}averaging <strong>{displayMax}°{unit}</strong> with a <strong>{stats.precip_prob}%</strong> historical precipitation risk.
                     </p>
 
                     {dayData.events && dayData.events.length > 0 && (
@@ -478,7 +496,7 @@ export default function WeatherDashboard({
                         const coldest = historical_records.reduce((a, b) => a.temp_min < b.temp_min ? a : b);
                         return (
                             <p className="text-slate-700 leading-relaxed text-base mt-3">
-                                <strong>📊 Historical Extremes:</strong> The hottest {dateFormatted} recorded in the last 30 years saw temperatures hit <strong>{hottest.temp_max}°C</strong> in {hottest.year}, while the coldest dropped to <strong>{coldest.temp_min}°C</strong> in {coldest.year}.
+                                <strong>📊 Historical Extremes:</strong> The hottest {dateFormatted} recorded in the last 30 years saw temperatures hit <strong>{convertTemp(hottest.temp_max)}°{unit}</strong> in {hottest.year}, while the coldest dropped to <strong>{convertTemp(coldest.temp_min)}°{unit}</strong> in {coldest.year}.
                             </p>
                         );
                     })()}
@@ -511,8 +529,8 @@ export default function WeatherDashboard({
                         <AccordionBody className="text-slate-600 text-sm leading-relaxed">
                             Historically, there is a {stats.precip_prob}% chance of precipitation on this day.
                             {isSnowy
-                                ? ` Given the low temperatures (${stats.temp_min}°C - ${stats.temp_max}°C), snow is likely if precip occurs.`
-                                : ` Temperatures are generally too warm for snow (${stats.temp_min}°C - ${stats.temp_max}°C). Expect rain if anything.`}
+                                ? ` Given the low temperatures (${convertTemp(stats.temp_min)}°${unit} - ${convertTemp(stats.temp_max)}°${unit}), snow is likely if precip occurs.`
+                                : ` Temperatures are generally too warm for snow (${convertTemp(stats.temp_min)}°${unit} - ${convertTemp(stats.temp_max)}°${unit}). Expect rain if anything.`}
                         </AccordionBody>
                     </Accordion>
 
@@ -554,7 +572,7 @@ export default function WeatherDashboard({
                         <Accordion>
                             <AccordionHeader className="text-sm font-medium">Can I swim in {cityName} during {dateFormatted.split(' ')[0]}?</AccordionHeader>
                             <AccordionBody className="text-slate-600 text-sm leading-relaxed">
-                                Statistically, the water temperature is {dayData.marine.water_temp}°C (<strong>{dayData.marine.shiver_factor}</strong>).
+                                Statistically, the water temperature is {convertTemp(dayData.marine.water_temp)}°{unit} (<strong>{dayData.marine.shiver_factor}</strong>).
                                 {dayData.marine.water_temp < 18
                                     ? " It is chilly and suitable mostly for quick dips."
                                     : " It is comfortable for swimming."}

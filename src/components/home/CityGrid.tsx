@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, ChevronUp, Thermometer, Droplets } from "lucide-react";
+import { useUnit } from "@/context/UnitContext";
 
 interface CityInfo {
     slug: string;
@@ -83,10 +84,11 @@ function generateSeoText(city: CityInfo): string {
 
 // Individual city card - light style with unique SEO text
 function CityCard({ city }: { city: CityInfo }) {
+    const { unit, convertTemp } = useUnit();
     const cityImage = `/images/${city.slug}-hero.webp`;
 
     // Format temperature
-    const tempDisplay = city.avgTemp !== undefined ? `${Math.round(city.avgTemp)}°C` : "—";
+    const tempDisplay = city.avgTemp !== undefined ? `${Math.round(convertTemp(city.avgTemp))}°${unit}` : "—";
 
     // Use custom desc if available, otherwise generate unique SEO text
     const seoText = city.desc && city.desc.length > 10
