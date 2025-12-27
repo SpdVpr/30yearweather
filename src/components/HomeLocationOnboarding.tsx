@@ -28,26 +28,25 @@ export default function HomeLocationOnboarding() {
 
     // Check if user needs to set home location
     // Check if user needs to set home location
+    // Check if user needs to set home location
     useEffect(() => {
-        if (initializing || !user) return;
+        if (initializing || !user || !userProfile) return;
 
-        // If user has home location, ensure modal is closed
-        if (userProfile?.homeLocation) {
+        // If user has home location (string or object), ensure modal is closed
+        if (userProfile.homeLocation) {
             setIsOpen(false);
             return;
         }
 
-        // If user is loaded, has profile, but NO home location, show modal after delay
-        if (userProfile && !userProfile.homeLocation) {
-            const timer = setTimeout(() => {
-                // Double check before showing
-                if (!userProfile.homeLocation) {
-                    setIsOpen(true);
-                }
-            }, 1000);
-            return () => clearTimeout(timer);
-        }
-    }, [initializing, user, userProfile]);
+        // Only show if user exists, profile is loaded, but homeLocation is missing
+        const timer = setTimeout(() => {
+            if (!userProfile.homeLocation) {
+                setIsOpen(true);
+            }
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, [initializing, user, userProfile, userProfile?.homeLocation]);
 
     // Debounced search
     useEffect(() => {
