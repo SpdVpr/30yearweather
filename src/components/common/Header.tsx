@@ -73,14 +73,14 @@ export default function Header({ breadcrumb }: HeaderProps) {
                 </div>
 
                 {/* Right side actions */}
-                <div className="flex items-center gap-2 md:gap-3 shrink-0">
+                <div className="flex items-center gap-1.5 md:gap-3 shrink-0">
                     {/* Search - icon only on mobile, full on desktop */}
                     <Link
                         href="/#cities"
-                        className="flex items-center justify-center gap-2 h-9 md:h-10 w-9 md:w-auto md:px-4 rounded-xl bg-stone-100 hover:bg-stone-200 transition-colors"
+                        className="flex items-center justify-center gap-2 min-h-[44px] min-w-[44px] md:h-10 md:w-auto md:px-4 rounded-xl bg-stone-100 hover:bg-stone-200 transition-colors"
                         aria-label="Search cities"
                     >
-                        <Search className="w-4 h-4 text-stone-500" />
+                        <Search className="w-5 h-5 md:w-4 md:h-4 text-stone-500" />
                         <span className="hidden md:inline text-sm text-stone-500 font-medium">Search cities...</span>
                     </Link>
 

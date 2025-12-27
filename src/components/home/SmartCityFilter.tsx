@@ -328,7 +328,7 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                 <div className="flex flex-col md:flex-row gap-2 mb-2">
                     {/* Search Input */}
                     <div className="flex-1 relative">
-                        <div className="flex items-center h-12 px-4 bg-stone-50 hover:bg-stone-100 rounded-xl transition-colors">
+                        <div className="flex items-center min-h-[48px] h-12 px-4 bg-stone-50 hover:bg-stone-100 rounded-xl transition-colors">
                             <Search className="w-5 h-5 text-stone-400 mr-3 shrink-0" />
                             <input
                                 ref={searchRef}
@@ -437,7 +437,7 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                                 closeAllDropdowns();
                                 setShowMonthDropdown(!showMonthDropdown);
                             }}
-                            className={`h-10 px-3 rounded-lg flex items-center gap-2 transition-all text-sm ${filters.months.length > 0
+                            className={`min-h-[44px] h-11 px-3 rounded-xl flex items-center gap-2 transition-all text-sm ${filters.months.length > 0
                                 ? 'bg-blue-100 text-blue-700 border border-blue-300'
                                 : 'bg-stone-100 hover:bg-stone-200 text-stone-600'
                                 }`}
@@ -486,7 +486,7 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                                 closeAllDropdowns();
                                 setShowDayDropdown(!showDayDropdown);
                             }}
-                            className={`h-10 px-3 rounded-lg flex items-center gap-2 transition-all text-sm ${filters.dayFrom !== null || filters.dayTo !== null
+                            className={`min-h-[44px] h-11 px-3 rounded-xl flex items-center gap-2 transition-all text-sm ${filters.dayFrom !== null || filters.dayTo !== null
                                 ? 'bg-blue-100 text-blue-700 border border-blue-300'
                                 : 'bg-stone-100 hover:bg-stone-200 text-stone-600'
                                 }`}
@@ -578,7 +578,7 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                                 closeAllDropdowns();
                                 setShowTempDropdown(!showTempDropdown);
                             }}
-                            className={`h-10 px-3 rounded-lg flex items-center gap-2 transition-all text-sm ${filters.tempRange !== 'all'
+                            className={`min-h-[44px] h-11 px-3 rounded-xl flex items-center gap-2 transition-all text-sm ${filters.tempRange !== 'all'
                                 ? 'bg-orange-100 text-orange-700 border border-orange-300'
                                 : 'bg-stone-100 hover:bg-stone-200 text-stone-600'
                                 }`}
@@ -629,7 +629,7 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                                 closeAllDropdowns();
                                 setShowWaveDropdown(!showWaveDropdown);
                             }}
-                            className={`h-10 px-3 rounded-lg flex items-center gap-2 transition-all text-sm ${filters.waveRange !== 'all'
+                            className={`min-h-[44px] h-11 px-3 rounded-xl flex items-center gap-2 transition-all text-sm ${filters.waveRange !== 'all'
                                 ? 'bg-cyan-100 text-cyan-700 border border-cyan-300'
                                 : 'bg-stone-100 hover:bg-stone-200 text-stone-600'
                                 }`}
@@ -668,7 +668,7 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                                 closeAllDropdowns();
                                 setShowBeachDropdown(!showBeachDropdown);
                             }}
-                            className={`h-10 px-3 rounded-lg flex items-center gap-2 transition-all text-sm ${filters.coastalOnly
+                            className={`min-h-[44px] h-11 px-3 rounded-xl flex items-center gap-2 transition-all text-sm ${filters.coastalOnly
                                 ? 'bg-teal-100 text-teal-700 border border-teal-300'
                                 : 'bg-stone-100 hover:bg-stone-200 text-stone-600'
                                 }`}
@@ -733,7 +733,7 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                                 closeAllDropdowns();
                                 setShowRainDropdown(!showRainDropdown);
                             }}
-                            className={`h-10 px-3 rounded-lg flex items-center gap-2 transition-all text-sm ${filters.rainProbMax !== null
+                            className={`min-h-[44px] h-11 px-3 rounded-xl flex items-center gap-2 transition-all text-sm ${filters.rainProbMax !== null
                                 ? 'bg-yellow-100 text-yellow-700 border border-yellow-300'
                                 : 'bg-stone-100 hover:bg-stone-200 text-stone-600'
                                 }`}
@@ -793,7 +793,7 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                                 closeAllDropdowns();
                                 setShowPriceDropdown(!showPriceDropdown);
                             }}
-                            className={`h-10 px-3 rounded-lg flex items-center gap-2 transition-all text-sm ${filters.priceLevel !== 'all'
+                            className={`min-h-[44px] h-11 px-3 rounded-xl flex items-center gap-2 transition-all text-sm ${filters.priceLevel !== 'all'
                                 ? filters.priceLevel === 'budget'
                                     ? 'bg-green-100 text-green-700 border border-green-300'
                                     : filters.priceLevel === 'expensive'
@@ -853,7 +853,7 @@ export default function SmartCityFilter({ cities, onFilterChange, totalCities }:
                                 closeAllDropdowns();
                                 setShowWeddingDropdown(!showWeddingDropdown);
                             }}
-                            className={`h-10 px-3 rounded-lg flex items-center gap-2 transition-all text-sm ${filters.weddingMin > 0
+                            className={`min-h-[44px] h-11 px-3 rounded-xl flex items-center gap-2 transition-all text-sm ${filters.weddingMin > 0
                                 ? 'bg-pink-100 text-pink-700 border border-pink-300'
                                 : 'bg-stone-100 hover:bg-stone-200 text-stone-600'
                                 }`}

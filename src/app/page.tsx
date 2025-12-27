@@ -316,7 +316,7 @@ export default async function Home() {
       <HomeNavigation />
 
       {/* 2. Hero Section (Compact without search) */}
-      <section className="relative w-full min-h-[50vh] md:min-h-[60vh] flex items-center justify-center border-b border-stone-200">
+      <section className="relative w-full min-h-[40vh] md:min-h-[60vh] flex items-center justify-center border-b border-stone-200">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
@@ -404,7 +404,7 @@ export default async function Home() {
               <p className="text-stone-600 max-w-xl mx-auto text-sm">Make data-driven decisions for weddings, travel, photography, and events.</p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
               {/* Wedding Planning */}
               <div className="group bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-100 rounded-xl p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all text-center">
                 <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform">

@@ -74,20 +74,22 @@ export default function SwipeNavigation({ prevUrl, nextUrl, children, className 
         >
             {children}
 
-            {/* Floating Navigation Arrows - Visible on mobile/touch mainly, but useful for all */}
+            {/* Floating Navigation Arrows - Optimized for mobile touch (48px targets) */}
             <button
                 onClick={() => router.push(prevUrl)}
-                className="fixed left-2 md:left-8 top-1/2 -translate-y-1/2 z-[100] p-2 md:p-3 bg-white/80 backdrop-blur-md shadow-xl rounded-full border border-white/20 text-stone-900 transition-all hover:scale-110 active:scale-95"
+                className="fixed left-3 md:left-8 top-1/2 -translate-y-1/2 z-[100] p-3 md:p-3 min-w-[48px] min-h-[48px] md:min-w-0 md:min-h-0 bg-white/90 backdrop-blur-md shadow-xl rounded-full border border-stone-200/50 text-stone-900 transition-all hover:scale-110 active:scale-95 active:bg-white flex items-center justify-center"
+                style={{ left: 'max(12px, env(safe-area-inset-left, 12px))' }}
                 aria-label="Previous Page"
             >
-                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+                <ChevronLeft className="w-6 h-6" />
             </button>
             <button
                 onClick={() => router.push(nextUrl)}
-                className="fixed right-2 md:right-8 top-1/2 -translate-y-1/2 z-[100] p-2 md:p-3 bg-white/80 backdrop-blur-md shadow-xl rounded-full border border-white/20 text-stone-900 transition-all hover:scale-110 active:scale-95"
+                className="fixed right-3 md:right-8 top-1/2 -translate-y-1/2 z-[100] p-3 md:p-3 min-w-[48px] min-h-[48px] md:min-w-0 md:min-h-0 bg-white/90 backdrop-blur-md shadow-xl rounded-full border border-stone-200/50 text-stone-900 transition-all hover:scale-110 active:scale-95 active:bg-white flex items-center justify-center"
+                style={{ right: 'max(12px, env(safe-area-inset-right, 12px))' }}
                 aria-label="Next Page"
             >
-                <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+                <ChevronRight className="w-6 h-6" />
             </button>
         </div>
     );
