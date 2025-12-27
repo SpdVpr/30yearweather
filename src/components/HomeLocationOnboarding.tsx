@@ -30,22 +30,30 @@ export default function HomeLocationOnboarding() {
     // Check if user needs to set home location
     // Check if user needs to set home location
     useEffect(() => {
-        if (initializing || !user || !userProfile) return;
-
-        // If user has home location (string or object), ensure modal is closed
-        if (userProfile.homeLocation) {
+        // 1. If still initializing or no user, we do nothing (default is closed)
+        if (initializing || !user) {
             setIsOpen(false);
             return;
         }
 
-        // Only show if user exists, profile is loaded, but homeLocation is missing
-        const timer = setTimeout(() => {
-            if (!userProfile.homeLocation) {
-                setIsOpen(true);
-            }
-        }, 1000);
+        // 2. Wait until we have the profile data
+        if (!userProfile) return;
 
-        return () => clearTimeout(timer);
+        // 3. LOGIC FLIP:
+        // Only show IF profile is loaded AND homeLocation is clearly missing
+        const hasLocation = !!userProfile.homeLocation;
+
+        if (hasLocation) {
+            setIsOpen(false);
+        } else {
+            // Use a short delay just to ensure no race conditions with hydration/auth state
+            const timer = setTimeout(() => {
+                if (!userProfile.homeLocation) {
+                    setIsOpen(true);
+                }
+            }, 500);
+            return () => clearTimeout(timer);
+        }
     }, [initializing, user, userProfile, userProfile?.homeLocation]);
 
     // Debounced search
